@@ -8,7 +8,7 @@
  *                 of hours. 
  *----------------------------------------------------------
  */
-namespace WageCalculator
+namespace WageCalculator.ConApp
 {
     internal class Program
     {
