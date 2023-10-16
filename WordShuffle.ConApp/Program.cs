@@ -46,8 +46,10 @@ namespace WordShuffle.ConApp
             Console.WriteLine(word2 + " " + word3 + " " + word1);
             Console.WriteLine(word3 + " " + word1 + " " + word2);
             Console.WriteLine(word3 + " " + word2 + " " + word1);
+
             Console.WriteLine();
             Console.WriteLine("Press any key to exit: ");
+            Console.ReadKey();
         }
     }
 }

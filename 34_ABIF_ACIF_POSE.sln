@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalculator.ConApp", "Tax
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WageCalculator.ConApp", "WageCalculator.ConApp\WageCalculator.ConApp.csproj", "{47FB1721-567B-4FEA-B67B-0B2B43618C03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiggyBank.ConApp", "PiggyBank.ConApp\PiggyBank.ConApp.csproj", "{BB061407-334B-4604-B73A-83C87FBA0D40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{47FB1721-567B-4FEA-B67B-0B2B43618C03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47FB1721-567B-4FEA-B67B-0B2B43618C03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47FB1721-567B-4FEA-B67B-0B2B43618C03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB061407-334B-4604-B73A-83C87FBA0D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB061407-334B-4604-B73A-83C87FBA0D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB061407-334B-4604-B73A-83C87FBA0D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB061407-334B-4604-B73A-83C87FBA0D40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
