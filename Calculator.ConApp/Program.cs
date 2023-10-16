@@ -9,6 +9,8 @@
 *                 the right.
 *----------------------------------------------------------
 */
+#nullable disable
+
 namespace Calculator.ConApp
 {
     /// <summary>

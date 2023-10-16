@@ -7,6 +7,8 @@
 *                 in and output in the form of a business card.
 *----------------------------------------------------------
 */
+#nullable disable
+
 namespace WordShuffle.ConApp
 {
     ///<summary>

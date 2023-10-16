@@ -8,6 +8,8 @@
 *                 of hours.
 *----------------------------------------------------------
 */
+#nullable disable
+
 namespace WageCalculator.ConApp
 {
     /// <summary>

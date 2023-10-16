@@ -8,7 +8,8 @@
 *                 Outputs combinations of these 3 terms.
 *----------------------------------------------------------
 */
-using System;
+#nullable disable
+
 namespace BusinessCard.ConApp
 {
     /// <summary>

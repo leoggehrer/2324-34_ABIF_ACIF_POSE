@@ -8,6 +8,8 @@
 *                 and calculates a gross price for 5% VAT.
 *----------------------------------------------------------
 */
+#nullable disable
+
 namespace TaxCalculator.ConApp
 {
     /// <summary>
