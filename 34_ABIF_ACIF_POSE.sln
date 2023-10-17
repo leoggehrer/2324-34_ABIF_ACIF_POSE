@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WageCalculator.ConApp", "Wa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiggyBank.ConApp", "PiggyBank.ConApp\PiggyBank.ConApp.csproj", "{BB061407-334B-4604-B73A-83C87FBA0D40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter", "CurrencyConverter\CurrencyConverter.csproj", "{A8683EC2-85FC-44DA-A1E9-B91FF95BD71F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitYourAunt", "VisitYourAunt\VisitYourAunt.csproj", "{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{BB061407-334B-4604-B73A-83C87FBA0D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB061407-334B-4604-B73A-83C87FBA0D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB061407-334B-4604-B73A-83C87FBA0D40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8683EC2-85FC-44DA-A1E9-B91FF95BD71F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8683EC2-85FC-44DA-A1E9-B91FF95BD71F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8683EC2-85FC-44DA-A1E9-B91FF95BD71F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8683EC2-85FC-44DA-A1E9-B91FF95BD71F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

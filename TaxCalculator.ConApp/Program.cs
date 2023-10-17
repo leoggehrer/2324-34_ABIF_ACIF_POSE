@@ -3,6 +3,7 @@
 *----------------------------------------------------------
 *                 Hermann Mustermann
 *----------------------------------------------------------
+*                 TaxCalculator
 *                 This program determines the net price
 *                 based on the current VAT rate of 10%
 *                 and calculates a gross price for 5% VAT.

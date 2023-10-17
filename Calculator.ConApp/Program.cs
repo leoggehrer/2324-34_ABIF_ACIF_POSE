@@ -3,6 +3,7 @@
 *----------------------------------------------------------
 *                 Hermann Mustermann
 *----------------------------------------------------------
+*                 Calculator
 *                 This program reads two integers from
 *                 on the console and add the two numbers.
 *                 The entire invoice is output flush to

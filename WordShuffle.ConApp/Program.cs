@@ -3,6 +3,7 @@
 *----------------------------------------------------------
 *                 Hermann Mustermann
 *----------------------------------------------------------
+*                 WordShuffle
 *                 The user's name and addresses are read
 *                 in and output in the form of a business card.
 *----------------------------------------------------------

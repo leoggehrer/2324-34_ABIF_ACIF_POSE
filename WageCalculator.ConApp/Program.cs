@@ -3,6 +3,7 @@
 *----------------------------------------------------------
 *                 Hermann Mustermann
 *----------------------------------------------------------
+*                 WageCalculator
 *                 This program calculates a worker's wages
 *                 depending on his hourly rate and number
 *                 of hours.

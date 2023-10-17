@@ -3,6 +3,7 @@
 *----------------------------------------------------------
 *                 Hermann Mustermann
 *----------------------------------------------------------
+*                 BusinessCard
 *                 You enter 3 terms via the console. Write
 *                 a program that does all 6 possible
 *                 Outputs combinations of these 3 terms.
