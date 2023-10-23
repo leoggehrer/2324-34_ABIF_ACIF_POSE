@@ -13,11 +13,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxCalculator.ConApp", "Tax
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WageCalculator.ConApp", "WageCalculator.ConApp\WageCalculator.ConApp.csproj", "{47FB1721-567B-4FEA-B67B-0B2B43618C03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiggyBank.ConApp", "PiggyBank.ConApp\PiggyBank.ConApp.csproj", "{BB061407-334B-4604-B73A-83C87FBA0D40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiggyBank.ConApp", "PiggyBank.ConApp\PiggyBank.ConApp.csproj", "{BB061407-334B-4604-B73A-83C87FBA0D40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyConverter", "CurrencyConverter\CurrencyConverter.csproj", "{A8683EC2-85FC-44DA-A1E9-B91FF95BD71F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.ConApp", "CurrencyConverter.ConApp\CurrencyConverter.ConApp.csproj", "{A8683EC2-85FC-44DA-A1E9-B91FF95BD71F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisitYourAunt", "VisitYourAunt\VisitYourAunt.csproj", "{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitYourAunt.ConApp", "VisitYourAunt.ConApp\VisitYourAunt.ConApp.csproj", "{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureCalculator.ConApp", "TemperatureCalculator.ConApp\TemperatureCalculator´.ConApp.csproj", "{86093A91-984F-40EA-8183-CF660993023F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrownUpCalculator.ConApp", "GrownUpCalculator.ConApp\GrownUpCalculator.ConApp.csproj", "{73D62E14-8633-4369-BB48-2E8D551A8CD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator.ConApp", "SimpleCalculator.ConApp\SimpleCalculator.ConApp.csproj", "{1EDED6C6-167B-44D7-84F8-EBDA13839C44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurrencyTranslation.ConApp", "CurrencyTranslation.ConApp\CurrencyTranslation.ConApp.csproj", "{2C476092-C0A2-49CF-8D1C-3C276D656D61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +65,22 @@ Global
 		{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86093A91-984F-40EA-8183-CF660993023F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86093A91-984F-40EA-8183-CF660993023F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86093A91-984F-40EA-8183-CF660993023F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86093A91-984F-40EA-8183-CF660993023F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D62E14-8633-4369-BB48-2E8D551A8CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D62E14-8633-4369-BB48-2E8D551A8CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D62E14-8633-4369-BB48-2E8D551A8CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D62E14-8633-4369-BB48-2E8D551A8CD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EDED6C6-167B-44D7-84F8-EBDA13839C44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EDED6C6-167B-44D7-84F8-EBDA13839C44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EDED6C6-167B-44D7-84F8-EBDA13839C44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EDED6C6-167B-44D7-84F8-EBDA13839C44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C476092-C0A2-49CF-8D1C-3C276D656D61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C476092-C0A2-49CF-8D1C-3C276D656D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C476092-C0A2-49CF-8D1C-3C276D656D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C476092-C0A2-49CF-8D1C-3C276D656D61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

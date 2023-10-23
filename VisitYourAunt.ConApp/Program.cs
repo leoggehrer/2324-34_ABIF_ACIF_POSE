@@ -10,7 +10,7 @@
 */
 #nullable disable
 
-namespace VisitYourAunt
+namespace VisitYourAunt.ConApp
 {
     /// <summary>
     /// Represents a program for calculating arrival time based on distance and speed.

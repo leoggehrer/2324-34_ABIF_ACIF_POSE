@@ -10,7 +10,7 @@
 */
 #nullable disable
 
-namespace CurrencyConverter
+namespace CurrencyConverter.ConApp
 {
     /// <summary>
     /// Represents the Program class.
