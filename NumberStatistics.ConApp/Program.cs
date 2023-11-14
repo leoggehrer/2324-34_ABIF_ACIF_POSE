@@ -22,8 +22,8 @@ namespace NumberStatistics.ConApp
             int sum = 0, prvMax = Int32.MinValue, max = Int32.MinValue, min = Int32.MaxValue, num = 0, idx = 0;
             double average = 0;
 
-            Console.WriteLine("Zahlen Statistik");
-            Console.WriteLine("================");
+            Console.WriteLine(" Zahlen Statistik ");
+            Console.WriteLine("==================");
             Console.WriteLine();
 
             // Eingabe (E)
