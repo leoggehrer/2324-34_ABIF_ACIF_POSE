@@ -35,11 +35,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FuelCalculator.ConApp", "Fu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorWithSwitch.ConApp", "CalculatorWithSwitch.ConApp\CalculatorWithSwitch.ConApp.csproj", "{131A3E36-ACBE-4D9C-9D9F-D6D50DFFEAC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberStatistics.ConApp", "NumberStatistics.ConApp\NumberStatistics.ConApp.csproj", "{AC039C0C-2B1C-42AB-96F6-9EFEC4C1E186}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberStatistics.ConApp", "NumberStatistics.ConApp\NumberStatistics.ConApp.csproj", "{AC039C0C-2B1C-42AB-96F6-9EFEC4C1E186}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingCart.ConApp", "ShoppingCart.ConApp\ShoppingCart.ConApp.csproj", "{1ECC1433-52F0-49C1-BF61-EEBE78EDEC9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShoppingCart.ConApp", "ShoppingCart.ConApp\ShoppingCart.ConApp.csproj", "{1ECC1433-52F0-49C1-BF61-EEBE78EDEC9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashMaschine.ConApp", "CashMaschine.ConApp\CashMaschine.ConApp.csproj", "{49FD973D-1EF8-45DE-90C6-4D5DA34E49CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashMaschine.ConApp", "CashMaschine.ConApp\CashMaschine.ConApp.csproj", "{49FD973D-1EF8-45DE-90C6-4D5DA34E49CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dagobert.ConApp", "Dagobert.ConApp\Dagobert.ConApp.csproj", "{45E10A7C-A6CE-43DD-A1DE-7D93CA54B8AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +125,10 @@ Global
 		{49FD973D-1EF8-45DE-90C6-4D5DA34E49CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49FD973D-1EF8-45DE-90C6-4D5DA34E49CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49FD973D-1EF8-45DE-90C6-4D5DA34E49CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45E10A7C-A6CE-43DD-A1DE-7D93CA54B8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E10A7C-A6CE-43DD-A1DE-7D93CA54B8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E10A7C-A6CE-43DD-A1DE-7D93CA54B8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E10A7C-A6CE-43DD-A1DE-7D93CA54B8AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
