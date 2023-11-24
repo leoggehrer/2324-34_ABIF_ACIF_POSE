@@ -10,11 +10,11 @@ Summe = (n + 1) * n /2
 
 n == 5
 
-	x x x x x
-	x x x x x
-	x x x x x
-	x x x x x
-	x x x x x
+		x x x x x
+		x x x x x
+		x x x x x
+		x x x x x
+		x x x x x
 
 Summe = n * n
 
@@ -24,21 +24,21 @@ dz == 1
 qz == 1
 	x
 dz == 8
-              x		--
-             x x		--
-            x x x			-- --
-           x x x x		--
-          x x x x x	--
-	 x x x x x x
-	x x x x x x x
+              x	
+             x x
+            x x x
+           x x x x
+          x x x x x
+	     x x x x x x
+	    x x x x x x x
        x x x x x x x x
 
 Summe = (8 + 1) * 8 / 2 == 36
 
 qz == 6
-	x x x x x x 
-	x x x x x x 
-	x x x x x x 
-	x x x x x x 
-	x x x x x x 
-	x x x x x x 
+		x x x x x x 
+		x x x x x x 
+		x x x x x x 
+		x x x x x x 
+		x x x x x x 
+		x x x x x x 

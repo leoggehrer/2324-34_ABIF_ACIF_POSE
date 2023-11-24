@@ -1,10 +1,34 @@
-﻿namespace Dagobert.ConApp
+/*----------------------------------------------------------
+*                 HTBLA-Leonding / Class: 3ABIF/3ACIF
+*----------------------------------------------------------
+*                 Hermann Mustermann
+*----------------------------------------------------------
+*                 Dagobert
+*                 This program solves Scrooge's wealth puzzle.
+*----------------------------------------------------------
+*/
+#nullable disable
+
+namespace Dagobert.ConApp
 {
+    /// <summary>
+    /// Represents the entry point of the program.
+    /// </summary>
     internal class Program
     {
+        /// <summary>
+        /// This method solves the "Das große Rätsel von Dagobert" by finding a triangle number (tSum) and a square number (qSum)
+        /// that are equal in a given range. It starts with initial values of t = 1_000 and q = 1_000,
+        /// and increases t or q depending on the comparison of tSum and qSum until they are equal or tSum exceeds the upper range.
+        /// If a solution is found, it displays the solution with the values of t, q, and the common sum (qSum).
+        /// If no solution is found within the specified lower and upper range, it displays a message indicating the absence of such numbers.
+        /// </summary>
+        /// <param name="args">An array of arguments passed to the program</param>
         static void Main(string[] args)
         {
-            Console.WriteLine("Das Rätsel von Dagobert!");
+            Console.WriteLine("Das große Rätsel von Dagobert!");
+            Console.WriteLine("==============================");
+            Console.WriteLine();
 
             // Eingabe (E)
             const int UPPER_RANGE = 2_000_000;
@@ -38,6 +62,10 @@
                 Console.WriteLine();
                 Console.WriteLine($"Es gibt keine Dreieckszahl und Quadratzahl welche im Bereich {LOWER_RANGE} - {UPPER_RANGE} gleich sind!");
             }
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit: ");
+            Console.ReadKey();
         }
     }
 }

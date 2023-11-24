@@ -1,4 +1,4 @@
-﻿/*----------------------------------------------------------
+/*----------------------------------------------------------
 *                 HTBLA-Leonding / Class: 3ABIF/3ACIF
 *----------------------------------------------------------
 *                 Hermann Mustermann
@@ -21,8 +21,20 @@
 
 namespace CashMachine.ConApp
 {
+    /// <summary>
+    /// Represents the main program for a cash machine.
+    /// </summary>
+    // ...
     internal class Program
     {
+        /// <summary>
+        /// The entry point of the program. Performs cash machine operations.
+        /// </summary>
+        /// <param name="args">The command-line arguments.</param>
+        /// <remarks>
+        /// This method prompts the user to enter a PIN code and allows a maximum number of incorrect entries.
+        /// If the correct PIN is entered, it displays the user's account balance and withdrawal options.
+        /// </remarks>
         static void Main(string[] args)
         {
             const int MAX_INCORRECT_ENTRIES = 3;

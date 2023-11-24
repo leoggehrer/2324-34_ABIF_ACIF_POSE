@@ -1,4 +1,4 @@
-﻿/*----------------------------------------------------------
+/*----------------------------------------------------------
 *                 HTBLA-Leonding / Class: 3ABIF/3ACIF
 *----------------------------------------------------------
 *                 Hermann Mustermann
@@ -14,8 +14,17 @@
 
 namespace NumberStatistics.ConApp
 {
+    /// <summary>
+    /// Represents an internal class that contains the main entry point for the application.
+    /// </summary>
     internal class Program
     {
+        /// <summary>
+        /// This method calculates statistics for a list of positive integers entered by the user.
+        /// </summary>
+        /// <param name="args">An array of command-line arguments.</param>
+        /// <returns>Void</returns>
+        // method code
         static void Main(string[] args)
         {
             string input;

@@ -1,4 +1,4 @@
-﻿/*----------------------------------------------------------
+/*----------------------------------------------------------
 *                 HTBLA-Leonding / Class: 3ABIF/3ACIF
 *----------------------------------------------------------
 *                 Hermann Mustermann
@@ -17,8 +17,16 @@
 
 namespace ShoppingCart.ConApp
 {
+    /// <summary>
+    /// Represents a program for shopping cart.
+    /// </summary>
+    // ... rest of the code ...
     internal class Program
     {
+        /// <summary>
+        /// Main method that executes the shopping cart program.
+        /// </summary>
+        /// <param name="args">Command line arguments</param>
         static void Main(string[] args)
         {
             const double DELIVERI_COST = 5.90;
