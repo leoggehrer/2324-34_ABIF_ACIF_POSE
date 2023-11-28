@@ -44,7 +44,7 @@ namespace CaptainHook.ConApp
                 age = children;
                 do
                 {
-                    age++;  // aelter als seine die Anzahl seiner Kinder
+                    age++;  // aelter als die Anzahl seiner Kinder
                     shipLength = PARAMS_PRODUCT / (children * age);
                 } while (children * age * shipLength != PARAMS_PRODUCT && age < MAX_AGE);
             }
