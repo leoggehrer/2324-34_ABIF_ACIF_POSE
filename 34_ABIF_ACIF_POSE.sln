@@ -43,15 +43,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CashMaschine.ConApp", "Cash
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dagobert.ConApp", "Dagobert.ConApp\Dagobert.ConApp.csproj", "{45E10A7C-A6CE-43DD-A1DE-7D93CA54B8AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptainHook.ConApp", "CaptainHook.ConApp\CaptainHook.ConApp.csproj", "{1E54BE3A-539B-485F-936E-872DCF371FCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CaptainHook.ConApp", "CaptainHook.ConApp\CaptainHook.ConApp.csproj", "{1E54BE3A-539B-485F-936E-872DCF371FCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularyTrainer.ConApp", "VocabularyTrainer.ConApp\VocabularyTrainer.ConApp.csproj", "{151DDD85-5B23-441E-AAC0-AD721A16B49F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularyTrainer.ConApp", "VocabularyTrainer.ConApp\VocabularyTrainer.ConApp.csproj", "{151DDD85-5B23-441E-AAC0-AD721A16B49F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerCalculator.ConApp", "TowerCalculator.ConApp\TowerCalculator.ConApp.csproj", "{013D5F43-75FA-4F10-8800-5723A00E6DEB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TowerCalculator.ConApp", "TowerCalculator.ConApp\TowerCalculator.ConApp.csproj", "{013D5F43-75FA-4F10-8800-5723A00E6DEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberGuessing.ConApp", "NumberGuessing.ConApp\NumberGuessing.ConApp.csproj", "{6F6E4A47-3CCA-4298-BFF5-662B7FC17E55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberGuessing.ConApp", "NumberGuessing.ConApp\NumberGuessing.ConApp.csproj", "{6F6E4A47-3CCA-4298-BFF5-662B7FC17E55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Faculty.ConApp", "Faculty.ConApp\Faculty.ConApp.csproj", "{5BC8D6AF-BE76-4076-8851-AAFD6B37EC60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faculty.ConApp", "Faculty.ConApp\Faculty.ConApp.csproj", "{5BC8D6AF-BE76-4076-8851-AAFD6B37EC60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogarithmusDualis.ConApp", "LogarithmusDualis.ConApp\LogarithmusDualis.ConApp.csproj", "{4FFBC6F0-B5DE-4F38-B994-1A3EA39CA45E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearMotion.ConApp", "LinearMotion.ConApp\LinearMotion.ConApp.csproj", "{84C6F4FC-056A-442B-906B-F9E4DA1D41F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeChecker.ConApp", "PrimeChecker.ConApp\PrimeChecker.ConApp.csproj", "{711A0E8F-9EAF-432A-A0B0-F037ED4ED1A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarSquare.ConApp", "StarSquare.ConApp\StarSquare.ConApp.csproj", "{0BAC3E43-746C-494A-AF4C-CAC59F3DA26F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +167,22 @@ Global
 		{5BC8D6AF-BE76-4076-8851-AAFD6B37EC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BC8D6AF-BE76-4076-8851-AAFD6B37EC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BC8D6AF-BE76-4076-8851-AAFD6B37EC60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FFBC6F0-B5DE-4F38-B994-1A3EA39CA45E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FFBC6F0-B5DE-4F38-B994-1A3EA39CA45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FFBC6F0-B5DE-4F38-B994-1A3EA39CA45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FFBC6F0-B5DE-4F38-B994-1A3EA39CA45E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C6F4FC-056A-442B-906B-F9E4DA1D41F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C6F4FC-056A-442B-906B-F9E4DA1D41F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C6F4FC-056A-442B-906B-F9E4DA1D41F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C6F4FC-056A-442B-906B-F9E4DA1D41F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{711A0E8F-9EAF-432A-A0B0-F037ED4ED1A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{711A0E8F-9EAF-432A-A0B0-F037ED4ED1A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{711A0E8F-9EAF-432A-A0B0-F037ED4ED1A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{711A0E8F-9EAF-432A-A0B0-F037ED4ED1A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BAC3E43-746C-494A-AF4C-CAC59F3DA26F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BAC3E43-746C-494A-AF4C-CAC59F3DA26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BAC3E43-746C-494A-AF4C-CAC59F3DA26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BAC3E43-746C-494A-AF4C-CAC59F3DA26F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

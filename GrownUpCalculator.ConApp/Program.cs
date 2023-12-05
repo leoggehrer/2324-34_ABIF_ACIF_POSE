@@ -4,7 +4,7 @@
 *                 Hermann Mustermann
 *----------------------------------------------------------
 *                 GrownUpCalculator
-*                 The implementation of age evaluation #
+*                 The implementation of age evaluation 
 *                 from lessons.
 *----------------------------------------------------------
 */
