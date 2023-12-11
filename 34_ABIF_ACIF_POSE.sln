@@ -53,13 +53,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberGuessing.ConApp", "Nu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Faculty.ConApp", "Faculty.ConApp\Faculty.ConApp.csproj", "{5BC8D6AF-BE76-4076-8851-AAFD6B37EC60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogarithmusDualis.ConApp", "LogarithmusDualis.ConApp\LogarithmusDualis.ConApp.csproj", "{4FFBC6F0-B5DE-4F38-B994-1A3EA39CA45E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogarithmusDualis.ConApp", "LogarithmusDualis.ConApp\LogarithmusDualis.ConApp.csproj", "{4FFBC6F0-B5DE-4F38-B994-1A3EA39CA45E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinearMotion.ConApp", "LinearMotion.ConApp\LinearMotion.ConApp.csproj", "{84C6F4FC-056A-442B-906B-F9E4DA1D41F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinearMotion.ConApp", "LinearMotion.ConApp\LinearMotion.ConApp.csproj", "{84C6F4FC-056A-442B-906B-F9E4DA1D41F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeChecker.ConApp", "PrimeChecker.ConApp\PrimeChecker.ConApp.csproj", "{711A0E8F-9EAF-432A-A0B0-F037ED4ED1A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrimeChecker.ConApp", "PrimeChecker.ConApp\PrimeChecker.ConApp.csproj", "{711A0E8F-9EAF-432A-A0B0-F037ED4ED1A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarSquare.ConApp", "StarSquare.ConApp\StarSquare.ConApp.csproj", "{0BAC3E43-746C-494A-AF4C-CAC59F3DA26F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarSquare.ConApp", "StarSquare.ConApp\StarSquare.ConApp.csproj", "{0BAC3E43-746C-494A-AF4C-CAC59F3DA26F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzz.ConApp", "FizzBuzz.ConApp\FizzBuzz.ConApp.csproj", "{0C0CE6DB-263B-40C6-BE76-193E448507B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindAllBits.ConApp", "FindAllBits.ConApp\FindAllBits.ConApp.csproj", "{F28AE9BF-74F9-49C0-AC53-DE342CEA02CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringReverse.ConApp", "StringReverse.ConApp\StringReverse.ConApp.csproj", "{4AFA749F-DF4F-48F5-B24D-8EBD2E56BF1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -183,6 +189,18 @@ Global
 		{0BAC3E43-746C-494A-AF4C-CAC59F3DA26F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BAC3E43-746C-494A-AF4C-CAC59F3DA26F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BAC3E43-746C-494A-AF4C-CAC59F3DA26F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C0CE6DB-263B-40C6-BE76-193E448507B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C0CE6DB-263B-40C6-BE76-193E448507B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C0CE6DB-263B-40C6-BE76-193E448507B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C0CE6DB-263B-40C6-BE76-193E448507B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F28AE9BF-74F9-49C0-AC53-DE342CEA02CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F28AE9BF-74F9-49C0-AC53-DE342CEA02CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F28AE9BF-74F9-49C0-AC53-DE342CEA02CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F28AE9BF-74F9-49C0-AC53-DE342CEA02CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AFA749F-DF4F-48F5-B24D-8EBD2E56BF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AFA749F-DF4F-48F5-B24D-8EBD2E56BF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AFA749F-DF4F-48F5-B24D-8EBD2E56BF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AFA749F-DF4F-48F5-B24D-8EBD2E56BF1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

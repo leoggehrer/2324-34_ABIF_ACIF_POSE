@@ -45,7 +45,7 @@ namespace Faculty.ConApp
             Console.WriteLine($"{number}! results in {result}.");
 
             Console.WriteLine();
-            Console.WriteLine("Press any key to exit: ");
+            Console.WriteLine("Press any key to exit... ");
             Console.ReadKey();
         }
     }
