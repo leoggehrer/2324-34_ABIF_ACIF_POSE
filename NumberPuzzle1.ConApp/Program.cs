@@ -30,7 +30,7 @@ namespace NumberGuessing.ConApp
             int a, b, c, equation_1, equation_2;
             bool solved = false;
 
-            Console.Clear();
+            //Console.Clear();
             Console.WriteLine("Number Puzzel");
             Console.WriteLine("=============");
             Console.WriteLine();
