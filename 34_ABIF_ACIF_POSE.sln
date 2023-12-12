@@ -69,6 +69,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringReverse.ConApp", "Str
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberPalindrom.ConApp", "NumberPalindrom.ConApp\NumberPalindrom.ConApp.csproj", "{F3BFA0A4-2177-4BE1-B138-B342CE0D49C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberPuzzle1.ConApp", "NumberPuzzle1.ConApp\NumberPuzzle1.ConApp.csproj", "{C81A9379-5733-49A1-BC8C-B4B9C0383EF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -207,6 +209,10 @@ Global
 		{F3BFA0A4-2177-4BE1-B138-B342CE0D49C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3BFA0A4-2177-4BE1-B138-B342CE0D49C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3BFA0A4-2177-4BE1-B138-B342CE0D49C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81A9379-5733-49A1-BC8C-B4B9C0383EF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81A9379-5733-49A1-BC8C-B4B9C0383EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81A9379-5733-49A1-BC8C-B4B9C0383EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81A9379-5733-49A1-BC8C-B4B9C0383EF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
