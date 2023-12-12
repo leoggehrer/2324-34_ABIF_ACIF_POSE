@@ -43,9 +43,9 @@ namespace NumberGuessing.ConApp
                 // Processing (P)
                 while (divider <= number)
                 {
-                    reverseNumber *= 10;
-                    reverseNumber += number / divider % 10;
-                    divider *= 10;
+                    reverseNumber = reverseNumber * 10;
+                    reverseNumber = reverseNumber + number / divider % 10;
+                    divider = divider * 10;
                 }
             }
             else
