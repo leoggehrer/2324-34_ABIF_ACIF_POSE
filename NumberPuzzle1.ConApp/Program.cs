@@ -28,7 +28,7 @@ namespace NumberGuessing.ConApp
             const int A_plus_B_x_C = 2024;
             const int A_x_B_plus_C = 2023;
             int a, b, c, equation_1, equation_2;
-            bool solved;
+            bool solved = false;
 
             //Console.Clear();
             Console.WriteLine("Number Puzzel");
@@ -41,25 +41,27 @@ namespace NumberGuessing.ConApp
 
             // Input (I)
             a = 0;
+            b = 0;
+            c = 0;
 
             // Processing (P)
-            do
+            while (solved == false && a < A_plus_B_x_C)
             {
                 a++;
                 b = 0;
-                do
+                while (solved == false && b < A_plus_B_x_C)
                 {
                     b++;
                     c = 0;
-                    do
+                    while (solved == false && c < A_plus_B_x_C)
                     {
                         c++;
                         equation_1 = a + (b * c);
                         equation_2 = (a * b) + c;
                         solved = equation_1 == A_plus_B_x_C && equation_2 == A_x_B_plus_C;
-                    } while (solved == false && equation_1 <= A_plus_B_x_C && equation_2 <= A_x_B_plus_C);
-                } while (solved == false && equation_1 <= A_plus_B_x_C && equation_2 <= A_x_B_plus_C);
-            } while (solved == false && a < A_plus_B_x_C);
+                    }
+                }
+            }
 
             // Ouput (O)
             if (solved)
