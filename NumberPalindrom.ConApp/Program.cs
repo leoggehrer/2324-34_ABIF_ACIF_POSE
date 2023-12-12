@@ -38,13 +38,14 @@ namespace NumberGuessing.ConApp
             Console.Write("Number [>...0]: ");
             input = Console.ReadLine();
 
-            if (Int32.TryParse(input, out number) && number > 0)
+            if (int.TryParse(input, out number) && number > 0)
             {
                 // Processing (P)
                 while (divider <= number)
                 {
-                    reverseNumber = reverseNumber * 10 + (number / divider) % 10;
-                    divider = divider * 10;
+                    reverseNumber *= 10;
+                    reverseNumber += number / divider % 10;
+                    divider *= 10;
                 }
             }
             else
