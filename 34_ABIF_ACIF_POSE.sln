@@ -75,6 +75,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreditCardChecker.ConApp", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringSplit.ConApp", "StringSplit.ConApp\StringSplit.ConApp.csproj", "{9CDF05BE-53BC-462B-BC99-685DE4B36287}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DigitFilter.ConApp", "DigitFilter.ConApp\DigitFilter.ConApp.csproj", "{77F1FBB5-497B-452B-960C-EC7EE0EFE0A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocalFilter.ConApp", "VocalFilter.ConApp\VocalFilter.ConApp.csproj", "{5F13AEAF-4CF2-40E7-972F-C7AA51EF6C70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintASCII.ConApp", "PrintASCII.ConApp\PrintASCII.ConApp.csproj", "{201480AB-7433-4C63-8696-475AB75DFCBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +231,18 @@ Global
 		{9CDF05BE-53BC-462B-BC99-685DE4B36287}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CDF05BE-53BC-462B-BC99-685DE4B36287}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CDF05BE-53BC-462B-BC99-685DE4B36287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77F1FBB5-497B-452B-960C-EC7EE0EFE0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77F1FBB5-497B-452B-960C-EC7EE0EFE0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77F1FBB5-497B-452B-960C-EC7EE0EFE0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77F1FBB5-497B-452B-960C-EC7EE0EFE0A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F13AEAF-4CF2-40E7-972F-C7AA51EF6C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F13AEAF-4CF2-40E7-972F-C7AA51EF6C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F13AEAF-4CF2-40E7-972F-C7AA51EF6C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F13AEAF-4CF2-40E7-972F-C7AA51EF6C70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{201480AB-7433-4C63-8696-475AB75DFCBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{201480AB-7433-4C63-8696-475AB75DFCBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{201480AB-7433-4C63-8696-475AB75DFCBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{201480AB-7433-4C63-8696-475AB75DFCBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
