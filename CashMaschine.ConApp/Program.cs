@@ -126,7 +126,6 @@ namespace CashMachine.ConApp
             Console.WriteLine();
             Console.WriteLine("Press any key to exit: ");
             Console.ReadKey();
-
         }
     }
 }
