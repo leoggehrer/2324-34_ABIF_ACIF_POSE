@@ -40,7 +40,10 @@ namespace VocalFilter.ConApp
 
                 if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u')
                 {
-                    output += input[i];
+                    if (output.Contains(input[i]) == false)
+                    {
+                        output += input[i];
+                    }
                 }
             }
 
