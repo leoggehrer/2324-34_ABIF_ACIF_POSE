@@ -81,6 +81,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocalFilter.ConApp", "Vocal
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintASCII.ConApp", "PrintASCII.ConApp\PrintASCII.ConApp.csproj", "{201480AB-7433-4C63-8696-475AB75DFCBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteChars.ConApp", "DeleteChars.ConApp\DeleteChars.ConApp.csproj", "{E4B38412-787F-41A1-A728-99D4F1ABA8DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringSearch.ConApp", "StringSearch.ConApp\StringSearch.ConApp.csproj", "{43A53B17-5104-42E0-AFD3-6ECA4A4233B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -243,6 +247,14 @@ Global
 		{201480AB-7433-4C63-8696-475AB75DFCBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{201480AB-7433-4C63-8696-475AB75DFCBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{201480AB-7433-4C63-8696-475AB75DFCBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4B38412-787F-41A1-A728-99D4F1ABA8DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4B38412-787F-41A1-A728-99D4F1ABA8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4B38412-787F-41A1-A728-99D4F1ABA8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4B38412-787F-41A1-A728-99D4F1ABA8DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43A53B17-5104-42E0-AFD3-6ECA4A4233B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43A53B17-5104-42E0-AFD3-6ECA4A4233B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43A53B17-5104-42E0-AFD3-6ECA4A4233B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43A53B17-5104-42E0-AFD3-6ECA4A4233B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
