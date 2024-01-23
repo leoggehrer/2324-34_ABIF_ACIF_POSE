@@ -89,6 +89,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMethods.ConApp", "Sim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocalFilterWithMethod.ConApp", "VocalFilterWithMethod.ConApp\VocalFilterWithMethod.ConApp.csproj", "{5AC06D4F-B57E-47B3-9F41-A6612EA7D314}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ROT13.ConApp", "ROT13.ConApp\ROT13.ConApp.csproj", "{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -267,6 +269,10 @@ Global
 		{5AC06D4F-B57E-47B3-9F41-A6612EA7D314}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AC06D4F-B57E-47B3-9F41-A6612EA7D314}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AC06D4F-B57E-47B3-9F41-A6612EA7D314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

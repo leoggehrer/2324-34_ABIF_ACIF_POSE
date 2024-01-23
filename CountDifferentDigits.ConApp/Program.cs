@@ -27,6 +27,10 @@ namespace CountDifferentDigits.ConApp
 {
     internal class Program
     {
+        /// <summary>
+        /// The entry point of the program.
+        /// </summary>
+        /// <param name="args">The command-line arguments.</param>
         static void Main(string[] args)
         {
             Console.WriteLine("Count Different Digits");
@@ -62,26 +66,38 @@ namespace CountDifferentDigits.ConApp
 
             while (count <= MAX_NUMBERS)
             {
-                Console.Write($"{count}. Ziffer [0-9] eingeben: ");
+                Console.Write($"{count, 2}. Ziffer [0-9] eingeben: ");
                 input = Console.ReadLine();
                 if (int.TryParse(input, out result[index]))
                 {
-                    count++;
-                    index++;
+                    if (result[index] < 0 || result[index] > 9)
+                    {
+                        Console.WriteLine("Fehleingabe, Ziffer muss zwischen 0 und 9 liegen!");
+                    }
+                    else
+                    {
+                        count++;
+                        index++;
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Fehleingabe, Ziffer muss zwischen 0 und 9 liegen!");
+                    Console.WriteLine("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!");
                 }
             }
             return result;
         }
 
+        /// <summary>
+        /// Returns a string containing unique digits from the given array.
+        /// </summary>
+        /// <param name="digits">An array of integers representing digits.</param>
+        /// <returns>A string containing unique digits.</returns>
         public static string GetUniqueDigitsString(int[] digits)
         {
             string result = string.Empty;
 
-            for (int i = 0, i < digits.length; i++)
+            for (int i = 0; i < digits.Length; i++)
             {
                 if (result.Contains(digits[i].ToString()) == false)
                 {

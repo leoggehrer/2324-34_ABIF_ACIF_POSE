@@ -54,8 +54,8 @@ namespace PiggyBank.ConApp
             Console.WriteLine($"Dein Sparschwein enthält {sum:f2} EUR");
             
             Console.WriteLine();
-            Console.WriteLine("Press any key to exit: ");
-            Console.ReadKey();
+            Console.WriteLine("Press enter to exit: ");
+            Console.ReadLine();
         }
     }
 }
