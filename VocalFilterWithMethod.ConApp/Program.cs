@@ -3,13 +3,14 @@
 *----------------------------------------------------------
 *                 Hermann Mustermann
 *----------------------------------------------------------
-*                 Vocal Filter
+*                 DigitFilter
 *                 The program filters all vocals from an 
 *                 input text and outputs them.
 *----------------------------------------------------------
 */
 #nullable disable
-namespace VocalFilter.ConApp
+
+namespace VocalFilterWithMethod.ConApp
 {
     /// <summary>
     /// Represents the entry point of the program.
@@ -25,7 +26,7 @@ namespace VocalFilter.ConApp
             string input, output = string.Empty;
 
             Console.WriteLine("***************************************************");
-            Console.WriteLine("* Vocal Filter                                    *");
+            Console.WriteLine("* Vocal Filter with Method                        *");
             Console.WriteLine("***************************************************");
             Console.WriteLine();
 
@@ -34,18 +35,7 @@ namespace VocalFilter.ConApp
             input = Console.ReadLine();
 
             // Verarbeitung (V)
-            for (int i = 0; i < input.Length; i++)
-            {
-                char chr = char.ToLower(input[i]);
-
-                if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u')
-                {
-                    if (output.Contains(input[i]) == false)
-                    {
-                        output += input[i];
-                    }
-                }
-            }
+            output = FilterVocals(input);
 
             // Ausgabe (A)
             Console.WriteLine($"Ausgabetext: {output}");
@@ -53,6 +43,30 @@ namespace VocalFilter.ConApp
             Console.WriteLine();
             Console.WriteLine("Press any key to exit: ");
             Console.ReadKey();
+        }
+
+        /// <summary>
+        /// Filters out the vowels from the input string and returns the result.
+        /// </summary>
+        /// <param name="input">The input string to filter.</param>
+        /// <returns>The filtered string without vowels.</returns>
+        public static string FilterVocals(string input)
+        {
+            string result = string.Empty;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                char chr = char.ToLower(input[i]);
+
+                if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u')
+                {
+                    if (result.Contains(input[i]) == false)
+                    {
+                        result += input[i];
+                    }
+                }
+            }
+            return result;
         }
     }
 }
