@@ -91,6 +91,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocalFilterWithMethod.ConAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ROT13.ConApp", "ROT13.ConApp\ROT13.ConApp.csproj", "{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountDifferentDigits.ConApp", "CountDifferentDigits.ConApp\CountDifferentDigits.ConApp.csproj", "{1F8559DE-47D9-4DC0-B438-F929C8D39BE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryAdder.ConApp", "BinaryAdder.ConApp\BinaryAdder.ConApp.csproj", "{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -273,6 +277,14 @@ Global
 		{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8559DE-47D9-4DC0-B438-F929C8D39BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8559DE-47D9-4DC0-B438-F929C8D39BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8559DE-47D9-4DC0-B438-F929C8D39BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8559DE-47D9-4DC0-B438-F929C8D39BE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
