@@ -5,13 +5,13 @@
 | carry  |  num1  |  num2  | result | carry' |
 | :----: | :----: | :----: | :----: | :----: |
 |   0    |    0   |    0   |    0   |    0   |
-|   0    |    0   |    1   |    1   |    0   |
-|   0    |    1   |    0   |    1   |    0   |
-|   0    |    1   |    1   |    0   |    1   |
-|   1    |    0   |    0   |    1   |    0   |
-|   1    |    0   |    1   |    0   |    1   |
-|   1    |    1   |    0   |    0   |    1   |
-|   1    |    1   |    1   |    1   |    1   |
+|   0    |    0   |    1   |  **1** |    0   |
+|   0    |    1   |    0   |  **1** |    0   |
+|   0    |    1   |    1   |    0   |  **1** |
+|   1    |    0   |    0   |  **1** |    0   |
+|   1    |    0   |    1   |    0   |  **1** |
+|   1    |    1   |    0   |    0   |  **1** |
+|   1    |    1   |    1   |  **1** |  **1** |
 
 ### Conversion into a CSharp program
 
@@ -57,12 +57,12 @@ else if (carry && number1[i] == '1' && number2[i] == '1')
 The binary number is extended with zeros to a length divisible by 4.
 
 ```csharp
-int expandLength = 4 - number.Length % 4 + number.Length;
+int expandLength = 8 - number.Length % 8 + number.Length;
 
 // A space is added after every 4 digits.
 for (int i = 0; i < number.Length; i++)
 {
-    if (i > 0 && i % 4 == 0)
+    if (i > 0 && i % 8 == 0)
     {
         result += ' ';
     }

@@ -36,7 +36,7 @@ namespace BinaryAdder.ConApp
             // Processing (P)
             result = AddBinaryNumbers(number1, number2);
             // Output (O)
-            Console.WriteLine($"{FormatBinary(number1)} + {FormatBinary(number2)} =  {FormatBinary(result)}");
+            Console.WriteLine($"{FormatBinary(number1, 8)} + {FormatBinary(number2, 8)} =  {FormatBinary(result, 8)}");
 
             Console.WriteLine();
             Console.WriteLine("Beenden mit Eingabetaste... ");
@@ -44,19 +44,20 @@ namespace BinaryAdder.ConApp
         }
 
         /// <summary>
-        /// Formats a binary number by adding spaces every 4 digits.
+        /// Formats a binary number by inserting spaces at regular intervals to improve readability.
         /// </summary>
         /// <param name="number">The binary number to format.</param>
+        /// <param name="wide">The width of each group of digits.</param>
         /// <returns>The formatted binary number.</returns>
-        private static string FormatBinary(string number)
+        private static string FormatBinary(string number, int wide)
         {
             string result = string.Empty;
-            int expandLength = 4 - number.Length % 4 + number.Length;
+            int expandLength = wide - number.Length % wide + number.Length;
 
             number = ExpandNumber(number, expandLength);
             for (int i = 0; i < number.Length; i++)
             {
-                if (i > 0 && i % 4 == 0)
+                if (i > 0 && i % wide == 0)
                 {
                     result += ' ';
                 }
