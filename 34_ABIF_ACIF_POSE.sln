@@ -97,6 +97,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryAdder.ConApp", "Binar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiJumpVoting.ConApp", "SkiJumpVoting.ConApp\SkiJumpVoting.ConApp.csproj", "{3CDC55C5-680B-493E-9E35-3DA86D3AE174}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigInteger.ConApp", "BigInteger.ConApp\BigInteger.ConApp.csproj", "{F6B8DE6D-530C-429C-8428-1A835DB3F571}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -291,6 +293,10 @@ Global
 		{3CDC55C5-680B-493E-9E35-3DA86D3AE174}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CDC55C5-680B-493E-9E35-3DA86D3AE174}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CDC55C5-680B-493E-9E35-3DA86D3AE174}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6B8DE6D-530C-429C-8428-1A835DB3F571}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6B8DE6D-530C-429C-8428-1A835DB3F571}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6B8DE6D-530C-429C-8428-1A835DB3F571}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6B8DE6D-530C-429C-8428-1A835DB3F571}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
