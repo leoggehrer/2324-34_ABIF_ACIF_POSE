@@ -85,15 +85,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeleteChars.ConApp", "Delet
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringSearch.ConApp", "StringSearch.ConApp\StringSearch.ConApp.csproj", "{43A53B17-5104-42E0-AFD3-6ECA4A4233B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMethods.ConApp", "SimpleMethods.ConApp\SimpleMethods.ConApp.csproj", "{268EF34E-58E1-4CF0-9BC2-1A703CE40E9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleMethods.ConApp", "SimpleMethods.ConApp\SimpleMethods.ConApp.csproj", "{268EF34E-58E1-4CF0-9BC2-1A703CE40E9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocalFilterWithMethod.ConApp", "VocalFilterWithMethod.ConApp\VocalFilterWithMethod.ConApp.csproj", "{5AC06D4F-B57E-47B3-9F41-A6612EA7D314}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocalFilterWithMethod.ConApp", "VocalFilterWithMethod.ConApp\VocalFilterWithMethod.ConApp.csproj", "{5AC06D4F-B57E-47B3-9F41-A6612EA7D314}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ROT13.ConApp", "ROT13.ConApp\ROT13.ConApp.csproj", "{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ROT13.ConApp", "ROT13.ConApp\ROT13.ConApp.csproj", "{B6D82DE8-D5C3-45E0-86DE-F69606C397BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountDifferentDigits.ConApp", "CountDifferentDigits.ConApp\CountDifferentDigits.ConApp.csproj", "{1F8559DE-47D9-4DC0-B438-F929C8D39BE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountDifferentDigits.ConApp", "CountDifferentDigits.ConApp\CountDifferentDigits.ConApp.csproj", "{1F8559DE-47D9-4DC0-B438-F929C8D39BE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryAdder.ConApp", "BinaryAdder.ConApp\BinaryAdder.ConApp.csproj", "{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryAdder.ConApp", "BinaryAdder.ConApp\BinaryAdder.ConApp.csproj", "{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiJumpVoting.ConApp", "SkiJumpVoting.ConApp\SkiJumpVoting.ConApp.csproj", "{3CDC55C5-680B-493E-9E35-3DA86D3AE174}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -285,6 +287,10 @@ Global
 		{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CDC55C5-680B-493E-9E35-3DA86D3AE174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CDC55C5-680B-493E-9E35-3DA86D3AE174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CDC55C5-680B-493E-9E35-3DA86D3AE174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CDC55C5-680B-493E-9E35-3DA86D3AE174}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

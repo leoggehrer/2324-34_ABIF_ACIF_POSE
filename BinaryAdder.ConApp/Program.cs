@@ -12,9 +12,6 @@
 */
 #nullable disable
 
-
-using System.Runtime.Intrinsics.Arm;
-
 namespace BinaryAdder.ConApp
 {
     internal class Program
