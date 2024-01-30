@@ -116,6 +116,12 @@ namespace BigInteger.ConApp
             return result;
         }
 
+        /// <summary>
+        /// Determines whether the given string represents a big number.
+        /// A big number is considered valid if it contains only digits.
+        /// </summary>
+        /// <param name="number">The string to check.</param>
+        /// <returns><c>true</c> if the string represents a big number; otherwise, <c>false</c>.</returns>
         private static bool IsBigNumber(string number)
         {
             bool result = number.Length > 0;
