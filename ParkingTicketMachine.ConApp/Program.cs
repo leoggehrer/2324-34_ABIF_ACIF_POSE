@@ -1,4 +1,4 @@
-﻿/*----------------------------------------------------------
+/*----------------------------------------------------------
 *                 HTBLA-Leonding / Class: 3ABIF/3ACIF
 *----------------------------------------------------------
 *                 Hermann Mustermann
@@ -25,7 +25,7 @@ namespace ParkingTicketMachine.ConApp
     /// </summary>
     internal class Program
     {
-        private static int[] _coins = new int[] {5, 10, 20, 50, 100, 200 };
+        private static int[] _coins = new int[] { 5, 10, 20, 50, 100, 200 };
         private const int _minTimeInMinutes = 30;
         private const int _maxTimeInMinutes = 90;
         private const int _minPaymentInCents = 50;
@@ -52,9 +52,9 @@ namespace ParkingTicketMachine.ConApp
             Console.WriteLine("Programm beenden mit Eingabetaste...");
             Console.ReadLine();
         }
-        
+
         /// <summary>
-        /// 
+        /// Prints the program header.
         /// </summary>
         private static void PrintHeader()
         {
@@ -65,21 +65,29 @@ namespace ParkingTicketMachine.ConApp
         }
 
         /// <summary>
-        /// 
+        /// Reads the parking payment from the user.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The total payment in cents.</returns>
         private static int ReadParkingPayment()
         {
             int result = 0;
-            string input = string.Empty;
+            bool exit = false;
+            string input;
 
             do
             {
-                Console.Write($"Parkzeit bisher: {ToHoursFormat(ToMinutes(result))}, Einwurf bisher: {result} Cent,  d für Ticket, Einwurf in Cent: ");
+                Console.Write($"Parkzeit bisher: {(result >= _minPaymentInCents ? ToHoursFormat(ToMinutes(result)) : "00:00")}, Einwurf bisher: {result} Cent,  d für Ticket, Einwurf in Cent: ");
                 input = Console.ReadLine();
-                if (input.ToLower() == "d" && result < _minPaymentInCents)
+                if (input.ToLower() == "d")
                 {
-                    Console.Write($"Mindesteinwurf {_minPaymentInCents} Cent, bisher haben Sie {result} eingeworfen");
+                    if (result < _minPaymentInCents)
+                    {
+                        Console.Write($"Mindesteinwurf {_minPaymentInCents} Cent, bisher haben Sie {result} eingeworfen");
+                    }
+                    else
+                    {
+                        exit = true;
+                    }
                 }
                 else if (int.TryParse(input, out int coin))
                 {
@@ -92,37 +100,39 @@ namespace ParkingTicketMachine.ConApp
                         Console.WriteLine($"'{coin}' ist ein ungültiger Wert!");
                     }
                 }
-            } while (input.ToLower() == "d" && result >= _minPaymentInCents || result < _maxPaymentInCents);
+            } while (exit == false && result < _maxPaymentInCents);
             return result;
         }
 
         /// <summary>
-        /// 
+        /// Prints a ticket with information about payment and parking duration.
         /// </summary>
-        /// <param name="paymentInCents"></param>
+        /// <param name="paymentInCents">The payment amount in cents.</param>
         private static void PrintTicket(int paymentInCents)
         {
             Console.WriteLine("Ticket ausgeben:");
             if (paymentInCents > _maxPaymentInCents)
             {
-                Console.WriteLine($"Danke für Ihre Spende von {_maxPaymentInCents - paymentInCents} Cent");
+                Console.WriteLine($"Danke für Ihre Spende von {paymentInCents - _maxPaymentInCents} Cent");
             }
-            Console.WriteLine($"Sie dürfen {ToHoursFormat(Math.Min(paymentInCents, _maxPaymentInCents))} Stunden parken");
+            int minutes = ToMinutes(Math.Min(paymentInCents, _maxPaymentInCents));
+
+            Console.WriteLine($"Sie dürfen {ToHoursFormat(minutes)} Stunden parken");
         }
         /// <summary>
-        /// 
+        /// Converts the given amount in cents to minutes based on the cost per minute.
         /// </summary>
-        /// <param name="throwInCents"></param>
-        /// <returns></returns>
+        /// <param name="throwInCents">The amount in cents to be converted to minutes.</param>
+        /// <returns>The equivalent amount in minutes.</returns>
         private static int ToMinutes(int throwInCents)
         {
             return (int)(_costPerMinute * throwInCents);
         }
         /// <summary>
-        /// 
+        /// Converts the given number of minutes to a formatted string representation in hours format (HH:mm).
         /// </summary>
-        /// <param name="minutes"></param>
-        /// <returns></returns>
+        /// <param name="minutes">The number of minutes to be converted.</param>
+        /// <returns>A string representing the given number of minutes in hours format (HH:mm).</returns>
         private static string ToHoursFormat(int minutes)
         {
             return $"{minutes / 60:D2}:{minutes % 60:D2}";
