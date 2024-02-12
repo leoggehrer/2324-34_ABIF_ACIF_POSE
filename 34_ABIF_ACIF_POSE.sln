@@ -95,11 +95,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountDifferentDigits.ConApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinaryAdder.ConApp", "BinaryAdder.ConApp\BinaryAdder.ConApp.csproj", "{A2E77FD7-C2F5-45CF-A764-6D0A9316AA45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiJumpVoting.ConApp", "SkiJumpVoting.ConApp\SkiJumpVoting.ConApp.csproj", "{3CDC55C5-680B-493E-9E35-3DA86D3AE174}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiJumpVoting.ConApp", "SkiJumpVoting.ConApp\SkiJumpVoting.ConApp.csproj", "{3CDC55C5-680B-493E-9E35-3DA86D3AE174}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigInteger.ConApp", "BigInteger.ConApp\BigInteger.ConApp.csproj", "{F6B8DE6D-530C-429C-8428-1A835DB3F571}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigInteger.ConApp", "BigInteger.ConApp\BigInteger.ConApp.csproj", "{F6B8DE6D-530C-429C-8428-1A835DB3F571}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParkingTicketMachine.ConApp", "ParkingTicketMachine.ConApp\ParkingTicketMachine.ConApp.csproj", "{D56F3F91-1560-4531-8E46-B653B6CD4633}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingTicketMachine.ConApp", "ParkingTicketMachine.ConApp\ParkingTicketMachine.ConApp.csproj", "{D56F3F91-1560-4531-8E46-B653B6CD4633}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantUML.ConApp", "PlantUML.ConApp\PlantUML.ConApp.csproj", "{E69413A2-A2BB-4CB9-A08D-7923D767EFC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -303,6 +305,10 @@ Global
 		{D56F3F91-1560-4531-8E46-B653B6CD4633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D56F3F91-1560-4531-8E46-B653B6CD4633}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D56F3F91-1560-4531-8E46-B653B6CD4633}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E69413A2-A2BB-4CB9-A08D-7923D767EFC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E69413A2-A2BB-4CB9-A08D-7923D767EFC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E69413A2-A2BB-4CB9-A08D-7923D767EFC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E69413A2-A2BB-4CB9-A08D-7923D767EFC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
