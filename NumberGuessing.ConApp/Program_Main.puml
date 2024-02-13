@@ -1,0 +1,33 @@
+@startuml Program.Main
+title Program.Main
+start
+:PrintLine("Zahlenraten");
+:PrintLine("===========");
+:PrintLine();
+:PrintLine("Ich habe mir eine Zahl zwischen 1 und 100 ausgedacht. Kannst du sie erraten?");
+repeat
+    :Print($"{++counter}. Versuch: ");
+    :input = ReadLine();
+    :guessNumber = Convert.ToInt32(input);
+    if (guessNumber < randomNumber) then (yes)
+        :Print("Die gesuchte Zahl ist größer, ");
+      else (no)
+        if (guessNumber > randomNumber) then (yes)
+            :Print("Die gesuchte Zahl ist kleiner, ");
+        endif
+    endif
+repeat while (guessNumber != randomNumber) is (yes)
+if (counter > 1 && counter <= 5) then (yes)
+    :PrintLine("Tolle Leistung!");
+  else (no)
+    if (counter > 5 && counter <= 10) then (yes)
+        :PrintLine("Schon ganz gut!");
+      else (no)
+          :PrintLine("Endlich geschafft!");
+    endif
+endif
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

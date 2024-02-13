@@ -1,0 +1,5 @@
+@startuml UMLCreator.CreateActivityDiagram
+title UMLCreator.CreateActivityDiagram
+start
+stop
+@enduml

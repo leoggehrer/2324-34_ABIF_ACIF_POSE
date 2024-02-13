@@ -1,0 +1,5 @@
+@startuml Program.ToMinutes
+title Program.ToMinutes
+start
+stop
+@enduml

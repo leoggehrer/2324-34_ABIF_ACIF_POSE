@@ -1,0 +1,21 @@
+@startuml Program.Main
+title Program.Main
+start
+:PrintLine("***************************************************");
+:PrintLine("* Der Lohnrechner für eine gerechte Entlohnung!   *");
+:PrintLine("***************************************************");
+:Print("Name des Arbeiters:        ");
+:name = ReadLine();
+:Print("Anzahl der Arbeitsstunden: ");
+:hours = Convert.ToDouble(ReadLine());
+:Print("Stundenlohn:               ");
+:input = ReadLine();
+:pricePerHour = Convert.ToDouble(input);
+:salary = hours * pricePerHour;
+:PrintLine();
+:PrintLine($"{name} hat in {hours:f} Stunden {salary} EUR verdient.");
+:PrintLine();
+:Print("Zum Beenden Eingabetaste drücken...");
+:ReadLine();
+stop
+@enduml

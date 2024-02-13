@@ -1,0 +1,18 @@
+@startuml Program.Main
+title Program.Main
+start
+:PrintLine("Visitenkarte");
+:Print("Write your name:   ");
+:username = ReadLine();
+:Print("write your adress: ");
+:adress = ReadLine();
+:PrintLine();
+:PrintLine("****************************************");
+:Print($"* {username,-37}");
+:PrintLine("*");
+:PrintLine("****************************************");
+:Print($"* {adress,-37}");
+:PrintLine("*");
+:PrintLine("****************************************");
+stop
+@enduml

@@ -1,0 +1,10 @@
+@startuml Program.PrintTicket
+title Program.PrintTicket
+start
+:PrintLine("Ticket ausgeben:");
+if (paymentInCents > _maxPaymentInCents) then (yes)
+    :PrintLine($"Danke für Ihre Spende von {paymentInCents - _maxPaymentInCents} Cent");
+endif
+:PrintLine($"Sie dürfen {ToHoursFormat(minutes)} Stunden parken");
+stop
+@enduml

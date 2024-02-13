@@ -1,0 +1,6 @@
+@startuml Program.CalculateJump
+title Program.CalculateJump
+start
+:far = (int)far;
+stop
+@enduml

@@ -1,0 +1,8 @@
+@startuml Program.ExpandNumber
+title Program.ExpandNumber
+start
+while (number.Length < numberLength) is (yes)
+    :number = '0' + number;
+endwhile (no)
+stop
+@enduml

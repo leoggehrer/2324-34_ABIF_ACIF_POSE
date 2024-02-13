@@ -1,0 +1,58 @@
+@startuml Program.Main
+title Program.Main
+start
+repeat
+    :Console.Clear();
+    :PrintLine("Simple Methods");
+    :PrintLine("==============");
+    :PrintLine();
+    :PrintLine("Welche Methode möchten Sie verwenden?");
+    :PrintLine("1 ... WriteStars");
+    :PrintLine("2 ... WriteCharacters");
+    :PrintLine("3 ... SumOfDigits");
+    :PrintLine("4 ... SubString");
+    :PrintLine("0 ... Exit");
+    :Print("Geben Sie eine Zahl ein [1-4]: ");
+    :menueNumber = Convert.ToInt32(ReadLine());
+    :PrintLine();
+    switch (menueNumber)
+      case( 1 )
+      :Print("Geben Sie die Anzahl der Sterne ein, die Sie anzeigen möchten: ");
+      :numStars = Convert.ToInt32(ReadLine());
+      :WriteStars(numStars);
+      :PrintLine();
+      :Print("Weiter mit Eingabe...");
+      :ReadLine();
+      case( 2 )
+      :Print("Geben Sie das Zeichen ein, das Sie anzeigen möchten: ");
+      :characterDisplayed = Convert.ToChar(ReadLine());
+      :Print($"Geben Sie an, wie oft {characterDisplayed} angezeigt werden soll: ");
+      :numChars = Convert.ToInt32(ReadLine());
+      :WriteCharacters(numChars, characterDisplayed);
+      :PrintLine();
+      :Print("Weiter mit Eingabe...");
+      :ReadLine();
+      case( 3 )
+      :Print("Geben Sie Ihren Text ein, sie erhalten eine Zusammenfassung: ");
+      :inputSumOfDigits = ReadLine();
+      :sumOfAllDigits = SumOfDigits(inputSumOfDigits);
+      :PrintLine();
+      :PrintLine($"Die Summe aller Zahlen ist gleich {sumOfAllDigits}");
+      :Print("Weiter mit Eingabe...");
+      :ReadLine();
+      case( 4 )
+      :Print("Geben Sie Ihren Text ein: ");
+      :inputString = ReadLine();
+      :Print("Geben Sie den Index ein, an dem der SubString beginnt: ");
+      :indexSubString = Convert.ToInt32(ReadLine());
+      :Print("Geben Sie die Länge des SubStrings ein: ");
+      :lengthSubString = Convert.ToInt32(ReadLine());
+      :searchedSubString = SubString(inputString, indexSubString, lengthSubString);
+      :PrintLine($"Der Teiltext ist: {searchedSubString}");
+      :PrintLine();
+      :Print("Weiter mit Eingabe...");
+      :ReadLine();
+    endswitch
+repeat while (menueNumber != 0) is (yes)
+stop
+@enduml

@@ -1,0 +1,29 @@
+@startuml Program.Main
+title Program.Main
+start
+:PrintLine("Prime Checker");
+:PrintLine("=============");
+:PrintLine();
+:Print("Geben Sie eine Ganzzahl ein: ");
+:input = ReadLine();
+:number = Convert.ToInt32(input);
+:isPrime = number > 1 && (number == 2 || number % 2 != 0);
+:divider = 3;
+while (isPrime && divider <= number / 2) is (yes)
+    :isPrime = number % divider != 0;
+    :divider += 2;
+endwhile (no)
+:PrintLine($"Variante while: Die Zahl {number} {(isPrime ? "ist" : "keine")} Primzahl!");
+:PrintLine();
+:isPrime = number > 1 && (number == 2 || number % 2 != 0);
+:int i = 3;
+while (isPrime && i <= number / 2) is (yes)
+    :isPrime = number % i != 0;
+:i = i + 2;
+endwhile (no)
+:PrintLine($"Variante for: Die Zahl {number} {(isPrime ? "ist" : "keine")} Primzahl!");
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

@@ -1,0 +1,15 @@
+@startuml Program.Main
+title Program.Main
+start
+:PrintLine("Addieren von sehr großen Zahlen (Integer)");
+:PrintLine("=========================================");
+:number1 = ReadBigInteger("Geben Sie die erste Zahl ein: ");
+:number2 = ReadBigInteger("Geben Sie die zweite Zahl ein:");
+:result = AddBigInteger(number1, number2);
+:PrintLine("Summer der beiden Zahlen:");
+:PrintLine($"{result}");
+:PrintLine();
+:PrintLine("Beenden mit Eingabetaste... ");
+:ReadLine();
+stop
+@enduml

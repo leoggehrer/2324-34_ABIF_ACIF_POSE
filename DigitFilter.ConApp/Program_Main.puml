@@ -1,0 +1,22 @@
+@startuml Program.Main
+title Program.Main
+start
+:PrintLine("***************************************************");
+:PrintLine("* Digit Filter                                    *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Eingabetext: ");
+:input = ReadLine();
+:int i = 0;
+while (i < input.Length) is (yes)
+    if (char.IsDigit(input[i])) then (yes)
+        :output += input[i];
+    endif
+:i++;
+endwhile (no)
+:PrintLine($"Ausgabetext: {output}");
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

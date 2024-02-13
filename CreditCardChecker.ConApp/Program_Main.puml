@@ -1,0 +1,49 @@
+@startuml Program.Main
+title Program.Main
+start
+:PrintLine("***************************************************");
+:PrintLine("* Kreditkarten-Prüfer                             *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Geben Sie Ihre 16-stellige Kreditkartennummer ein: ");
+:input = ReadLine();
+:int i = 0;
+while (i < input.Length) is (yes)
+    if (char.IsWhiteSpace(input[i]) == false) then (yes)
+        :cardNumber += input[i];
+    endif
+:i++;
+endwhile (no)
+:valid = cardNumber.Length == 16;
+:idx = 0;
+while (valid && idx < cardNumber.Length) is (yes)
+    :valid = char.IsDigit(cardNumber[idx++]);
+endwhile (no)
+:idx = 0;
+while (valid && idx < cardNumber.Length - 1) is (yes)
+    :digit = (cardNumber[idx] - '0') * 2;
+    :evenSum = digit > 9 ? evenSum + digit % 10 + (digit / 10 % 10)
+                                    : evenSum + digit;
+    :idx = idx + 2;
+endwhile (no)
+:idx = 1;
+while (valid && idx < cardNumber.Length - 1) is (yes)
+    :oddSum = oddSum + (cardNumber[idx] - '0');
+    :idx = idx + 2;
+endwhile (no)
+if (valid) then (yes)
+    :sum = evenSum + oddSum;
+    :diff = (10 - sum % 10) % 10;
+    :valid = diff == cardNumber[cardNumber.Length - 1] - '0';
+endif
+:PrintLine();
+if (valid) then (yes)
+    :PrintLine($"Die Kreditkartennummer '{input}' ist gültig.");
+  else (no)
+      :PrintLine($"Die Kreditkartennummer '{input}' ist ungültig.");
+endif
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

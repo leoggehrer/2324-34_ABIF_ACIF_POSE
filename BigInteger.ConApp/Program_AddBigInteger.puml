@@ -1,0 +1,18 @@
+@startuml Program.AddBigInteger
+title Program.AddBigInteger
+start
+:number1 = AddLeadingCharacters(number1, '0', maxNumber - number1.Length);
+:number2 = AddLeadingCharacters(number2, '0', maxNumber - number2.Length);
+:int i = number1.Length - 1;
+while (i >= 0) is (yes)
+    if (sum < 10) then (yes)
+        :result = sum.ToString() + result;
+        :carry = false;
+      else (no)
+          :result = (sum % 10).ToString() + result;
+          :carry = true;
+    endif
+:i--;
+endwhile (no)
+stop
+@enduml

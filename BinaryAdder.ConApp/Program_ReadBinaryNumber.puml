@@ -1,0 +1,13 @@
+@startuml Program.ReadBinaryNumber
+title Program.ReadBinaryNumber
+start
+repeat
+    :Print($"Geben Sie die {number}. Binärzahl ein: ");
+    :result = ReadLine();
+    :validInput = CheckBinaryNumber(result);
+    if (!validInput) then (yes)
+        :PrintLine("Fehler: In einer Binärzahl sind nur 1 und 0 erlaubt!");
+    endif
+repeat while (validInput == false) is (yes)
+stop
+@enduml

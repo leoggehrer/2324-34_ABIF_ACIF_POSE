@@ -1,0 +1,25 @@
+@startuml Program.Main
+title Program.Main
+start
+:Console.Clear();
+:PrintLine("Palindrom number");
+:PrintLine("================");
+:PrintLine();
+:Print("Number [>...0]: ");
+:input = ReadLine();
+if (int.TryParse(input, out number) && number > 0) then (yes)
+    while (divider <= number) is (yes)
+        :reverseNumber = reverseNumber * 10;
+        :reverseNumber = reverseNumber + number / divider % 10;
+        :divider = divider * 10;
+    endwhile (no)
+  else (no)
+      :PrintLine("Invalid number!");
+endif
+:PrintLine();
+:PrintLine($"{number} {(number == reverseNumber ? "ist" : "kein")} Palindrom!");
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

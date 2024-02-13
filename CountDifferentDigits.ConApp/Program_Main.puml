@@ -1,0 +1,13 @@
+@startuml Program.Main
+title Program.Main
+start
+:PrintLine("Count Different Digits");
+:PrintLine("======================");
+:PrintLine();
+:PrintLine($"Eingegebene Ziffern im Array: {output}");
+:PrintLine($"Eindeutige Ziffern im Array : {uniqueDigits}");
+:PrintLine();
+:PrintLine("Beenden mit Eingabetaste... ");
+:ReadLine();
+stop
+@enduml

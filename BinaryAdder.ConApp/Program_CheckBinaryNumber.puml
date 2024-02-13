@@ -1,0 +1,8 @@
+@startuml Program.CheckBinaryNumber
+title Program.CheckBinaryNumber
+start
+while (idx < number.Length && result) is (yes)
+    :result = IsBinaryDigit(number[idx++]);
+endwhile (no)
+stop
+@enduml

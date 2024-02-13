@@ -1,0 +1,5 @@
+@startuml Program.ShrinkNumber
+title Program.ShrinkNumber
+start
+stop
+@enduml

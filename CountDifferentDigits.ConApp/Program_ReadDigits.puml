@@ -1,0 +1,19 @@
+@startuml Program.ReadDigits
+title Program.ReadDigits
+start
+while (count <= MAX_NUMBERS) is (yes)
+    :Print($"{count, 2}. Ziffer [0-9] eingeben: ");
+    :input = ReadLine();
+    if (int.TryParse(input, out result[index])) then (yes)
+        if (result[index] < 0 || result[index] > 9) then (yes)
+            :PrintLine("Fehleingabe, Ziffer muss zwischen 0 und 9 liegen!");
+          else (no)
+              :count++;
+              :index++;
+        endif
+      else (no)
+          :PrintLine("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!");
+    endif
+endwhile (no)
+stop
+@enduml

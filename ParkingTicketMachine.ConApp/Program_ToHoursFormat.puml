@@ -1,0 +1,5 @@
+@startuml Program.ToHoursFormat
+title Program.ToHoursFormat
+start
+stop
+@enduml

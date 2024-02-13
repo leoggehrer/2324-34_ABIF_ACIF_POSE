@@ -1,0 +1,12 @@
+@startuml Program.SumOfDigits
+title Program.SumOfDigits
+start
+:int i = 0;
+while (i < text.Length) is (yes)
+    if (Char.IsDigit(text[i])) then (yes)
+        :result += text[i] - '0';
+    endif
+:i++;
+endwhile (no)
+stop
+@enduml
