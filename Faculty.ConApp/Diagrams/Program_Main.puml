@@ -1,0 +1,24 @@
+@startuml Program.Main
+title Program.Main
+start
+:string input;
+:long number;
+:long result = 1;
+:PrintLine("Calculate Faculty");
+:PrintLine("=================");
+:PrintLine();
+:Print("Please enter a number: ");
+:input = ReadLine();
+:number = Convert.ToInt32(input);
+:int i = 1;
+while (i <= number) is (yes)
+    :result *= i;
+:i++;
+endwhile (no)
+:PrintLine();
+:PrintLine($"{number}! results in {result}.");
+:PrintLine();
+:PrintLine("Press any key to exit... ");
+:ReadKey();
+stop
+@enduml

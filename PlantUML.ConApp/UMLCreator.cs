@@ -17,6 +17,11 @@ namespace PlantUML.ConApp
             var syntaxRoot = syntaxTree.GetRoot();
             var classNodes = syntaxRoot.DescendantNodes().OfType<ClassDeclarationSyntax>();
 
+            if (Path.Exists(path) == false)
+            {
+                Directory.CreateDirectory(path);
+            }
+
             foreach (var classNode in classNodes)
             {
                 var methodNodes = classNode.DescendantNodes().OfType<MethodDeclarationSyntax>();
@@ -65,7 +70,7 @@ namespace PlantUML.ConApp
         {
             if (syntaxNode is LocalDeclarationStatementSyntax localDeclarationStatement)
             {
-                System.Diagnostics.Debug.WriteLine($"{nameof(localDeclarationStatement)} is known but not used!");
+                diagramData.Add($":{localDeclarationStatement.Declaration};".SetIndent(level));
             }
             else if (syntaxNode is ExpressionStatementSyntax expressionStatement)
             {
@@ -157,6 +162,23 @@ namespace PlantUML.ConApp
                 AnalysisStatement(forStatement.Statement, diagramData, level + 1);
                 if (forStatement.Incrementors.Count > 0)
                     diagramData.Add($":{forStatement.Incrementors};".SetIndent(level));
+
+                diagramData.Add("endwhile (no)".SetIndent(level));
+            }
+            else if (syntaxNode is ForEachStatementSyntax forEachStatement)
+            {
+                var statements = new List<string>();
+
+                diagramData.Add($":iterator = {forEachStatement.Expression}.GetIterator();".SetIndent(level));
+                diagramData.Add($"while (iterator.MoveNext()) is (yes)".SetIndent(level));
+                diagramData.Add($":current = iterator.Current();".SetIndent(level));
+
+                AnalysisStatement(forEachStatement.Statement, statements, level + 1);
+
+                foreach (var statement in statements)
+                {
+                    diagramData.Add(statement.Replace(forEachStatement.Identifier.ToString(), "current").SetIndent(level + 1));
+                }
 
                 diagramData.Add("endwhile (no)".SetIndent(level));
             }

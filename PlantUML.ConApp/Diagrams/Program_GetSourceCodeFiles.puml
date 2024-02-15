@@ -1,0 +1,14 @@
+@startuml Program.GetSourceCodeFiles
+title Program.GetSourceCodeFiles
+start
+:var result = new List<string>();
+:var ignoreFolders = new string[] { $"{Path.DirectorySeparatorChar}bin{Path.DirectorySeparatorChar}", $"{Path.DirectorySeparatorChar}obj{Path.DirectorySeparatorChar}" };
+:iterator = searchPatterns.GetIterator();
+while (iterator.MoveNext()) is (yes)
+:current = iterator.Current();
+      :result.AddRange(Directory.GetFiles(path, current, SearchOption.AllDirectories)
+                      .Where(f => ignoreFolders.Any(e => f.Contains(e)) == false)
+                      .OrderBy(i => i));
+endwhile (no)
+stop
+@enduml

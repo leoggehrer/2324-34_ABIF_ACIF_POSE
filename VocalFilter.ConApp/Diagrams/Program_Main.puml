@@ -1,0 +1,26 @@
+@startuml Program.Main
+title Program.Main
+start
+:string input, output = string.Empty;
+:PrintLine("***************************************************");
+:PrintLine("* Vocal Filter                                    *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Eingabetext: ");
+:input = ReadLine();
+:int i = 0;
+while (i < input.Length) is (yes)
+    :char chr = char.ToLower(input[i]);
+    if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u') then (yes)
+        if (output.Contains(input[i]) == false) then (yes)
+            :output += input[i];
+        endif
+    endif
+:i++;
+endwhile (no)
+:PrintLine($"Ausgabetext: {output}");
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

@@ -1,0 +1,24 @@
+@startuml Program.Main
+title Program.Main
+start
+:string input;
+:int number;
+:PrintLine("StarSquare");
+:PrintLine("==========");
+:PrintLine();
+:Print("Geben Sie eine Ganzzahl ein: ");
+:input = ReadLine();
+:number = Convert.ToInt32(input);
+:PrintLine();
+:int i = 0;
+while (i < number) is (yes)
+    :int j = 0;
+    while (j < number) is (yes)
+        :Print("* ");
+    :j++;
+    endwhile (no)
+    :PrintLine();
+:i++;
+endwhile (no)
+stop
+@enduml

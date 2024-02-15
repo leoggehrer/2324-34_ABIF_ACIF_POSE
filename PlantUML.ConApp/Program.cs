@@ -11,9 +11,10 @@
             foreach (var file in files)
             {
                 var sourcePath = Path.GetDirectoryName(file);
+                var diagramsPath = Path.Combine(sourcePath!, "Diagrams");
                 var source = File.ReadAllText(file!);
 
-                UMLCreator.CreateActivityDiagram(sourcePath!, source);
+                UMLCreator.CreateActivityDiagram(diagramsPath, source);
             }
         }
 
@@ -54,6 +55,5 @@
             }
             return result;
         }
-
     }
 }

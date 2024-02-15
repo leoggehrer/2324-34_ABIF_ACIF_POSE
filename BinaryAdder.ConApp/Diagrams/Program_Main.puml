@@ -1,0 +1,15 @@
+@startuml Program.Main
+title Program.Main
+start
+:string number1, number2, result;
+:PrintLine("Binäraddierer");
+:PrintLine("=============");
+:number1 = ReadBinaryNumber(1);
+:number2 = ReadBinaryNumber(2);
+:result = AddBinaryNumbers(number1, number2);
+:PrintLine($"{FormatBinary(number1, 8)} + {FormatBinary(number2, 8)} =  {FormatBinary(result, 8)}");
+:PrintLine();
+:PrintLine("Beenden mit Eingabetaste... ");
+:ReadLine();
+stop
+@enduml

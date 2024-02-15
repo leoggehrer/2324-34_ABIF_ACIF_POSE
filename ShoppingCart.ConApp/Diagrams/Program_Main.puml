@@ -1,0 +1,74 @@
+@startuml Program.Main
+title Program.Main
+start
+:double DELIVERI_COST = 5.90;
+:string input = string.Empty, giftOption, location;
+:int idx = 0, numberOfPieces;
+:double nettoPrice, sumNettoPrice, sumNettoPriceAll = 0, sumGift = 0, sumGiftAll = 0;
+:double sumGrossPriceAll, sumTaxAll, sumDeliveryCost = 0;
+:PrintLine("===========================================");
+:PrintLine(" Shopping Cart                             ");
+:PrintLine("===========================================");
+:PrintLine();
+while (input.ToLower() != "n") is (yes)
+    :PrintLine($"Eingabe von Produkt Nr. {++idx}");
+    :Print("Netto-Stückpreis: ");
+    :input = ReadLine();
+    :nettoPrice = Convert.ToDouble(input);
+    :Print("Stückzahl:        ");
+    :input = ReadLine();
+    :numberOfPieces = Convert.ToInt32(input);
+    :Print("Geschenkoption ((j)a / (n)ein)? : ");
+    :giftOption = ReadLine();
+    :sumGift = 0;
+    :sumNettoPrice = nettoPrice * numberOfPieces;
+    if (giftOption.ToLower() == "j") then (yes)
+        :sumGift = numberOfPieces * 2.50;
+    endif
+    :sumNettoPriceAll += sumNettoPrice;
+    :sumGiftAll += sumGift;
+    :PrintLine($"=> Nettopreis = {sumNettoPrice + sumGift,2:f2} EUR");
+    if (sumGift > 0) then (yes)
+        :PrintLine($"=> zuzügl. Geschenkoption = {sumGift} EUR");
+    endif
+    :Print("Ein weiteres Produkt eingeben ((j)a / (n)ein) ");
+    :input = ReadLine();
+    :PrintLine();
+    :idx++;
+endwhile (no)
+:Print("Lieferung nach de oder at? ");
+:location = ReadLine();
+:PrintLine();
+:PrintLine("===========================================");
+:PrintLine("Ihre Einkaufsrechnung                      ");
+:PrintLine("===========================================");
+:PrintLine();
+:Print("Nettopreis gesamt: ");
+:PrintLine($"{sumNettoPriceAll + sumGift,20:f2} EUR");
+if (sumNettoPriceAll < 29) then (yes)
+    :sumDeliveryCost = DELIVERI_COST;
+    :Print("Versandkosten:     ");
+    :PrintLine($"{sumDeliveryCost,20:f2} EUR");
+endif
+if (location.ToLower() == "de") then (yes)
+    :sumGrossPriceAll = (sumNettoPriceAll + sumGiftAll) * 1.19;
+    :sumTaxAll = sumGrossPriceAll - sumNettoPriceAll - sumGiftAll;
+  else (no)
+      :sumGrossPriceAll = (sumNettoPriceAll + sumGiftAll) * 1.20;
+      :sumTaxAll = sumGrossPriceAll - sumNettoPriceAll - sumGiftAll;
+endif
+:Print("Gesamtpreis:       ");
+:PrintLine($"{sumGrossPriceAll + sumDeliveryCost,20:f2} EUR");
+:PrintLine("===========================================");
+if (location.ToLower() == "at") then (yes)
+    :Print("Darin enthalten sind 20,00 % MWSt. ");
+    :PrintLine($"{sumTaxAll:f2} EUR");
+  else (no)
+      :Print("Darin enthalten sind 19,00 % MWSt. ");
+      :PrintLine($"{sumTaxAll:f2} EUR");
+endif
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

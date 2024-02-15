@@ -1,0 +1,15 @@
+@startuml Program.ReadBigInteger
+title Program.ReadBigInteger
+start
+:string result;
+:bool validInput;
+repeat
+    :Print(prompt);
+    :result = ReadLine();
+    :validInput = IsBigNumber(result);
+    if (validInput == false) then (yes)
+        :PrintLine("Ungültige Eingabe!");
+    endif
+repeat while (validInput == false) is (yes)
+stop
+@enduml

@@ -1,0 +1,49 @@
+@startuml Program.Main
+title Program.Main
+start
+:bool validInput = true;
+:string input, sourceCurrency;
+:double value, euroValue = 0, dollarValue = 0, francValue = 0;
+:PrintLine("***************************************************");
+:PrintLine("* Währungsrechner - Der faire Austausch von Geld  *");
+:PrintLine("*                   EURO    -> DOLLAR             *");
+:PrintLine("*                   EURO    -> FRANKEN            *");
+:PrintLine("* oder              DOLLAR  -> EURO               *");
+:PrintLine("*                   DOLLAR  -> FRANKEN            *");
+:PrintLine("* oder              FRANKEN -> EURO               *");
+:PrintLine("*                   FRANKEN -> DOLLAR             *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Eingabe der Ausgangswaehrung (D=Dollar, E=Euro, F=Franken): ");
+:sourceCurrency = ReadLine().ToUpper();
+:PrintLine();
+:Print("Betrag: ");
+:input = ReadLine();
+:value = Convert.ToDouble(input);
+switch (sourceCurrency)
+  case( "E" )
+  :euroValue = value;
+  :dollarValue = value * 1.06;
+  :francValue = value * 0.95;
+  case( "F" )
+  :francValue = value;
+  :dollarValue = value * 1.12;
+  :euroValue = value * 1.06;
+  case( "D" )
+  :dollarValue = value;
+  :francValue = value * 0.89;
+  :euroValue = value * 0.94;
+  case ( default )
+  :validInput = false;
+  :PrintLine("Ungültige Eingabe!");
+endswitch
+if (validInput) then (yes)
+    :PrintLine($"Euro:    {euroValue:f2}");
+    :PrintLine($"Dollar:  {dollarValue:f2}");
+    :PrintLine($"Franken: {francValue:f2}");
+endif
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

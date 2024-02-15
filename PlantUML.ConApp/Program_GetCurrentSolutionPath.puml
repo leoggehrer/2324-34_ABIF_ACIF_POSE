@@ -1,8 +1,0 @@
-@startuml Program.GetCurrentSolutionPath
-title Program.GetCurrentSolutionPath
-start
-while (result.EndsWith(Path.DirectorySeparatorChar)) is (yes)
-    :result = result[0..^1];
-endwhile (no)
-stop
-@enduml

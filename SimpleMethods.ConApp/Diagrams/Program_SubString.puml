@@ -1,0 +1,11 @@
+@startuml Program.SubString
+title Program.SubString
+start
+:string result = string.Empty;
+:int i = startIndex;
+while (i >= 0 && i < text.Length && i < startIndex + length) is (yes)
+    :result += text[i];
+:i++;
+endwhile (no)
+stop
+@enduml

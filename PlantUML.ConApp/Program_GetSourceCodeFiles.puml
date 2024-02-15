@@ -1,5 +1,0 @@
-@startuml Program.GetSourceCodeFiles
-title Program.GetSourceCodeFiles
-start
-stop
-@enduml

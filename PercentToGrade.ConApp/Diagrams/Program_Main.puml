@@ -1,0 +1,44 @@
+@startuml Program.Main
+title Program.Main
+start
+:string input;
+:double percentValue;
+:int grade;
+:PrintLine("Prozent --> Noten");
+:PrintLine("=================");
+:PrintLine();
+:Print("Eingabe Prozentwert: ");
+:input = ReadLine();
+:percentValue = Convert.ToDouble(input);
+if (percentValue >= 88) then (yes)
+    :grade = 1;
+  else (no)
+    if (percentValue > 75) then (yes)
+        :grade = 2;
+      else (no)
+        if (percentValue >= 63) then (yes)
+            :grade = 3;
+          else (no)
+            if (percentValue >= 50) then (yes)
+                :grade = 4;
+              else (no)
+                if (percentValue >= 0) then (yes)
+                    :grade = 5;
+                  else (no)
+                      :grade = -1;
+                endif
+            endif
+        endif
+    endif
+endif
+:PrintLine();
+if (grade == -1) then (yes)
+    :PrintLine("Ungültige Eingabe!");
+  else (no)
+      :PrintLine($"Note = {grade, 3}");
+endif
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

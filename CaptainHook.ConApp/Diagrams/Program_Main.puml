@@ -1,0 +1,37 @@
+@startuml Program.Main
+title Program.Main
+start
+:int PARAMS_PRODUCT = 32118;
+:int MAX_AGE = 100;
+:int children;
+:int age;
+:int shipLength;
+:PrintLine("Käpt'n Hooks Rätsel");
+:PrintLine("===================");
+:PrintLine();
+:children = 4;
+:age = children + 1;
+:shipLength = 1;
+while (children * age * shipLength != PARAMS_PRODUCT && children < MAX_AGE) is (yes)
+    :children++;
+    :age = children;
+    repeat
+        :age++;
+        :shipLength = PARAMS_PRODUCT / (children * age);
+    repeat while (children * age * shipLength != PARAMS_PRODUCT && age < MAX_AGE) is (yes)
+endwhile (no)
+if (children * age * shipLength == PARAMS_PRODUCT) then (yes)
+    :PrintLine();
+    :PrintLine($"Die Lösung des Rätsels:");
+    :PrintLine($"Anzahl der Kinder:     {children}");
+    :PrintLine($"Alter des Kapitains:   {age}");
+    :PrintLine($"Schiffslänge in Meter: {shipLength}");
+  else (no)
+      :PrintLine();
+      :PrintLine($"Es gibt keine Lösung für das Produkt der Parameter von {PARAMS_PRODUCT}!");
+endif
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

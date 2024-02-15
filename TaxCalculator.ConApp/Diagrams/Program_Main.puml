@@ -1,0 +1,28 @@
+@startuml Program.Main
+title Program.Main
+start
+:string input;
+:double netPrice, grossPrice10, tax10, grossPrice5, tax5;
+:PrintLine("***************************************************");
+:PrintLine("* Steuerrechner für leistbare Grundnahrungsmittel *");
+:PrintLine("***************************************************");
+:Print("Aktueller Verkaufspreis:            ");
+:input = ReadLine();
+:grossPrice10 = Convert.ToDouble(input);
+:netPrice = grossPrice10 / 1.1;
+:tax10 = grossPrice10 - netPrice;
+:grossPrice5 = netPrice * 1.05;
+:tax5 = grossPrice5 - netPrice;
+:PrintLine();
+:PrintLine($"Nettopreis:                    {netPrice,10:f} EUR");
+:PrintLine($"Derzeitige Merwehrtsteuer:     {tax10,10:f} EUR");
+:PrintLine();
+:PrintLine($"Werte bei 5% Steuer");
+:PrintLine($"-------------------");
+:PrintLine($"Mehrwertsteuer:                {tax5,10:f} EUR");
+:PrintLine($"Zukünftiger Verkaufspreis:     {grossPrice5,10:f} EUR");
+:PrintLine();
+:Print("Zum Beenden Eingabetaste drücken...");
+:ReadLine();
+stop
+@enduml

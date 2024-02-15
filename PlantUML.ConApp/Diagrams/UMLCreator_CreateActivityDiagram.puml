@@ -1,0 +1,12 @@
+@startuml UMLCreator.CreateActivityDiagram
+title UMLCreator.CreateActivityDiagram
+start
+:var diagramData = new List<string>();
+:var statements = methodNode?.Body?.Statements;
+:iterator = statements!.GetIterator();
+while (iterator.MoveNext()) is (yes)
+:current = iterator.Current();
+      :AnalysisStatement(current, diagramData, 0);
+endwhile (no)
+stop
+@enduml

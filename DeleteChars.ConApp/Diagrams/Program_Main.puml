@@ -1,0 +1,35 @@
+@startuml Program.Main
+title Program.Main
+start
+:string inputText, eliminatorText, outputText;
+:PrintLine("Delete Chars!");
+:PrintLine("=============");
+:outputText = string.Empty;
+:PrintLine();
+:Print("Eingabetext....: ");
+:inputText = ReadLine();
+if (inputText != "") then (yes)
+    :Print("Eliminatortext..: ");
+    :eliminatorText = ReadLine();
+    :int i = 0;
+    while (i < inputText.Length) is (yes)
+        :bool contains = false;
+        :int j = 0;
+        while (j < eliminatorText.Length && contains == false) is (yes)
+            if (inputText[i] == eliminatorText[j]) then (yes)
+                :contains = true;
+            endif
+        :j++;
+        endwhile (no)
+        if (contains == false) then (yes)
+            :outputText = outputText + inputText[i];
+        endif
+    :i++;
+    endwhile (no)
+    :PrintLine();
+    :PrintLine($"Ausgabetext....: {outputText}");
+    :Print("Weiter mit beliebiger Taste ...");
+    :ReadKey();
+endif
+stop
+@enduml

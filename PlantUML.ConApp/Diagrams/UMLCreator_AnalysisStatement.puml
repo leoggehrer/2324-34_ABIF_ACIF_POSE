@@ -1,0 +1,118 @@
+@startuml UMLCreator.AnalysisStatement
+title UMLCreator.AnalysisStatement
+start
+if (syntaxNode is LocalDeclarationStatementSyntax localDeclarationStatement) then (yes)
+    :diagramData.Add($":{localDeclarationStatement.Declaration};".SetIndent(level));
+  else (no)
+    if (syntaxNode is ExpressionStatementSyntax expressionStatement) then (yes)
+        :var expression = expressionStatement.ToString();
+        :expression = expression.Replace("PrintLine", "PrintLine");
+        :expression = expression.Replace("PrintLine", "PrintLine");
+        :expression = expression.Replace("Print", "Print");
+        :expression = expression.Replace("Print", "Print");
+        :expression = expression.Replace("ReadLine", "ReadLine");
+        :expression = expression.Replace("ReadLine", "ReadLine");
+        :expression = expression.Replace("Read", "Read");
+        :expression = expression.Replace("Read", "Read");
+        :diagramData.Add($":{expression}".SetIndent(level));
+      else (no)
+        if (syntaxNode is BlockSyntax blockSyntax) then (yes)
+            :iterator = blockSyntax.ChildNodes().GetIterator();
+            while (iterator.MoveNext()) is (yes)
+            :current = iterator.Current();
+                              if (current is StatementSyntax statementSyntax) then (yes)
+                                  :AnalysisStatement(statementSyntax, diagramData, level + 1);
+                              endif
+            endwhile (no)
+          else (no)
+            if (syntaxNode is IfStatementSyntax ifStatement) then (yes)
+                :diagramData.Add($"if ({ifStatement.Condition}) then (yes)".SetIndent(level));
+                :AnalysisStatement(ifStatement.Statement, diagramData, level + 1);
+                if (ifStatement.Else != null) then (yes)
+                  :AnalysisStatement(ifStatement.Else, diagramData, level + 1);
+                endif
+                :diagramData.Add("endif".SetIndent(level));
+              else (no)
+                if (syntaxNode is ElseClauseSyntax elseClause) then (yes)
+                    :diagramData.Add($"else (no)".SetIndent(level));
+                    :AnalysisStatement(elseClause.Statement, diagramData, level + 1);
+                  else (no)
+                    if (syntaxNode is SwitchStatementSyntax switchStatement) then (yes)
+                        :diagramData.Add($"switch ({switchStatement.Expression})".SetIndent(level));
+                        :iterator = switchStatement.Sections.GetIterator();
+                        while (iterator.MoveNext()) is (yes)
+                        :current = iterator.Current();
+                                                      :var labels = $"{current.Labels}".Replace("case", "case(");
+                                                      if (labels.Contains("default:")) then (yes)
+                                                        :labels = labels.Replace("default:", "case ( default )");
+                                                        else (no)
+                                                          :labels = labels.Replace(":", " )");
+                                                      endif
+                                                      :diagramData.Add($"{labels}".SetIndent(level + 1));
+                                                      :iterator = current.ChildNodes().GetIterator();
+                                                      while (iterator.MoveNext()) is (yes)
+                                                      :current = iterator.Current();
+                                                                                        if (current is StatementSyntax statementSyntax) then (yes)
+                                                                                            :AnalysisStatement(statementSyntax, diagramData, level + 1);
+                                                                                        endif
+                                                      endwhile (no)
+                        endwhile (no)
+                        :diagramData.Add("endswitch".SetIndent(level));
+                      else (no)
+                        if (syntaxNode is BreakStatementSyntax breakStatement) then (yes)
+                            :System.Diagnostics.Debug.WriteLine($"{nameof(breakStatement)} is known but not used!");
+                          else (no)
+                            if (syntaxNode is ContinueStatementSyntax continueStatement) then (yes)
+                                :System.Diagnostics.Debug.WriteLine($"{nameof(continueStatement)} is known but not used!");
+                              else (no)
+                                if (syntaxNode is DoStatementSyntax doStatement) then (yes)
+                                    :diagramData.Add("repeat".SetIndent(level));
+                                    :AnalysisStatement(doStatement.Statement, diagramData, level + 1);
+                                    :diagramData.Add($"repeat while ({doStatement.Condition}) is (yes)".SetIndent(level));
+                                  else (no)
+                                    if (syntaxNode is WhileStatementSyntax whileStatement) then (yes)
+                                        :diagramData.Add($"while ({whileStatement.Condition}) is (yes)".SetIndent(level));
+                                        :AnalysisStatement(whileStatement.Statement, diagramData, level + 1);
+                                        :diagramData.Add("endwhile (no)".SetIndent(level));
+                                      else (no)
+                                        if (syntaxNode is ForStatementSyntax forStatement) then (yes)
+                                            :diagramData.Add($":{forStatement.Declaration};".SetIndent(level));
+                                            :diagramData.Add($"while ({forStatement.Condition}) is (yes)".SetIndent(level));
+                                            :AnalysisStatement(forStatement.Statement, diagramData, level + 1);
+                                            if (forStatement.Incrementors.Count > 0) then (yes)
+                                              :diagramData.Add($":{forStatement.Incrementors};".SetIndent(level));
+                                            endif
+                                            :diagramData.Add("endwhile (no)".SetIndent(level));
+                                          else (no)
+                                            if (syntaxNode is ForEachStatementSyntax forEachStatement) then (yes)
+                                                :var statements = new List<string>();
+                                                :diagramData.Add($":iterator = {forEachStatement.Expression}.GetIterator();".SetIndent(level));
+                                                :diagramData.Add($"while (iterator.MoveNext()) is (yes)".SetIndent(level));
+                                                :diagramData.Add($":current = iterator.Current();".SetIndent(level));
+                                                :AnalysisStatement(forEachStatement.Statement, statements, level + 1);
+                                                :iterator = statements.GetIterator();
+                                                while (iterator.MoveNext()) is (yes)
+                                                :current = iterator.Current();
+                                                                                                      :diagramData.Add(current.Replace(forEachStatement.Identifier.ToString(), "current").SetIndent(level + 1));
+                                                endwhile (no)
+                                                :diagramData.Add("endwhile (no)".SetIndent(level));
+                                              else (no)
+                                                if (syntaxNode is ReturnStatementSyntax returnStatement) then (yes)
+                                                    :System.Diagnostics.Debug.WriteLine($"{nameof(returnStatement)} is known but not used!");
+                                                  else (no)
+                                                      :System.Diagnostics.Debug.WriteLine($"{syntaxNode.GetType().Name} is unknown!");
+                                                endif
+                                            endif
+                                        endif
+                                    endif
+                                endif
+                            endif
+                        endif
+                    endif
+                endif
+            endif
+        endif
+    endif
+endif
+stop
+@enduml

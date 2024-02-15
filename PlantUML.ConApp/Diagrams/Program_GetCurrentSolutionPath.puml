@@ -1,0 +1,11 @@
+@startuml Program.GetCurrentSolutionPath
+title Program.GetCurrentSolutionPath
+start
+:int endPos = AppContext.BaseDirectory
+                                   .IndexOf($"{nameof(PlantUML)}", StringComparison.CurrentCultureIgnoreCase);
+:var result = AppContext.BaseDirectory[..endPos];
+while (result.EndsWith(Path.DirectorySeparatorChar)) is (yes)
+    :result = result[0..^1];
+endwhile (no)
+stop
+@enduml

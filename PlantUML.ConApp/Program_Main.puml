@@ -1,6 +1,0 @@
-@startuml Program.Main
-title Program.Main
-start
-:PrintLine("PlantUML-Creator");
-stop
-@enduml

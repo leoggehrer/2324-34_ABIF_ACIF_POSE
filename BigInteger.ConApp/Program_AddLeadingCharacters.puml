@@ -1,8 +1,0 @@
-@startuml Program.AddLeadingCharacters
-title Program.AddLeadingCharacters
-start
-while (result.Length < length) is (yes)
-    :result = chr + result;
-endwhile (no)
-stop
-@enduml

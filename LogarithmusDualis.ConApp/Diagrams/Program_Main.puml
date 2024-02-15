@@ -1,0 +1,22 @@
+@startuml Program.Main
+title Program.Main
+start
+:string input;
+:int number, logarithmus = 0;
+:PrintLine("Logarithmus Dualis");
+:PrintLine("==================");
+:PrintLine();
+:Print("Zahl: ");
+:input = ReadLine();
+:number = Convert.ToInt32(input);
+while (number > 1) is (yes)
+    :number /= 2;
+    :logarithmus++;
+endwhile (no)
+:PrintLine();
+:PrintLine($"Der Logarithmus Dualis von {number} ist {logarithmus}.");
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml
