@@ -1,0 +1,33 @@
+@startuml CompleteActivityDiagram
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:string input
+int number, operand, result;
+:PrintLine("Pyramid of Numbres");
+:PrintLine("==================");
+:PrintLine();
+:Print("Please enter a number: ");
+:input = ReadLine();
+:number = Convert.ToInt32(input);
+:operand = number;
+:PrintLine();
+:int i = 2;
+while (i < 10) is (<color:green>yes)
+    :result = operand * i;
+    :PrintLine($"{operand} * {i} = {result}");
+    :operand = result;
+:i++;
+endwhile (<color:red>no)
+:int i = 2;
+while (i < 10) is (<color:green>yes)
+    :result = operand / i;
+    :PrintLine($"{operand} / {i} = {result}");
+    :operand = result;
+:i++;
+endwhile (<color:red>no)
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

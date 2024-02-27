@@ -1,0 +1,35 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightBlue:string inputText, eliminatorText, outputText;
+:PrintLine("Delete Chars!");
+:PrintLine("=============");
+:outputText = string.Empty;
+:PrintLine();
+:Print("Eingabetext....: ");
+:inputText = ReadLine();
+if (inputText != "") then (<color:green>yes)
+    :Print("Eliminatortext..: ");
+    :eliminatorText = ReadLine();
+    :int i = 0;
+    while (i < inputText.Length) is (<color:green>yes)
+        #LightBlue:bool contains = false;
+        :int j = 0;
+        while (j < eliminatorText.Length && contains == false) is (<color:green>yes)
+            if (inputText[i] == eliminatorText[j]) then (<color:green>yes)
+                :contains = true;
+            endif
+        :j++;
+        endwhile (<color:red>no)
+        if (contains == false) then (<color:green>yes)
+            :outputText = outputText + inputText[i];
+        endif
+    :i++;
+    endwhile (<color:red>no)
+    :PrintLine();
+    :PrintLine($"Ausgabetext....: {outputText}");
+    :Print("Weiter mit beliebiger Taste ...");
+    :ReadKey();
+endif
+stop
+@enduml

@@ -1,0 +1,13 @@
+@startuml Program.GetUniqueDigitsString
+title Program.GetUniqueDigitsString
+start
+#LightBlue:string result = string.Empty;
+:int i = 0;
+while (i < digits.Length) is (<color:green>yes)
+    if (result.Contains(digits[i].ToString()) == false) then (<color:green>yes)
+        :result += digits[i].ToString();
+    endif
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

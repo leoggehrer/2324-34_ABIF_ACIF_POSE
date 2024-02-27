@@ -1,0 +1,29 @@
+@startuml UMLCreator.CreateActivityDiagram
+title UMLCreator.CreateActivityDiagram
+start
+#LightBlue:var syntaxTree = CSharpSyntaxTree.ParseText(source)
+var syntaxRoot = syntaxTree.GetRoot()
+var classNodes = syntaxRoot.DescendantNodes().OfType<ClassDeclarationSyntax>();
+if (Path.Exists(path) == false) then (<color:green>yes)
+    :Directory.CreateDirectory(path);
+endif
+:iterator = classNodes.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:current = iterator.Current();
+      #LightBlue:var methodNodes = current.DescendantNodes().OfType<MethodDeclarationSyntax>();
+      :iterator = methodNodes.GetIterator();
+      while (iterator.MoveNext()) is (<color:green>yes)
+      :current = iterator.Current();
+                #LightBlue:var fileName = $"{current.Identifier.Text}_{current.Identifier.Text}.puml";
+                #LightBlue:var filePath = Path.Combine(path, fileName);
+                #LightBlue:var diagramData = CreateActivityDiagram(current);
+                :diagramData.Insert(0, $"@startuml {current.Identifier.Text}.{current.Identifier.Text}");
+                :diagramData.Insert(1, $"title {current.Identifier.Text}.{current.Identifier.Text}");
+                :diagramData.Insert(2, "start");
+                :diagramData.Add("stop");
+                :diagramData.Add("@enduml");
+                :File.WriteAllLines(filePath, diagramData);
+      endwhile (<color:red>no)
+endwhile (<color:red>no)
+stop
+@enduml

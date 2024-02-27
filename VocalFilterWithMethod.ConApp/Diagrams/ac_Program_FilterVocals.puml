@@ -1,0 +1,16 @@
+@startuml Program.FilterVocals
+title Program.FilterVocals
+start
+#LightBlue:string result = string.Empty;
+:int i = 0;
+while (i < input.Length) is (<color:green>yes)
+    #LightBlue:char chr = char.ToLower(input[i]);
+    if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u') then (<color:green>yes)
+        if (result.Contains(input[i]) == false) then (<color:green>yes)
+            :result += input[i];
+        endif
+    endif
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

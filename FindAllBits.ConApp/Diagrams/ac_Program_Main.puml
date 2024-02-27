@@ -1,0 +1,30 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightBlue:string input
+uint number = 0
+double numPow = 0
+int idx = 0, bit = 0, sumBit = 0;
+:PrintLine("Find all Bits");
+:PrintLine("=============");
+:PrintLine();
+:Print($"Geben Sie eine Zahl zwischen 1 und {uint.MaxValue} ein (0 für Ende): ");
+:input = ReadLine();
+if (uint.TryParse(input, out number) && number > 0) then (<color:green>yes)
+    while (number > 0) is (<color:green>yes)
+        :bit = (int)number % 2;
+        :number = number / 2;
+        :numPow = bit * Math.Pow(2, idx);
+        :sumBit += (int)numPow;
+        :PrintLine($"{bit} * 2^{idx++} = {numPow}");
+    endwhile (<color:red>no)
+    :PrintLine("=========================");
+    :PrintLine($"Dezimalzahl:          {input:n0}");
+    :PrintLine($"Summe aller Bitwerte: {sumBit:n0}");
+    :PrintLine("=========================");
+endif
+:PrintLine();
+:PrintLine("Press any key to exit... ");
+:ReadKey();
+stop
+@enduml

@@ -1,0 +1,66 @@
+@startuml CompleteActivityDiagram
+title CompleteActivityDiagram
+start
+note right:  Program.IsBigNumber
+#LightBlue:bool result = number.Length > 0
+int idx = 0;
+while (idx < number.Length && result) is (<color:green>yes)
+    :result = char.IsDigit(number[idx++]);
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.Main
+#LightBlue:string number1, number2, result;
+:PrintLine("Addieren von sehr großen Zahlen (Integer)");
+:PrintLine("=========================================");
+:number1 = ReadBigInteger("Geben Sie die erste Zahl ein: ");
+:number2 = ReadBigInteger("Geben Sie die zweite Zahl ein:");
+:result = AddBigInteger(number1, number2);
+:PrintLine("Summer der beiden Zahlen:");
+:PrintLine($"{result}");
+:PrintLine();
+:PrintLine("Beenden mit Eingabetaste... ");
+:ReadLine();
+stop
+start
+note right:  Program.AddLeadingCharacters
+#LightBlue:string result = number
+int length = number.Length + count;
+while (result.Length < length) is (<color:green>yes)
+    :result = chr + result;
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.ReadBigInteger
+#LightBlue:string result
+bool validInput;
+repeat
+    :Print(prompt);
+    :result = ReadLine();
+    :validInput = IsBigNumber(result);
+    if (validInput == false) then (<color:green>yes)
+        :PrintLine("Ungültige Eingabe!");
+    endif
+repeat while (validInput == false) is (<color:green>yes)
+stop
+start
+note right:  Program.AddBigInteger
+#LightBlue:string result = string.Empty
+int maxNumber = Math.Max(number1.Length, number2.Length) + 1
+bool carry = false;
+:number1 = AddLeadingCharacters(number1, '0', maxNumber - number1.Length);
+:number2 = AddLeadingCharacters(number2, '0', maxNumber - number2.Length);
+:int i = number1.Length - 1;
+while (i >= 0) is (<color:green>yes)
+    #LightBlue:int sum = number1[i] - '0' + number2[i] - '0' + (carry ? 1 : 0);
+    if (sum < 10) then (<color:green>yes)
+        :result = sum.ToString() + result;
+        :carry = false;
+      else (<color:red>no)
+          :result = (sum % 10).ToString() + result;
+          :carry = true;
+    endif
+:i--;
+endwhile (<color:red>no)
+stop
+@enduml

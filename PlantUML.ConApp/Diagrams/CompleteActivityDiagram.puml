@@ -1,0 +1,38 @@
+@startuml CompleteActivityDiagram
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+:PrintLine("PlantUML-Creator");
+#LightBlue:var slnPath = GetCurrentSolutionPath()
+var files = GetSourceCodeFiles(slnPath, ["*.cs"]);
+:iterator = files.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:current = iterator.Current();
+      #LightBlue:var sourcePath = Path.GetDirectoryName(current);
+      #LightBlue:var diagramsPath = Path.Combine(sourcePath!, "Diagrams");
+      #LightBlue:var source = File.ReadAllText(current!);
+      :UMLCreator.CreateActivityDiagram(diagramsPath, source);
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.GetSourceCodeFiles
+#LightBlue:var result = new List<string>()
+var ignoreFolders = new string[] { $"{Path.DirectorySeparatorChar}bin{Path.DirectorySeparatorChar}", $"{Path.DirectorySeparatorChar}obj{Path.DirectorySeparatorChar}" };
+:iterator = searchPatterns.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:current = iterator.Current();
+      :result.AddRange(Directory.GetFiles(path, current, SearchOption.AllDirectories)
+                      .Where(f => ignoreFolders.Any(e => f.Contains(e)) == false)
+                      .OrderBy(i => i));
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.GetCurrentSolutionPath
+#LightBlue:int endPos = AppContext.BaseDirectory
+                                   .IndexOf($"{nameof(PlantUML)}", StringComparison.CurrentCultureIgnoreCase)
+var result = AppContext.BaseDirectory[..endPos];
+while (result.EndsWith(Path.DirectorySeparatorChar)) is (<color:green>yes)
+    :result = result[0..^1];
+endwhile (<color:red>no)
+stop
+@enduml

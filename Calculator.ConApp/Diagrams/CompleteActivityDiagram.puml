@@ -1,0 +1,25 @@
+@startuml CompleteActivityDiagram
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:string input
+int number1, number2, sum;
+:PrintLine("****************************************");
+:PrintLine("* Calculator - Ihr Zahlenbegleiter     *");
+:PrintLine("****************************************");
+:Print("Erste Zahl:  ");
+:input = ReadLine();
+:number1 = Convert.ToInt32(input);
+:Print("Zweite Zahl: ");
+:input = ReadLine();
+:number2 = Convert.ToInt32(input);
+:sum = number1 + number2;
+:PrintLine("Ergebnis:");
+:PrintLine("====================");
+:PrintLine($"{number1,20}");
+:PrintLine($"+{number2,19}");
+:PrintLine("--------------------");
+:PrintLine($"{sum,20}");
+:PrintLine("====================");
+stop
+@enduml

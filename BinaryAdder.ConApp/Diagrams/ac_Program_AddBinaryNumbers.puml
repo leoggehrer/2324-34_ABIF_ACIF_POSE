@@ -1,0 +1,47 @@
+@startuml Program.AddBinaryNumbers
+title Program.AddBinaryNumbers
+start
+#LightBlue:bool carry = false
+string result = string.Empty
+int numberLength = Math.Max(number1.Length, number2.Length) + 1;
+:number1 = ExpandNumber(number1, numberLength);
+:number2 = ExpandNumber(number2, numberLength);
+:int i = numberLength - 1;
+while (i >= 0) is (<color:green>yes)
+    if (carry == false && number1[i] == '0' && number2[i] == '0') then (<color:green>yes)
+        :result = '0' + result;
+      else (<color:red>no)
+        if (carry == false && number1[i] == '1' && number2[i] == '0') then (<color:green>yes)
+            :result = '1' + result;
+          else (<color:red>no)
+            if (carry == false && number1[i] == '0' && number2[i] == '1') then (<color:green>yes)
+                :result = '1' + result;
+              else (<color:red>no)
+                if (carry == false && number1[i] == '1' && number2[i] == '1') then (<color:green>yes)
+                    :carry = true;
+                    :result = '0' + result;
+                  else (<color:red>no)
+                    if (carry && number1[i] == '0' && number2[i] == '0') then (<color:green>yes)
+                        :carry = false;
+                        :result = '1' + result;
+                      else (<color:red>no)
+                        if (carry && number1[i] == '1' && number2[i] == '0') then (<color:green>yes)
+                            :result = '0' + result;
+                          else (<color:red>no)
+                            if (carry && number1[i] == '0' && number2[i] == '1') then (<color:green>yes)
+                                :result = '0' + result;
+                              else (<color:red>no)
+                                if (carry && number1[i] == '1' && number2[i] == '1') then (<color:green>yes)
+                                    :result = '1' + result;
+                                endif
+                            endif
+                        endif
+                    endif
+                endif
+            endif
+        endif
+    endif
+:i--;
+endwhile (<color:red>no)
+stop
+@enduml

@@ -1,0 +1,24 @@
+@startuml CompleteActivityDiagram
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:string input, output = string.Empty;
+:PrintLine("***************************************************");
+:PrintLine("* Digit Filter                                    *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Eingabetext: ");
+:input = ReadLine();
+:int i = 0;
+while (i < input.Length) is (<color:green>yes)
+    if (char.IsDigit(input[i])) then (<color:green>yes)
+        :output += input[i];
+    endif
+:i++;
+endwhile (<color:red>no)
+:PrintLine($"Ausgabetext: {output}");
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

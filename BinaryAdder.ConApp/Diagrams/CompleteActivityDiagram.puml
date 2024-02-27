@@ -1,0 +1,102 @@
+@startuml CompleteActivityDiagram
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:string number1, number2, result;
+:PrintLine("Binäraddierer");
+:PrintLine("=============");
+:number1 = ReadBinaryNumber(1);
+:number2 = ReadBinaryNumber(2);
+:result = AddBinaryNumbers(number1, number2);
+:PrintLine($"{FormatBinary(number1, 8)} + {FormatBinary(number2, 8)} =  {FormatBinary(result, 8)}");
+:PrintLine();
+:PrintLine("Beenden mit Eingabetaste... ");
+:ReadLine();
+stop
+start
+note right:  Program.FormatBinary
+#LightBlue:string result = string.Empty
+int expandLength = wide - number.Length % wide + number.Length;
+:number = ExpandNumber(number, expandLength);
+:int i = 0;
+while (i < number.Length) is (<color:green>yes)
+    if (i > 0 && i % wide == 0) then (<color:green>yes)
+        :result += ' ';
+    endif
+    :result += number[i];
+:i++;
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.CheckBinaryNumber
+#LightBlue:bool result = true
+int idx = 0;
+while (idx < number.Length && result) is (<color:green>yes)
+    :result = IsBinaryDigit(number[idx++]);
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.ReadBinaryNumber
+#LightBlue:string result
+bool validInput;
+repeat
+    :Print($"Geben Sie die {number}. Binärzahl ein: ");
+    :result = ReadLine();
+    :validInput = CheckBinaryNumber(result);
+    if (!validInput) then (<color:green>yes)
+        :PrintLine("Fehler: In einer Binärzahl sind nur 1 und 0 erlaubt!");
+    endif
+repeat while (validInput == false) is (<color:green>yes)
+stop
+start
+note right:  Program.ExpandNumber
+while (number.Length < numberLength) is (<color:green>yes)
+    :number = '0' + number;
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.AddBinaryNumbers
+#LightBlue:bool carry = false
+string result = string.Empty
+int numberLength = Math.Max(number1.Length, number2.Length) + 1;
+:number1 = ExpandNumber(number1, numberLength);
+:number2 = ExpandNumber(number2, numberLength);
+:int i = numberLength - 1;
+while (i >= 0) is (<color:green>yes)
+    if (carry == false && number1[i] == '0' && number2[i] == '0') then (<color:green>yes)
+        :result = '0' + result;
+      else (<color:red>no)
+        if (carry == false && number1[i] == '1' && number2[i] == '0') then (<color:green>yes)
+            :result = '1' + result;
+          else (<color:red>no)
+            if (carry == false && number1[i] == '0' && number2[i] == '1') then (<color:green>yes)
+                :result = '1' + result;
+              else (<color:red>no)
+                if (carry == false && number1[i] == '1' && number2[i] == '1') then (<color:green>yes)
+                    :carry = true;
+                    :result = '0' + result;
+                  else (<color:red>no)
+                    if (carry && number1[i] == '0' && number2[i] == '0') then (<color:green>yes)
+                        :carry = false;
+                        :result = '1' + result;
+                      else (<color:red>no)
+                        if (carry && number1[i] == '1' && number2[i] == '0') then (<color:green>yes)
+                            :result = '0' + result;
+                          else (<color:red>no)
+                            if (carry && number1[i] == '0' && number2[i] == '1') then (<color:green>yes)
+                                :result = '0' + result;
+                              else (<color:red>no)
+                                if (carry && number1[i] == '1' && number2[i] == '1') then (<color:green>yes)
+                                    :result = '1' + result;
+                                endif
+                            endif
+                        endif
+                    endif
+                endif
+            endif
+        endif
+    endif
+:i--;
+endwhile (<color:red>no)
+stop
+@enduml

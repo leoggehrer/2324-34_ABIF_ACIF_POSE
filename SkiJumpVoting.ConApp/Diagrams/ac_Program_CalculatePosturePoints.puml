@@ -1,0 +1,19 @@
+@startuml Program.CalculatePosturePoints
+title Program.CalculatePosturePoints
+start
+#LightBlue:double result = 0
+double max = Double.MinValue
+double min = Double.MaxValue;
+:int i = 0;
+while (i < posturePoints.Length) is (<color:green>yes)
+    if (posturePoints[i] > max) then (<color:green>yes)
+        :max = posturePoints[i];
+    endif
+    if (posturePoints[i] < min) then (<color:green>yes)
+        :min = posturePoints[i];
+    endif
+    :result += posturePoints[i];
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml
