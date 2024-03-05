@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:19
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -13,6 +16,9 @@ string uniqueDigits = GetUniqueDigitsString(digits);
 :PrintLine();
 :PrintLine("Beenden mit Eingabetaste... ");
 :ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.ReadDigits
@@ -34,16 +40,25 @@ while (count <= MAX_NUMBERS) is (<color:green>yes)
           :PrintLine("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!");
     endif
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.GetUniqueDigitsString
 #LightBlue:string result = string.Empty;
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < digits.Length) is (<color:green>yes)
     if (result.Contains(digits[i].ToString()) == false) then (<color:green>yes)
         :result += digits[i].ToString();
     endif
 :i++;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

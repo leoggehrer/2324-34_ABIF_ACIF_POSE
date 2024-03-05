@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:20
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -16,11 +19,20 @@ note right:  Program.Main
 :PrintLine();
 :Print("Press enter to exit...");
 :ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.Decrypt
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.Encrypt
 #LightBlue:string result = string.Empty;
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < input.Length) is (<color:green>yes)
     #LightBlue:char chr = char.ToLower(input[i]);
     if (chr >= 'a' && chr <= 'm') then (<color:green>yes)
@@ -33,5 +45,11 @@ while (i < input.Length) is (<color:green>yes)
     :result += chr;
 :i++;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

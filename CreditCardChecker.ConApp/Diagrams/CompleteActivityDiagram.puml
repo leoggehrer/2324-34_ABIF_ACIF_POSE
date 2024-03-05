@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:19
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -14,7 +17,7 @@ bool valid = true;
 :PrintLine();
 :Print("Geben Sie Ihre 16-stellige Kreditkartennummer ein: ");
 :input = ReadLine();
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < input.Length) is (<color:green>yes)
     if (char.IsWhiteSpace(input[i]) == false) then (<color:green>yes)
         :cardNumber += input[i];
@@ -52,5 +55,11 @@ endif
 :PrintLine();
 :PrintLine("Press any key to exit: ");
 :ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

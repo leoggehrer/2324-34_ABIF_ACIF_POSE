@@ -1,8 +1,11 @@
 @startuml Program.FilterVocals
+header
+generated on 05.03.2024 11:15:22
+end header
 title Program.FilterVocals
 start
 #LightBlue:string result = string.Empty;
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < input.Length) is (<color:green>yes)
     #LightBlue:char chr = char.ToLower(input[i]);
     if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u') then (<color:green>yes)
@@ -12,5 +15,8 @@ while (i < input.Length) is (<color:green>yes)
     endif
 :i++;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

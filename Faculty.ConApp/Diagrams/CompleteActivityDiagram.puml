@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:19
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -11,7 +14,7 @@ long result = 1;
 :Print("Please enter a number: ");
 :input = ReadLine();
 :number = Convert.ToInt32(input);
-:int i = 1;
+#LightBlue:int i = 1;
 while (i <= number) is (<color:green>yes)
     :result *= i;
 :i++;
@@ -21,5 +24,11 @@ endwhile (<color:red>no)
 :PrintLine();
 :PrintLine("Press any key to exit... ");
 :ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

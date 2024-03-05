@@ -1,0 +1,25 @@
+@startuml Sort.BubbleSort
+header
+generated on 05.03.2024 11:15:20
+end header
+title Sort.BubbleSort
+start
+#LightBlue:bool exchange
+int length = array.Length;
+repeat
+    :exchange = false;
+    #LightBlue:int i = 0;
+    while (i < length - 1) is (<color:green>yes)
+        if (array[i] > array[i + 1]) then (<color:green>yes)
+            :Swap(ref array[i], ref array[i + 1]);
+            :exchange = true;
+        endif
+    :i++;
+    endwhile (<color:red>no)
+    :length--;
+repeat while (exchange) is (<color:green>yes)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

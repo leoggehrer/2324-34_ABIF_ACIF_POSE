@@ -1,4 +1,7 @@
 @startuml Program.Main
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.Main
 start
 #LightBlue:string inputText, eliminatorText, outputText;
@@ -11,10 +14,10 @@ start
 if (inputText != "") then (<color:green>yes)
     :Print("Eliminatortext..: ");
     :eliminatorText = ReadLine();
-    :int i = 0;
+    #LightBlue:int i = 0;
     while (i < inputText.Length) is (<color:green>yes)
         #LightBlue:bool contains = false;
-        :int j = 0;
+        #LightBlue:int j = 0;
         while (j < eliminatorText.Length && contains == false) is (<color:green>yes)
             if (inputText[i] == eliminatorText[j]) then (<color:green>yes)
                 :contains = true;
@@ -31,5 +34,8 @@ if (inputText != "") then (<color:green>yes)
     :Print("Weiter mit beliebiger Taste ...");
     :ReadKey();
 endif
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

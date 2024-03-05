@@ -1,13 +1,19 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:20
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.WriteStars
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < count) is (<color:green>yes)
     :Print("*");
 :i++;
 endwhile (<color:red>no)
 :PrintLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.Main
@@ -67,34 +73,49 @@ repeat
       :ReadLine();
     endswitch
 repeat while (menueNumber != 0) is (<color:green>yes)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.WriteCharacters
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < count) is (<color:green>yes)
     :Print(character);
 :i++;
 endwhile (<color:red>no)
 :PrintLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.SubString
 #LightBlue:string result = string.Empty;
-:int i = startIndex;
+#LightBlue:int i = startIndex;
 while (i >= 0 && i < text.Length && i < startIndex + length) is (<color:green>yes)
     :result += text[i];
 :i++;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.SumOfDigits
 #LightBlue:int result = 0;
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < text.Length) is (<color:green>yes)
     if (Char.IsDigit(text[i])) then (<color:green>yes)
         :result += text[i] - '0';
     endif
 :i++;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

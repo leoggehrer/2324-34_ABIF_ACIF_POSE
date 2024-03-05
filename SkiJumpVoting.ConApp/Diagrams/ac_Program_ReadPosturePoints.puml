@@ -1,4 +1,7 @@
 @startuml Program.ReadPosturePoints
+header
+generated on 05.03.2024 11:15:20
+end header
 title Program.ReadPosturePoints
 start
 #LightBlue:int idx = 0
@@ -16,5 +19,8 @@ while (idx < count) is (<color:green>yes)
           :PrintLine("Ungültige Eingabe!");
     endif
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

@@ -1,4 +1,7 @@
 @startuml Program.AddLeadingCharacters
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.AddLeadingCharacters
 start
 #LightBlue:string result = number
@@ -6,5 +9,8 @@ int length = number.Length + count;
 while (result.Length < length) is (<color:green>yes)
     :result = chr + result;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

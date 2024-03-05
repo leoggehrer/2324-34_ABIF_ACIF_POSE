@@ -1,8 +1,14 @@
 @startuml Program.ExpandNumber
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.ExpandNumber
 start
 while (number.Length < numberLength) is (<color:green>yes)
     :number = '0' + number;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

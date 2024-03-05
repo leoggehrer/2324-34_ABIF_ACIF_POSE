@@ -1,4 +1,7 @@
 @startuml Program.ReadParkingPayment
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.ReadParkingPayment
 start
 #LightBlue:int result = 0
@@ -23,5 +26,8 @@ repeat
         endif
     endif
 repeat while (exit == false && result < _maxPaymentInCents) is (<color:green>yes)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

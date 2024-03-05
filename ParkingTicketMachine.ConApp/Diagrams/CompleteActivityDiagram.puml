@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:19
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -12,6 +15,9 @@ note right:  Program.Main
 :PrintLine();
 :PrintLine("Programm beenden mit Eingabetaste...");
 :ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.ReadParkingPayment
@@ -37,6 +43,21 @@ repeat
         endif
     endif
 repeat while (exit == false && result < _maxPaymentInCents) is (<color:green>yes)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.ToMinutes
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.ToHoursFormat
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.PrintHeader
@@ -44,6 +65,9 @@ note right:  Program.PrintHeader
 :PrintLine("Tarif pro Stunde: 1 Euro");
 :PrintLine($"Zulässige Münzen: {string.Join(", ", _coins)} Cent");
 :PrintLine("Parkschein drucken mit d oder D");
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.PrintTicket
@@ -53,5 +77,11 @@ if (paymentInCents > _maxPaymentInCents) then (<color:green>yes)
 endif
 #LightBlue:int minutes = ToMinutes(Math.Min(paymentInCents, _maxPaymentInCents));
 :PrintLine($"Sie dürfen {ToHoursFormat(minutes)} Stunden parken");
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

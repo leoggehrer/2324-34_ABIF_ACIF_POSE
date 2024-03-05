@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:20
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -12,14 +15,14 @@ int number, operand, result;
 :number = Convert.ToInt32(input);
 :operand = number;
 :PrintLine();
-:int i = 2;
+#LightBlue:int i = 2;
 while (i < 10) is (<color:green>yes)
     :result = operand * i;
     :PrintLine($"{operand} * {i} = {result}");
     :operand = result;
 :i++;
 endwhile (<color:red>no)
-:int i = 2;
+#LightBlue:int i = 2;
 while (i < 10) is (<color:green>yes)
     :result = operand / i;
     :PrintLine($"{operand} / {i} = {result}");
@@ -29,5 +32,11 @@ endwhile (<color:red>no)
 :PrintLine();
 :PrintLine("Press any key to exit: ");
 :ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

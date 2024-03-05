@@ -1,4 +1,7 @@
 @startuml Program.Main
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.Main
 start
 :PrintLine("Visitenkarte");
@@ -15,5 +18,8 @@ start
 :Print($"* {adress,-37}");
 :PrintLine("*");
 :PrintLine("****************************************");
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

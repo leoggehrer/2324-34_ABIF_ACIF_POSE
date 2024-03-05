@@ -1,4 +1,7 @@
 @startuml Program.ReadDigits
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.ReadDigits
 start
 #LightBlue:int MAX_NUMBERS = 10
@@ -19,5 +22,8 @@ while (count <= MAX_NUMBERS) is (<color:green>yes)
           :PrintLine("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!");
     endif
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

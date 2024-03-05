@@ -1,10 +1,13 @@
 @startuml Program.FormatBinary
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.FormatBinary
 start
 #LightBlue:string result = string.Empty
 int expandLength = wide - number.Length % wide + number.Length;
 :number = ExpandNumber(number, expandLength);
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < number.Length) is (<color:green>yes)
     if (i > 0 && i % wide == 0) then (<color:green>yes)
         :result += ' ';
@@ -12,5 +15,8 @@ while (i < number.Length) is (<color:green>yes)
     :result += number[i];
 :i++;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

@@ -1,4 +1,7 @@
 @startuml Program.AddBinaryNumbers
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.AddBinaryNumbers
 start
 #LightBlue:bool carry = false
@@ -6,7 +9,7 @@ string result = string.Empty
 int numberLength = Math.Max(number1.Length, number2.Length) + 1;
 :number1 = ExpandNumber(number1, numberLength);
 :number2 = ExpandNumber(number2, numberLength);
-:int i = numberLength - 1;
+#LightBlue:int i = numberLength - 1;
 while (i >= 0) is (<color:green>yes)
     if (carry == false && number1[i] == '0' && number2[i] == '0') then (<color:green>yes)
         :result = '0' + result;
@@ -43,5 +46,8 @@ while (i >= 0) is (<color:green>yes)
     endif
 :i--;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

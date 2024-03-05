@@ -1,5 +1,11 @@
 @startuml Program.ToHoursFormat
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.ToHoursFormat
 start
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

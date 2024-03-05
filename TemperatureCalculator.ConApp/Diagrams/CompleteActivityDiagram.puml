@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:20
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -23,5 +26,11 @@ endif
 :PrintLine();
 :PrintLine("Press any key to exit: ");
 :ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

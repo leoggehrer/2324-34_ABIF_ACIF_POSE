@@ -1,14 +1,18 @@
 @startuml StringExtensions.SetIndent
+header
+generated on 05.03.2024 11:15:20
+end header
 title StringExtensions.SetIndent
 start
-#LightBlue:StringBuilder sb = new();
-if (text != null) then (<color:green>yes)
-    :int i = 0;
-    while (i < count) is (<color:green>yes)
-      :sb.Append(Indent);
+if (lines != null) then (<color:green>yes)
+    #LightBlue:int i = 0;
+    while (i < lines.Length) is (<color:green>yes)
+        :lines[i] = lines[i].SetIndent(count);
     :i++;
     endwhile (<color:red>no)
 endif
-:sb.Append(text);
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

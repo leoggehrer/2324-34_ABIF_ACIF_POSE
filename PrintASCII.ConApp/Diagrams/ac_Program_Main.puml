@@ -1,4 +1,7 @@
 @startuml Program.Main
+header
+generated on 05.03.2024 11:15:20
+end header
 title Program.Main
 start
 #LightBlue:int FIRST_ASCII = 32
@@ -7,7 +10,7 @@ int LAST_ASCII = 127;
 :PrintLine("* ASCII - Tabelle                                 *");
 :PrintLine("***************************************************");
 :PrintLine();
-:int idx = FIRST_ASCII;
+#LightBlue:int idx = FIRST_ASCII;
 while (idx <= LAST_ASCII) is (<color:green>yes)
     #LightBlue:char printChar = Convert.ToChar(FIRST_ASCII + idx);
     #LightBlue:string output = $"Zeichen: {printChar} Code: {idx,4} (dec) {idx.ToString("X4")} (hex)";
@@ -17,5 +20,8 @@ endwhile (<color:red>no)
 :PrintLine();
 :PrintLine("Press any key to exit: ");
 :ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

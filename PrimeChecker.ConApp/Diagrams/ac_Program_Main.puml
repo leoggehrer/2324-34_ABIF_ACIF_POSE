@@ -1,4 +1,7 @@
 @startuml Program.Main
+header
+generated on 05.03.2024 11:15:20
+end header
 title Program.Main
 start
 #LightBlue:string input
@@ -19,7 +22,7 @@ endwhile (<color:red>no)
 :PrintLine($"Variante while: Die Zahl {number} {(isPrime ? "ist" : "keine")} Primzahl!");
 :PrintLine();
 :isPrime = number > 1 && (number == 2 || number % 2 != 0);
-:int i = 3;
+#LightBlue:int i = 3;
 while (isPrime && i <= number / 2) is (<color:green>yes)
     :isPrime = number % i != 0;
 :i = i + 2;
@@ -28,5 +31,8 @@ endwhile (<color:red>no)
 :PrintLine();
 :PrintLine("Press any key to exit: ");
 :ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

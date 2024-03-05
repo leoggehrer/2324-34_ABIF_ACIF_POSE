@@ -1,4 +1,7 @@
 @startuml Program.CheckBinaryNumber
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.CheckBinaryNumber
 start
 #LightBlue:bool result = true
@@ -6,5 +9,8 @@ int idx = 0;
 while (idx < number.Length && result) is (<color:green>yes)
     :result = IsBinaryDigit(number[idx++]);
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

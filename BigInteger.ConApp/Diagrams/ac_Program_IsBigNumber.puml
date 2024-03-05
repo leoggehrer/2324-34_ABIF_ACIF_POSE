@@ -1,4 +1,7 @@
 @startuml Program.IsBigNumber
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.IsBigNumber
 start
 #LightBlue:bool result = number.Length > 0
@@ -6,5 +9,8 @@ int idx = 0;
 while (idx < number.Length && result) is (<color:green>yes)
     :result = char.IsDigit(number[idx++]);
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

@@ -1,4 +1,7 @@
 @startuml Program.ReadJumpFar
+header
+generated on 05.03.2024 11:15:20
+end header
 title Program.ReadJumpFar
 start
 #LightBlue:double result
@@ -13,5 +16,8 @@ repeat
           :PrintLine("Ungültige Eingabe!");
     endif
 repeat while (valid == false) is (<color:green>yes)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

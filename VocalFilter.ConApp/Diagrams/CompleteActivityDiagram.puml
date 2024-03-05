@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:22
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -9,7 +12,7 @@ note right:  Program.Main
 :PrintLine();
 :Print("Eingabetext: ");
 :input = ReadLine();
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < input.Length) is (<color:green>yes)
     #LightBlue:char chr = char.ToLower(input[i]);
     if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u') then (<color:green>yes)
@@ -23,5 +26,11 @@ endwhile (<color:red>no)
 :PrintLine();
 :PrintLine("Press any key to exit: ");
 :ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

@@ -1,4 +1,7 @@
 @startuml Program.ReadBigInteger
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.ReadBigInteger
 start
 #LightBlue:string result
@@ -11,5 +14,8 @@ repeat
         :PrintLine("Ungültige Eingabe!");
     endif
 repeat while (validInput == false) is (<color:green>yes)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

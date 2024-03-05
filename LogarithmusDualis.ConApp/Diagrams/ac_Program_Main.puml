@@ -1,4 +1,7 @@
 @startuml Program.Main
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.Main
 start
 #LightBlue:string input
@@ -18,5 +21,8 @@ endwhile (<color:red>no)
 :PrintLine();
 :PrintLine("Press any key to exit: ");
 :ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

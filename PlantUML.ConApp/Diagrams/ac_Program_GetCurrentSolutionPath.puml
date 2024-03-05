@@ -1,4 +1,7 @@
 @startuml Program.GetCurrentSolutionPath
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.GetCurrentSolutionPath
 start
 #LightBlue:int endPos = AppContext.BaseDirectory
@@ -7,5 +10,8 @@ var result = AppContext.BaseDirectory[..endPos];
 while (result.EndsWith(Path.DirectorySeparatorChar)) is (<color:green>yes)
     :result = result[0..^1];
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

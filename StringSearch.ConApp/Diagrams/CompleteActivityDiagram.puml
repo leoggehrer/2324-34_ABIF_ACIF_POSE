@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:20
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -12,7 +15,7 @@ int index = -1;
 if (inputText != "") then (<color:green>yes)
     :Print("Suchtext.......: ");
     :searchText = ReadLine();
-    :int i = 0;
+    #LightBlue:int i = 0;
     while (index == -1 && searchText.Length > 0 && i <= inputText.Length - searchText.Length) is (<color:green>yes)
         #LightBlue:int j = 0;
         #LightBlue:bool check = true;
@@ -32,5 +35,11 @@ if (inputText != "") then (<color:green>yes)
     :Print("Weiter mit Enter...");
     :ReadLine();
 endif
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

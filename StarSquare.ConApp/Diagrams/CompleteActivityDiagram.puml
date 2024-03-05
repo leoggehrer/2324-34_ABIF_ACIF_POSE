@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:20
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -11,9 +14,9 @@ int number;
 :input = ReadLine();
 :number = Convert.ToInt32(input);
 :PrintLine();
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < number) is (<color:green>yes)
-    :int j = 0;
+    #LightBlue:int j = 0;
     while (j < number) is (<color:green>yes)
         :Print("* ");
     :j++;
@@ -21,5 +24,11 @@ while (i < number) is (<color:green>yes)
     :PrintLine();
 :i++;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

@@ -1,4 +1,7 @@
 @startuml Program.Main
+header
+generated on 05.03.2024 11:15:20
+end header
 title Program.Main
 start
 #LightBlue:string input, encrypted, decrypted;
@@ -15,5 +18,8 @@ start
 :PrintLine();
 :Print("Press enter to exit...");
 :ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

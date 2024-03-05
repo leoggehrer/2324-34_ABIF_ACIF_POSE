@@ -1,4 +1,7 @@
 @startuml Program.GetSourceCodeFiles
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.GetSourceCodeFiles
 start
 #LightBlue:var result = new List<string>()
@@ -10,5 +13,8 @@ while (iterator.MoveNext()) is (<color:green>yes)
                       .Where(f => ignoreFolders.Any(e => f.Contains(e)) == false)
                       .OrderBy(i => i));
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

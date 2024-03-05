@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:20
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -15,6 +18,9 @@ double[] posturePoints;
 :PrintLine();
 :PrintLine("Beenden mit Eingabetaste... ");
 :ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.ReadJumpFar
@@ -30,6 +36,9 @@ repeat
           :PrintLine("Ungültige Eingabe!");
     endif
 repeat while (valid == false) is (<color:green>yes)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.ReadPosturePoints
@@ -48,13 +57,16 @@ while (idx < count) is (<color:green>yes)
           :PrintLine("Ungültige Eingabe!");
     endif
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.CalculatePosturePoints
 #LightBlue:double result = 0
 double max = Double.MinValue
 double min = Double.MaxValue;
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < posturePoints.Length) is (<color:green>yes)
     if (posturePoints[i] > max) then (<color:green>yes)
         :max = posturePoints[i];
@@ -65,9 +77,18 @@ while (i < posturePoints.Length) is (<color:green>yes)
     :result += posturePoints[i];
 :i++;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.CalculateJump
 :far = (int)far;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

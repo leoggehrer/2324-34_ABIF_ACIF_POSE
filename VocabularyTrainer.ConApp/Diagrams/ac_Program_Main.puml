@@ -1,4 +1,7 @@
 @startuml Program.Main
+header
+generated on 05.03.2024 11:15:20
+end header
 title Program.Main
 start
 #LightBlue:int counter = 0
@@ -48,5 +51,8 @@ endif
 :PrintLine();
 :PrintLine("Press any key to exit: ");
 :ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

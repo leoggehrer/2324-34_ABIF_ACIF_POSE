@@ -1,4 +1,7 @@
 @startuml UMLCreator.AnalysisStatement
+header
+generated on 05.03.2024 11:15:20
+end header
 title UMLCreator.AnalysisStatement
 start
 if (syntaxNode is LocalDeclarationStatementSyntax localDeclarationStatement) then (<color:green>yes)
@@ -114,5 +117,8 @@ if (syntaxNode is LocalDeclarationStatementSyntax localDeclarationStatement) the
         endif
     endif
 endif
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

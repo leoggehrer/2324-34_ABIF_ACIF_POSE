@@ -1,4 +1,7 @@
 @startuml Program.Main
+header
+generated on 05.03.2024 11:15:19
+end header
 title Program.Main
 start
 #LightBlue:string input, output = string.Empty;
@@ -8,7 +11,7 @@ start
 :PrintLine();
 :Print("Eingabetext: ");
 :input = ReadLine();
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < input.Length) is (<color:green>yes)
     if (char.IsDigit(input[i])) then (<color:green>yes)
         :output += input[i];
@@ -19,5 +22,8 @@ endwhile (<color:red>no)
 :PrintLine();
 :PrintLine("Press any key to exit: ");
 :ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

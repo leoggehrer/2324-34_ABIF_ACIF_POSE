@@ -1,4 +1,7 @@
 @startuml Program.Main
+header
+generated on 05.03.2024 11:15:20
+end header
 title Program.Main
 start
 #LightBlue:char characterDisplayed
@@ -57,5 +60,8 @@ repeat
       :ReadLine();
     endswitch
 repeat while (menueNumber != 0) is (<color:green>yes)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 @enduml

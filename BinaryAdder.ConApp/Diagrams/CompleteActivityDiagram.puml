@@ -1,4 +1,7 @@
 @startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:19
+end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
@@ -12,13 +15,22 @@ note right:  Program.Main
 :PrintLine();
 :PrintLine("Beenden mit Eingabetaste... ");
 :ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.IsBinaryDigit
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.FormatBinary
 #LightBlue:string result = string.Empty
 int expandLength = wide - number.Length % wide + number.Length;
 :number = ExpandNumber(number, expandLength);
-:int i = 0;
+#LightBlue:int i = 0;
 while (i < number.Length) is (<color:green>yes)
     if (i > 0 && i % wide == 0) then (<color:green>yes)
         :result += ' ';
@@ -26,6 +38,9 @@ while (i < number.Length) is (<color:green>yes)
     :result += number[i];
 :i++;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.CheckBinaryNumber
@@ -34,6 +49,9 @@ int idx = 0;
 while (idx < number.Length && result) is (<color:green>yes)
     :result = IsBinaryDigit(number[idx++]);
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.ReadBinaryNumber
@@ -47,12 +65,24 @@ repeat
         :PrintLine("Fehler: In einer Binärzahl sind nur 1 und 0 erlaubt!");
     endif
 repeat while (validInput == false) is (<color:green>yes)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.ShrinkNumber
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.ExpandNumber
 while (number.Length < numberLength) is (<color:green>yes)
     :number = '0' + number;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
 start
 note right:  Program.AddBinaryNumbers
@@ -61,7 +91,7 @@ string result = string.Empty
 int numberLength = Math.Max(number1.Length, number2.Length) + 1;
 :number1 = ExpandNumber(number1, numberLength);
 :number2 = ExpandNumber(number2, numberLength);
-:int i = numberLength - 1;
+#LightBlue:int i = numberLength - 1;
 while (i >= 0) is (<color:green>yes)
     if (carry == false && number1[i] == '0' && number2[i] == '0') then (<color:green>yes)
         :result = '0' + result;
@@ -98,5 +128,11 @@ while (i >= 0) is (<color:green>yes)
     endif
 :i--;
 endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

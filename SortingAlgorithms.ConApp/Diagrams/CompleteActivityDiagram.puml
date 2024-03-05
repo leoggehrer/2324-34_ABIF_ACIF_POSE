@@ -1,0 +1,205 @@
+@startuml CompleteActivityDiagram
+header
+generated on 05.03.2024 11:15:20
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.CreateRandomArray
+#LightBlue:int[] result = new int[size];
+#LightBlue:int i = 0;
+while (i < result.Length) is (<color:green>yes)
+    :result[i] = Random.Shared.Next(min, max);
+:i++;
+endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.Main
+#LightBlue:int TEST_SIZE = 20
+int PERFORMANCE_SIZE = 50_000
+int[] array;
+:PrintLine("Sort-Algorithmen!");
+:PrintLine("=================");
+:PrintLine();
+:PrintLine("Test BruteForceSort");
+:array = CreateRandomArray(TEST_SIZE);
+:PrintArray("Unsorted:", array);
+:Sort.BruteForceSort(array);
+:PrintArray("BruteForceSort:", array);
+:PrintLine();
+:PrintLine("Test BubbleSort");
+:array = CreateRandomArray(TEST_SIZE);
+:PrintArray("Unsorted:", array);
+:Sort.BubbleSort(array);
+:PrintArray("BubbleSort:", array);
+:PrintLine();
+:PrintLine("Test InsertionSort");
+:array = CreateRandomArray(TEST_SIZE);
+:PrintArray("Unsorted:", array);
+:Sort.InsertionSort(array);
+:PrintArray("InsertionSort:", array);
+:PrintLine();
+:PrintLine("Test SelectionSort");
+:array = CreateRandomArray(TEST_SIZE);
+:PrintArray("Unsorted:", array);
+:Sort.SelectionSort(array);
+:PrintArray("SelectionSort:", array);
+:PrintLine();
+:PrintLine("Performance Testing");
+:PrintLine("===================");
+:PrintLine();
+:PrintLine("Machine:   " + Environment.MachineName);
+:PrintLine("Version:   " + Environment.Version);
+:PrintLine("Processor: Apple M2");
+:PrintLine("Processor: " + Environment.ProcessorCount + " cores");
+:PrintLine("OS:        " + Environment.OSVersion);
+:PrintLine();
+#LightBlue:Stopwatch sw = new Stopwatch()
+int[] randomArray = CreateRandomArray(PERFORMANCE_SIZE)
+int[] arrayToSort;
+:arrayToSort = (int[])randomArray.Clone();
+:PrintLine($"{nameof(Sort.BruteForceSort)}(0...{randomArray.Length})");
+:sw.Start();
+:Sort.BruteForceSort(arrayToSort);
+:sw.Stop();
+:PrintLine($"Zeitmessung: {sw.ElapsedMilliseconds} ms");
+:PrintLine();
+:arrayToSort = (int[])randomArray.Clone();
+:PrintLine($"{nameof(Sort.BubbleSort)}(0...{randomArray.Length})");
+:sw.Restart();
+:Sort.BubbleSort(arrayToSort);
+:sw.Stop();
+:PrintLine($"Zeitmessung: {sw.ElapsedMilliseconds} ms");
+:PrintLine();
+:arrayToSort = (int[])randomArray.Clone();
+:PrintLine($"{nameof(Sort.InsertionSort)}(0...{randomArray.Length})");
+:sw.Restart();
+:Sort.InsertionSort(arrayToSort);
+:sw.Stop();
+:PrintLine($"Zeitmessung: {sw.ElapsedMilliseconds} ms");
+:PrintLine();
+:arrayToSort = (int[])randomArray.Clone();
+:PrintLine($"{nameof(Sort.SelectionSort)}(0...{randomArray.Length})");
+:sw.Restart();
+:Sort.SelectionSort(arrayToSort);
+:sw.Stop();
+:PrintLine($"Zeitmessung: {sw.ElapsedMilliseconds} ms");
+:PrintLine();
+:arrayToSort = (int[])randomArray.Clone();
+:PrintLine($"Array.Sort(0...{randomArray.Length})");
+:sw.Restart();
+:Array.Sort(arrayToSort);
+:sw.Stop();
+:PrintLine($"Zeitmessung: {sw.ElapsedMilliseconds} ms");
+:PrintLine();
+:PrintLine("Exit with ENTER...");
+:ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Sort.SelectionSort
+#LightBlue:int i = 0;
+while (i < array.Length - 1) is (<color:green>yes)
+    #LightBlue:int minIdx = i;
+    #LightBlue:int j = i + 1;
+    while (j < array.Length) is (<color:green>yes)
+        if (array[j] < array[minIdx]) then (<color:green>yes)
+            :minIdx = j;
+        endif
+    :j++;
+    endwhile (<color:red>no)
+    if (minIdx != i) then (<color:green>yes)
+        :Swap(ref array[i], ref array[minIdx]);
+    endif
+:i++;
+endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.PrintArray
+#LightBlue:int i = 0;
+while (i < array.Length) is (<color:green>yes)
+    if (i > 0) then (<color:green>yes)
+        :Print(" ");
+    endif
+    :Print(array[i]);
+:i++;
+endwhile (<color:red>no)
+:PrintLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Sort.BubbleSort
+#LightBlue:bool exchange
+int length = array.Length;
+repeat
+    :exchange = false;
+    #LightBlue:int i = 0;
+    while (i < length - 1) is (<color:green>yes)
+        if (array[i] > array[i + 1]) then (<color:green>yes)
+            :Swap(ref array[i], ref array[i + 1]);
+            :exchange = true;
+        endif
+    :i++;
+    endwhile (<color:red>no)
+    :length--;
+repeat while (exchange) is (<color:green>yes)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Sort.InsertionSort
+#LightBlue:int i = 1;
+while (i < array.Length) is (<color:green>yes)
+    #LightBlue:int j = i;
+    #LightBlue:int current = array[i];
+    while (j > 0 && array[j - 1] > current) is (<color:green>yes)
+        :array[j] = array[j - 1];
+        :j--;
+    endwhile (<color:red>no)
+    :array[j] = current;
+:i++;
+endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Sort.Swap
+#LightBlue:int tmp = v1;
+:v1 = v2;
+:v2 = tmp;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Sort.BruteForceSort
+#LightBlue:int i = 0;
+while (i < array.Length) is (<color:green>yes)
+    #LightBlue:int j = 0;
+    while (j < array.Length - 1) is (<color:green>yes)
+        if (array[j] > array[j + 1]) then (<color:green>yes)
+            :Swap(ref array[j], ref array[j + 1]);
+        endif
+    :j++;
+    endwhile (<color:red>no)
+:i++;
+endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml
