@@ -1,0 +1,12 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+#class Program #whitesmoke {
+---
+---
+{static} void Main(string[] args)
+{static} string AddBigInteger(string number1, string number2)
+{static} string AddLeadingCharacters(string number, char chr, int count)
+{static} string ReadBigInteger(string prompt)
+{static} bool IsBigNumber(string number)
+}
+@enduml

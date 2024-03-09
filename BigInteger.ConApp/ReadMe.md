@@ -1,4 +1,4 @@
-# BigIntegeger
+# BigInteger (Ein Programm)
 
 ## Activity Diagrams
 
