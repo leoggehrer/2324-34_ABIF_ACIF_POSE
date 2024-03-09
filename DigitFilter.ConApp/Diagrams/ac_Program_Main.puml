@@ -1,0 +1,29 @@
+@startuml Program.Main
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.Main
+start
+#LightBlue:string input, output = string.Empty;
+:PrintLine("***************************************************");
+:PrintLine("* Digit Filter                                    *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Eingabetext: ");
+:input = ReadLine();
+#LightBlue:int i = 0;
+while (i < input.Length) is (<color:green>yes)
+    if (char.IsDigit(input[i])) then (<color:green>yes)
+        :output += input[i];
+    endif
+:i++;
+endwhile (<color:red>no)
+:PrintLine($"Ausgabetext: {output}");
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

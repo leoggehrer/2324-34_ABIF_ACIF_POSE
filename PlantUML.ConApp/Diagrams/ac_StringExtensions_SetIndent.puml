@@ -1,0 +1,19 @@
+@startuml StringExtensions.SetIndent
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title StringExtensions.SetIndent
+start
+if (lines != null) then (<color:green>yes)
+    #LightBlue:int i = 0;
+    while (i < lines.Length) is (<color:green>yes)
+        :lines[i] = lines[i].SetIndent(count);
+    :i++;
+    endwhile (<color:red>no)
+endif
+#Lavender:return lines ?? Array.Empty<string>();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

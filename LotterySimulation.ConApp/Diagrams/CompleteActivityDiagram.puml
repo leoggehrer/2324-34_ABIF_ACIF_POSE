@@ -1,0 +1,121 @@
+@startuml CompleteActivityDiagram
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:int[] results
+int[] correctResult = { 400874, 423358, 151635, 22687, 1416, 30, 0 }
+int[] thrownNumbers
+int[,] lottoTipps = CreateTipps(TIPPS_COUNT)
+Stopwatch stopWatch = new Stopwatch();
+start
+note right:  Program.PrintResult
+#LightBlue:int resultSum = 0;
+#LightBlue:int i = TIP_SIZE;
+while (i >= 0) is (<color:green>yes)
+    :PrintLine($"{i}er: {results[i], 10}");
+    :resultSum += results[i];
+:i--;
+endwhile (<color:red>no)
+:PrintLine(new string('-' , 20));
+:PrintLine($"Summe: {resultSum, 8}");
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.EqualsTo
+#LightBlue:int idx = 0
+bool result = arrayOne.Length == arrayTwo.Length;
+while (result && idx < arrayOne.Length) is (<color:green>yes)
+    :result = arrayOne[idx] == arrayTwo[idx];
+    :idx++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.AnalyzeLottery
+#LightBlue:int[] result = new int[TIP_SIZE + 1];
+#LightBlue:int i = 0;
+while (i < lottoTipps.GetLength(0)) is (<color:green>yes)
+    #LightBlue:int hits = CountNumberOfHits(i, lottoTipps, thrownNumbers);
+    :result[hits]++;
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.CountNumberOfHits
+#LightBlue:int result = 0;
+#LightBlue:int i = 0;
+while (i < tipps.GetLength(1)) is (<color:green>yes)
+    #LightBlue:int j = 0;
+    while (j < thrownNumbers.Length) is (<color:green>yes)
+        if (tipps[index, i] == thrownNumbers[j]) then (<color:green>yes)
+            :result++;
+        endif
+    :j++;
+    endwhile (<color:red>no)
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.CreateTipps
+#LightBlue:int[,] result = new int[countTipps, TIP_SIZE];
+#LightBlue:int tippNummer = 0;
+while (tippNummer < countTipps) is (<color:green>yes)
+    #LightBlue:int[] tip = CreateTip();
+    #LightBlue:int zahlNummer = 0;
+    while (zahlNummer < 6) is (<color:green>yes)
+        :result[tippNummer, zahlNummer] = tip[zahlNummer];
+    :zahlNummer++;
+    endwhile (<color:red>no)
+:tippNummer++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.CreateTip
+#LightBlue:int[] result = new int[TIP_SIZE]
+int number
+bool found;
+#LightBlue:int i = 0;
+while (i < result.Length) is (<color:green>yes)
+    repeat
+        :found = false;
+        :number = random.Next(MIN_NUMBER, MAX_NUMBER + 1);
+        #LightBlue:int j = 0;
+        while (j < i) is (<color:green>yes)
+            if (number == result[j]) then (<color:green>yes)
+                :found = true;
+            endif
+        :j++;
+        endwhile (<color:red>no)
+    repeat while (found) is (<color:green>yes)
+    :result[i] = number;
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

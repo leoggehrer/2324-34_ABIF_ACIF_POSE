@@ -1,0 +1,29 @@
+@startuml Program.Main
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.Main
+start
+#LightBlue:string name, input
+double hours, pricePerHour, salary;
+:PrintLine("***************************************************");
+:PrintLine("* Der Lohnrechner für eine gerechte Entlohnung!   *");
+:PrintLine("***************************************************");
+:Print("Name des Arbeiters:        ");
+:name = ReadLine();
+:Print("Anzahl der Arbeitsstunden: ");
+:hours = Convert.ToDouble(ReadLine());
+:Print("Stundenlohn:               ");
+:input = ReadLine();
+:pricePerHour = Convert.ToDouble(input);
+:salary = hours * pricePerHour;
+:PrintLine();
+:PrintLine($"{name} hat in {hours:f} Stunden {salary} EUR verdient.");
+:PrintLine();
+:Print("Zum Beenden Eingabetaste drücken...");
+:ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

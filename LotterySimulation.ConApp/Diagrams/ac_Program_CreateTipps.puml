@@ -1,0 +1,23 @@
+@startuml Program.CreateTipps
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.CreateTipps
+start
+#LightBlue:int[,] result = new int[countTipps, TIP_SIZE];
+#LightBlue:int tippNummer = 0;
+while (tippNummer < countTipps) is (<color:green>yes)
+    #LightBlue:int[] tip = CreateTip();
+    #LightBlue:int zahlNummer = 0;
+    while (zahlNummer < 6) is (<color:green>yes)
+        :result[tippNummer, zahlNummer] = tip[zahlNummer];
+    :zahlNummer++;
+    endwhile (<color:red>no)
+:tippNummer++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

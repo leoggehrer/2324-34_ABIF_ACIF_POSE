@@ -1,0 +1,57 @@
+@startuml CompleteActivityDiagram
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:string input, encrypted, decrypted;
+:PrintLine("***************************************************");
+:PrintLine("* Einfache Verschlüsselung nach ROT13             *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Zu verschlüsselnden Text: ");
+:input = ReadLine();
+:encrypted = Encrypt(input);
+:PrintLine($"Verschlüsselter Text: {encrypted}");
+:decrypted = Decrypt(encrypted);
+:PrintLine($"Entschlüsselter Text: {decrypted}");
+:PrintLine();
+:Print("Press enter to exit...");
+:ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.Decrypt
+#Lavender:return Encrypt(encrypted);
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.Encrypt
+#LightBlue:string result = string.Empty;
+#LightBlue:int i = 0;
+while (i < input.Length) is (<color:green>yes)
+    #LightBlue:char chr = char.ToLower(input[i]);
+    if (chr >= 'a' && chr <= 'm') then (<color:green>yes)
+        :chr = Convert.ToChar(input[i] + 13);
+      else (<color:red>no)
+        if (chr >= 'n' && chr <= 'z') then (<color:green>yes)
+            :chr = Convert.ToChar(input[i] - 13);
+        endif
+    endif
+    :result += chr;
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

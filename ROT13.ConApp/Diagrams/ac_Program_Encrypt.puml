@@ -1,0 +1,26 @@
+@startuml Program.Encrypt
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.Encrypt
+start
+#LightBlue:string result = string.Empty;
+#LightBlue:int i = 0;
+while (i < input.Length) is (<color:green>yes)
+    #LightBlue:char chr = char.ToLower(input[i]);
+    if (chr >= 'a' && chr <= 'm') then (<color:green>yes)
+        :chr = Convert.ToChar(input[i] + 13);
+      else (<color:red>no)
+        if (chr >= 'n' && chr <= 'z') then (<color:green>yes)
+            :chr = Convert.ToChar(input[i] - 13);
+        endif
+    endif
+    :result += chr;
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

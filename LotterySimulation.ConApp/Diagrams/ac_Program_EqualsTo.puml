@@ -1,0 +1,18 @@
+@startuml Program.EqualsTo
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.EqualsTo
+start
+#LightBlue:int idx = 0
+bool result = arrayOne.Length == arrayTwo.Length;
+while (result && idx < arrayOne.Length) is (<color:green>yes)
+    :result = arrayOne[idx] == arrayTwo[idx];
+    :idx++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

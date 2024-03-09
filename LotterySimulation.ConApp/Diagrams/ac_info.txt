@@ -1,0 +1,14 @@
+title:Program.Main
+fileName:ac_Program_Main.puml
+title:Program.PrintResult
+fileName:ac_Program_PrintResult.puml
+title:Program.EqualsTo
+fileName:ac_Program_EqualsTo.puml
+title:Program.AnalyzeLottery
+fileName:ac_Program_AnalyzeLottery.puml
+title:Program.CountNumberOfHits
+fileName:ac_Program_CountNumberOfHits.puml
+title:Program.CreateTipps
+fileName:ac_Program_CreateTipps.puml
+title:Program.CreateTip
+fileName:ac_Program_CreateTip.puml

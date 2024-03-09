@@ -1,0 +1,20 @@
+@startuml Program.SumOfDigits
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.SumOfDigits
+start
+#LightBlue:int result = 0;
+#LightBlue:int i = 0;
+while (i < text.Length) is (<color:green>yes)
+    if (Char.IsDigit(text[i])) then (<color:green>yes)
+        :result += text[i] - '0';
+    endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

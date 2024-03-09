@@ -1,0 +1,30 @@
+@startuml Program.Main
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.Main
+start
+#LightBlue:string input
+double euroToFranc = 0.95, euroToDollar = 1.05
+double euroValue, francValue, dollarValue;
+:PrintLine("***************************************************");
+:PrintLine("* Währungsrechner - Der faire Austausch von Geld  *");
+:PrintLine("*                   EURO -> DOLLAR                *");
+:PrintLine("*                   EURO -> FRANKEN               *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Eingabe des Betrages in Euro: ");
+:input = ReadLine();
+:euroValue = Convert.ToDouble(input);
+:dollarValue = euroValue * euroToDollar;
+:francValue = euroValue * euroToFranc;
+:PrintLine($"Dollar:  {dollarValue,10:f4}");
+:PrintLine($"Franken: {francValue,10:f4}");
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

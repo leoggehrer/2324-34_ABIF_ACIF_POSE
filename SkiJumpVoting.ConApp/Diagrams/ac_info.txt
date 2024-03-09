@@ -1,0 +1,10 @@
+title:Program.Main
+fileName:ac_Program_Main.puml
+title:Program.CalculateJump
+fileName:ac_Program_CalculateJump.puml
+title:Program.CalculatePosturePoints
+fileName:ac_Program_CalculatePosturePoints.puml
+title:Program.ReadPosturePoints
+fileName:ac_Program_ReadPosturePoints.puml
+title:Program.ReadJumpFar
+fileName:ac_Program_ReadJumpFar.puml

@@ -1,0 +1,13 @@
+@startuml Program.CalculateJump
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.CalculateJump
+start
+:far = (int)far;
+#Lavender:return far >= 120 ? 60 + (far - 120) * 1.8 : far * 1.8;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

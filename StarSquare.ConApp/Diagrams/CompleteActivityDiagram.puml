@@ -1,0 +1,34 @@
+@startuml CompleteActivityDiagram
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:string input
+int number;
+:PrintLine("StarSquare");
+:PrintLine("==========");
+:PrintLine();
+:Print("Geben Sie eine Ganzzahl ein: ");
+:input = ReadLine();
+:number = Convert.ToInt32(input);
+:PrintLine();
+#LightBlue:int i = 0;
+while (i < number) is (<color:green>yes)
+    #LightBlue:int j = 0;
+    while (j < number) is (<color:green>yes)
+        :Print("* ");
+    :j++;
+    endwhile (<color:red>no)
+    :PrintLine();
+:i++;
+endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

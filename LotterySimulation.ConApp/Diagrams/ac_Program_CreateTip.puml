@@ -1,0 +1,31 @@
+@startuml Program.CreateTip
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.CreateTip
+start
+#LightBlue:int[] result = new int[TIP_SIZE]
+int number
+bool found;
+#LightBlue:int i = 0;
+while (i < result.Length) is (<color:green>yes)
+    repeat
+        :found = false;
+        :number = random.Next(MIN_NUMBER, MAX_NUMBER + 1);
+        #LightBlue:int j = 0;
+        while (j < i) is (<color:green>yes)
+            if (number == result[j]) then (<color:green>yes)
+                :found = true;
+            endif
+        :j++;
+        endwhile (<color:red>no)
+    repeat while (found) is (<color:green>yes)
+    :result[i] = number;
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

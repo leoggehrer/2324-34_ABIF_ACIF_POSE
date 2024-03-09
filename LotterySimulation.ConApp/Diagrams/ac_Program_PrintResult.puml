@@ -1,0 +1,20 @@
+@startuml Program.PrintResult
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.PrintResult
+start
+#LightBlue:int resultSum = 0;
+#LightBlue:int i = TIP_SIZE;
+while (i >= 0) is (<color:green>yes)
+    :PrintLine($"{i}er: {results[i], 10}");
+    :resultSum += results[i];
+:i--;
+endwhile (<color:red>no)
+:PrintLine(new string('-' , 20));
+:PrintLine($"Summe: {resultSum, 8}");
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

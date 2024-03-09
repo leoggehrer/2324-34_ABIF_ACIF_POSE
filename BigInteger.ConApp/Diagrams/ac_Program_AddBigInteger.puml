@@ -1,6 +1,6 @@
 @startuml Program.AddBigInteger
 header
-generated on 08.03.2024 08:27:27
+generated on 3/9/2024 8:21:55 PM
 end header
 title Program.AddBigInteger
 start
@@ -21,6 +21,7 @@ while (i >= 0) is (<color:green>yes)
     endif
 :i--;
 endwhile (<color:red>no)
+#Lavender:return result;
 footer
 generated with the DiagramCreator by Prof.Gehrer
 end footer

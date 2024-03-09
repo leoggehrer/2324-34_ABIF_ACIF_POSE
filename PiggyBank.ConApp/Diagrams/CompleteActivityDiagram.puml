@@ -1,0 +1,37 @@
+@startuml CompleteActivityDiagram
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:string input
+double sum
+int fiftyCentCount, oneEuroCount, twoEuroCount;
+:PrintLine("***************************************************");
+:PrintLine("* Sparschwein - Meine Bank, meine Zukunft         *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Wie viele Fünfzigerl?     ");
+:input = ReadLine();
+:fiftyCentCount = Convert.ToInt32(input);
+:Print("Wie viele Euro Stücke?    ");
+:input = ReadLine();
+:oneEuroCount = Convert.ToInt32(input);
+:Print("Wie viele Zweieurostücke? ");
+:input = ReadLine();
+:twoEuroCount = Convert.ToInt32(input);
+:sum = fiftyCentCount * 0.5 + oneEuroCount * 1 + twoEuroCount * 2;
+:PrintLine("===================================================");
+:PrintLine($"Dein Sparschwein enthält {sum:f2} EUR");
+:PrintLine();
+:PrintLine("Press enter to exit: ");
+:ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

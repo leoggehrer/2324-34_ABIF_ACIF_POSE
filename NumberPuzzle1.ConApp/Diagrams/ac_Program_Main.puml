@@ -1,0 +1,47 @@
+@startuml Program.Main
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.Main
+start
+#LightBlue:int A_plus_B_x_C = 2024
+int A_x_B_plus_C = 2023
+int a, b, c, equation_1, equation_2
+bool solved = false;
+:PrintLine("Number Puzzel");
+:PrintLine("=============");
+:PrintLine();
+:PrintLine("Solve:");
+:PrintLine("  a + bc = 2024");
+:PrintLine("  ab + c = 2023");
+:PrintLine();
+:a = 0;
+:b = 0;
+:c = 0;
+while (solved == false && a < A_plus_B_x_C) is (<color:green>yes)
+    :a++;
+    :b = 0;
+    while (solved == false && b < A_plus_B_x_C) is (<color:green>yes)
+        :b++;
+        :c = 0;
+        while (solved == false && c < A_plus_B_x_C) is (<color:green>yes)
+            :c++;
+            :equation_1 = a + (b * c);
+            :equation_2 = (a * b) + c;
+            :solved = equation_1 == A_plus_B_x_C && equation_2 == A_x_B_plus_C;
+        endwhile (<color:red>no)
+    endwhile (<color:red>no)
+endwhile (<color:red>no)
+if (solved) then (<color:green>yes)
+    :PrintLine($"The solution: a == {a}, b == {b} and c == {c}");
+  else (<color:red>no)
+      :PrintLine("No solution found!");
+endif
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

@@ -1,0 +1,22 @@
+@startuml Sort.BruteForceSort
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Sort.BruteForceSort
+start
+#LightBlue:int i = 0;
+while (i < array.Length) is (<color:green>yes)
+    #LightBlue:int j = 0;
+    while (j < array.Length - 1) is (<color:green>yes)
+        if (array[j] > array[j + 1]) then (<color:green>yes)
+            :Swap(ref array[j], ref array[j + 1]);
+        endif
+    :j++;
+    endwhile (<color:red>no)
+:i++;
+endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

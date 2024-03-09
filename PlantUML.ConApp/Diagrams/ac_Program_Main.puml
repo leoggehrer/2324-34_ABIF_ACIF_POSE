@@ -1,0 +1,22 @@
+@startuml Program.Main
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.Main
+start
+:PrintLine("PlantUML-Creator");
+#LightBlue:var slnPath = GetCurrentSolutionPath()
+var files = GetSourceCodeFiles(slnPath, ["*.cs"]);
+:iterator = files.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:current = iterator.Current();
+      #LightBlue:var sourcePath = Path.GetDirectoryName(current);
+      #LightBlue:var diagramsPath = Path.Combine(sourcePath!, "Diagrams");
+      #LightBlue:var source = File.ReadAllText(current!);
+      :UMLCreator.CreateActivityDiagram(diagramsPath, source);
+endwhile (<color:red>no)
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

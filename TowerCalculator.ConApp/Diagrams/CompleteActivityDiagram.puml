@@ -1,0 +1,42 @@
+@startuml CompleteActivityDiagram
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:string input
+int number, operand, result;
+:PrintLine("Pyramid of Numbres");
+:PrintLine("==================");
+:PrintLine();
+:Print("Please enter a number: ");
+:input = ReadLine();
+:number = Convert.ToInt32(input);
+:operand = number;
+:PrintLine();
+#LightBlue:int i = 2;
+while (i < 10) is (<color:green>yes)
+    :result = operand * i;
+    :PrintLine($"{operand} * {i} = {result}");
+    :operand = result;
+:i++;
+endwhile (<color:red>no)
+#LightBlue:int i = 2;
+while (i < 10) is (<color:green>yes)
+    :result = operand / i;
+    :PrintLine($"{operand} / {i} = {result}");
+    :operand = result;
+:i++;
+endwhile (<color:red>no)
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

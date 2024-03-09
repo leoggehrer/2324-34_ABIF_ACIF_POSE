@@ -1,6 +1,6 @@
 @startuml Program.ReadBinaryNumber
 header
-generated on 3/9/2024 6:07:23 PM
+generated on 3/9/2024 8:21:55 PM
 end header
 title Program.ReadBinaryNumber
 start
@@ -14,6 +14,7 @@ repeat
         :PrintLine("Fehler: In einer Binärzahl sind nur 1 und 0 erlaubt!");
     endif
 repeat while (validInput == false) is (<color:green>yes)
+#Lavender:return result;
 footer
 generated with the DiagramCreator by Prof.Gehrer
 end footer

@@ -1,0 +1,16 @@
+title:Program.Main
+fileName:ac_Program_Main.puml
+title:Program.FormatBinary
+fileName:ac_Program_FormatBinary.puml
+title:Program.AddBinaryNumbers
+fileName:ac_Program_AddBinaryNumbers.puml
+title:Program.ShrinkNumber
+fileName:ac_Program_ShrinkNumber.puml
+title:Program.ExpandNumber
+fileName:ac_Program_ExpandNumber.puml
+title:Program.ReadBinaryNumber
+fileName:ac_Program_ReadBinaryNumber.puml
+title:Program.CheckBinaryNumber
+fileName:ac_Program_CheckBinaryNumber.puml
+title:Program.IsBinaryDigit
+fileName:ac_Program_IsBinaryDigit.puml

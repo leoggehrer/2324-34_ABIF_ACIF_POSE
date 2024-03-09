@@ -1,0 +1,66 @@
+@startuml CompleteActivityDiagram
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+:PrintLine("Count Different Digits");
+:PrintLine("======================");
+:PrintLine();
+#LightBlue:int[] digits = ReadDigits()
+string output = string.Join("", digits)
+string uniqueDigits = GetUniqueDigitsString(digits);
+:PrintLine($"Eingegebene Ziffern im Array: {output}");
+:PrintLine($"Eindeutige Ziffern im Array : {uniqueDigits}");
+:PrintLine();
+:PrintLine("Beenden mit Eingabetaste... ");
+:ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.ReadDigits
+#LightBlue:int MAX_NUMBERS = 10
+int[] result = new int[MAX_NUMBERS]
+int count = 1, index = 0
+string input = string.Empty;
+while (count <= MAX_NUMBERS) is (<color:green>yes)
+    :Print($"{count, 2}. Ziffer [0-9] eingeben: ");
+    :input = ReadLine();
+    if (int.TryParse(input, out result[index])) then (<color:green>yes)
+        if (result[index] < 0 || result[index] > 9) then (<color:green>yes)
+            :PrintLine("Fehleingabe, Ziffer muss zwischen 0 und 9 liegen!");
+          else (<color:red>no)
+              :count++;
+              :index++;
+        endif
+      else (<color:red>no)
+          :PrintLine("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!");
+    endif
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.GetUniqueDigitsString
+#LightBlue:string result = string.Empty;
+#LightBlue:int i = 0;
+while (i < digits.Length) is (<color:green>yes)
+    if (result.Contains(digits[i].ToString()) == false) then (<color:green>yes)
+        :result += digits[i].ToString();
+    endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

@@ -35,4 +35,35 @@ Wird eine Fehleingabe gemacht, ist entsprechend zu reagieren:
 
 ## Activity Diagrams
 
-![ful-activity-digram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/Diagrams/CompleteActivityDiagram.puml)
+
+## Program.Main
+
+![Program.Main](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/Diagrams/ac_Program_Main.puml)
+
+## Program.FormatBinary
+
+![Program.FormatBinary](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/Diagrams/ac_Program_FormatBinary.puml)
+
+## Program.AddBinaryNumbers
+
+![Program.AddBinaryNumbers](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/Diagrams/ac_Program_AddBinaryNumbers.puml)
+
+## Program.ShrinkNumber
+
+![Program.ShrinkNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/Diagrams/ac_Program_ShrinkNumber.puml)
+
+## Program.ExpandNumber
+
+![Program.ExpandNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/Diagrams/ac_Program_ExpandNumber.puml)
+
+## Program.ReadBinaryNumber
+
+![Program.ReadBinaryNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/Diagrams/ac_Program_ReadBinaryNumber.puml)
+
+## Program.CheckBinaryNumber
+
+![Program.CheckBinaryNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/Diagrams/ac_Program_CheckBinaryNumber.puml)
+
+## Program.IsBinaryDigit
+
+![Program.IsBinaryDigit](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/Diagrams/ac_Program_IsBinaryDigit.puml)

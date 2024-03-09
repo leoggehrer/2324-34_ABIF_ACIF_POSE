@@ -1,0 +1,25 @@
+@startuml Program.Main
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.Main
+start
+#LightBlue:string input, encrypted, decrypted;
+:PrintLine("***************************************************");
+:PrintLine("* Einfache Verschlüsselung nach ROT13             *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Zu verschlüsselnden Text: ");
+:input = ReadLine();
+:encrypted = Encrypt(input);
+:PrintLine($"Verschlüsselter Text: {encrypted}");
+:decrypted = Decrypt(encrypted);
+:PrintLine($"Entschlüsselter Text: {decrypted}");
+:PrintLine();
+:Print("Press enter to exit...");
+:ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

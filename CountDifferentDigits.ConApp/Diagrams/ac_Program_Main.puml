@@ -1,0 +1,22 @@
+@startuml Program.Main
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.Main
+start
+:PrintLine("Count Different Digits");
+:PrintLine("======================");
+:PrintLine();
+#LightBlue:int[] digits = ReadDigits()
+string output = string.Join("", digits)
+string uniqueDigits = GetUniqueDigitsString(digits);
+:PrintLine($"Eingegebene Ziffern im Array: {output}");
+:PrintLine($"Eindeutige Ziffern im Array : {uniqueDigits}");
+:PrintLine();
+:PrintLine("Beenden mit Eingabetaste... ");
+:ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

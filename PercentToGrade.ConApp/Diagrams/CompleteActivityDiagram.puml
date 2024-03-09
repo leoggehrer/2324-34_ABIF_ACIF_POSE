@@ -1,0 +1,54 @@
+@startuml CompleteActivityDiagram
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:string input
+double percentValue
+int grade;
+:PrintLine("Prozent --> Noten");
+:PrintLine("=================");
+:PrintLine();
+:Print("Eingabe Prozentwert: ");
+:input = ReadLine();
+:percentValue = Convert.ToDouble(input);
+if (percentValue >= 88) then (<color:green>yes)
+    :grade = 1;
+  else (<color:red>no)
+    if (percentValue > 75) then (<color:green>yes)
+        :grade = 2;
+      else (<color:red>no)
+        if (percentValue >= 63) then (<color:green>yes)
+            :grade = 3;
+          else (<color:red>no)
+            if (percentValue >= 50) then (<color:green>yes)
+                :grade = 4;
+              else (<color:red>no)
+                if (percentValue >= 0) then (<color:green>yes)
+                    :grade = 5;
+                  else (<color:red>no)
+                      :grade = -1;
+                endif
+            endif
+        endif
+    endif
+endif
+:PrintLine();
+if (grade == -1) then (<color:green>yes)
+    :PrintLine("Ungültige Eingabe!");
+  else (<color:red>no)
+      :PrintLine($"Note = {grade, 3}");
+endif
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

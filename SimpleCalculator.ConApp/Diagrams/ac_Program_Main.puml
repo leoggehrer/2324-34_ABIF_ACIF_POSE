@@ -1,0 +1,48 @@
+@startuml Program.Main
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.Main
+start
+#LightBlue:string input, output
+string operation
+double leftOpd, rightOpd, result;
+:PrintLine("Einfacher Rechner");
+:PrintLine("=================");
+:Print("Linker Operand [double]: ");
+:input = ReadLine();
+:leftOpd = Convert.ToDouble(input);
+:Print("Operation [+ - * /]: ");
+:operation = ReadLine();
+:Print("Rechter Operand [double]: ");
+:input = ReadLine();
+:rightOpd = Convert.ToDouble(input);
+if (operation == "+") then (<color:green>yes)
+    :result = leftOpd + rightOpd;
+    :output = ($"Ergebnis von {leftOpd} + {rightOpd} = {result}");
+  else (<color:red>no)
+    if (operation == "-") then (<color:green>yes)
+        :result = leftOpd - rightOpd;
+        :output = ($"Ergebnis von {leftOpd} - {rightOpd} = {result}");
+      else (<color:red>no)
+        if (operation == "*") then (<color:green>yes)
+            :result = leftOpd * rightOpd;
+            :output = ($"Ergebnis von {leftOpd} * {rightOpd} = {result}");
+          else (<color:red>no)
+            if (operation == "/") then (<color:green>yes)
+                :result = leftOpd / rightOpd;
+                :output = ($"Ergebnis von {leftOpd} / {rightOpd} = {result}");
+              else (<color:red>no)
+                  :output = "Ungültige Eingabe!";
+            endif
+        endif
+    endif
+endif
+:PrintLine(output);
+:PrintLine("Beenden mit der Eingabetaste");
+:ReadLine();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

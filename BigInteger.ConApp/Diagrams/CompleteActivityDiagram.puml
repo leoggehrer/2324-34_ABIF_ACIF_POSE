@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 08.03.2024 08:27:27
+generated on 3/9/2024 8:21:55 PM
 end header
 title CompleteActivityDiagram
 start
@@ -39,6 +39,7 @@ while (i >= 0) is (<color:green>yes)
     endif
 :i--;
 endwhile (<color:red>no)
+#Lavender:return result;
 footer
 generated with the DiagramCreator by Prof.Gehrer
 end footer
@@ -50,6 +51,7 @@ int length = number.Length + count;
 while (result.Length < length) is (<color:green>yes)
     :result = chr + result;
 endwhile (<color:red>no)
+#Lavender:return result;
 footer
 generated with the DiagramCreator by Prof.Gehrer
 end footer
@@ -66,6 +68,7 @@ repeat
         :PrintLine("Ungültige Eingabe!");
     endif
 repeat while (validInput == false) is (<color:green>yes)
+#Lavender:return result;
 footer
 generated with the DiagramCreator by Prof.Gehrer
 end footer
@@ -77,6 +80,7 @@ int idx = 0;
 while (idx < number.Length && result) is (<color:green>yes)
     :result = char.IsDigit(number[idx++]);
 endwhile (<color:red>no)
+#Lavender:return result;
 footer
 generated with the DiagramCreator by Prof.Gehrer
 end footer

@@ -1,0 +1,18 @@
+@startuml Program.SubString
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.SubString
+start
+#LightBlue:string result = string.Empty;
+#LightBlue:int i = startIndex;
+while (i >= 0 && i < text.Length && i < startIndex + length) is (<color:green>yes)
+    :result += text[i];
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

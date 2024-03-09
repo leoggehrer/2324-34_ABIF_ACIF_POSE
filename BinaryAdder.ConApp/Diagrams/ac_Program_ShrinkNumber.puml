@@ -1,9 +1,10 @@
 @startuml Program.ShrinkNumber
 header
-generated on 3/9/2024 6:07:23 PM
+generated on 3/9/2024 8:21:55 PM
 end header
 title Program.ShrinkNumber
 start
+#Lavender:return number.TrimStart('0');
 footer
 generated with the DiagramCreator by Prof.Gehrer
 end footer

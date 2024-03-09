@@ -1,0 +1,45 @@
+@startuml CompleteActivityDiagram
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightBlue:string input, output = string.Empty;
+:PrintLine("***************************************************");
+:PrintLine("* Vocal Filter with Method                        *");
+:PrintLine("***************************************************");
+:PrintLine();
+:Print("Eingabetext: ");
+:input = ReadLine();
+:output = FilterVocals(input);
+:PrintLine($"Ausgabetext: {output}");
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+start
+note right:  Program.FilterVocals
+#LightBlue:string result = string.Empty;
+#LightBlue:int i = 0;
+while (i < input.Length) is (<color:green>yes)
+    #LightBlue:char chr = char.ToLower(input[i]);
+    if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u') then (<color:green>yes)
+        if (result.Contains(input[i]) == false) then (<color:green>yes)
+            :result += input[i];
+        endif
+    endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

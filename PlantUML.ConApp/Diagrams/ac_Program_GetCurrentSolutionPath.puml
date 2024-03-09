@@ -1,0 +1,18 @@
+@startuml Program.GetCurrentSolutionPath
+header
+generated on 3/9/2024 8:21:55 PM
+end header
+title Program.GetCurrentSolutionPath
+start
+#LightBlue:int endPos = AppContext.BaseDirectory
+                                   .IndexOf($"{nameof(PlantUML)}", StringComparison.CurrentCultureIgnoreCase)
+var result = AppContext.BaseDirectory[..endPos];
+while (result.EndsWith(Path.DirectorySeparatorChar)) is (<color:green>yes)
+    :result = result[0..^1];
+endwhile (<color:red>no)
+#Lavender:return result;
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+stop
+@enduml

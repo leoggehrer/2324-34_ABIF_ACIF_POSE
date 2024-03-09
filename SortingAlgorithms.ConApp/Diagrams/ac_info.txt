@@ -1,0 +1,10 @@
+title:Sort.BruteForceSort
+fileName:ac_Sort_BruteForceSort.puml
+title:Sort.BubbleSort
+fileName:ac_Sort_BubbleSort.puml
+title:Sort.InsertionSort
+fileName:ac_Sort_InsertionSort.puml
+title:Sort.SelectionSort
+fileName:ac_Sort_SelectionSort.puml
+title:Sort.Swap
+fileName:ac_Sort_Swap.puml

@@ -1,0 +1,10 @@
+title:Program.Main
+fileName:ac_Program_Main.puml
+title:Program.WriteStars
+fileName:ac_Program_WriteStars.puml
+title:Program.WriteCharacters
+fileName:ac_Program_WriteCharacters.puml
+title:Program.SumOfDigits
+fileName:ac_Program_SumOfDigits.puml
+title:Program.SubString
+fileName:ac_Program_SubString.puml
