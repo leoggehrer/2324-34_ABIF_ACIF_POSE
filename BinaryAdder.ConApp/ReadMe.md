@@ -32,3 +32,7 @@ Wird eine Fehleingabe gemacht, ist entsprechend zu reagieren:
 |1010           |111             |10001           |
 |10110101       |10101           |11001010        |
 |1010           |0               |1010            |
+
+## Activity Diagrams
+
+![ful-activity-digram](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/Diagrams/CompleteActivityDiagram.puml)
