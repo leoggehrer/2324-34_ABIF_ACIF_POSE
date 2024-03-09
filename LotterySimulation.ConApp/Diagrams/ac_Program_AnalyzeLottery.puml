@@ -1,7 +1,4 @@
 @startuml Program.AnalyzeLottery
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title Program.AnalyzeLottery
 start
 #LightBlue:int[] result = new int[TIP_SIZE + 1];
@@ -12,8 +9,5 @@ while (i < lottoTipps.GetLength(0)) is (<color:green>yes)
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

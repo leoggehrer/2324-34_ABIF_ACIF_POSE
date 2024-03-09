@@ -1,7 +1,4 @@
 @startuml Program.CalculatePosturePoints
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title Program.CalculatePosturePoints
 start
 #LightBlue:double result = 0
@@ -19,8 +16,5 @@ while (i < posturePoints.Length) is (<color:green>yes)
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result - max - min;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

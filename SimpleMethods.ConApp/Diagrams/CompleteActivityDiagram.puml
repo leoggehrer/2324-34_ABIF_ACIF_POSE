@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 8:21:55 PM
+generated on 3/9/2024 7:37:48 PM
 end header
 title CompleteActivityDiagram
 start
@@ -61,9 +61,6 @@ repeat
       :ReadLine();
     endswitch
 repeat while (menueNumber != 0) is (<color:green>yes)
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.WriteStars
@@ -73,9 +70,6 @@ while (i < count) is (<color:green>yes)
 :i++;
 endwhile (<color:red>no)
 :PrintLine();
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.WriteCharacters
@@ -85,9 +79,6 @@ while (i < count) is (<color:green>yes)
 :i++;
 endwhile (<color:red>no)
 :PrintLine();
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.SumOfDigits
@@ -100,9 +91,6 @@ while (i < text.Length) is (<color:green>yes)
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.SubString
@@ -113,9 +101,6 @@ while (i >= 0 && i < text.Length && i < startIndex + length) is (<color:green>ye
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 footer
 generated with the DiagramCreator by Prof.Gehrer

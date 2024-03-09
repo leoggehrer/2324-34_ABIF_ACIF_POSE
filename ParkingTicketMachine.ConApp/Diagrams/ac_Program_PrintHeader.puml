@@ -1,15 +1,9 @@
 @startuml Program.PrintHeader
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title Program.PrintHeader
 start
 :PrintLine($"Parkscheinautomat mit Mindestparkdauer {_minTimeInMinutes} Minuten und Höchstparkdauer {_maxTimeInMinutes} Minuten");
 :PrintLine("Tarif pro Stunde: 1 Euro");
 :PrintLine($"Zulässige Münzen: {string.Join(", ", _coins)} Cent");
 :PrintLine("Parkschein drucken mit d oder D");
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

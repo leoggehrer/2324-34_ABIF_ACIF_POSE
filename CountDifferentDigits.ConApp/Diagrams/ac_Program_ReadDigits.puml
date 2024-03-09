@@ -1,7 +1,4 @@
 @startuml Program.ReadDigits
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title Program.ReadDigits
 start
 #LightBlue:int MAX_NUMBERS = 10
@@ -23,8 +20,5 @@ while (count <= MAX_NUMBERS) is (<color:green>yes)
     endif
 endwhile (<color:red>no)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

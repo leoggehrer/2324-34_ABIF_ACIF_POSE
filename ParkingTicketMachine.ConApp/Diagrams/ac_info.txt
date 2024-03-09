@@ -1,12 +1,24 @@
 title:Program.Main
 fileName:ac_Program_Main.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.PrintHeader
 fileName:ac_Program_PrintHeader.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ReadParkingPayment
 fileName:ac_Program_ReadParkingPayment.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.PrintTicket
 fileName:ac_Program_PrintTicket.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ToMinutes
 fileName:ac_Program_ToMinutes.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ToHoursFormat
 fileName:ac_Program_ToHoursFormat.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer

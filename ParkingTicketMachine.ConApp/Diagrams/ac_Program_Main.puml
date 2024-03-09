@@ -1,7 +1,4 @@
 @startuml Program.Main
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title Program.Main
 start
 #LightBlue:int payment = 0;
@@ -14,8 +11,5 @@ start
 :PrintLine();
 :PrintLine("Programm beenden mit Eingabetaste...");
 :ReadLine();
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

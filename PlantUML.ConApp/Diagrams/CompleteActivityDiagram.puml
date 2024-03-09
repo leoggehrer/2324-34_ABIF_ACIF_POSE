@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 8:21:55 PM
+generated on 3/9/2024 7:37:48 PM
 end header
 title CompleteActivityDiagram
 start
@@ -13,9 +13,6 @@ while (iterator.MoveNext()) is (<color:green>yes)
       :AnalysisStatement(current, diagramData, 0);
 endwhile (<color:red>no)
 #Lavender:return diagramData;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  UMLCreator.CreateActivityDiagram
@@ -27,9 +24,6 @@ while (iterator.MoveNext()) is (<color:green>yes)
       :AnalysisStatement(current, diagramData, 0);
 endwhile (<color:red>no)
 #Lavender:return diagramData;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  UMLCreator.AnalysisStatement
@@ -146,9 +140,6 @@ if (syntaxNode is LocalDeclarationStatementSyntax localDeclarationStatement) the
         endif
     endif
 endif
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 footer
 generated with the DiagramCreator by Prof.Gehrer

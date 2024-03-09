@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 8:21:55 PM
+generated on 3/9/2024 7:37:48 PM
 end header
 title CompleteActivityDiagram
 start
@@ -35,9 +35,6 @@ if (inputText != "") then (<color:green>yes)
     :Print("Weiter mit beliebiger Taste ...");
     :ReadKey();
 endif
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 footer
 generated with the DiagramCreator by Prof.Gehrer

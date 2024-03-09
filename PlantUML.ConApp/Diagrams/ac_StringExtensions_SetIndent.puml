@@ -1,7 +1,4 @@
 @startuml StringExtensions.SetIndent
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title StringExtensions.SetIndent
 start
 if (lines != null) then (<color:green>yes)
@@ -12,8 +9,5 @@ if (lines != null) then (<color:green>yes)
     endwhile (<color:red>no)
 endif
 #Lavender:return lines ?? Array.Empty<string>();
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

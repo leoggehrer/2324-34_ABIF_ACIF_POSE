@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 8:21:55 PM
+generated on 3/9/2024 7:37:48 PM
 end header
 title CompleteActivityDiagram
 start
@@ -17,9 +17,6 @@ note right:  Program.Main
 :PrintLine();
 :PrintLine("Press any key to exit: ");
 :ReadKey();
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.FilterVocals
@@ -35,9 +32,6 @@ while (i < input.Length) is (<color:green>yes)
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 footer
 generated with the DiagramCreator by Prof.Gehrer

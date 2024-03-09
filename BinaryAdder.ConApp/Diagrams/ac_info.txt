@@ -1,16 +1,32 @@
 title:Program.Main
 fileName:ac_Program_Main.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.FormatBinary
 fileName:ac_Program_FormatBinary.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.AddBinaryNumbers
 fileName:ac_Program_AddBinaryNumbers.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ShrinkNumber
 fileName:ac_Program_ShrinkNumber.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ExpandNumber
 fileName:ac_Program_ExpandNumber.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ReadBinaryNumber
 fileName:ac_Program_ReadBinaryNumber.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.CheckBinaryNumber
 fileName:ac_Program_CheckBinaryNumber.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.IsBinaryDigit
 fileName:ac_Program_IsBinaryDigit.puml
+generated_on:3/9/2024 7:37:48 PM
+generated_by:generated with the DiagramCreator by Prof.Gehrer

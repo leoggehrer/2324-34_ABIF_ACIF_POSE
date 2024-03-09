@@ -1,7 +1,4 @@
 @startuml Sort.BubbleSort
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title Sort.BubbleSort
 start
 #LightBlue:bool exchange
@@ -18,8 +15,5 @@ repeat
     endwhile (<color:red>no)
     :length--;
 repeat while (exchange) is (<color:green>yes)
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

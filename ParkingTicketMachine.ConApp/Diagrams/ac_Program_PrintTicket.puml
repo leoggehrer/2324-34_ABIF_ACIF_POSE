@@ -1,7 +1,4 @@
 @startuml Program.PrintTicket
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title Program.PrintTicket
 start
 :PrintLine("Ticket ausgeben:");
@@ -10,8 +7,5 @@ if (paymentInCents > _maxPaymentInCents) then (<color:green>yes)
 endif
 #LightBlue:int minutes = ToMinutes(Math.Min(paymentInCents, _maxPaymentInCents));
 :PrintLine($"Sie dürfen {ToHoursFormat(minutes)} Stunden parken");
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

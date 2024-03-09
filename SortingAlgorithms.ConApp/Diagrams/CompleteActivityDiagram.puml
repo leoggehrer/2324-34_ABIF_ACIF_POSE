@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 8:21:55 PM
+generated on 3/9/2024 7:37:48 PM
 end header
 title CompleteActivityDiagram
 start
@@ -16,9 +16,6 @@ while (i < array.Length) is (<color:green>yes)
     endwhile (<color:red>no)
 :i++;
 endwhile (<color:red>no)
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Sort.BubbleSort
@@ -36,9 +33,6 @@ repeat
     endwhile (<color:red>no)
     :length--;
 repeat while (exchange) is (<color:green>yes)
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Sort.InsertionSort
@@ -53,9 +47,6 @@ while (i < array.Length) is (<color:green>yes)
     :array[j] = current;
 :i++;
 endwhile (<color:red>no)
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Sort.SelectionSort
@@ -74,18 +65,12 @@ while (i < array.Length - 1) is (<color:green>yes)
     endif
 :i++;
 endwhile (<color:red>no)
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Sort.Swap
 #LightBlue:int tmp = v1;
 :v1 = v2;
 :v2 = tmp;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 footer
 generated with the DiagramCreator by Prof.Gehrer

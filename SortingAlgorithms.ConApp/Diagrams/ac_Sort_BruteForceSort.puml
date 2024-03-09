@@ -1,7 +1,4 @@
 @startuml Sort.BruteForceSort
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title Sort.BruteForceSort
 start
 #LightBlue:int i = 0;
@@ -15,8 +12,5 @@ while (i < array.Length) is (<color:green>yes)
     endwhile (<color:red>no)
 :i++;
 endwhile (<color:red>no)
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

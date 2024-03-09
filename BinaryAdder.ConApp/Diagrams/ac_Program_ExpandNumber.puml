@@ -1,15 +1,9 @@
 @startuml Program.ExpandNumber
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title Program.ExpandNumber
 start
 while (number.Length < numberLength) is (<color:green>yes)
     :number = '0' + number;
 endwhile (<color:red>no)
 #Lavender:return number;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

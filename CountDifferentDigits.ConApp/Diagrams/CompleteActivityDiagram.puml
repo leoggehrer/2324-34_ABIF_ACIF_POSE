@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 8:21:55 PM
+generated on 3/9/2024 7:37:48 PM
 end header
 title CompleteActivityDiagram
 start
@@ -16,9 +16,6 @@ string uniqueDigits = GetUniqueDigitsString(digits);
 :PrintLine();
 :PrintLine("Beenden mit Eingabetaste... ");
 :ReadLine();
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.ReadDigits
@@ -41,9 +38,6 @@ while (count <= MAX_NUMBERS) is (<color:green>yes)
     endif
 endwhile (<color:red>no)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.GetUniqueDigitsString
@@ -56,9 +50,6 @@ while (i < digits.Length) is (<color:green>yes)
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 footer
 generated with the DiagramCreator by Prof.Gehrer

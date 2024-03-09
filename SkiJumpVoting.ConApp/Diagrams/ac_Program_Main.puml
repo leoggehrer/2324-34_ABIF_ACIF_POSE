@@ -1,7 +1,4 @@
 @startuml Program.Main
-header
-generated on 3/9/2024 8:21:55 PM
-end header
 title Program.Main
 start
 #LightBlue:double far, points
@@ -17,8 +14,5 @@ double[] posturePoints;
 :PrintLine();
 :PrintLine("Beenden mit Eingabetaste... ");
 :ReadLine();
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 @enduml

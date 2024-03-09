@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 8:21:55 PM
+generated on 3/9/2024 7:37:48 PM
 end header
 title CompleteActivityDiagram
 start
@@ -15,9 +15,6 @@ note right:  Program.Main
 :PrintLine();
 :PrintLine("Beenden mit Eingabetaste... ");
 :ReadLine();
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.FormatBinary
@@ -33,9 +30,6 @@ while (i < number.Length) is (<color:green>yes)
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.AddBinaryNumbers
@@ -82,16 +76,10 @@ while (i >= 0) is (<color:green>yes)
 :i--;
 endwhile (<color:red>no)
 #Lavender:return ShrinkNumber(result);
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.ShrinkNumber
 #Lavender:return number.TrimStart('0');
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.ExpandNumber
@@ -99,9 +87,6 @@ while (number.Length < numberLength) is (<color:green>yes)
     :number = '0' + number;
 endwhile (<color:red>no)
 #Lavender:return number;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.ReadBinaryNumber
@@ -116,9 +101,6 @@ repeat
     endif
 repeat while (validInput == false) is (<color:green>yes)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.CheckBinaryNumber
@@ -128,16 +110,10 @@ while (idx < number.Length && result) is (<color:green>yes)
     :result = IsBinaryDigit(number[idx++]);
 endwhile (<color:red>no)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.IsBinaryDigit
 #Lavender:return chr == '0' || chr == '1';
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 footer
 generated with the DiagramCreator by Prof.Gehrer

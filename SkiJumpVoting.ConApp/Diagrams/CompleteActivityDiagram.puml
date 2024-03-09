@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 8:21:55 PM
+generated on 3/9/2024 7:37:48 PM
 end header
 title CompleteActivityDiagram
 start
@@ -18,17 +18,11 @@ double[] posturePoints;
 :PrintLine();
 :PrintLine("Beenden mit Eingabetaste... ");
 :ReadLine();
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.CalculateJump
 :far = (int)far;
 #Lavender:return far >= 120 ? 60 + (far - 120) * 1.8 : far * 1.8;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.CalculatePosturePoints
@@ -47,9 +41,6 @@ while (i < posturePoints.Length) is (<color:green>yes)
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result - max - min;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.ReadPosturePoints
@@ -69,9 +60,6 @@ while (idx < count) is (<color:green>yes)
     endif
 endwhile (<color:red>no)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 start
 note right:  Program.ReadJumpFar
@@ -88,9 +76,6 @@ repeat
     endif
 repeat while (valid == false) is (<color:green>yes)
 #Lavender:return result;
-footer
-generated with the DiagramCreator by Prof.Gehrer
-end footer
 stop
 footer
 generated with the DiagramCreator by Prof.Gehrer
