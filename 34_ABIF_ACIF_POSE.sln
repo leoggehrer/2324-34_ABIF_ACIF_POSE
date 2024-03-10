@@ -107,6 +107,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithms.ConApp", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotterySimulation.ConApp", "LotterySimulation.ConApp\LotterySimulation.ConApp.csproj", "{59ADF887-805D-4A52-9DC0-1AFEA8C9ACFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddBigInteger.ConApp", "AddBigInteger.ConApp\AddBigInteger.ConApp.csproj", "{4EB03658-925C-4362-B5D7-9D9A7DAC288C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -321,6 +323,10 @@ Global
 		{59ADF887-805D-4A52-9DC0-1AFEA8C9ACFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59ADF887-805D-4A52-9DC0-1AFEA8C9ACFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59ADF887-805D-4A52-9DC0-1AFEA8C9ACFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB03658-925C-4362-B5D7-9D9A7DAC288C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB03658-925C-4362-B5D7-9D9A7DAC288C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB03658-925C-4362-B5D7-9D9A7DAC288C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB03658-925C-4362-B5D7-9D9A7DAC288C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,11 @@
+@startuml Program.AddLeadingCharacters
+title Program.AddLeadingCharacters
+start
+#LightBlue:string result = number
+int length = number.Length + count;
+while (result.Length < length) is (<color:green>yes)
+    :result = chr + result;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml
