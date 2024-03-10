@@ -5,6 +5,17 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "GameOfLife",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/GameOfLife.ConApp/bin/Debug/net8.0/GameOfLife.ConApp.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/GameOfLife.ConApp",
+      "stopAtEntry": false,
+      "console": "externalTerminal"
+    },
+    {
       "name": "NumberPalindrom",
       "type": "coreclr",
       "request": "launch",
@@ -15,7 +26,5 @@
       "stopAtEntry": false,
       "console": "externalTerminal"
     }
-    
-
   ]
 }

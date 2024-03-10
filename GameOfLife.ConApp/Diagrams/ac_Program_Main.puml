@@ -1,0 +1,41 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightBlue:string input
+int[,] field = new int[0, 0]
+int occupancy;
+:Console.Clear();
+:PrintLine("GameOfLife");
+:PrintLine("==========");
+:PrintLine();
+:PrintLine("1...Erstellen eines zufälligen Feldes (79 * 20 Zellen)");
+:PrintLine("2...Erstellen eines Blinkers (Blinker.csv)");
+:PrintLine("3...Erstellen eines Blinkers II (Blinker2.csv)");
+:PrintLine("4...Erstellen eines Bipols (Bipol.csv)");
+:PrintLine();
+:Print("Wählen Sie eine Option: ");
+:input = ReadLine();
+if (input == "1") then (<color:green>yes)
+    repeat
+        :Print($"Wieviele Zellen sollen lebendig sein <Max: {MAX_ROWS * MAX_COLS}> ? ");
+        :input = ReadLine();
+    repeat while (!int.TryParse(input, out occupancy) || occupancy < 0 || occupancy > MAX_ROWS * MAX_COLS) is (<color:green>yes)
+    :field = CreateRandomField(MAX_ROWS, MAX_COLS, occupancy);
+  else (<color:red>no)
+    if (input == "2") then (<color:green>yes)
+        :field = ReadFieldFromCsvFile("Blinker.csv");
+      else (<color:red>no)
+        if (input == "3") then (<color:green>yes)
+            :field = ReadFieldFromCsvFile("Blinker2.csv");
+          else (<color:red>no)
+            if (input == "4") then (<color:green>yes)
+                :field = ReadFieldFromCsvFile("Bipol.csv");
+              else (<color:red>no)
+                  :PrintLine("Ungültige Eingabe!");
+            endif
+        endif
+    endif
+endif
+:Simulate(field, 1000, 250);
+stop
+@enduml

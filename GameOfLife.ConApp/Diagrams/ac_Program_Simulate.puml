@@ -1,0 +1,14 @@
+@startuml Program.Simulate
+title Program.Simulate
+start
+:PrintField(field);
+:Thread.Sleep(delay);
+#LightBlue:int i = 0;
+while (i < iterations && SumCellValues(field) > 0) is (<color:green>yes)
+    :field = CreateNextGeneration(field);
+    :PrintField(field);
+    :Thread.Sleep(delay);
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

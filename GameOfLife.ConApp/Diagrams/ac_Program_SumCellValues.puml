@@ -1,0 +1,16 @@
+@startuml Program.SumCellValues
+title Program.SumCellValues
+start
+#LightBlue:int sum = 0;
+#LightBlue:int r = 0;
+while (r < field.GetLength(0)) is (<color:green>yes)
+    #LightBlue:int c = 0;
+    while (c < field.GetLength(1)) is (<color:green>yes)
+        :sum += field[r, c];
+    :c++;
+    endwhile (<color:red>no)
+:r++;
+endwhile (<color:red>no)
+#Lavender:return sum;
+stop
+@enduml
