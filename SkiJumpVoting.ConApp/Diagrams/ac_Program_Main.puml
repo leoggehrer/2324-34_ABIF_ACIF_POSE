@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:double far, points
 double[] posturePoints;
 :PrintLine("Notenermittlung für Skispringer");

@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:string input
 uint number = 0
 double numPow = 0

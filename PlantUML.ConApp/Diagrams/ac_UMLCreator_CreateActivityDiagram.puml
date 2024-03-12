@@ -1,6 +1,7 @@
 @startuml UMLCreator.CreateActivityDiagram
 title UMLCreator.CreateActivityDiagram
 start
+#Lavender:Params(MethodDeclarationSyntax methodNode);
 #LightBlue:var diagramData = new List<string>()
 var statements = methodNode?.Body?.Statements;
 :iterator = statements!.GetIterator();

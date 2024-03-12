@@ -1,6 +1,7 @@
 @startuml Program.ReadMatrixDimensions
 title Program.ReadMatrixDimensions
 start
+#Lavender:Params(out int rows, out int cols);
 #LightBlue:string input
 bool validInput;
 repeat

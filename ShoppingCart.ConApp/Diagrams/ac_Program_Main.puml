@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:double DELIVERI_COST = 5.90
 string input = string.Empty, giftOption, location
 int idx = 0, numberOfPieces

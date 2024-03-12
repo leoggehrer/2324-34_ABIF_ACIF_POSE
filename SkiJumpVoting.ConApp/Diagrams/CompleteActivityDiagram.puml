@@ -1,10 +1,11 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 7:37:48 PM
+generated on 12.03.2024 22:57:10
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
+#Lavender:Params(string[] args);
 #LightBlue:double far, points
 double[] posturePoints;
 :PrintLine("Notenermittlung für Skispringer");
@@ -21,11 +22,13 @@ double[] posturePoints;
 stop
 start
 note right:  Program.CalculateJump
+#Lavender:Params(double far);
 :far = (int)far;
 #Lavender:return far >= 120 ? 60 + (far - 120) * 1.8 : far * 1.8;
 stop
 start
 note right:  Program.CalculatePosturePoints
+#Lavender:Params(double[] posturePoints);
 #LightBlue:double result = 0
 double max = Double.MinValue
 double min = Double.MaxValue;
@@ -44,6 +47,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.ReadPosturePoints
+#Lavender:Params(int count);
 #LightBlue:int idx = 0
 string input
 double[] result = new double[count];

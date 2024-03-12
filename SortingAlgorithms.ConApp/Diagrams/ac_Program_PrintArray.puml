@@ -1,6 +1,7 @@
 @startuml Program.PrintArray
 title Program.PrintArray
 start
+#Lavender:Params(int[] array);
 #LightBlue:int i = 0;
 while (i < array.Length) is (<color:green>yes)
     if (i > 0) then (<color:green>yes)

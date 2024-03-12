@@ -1,6 +1,7 @@
 @startuml Program.ReadFieldFromCsvFile
 title Program.ReadFieldFromCsvFile
 start
+#Lavender:Params(string filePath);
 #LightBlue:bool isDefined = false
 int[,] result = new int[0, 0];
 if (File.Exists(filePath)) then (<color:green>yes)

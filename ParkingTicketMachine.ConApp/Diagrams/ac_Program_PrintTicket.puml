@@ -1,6 +1,7 @@
 @startuml Program.PrintTicket
 title Program.PrintTicket
 start
+#Lavender:Params(int paymentInCents);
 :PrintLine("Ticket ausgeben:");
 if (paymentInCents > _maxPaymentInCents) then (<color:green>yes)
     :PrintLine($"Danke für Ihre Spende von {paymentInCents - _maxPaymentInCents} Cent");

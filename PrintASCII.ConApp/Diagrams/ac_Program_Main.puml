@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:int FIRST_ASCII = 32
 int LAST_ASCII = 127;
 :PrintLine("***************************************************");

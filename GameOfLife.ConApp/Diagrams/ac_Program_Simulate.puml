@@ -1,6 +1,7 @@
 @startuml Program.Simulate
 title Program.Simulate
 start
+#Lavender:Params(int[,] field, int iterations, int delay);
 :PrintField(field);
 :Thread.Sleep(delay);
 #LightBlue:int i = 0;

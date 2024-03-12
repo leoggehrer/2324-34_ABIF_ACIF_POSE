@@ -1,6 +1,7 @@
 @startuml Program.ReadPosturePoints
 title Program.ReadPosturePoints
 start
+#Lavender:Params(int count);
 #LightBlue:int idx = 0
 string input
 double[] result = new double[count];

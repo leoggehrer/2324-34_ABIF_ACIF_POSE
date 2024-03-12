@@ -1,6 +1,7 @@
 @startuml Program.PrintField
 title Program.PrintField
 start
+#Lavender:Params(int[,] field);
 :Console.Clear();
 :Console.ForegroundColor = ConsoleColor.Yellow;
 #LightBlue:int r = 0;

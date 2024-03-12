@@ -1,6 +1,7 @@
 @startuml Program.GetUniqueDigitsString
 title Program.GetUniqueDigitsString
 start
+#Lavender:Params(int[] digits);
 #LightBlue:string result = string.Empty;
 #LightBlue:int i = 0;
 while (i < digits.Length) is (<color:green>yes)

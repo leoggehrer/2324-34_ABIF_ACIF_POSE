@@ -1,6 +1,7 @@
 @startuml Program.SubString
 title Program.SubString
 start
+#Lavender:Params(string text, int startIndex, int length);
 #LightBlue:string result = string.Empty;
 #LightBlue:int i = startIndex;
 while (i >= 0 && i < text.Length && i < startIndex + length) is (<color:green>yes)

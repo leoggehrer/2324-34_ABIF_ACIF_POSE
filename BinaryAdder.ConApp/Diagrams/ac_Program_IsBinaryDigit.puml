@@ -1,6 +1,7 @@
 @startuml Program.IsBinaryDigit
 title Program.IsBinaryDigit
 start
+#Lavender:Params(char chr);
 #Lavender:return chr == '0' || chr == '1';
 stop
 @enduml

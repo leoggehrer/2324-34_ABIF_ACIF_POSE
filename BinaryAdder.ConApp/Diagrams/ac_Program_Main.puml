@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:string number1, number2, result;
 :PrintLine("Binäraddierer");
 :PrintLine("=============");

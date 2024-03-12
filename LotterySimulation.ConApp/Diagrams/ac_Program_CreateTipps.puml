@@ -1,6 +1,7 @@
 @startuml Program.CreateTipps
 title Program.CreateTipps
 start
+#Lavender:Params(int countTipps);
 #LightBlue:int[,] result = new int[countTipps, TIP_SIZE];
 #LightBlue:int tippNummer = 0;
 while (tippNummer < countTipps) is (<color:green>yes)

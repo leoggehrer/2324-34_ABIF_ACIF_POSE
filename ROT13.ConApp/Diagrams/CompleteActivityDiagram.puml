@@ -1,10 +1,11 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 7:37:48 PM
+generated on 12.03.2024 22:57:06
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
+#Lavender:Params(string[] args);
 #LightBlue:string input, encrypted, decrypted;
 :PrintLine("***************************************************");
 :PrintLine("* Einfache Verschlüsselung nach ROT13             *");
@@ -22,10 +23,12 @@ note right:  Program.Main
 stop
 start
 note right:  Program.Decrypt
+#Lavender:Params(string encrypted);
 #Lavender:return Encrypt(encrypted);
 stop
 start
 note right:  Program.Encrypt
+#Lavender:Params(string input);
 #LightBlue:string result = string.Empty;
 #LightBlue:int i = 0;
 while (i < input.Length) is (<color:green>yes)

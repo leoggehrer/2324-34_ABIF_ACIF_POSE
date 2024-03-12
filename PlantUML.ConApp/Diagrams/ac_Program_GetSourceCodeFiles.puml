@@ -1,6 +1,7 @@
 @startuml Program.GetSourceCodeFiles
 title Program.GetSourceCodeFiles
 start
+#Lavender:Params(string path, string[] searchPatterns);
 #LightBlue:var result = new List<string>()
 var ignoreFolders = new string[] { $"{Path.DirectorySeparatorChar}bin{Path.DirectorySeparatorChar}", $"{Path.DirectorySeparatorChar}obj{Path.DirectorySeparatorChar}" };
 :iterator = searchPatterns.GetIterator();

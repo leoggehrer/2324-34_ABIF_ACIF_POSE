@@ -1,6 +1,7 @@
 @startuml Program.CalculatePosturePoints
 title Program.CalculatePosturePoints
 start
+#Lavender:Params(double[] posturePoints);
 #LightBlue:double result = 0
 double max = Double.MinValue
 double min = Double.MaxValue;

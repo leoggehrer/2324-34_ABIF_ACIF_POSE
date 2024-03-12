@@ -1,10 +1,11 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 7:37:48 PM
+generated on 12.03.2024 22:56:23
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
+#Lavender:Params(string[] args);
 #LightBlue:string number1, number2, result;
 :PrintLine("Binäraddierer");
 :PrintLine("=============");
@@ -18,6 +19,7 @@ note right:  Program.Main
 stop
 start
 note right:  Program.FormatBinary
+#Lavender:Params(string number, int wide);
 #LightBlue:string result = string.Empty
 int expandLength = wide - number.Length % wide + number.Length;
 :number = ExpandNumber(number, expandLength);
@@ -33,6 +35,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.AddBinaryNumbers
+#Lavender:Params(string number1, string number2);
 #LightBlue:bool carry = false
 string result = string.Empty
 int numberLength = Math.Max(number1.Length, number2.Length) + 1;
@@ -79,10 +82,12 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.ShrinkNumber
+#Lavender:Params(string number);
 #Lavender:return number.TrimStart('0');
 stop
 start
 note right:  Program.ExpandNumber
+#Lavender:Params(string number, int numberLength);
 while (number.Length < numberLength) is (<color:green>yes)
     :number = '0' + number;
 endwhile (<color:red>no)
@@ -90,6 +95,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.ReadBinaryNumber
+#Lavender:Params(int number);
 #LightBlue:string result
 bool validInput;
 repeat
@@ -104,6 +110,7 @@ repeat while (validInput == false) is (<color:green>yes)
 stop
 start
 note right:  Program.CheckBinaryNumber
+#Lavender:Params(string number);
 #LightBlue:bool result = true
 int idx = 0;
 while (idx < number.Length && result) is (<color:green>yes)
@@ -113,6 +120,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.IsBinaryDigit
+#Lavender:Params(char chr);
 #Lavender:return chr == '0' || chr == '1';
 stop
 footer

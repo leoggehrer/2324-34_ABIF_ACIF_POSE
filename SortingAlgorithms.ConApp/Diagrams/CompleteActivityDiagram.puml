@@ -1,10 +1,11 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 7:37:48 PM
+generated on 12.03.2024 22:57:10
 end header
 title CompleteActivityDiagram
 start
 note right:  Sort.BruteForceSort
+#Lavender:Params(int[] array);
 #LightBlue:int i = 0;
 while (i < array.Length) is (<color:green>yes)
     #LightBlue:int j = 0;
@@ -19,6 +20,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Sort.BubbleSort
+#Lavender:Params(int[] array);
 #LightBlue:bool exchange
 int length = array.Length;
 repeat
@@ -36,6 +38,7 @@ repeat while (exchange) is (<color:green>yes)
 stop
 start
 note right:  Sort.InsertionSort
+#Lavender:Params(int[] array);
 #LightBlue:int i = 1;
 while (i < array.Length) is (<color:green>yes)
     #LightBlue:int j = i;
@@ -50,6 +53,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Sort.SelectionSort
+#Lavender:Params(int[] array);
 #LightBlue:int i = 0;
 while (i < array.Length - 1) is (<color:green>yes)
     #LightBlue:int minIdx = i;
@@ -68,6 +72,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Sort.Swap
+#Lavender:Params(ref int v1, ref int v2);
 #LightBlue:int tmp = v1;
 :v1 = v2;
 :v2 = tmp;

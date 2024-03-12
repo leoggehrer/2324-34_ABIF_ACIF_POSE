@@ -1,6 +1,7 @@
 @startuml Program.AddBinaryNumbers
 title Program.AddBinaryNumbers
 start
+#Lavender:Params(string number1, string number2);
 #LightBlue:bool carry = false
 string result = string.Empty
 int numberLength = Math.Max(number1.Length, number2.Length) + 1;

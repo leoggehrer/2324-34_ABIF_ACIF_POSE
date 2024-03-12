@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:int TEST_SIZE = 20
 int PERFORMANCE_SIZE = 50_000
 int[] array;

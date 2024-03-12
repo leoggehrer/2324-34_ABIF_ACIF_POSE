@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:string input, operation
 double left, right, result;
 :PrintLine("CalculatorWithSwitch");

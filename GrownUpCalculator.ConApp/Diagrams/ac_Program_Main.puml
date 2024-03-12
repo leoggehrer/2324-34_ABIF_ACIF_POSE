@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:int GROWN_UP_AGE = 18
 string input
 int age, ageDiff;

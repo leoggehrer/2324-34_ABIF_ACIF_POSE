@@ -1,6 +1,7 @@
 @startuml Program.CompareAndPrintMatrix
 title Program.CompareAndPrintMatrix
 start
+#Lavender:Params(int[,] matrix);
 #LightBlue:ConsoleColor originalColor = Console.ForegroundColor;
 #LightBlue:int r = 0;
 while (r < matrix.GetLength(0)) is (<color:green>yes)

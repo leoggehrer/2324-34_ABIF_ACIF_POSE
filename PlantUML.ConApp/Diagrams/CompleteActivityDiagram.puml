@@ -1,10 +1,11 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 7:37:48 PM
+generated on 12.03.2024 22:57:06
 end header
 title CompleteActivityDiagram
 start
 note right:  UMLCreator.CreateActivityDiagram
+#Lavender:Params(MethodDeclarationSyntax methodNode);
 #LightBlue:var diagramData = new List<string>()
 var statements = methodNode?.Body?.Statements;
 :iterator = statements!.GetIterator();
@@ -16,6 +17,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  UMLCreator.CreateActivityDiagram
+#Lavender:Params(MethodDeclarationSyntax methodNode);
 #LightBlue:var diagramData = new List<string>()
 var statements = methodNode?.Body?.Statements;
 :iterator = statements!.GetIterator();
@@ -27,6 +29,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  UMLCreator.AnalysisStatement
+#Lavender:Params(SyntaxNode syntaxNode, List<string> diagramData, int level);
 if (syntaxNode is LocalDeclarationStatementSyntax localDeclarationStatement) then (<color:green>yes)
     :diagramData.Add($":{localDeclarationStatement.Declaration};".SetIndent(level));
   else (<color:red>no)

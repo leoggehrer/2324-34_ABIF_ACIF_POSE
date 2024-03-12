@@ -1,6 +1,7 @@
 @startuml Program.FilterVocals
 title Program.FilterVocals
 start
+#Lavender:Params(string input);
 #LightBlue:string result = string.Empty;
 #LightBlue:int i = 0;
 while (i < input.Length) is (<color:green>yes)

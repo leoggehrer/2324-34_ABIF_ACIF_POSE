@@ -1,6 +1,7 @@
 @startuml Program.SumCellValues
 title Program.SumCellValues
 start
+#Lavender:Params(int[,] field);
 #LightBlue:int sum = 0;
 #LightBlue:int r = 0;
 while (r < field.GetLength(0)) is (<color:green>yes)

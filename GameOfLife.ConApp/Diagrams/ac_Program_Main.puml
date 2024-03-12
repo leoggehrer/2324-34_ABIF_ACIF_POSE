@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:string input
 int[,] field = new int[0, 0]
 int occupancy;

@@ -1,6 +1,7 @@
 @startuml Program.CreateRandomArray
 title Program.CreateRandomArray
 start
+#Lavender:Params(int size, int min, int max);
 #LightBlue:int[] result = new int[size];
 #LightBlue:int i = 0;
 while (i < result.Length) is (<color:green>yes)

@@ -1,6 +1,7 @@
 @startuml Program.WriteStars
 title Program.WriteStars
 start
+#Lavender:Params(int count);
 #LightBlue:int i = 0;
 while (i < count) is (<color:green>yes)
     :Print("*");

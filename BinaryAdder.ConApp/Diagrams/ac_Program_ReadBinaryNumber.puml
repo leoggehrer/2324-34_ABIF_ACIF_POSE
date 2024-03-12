@@ -1,6 +1,7 @@
 @startuml Program.ReadBinaryNumber
 title Program.ReadBinaryNumber
 start
+#Lavender:Params(int number);
 #LightBlue:string result
 bool validInput;
 repeat

@@ -1,6 +1,7 @@
 @startuml Program.CountNumberOfHits
 title Program.CountNumberOfHits
 start
+#Lavender:Params(int index, int[,] tipps, int[] thrownNumbers);
 #LightBlue:int result = 0;
 #LightBlue:int i = 0;
 while (i < tipps.GetLength(1)) is (<color:green>yes)

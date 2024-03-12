@@ -1,6 +1,7 @@
 @startuml Sort.BubbleSort
 title Sort.BubbleSort
 start
+#Lavender:Params(int[] array);
 #LightBlue:bool exchange
 int length = array.Length;
 repeat

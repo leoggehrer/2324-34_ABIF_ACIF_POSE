@@ -1,6 +1,7 @@
 @startuml StringExtensions.SetIndent
 title StringExtensions.SetIndent
 start
+#Lavender:Params(this string[] lines, int count);
 if (lines != null) then (<color:green>yes)
     #LightBlue:int i = 0;
     while (i < lines.Length) is (<color:green>yes)

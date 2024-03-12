@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 12.03.2024 10:47:14
+generated on 12.03.2024 22:57:03
 end header
 title CompleteActivityDiagram
 start
@@ -17,6 +17,7 @@ repeat while (input.ToLower() == "j") is (<color:green>yes)
 stop
 start
 note right:  Program.ReadMatrixDimensions
+#Lavender:Params(out int rows, out int cols);
 #LightBlue:string input
 bool validInput;
 repeat
@@ -38,6 +39,7 @@ repeat while (!validInput) is (<color:green>yes)
 stop
 start
 note right:  Program.CreateMatrix
+#Lavender:Params(int rows, int cols);
 #LightBlue:int[,] result = new int[Math.Max(0, rows), Math.Max(0, cols)];
 #LightBlue:int i = 0;
 while (i < result.GetLength(0)) is (<color:green>yes)
@@ -52,6 +54,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.CompareAndPrintMatrix
+#Lavender:Params(int[,] matrix);
 #LightBlue:ConsoleColor originalColor = Console.ForegroundColor;
 #LightBlue:int r = 0;
 while (r < matrix.GetLength(0)) is (<color:green>yes)
@@ -68,6 +71,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.CompareAndPrintMatrixValues
+#Lavender:Params(int[,] matrix, int row);
 #LightBlue:ConsoleColor originalColor = Console.ForegroundColor
 ConsoleColor valueColor = ConsoleColor.Yellow
 ConsoleColor relationColor = ConsoleColor.Red
@@ -98,6 +102,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.CompareAndPrintMatrixRows
+#Lavender:Params(int[,] matrix, int firstRow, int secondRow);
 #LightBlue:ConsoleColor originalColor = Console.ForegroundColor
 ConsoleColor relationColor = ConsoleColor.Red
 ConsoleColor equalsColor = ConsoleColor.Green;

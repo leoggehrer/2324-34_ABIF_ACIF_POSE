@@ -1,6 +1,7 @@
 @startuml Program.EqualsTo
 title Program.EqualsTo
 start
+#Lavender:Params(int[] arrayOne, int[] arrayTwo);
 #LightBlue:int idx = 0
 bool result = arrayOne.Length == arrayTwo.Length;
 while (result && idx < arrayOne.Length) is (<color:green>yes)

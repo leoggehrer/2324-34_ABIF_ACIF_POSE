@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:string input
 int counterInSec = 0
 double distanceInKm, distanceInM, way = 0

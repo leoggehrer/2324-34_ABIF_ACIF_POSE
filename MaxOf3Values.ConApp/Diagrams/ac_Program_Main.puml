@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:string input
 int nOne, nTwo, nThree, nMax, nMin;
 :PrintLine("MinMax Calculator");

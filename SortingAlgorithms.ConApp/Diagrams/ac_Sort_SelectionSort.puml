@@ -1,6 +1,7 @@
 @startuml Sort.SelectionSort
 title Sort.SelectionSort
 start
+#Lavender:Params(int[] array);
 #LightBlue:int i = 0;
 while (i < array.Length - 1) is (<color:green>yes)
     #LightBlue:int minIdx = i;

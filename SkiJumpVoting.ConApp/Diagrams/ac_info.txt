@@ -1,20 +1,20 @@
 title:Program.Main
 fileName:ac_Program_Main.puml
-generated_on:3/9/2024 7:37:48 PM
+generated_on:12.03.2024 22:57:10
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.CalculateJump
 fileName:ac_Program_CalculateJump.puml
-generated_on:3/9/2024 7:37:48 PM
+generated_on:12.03.2024 22:57:10
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.CalculatePosturePoints
 fileName:ac_Program_CalculatePosturePoints.puml
-generated_on:3/9/2024 7:37:48 PM
+generated_on:12.03.2024 22:57:10
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ReadPosturePoints
 fileName:ac_Program_ReadPosturePoints.puml
-generated_on:3/9/2024 7:37:48 PM
+generated_on:12.03.2024 22:57:10
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ReadJumpFar
 fileName:ac_Program_ReadJumpFar.puml
-generated_on:3/9/2024 7:37:48 PM
+generated_on:12.03.2024 22:57:10
 generated_by:generated with the DiagramCreator by Prof.Gehrer

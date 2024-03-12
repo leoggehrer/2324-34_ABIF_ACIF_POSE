@@ -1,6 +1,7 @@
 @startuml Sort.InsertionSort
 title Sort.InsertionSort
 start
+#Lavender:Params(int[] array);
 #LightBlue:int i = 1;
 while (i < array.Length) is (<color:green>yes)
     #LightBlue:int j = i;

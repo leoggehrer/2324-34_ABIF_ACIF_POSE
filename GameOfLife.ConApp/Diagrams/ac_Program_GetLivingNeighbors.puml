@@ -1,6 +1,7 @@
 @startuml Program.GetLivingNeighbors
 title Program.GetLivingNeighbors
 start
+#Lavender:Params(int[,] field, int row, int col);
 #LightBlue:int result = 0
 int rowCount = field.GetLength(0)
 int colCount = field.GetLength(1);

@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:string input, splitText;
 :PrintLine("***************************************************");
 :PrintLine("* StringSplit - Ein einfacher Textsplit           *");

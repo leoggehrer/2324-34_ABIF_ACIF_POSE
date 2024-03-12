@@ -1,6 +1,7 @@
 @startuml Program.SumOfDigits
 title Program.SumOfDigits
 start
+#Lavender:Params(string text);
 #LightBlue:int result = 0;
 #LightBlue:int i = 0;
 while (i < text.Length) is (<color:green>yes)

@@ -1,6 +1,7 @@
 @startuml Program.AddLeadingCharacters
 title Program.AddLeadingCharacters
 start
+#Lavender:Params(string number, char chr, int count);
 #LightBlue:string result = number
 int length = number.Length + count;
 while (result.Length < length) is (<color:green>yes)

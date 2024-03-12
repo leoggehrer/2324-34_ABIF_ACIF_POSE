@@ -1,6 +1,7 @@
 @startuml Program.CreateMatrix
 title Program.CreateMatrix
 start
+#Lavender:Params(int rows, int cols);
 #LightBlue:int[,] result = new int[Math.Max(0, rows), Math.Max(0, cols)];
 #LightBlue:int i = 0;
 while (i < result.GetLength(0)) is (<color:green>yes)

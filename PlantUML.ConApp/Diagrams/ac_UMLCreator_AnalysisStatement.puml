@@ -1,6 +1,7 @@
 @startuml UMLCreator.AnalysisStatement
 title UMLCreator.AnalysisStatement
 start
+#Lavender:Params(SyntaxNode syntaxNode, List<string> diagramData, int level);
 if (syntaxNode is LocalDeclarationStatementSyntax localDeclarationStatement) then (<color:green>yes)
     :diagramData.Add($":{localDeclarationStatement.Declaration};".SetIndent(level));
   else (<color:red>no)

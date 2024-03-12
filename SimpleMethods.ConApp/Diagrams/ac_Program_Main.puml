@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:char characterDisplayed
 int menueNumber = 0, numChars = 0, numStars = 0, sumOfAllDigits = 0, indexSubString = 0, lengthSubString = 0
 string inputSumOfDigits, searchedSubString, inputString;

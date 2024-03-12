@@ -1,10 +1,11 @@
 @startuml CompleteActivityDiagram
 header
-generated on 10.03.2024 21:52:12
+generated on 12.03.2024 22:57:00
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
+#Lavender:Params(string[] args);
 #LightBlue:string input
 int[,] field = new int[0, 0]
 int occupancy;
@@ -44,6 +45,7 @@ endif
 stop
 start
 note right:  Program.Simulate
+#Lavender:Params(int[,] field, int iterations, int delay);
 :PrintField(field);
 :Thread.Sleep(delay);
 #LightBlue:int i = 0;
@@ -56,6 +58,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.SumCellValues
+#Lavender:Params(int[,] field);
 #LightBlue:int sum = 0;
 #LightBlue:int r = 0;
 while (r < field.GetLength(0)) is (<color:green>yes)
@@ -70,6 +73,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.GetLivingNeighbors
+#Lavender:Params(int[,] field, int row, int col);
 #LightBlue:int result = 0
 int rowCount = field.GetLength(0)
 int colCount = field.GetLength(1);
@@ -92,25 +96,26 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.CreateNextGeneration
-#LightBlue:int[,] nextField = new int[field.GetLength(0), field.GetLength(1)];
+#Lavender:Params(int[,] currentField);
+#LightBlue:int[,] nextField = new int[currentField.GetLength(0), currentField.GetLength(1)];
 #LightBlue:int r = 0;
-while (r < field.GetLength(0)) is (<color:green>yes)
+while (r < currentField.GetLength(0)) is (<color:green>yes)
     #LightBlue:int c = 0;
-    while (c < field.GetLength(1)) is (<color:green>yes)
-        #LightBlue:int neighbors = GetLivingNeighbors(field, r, c);
-        if (field[r, c] == 0 && neighbors == 3) then (<color:green>yes)
+    while (c < currentField.GetLength(1)) is (<color:green>yes)
+        #LightBlue:int neighbors = GetLivingNeighbors(currentField, r, c);
+        if (currentField[r, c] == 0 && neighbors == 3) then (<color:green>yes)
           :nextField[r, c] = 1;
           else (<color:red>no)
-            if (field[r, c] == 1 && neighbors < 2) then (<color:green>yes)
+            if (currentField[r, c] == 1 && neighbors < 2) then (<color:green>yes)
               :nextField[r, c] = 0;
               else (<color:red>no)
-                if (field[r, c] == 1 && (neighbors == 2 || neighbors == 3)) then (<color:green>yes)
+                if (currentField[r, c] == 1 && (neighbors == 2 || neighbors == 3)) then (<color:green>yes)
                   :nextField[r, c] = 1;
                   else (<color:red>no)
-                    if (field[r, c] == 1 && neighbors > 3) then (<color:green>yes)
+                    if (currentField[r, c] == 1 && neighbors > 3) then (<color:green>yes)
                       :nextField[r, c] = 0;
                       else (<color:red>no)
-                        :nextField[r, c] = field[r, c];
+                        :nextField[r, c] = currentField[r, c];
                     endif
                 endif
             endif
@@ -123,6 +128,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.PrintField
+#Lavender:Params(int[,] field);
 :Console.Clear();
 :Console.ForegroundColor = ConsoleColor.Yellow;
 #LightBlue:int r = 0;
@@ -139,6 +145,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.CreateRandomField
+#Lavender:Params(int rows, int cols, int occupancy);
 #LightBlue:int count = 0
 int[,] field = new int[Math.Max(rows, 0), Math.Max(cols, 0)];
 :occupancy = Math.Min(occupancy, rows * cols);
@@ -154,6 +161,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.ReadFieldFromCsvFile
+#Lavender:Params(string filePath);
 #LightBlue:bool isDefined = false
 int[,] result = new int[0, 0];
 if (File.Exists(filePath)) then (<color:green>yes)

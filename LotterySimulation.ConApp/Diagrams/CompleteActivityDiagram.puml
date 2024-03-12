@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 7:37:48 PM
+generated on 12.03.2024 22:57:03
 end header
 title CompleteActivityDiagram
 start
@@ -12,6 +12,7 @@ int[,] lottoTipps = CreateTipps(TIPPS_COUNT)
 Stopwatch stopWatch = new Stopwatch();
 start
 note right:  Program.PrintResult
+#Lavender:Params(int[] results);
 #LightBlue:int resultSum = 0;
 #LightBlue:int i = TIP_SIZE;
 while (i >= 0) is (<color:green>yes)
@@ -24,6 +25,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.EqualsTo
+#Lavender:Params(int[] arrayOne, int[] arrayTwo);
 #LightBlue:int idx = 0
 bool result = arrayOne.Length == arrayTwo.Length;
 while (result && idx < arrayOne.Length) is (<color:green>yes)
@@ -34,6 +36,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.AnalyzeLottery
+#Lavender:Params(int[,] lottoTipps, int[] thrownNumbers);
 #LightBlue:int[] result = new int[TIP_SIZE + 1];
 #LightBlue:int i = 0;
 while (i < lottoTipps.GetLength(0)) is (<color:green>yes)
@@ -45,6 +48,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.CountNumberOfHits
+#Lavender:Params(int index, int[,] tipps, int[] thrownNumbers);
 #LightBlue:int result = 0;
 #LightBlue:int i = 0;
 while (i < tipps.GetLength(1)) is (<color:green>yes)
@@ -61,6 +65,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.CreateTipps
+#Lavender:Params(int countTipps);
 #LightBlue:int[,] result = new int[countTipps, TIP_SIZE];
 #LightBlue:int tippNummer = 0;
 while (tippNummer < countTipps) is (<color:green>yes)

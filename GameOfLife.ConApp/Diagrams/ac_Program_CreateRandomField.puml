@@ -1,6 +1,7 @@
 @startuml Program.CreateRandomField
 title Program.CreateRandomField
 start
+#Lavender:Params(int rows, int cols, int occupancy);
 #LightBlue:int count = 0
 int[,] field = new int[Math.Max(rows, 0), Math.Max(cols, 0)];
 :occupancy = Math.Min(occupancy, rows * cols);

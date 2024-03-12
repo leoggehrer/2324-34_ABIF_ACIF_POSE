@@ -1,6 +1,7 @@
 @startuml Program.AnalyzeLottery
 title Program.AnalyzeLottery
 start
+#Lavender:Params(int[,] lottoTipps, int[] thrownNumbers);
 #LightBlue:int[] result = new int[TIP_SIZE + 1];
 #LightBlue:int i = 0;
 while (i < lottoTipps.GetLength(0)) is (<color:green>yes)

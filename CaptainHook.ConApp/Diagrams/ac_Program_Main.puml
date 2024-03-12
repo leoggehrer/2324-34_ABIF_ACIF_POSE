@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:int PARAMS_PRODUCT = 32118
 int MAX_AGE = 100
 int children

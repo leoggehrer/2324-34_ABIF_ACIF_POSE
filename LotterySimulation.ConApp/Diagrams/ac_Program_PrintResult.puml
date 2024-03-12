@@ -1,6 +1,7 @@
 @startuml Program.PrintResult
 title Program.PrintResult
 start
+#Lavender:Params(int[] results);
 #LightBlue:int resultSum = 0;
 #LightBlue:int i = TIP_SIZE;
 while (i >= 0) is (<color:green>yes)

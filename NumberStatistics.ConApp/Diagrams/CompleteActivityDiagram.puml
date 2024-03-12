@@ -1,10 +1,11 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 7:37:48 PM
+generated on 12.03.2024 22:57:03
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
+#Lavender:Params(string[] args);
 #LightBlue:string input
 int sum = 0, prvMax = Int32.MinValue, max = Int32.MinValue, min = Int32.MaxValue, num = 0, idx = 0
 double average = 0;

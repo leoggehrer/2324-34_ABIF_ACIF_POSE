@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 #LightBlue:int MAX_INCORRECT_ENTRIES = 3
 int DEFINED_PIN = 4711
 double COVER_FRAME = 1000

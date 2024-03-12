@@ -1,6 +1,7 @@
 @startuml Program.CompareAndPrintMatrixValues
 title Program.CompareAndPrintMatrixValues
 start
+#Lavender:Params(int[,] matrix, int row);
 #LightBlue:ConsoleColor originalColor = Console.ForegroundColor
 ConsoleColor valueColor = ConsoleColor.Yellow
 ConsoleColor relationColor = ConsoleColor.Red

@@ -1,6 +1,7 @@
 @startuml Program.AddBigInteger
 title Program.AddBigInteger
 start
+#Lavender:Params(string number1, string number2);
 #LightBlue:string result = string.Empty
 int maxNumber = Math.Max(number1.Length, number2.Length) + 1
 bool carry = false;

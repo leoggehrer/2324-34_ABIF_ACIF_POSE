@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 :PrintLine("Visitenkarte");
 #LightBlue:string username, adress;
 :Print("Write your name:   ");

@@ -1,25 +1,26 @@
 @startuml Program.CreateNextGeneration
 title Program.CreateNextGeneration
 start
-#LightBlue:int[,] nextField = new int[field.GetLength(0), field.GetLength(1)];
+#Lavender:Params(int[,] currentField);
+#LightBlue:int[,] nextField = new int[currentField.GetLength(0), currentField.GetLength(1)];
 #LightBlue:int r = 0;
-while (r < field.GetLength(0)) is (<color:green>yes)
+while (r < currentField.GetLength(0)) is (<color:green>yes)
     #LightBlue:int c = 0;
-    while (c < field.GetLength(1)) is (<color:green>yes)
-        #LightBlue:int neighbors = GetLivingNeighbors(field, r, c);
-        if (field[r, c] == 0 && neighbors == 3) then (<color:green>yes)
+    while (c < currentField.GetLength(1)) is (<color:green>yes)
+        #LightBlue:int neighbors = GetLivingNeighbors(currentField, r, c);
+        if (currentField[r, c] == 0 && neighbors == 3) then (<color:green>yes)
           :nextField[r, c] = 1;
           else (<color:red>no)
-            if (field[r, c] == 1 && neighbors < 2) then (<color:green>yes)
+            if (currentField[r, c] == 1 && neighbors < 2) then (<color:green>yes)
               :nextField[r, c] = 0;
               else (<color:red>no)
-                if (field[r, c] == 1 && (neighbors == 2 || neighbors == 3)) then (<color:green>yes)
+                if (currentField[r, c] == 1 && (neighbors == 2 || neighbors == 3)) then (<color:green>yes)
                   :nextField[r, c] = 1;
                   else (<color:red>no)
-                    if (field[r, c] == 1 && neighbors > 3) then (<color:green>yes)
+                    if (currentField[r, c] == 1 && neighbors > 3) then (<color:green>yes)
                       :nextField[r, c] = 0;
                       else (<color:red>no)
-                        :nextField[r, c] = field[r, c];
+                        :nextField[r, c] = currentField[r, c];
                     endif
                 endif
             endif

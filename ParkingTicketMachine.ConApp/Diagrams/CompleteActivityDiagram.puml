@@ -1,10 +1,11 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 7:37:48 PM
+generated on 12.03.2024 22:57:06
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
+#Lavender:Params(string[] args);
 #LightBlue:int payment = 0;
 :PrintLine("Parkschein Automat");
 :PrintLine("==================");
@@ -51,6 +52,7 @@ repeat while (exit == false && result < _maxPaymentInCents) is (<color:green>yes
 stop
 start
 note right:  Program.PrintTicket
+#Lavender:Params(int paymentInCents);
 :PrintLine("Ticket ausgeben:");
 if (paymentInCents > _maxPaymentInCents) then (<color:green>yes)
     :PrintLine($"Danke für Ihre Spende von {paymentInCents - _maxPaymentInCents} Cent");
@@ -60,10 +62,12 @@ endif
 stop
 start
 note right:  Program.ToMinutes
+#Lavender:Params(int throwInCents);
 #Lavender:return (int)(_costPerMinute * throwInCents);
 stop
 start
 note right:  Program.ToHoursFormat
+#Lavender:Params(int minutes);
 #Lavender:return $"{minutes / 60:D2}:{minutes % 60:D2}";
 stop
 footer

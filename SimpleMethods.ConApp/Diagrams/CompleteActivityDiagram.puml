@@ -1,10 +1,11 @@
 @startuml CompleteActivityDiagram
 header
-generated on 3/9/2024 7:37:48 PM
+generated on 12.03.2024 22:57:10
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
+#Lavender:Params(string[] args);
 #LightBlue:char characterDisplayed
 int menueNumber = 0, numChars = 0, numStars = 0, sumOfAllDigits = 0, indexSubString = 0, lengthSubString = 0
 string inputSumOfDigits, searchedSubString, inputString;
@@ -64,6 +65,7 @@ repeat while (menueNumber != 0) is (<color:green>yes)
 stop
 start
 note right:  Program.WriteStars
+#Lavender:Params(int count);
 #LightBlue:int i = 0;
 while (i < count) is (<color:green>yes)
     :Print("*");
@@ -73,6 +75,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.WriteCharacters
+#Lavender:Params(int count, char character);
 #LightBlue:int i = 0;
 while (i < count) is (<color:green>yes)
     :Print(character);
@@ -82,6 +85,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.SumOfDigits
+#Lavender:Params(string text);
 #LightBlue:int result = 0;
 #LightBlue:int i = 0;
 while (i < text.Length) is (<color:green>yes)
@@ -94,6 +98,7 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.SubString
+#Lavender:Params(string text, int startIndex, int length);
 #LightBlue:string result = string.Empty;
 #LightBlue:int i = startIndex;
 while (i >= 0 && i < text.Length && i < startIndex + length) is (<color:green>yes)

@@ -1,6 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
+#Lavender:Params(string[] args);
 :PrintLine("Word Shuffle");
 :PrintLine("============");
 :Print("Please enter 1st word: ");

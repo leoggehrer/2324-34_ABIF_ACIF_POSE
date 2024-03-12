@@ -1,6 +1,7 @@
 @startuml Program.FormatBinary
 title Program.FormatBinary
 start
+#Lavender:Params(string number, int wide);
 #LightBlue:string result = string.Empty
 int expandLength = wide - number.Length % wide + number.Length;
 :number = ExpandNumber(number, expandLength);

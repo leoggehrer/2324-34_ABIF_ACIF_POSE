@@ -1,6 +1,7 @@
 @startuml Program.ReadBigInteger
 title Program.ReadBigInteger
 start
+#Lavender:Params(string prompt);
 #LightBlue:string result
 bool validInput;
 repeat
