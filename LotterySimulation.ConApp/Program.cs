@@ -14,16 +14,37 @@
 
 using System.Diagnostics;
 
-namespace LotterySimulation
+namespace LotterySimulation.ConApp
 {
+    /// <summary>
+    /// Represents the entry point of the lottery simulation program.
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// The size of the tip in the lottery simulation.
+        /// </summary>
         const int TIP_SIZE = 6;
+        /// <summary>
+        /// The minimum number allowed in the lottery simulation.
+        /// </summary>
         const int MIN_NUMBER = 1;
+        /// <summary>
+        /// The maximum number allowed in the lottery simulation.
+        /// </summary>
         const int MAX_NUMBER = 45;
+        /// <summary>
+        /// The number of lottery tips.
+        /// </summary>
         const int TIPPS_COUNT = 1_000_000;  // 1.000.000 Lottotipps
+        /// <summary>
+        /// Represents a random number generator.
+        /// </summary>
         static Random random = new Random(1);  // 1 damit immer gleiches Ergebnis kommt
 
+        /// <summary>
+        /// The entry point of the program.
+        /// </summary>
         static void Main()
         {
             // 1.000.000 Lottotipps erzeugen

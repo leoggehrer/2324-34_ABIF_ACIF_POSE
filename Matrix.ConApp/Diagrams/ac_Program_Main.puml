@@ -1,0 +1,14 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightBlue:string input
+int rows, cols;
+repeat
+    :ReadMatrixDimensions(out rows, out cols);
+    #LightBlue:int[,] matrix = CreateMatrix(rows, cols);
+    :CompareAndPrintMatrix(matrix);
+    :Print("Weitere Matrix anzeigen (j/n)? ");
+    :input = ReadLine();
+repeat while (input.ToLower() == "j") is (<color:green>yes)
+stop
+@enduml

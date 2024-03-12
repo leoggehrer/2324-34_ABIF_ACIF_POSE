@@ -19,7 +19,13 @@ namespace GameOfLife.ConApp
     /// </summary>
     class Program
     {
+        /// <summary>
+        /// The maximum number of rows in the game grid.
+        /// </summary>
         const int MAX_ROWS = 20;
+        /// <summary>
+        /// The maximum number of columns in the game grid.
+        /// </summary>
         const int MAX_COLS = 79;
 
         /// <summary>
@@ -143,31 +149,31 @@ namespace GameOfLife.ConApp
         /// <summary>
         /// Creates the next generation of the game field based on the current field.
         /// </summary>
-        /// <param name="field">The current game field represented as a 2D array.</param>
+        /// <param name="currentField">The current game field represented as a 2D array.</param>
         /// <returns>The next generation of the game field as a 2D array.</returns>
-        private static int[,] CreateNextGeneration(int[,] field)
+        private static int[,] CreateNextGeneration(int[,] currentField)
         {
-            int[,] nextField = new int[field.GetLength(0), field.GetLength(1)];
+            int[,] nextField = new int[currentField.GetLength(0), currentField.GetLength(1)];
 
-            for (int r = 0; r < field.GetLength(0); r++)
+            for (int r = 0; r < currentField.GetLength(0); r++)
             {
-                for (int c = 0; c < field.GetLength(1); c++)
+                for (int c = 0; c < currentField.GetLength(1); c++)
                 {
-                    int neighbors = GetLivingNeighbors(field, r, c);
+                    int neighbors = GetLivingNeighbors(currentField, r, c);
                     // Eine tote Zelle mit genau drei lebenden Nachbarn wird in der Folgegeneration neu geboren.
-                    if (field[r, c] == 0 && neighbors == 3)
+                    if (currentField[r, c] == 0 && neighbors == 3)
                         nextField[r, c] = 1;
                     // Lebende Zellen mit weniger als zwei lebenden Nachbarn sterben in der Folgegeneration an Einsamkeit.
-                    else if (field[r, c] == 1 && neighbors < 2)
+                    else if (currentField[r, c] == 1 && neighbors < 2)
                         nextField[r, c] = 0;
                     // Eine lebende Zelle mit zwei oder drei lebenden Nachbarn bleibt in der Folgegeneration am Leben.
-                    else if (field[r, c] == 1 && (neighbors == 2 || neighbors == 3))
+                    else if (currentField[r, c] == 1 && (neighbors == 2 || neighbors == 3))
                         nextField[r, c] = 1;
                     // Lebende Zellen mit mehr als drei lebenden Nachbarn sterben in der Folgegeneration an Überbevölkerung.
-                    else if (field[r, c] == 1 && neighbors > 3)
+                    else if (currentField[r, c] == 1 && neighbors > 3)
                         nextField[r, c] = 0;
                     else
-                        nextField[r, c] = field[r, c];
+                        nextField[r, c] = currentField[r, c];
                 }
             }
             return nextField;

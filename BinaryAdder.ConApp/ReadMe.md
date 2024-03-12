@@ -1,6 +1,6 @@
 # POSE
 
-## POSE BinaryAdder, 3ABIF/3AKIF
+## BinaryAdder, 3ABIF/3AKIF
 
 Lehrziele
 

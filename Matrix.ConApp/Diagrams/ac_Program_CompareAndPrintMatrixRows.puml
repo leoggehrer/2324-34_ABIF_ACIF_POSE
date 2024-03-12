@@ -1,0 +1,27 @@
+@startuml Program.CompareAndPrintMatrixRows
+title Program.CompareAndPrintMatrixRows
+start
+#LightBlue:ConsoleColor originalColor = Console.ForegroundColor
+ConsoleColor relationColor = ConsoleColor.Red
+ConsoleColor equalsColor = ConsoleColor.Green;
+if (firstRow >= 0 && firstRow < matrix.GetLength(0) && secondRow >= 0 && secondRow < matrix.GetLength(0)) then (<color:green>yes)
+    #LightBlue:int c = 0;
+    while (c < matrix.GetLength(1)) is (<color:green>yes)
+        if (matrix[firstRow, c] > matrix[secondRow, c]) then (<color:green>yes)
+            :Console.ForegroundColor = relationColor;
+            :Print("V   ");
+          else (<color:red>no)
+            if (matrix[firstRow, c] < matrix[secondRow, c]) then (<color:green>yes)
+                :Console.ForegroundColor = relationColor;
+                :Print("A   ");
+              else (<color:red>no)
+                  :Console.ForegroundColor = equalsColor;
+                  :Print("=   ");
+            endif
+        endif
+    :c++;
+    endwhile (<color:red>no)
+endif
+:Console.ForegroundColor = originalColor;
+stop
+@enduml

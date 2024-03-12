@@ -1,6 +1,6 @@
 # POSE
 
-[insert_readme](../../34_ABIF_ACIF_POSE_EXERCISES/BinaryAdder/Readme.md)(1)
+[insert_file](../../34_ABIF_ACIF_POSE_EXERCISES/BinaryAdder/Readme.md)(1)
 
 ## Activity Diagrams
 

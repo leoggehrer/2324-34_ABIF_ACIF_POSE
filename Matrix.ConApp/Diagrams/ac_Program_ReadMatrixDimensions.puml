@@ -1,0 +1,23 @@
+@startuml Program.ReadMatrixDimensions
+title Program.ReadMatrixDimensions
+start
+#LightBlue:string input
+bool validInput;
+repeat
+    :Print("Zeilen:  ");
+    :input = ReadLine();
+    :validInput = int.TryParse(input, out rows);
+    if (!validInput) then (<color:green>yes)
+        :PrintLine("Ungültige Eingabe. Bitte geben Sie eine positive ganze Zahl ein.");
+    endif
+repeat while (!validInput) is (<color:green>yes)
+repeat
+    :Print("Spalten: ");
+    :input = ReadLine();
+    :validInput = int.TryParse(input, out cols);
+    if (!validInput) then (<color:green>yes)
+        :PrintLine("Ungültige Eingabe. Bitte geben Sie eine positive ganze Zahl ein.");
+    endif
+repeat while (!validInput) is (<color:green>yes)
+stop
+@enduml
