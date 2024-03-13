@@ -74,11 +74,11 @@ Testen Sie ihre Methoden im Hauptprogramm. Eine mögliche Bildschirmausgabe kön
 
 ### Program.Main
 
-![Program.Main](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BigInteger.ConApp/Diagrams/ac_Program_Main.puml)
+![Program.Main](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BigInteger.ConApp/diagrams/ac_Program_Main.puml)
 
 ### Program.AddBigInteger
 
-![Program.AddBigInteger](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BigInteger.ConApp/Diagrams/ac_Program_AddBigInteger.puml)
+![Program.AddBigInteger](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BigInteger.ConApp/diagrams/ac_Program_AddBigInteger.puml)
 
 ### Program.AddLeadingCharacters
 

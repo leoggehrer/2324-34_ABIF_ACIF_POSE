@@ -28,26 +28,3 @@ Geben Sie zusätzlich zu den horizontalen Beziehungen auch die  Beziehungen zwis
 
 ## Activity Diagrams
 
-### Program.Main
-
-![Program.Main](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/Matrix.ConApp/Diagrams/ac_Program_Main.puml)
-
-### Program.ReadMatrixDimensions
-
-![Program.ReadMatrixDimensions](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/Matrix.ConApp/Diagrams/ac_Program_ReadMatrixDimensions.puml)
-
-### Program.CreateMatrix
-
-![Program.CreateMatrix](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/Matrix.ConApp/Diagrams/ac_Program_CreateMatrix.puml)
-
-### Program.CompareAndPrintMatrix
-
-![Program.CompareAndPrintMatrix](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/Matrix.ConApp/Diagrams/ac_Program_CompareAndPrintMatrix.puml)
-
-### Program.CompareAndPrintMatrixValues
-
-![Program.CompareAndPrintMatrixValues](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/Matrix.ConApp/Diagrams/ac_Program_CompareAndPrintMatrixValues.puml)
-
-### Program.CompareAndPrintMatrixRows
-
-![Program.CompareAndPrintMatrixRows](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/Matrix.ConApp/Diagrams/ac_Program_CompareAndPrintMatrixRows.puml)

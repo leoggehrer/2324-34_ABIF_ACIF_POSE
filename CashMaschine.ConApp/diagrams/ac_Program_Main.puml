@@ -1,0 +1,71 @@
+@startuml Program.Main
+title Program.Main
+start
+#Lavender:Params(string[] args);
+#LightBlue:int MAX_INCORRECT_ENTRIES = 3
+int DEFINED_PIN = 4711
+double COVER_FRAME = 1000
+string input
+bool userPinCorrect
+int machineBalance = 20000
+int userPin, userBalance = 1000
+int numberOfInvalidPins = 0
+int amount;
+:PrintLine();
+:PrintLine("**********************************");
+:PrintLine("         CASH MASHINE             ");
+:PrintLine("**********************************");
+repeat
+    :PrintLine();
+    :Print("Bitte geben Sie ihren 4 stelligen PIN-Code ein: ");
+    :input = ReadLine();
+    :userPin = Convert.ToInt32(input);
+    if (userPin != DEFINED_PIN) then (<color:green>yes)
+        :userPinCorrect = false;
+        :numberOfInvalidPins++;
+        :PrintLine($"Sie haben {numberOfInvalidPins} mal einen falschen PIN eingegeben.");
+      else (<color:red>no)
+          :userPinCorrect = true;
+          :numberOfInvalidPins = 0;
+    endif
+repeat while (numberOfInvalidPins < MAX_INCORRECT_ENTRIES && userPinCorrect == false) is (<color:green>yes)
+if (numberOfInvalidPins >= MAX_INCORRECT_ENTRIES) then (<color:green>yes)
+    :PrintLine();
+    :PrintLine("Sie haben Ihren PIN zu oft eingegeben!");
+    :PrintLine(" => Ihre Karte wird eingezogen!");
+  else (<color:red>no)
+    if (userPinCorrect) then (<color:green>yes)
+        #LightBlue:double maxAmount = Math.Min(machineBalance, userBalance + COVER_FRAME);
+        :PrintLine($"Ihr Kontostand:                 {userBalance} EUR");
+        :PrintLine($"Ihr Überziehungsrahmen:         {COVER_FRAME} EUR");
+        :PrintLine("-----------------------------------------------------");
+        :PrintLine($"maximaler Betrag                {maxAmount} EUR");
+        :PrintLine();
+        :Print("Geben Sie den Betrag ein, den Sie abheben wollen: ");
+        :input = ReadLine();
+        :amount = Convert.ToInt32(input);
+        if (amount <= 0 || amount > maxAmount) then (<color:green>yes)
+            :PrintLine("Ungültiger Betrag - bitte versuchen Sie es erneut!");
+            :PrintLine();
+            :Print("Geben Sie den Betrag ein, den Sie abheben wollen: ");
+            :input = ReadLine();
+            :amount = Convert.ToInt32(input);
+        endif
+        if (amount > 0 && amount <= maxAmount) then (<color:green>yes)
+            :Print($"Soll der Betrag {amount:f2} EUR abgehoben werden [j/n]?: ");
+            :input = ReadLine();
+            if (input.ToLower() == "j") then (<color:green>yes)
+                :userBalance = userBalance - amount;
+                :PrintLine($"Auszahlung des Betrages {amount:f2} EUR");
+                :PrintLine($"Ihr neuer Kontostand: {userBalance:f2} EUR");
+            endif
+          else (<color:red>no)
+              :PrintLine("Die Abhebung wurde ohne Auszahlung beendet!");
+        endif
+    endif
+endif
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+@enduml

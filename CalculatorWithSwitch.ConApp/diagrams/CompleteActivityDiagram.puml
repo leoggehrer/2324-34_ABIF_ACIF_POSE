@@ -1,0 +1,50 @@
+@startuml CompleteActivityDiagram
+header
+generated on 13.03.2024 08:32:44
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#Lavender:Params(string[] args);
+#LightBlue:string input, operation
+double left, right, result;
+:PrintLine("CalculatorWithSwitch");
+:PrintLine("====================");
+:PrintLine();
+:Print("Eingabe Zahl 1: ");
+:input = ReadLine();
+:left = Convert.ToDouble(input);
+:Print("Eingabe Zahl 2: ");
+:input = ReadLine();
+:right = Convert.ToDouble(input);
+:Print("Eingabe Operation [+, -, *, /]: ");
+:operation = ReadLine();
+switch (operation)
+  case( "+" )
+  :result = left + right;
+  case( "-" )
+  :result = left - right;
+  case( "*" )
+  :result = left * right;
+  case( "/" )
+  :result = left / right;
+  case ( default )
+  :result = 0;
+endswitch
+:PrintLine();
+if (operation == "+" || operation == "-" || operation == "*" || operation == "/") then (<color:green>yes)
+    :PrintLine($"{left,10:f}");
+    :PrintLine($"{operation}{right,9:f}");
+    :PrintLine("----------");
+    :PrintLine($"{result,10:f}");
+  else (<color:red>no)
+      :PrintLine("Ungültige Operation!");
+endif
+:PrintLine();
+:PrintLine("Press any key to exit: ");
+:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

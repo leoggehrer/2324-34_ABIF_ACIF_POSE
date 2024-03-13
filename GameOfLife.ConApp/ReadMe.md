@@ -22,15 +22,47 @@ Jede **Zelle** (Feld) ist entweder **'am Leben'** oder **'tot'**. Der Zustand ei
 
 **Hinweise:**
 
-- Verwende Sie ein zweidimensionales **bool-Array** der Größe 79 \* 20.
+- Verwende Sie ein zweidimensionales **int-Array** der Größe 79 \* 20.
 - Beachten Sie, dass das Spielfeld (Array) endlos ist und auch die Randzellen 8 Nachbarn haben.
 - Jede Arrayposition repräsentiert eine Zelle.
 - Für **lebende** Zellen wird **'1'** eingetragen und für **tote** Zellen **'0'**.
-- Implementieren Sie die folgende Methode:
+- Implementieren Sie für die Simulations die folgenden Methoden:
   
-```csharp
-int[,] CreateNextGeneration(int[,] field) {...}
+```cs
+/// <summary>
+/// Calculates the sum of all cell values in a given field.
+/// </summary>
+/// <param name="field">The 2D array representing the field.</param>
+/// <returns>The sum of all cell values.</returns>
+public static int SumCellValues(int[,] field)
+{
+   throw new NotImplementedException();
+}
+
+/// <summary>
+/// Creates a random field with the specified number of rows, columns, and occupancy.
+/// </summary>
+/// <param name="rows">The number of rows in the field.</param>
+/// <param name="cols">The number of columns in the field.</param>
+/// <param name="occupancy">The desired occupancy of the field (number of cells with value 1).</param>
+/// <returns>A 2D array representing the random field.</returns>
+public static int[,] CreateRandomField(int rows, int cols, int occupancy)
+{
+   throw new NotImplementedException();
+}
+
+/// <summary>
+/// Creates the next generation of the game field based on the current field.
+/// </summary>
+/// <param name="currentField">The current game field represented as a 2D array.</param>
+/// <returns>The next generation of the game field as a 2D array.</returns>
+int[,] CreateNextGeneration(int[,] currentField)
+{
+   throw new NotImplementedException();
+}
 ```
+
+**Hinweis:** Sie sollten natürlich versuchen, wenn sinnvoll die Methoden mittels schrittweiser Verfeinerung zumindest um eine Methode weiter zu zerlegen.
 
 **Programmablauf:**
 
@@ -38,53 +70,24 @@ int[,] CreateNextGeneration(int[,] field) {...}
 2. Nun sollen entsprechend viele
 Zellen zufällig mit Leben gefüllt werden (auf true gesetzt werden). Verwenden Sie dazu die Random-Klasse.
 ![Illustration](Task.002.png)
-1. Als nächstes soll diese anfängliche Verteilung der Leben im zweidimensionalen Array auf die Console gezeichnet werden. Schreiben Sie dazu ein „x“ für jede lebende Zelle auf die Console.
+3. Als nächstes soll diese anfängliche Verteilung der Leben im zweidimensionalen Array auf die Console gezeichnet werden. Schreiben Sie dazu ein „x“ für jede lebende Zelle auf die Console.
 ![Illustration](Task.003.png)
-1. Erst mit einer Benutzereingabe startet die Simulation, in der bis zu einer maximalen Anzahl von Lebenszyklen folgende Schritte durchgeführt werden:
+4. Erst mit einer Benutzereingabe startet die Simulation, in der bis zu einer maximalen Anzahl von Lebenszyklen folgende Schritte durchgeführt werden:
 
    - Zuerst muss ein neues zwei-dimensionales Array erzeugt und mit allen lebenden Zellen gefüllt werden, die sich aus dem Zustand in dem alten Array ergeben. Beachten Sie dabei die obigen Regeln (lebende Zellen können sterben, neue Zellen können geboren werden).
    - Das alte Array wird danach nicht mehr benötigt und wird durch das neue Array ersetzt.
    - Das Array wird wieder auf die Console gezeichnet (Löschen des Bildschirms mit Console.Clear()).
    - Sie können mit der Funktion System.Threading.Thread.Sleep(200) 200 Millisekunden warten, bevor der nächste Lebenszyklus beginnt.
 
-Ein mögliches Simulationsergebnis:
+**Ausgabe:**
 
-![Illustration](Task.004.png)
+Die Methode *Simulate(...)* gibt das Spielfeld für maximal 1000 Iterationen und mit einer Zeitverzögerung von 250 Millisekunden auf die Konsole aus.
 
-**Erweiterung:**
+![Simulationsausgabe](Task.004.png)
+
+#### Erweiterung
 
 Experimentieren Sie in weiterer Folge, dass zu Beginn keine zufällige Startbelegung erfolgt, sondern programmtechnisch spezielle Figuren platziert werden.
 
 ## Activity Diagrams
 
-### Program.Main
-
-![Program.Main](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/GameOfLife.ConApp/Diagrams/ac_Program_Main.puml)
-
-### Program.Simulate
-
-![Program.Simulate](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/GameOfLife.ConApp/Diagrams/ac_Program_Simulate.puml)
-
-### Program.SumCellValues
-
-![Program.SumCellValues](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/GameOfLife.ConApp/Diagrams/ac_Program_SumCellValues.puml)
-
-### Program.GetLivingNeighbors
-
-![Program.GetLivingNeighbors](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/GameOfLife.ConApp/Diagrams/ac_Program_GetLivingNeighbors.puml)
-
-### Program.CreateNextGeneration
-
-![Program.CreateNextGeneration](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/GameOfLife.ConApp/Diagrams/ac_Program_CreateNextGeneration.puml)
-
-### Program.PrintField
-
-![Program.PrintField](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/GameOfLife.ConApp/Diagrams/ac_Program_PrintField.puml)
-
-### Program.CreateRandomField
-
-![Program.CreateRandomField](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/GameOfLife.ConApp/Diagrams/ac_Program_CreateRandomField.puml)
-
-### Program.ReadFieldFromCsvFile
-
-![Program.ReadFieldFromCsvFile](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/GameOfLife.ConApp/Diagrams/ac_Program_ReadFieldFromCsvFile.puml)

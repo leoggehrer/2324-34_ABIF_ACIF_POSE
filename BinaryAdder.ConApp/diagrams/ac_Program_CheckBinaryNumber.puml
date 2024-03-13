@@ -1,0 +1,12 @@
+@startuml Program.CheckBinaryNumber
+title Program.CheckBinaryNumber
+start
+#Lavender:Params(string number);
+#LightBlue:bool result = true
+int idx = 0;
+while (idx < number.Length && result) is (<color:green>yes)
+    :result = IsBinaryDigit(number[idx++]);
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

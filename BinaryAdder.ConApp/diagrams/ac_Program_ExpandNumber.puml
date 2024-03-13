@@ -1,0 +1,10 @@
+@startuml Program.ExpandNumber
+title Program.ExpandNumber
+start
+#Lavender:Params(string number, int numberLength);
+while (number.Length < numberLength) is (<color:green>yes)
+    :number = '0' + number;
+endwhile (<color:red>no)
+#Lavender:return number;
+stop
+@enduml
