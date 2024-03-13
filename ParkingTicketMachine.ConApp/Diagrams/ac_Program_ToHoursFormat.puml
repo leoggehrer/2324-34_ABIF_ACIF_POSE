@@ -1,7 +1,0 @@
-@startuml Program.ToHoursFormat
-title Program.ToHoursFormat
-start
-#Lavender:Params(int minutes);
-#Lavender:return $"{minutes / 60:D2}:{minutes % 60:D2}";
-stop
-@enduml

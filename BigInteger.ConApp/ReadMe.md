@@ -82,12 +82,12 @@ Testen Sie ihre Methoden im Hauptprogramm. Eine mögliche Bildschirmausgabe kön
 
 ### Program.AddLeadingCharacters
 
-![Program.AddLeadingCharacters](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BigInteger.ConApp/Diagrams/ac_Program_AddLeadingCharacters.puml)
+![Program.AddLeadingCharacters](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BigInteger.ConApp/diagrams/ac_Program_AddLeadingCharacters.puml)
 
 ### Program.ReadBigInteger
 
-![Program.ReadBigInteger](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BigInteger.ConApp/Diagrams/ac_Program_ReadBigInteger.puml)
+![Program.ReadBigInteger](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BigInteger.ConApp/diagrams/ac_Program_ReadBigInteger.puml)
 
 ### Program.IsBigNumber
 
-![Program.IsBigNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BigInteger.ConApp/Diagrams/ac_Program_IsBigNumber.puml)
+![Program.IsBigNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BigInteger.ConApp/diagrams/ac_Program_IsBigNumber.puml)

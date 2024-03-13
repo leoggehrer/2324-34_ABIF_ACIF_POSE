@@ -1,7 +1,0 @@
-@startuml Program.ShrinkNumber
-title Program.ShrinkNumber
-start
-#Lavender:Params(string number);
-#Lavender:return number.TrimStart('0');
-stop
-@enduml

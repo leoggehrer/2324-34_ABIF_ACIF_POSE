@@ -1,7 +1,0 @@
-@startuml Program.ToMinutes
-title Program.ToMinutes
-start
-#Lavender:Params(int throwInCents);
-#Lavender:return (int)(_costPerMinute * throwInCents);
-stop
-@enduml

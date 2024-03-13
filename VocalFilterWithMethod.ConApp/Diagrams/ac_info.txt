@@ -1,8 +1,0 @@
-title:Program.Main
-fileName:ac_Program_Main.puml
-generated_on:12.03.2024 22:57:23
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.FilterVocals
-fileName:ac_Program_FilterVocals.puml
-generated_on:12.03.2024 22:57:23
-generated_by:generated with the DiagramCreator by Prof.Gehrer

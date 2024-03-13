@@ -1,7 +1,0 @@
-@startuml Program.Decrypt
-title Program.Decrypt
-start
-#Lavender:Params(string encrypted);
-#Lavender:return Encrypt(encrypted);
-stop
-@enduml
