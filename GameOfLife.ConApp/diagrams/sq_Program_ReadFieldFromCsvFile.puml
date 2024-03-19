@@ -1,0 +1,12 @@
+@startuml Program.ReadFieldFromCsvFile
+title Program.ReadFieldFromCsvFile
+participant "ReadFieldFromCsvFile(string filePath)" as ReadFieldFromCsvFile_p0 #LightYellow
+participant "File.Exists(a0)" as File.Exists_a0 #LightGreen
+participant "File.ReadAllLines(a0)" as File.ReadAllLines_a0 #LightGreen
+participant "lines[r].Split(a0)" as lines[r].Split_a0 #LightGreen
+participant "int.Parse(a0)" as int.Parse_a0 #LightGreen
+autonumber
+ReadFieldFromCsvFile_p0 -> File.Exists_a0 : (filePath)
+ReadFieldFromCsvFile_p0 -> int.Parse_a0 : (values[c])
+int.Parse_a0 --> ReadFieldFromCsvFile_p0 : result[r, c]
+@enduml

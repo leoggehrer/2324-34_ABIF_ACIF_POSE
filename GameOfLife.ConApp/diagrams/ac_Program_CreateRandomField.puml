@@ -1,0 +1,18 @@
+@startuml Program.CreateRandomField
+title Program.CreateRandomField
+start
+#LightGreen:Params(int rows,int cols,int occupancy);
+#LightSkyBlue:int count = 0
+int[,] field = new int[Math.Max(rows, 0), Math.Max(cols, 0)];
+#WhiteSmoke:occupancy = Math.Min(occupancy, rows * cols);
+while (count < occupancy) is (<color:green>yes)
+    #LightSkyBlue:int r = Random.Shared.Next(0, rows);
+    #LightSkyBlue:int c = Random.Shared.Next(0, cols);
+    if (field[r, c] == 0) then (<color:green>yes)
+        #WhiteSmoke:field[r, c] = 1;
+        #WhiteSmoke:count++;
+    endif
+endwhile (<color:red>no)
+#Lavender:return field;
+stop
+@enduml

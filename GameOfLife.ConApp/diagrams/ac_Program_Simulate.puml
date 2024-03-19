@@ -1,0 +1,15 @@
+@startuml Program.Simulate
+title Program.Simulate
+start
+#LightGreen:Params(int[,] field,int iterations,int delay);
+#WhiteSmoke:PrintField(field);
+#WhiteSmoke:Thread.Sleep(delay);
+#LightSkyBlue:int i = 0;
+while (i < iterations && SumCellValues(field) > 0) is (<color:green>yes)
+    #WhiteSmoke:field = CreateNextGeneration(field);
+    #WhiteSmoke:PrintField(field);
+    #WhiteSmoke:Thread.Sleep(delay);
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

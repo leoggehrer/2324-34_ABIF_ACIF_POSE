@@ -1,0 +1,26 @@
+@startuml Program.ReadFieldFromCsvFile
+title Program.ReadFieldFromCsvFile
+start
+#LightGreen:Params(string filePath);
+#LightSkyBlue:bool isDefined = false
+int[,] result = new int[0, 0];
+if (File.Exists(filePath)) then (<color:green>yes)
+    #LightSkyBlue:string[] lines = File.ReadAllLines(filePath);
+    #LightSkyBlue:int r = 0;
+    while (r < lines.Length) is (<color:green>yes)
+        #LightSkyBlue:string[] values = lines[r].Split(';');
+        if (isDefined == false) then (<color:green>yes)
+            #WhiteSmoke:result = new int[lines.Length, values.Length];
+            #WhiteSmoke:isDefined = true;
+        endif
+        #LightSkyBlue:int c = 0;
+        while (c < values.Length) is (<color:green>yes)
+            #WhiteSmoke:result[r, c] = int.Parse(values[c]);
+        :c++;
+        endwhile (<color:red>no)
+    :r++;
+    endwhile (<color:red>no)
+endif
+#Lavender:return result;
+stop
+@enduml

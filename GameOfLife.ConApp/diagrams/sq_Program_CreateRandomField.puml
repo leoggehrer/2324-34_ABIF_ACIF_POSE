@@ -1,0 +1,10 @@
+@startuml Program.CreateRandomField
+title Program.CreateRandomField
+participant "CreateRandomField(int rows,int cols,int occupancy)" as CreateRandomField_p0_p1_p2 #LightYellow
+participant "Math.Max(a0, a1)" as Math.Max_a0_a1 #LightGreen
+participant "Math.Min(a0, a1)" as Math.Min_a0_a1 #LightGreen
+participant "Random.Shared.Next(a0, a1)" as Random.Shared.Next_a0_a1 #LightGreen
+autonumber
+CreateRandomField_p0_p1_p2 -> Math.Min_a0_a1 : (occupancy ,rows * cols)
+Math.Min_a0_a1 --> CreateRandomField_p0_p1_p2 : occupancy
+@enduml

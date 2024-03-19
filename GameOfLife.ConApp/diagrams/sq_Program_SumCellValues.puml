@@ -1,0 +1,8 @@
+@startuml Program.SumCellValues
+title Program.SumCellValues
+participant "SumCellValues(int[,] field)" as SumCellValues_p0 #LightYellow
+participant "field.GetLength(a0)" as field.GetLength_a0 #LightGreen
+autonumber
+SumCellValues_p0 -> field.GetLength_a0 : (0)
+SumCellValues_p0 -> field.GetLength_a0 : (1)
+@enduml

@@ -1,0 +1,14 @@
+@startuml Program.PrintField
+title Program.PrintField
+participant "PrintField(int[,] field)" as PrintField_p0 #LightYellow
+participant "Console.Clear()" as Console.Clear #LightGreen
+participant "field.GetLength(a0)" as field.GetLength_a0 #LightGreen
+participant "Console.Write(a0)" as Console.Write_a0 #LightGreen
+participant "Console.WriteLine()" as Console.WriteLine #LightGreen
+autonumber
+PrintField_p0 -> Console.Clear
+PrintField_p0 -> field.GetLength_a0 : (0)
+PrintField_p0 -> field.GetLength_a0 : (1)
+PrintField_p0 -> Console.Write_a0 : ($" {sign} ")
+PrintField_p0 -> Console.WriteLine
+@enduml

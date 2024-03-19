@@ -1,0 +1,25 @@
+@startuml Program.GetLivingNeighbors
+title Program.GetLivingNeighbors
+start
+#LightGreen:Params(int[,] field,int row,int col);
+#LightSkyBlue:int result = 0
+int rowCount = field.GetLength(0)
+int colCount = field.GetLength(1);
+#LightSkyBlue:int r = row - 1;
+while (r <= row + 1) is (<color:green>yes)
+    #LightSkyBlue:int c = col - 1;
+    while (c <= col + 1) is (<color:green>yes)
+        #LightSkyBlue:int rIdx = r < 0 ? rowCount - 1 : r >= rowCount ? 0 : r;
+        #LightSkyBlue:int cIdx = c < 0 ? colCount - 1 : c >= colCount ? 0 : c;
+        if (rIdx == row && cIdx == col) then (<color:green>yes)
+          #WhiteSmoke:result += 0;
+          else (<color:red>no)
+            #WhiteSmoke:result += field[rIdx, cIdx];
+        endif
+    :c++;
+    endwhile (<color:red>no)
+:r++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

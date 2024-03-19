@@ -1,0 +1,19 @@
+@startuml Program.PrintField
+title Program.PrintField
+start
+#LightGreen:Params(int[,] field);
+#WhiteSmoke:Console.Clear();
+#WhiteSmoke:Console.ForegroundColor = ConsoleColor.Yellow;
+#LightSkyBlue:int r = 0;
+while (r < field.GetLength(0)) is (<color:green>yes)
+    #LightSkyBlue:int c = 0;
+    while (c < field.GetLength(1)) is (<color:green>yes)
+        #LightSkyBlue:char sign = field[r, c] == 0 ? ' ' : '*';
+        #WhiteSmoke:Print($" {sign} ");
+    :c++;
+    endwhile (<color:red>no)
+    #WhiteSmoke:PrintLine();
+:r++;
+endwhile (<color:red>no)
+stop
+@enduml

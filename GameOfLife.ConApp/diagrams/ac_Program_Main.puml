@@ -1,0 +1,42 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input
+int[,] field = new int[0, 0]
+int occupancy;
+#WhiteSmoke:Console.Clear();
+#WhiteSmoke:PrintLine("GameOfLife");
+#WhiteSmoke:PrintLine("==========");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("1...Erstellen eines zufälligen Feldes (79 * 20 Zellen)");
+#WhiteSmoke:PrintLine("2...Erstellen eines Blinkers (Blinker.csv)");
+#WhiteSmoke:PrintLine("3...Erstellen eines Blinkers II (Blinker2.csv)");
+#WhiteSmoke:PrintLine("4...Erstellen eines Bipols (Bipol.csv)");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Wählen Sie eine Option: ");
+#WhiteSmoke:input = ReadLine();
+if (input == "1") then (<color:green>yes)
+    repeat
+        #WhiteSmoke:Print($"Wieviele Zellen sollen lebendig sein <Max: {MAX_ROWS * MAX_COLS}> ? ");
+        #WhiteSmoke:input = ReadLine();
+    repeat while (!int.TryParse(input, out occupancy) || occupancy < 0 || occupancy > MAX_ROWS * MAX_COLS) is (<color:green>yes)
+    #WhiteSmoke:field = CreateRandomField(MAX_ROWS, MAX_COLS, occupancy);
+  else (<color:red>no)
+    if (input == "2") then (<color:green>yes)
+        #WhiteSmoke:field = ReadFieldFromCsvFile("Blinker.csv");
+      else (<color:red>no)
+        if (input == "3") then (<color:green>yes)
+            #WhiteSmoke:field = ReadFieldFromCsvFile("Blinker2.csv");
+          else (<color:red>no)
+            if (input == "4") then (<color:green>yes)
+                #WhiteSmoke:field = ReadFieldFromCsvFile("Bipol.csv");
+              else (<color:red>no)
+                  #WhiteSmoke:PrintLine("Ungültige Eingabe!");
+            endif
+        endif
+    endif
+endif
+#WhiteSmoke:Simulate(field, 1000, 250);
+stop
+@enduml

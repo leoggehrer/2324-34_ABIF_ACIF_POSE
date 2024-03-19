@@ -1,0 +1,32 @@
+title:Program.Main
+fileName:ac_Program_Main.puml
+generated_on:19.03.2024 20:13:13
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.ReadTippsFromFile
+fileName:ac_Program_ReadTippsFromFile.puml
+generated_on:19.03.2024 20:13:13
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.PrintTipps
+fileName:ac_Program_PrintTipps.puml
+generated_on:19.03.2024 20:13:13
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.WriteTippsToFile
+fileName:ac_Program_WriteTippsToFile.puml
+generated_on:19.03.2024 20:13:13
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.GetCorrectTipps
+fileName:ac_Program_GetCorrectTipps.puml
+generated_on:19.03.2024 20:13:13
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.GetIncorrectTipps
+fileName:ac_Program_GetIncorrectTipps.puml
+generated_on:19.03.2024 20:13:13
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.IsTipValid
+fileName:ac_Program_IsTipValid.puml
+generated_on:19.03.2024 20:13:13
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.CountNumberInTip
+fileName:ac_Program_CountNumberInTip.puml
+generated_on:19.03.2024 20:13:13
+generated_by:generated with the DiagramCreator by Prof.Gehrer

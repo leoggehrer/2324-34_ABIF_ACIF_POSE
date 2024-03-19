@@ -1,0 +1,34 @@
+@startuml Program.CreateNextGeneration
+title Program.CreateNextGeneration
+start
+#LightGreen:Params(int[,] currentField);
+#LightSkyBlue:int[,] nextField = new int[currentField.GetLength(0), currentField.GetLength(1)];
+#LightSkyBlue:int r = 0;
+while (r < currentField.GetLength(0)) is (<color:green>yes)
+    #LightSkyBlue:int c = 0;
+    while (c < currentField.GetLength(1)) is (<color:green>yes)
+        #LightSkyBlue:int neighbors = GetLivingNeighbors(currentField, r, c);
+        if (currentField[r, c] == 0 && neighbors == 3) then (<color:green>yes)
+          #WhiteSmoke:nextField[r, c] = 1;
+          else (<color:red>no)
+            if (currentField[r, c] == 1 && neighbors < 2) then (<color:green>yes)
+              #WhiteSmoke:nextField[r, c] = 0;
+              else (<color:red>no)
+                if (currentField[r, c] == 1 && (neighbors == 2 || neighbors == 3)) then (<color:green>yes)
+                  #WhiteSmoke:nextField[r, c] = 1;
+                  else (<color:red>no)
+                    if (currentField[r, c] == 1 && neighbors > 3) then (<color:green>yes)
+                      #WhiteSmoke:nextField[r, c] = 0;
+                      else (<color:red>no)
+                        #WhiteSmoke:nextField[r, c] = currentField[r, c];
+                    endif
+                endif
+            endif
+        endif
+    :c++;
+    endwhile (<color:red>no)
+:r++;
+endwhile (<color:red>no)
+#Lavender:return nextField;
+stop
+@enduml

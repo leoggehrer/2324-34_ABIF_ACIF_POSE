@@ -1,0 +1,32 @@
+title:Program.Main
+fileName:sq_Program_Main.puml
+generated_on:19.03.2024 15:59:50
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.Simulate
+fileName:sq_Program_Simulate.puml
+generated_on:19.03.2024 15:59:50
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.SumCellValues
+fileName:sq_Program_SumCellValues.puml
+generated_on:19.03.2024 15:59:50
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.GetLivingNeighbors
+fileName:sq_Program_GetLivingNeighbors.puml
+generated_on:19.03.2024 15:59:50
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.CreateNextGeneration
+fileName:sq_Program_CreateNextGeneration.puml
+generated_on:19.03.2024 15:59:50
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.PrintField
+fileName:sq_Program_PrintField.puml
+generated_on:19.03.2024 15:59:50
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.CreateRandomField
+fileName:sq_Program_CreateRandomField.puml
+generated_on:19.03.2024 15:59:50
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.ReadFieldFromCsvFile
+fileName:sq_Program_ReadFieldFromCsvFile.puml
+generated_on:19.03.2024 15:59:50
+generated_by:generated with the DiagramCreator by Prof.Gehrer
