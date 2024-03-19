@@ -1,17 +1,17 @@
 @startuml Program.Main
 title Program.Main
 start
-#Lavender:Params(string[] args);
-#LightBlue:string number1, number2, result;
-:PrintLine("Addieren von sehr großen Zahlen (Integer)");
-:PrintLine("=========================================");
-:number1 = ReadBigInteger("Geben Sie die erste Zahl ein: ");
-:number2 = ReadBigInteger("Geben Sie die zweite Zahl ein:");
-:result = AddBigInteger(number1, number2);
-:PrintLine("Summer der beiden Zahlen:");
-:PrintLine($"{result}");
-:PrintLine();
-:PrintLine("Beenden mit Eingabetaste... ");
-:ReadLine();
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string number1, number2, result;
+#WhiteSmoke:PrintLine("Addieren von sehr großen Zahlen (Integer)");
+#WhiteSmoke:PrintLine("=========================================");
+#WhiteSmoke:number1 = ReadBigInteger("Geben Sie die erste Zahl ein: ");
+#WhiteSmoke:number2 = ReadBigInteger("Geben Sie die zweite Zahl ein:");
+#WhiteSmoke:result = AddBigInteger(number1, number2);
+#WhiteSmoke:PrintLine("Summer der beiden Zahlen:");
+#WhiteSmoke:PrintLine($"{result}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Beenden mit Eingabetaste... ");
+#WhiteSmoke:ReadLine();
 stop
 @enduml
