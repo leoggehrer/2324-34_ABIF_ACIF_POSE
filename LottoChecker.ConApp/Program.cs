@@ -4,7 +4,9 @@
 *                 Hermann Mustermann
 *----------------------------------------------------------
 *                 LottoChecker
-*                 
+*                 Reads lottery tips from a csv file and 
+*                 checks if they are valid. Split the tips 
+*                 into two files: valid and invalid tips.
 *----------------------------------------------------------
 */
 
@@ -12,11 +14,17 @@
 
 namespace LottoChecker.ConApp
 {
+    /// <summary>
+    /// Represents the main program class.
+    /// </summary>
     class Program
     {
         static string FileName = "LottoTipps.csv";
         static string CorrectFileName = "ValidLottoTipps.csv";
         static string IncorrectFileName = "InvalidLottoTipps.csv";
+        /// <summary>
+        /// The entry point of the application.
+        /// </summary>
         static void Main()
         {
             Console.WriteLine("LottoChecker");
@@ -40,6 +48,11 @@ namespace LottoChecker.ConApp
         }
 
 
+        /// <summary>
+        /// Reads lottery tips from a file and returns an array of LotteryTip objects.
+        /// </summary>
+        /// <param name="filePath">The path to the file containing the lottery tips.</param>
+        /// <returns>An array of LotteryTip objects.</returns>
         static LotteryTip[] ReadTippsFromFile(string filePath)
         {
             string[] lines = File.ReadAllLines(filePath);
@@ -62,6 +75,10 @@ namespace LottoChecker.ConApp
             }
             return tipps;
         }
+        /// <summary>
+        /// Prints the given array of LotteryTip objects.
+        /// </summary>
+        /// <param name="tipps">The array of LotteryTip objects to be printed.</param>
         static void PrintTipps(LotteryTip[] tipps)
         {
             for (int i = 0; i < tipps.Length; i++)
@@ -69,6 +86,11 @@ namespace LottoChecker.ConApp
                 Console.WriteLine($"{tipps[i].Id}: {tipps[i].Numbers[0],3} {tipps[i].Numbers[1],3} {tipps[i].Numbers[2],3} {tipps[i].Numbers[3],3} {tipps[i].Numbers[4],3} {tipps[i].Numbers[5],3}");
             }
         }
+        /// <summary>
+        /// Writes an array of LotteryTip objects to a file.
+        /// </summary>
+        /// <param name="tipps">The array of LotteryTip objects to write.</param>
+        /// <param name="filePath">The path of the file to write to.</param>
         static void WriteTippsToFile(LotteryTip[] tipps, string filePath)
         {
             string[] lines = new string[tipps.Length];
@@ -79,6 +101,11 @@ namespace LottoChecker.ConApp
             }
             File.WriteAllLines(filePath, lines);
         }
+        /// <summary>
+        /// Filters an array of lottery tips and returns only the valid ones.
+        /// </summary>
+        /// <param name="tipps">The array of lottery tips to filter.</param>
+        /// <returns>An array of valid lottery tips.</returns>
         static LotteryTip[] GetCorrectTipps(LotteryTip[] tipps)
         {
             List<LotteryTip> result = new List<LotteryTip>();
@@ -92,6 +119,11 @@ namespace LottoChecker.ConApp
             }
             return result.ToArray();
         }
+        /// <summary>
+        /// Retrieves an array of incorrect lottery tips from the given array of tips.
+        /// </summary>
+        /// <param name="tipps">The array of lottery tips.</param>
+        /// <returns>An array of incorrect lottery tips.</returns>
         static LotteryTip[] GetIncorrectTipps(LotteryTip[] tipps)
         {
             List<LotteryTip> result = new List<LotteryTip>();
@@ -105,6 +137,11 @@ namespace LottoChecker.ConApp
             }
             return result.ToArray();
         }
+        /// <summary>
+        /// Checks if a given lottery tip is valid.
+        /// </summary>
+        /// <param name="tip">The lottery tip to be checked.</param>
+        /// <returns>True if the tip is valid, otherwise false.</returns>
         static bool IsTipValid(LotteryTip tip)
         {
             bool result = true;
@@ -121,6 +158,12 @@ namespace LottoChecker.ConApp
             return result;
         }
 
+        /// <summary>
+        /// Counts the occurrences of a specific number in a given lottery tip.
+        /// </summary>
+        /// <param name="number">The number to count.</param>
+        /// <param name="tip">The lottery tip.</param>
+        /// <returns>The number of occurrences of the specified number in the lottery tip.</returns>
         private static int CountNumberInTip(int number, LotteryTip tip)
         {
             int result = 0;
