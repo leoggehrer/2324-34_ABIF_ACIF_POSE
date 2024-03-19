@@ -1,11 +1,11 @@
 @startuml Program.IsBigNumber
 title Program.IsBigNumber
 start
-#Lavender:Params(string number);
-#LightBlue:bool result = number.Length > 0
+#LightGreen:Params(string number)
+#LightSkyBlue:bool result = number.Length > 0
 int idx = 0;
 while (idx < number.Length && result) is (<color:green>yes)
-    :result = char.IsDigit(number[idx++]);
+    #WhiteSmoke:result = char.IsDigit(number[idx++]);
 endwhile (<color:red>no)
 #Lavender:return result;
 stop

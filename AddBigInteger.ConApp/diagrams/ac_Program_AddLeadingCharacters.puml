@@ -1,11 +1,11 @@
 @startuml Program.AddLeadingCharacters
 title Program.AddLeadingCharacters
 start
-#Lavender:Params(string number, char chr, int count);
-#LightBlue:string result = number
+#LightGreen:Params(string number,char chr,int count)
+#LightSkyBlue:string result = number
 int length = number.Length + count;
 while (result.Length < length) is (<color:green>yes)
-    :result = chr + result;
+    #WhiteSmoke:result = chr + result;
 endwhile (<color:red>no)
 #Lavender:return result;
 stop
