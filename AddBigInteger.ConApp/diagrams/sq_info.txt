@@ -1,5 +1,6 @@
 title:Program.Main
 fileName:sq_Program_Main.puml
+<<<<<<< HEAD
 generated_on:19/03/2024 08:21:49
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.AddBigInteger
@@ -17,4 +18,23 @@ generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.IsBigNumber
 fileName:sq_Program_IsBigNumber.puml
 generated_on:19/03/2024 08:21:49
+=======
+generated_on:19.03.2024 11:07:00
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.AddBigInteger
+fileName:sq_Program_AddBigInteger.puml
+generated_on:19.03.2024 11:07:00
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.AddLeadingCharacters
+fileName:sq_Program_AddLeadingCharacters.puml
+generated_on:19.03.2024 11:07:00
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.ReadBigInteger
+fileName:sq_Program_ReadBigInteger.puml
+generated_on:19.03.2024 11:07:00
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.IsBigNumber
+fileName:sq_Program_IsBigNumber.puml
+generated_on:19.03.2024 11:07:00
+>>>>>>> c49a88c6559cc263bc6a855e1f0daab06cce608a
 generated_by:generated with the DiagramCreator by Prof.Gehrer

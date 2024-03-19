@@ -1,11 +1,19 @@
 @startuml CompleteActivityDiagram
 header
+<<<<<<< HEAD
 generated on 15/03/2024 19:24:11
+=======
+generated on 19.03.2024 11:06:49
+>>>>>>> c49a88c6559cc263bc6a855e1f0daab06cce608a
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
+<<<<<<< HEAD
 #LightGreen:Params(string[] args);
+=======
+#LightGreen:Params(string[] args)
+>>>>>>> c49a88c6559cc263bc6a855e1f0daab06cce608a
 #LightSkyBlue:string number1, number2, result;
 #WhiteSmoke:PrintLine("Addieren von sehr großen Zahlen (Integer)");
 #WhiteSmoke:PrintLine("=========================================");
@@ -20,7 +28,11 @@ note right:  Program.Main
 stop
 start
 note right:  Program.AddBigInteger
+<<<<<<< HEAD
 #LightGreen:Params(string number1, string number2);
+=======
+#LightGreen:Params(string number1,string number2)
+>>>>>>> c49a88c6559cc263bc6a855e1f0daab06cce608a
 #LightSkyBlue:string result = string.Empty
 int maxNumber = Math.Max(number1.Length, number2.Length) + 1
 bool carry = false;
@@ -42,7 +54,11 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.AddLeadingCharacters
+<<<<<<< HEAD
 #LightGreen:Params(string number, char chr, int count);
+=======
+#LightGreen:Params(string number,char chr,int count)
+>>>>>>> c49a88c6559cc263bc6a855e1f0daab06cce608a
 #LightSkyBlue:string result = number
 int length = number.Length + count;
 while (result.Length < length) is (<color:green>yes)
@@ -52,7 +68,11 @@ endwhile (<color:red>no)
 stop
 start
 note right:  Program.ReadBigInteger
+<<<<<<< HEAD
 #LightGreen:Params(string prompt);
+=======
+#LightGreen:Params(string prompt)
+>>>>>>> c49a88c6559cc263bc6a855e1f0daab06cce608a
 #LightSkyBlue:string result
 bool validInput;
 repeat
@@ -67,7 +87,11 @@ repeat while (validInput == false) is (<color:green>yes)
 stop
 start
 note right:  Program.IsBigNumber
+<<<<<<< HEAD
 #LightGreen:Params(string number);
+=======
+#LightGreen:Params(string number)
+>>>>>>> c49a88c6559cc263bc6a855e1f0daab06cce608a
 #LightSkyBlue:bool result = number.Length > 0
 int idx = 0;
 while (idx < number.Length && result) is (<color:green>yes)

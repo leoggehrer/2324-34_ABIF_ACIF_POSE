@@ -1,7 +1,11 @@
 @startuml Program.ReadBigInteger
 title Program.ReadBigInteger
 start
+<<<<<<< HEAD
 #LightGreen:Params(string prompt);
+=======
+#LightGreen:Params(string prompt)
+>>>>>>> c49a88c6559cc263bc6a855e1f0daab06cce608a
 #LightSkyBlue:string result
 bool validInput;
 repeat
