@@ -1,13 +1,12 @@
 @startuml CompleteActivityDiagram
 header
-generated on 20.03.2024 09:26:39
+generated on 21.03.2024 21:42:26
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
 #WhiteSmoke:PrintLine("LottoChecker");
 #WhiteSmoke:PrintLine("============");
-#WhiteSmoke:PrintLine();
 #WhiteSmoke:PrintLine();
 #LightSkyBlue:LotteryTip[] tipps = ReadTippsFromFile(FileName)
 LotteryTip[] correctTipps = GetCorrectTipps(tipps)

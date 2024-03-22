@@ -1,26 +1,28 @@
 @startuml CompleteClassDiagram
 title CompleteClassDiagram
-class Program #White {
-  {static} string FileName = "LottoTipps.csv"
-  {static} string CorrectFileName = "ValidLottoTipps.csv"
-  {static} string IncorrectFileName = "InvalidLottoTipps.csv"
+class Program #GhostWhite {
+  - {static} string FileName = "LottoTipps.csv"
+  - {static} string CorrectFileName = "ValidLottoTipps.csv"
+  - {static} string IncorrectFileName = "InvalidLottoTipps.csv"
 ---
 ---
-{static} void Main()
-{static} LotteryTip[] ReadTippsFromFile(string filePath)
-{static} void PrintTipps(LotteryTip[] tipps)
-{static} void WriteTippsToFile(LotteryTip[] tipps, string filePath)
-{static} LotteryTip[] GetCorrectTipps(LotteryTip[] tipps)
-{static} LotteryTip[] GetIncorrectTipps(LotteryTip[] tipps)
-{static} bool IsTipValid(LotteryTip tip)
-{static} int CountNumberInTip(int number, LotteryTip tip)
+-{static} void Main()
+-{static} LotteryTip[] ReadTippsFromFile(string filePath)
+-{static} void PrintTipps(LotteryTip[] tipps)
+-{static} void WriteTippsToFile(LotteryTip[] tipps, string filePath)
+-{static} LotteryTip[] GetCorrectTipps(LotteryTip[] tipps)
+-{static} LotteryTip[] GetIncorrectTipps(LotteryTip[] tipps)
+-{static} bool IsTipValid(LotteryTip tip)
+-{static} int CountNumberInTip(int number, LotteryTip tip)
 }
-+class LotteryTip #White {
+class LotteryTip #GhostWhite {
+-string _id
+-int[] _numbers
 ---
-+ string getId()
-+ Void setId(string value)
-+ int[] getNumbers()
-+ Void setNumbers(int[] value)
++string getId()
++Void setId(string value)
++int[] getNumbers()
++Void setNumbers(int[] value)
 ---
 }
 @enduml

@@ -1,11 +1,13 @@
 @startuml LotteryTip
 title LotteryTip
-+class LotteryTip #White {
+class LotteryTip #GhostWhite {
+-string _id
+-int[] _numbers
 ---
-+ string getId()
-+ Void setId(string value)
-+ int[] getNumbers()
-+ Void setNumbers(int[] value)
++string getId()
++Void setId(string value)
++int[] getNumbers()
++Void setNumbers(int[] value)
 ---
 }
 @enduml

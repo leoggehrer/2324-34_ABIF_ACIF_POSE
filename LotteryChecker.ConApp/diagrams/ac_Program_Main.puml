@@ -4,7 +4,6 @@ start
 #WhiteSmoke:PrintLine("LottoChecker");
 #WhiteSmoke:PrintLine("============");
 #WhiteSmoke:PrintLine();
-#WhiteSmoke:PrintLine();
 #LightSkyBlue:LotteryTip[] tipps = ReadTippsFromFile(FileName)
 LotteryTip[] correctTipps = GetCorrectTipps(tipps)
 LotteryTip[] incorrectTipps = GetIncorrectTipps(tipps);

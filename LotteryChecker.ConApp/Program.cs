@@ -30,7 +30,6 @@ namespace LotteryChecker.ConApp
             Console.WriteLine("LottoChecker");
             Console.WriteLine("============");
             Console.WriteLine();
-            Console.WriteLine();
 
             LotteryTip[] tipps = ReadTippsFromFile(FileName);
             LotteryTip[] correctTipps = GetCorrectTipps(tipps);
