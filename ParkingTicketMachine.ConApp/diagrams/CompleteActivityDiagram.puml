@@ -1,0 +1,76 @@
+@startuml CompleteActivityDiagram
+header
+generated on 23.03.2024 08:05:41
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:int payment = 0;
+#WhiteSmoke:PrintLine("Parkschein Automat");
+#WhiteSmoke:PrintLine("==================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintHeader();
+#WhiteSmoke:payment = ReadParkingPayment();
+#WhiteSmoke:PrintTicket(payment);
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Programm beenden mit Eingabetaste...");
+#WhiteSmoke:ReadLine();
+stop
+start
+note right:  Program.PrintHeader
+#WhiteSmoke:PrintLine($"Parkscheinautomat mit Mindestparkdauer {_minTimeInMinutes} Minuten und Höchstparkdauer {_maxTimeInMinutes} Minuten");
+#WhiteSmoke:PrintLine("Tarif pro Stunde: 1 Euro");
+#WhiteSmoke:PrintLine($"Zulässige Münzen: {string.Join(", ", _coins)} Cent");
+#WhiteSmoke:PrintLine("Parkschein drucken mit d oder D");
+stop
+start
+note right:  Program.ReadParkingPayment
+#LightSkyBlue:int result = 0
+bool exit = false
+string input;
+repeat
+    #WhiteSmoke:Print($"Parkzeit bisher: {(result >= _minPaymentInCents ? ToHoursFormat(ToMinutes(result)) : "00:00")}, Einwurf bisher: {result} Cent,  d für Ticket, Einwurf in Cent: ");
+    #WhiteSmoke:input = ReadLine();
+    if (input.ToLower() == "d") then (<color:green>yes)
+        if (result < _minPaymentInCents) then (<color:green>yes)
+            #WhiteSmoke:Print($"Mindesteinwurf {_minPaymentInCents} Cent, bisher haben Sie {result} eingeworfen");
+          else (<color:red>no)
+              #WhiteSmoke:exit = true;
+        endif
+      else (<color:red>no)
+        if (int.TryParse(input, out int coin)) then (<color:green>yes)
+            if (_coins.Contains(coin)) then (<color:green>yes)
+                #WhiteSmoke:result += coin;
+              else (<color:red>no)
+                  #WhiteSmoke:PrintLine($"'{coin}' ist ein ungültiger Wert!");
+            endif
+        endif
+    endif
+repeat while (exit == false && result < _maxPaymentInCents) is (<color:green>yes)
+#Lavender:return result;
+stop
+start
+note right:  Program.PrintTicket
+#LightGreen:Params(int paymentInCents);
+#WhiteSmoke:PrintLine("Ticket ausgeben:");
+if (paymentInCents > _maxPaymentInCents) then (<color:green>yes)
+    #WhiteSmoke:PrintLine($"Danke für Ihre Spende von {paymentInCents - _maxPaymentInCents} Cent");
+endif
+#LightSkyBlue:int minutes = ToMinutes(Math.Min(paymentInCents, _maxPaymentInCents));
+#WhiteSmoke:PrintLine($"Sie dürfen {ToHoursFormat(minutes)} Stunden parken");
+stop
+start
+note right:  Program.ToMinutes
+#LightGreen:Params(int throwInCents);
+#Lavender:return (int)(_costPerMinute * throwInCents);
+stop
+start
+note right:  Program.ToHoursFormat
+#LightGreen:Params(int minutes);
+#Lavender:return $"{minutes / 60:D2}:{minutes % 60:D2}";
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

@@ -1,0 +1,50 @@
+@startuml Program.AnalyzeFile
+title Program.AnalyzeFile
+start
+#LightGreen:Params(string fileName,out int codeChars,out int commentChars);
+#LightSkyBlue:int blockCommentStartIdx = -1, blockCommentEndIdx = -1
+int lineCommentStartIdx = -1, lineCommentEndIdx = -1
+string text = File.ReadAllText(fileName);
+#WhiteSmoke:codeChars = 0;
+#WhiteSmoke:commentChars = 0;
+#LightSkyBlue:int i = 0;
+while (i < text.Length) is (<color:green>yes)
+    if (blockCommentStartIdx == -1 && lineCommentStartIdx == -1) then (<color:green>yes)
+        #WhiteSmoke:blockCommentStartIdx = text.IndexOf("/" + "*", i);
+        if (blockCommentStartIdx > -1) then (<color:green>yes)
+            #WhiteSmoke:blockCommentEndIdx = text.IndexOf("*" + "/", blockCommentStartIdx);
+            if (blockCommentEndIdx > blockCommentStartIdx) then (<color:green>yes)
+                #WhiteSmoke:blockCommentEndIdx += 2;
+              else (<color:red>no)
+                  #WhiteSmoke:blockCommentStartIdx = blockCommentEndIdx = -1;
+            endif
+        endif
+      else (<color:red>no)
+        if (i >= blockCommentEndIdx) then (<color:green>yes)
+            #WhiteSmoke:blockCommentStartIdx = blockCommentEndIdx = -1;
+        endif
+    endif
+    if (blockCommentStartIdx == -1 && lineCommentStartIdx == -1) then (<color:green>yes)
+        #WhiteSmoke:lineCommentStartIdx = text.IndexOf("/" + "/", i);
+        if (lineCommentStartIdx > -1) then (<color:green>yes)
+            #WhiteSmoke:lineCommentEndIdx = text.IndexOf("\n", lineCommentStartIdx);
+            if (lineCommentEndIdx > lineCommentStartIdx) then (<color:green>yes)
+                #WhiteSmoke:lineCommentEndIdx += 2;
+              else (<color:red>no)
+                  #WhiteSmoke:lineCommentStartIdx = lineCommentEndIdx = -1;
+            endif
+        endif
+      else (<color:red>no)
+        if (i >= lineCommentEndIdx) then (<color:green>yes)
+            #WhiteSmoke:lineCommentStartIdx = lineCommentEndIdx = -1;
+        endif
+    endif
+    if ((i >= blockCommentStartIdx && i <= blockCommentEndIdx) || (i >= lineCommentStartIdx && i <= lineCommentEndIdx)) then (<color:green>yes)
+        #WhiteSmoke:commentChars = char.IsLetterOrDigit(text[i]) ? commentChars + 1 : commentChars;
+      else (<color:red>no)
+          #WhiteSmoke:codeChars = char.IsLetterOrDigit(text[i]) ? codeChars + 1 : codeChars;
+    endif
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

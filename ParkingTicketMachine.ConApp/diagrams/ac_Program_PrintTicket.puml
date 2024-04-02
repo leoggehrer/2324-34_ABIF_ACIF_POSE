@@ -1,0 +1,12 @@
+@startuml Program.PrintTicket
+title Program.PrintTicket
+start
+#LightGreen:Params(int paymentInCents);
+#WhiteSmoke:PrintLine("Ticket ausgeben:");
+if (paymentInCents > _maxPaymentInCents) then (<color:green>yes)
+    #WhiteSmoke:PrintLine($"Danke für Ihre Spende von {paymentInCents - _maxPaymentInCents} Cent");
+endif
+#LightSkyBlue:int minutes = ToMinutes(Math.Min(paymentInCents, _maxPaymentInCents));
+#WhiteSmoke:PrintLine($"Sie dürfen {ToHoursFormat(minutes)} Stunden parken");
+stop
+@enduml

@@ -1,0 +1,16 @@
+@startuml Program.PrintFile
+title Program.PrintFile
+start
+#LightGreen:Params(string fileName);
+if (File.Exists(fileName)) then (<color:green>yes)
+    #LightSkyBlue:string[] lines = File.ReadAllLines(fileName);
+    :iterator = lines.GetIterator();
+    while (iterator.MoveNext()) is (<color:green>yes)
+    :line = iterator.Current();
+              #WhiteSmoke:PrintLine(line);
+    endwhile (<color:red>no)
+  else (<color:red>no)
+      #WhiteSmoke:PrintLine($"Die Datei '{fileName}' existiert nicht!");
+endif
+stop
+@enduml

@@ -1,0 +1,17 @@
+@startuml Program.GetFileName
+title Program.GetFileName
+start
+#LightSkyBlue:string result = string.Empty
+string input;
+repeat
+    #WhiteSmoke:Print("Welche Datei soll ich öffnen?: ");
+    #WhiteSmoke:input = ReadLine();
+    if (File.Exists(input)) then (<color:green>yes)
+        #WhiteSmoke:result = input;
+      else (<color:red>no)
+          #WhiteSmoke:PrintLine("Diese Datei existiert nicht!");
+    endif
+repeat while (string.IsNullOrEmpty(result)) is (<color:green>yes)
+#Lavender:return result;
+stop
+@enduml

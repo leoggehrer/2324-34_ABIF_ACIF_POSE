@@ -1,0 +1,17 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("Kommentarquote für C#-Dateien");
+#WhiteSmoke:PrintLine("=============================");
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:string fileName
+int codeChars, commentChars
+double relationShip;
+#WhiteSmoke:fileName = GetFileName();
+#WhiteSmoke:AnalyzeFile(fileName, out codeChars, out commentChars);
+#WhiteSmoke:relationShip = (double)commentChars / (codeChars + commentChars) * 100;
+#WhiteSmoke:PrintLine($"Von {codeChars + commentChars} Zeichen waren {commentChars} Kommentare, das ergibt {relationShip:f} % Kommentarquote.");
+#WhiteSmoke:Thread.Sleep(3000);
+stop
+@enduml

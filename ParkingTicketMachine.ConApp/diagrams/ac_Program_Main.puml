@@ -1,0 +1,16 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:int payment = 0;
+#WhiteSmoke:PrintLine("Parkschein Automat");
+#WhiteSmoke:PrintLine("==================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintHeader();
+#WhiteSmoke:payment = ReadParkingPayment();
+#WhiteSmoke:PrintTicket(payment);
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Programm beenden mit Eingabetaste...");
+#WhiteSmoke:ReadLine();
+stop
+@enduml
