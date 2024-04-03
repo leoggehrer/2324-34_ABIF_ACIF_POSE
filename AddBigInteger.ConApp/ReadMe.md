@@ -108,10 +108,6 @@ Testen Sie ihre Methoden im Hauptprogramm. Eine mögliche Bildschirmausgabe kön
 
 ![Program.AddBigInteger](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_AddBigInteger.puml)
 
-### Program.AddLeadingCharacters
-
-![Program.AddLeadingCharacters](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_AddLeadingCharacters.puml)
-
 ### Program.ReadBigInteger
 
 ![Program.ReadBigInteger](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_ReadBigInteger.puml)
