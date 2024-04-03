@@ -37,10 +37,14 @@ Wird eine Fehleingabe gemacht, ist entsprechend zu reagieren:
 
 ## Class Diagram
 
-```plantuml
+```plantUml
 @startuml
 Bob -> Alice : hello
 @enduml
+```
+
+```plantuml
+Bob -> Alice : hello
 ```
 
 ```plantuml
@@ -60,6 +64,8 @@ title Program
 }
 @enduml
 ```
+
+### Test
 
 ![Program (CD)](diagrams/cd_Program.puml)
 
