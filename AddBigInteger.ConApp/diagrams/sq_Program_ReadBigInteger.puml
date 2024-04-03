@@ -1,9 +1,14 @@
 @startuml Program.ReadBigInteger
 title Program.ReadBigInteger
 participant "ReadBigInteger(string prompt)" as ReadBigInteger_p0 #LightYellow
-participant "Console.Write(a0)" as Console.Write_a0 #LightGreen
-participant "Console.ReadLine()" as Console.ReadLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "IsBigNumber(a0)" as IsBigNumber_a0 #LightGreen
-participant "Console.WriteLine(a0)" as Console.WriteLine_a0 #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
+ReadBigInteger_p0 -> Console_Write_a0 : (prompt)
+ReadBigInteger_p0 -> Console_ReadLine
+ReadBigInteger_p0 -> IsBigNumber_a0 : (result)
+IsBigNumber_a0 --> ReadBigInteger_p0 : result
+ReadBigInteger_p0 -> Console_WriteLine_a0 : ("Ungültige Eingabe!")
 @enduml

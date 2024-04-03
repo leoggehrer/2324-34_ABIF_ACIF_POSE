@@ -70,6 +70,12 @@ Testen Sie ihre Methoden im Hauptprogramm. Eine mögliche Bildschirmausgabe kön
 
 ![Illustration](Task.002.png)
 
+## Class Diagram
+
+### Program
+
+![Program](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/cd_Program.puml)
+
 ## Activity Diagrams
 
 ### Program.Main
@@ -92,7 +98,7 @@ Testen Sie ihre Methoden im Hauptprogramm. Eine mögliche Bildschirmausgabe kön
 
 ![Program.IsBigNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_IsBigNumber.puml)
 
-## Sequnce Diagrams
+## Sequence Diagrams
 
 ### Program.Main
 
