@@ -38,7 +38,13 @@ Wird eine Fehleingabe gemacht, ist entsprechend zu reagieren:
 ## Class Diagram
 
 ```plantuml
-@startuml Program
+@startuml
+Bob -> Alice : hello
+@enduml
+```
+
+```plantuml
+@startuml
 title Program
  class Program #GhostWhite {
 ---
