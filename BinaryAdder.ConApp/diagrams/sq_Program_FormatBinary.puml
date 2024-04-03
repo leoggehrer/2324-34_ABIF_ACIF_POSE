@@ -1,0 +1,8 @@
+@startuml Program.FormatBinary
+title Program.FormatBinary
+participant "FormatBinary(string number,int wide)" as FormatBinary_p0_p1 #LightYellow
+participant "ExpandNumber(a0,a1)" as ExpandNumber_a0_a1 #LightGreen
+autonumber
+FormatBinary_p0_p1 -> ExpandNumber_a0_a1 : (number, expandLength)
+ExpandNumber_a0_a1 --> FormatBinary_p0_p1 : result
+@enduml

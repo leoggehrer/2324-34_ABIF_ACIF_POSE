@@ -1,0 +1,8 @@
+@startuml Program.CheckBinaryNumber
+title Program.CheckBinaryNumber
+participant "CheckBinaryNumber(string number)" as CheckBinaryNumber_p0 #LightYellow
+participant "IsBinaryDigit(a0)" as IsBinaryDigit_a0 #LightGreen
+autonumber
+CheckBinaryNumber_p0 -> IsBinaryDigit_a0 : (number[idx++])
+IsBinaryDigit_a0 --> CheckBinaryNumber_p0 : result
+@enduml

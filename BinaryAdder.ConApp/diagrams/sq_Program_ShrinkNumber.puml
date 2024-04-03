@@ -1,0 +1,8 @@
+@startuml Program.ShrinkNumber
+title Program.ShrinkNumber
+participant "ShrinkNumber(string number)" as ShrinkNumber_p0 #LightYellow
+participant "number.TrimStart(a0)" as number_TrimStart_a0 #LightGreen
+autonumber
+ShrinkNumber_p0 -> number_TrimStart_a0 : ('0')
+number_TrimStart_a0 --> ShrinkNumber_p0 : result
+@enduml

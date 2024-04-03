@@ -1,16 +1,16 @@
 @startuml Program.Main
 title Program.Main
 start
-#Lavender:Params(string[] args);
-#LightBlue:string number1, number2, result;
-:PrintLine("Binäraddierer");
-:PrintLine("=============");
-:number1 = ReadBinaryNumber(1);
-:number2 = ReadBinaryNumber(2);
-:result = AddBinaryNumbers(number1, number2);
-:PrintLine($"{FormatBinary(number1, 8)} + {FormatBinary(number2, 8)} =  {FormatBinary(result, 8)}");
-:PrintLine();
-:PrintLine("Beenden mit Eingabetaste... ");
-:ReadLine();
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string number1, number2, result;
+#WhiteSmoke:PrintLine("Binäraddierer");
+#WhiteSmoke:PrintLine("=============");
+#WhiteSmoke:number1 = ReadBinaryNumber(1);
+#WhiteSmoke:number2 = ReadBinaryNumber(2);
+#WhiteSmoke:result = AddBinaryNumbers(number1, number2);
+#WhiteSmoke:PrintLine($"{FormatBinary(number1, 8)} + {FormatBinary(number2, 8)} =  {FormatBinary(result, 8)}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Beenden mit Eingabetaste... ");
+#WhiteSmoke:ReadLine();
 stop
 @enduml
