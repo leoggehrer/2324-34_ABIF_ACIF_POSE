@@ -37,7 +37,25 @@ Wird eine Fehleingabe gemacht, ist entsprechend zu reagieren:
 
 ## Class Diagram
 
-![Program (CD)](./diagrams/cd_Program.puml)
+```plantuml
+@startuml Program
+title Program
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} string FormatBinary(string number, int wide)
+- {static} string AddBinaryNumbers(string number1, string number2)
+- {static} string ShrinkNumber(string number)
+- {static} string ExpandNumber(string number, int numberLength)
+- {static} string ReadBinaryNumber(int number)
+- {static} bool CheckBinaryNumber(string number)
+- {static} bool IsBinaryDigit(char chr)
+}
+@enduml
+```
+
+![Program (CD)](diagrams/cd_Program.puml)
 
 ### Program (CD)
 
