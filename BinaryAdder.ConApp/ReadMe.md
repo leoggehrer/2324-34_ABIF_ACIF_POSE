@@ -37,6 +37,8 @@ Wird eine Fehleingabe gemacht, ist entsprechend zu reagieren:
 
 ## Class Diagram
 
+![Program (CD)](./diagrams/cd_Program.puml)
+
 ### Program (CD)
 
 ![Program (CD)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/cd_Program.puml)
