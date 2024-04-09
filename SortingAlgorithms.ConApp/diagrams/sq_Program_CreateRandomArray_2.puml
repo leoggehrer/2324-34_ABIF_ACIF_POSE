@@ -3,8 +3,14 @@ title Program.CreateRandomArray
 participant "CreateRandomArray(intsize,intmin,intmax)" as CreateRandomArray_p0_p1_p2 #LightYellow
 participant "Random.Shared.Next(a0,a1)" as Random_Shared_Next_a0_a1 #LightGreen
 autonumber
+<<<<<<< HEAD
 loop#LightCoral i < result.Length
     CreateRandomArray_p0_p1_p2 -[#grey]> Random_Shared_Next_a0_a1 : (min, max)
     Random_Shared_Next_a0_a1 -[#blue]-> CreateRandomArray_p0_p1_p2 : result[i]
+=======
+loop i < result.Length
+    CreateRandomArray_p0_p1_p2 -> Random_Shared_Next_a0_a1 : (min, max)
+    Random_Shared_Next_a0_a1 --> CreateRandomArray_p0_p1_p2 : result[i]
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 end
 @enduml

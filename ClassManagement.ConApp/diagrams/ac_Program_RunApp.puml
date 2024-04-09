@@ -1,0 +1,29 @@
+@startuml Program.RunApp
+title Program.RunApp
+start
+#LightSkyBlue:bool exit = false\nPupil[] pupils = ReadPupilsFromCsvFile(FILE_NAME)\nint choice = PrintAndExecuteMenu();
+repeat
+        switch (choice)
+            case( 1 )
+            #WhiteSmoke:ReadPupil(pupils);
+            case( 2 )
+            #WhiteSmoke:SortPupilsByCatalogNumber(pupils);
+            case( 3 )
+            #WhiteSmoke:SortPupilsByLastName(pupils);
+            case( 4 )
+            #WhiteSmoke:PrintPupils(pupils);
+            case( 5 )
+            #WhiteSmoke:SearchPupilsByLastName(pupils);
+            case( 6 )
+            #WhiteSmoke:SearchPupilsByPostalCode(pupils);
+            case( 7 )
+            #WhiteSmoke:WritePupilsToCsvFile(FILE_NAME, pupils);
+            case( 8 )
+            #WhiteSmoke:exit = true;
+        endswitch
+        if (!exit) then (<color:green>yes)
+                #WhiteSmoke:choice = PrintAndExecuteMenu();
+        endif
+repeat while (exit == false) is (<color:green>yes)
+stop
+@enduml

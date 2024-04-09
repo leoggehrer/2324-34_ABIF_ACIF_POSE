@@ -1,0 +1,13 @@
+@startuml Program.PrintSimulation
+title Program.PrintSimulation
+start
+#LightGreen:Params(Horse[] horses);
+#WhiteSmoke:Console.Clear();
+#WhiteSmoke:PrintLine("Pferderennen - Simulation");
+#LightSkyBlue:int i = 0;
+while (i < horses.Length) is (<color:green>yes)
+        #WhiteSmoke:PrintLine($"Pferd {horses[i].Number, 2}: {new string(' ', horses[i].Position)}*");
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

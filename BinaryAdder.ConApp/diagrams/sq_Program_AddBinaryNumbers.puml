@@ -5,6 +5,7 @@ participant "Math.Max(a0,a1)" as Math_Max_a0_a1 #LightGreen
 participant "ExpandNumber(a0,a1)" as ExpandNumber_a0_a1 #LightGreen
 participant "ShrinkNumber(a0)" as ShrinkNumber_a0 #LightGreen
 autonumber
+<<<<<<< HEAD
 AddBinaryNumbers_p0_p1 -[#grey]> Math_Max_a0_a1 : (number1.Length, number2.Length)
 AddBinaryNumbers_p0_p1 -[#grey]> ExpandNumber_a0_a1 : (number1, numberLength)
 ExpandNumber_a0_a1 -[#blue]-> AddBinaryNumbers_p0_p1 : number1
@@ -12,4 +13,13 @@ AddBinaryNumbers_p0_p1 -[#grey]> ExpandNumber_a0_a1 : (number2, numberLength)
 ExpandNumber_a0_a1 -[#blue]-> AddBinaryNumbers_p0_p1 : number2
 AddBinaryNumbers_p0_p1 -[#grey]> ShrinkNumber_a0 : (result)
 ShrinkNumber_a0 -[#blue]-> AddBinaryNumbers_p0_p1 : result
+=======
+AddBinaryNumbers_p0_p1 -> Math_Max_a0_a1 : (number1.Length, number2.Length)
+AddBinaryNumbers_p0_p1 -> ExpandNumber_a0_a1 : (number1, numberLength)
+ExpandNumber_a0_a1 --> AddBinaryNumbers_p0_p1 : number1
+AddBinaryNumbers_p0_p1 -> ExpandNumber_a0_a1 : (number2, numberLength)
+ExpandNumber_a0_a1 --> AddBinaryNumbers_p0_p1 : number2
+AddBinaryNumbers_p0_p1 -> ShrinkNumber_a0 : (result)
+ShrinkNumber_a0 --> AddBinaryNumbers_p0_p1 : result
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

@@ -1,0 +1,19 @@
+@startuml Program.ReverseLines
+title Program.ReverseLines
+participant "ReverseLines(stringfileName)" as ReverseLines_p0 #LightYellow
+participant "File.Exists(a0)" as File_Exists_a0 #LightGreen
+participant "File.ReadAllLines(a0)" as File_ReadAllLines_a0 #LightGreen
+participant "Array.Reverse(a0)" as Array_Reverse_a0 #LightGreen
+participant "File.WriteAllLines(a0,a1)" as File_WriteAllLines_a0_a1 #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+autonumber
+alt File.Exists(fileName)
+    ReverseLines_p0 -> File_Exists_a0 : (fileName)
+    ReverseLines_p0 -> File_ReadAllLines_a0 : (fileName)
+    File_ReadAllLines_a0 --> ReverseLines_p0 : lines
+    ReverseLines_p0 -> Array_Reverse_a0 : (lines)
+    ReverseLines_p0 -> File_WriteAllLines_a0_a1 : (fileName, lines)
+    else
+        ReverseLines_p0 -> Console_WriteLine_a0 : ($"Die Datei '{fileName}' existiert nicht!")
+end
+@enduml

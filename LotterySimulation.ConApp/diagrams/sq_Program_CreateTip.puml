@@ -3,8 +3,14 @@ title Program.CreateTip
 participant "CreateTip" as CreateTip #LightYellow
 participant "random.Next(a0,a1)" as random_Next_a0_a1 #LightGreen
 autonumber
+<<<<<<< HEAD
 loop#LightCoral found
     CreateTip -[#grey]> random_Next_a0_a1 : (MIN_NUMBER, MAX_NUMBER + 1)
     random_Next_a0_a1 -[#blue]-> CreateTip : number
+=======
+loop found
+    CreateTip -> random_Next_a0_a1 : (MIN_NUMBER, MAX_NUMBER + 1)
+    random_Next_a0_a1 --> CreateTip : number
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 end
 @enduml

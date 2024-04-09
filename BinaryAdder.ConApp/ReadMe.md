@@ -35,36 +35,68 @@ Wird eine Fehleingabe gemacht, ist entsprechend zu reagieren:
 |10110101       |10101           |11001010        |
 |1010           |0               |1010            |
 
+## Class Diagram
+
+### Program (CD)
+
+![Program (CD)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/cd_Program.puml)
+
 ## Activity Diagrams
 
-### Program.Main
+### Program.Main (AC)
 
-![Program.Main](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_Main.puml)
+![Program.Main (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_Main.puml)
 
-### Program.FormatBinary
+### Program.FormatBinary (AC)
 
-![Program.FormatBinary](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_FormatBinary.puml)
+![Program.FormatBinary (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_FormatBinary.puml)
 
-### Program.AddBinaryNumbers
+### Program.AddBinaryNumbers (AC)
 
-![Program.AddBinaryNumbers](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_AddBinaryNumbers.puml)
+![Program.AddBinaryNumbers (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_AddBinaryNumbers.puml)
 
-### Program.ShrinkNumber
+### Program.ShrinkNumber (AC)
 
-![Program.ShrinkNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_ShrinkNumber.puml)
+![Program.ShrinkNumber (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_ShrinkNumber.puml)
 
-### Program.ExpandNumber
+### Program.ExpandNumber (AC)
 
-![Program.ExpandNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_ExpandNumber.puml)
+![Program.ExpandNumber (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_ExpandNumber.puml)
 
-### Program.ReadBinaryNumber
+### Program.ReadBinaryNumber (AC)
 
-![Program.ReadBinaryNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_ReadBinaryNumber.puml)
+![Program.ReadBinaryNumber (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_ReadBinaryNumber.puml)
 
-### Program.CheckBinaryNumber
+### Program.CheckBinaryNumber (AC)
 
-![Program.CheckBinaryNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_CheckBinaryNumber.puml)
+![Program.CheckBinaryNumber (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_CheckBinaryNumber.puml)
 
-### Program.IsBinaryDigit
+### Program.IsBinaryDigit (AC)
 
-![Program.IsBinaryDigit](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_IsBinaryDigit.puml)
+![Program.IsBinaryDigit (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/ac_Program_IsBinaryDigit.puml)
+
+## Sequence Diagrams
+
+### Program.Main (SQ)
+
+![Program.Main (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/sq_Program_Main.puml)
+
+### Program.FormatBinary (SQ)
+
+![Program.FormatBinary (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/sq_Program_FormatBinary.puml)
+
+### Program.AddBinaryNumbers (SQ)
+
+![Program.AddBinaryNumbers (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/sq_Program_AddBinaryNumbers.puml)
+
+### Program.ShrinkNumber (SQ)
+
+![Program.ShrinkNumber (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/sq_Program_ShrinkNumber.puml)
+
+### Program.ReadBinaryNumber (SQ)
+
+![Program.ReadBinaryNumber (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/sq_Program_ReadBinaryNumber.puml)
+
+### Program.CheckBinaryNumber (SQ)
+
+![Program.CheckBinaryNumber (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/BinaryAdder.ConApp/diagrams/sq_Program_CheckBinaryNumber.puml)

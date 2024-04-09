@@ -1,5 +1,6 @@
 title:Program.Main (AC)
 fileName:ac_Program_Main.puml
+<<<<<<< HEAD
 generated_on:09/04/2024 14:47:08
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.PrintArray (AC)
@@ -37,4 +38,43 @@ generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Sort.Swap (AC)
 fileName:ac_Sort_Swap.puml
 generated_on:09/04/2024 14:47:08
+=======
+generated_on:09.04.2024 09:47:24
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.PrintArray (AC)
+fileName:ac_Program_PrintArray.puml
+generated_on:09.04.2024 09:47:24
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.PrintArray (AC)
+fileName:ac_Program_PrintArray_1.puml
+generated_on:09.04.2024 09:47:24
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.CreateRandomArray (AC)
+fileName:ac_Program_CreateRandomArray.puml
+generated_on:09.04.2024 09:47:24
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.CreateRandomArray (AC)
+fileName:ac_Program_CreateRandomArray_2.puml
+generated_on:09.04.2024 09:47:24
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Sort.BruteForceSort (AC)
+fileName:ac_Sort_BruteForceSort.puml
+generated_on:09.04.2024 09:47:24
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Sort.BubbleSort (AC)
+fileName:ac_Sort_BubbleSort.puml
+generated_on:09.04.2024 09:47:24
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Sort.InsertionSort (AC)
+fileName:ac_Sort_InsertionSort.puml
+generated_on:09.04.2024 09:47:24
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Sort.SelectionSort (AC)
+fileName:ac_Sort_SelectionSort.puml
+generated_on:09.04.2024 09:47:24
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Sort.Swap (AC)
+fileName:ac_Sort_Swap.puml
+generated_on:09.04.2024 09:47:24
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 generated_by:generated with the DiagramCreator by Prof.Gehrer

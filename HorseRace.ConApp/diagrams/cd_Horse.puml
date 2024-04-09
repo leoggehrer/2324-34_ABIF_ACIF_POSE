@@ -1,0 +1,22 @@
+@startuml Horse
+title Horse
+ class Horse #GhostWhite {
+- int number
+- int age
+- string name = string.Empty
+- int position
+- int rank
+---
++ int getNumber()
++ Void setNumber(int value)
++ int getAge()
++ Void setAge(int value)
++ string getName()
++ Void setName(string value)
++ int getPosition()
++ Void setPosition(int value)
++ int getRank()
++ Void setRank(int value)
+---
+}
+@enduml

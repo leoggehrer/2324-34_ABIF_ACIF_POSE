@@ -1,0 +1,24 @@
+@startuml Program.ReadPupilsFromCsvFile
+title Program.ReadPupilsFromCsvFile
+start
+#LightGreen:Params(string fileName);
+#LightSkyBlue:Pupil[] result = new Pupil[40];
+if (File.Exists(fileName)) then (<color:green>yes)
+        #LightSkyBlue:string[] lines = File.ReadAllLines(fileName);
+        #LightSkyBlue:int i = 1;
+        while (i < lines.Length && i < result.Length) is (<color:green>yes)
+                #LightSkyBlue:string[] data = lines[i].Split(';');
+                #LightSkyBlue:Pupil pupil = new Pupil
+                    {
+                        CatalogNumber = int.Parse(data[0]),
+                        FirstName = data[1],
+                        LastName = data[2],
+                        PostalCode = data[3],
+                    };
+                #WhiteSmoke:result[i - 1] = pupil;
+        :i++;
+        endwhile (<color:red>no)
+endif
+#Lavender:return result;
+stop
+@enduml

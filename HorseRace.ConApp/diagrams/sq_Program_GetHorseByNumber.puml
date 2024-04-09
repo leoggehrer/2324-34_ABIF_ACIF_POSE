@@ -1,0 +1,8 @@
+@startuml Program.GetHorseByNumber
+title Program.GetHorseByNumber
+participant "GetHorseByNumber(Horse[]horses,intnumber)" as GetHorseByNumber_p0_p1 #LightYellow
+participant "GetHorseIndexByNumber(a0,a1)" as GetHorseIndexByNumber_a0_a1 #LightGreen
+autonumber
+GetHorseByNumber_p0_p1 -> GetHorseIndexByNumber_a0_a1 : (horses, number)
+GetHorseIndexByNumber_a0_a1 --> GetHorseByNumber_p0_p1 : index
+@enduml

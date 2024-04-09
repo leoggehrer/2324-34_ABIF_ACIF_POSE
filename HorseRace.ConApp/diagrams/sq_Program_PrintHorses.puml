@@ -1,0 +1,21 @@
+@startuml Program.PrintHorses
+title Program.PrintHorses
+participant "PrintHorses(Horse[]horses)" as PrintHorses_p0 #LightYellow
+participant "string.Format(a0,a1,a2,a3)" as string_Format_a0_a1_a2_a3 #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+autonumber
+PrintHorses_p0 -> string_Format_a0_a1_a2_a3 : (format, "Nr.", "Name", "Alter")
+string_Format_a0_a1_a2_a3 --> PrintHorses_p0 : output
+PrintHorses_p0 -> Console_WriteLine_a0 : (output)
+PrintHorses_p0 -> Console_Write_a0 : (new string('=', output.Length))
+PrintHorses_p0 -> Console_WriteLine
+loop i < horses.Length
+    alt horse != null
+        PrintHorses_p0 -> string_Format_a0_a1_a2_a3 : (format, horse.Number, horse.Name, horse.Age)
+        string_Format_a0_a1_a2_a3 --> PrintHorses_p0 : output
+        PrintHorses_p0 -> Console_WriteLine_a0 : (output)
+    end
+end
+@enduml

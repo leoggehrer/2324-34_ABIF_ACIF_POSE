@@ -1,0 +1,164 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:18
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#WhiteSmoke:RunApp();
+stop
+start
+note right:  Program.RunApp
+#LightSkyBlue:Horse[] horses = ReadFromCsvFile(FILE_NAME)\nint tipp = GetTipp(horses);
+if (IsCorrectTipp(horses, tipp)) then (<color:green>yes)
+        #LightSkyBlue:Horse horse = GetHorseByNumber(horses, tipp);
+        #WhiteSmoke:PrintLine("Ihr Tipp mit der Startnummer {tipp} heisst {horse.Name} und ist {horse.Age} Jahre alt.");
+        #WhiteSmoke:PrintLine("Das Rennen beginnt ...");
+        #WhiteSmoke:SimulateRace(horses);
+        #WhiteSmoke:SortHorsesByPosition(horses);
+        #LightSkyBlue:int index = GetHorseIndexByNumber(horses, tipp);
+        #WhiteSmoke:PrintLine($"Ihr Startnummer {tipp} Name {horse.Name} {horse.Age} Jahre alt erzielte Rang {index + 1}!");
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine("Ihr Tipp ist falsch!");
+endif
+stop
+start
+note right:  Program.SimulateRace
+#LightGreen:Params(Horse[] horses);
+#LightSkyBlue:bool raceFinished = false;
+#LightSkyBlue:int i = 0;
+while (i < horses.Length) is (<color:green>yes)
+        #WhiteSmoke:horses[i].Position = 0;
+:i++;
+endwhile (<color:red>no)
+while (raceFinished == false) is (<color:green>yes)
+        #LightSkyBlue:int i = 0;
+        while (i < horses.Length) is (<color:green>yes)
+                #LightSkyBlue:bool canMove = Random.Shared.Next(0, 2) == 1;
+                if (canMove) then (<color:green>yes)
+                        #WhiteSmoke:horses[i].Position++;
+                        #WhiteSmoke:raceFinished = horses[i].Position >= 60;
+                endif
+        :i++;
+        endwhile (<color:red>no)
+        #WhiteSmoke:PrintSimulation(horses);
+        #WhiteSmoke:Thread.Sleep(100);
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.PrintSimulation
+#LightGreen:Params(Horse[] horses);
+#WhiteSmoke:Console.Clear();
+#WhiteSmoke:PrintLine("Pferderennen - Simulation");
+#LightSkyBlue:int i = 0;
+while (i < horses.Length) is (<color:green>yes)
+        #WhiteSmoke:PrintLine($"Pferd {horses[i].Number, 2}: {new string(' ', horses[i].Position)}*");
+:i++;
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.ReadFromCsvFile
+#LightGreen:Params(string fileName);
+#LightSkyBlue:Horse[] result = new Horse[0];
+if (File.Exists(fileName)) then (<color:green>yes)
+        #LightSkyBlue:string[] lines = File.ReadAllLines(fileName);
+        #WhiteSmoke:result = new Horse[lines.Length];
+        #LightSkyBlue:int i = 0;
+        while (i < lines.Length) is (<color:green>yes)
+                #LightSkyBlue:string[] data = lines[i].Split(';');
+                #LightSkyBlue:Horse horse = new Horse
+                    {
+                        Number = i + 1,
+                        Name = data[0],
+                        Age = int.Parse(data[1]),
+                    };
+start
+note right:  Program.PrintHorses
+#LightGreen:Params(Horse[] horses);
+#LightSkyBlue:string format = "{0,-4} {1,-20} {2,-5}"\nstring output = string.Format(format, "Nr.", "Name", "Alter");
+#WhiteSmoke:PrintLine(output);
+#WhiteSmoke:Print(new string('=', output.Length));
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:int i = 0;
+while (i < horses.Length) is (<color:green>yes)
+        #LightSkyBlue:Horse horse = horses[i];
+        if (horse != null) then (<color:green>yes)
+                #WhiteSmoke:output = string.Format(format, horse.Number, horse.Name, horse.Age);
+                #WhiteSmoke:PrintLine(output);
+        endif
+:i++;
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.GetTipp
+#LightGreen:Params(Horse[] horses);
+#LightSkyBlue:int tipp\nbool validChoice = false;
+repeat
+        #WhiteSmoke:PrintLine("Pferderennen - Starterliste");
+        #WhiteSmoke:PrintLine("===========================");
+        #WhiteSmoke:PrintHorses(horses);
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:Print("Auf welches Pferd wollen Sie setzen? (0 für Ende): ");
+        if (int.TryParse(Console.ReadLine(), out tipp)) then (<color:green>yes)
+                #WhiteSmoke:validChoice = tipp == 0 || IsCorrectTipp(horses, tipp);
+        endif
+repeat while (validChoice == false) is (<color:green>yes)
+#Lavender:return tipp;
+stop
+start
+note right:  Program.IsCorrectTipp
+#LightGreen:Params(Horse[] horses,int tipp);
+#LightSkyBlue:bool result = false;
+#LightSkyBlue:int i = 0;
+while (i < horses.Length && result == false) is (<color:green>yes)
+        if (horses[i].Number == tipp) then (<color:green>yes)
+                #WhiteSmoke:result = true;
+        endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+start
+note right:  Program.GetHorseByNumber
+#LightGreen:Params(Horse[] horses,int number);
+#LightSkyBlue:Horse result = null\nint index = GetHorseIndexByNumber(horses, number);
+if (index != -1) then (<color:green>yes)
+        #WhiteSmoke:result = horses[index];
+endif
+#Lavender:return result;
+stop
+start
+note right:  Program.GetHorseIndexByNumber
+#LightGreen:Params(Horse[] horses,int number);
+#LightSkyBlue:int result = -1;
+#LightSkyBlue:int i = 0;
+while (i < horses.Length && result == -1) is (<color:green>yes)
+        if (horses[i].Number == number) then (<color:green>yes)
+                #WhiteSmoke:result = i;
+        endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+start
+note right:  Program.SortHorsesByPosition
+#LightGreen:Params(Horse[] horses);
+#LightSkyBlue:int i = 0;
+while (i < horses.Length -1) is (<color:green>yes)
+        #LightSkyBlue:int j = i + 1;
+        while (j < horses.Length) is (<color:green>yes)
+                if (horses[i].Position < horses[j].Position) then (<color:green>yes)
+                        #LightSkyBlue:Horse temp = horses[i];
+                        #WhiteSmoke:horses[i] = horses[j];
+                        #WhiteSmoke:horses[j] = temp;
+                endif
+        :j++;
+        endwhile (<color:red>no)
+:i++;
+endwhile (<color:red>no)
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

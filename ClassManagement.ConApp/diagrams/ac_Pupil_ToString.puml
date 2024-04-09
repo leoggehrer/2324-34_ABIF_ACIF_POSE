@@ -1,0 +1,6 @@
+@startuml Pupil.ToString
+title Pupil.ToString
+start
+#Lavender:return $"{CatalogNumber, 2} {FirstName, 20} {LastName, 20} {PostalCode}";
+stop
+@enduml

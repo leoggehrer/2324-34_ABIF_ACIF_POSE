@@ -1,0 +1,32 @@
+@startuml Program.ReadPupil
+title Program.ReadPupil
+start
+#LightGreen:Params(Pupil[] pupils);
+#LightSkyBlue:int idx;
+repeat
+        #WhiteSmoke:idx = -1;
+        #LightSkyBlue:int i = 0;
+        while (i < pupils.Length && idx == -1) is (<color:green>yes)
+                if (pupils[i] == null) then (<color:green>yes)
+                        #WhiteSmoke:idx = i;
+                endif
+        :i++;
+        endwhile (<color:red>no)
+        if (idx == -1) then (<color:green>yes)
+                #WhiteSmoke:PrintLine("Kein Speicherplatz mehr verfügbar!");
+            else (<color:red>no)
+                    #LightSkyBlue:Pupil pupil = new Pupil();
+                    #WhiteSmoke:Print("Katalognummer: ");
+                    #WhiteSmoke:pupil.CatalogNumber = int.Parse(ReadLine());
+                    #WhiteSmoke:Print("Vorname: ");
+                    #WhiteSmoke:pupil.FirstName = ReadLine();
+                    #WhiteSmoke:Print("Familienname: ");
+                    #WhiteSmoke:pupil.LastName = ReadLine();
+                    #WhiteSmoke:Print("PLZ: ");
+                    #WhiteSmoke:pupil.PostalCode = ReadLine();
+                    #WhiteSmoke:pupils[idx] = pupil;
+                    #WhiteSmoke:Print("Weiteren Schüler einlesen (j/n)? ");
+        endif
+repeat while (Console.ReadLine().ToLower().Equals("j") && idx != -1) is (<color:green>yes)
+stop
+@enduml

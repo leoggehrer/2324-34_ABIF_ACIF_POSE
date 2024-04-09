@@ -6,6 +6,7 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "CheckBinaryNumber(a0)" as CheckBinaryNumber_a0 #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
+<<<<<<< HEAD
 loop#LightCoral validInput == false
     ReadBinaryNumber_p0 -[#grey]> Console_Write_a0 : ($"Geben Sie die {number}. Binärzahl ein: ")
     ReadBinaryNumber_p0 -[#grey]> Console_ReadLine
@@ -14,6 +15,16 @@ loop#LightCoral validInput == false
     CheckBinaryNumber_a0 -[#blue]-> ReadBinaryNumber_p0 : validInput
     alt#LightBlue !validInput
         ReadBinaryNumber_p0 -[#grey]> Console_WriteLine_a0 : ("Fehler: In einer Binärzahl sind nur 1 und 0 erlaubt!")
+=======
+loop validInput == false
+    ReadBinaryNumber_p0 -> Console_Write_a0 : ($"Geben Sie die {number}. Binärzahl ein: ")
+    ReadBinaryNumber_p0 -> Console_ReadLine
+    Console_ReadLine --> ReadBinaryNumber_p0 : result
+    ReadBinaryNumber_p0 -> CheckBinaryNumber_a0 : (result)
+    CheckBinaryNumber_a0 --> ReadBinaryNumber_p0 : validInput
+    alt !validInput
+        ReadBinaryNumber_p0 -> Console_WriteLine_a0 : ("Fehler: In einer Binärzahl sind nur 1 und 0 erlaubt!")
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
     end
 end
 @enduml

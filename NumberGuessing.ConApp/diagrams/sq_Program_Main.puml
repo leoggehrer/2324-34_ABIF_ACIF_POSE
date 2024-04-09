@@ -9,6 +9,7 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Convert.ToInt32(a0)" as Convert_ToInt32_a0 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
+<<<<<<< HEAD
 Main_p0 -[#grey]> Random_Shared_Next_a0_a1 : (1, 101)
 Random_Shared_Next_a0_a1 -[#blue]-> Main_p0 : randomNumber
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Zahlenraten")
@@ -41,4 +42,38 @@ end
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
 Main_p0 -[#grey]> Console_ReadKey
+=======
+Main_p0 -> Random_Shared_Next_a0_a1 : (1, 101)
+Random_Shared_Next_a0_a1 --> Main_p0 : randomNumber
+Main_p0 -> Console_WriteLine_a0 : ("Zahlenraten")
+Main_p0 -> Console_WriteLine_a0 : ("===========")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Ich habe mir eine Zahl zwischen 1 und 100 ausgedacht. Kannst du sie erraten?")
+loop guessNumber != randomNumber
+    Main_p0 -> Console_Write_a0 : ($"{++counter}. Versuch: ")
+    Main_p0 -> Console_ReadLine
+    Console_ReadLine --> Main_p0 : input
+    Main_p0 -> Convert_ToInt32_a0 : (input)
+    Convert_ToInt32_a0 --> Main_p0 : guessNumber
+    alt guessNumber < randomNumber
+        Main_p0 -> Console_Write_a0 : ("Die gesuchte Zahl ist größer, ")
+        else
+            alt guessNumber > randomNumber
+                Main_p0 -> Console_Write_a0 : ("Die gesuchte Zahl ist kleiner, ")
+            end
+    end
+end
+alt counter > 1 && counter <= 5
+    Main_p0 -> Console_WriteLine_a0 : ("Tolle Leistung!")
+    else
+        alt counter > 5 && counter <= 10
+            Main_p0 -> Console_WriteLine_a0 : ("Schon ganz gut!")
+            else
+                Main_p0 -> Console_WriteLine_a0 : ("Endlich geschafft!")
+        end
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

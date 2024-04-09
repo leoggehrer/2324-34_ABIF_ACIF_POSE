@@ -1,0 +1,20 @@
+@startuml Program.GetFileName
+title Program.GetFileName
+participant "GetFileName" as GetFileName #LightYellow
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "File.Exists(a0)" as File_Exists_a0 #LightGreen
+participant "string.IsNullOrEmpty(a0)" as string_IsNullOrEmpty_a0 #LightGreen
+autonumber
+loop string.IsNullOrEmpty(result)
+    alt counter++ == 0
+        GetFileName -> Console_Write_a0 : ("Dateiname ohne Endung: ")
+        else
+            GetFileName -> Console_Write_a0 : (@"Dateiname ohne Endung <im Anwendungsverzeichnis \bin\debug>: ")
+    end
+    alt File.Exists(input)
+        GetFileName -> File_Exists_a0 : (input)
+    end
+    GetFileName -> string_IsNullOrEmpty_a0 : (result)
+    string_IsNullOrEmpty_a0 --> GetFileName : result
+end
+@enduml

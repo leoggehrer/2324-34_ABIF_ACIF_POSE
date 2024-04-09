@@ -7,6 +7,7 @@ participant "AddBinaryNumbers(a0,a1)" as AddBinaryNumbers_a0_a1 #LightGreen
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 autonumber
+<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Binäraddierer")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("=============")
 Main_p0 -[#grey]> ReadBinaryNumber_a0 : (1)
@@ -19,4 +20,18 @@ Main_p0 -[#grey]> Console_WriteLine_a0 : ($"{FormatBinary(number1, 8)} + {Format
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Beenden mit Eingabetaste... ")
 Main_p0 -[#grey]> Console_ReadLine
+=======
+Main_p0 -> Console_WriteLine_a0 : ("Binäraddierer")
+Main_p0 -> Console_WriteLine_a0 : ("=============")
+Main_p0 -> ReadBinaryNumber_a0 : (1)
+ReadBinaryNumber_a0 --> Main_p0 : number1
+Main_p0 -> ReadBinaryNumber_a0 : (2)
+ReadBinaryNumber_a0 --> Main_p0 : number2
+Main_p0 -> AddBinaryNumbers_a0_a1 : (number1, number2)
+AddBinaryNumbers_a0_a1 --> Main_p0 : result
+Main_p0 -> Console_WriteLine_a0 : ($"{FormatBinary(number1, 8)} + {FormatBinary(number2, 8)} =  {FormatBinary(result, 8)}")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Beenden mit Eingabetaste... ")
+Main_p0 -> Console_ReadLine
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

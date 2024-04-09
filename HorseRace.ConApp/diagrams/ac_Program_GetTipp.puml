@@ -1,0 +1,18 @@
+@startuml Program.GetTipp
+title Program.GetTipp
+start
+#LightGreen:Params(Horse[] horses);
+#LightSkyBlue:int tipp\nbool validChoice = false;
+repeat
+        #WhiteSmoke:PrintLine("Pferderennen - Starterliste");
+        #WhiteSmoke:PrintLine("===========================");
+        #WhiteSmoke:PrintHorses(horses);
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:Print("Auf welches Pferd wollen Sie setzen? (0 für Ende): ");
+        if (int.TryParse(Console.ReadLine(), out tipp)) then (<color:green>yes)
+                #WhiteSmoke:validChoice = tipp == 0 || IsCorrectTipp(horses, tipp);
+        endif
+repeat while (validChoice == false) is (<color:green>yes)
+#Lavender:return tipp;
+stop
+@enduml

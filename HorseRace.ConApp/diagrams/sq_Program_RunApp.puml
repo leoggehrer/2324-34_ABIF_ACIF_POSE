@@ -1,0 +1,32 @@
+@startuml Program.RunApp
+title Program.RunApp
+participant "RunApp" as RunApp #LightYellow
+participant "ReadFromCsvFile(a0)" as ReadFromCsvFile_a0 #LightGreen
+participant "GetTipp(a0)" as GetTipp_a0 #LightGreen
+participant "IsCorrectTipp(a0,a1)" as IsCorrectTipp_a0_a1 #LightGreen
+participant "GetHorseByNumber(a0,a1)" as GetHorseByNumber_a0_a1 #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "SimulateRace(a0)" as SimulateRace_a0 #LightGreen
+participant "SortHorsesByPosition(a0)" as SortHorsesByPosition_a0 #LightGreen
+participant "GetHorseIndexByNumber(a0,a1)" as GetHorseIndexByNumber_a0_a1 #LightGreen
+autonumber
+RunApp -> ReadFromCsvFile_a0 : (FILE_NAME)
+ReadFromCsvFile_a0 --> RunApp : horses
+RunApp -> GetTipp_a0 : (horses)
+GetTipp_a0 --> RunApp : tipp
+alt IsCorrectTipp(horses, tipp)
+    RunApp -> IsCorrectTipp_a0_a1 : (horses, tipp)
+    IsCorrectTipp_a0_a1 --> RunApp : result
+    RunApp -> GetHorseByNumber_a0_a1 : (horses, tipp)
+    GetHorseByNumber_a0_a1 --> RunApp : horse
+    RunApp -> Console_WriteLine_a0 : ("Ihr Tipp mit der Startnummer {tipp} heisst {horse.Name} und ist {horse.Age} Jahre alt.")
+    RunApp -> Console_WriteLine_a0 : ("Das Rennen beginnt ...")
+    RunApp -> SimulateRace_a0 : (horses)
+    RunApp -> SortHorsesByPosition_a0 : (horses)
+    RunApp -> GetHorseIndexByNumber_a0_a1 : (horses, tipp)
+    GetHorseIndexByNumber_a0_a1 --> RunApp : index
+    RunApp -> Console_WriteLine_a0 : ($"Ihr Startnummer {tipp} Name {horse.Name} {horse.Age} Jahre alt erzielte Rang {index + 1}!")
+    else
+        RunApp -> Console_WriteLine_a0 : ("Ihr Tipp ist falsch!")
+end
+@enduml

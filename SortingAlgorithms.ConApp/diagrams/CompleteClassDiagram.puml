@@ -1,5 +1,6 @@
 @startuml CompleteClassDiagram
 title CompleteClassDiagram
+<<<<<<< HEAD
  class Program #GhostWhite {
 ---
 ---
@@ -9,6 +10,8 @@ title CompleteClassDiagram
 - {static} int[] CreateRandomArray(int size)
 - {static} int[] CreateRandomArray(int size, int min, int max)
 }
+=======
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 {static} class Sort #GhostWhite {
 ---
 ---
@@ -18,4 +21,16 @@ title CompleteClassDiagram
 + {static} void SelectionSort(int[] array)
 + {static} void Swap(int v1, int v2)
 }
+<<<<<<< HEAD
+=======
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} void PrintArray(string title, int[] array)
+- {static} void PrintArray(int[] array)
+- {static} int[] CreateRandomArray(int size)
+- {static} int[] CreateRandomArray(int size, int min, int max)
+}
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

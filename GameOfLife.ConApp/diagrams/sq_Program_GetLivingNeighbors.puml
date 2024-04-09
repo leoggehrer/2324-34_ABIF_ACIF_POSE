@@ -3,8 +3,15 @@ title Program.GetLivingNeighbors
 participant "GetLivingNeighbors(int[,]field,introw,intcol)" as GetLivingNeighbors_p0_p1_p2 #LightYellow
 participant "field.GetLength(a0)" as field_GetLength_a0 #LightGreen
 autonumber
+<<<<<<< HEAD
 GetLivingNeighbors_p0_p1_p2 -[#grey]> field_GetLength_a0 : (0)
 field_GetLength_a0 -[#blue]-> GetLivingNeighbors_p0_p1_p2 : rowCount
 GetLivingNeighbors_p0_p1_p2 -[#grey]> field_GetLength_a0 : (1)
 field_GetLength_a0 -[#blue]-> GetLivingNeighbors_p0_p1_p2 : colCount
+=======
+GetLivingNeighbors_p0_p1_p2 -> field_GetLength_a0 : (0)
+field_GetLength_a0 --> GetLivingNeighbors_p0_p1_p2 : rowCount
+GetLivingNeighbors_p0_p1_p2 -> field_GetLength_a0 : (1)
+field_GetLength_a0 --> GetLivingNeighbors_p0_p1_p2 : colCount
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

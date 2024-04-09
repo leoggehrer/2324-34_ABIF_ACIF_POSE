@@ -3,6 +3,11 @@ title Program.ShrinkNumber
 participant "ShrinkNumber(stringnumber)" as ShrinkNumber_p0 #LightYellow
 participant "number.TrimStart(a0)" as number_TrimStart_a0 #LightGreen
 autonumber
+<<<<<<< HEAD
 ShrinkNumber_p0 -[#grey]> number_TrimStart_a0 : ('0')
 number_TrimStart_a0 -[#blue]-> ShrinkNumber_p0 : result
+=======
+ShrinkNumber_p0 -> number_TrimStart_a0 : ('0')
+number_TrimStart_a0 --> ShrinkNumber_p0 : result
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

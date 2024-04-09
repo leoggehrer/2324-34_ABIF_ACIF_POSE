@@ -1,0 +1,24 @@
+@startuml Program.ReadFromCsvFile
+title Program.ReadFromCsvFile
+start
+#LightGreen:Params(string fileName);
+#LightSkyBlue:Horse[] result = new Horse[0];
+if (File.Exists(fileName)) then (<color:green>yes)
+        #LightSkyBlue:string[] lines = File.ReadAllLines(fileName);
+        #WhiteSmoke:result = new Horse[lines.Length];
+        #LightSkyBlue:int i = 0;
+        while (i < lines.Length) is (<color:green>yes)
+                #LightSkyBlue:string[] data = lines[i].Split(';');
+                #LightSkyBlue:Horse horse = new Horse
+                    {
+                        Number = i + 1,
+                        Name = data[0],
+                        Age = int.Parse(data[1]),
+                    };
+                #WhiteSmoke:result[i] = horse;
+        :i++;
+        endwhile (<color:red>no)
+endif
+#Lavender:return result;
+stop
+@enduml

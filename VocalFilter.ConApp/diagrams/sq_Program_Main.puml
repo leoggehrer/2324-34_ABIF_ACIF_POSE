@@ -9,6 +9,7 @@ participant "char.ToLower(a0)" as char_ToLower_a0 #LightGreen
 participant "output.Contains(a0)" as output_Contains_a0 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
+<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("* Vocal Filter                                    *")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
@@ -24,4 +25,21 @@ Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Ausgabetext: {output}")
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
 Main_p0 -[#grey]> Console_ReadKey
+=======
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine_a0 : ("* Vocal Filter                                    *")
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Eingabetext: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> char_ToLower_a0 : (input[i])
+char_ToLower_a0 --> Main_p0 : chr
+Main_p0 -> output_Contains_a0 : (input[i])
+output_Contains_a0 --> Main_p0 : result
+Main_p0 -> Console_WriteLine_a0 : ($"Ausgabetext: {output}")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

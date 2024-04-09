@@ -2,7 +2,12 @@
 title UMLCreator.CreateActivityDiagram
 participant "AnalysisStatement(a0,a1,a2)" as AnalysisStatement_a0_a1_a2 #LightGreen
 autonumber
+<<<<<<< HEAD
 loop#LightCoral statements!
     CreateActivityDiagram_p0 -[#grey]> AnalysisStatement_a0_a1_a2 : (statement, diagramData, 0)
+=======
+loop statements!
+    CreateActivityDiagram_p0 -> AnalysisStatement_a0_a1_a2 : (statement, diagramData, 0)
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 end
 @enduml

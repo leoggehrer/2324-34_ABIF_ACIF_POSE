@@ -5,6 +5,7 @@ participant "IsTipValid(a0)" as IsTipValid_a0 #LightGreen
 participant "result.Add(a0)" as result_Add_a0 #LightGreen
 participant "result.ToArray()" as result_ToArray #LightGreen
 autonumber
+<<<<<<< HEAD
 loop#LightCoral i < tipps.Length
     alt#LightBlue IsTipValid(tipps[i]) == false
         GetIncorrectTipps_p0 -[#grey]> IsTipValid_a0 : (tipps[i])
@@ -14,4 +15,15 @@ loop#LightCoral i < tipps.Length
 end
 GetIncorrectTipps_p0 -[#grey]> result_ToArray
 result_ToArray -[#blue]-> GetIncorrectTipps_p0 : result
+=======
+loop i < tipps.Length
+    alt IsTipValid(tipps[i]) == false
+        GetIncorrectTipps_p0 -> IsTipValid_a0 : (tipps[i])
+        IsTipValid_a0 --> GetIncorrectTipps_p0 : result
+        GetIncorrectTipps_p0 -> result_Add_a0 : (tipps[i])
+    end
+end
+GetIncorrectTipps_p0 -> result_ToArray
+result_ToArray --> GetIncorrectTipps_p0 : result
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

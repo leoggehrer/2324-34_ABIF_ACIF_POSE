@@ -1,5 +1,6 @@
 title:Program.Main (SQ)
 fileName:sq_Program_Main.puml
+<<<<<<< HEAD
 generated_on:09/04/2024 14:47:07
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.PrintHeader (SQ)
@@ -13,4 +14,19 @@ generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.PrintTicket (SQ)
 fileName:sq_Program_PrintTicket.puml
 generated_on:09/04/2024 14:47:07
+=======
+generated_on:09.04.2024 09:47:21
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.PrintHeader (SQ)
+fileName:sq_Program_PrintHeader.puml
+generated_on:09.04.2024 09:47:21
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.ReadParkingPayment (SQ)
+fileName:sq_Program_ReadParkingPayment.puml
+generated_on:09.04.2024 09:47:21
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.PrintTicket (SQ)
+fileName:sq_Program_PrintTicket.puml
+generated_on:09.04.2024 09:47:21
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 generated_by:generated with the DiagramCreator by Prof.Gehrer

@@ -1,0 +1,20 @@
+@startuml Program.SortPupilsByLastName
+title Program.SortPupilsByLastName
+start
+#LightGreen:Params(Pupil[] pupils);
+#LightSkyBlue:bool exchange;
+repeat
+        #WhiteSmoke:exchange = false;
+        #LightSkyBlue:int i = 0;
+        while (i < pupils.Length - 1) is (<color:green>yes)
+                if (pupils[i] != null && pupils[i + 1] != null && pupils[i].LastName.CompareTo(pupils[i + 1].LastName) > 0) then (<color:green>yes)
+                        #LightSkyBlue:Pupil temp = pupils[i];
+                        #WhiteSmoke:pupils[i] = pupils[i + 1];
+                        #WhiteSmoke:pupils[i + 1] = temp;
+                        #WhiteSmoke:exchange = true;
+                endif
+        :i++;
+        endwhile (<color:red>no)
+repeat while (exchange == true) is (<color:green>yes)
+stop
+@enduml

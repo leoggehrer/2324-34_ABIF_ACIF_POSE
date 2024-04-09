@@ -3,6 +3,11 @@ title Program.CountNumberOfHits
 participant "CountNumberOfHits(intindex,int[,]tipps,int[]thrownNumbers)" as CountNumberOfHits_p0_p1_p2 #LightYellow
 participant "tipps.GetLength(a0)" as tipps_GetLength_a0 #LightGreen
 autonumber
+<<<<<<< HEAD
 CountNumberOfHits_p0_p1_p2 -[#grey]> tipps_GetLength_a0 : (1)
 tipps_GetLength_a0 -[#blue]-> CountNumberOfHits_p0_p1_p2 : result
+=======
+CountNumberOfHits_p0_p1_p2 -> tipps_GetLength_a0 : (1)
+tipps_GetLength_a0 --> CountNumberOfHits_p0_p1_p2 : result
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

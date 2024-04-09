@@ -8,6 +8,7 @@ participant "ReadParkingPayment()" as ReadParkingPayment #LightGreen
 participant "PrintTicket(a0)" as PrintTicket_a0 #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 autonumber
+<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Parkschein Automat")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("==================")
 Main_p0 -[#grey]> Console_WriteLine
@@ -18,4 +19,16 @@ Main_p0 -[#grey]> PrintTicket_a0 : (payment)
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Programm beenden mit Eingabetaste...")
 Main_p0 -[#grey]> Console_ReadLine
+=======
+Main_p0 -> Console_WriteLine_a0 : ("Parkschein Automat")
+Main_p0 -> Console_WriteLine_a0 : ("==================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> PrintHeader
+Main_p0 -> ReadParkingPayment
+ReadParkingPayment --> Main_p0 : payment
+Main_p0 -> PrintTicket_a0 : (payment)
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Programm beenden mit Eingabetaste...")
+Main_p0 -> Console_ReadLine
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

@@ -1,0 +1,36 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Pupil #GhostWhite {
+- int catalogNumber
+- string firstName = string.Empty
+- string lastName = string.Empty
+- string postalCode = string.Empty
+---
++ int getCatalogNumber()
++ Void setCatalogNumber(int value)
++ string getFirstName()
++ Void setFirstName(string value)
++ string getLastName()
++ Void setLastName(string value)
++ string getPostalCode()
++ Void setPostalCode(string value)
+---
++ string ToString()
+}
+ class Program #GhostWhite {
+- {const} string FILE_NAME = "pupils.csv"
+---
+---
+- {static} void Main(string[] args)
+- {static} void RunApp()
+- {static} int PrintAndExecuteMenu()
+- {static} Pupil[] ReadPupilsFromCsvFile(string fileName)
+- {static} void WritePupilsToCsvFile(string fileName, Pupil[] pupils)
+- {static} void ReadPupil(Pupil[] pupils)
+- {static} void PrintPupils(Pupil[] pupils)
+- {static} void SortPupilsByCatalogNumber(Pupil[] pupils)
+- {static} void SortPupilsByLastName(Pupil[] pupils)
+- {static} void SearchPupilsByLastName(Pupil[] pupils)
+- {static} void SearchPupilsByPostalCode(Pupil[] pupils)
+}
+@enduml

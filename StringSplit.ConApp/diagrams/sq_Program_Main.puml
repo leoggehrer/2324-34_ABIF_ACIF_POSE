@@ -7,6 +7,7 @@ participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
+<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("* StringSplit - Ein einfacher Textsplit           *")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
@@ -30,4 +31,29 @@ end
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
 Main_p0 -[#grey]> Console_ReadKey
+=======
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine_a0 : ("* StringSplit - Ein einfacher Textsplit           *")
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Eingabetext:  ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+loop splitText.Length != 1
+    Main_p0 -> Console_Write_a0 : ("Splitzeichen: ")
+    Main_p0 -> Console_ReadLine
+    Console_ReadLine --> Main_p0 : splitText
+end
+Main_p0 -> Console_WriteLine_a0 : ("*** Ausgabetext ***")
+loop i < input.Length
+    alt input[i] == splitText[0]
+        Main_p0 -> Console_WriteLine
+        else
+            Main_p0 -> Console_Write_a0 : (input[i])
+    end
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

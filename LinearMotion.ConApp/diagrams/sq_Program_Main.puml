@@ -8,6 +8,7 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
+<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Lienar Motion")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("=============")
 Main_p0 -[#grey]> Console_WriteLine
@@ -37,4 +38,35 @@ Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Treffpunkt von A nach {distanceInM_A
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
 Main_p0 -[#grey]> Console_ReadKey
+=======
+Main_p0 -> Console_WriteLine_a0 : ("Lienar Motion")
+Main_p0 -> Console_WriteLine_a0 : ("=============")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Begegnung zweier entgegenfahrender Fahrzeuge")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Entfernung [positive Ganzzahl in km]:                         ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : distanceInKm
+Main_p0 -> Console_Write_a0 : ("Geschwindigkeit des Fahrzeuges A [positive Ganzzahl in km/h]: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : speedInKmh_A
+Main_p0 -> Console_Write_a0 : ("Geschwindigkeit des Fahrzeuges B [positive Ganzzahl in km/h]: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : speedInKmh_B
+Main_p0 -> Console_WriteLine
+alt counterInSec % 60 == 0
+    Main_p0 -> Console_WriteLine_a0 : ($"Minute: {counterInSec / 60,4} | Position A: {distanceInM_A / 1_000,6:f} km | Position B: {distanceInM_B / 1_000,6:f} km | Distanz: {Math.Abs(distanceInM - distanceInM_A - distanceInM_B) / 1_000,6:f}")
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ($"Treffpunkt von A nach {distanceInM_A / 1_000:f} km und von B nach {distanceInM_B / 1_000:f} km nach {counterInSec / 3_600} Stunden, {(counterInSec % 3_600) / 60} Minuten und {counterInSec % 60} Sekunden")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

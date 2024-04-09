@@ -1,0 +1,39 @@
+@startuml Program.PerformOperation
+title Program.PerformOperation
+start
+#LightGreen:Params(ref string fileName);
+#LightSkyBlue:string input;
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Was kann ich für dich tun?");
+#WhiteSmoke:Console.ForegroundColor = ConsoleColor.Yellow;
+#WhiteSmoke:PrintLine($"FileName: {fileName}");
+#WhiteSmoke:Console.ForegroundColor = DefaultColor;
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("(1) Datei am Bildschirm ausgeben");
+#WhiteSmoke:PrintLine("(2) Zeilennummern hinzufügen");
+#WhiteSmoke:PrintLine("(3) Zeilen reversieren");
+#WhiteSmoke:PrintLine("(4) Zeichenketten ersetzen");
+#WhiteSmoke:PrintLine("(5) Neue Datei einlesen");
+#WhiteSmoke:PrintLine("(0) Ende");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Deine Wahl: ");
+#WhiteSmoke:input = ReadLine();
+switch (input)
+    case( "1" )
+    #WhiteSmoke:PrintFile(fileName);
+    case( "2" )
+    #WhiteSmoke:AddLineNumbers(fileName);
+    case( "3" )
+    #WhiteSmoke:ReverseLines(fileName);
+    case( "4" )
+    #WhiteSmoke:ReplaceCharacters(fileName);
+    case( "5" )
+    #WhiteSmoke:fileName = GetFileName();
+    #WhiteSmoke:CreateBackup(fileName);
+    case( "0" )
+    case ( default )
+    #WhiteSmoke:PrintLine("Ungültige Eingabe!");
+endswitch
+#Lavender:return input == "0";
+stop
+@enduml

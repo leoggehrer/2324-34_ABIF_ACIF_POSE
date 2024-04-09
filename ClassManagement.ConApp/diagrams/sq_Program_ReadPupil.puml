@@ -1,0 +1,31 @@
+@startuml Program.ReadPupil
+title Program.ReadPupil
+participant "ReadPupil(Pupil[]pupils)" as ReadPupil_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "int.Parse(a0)" as int_Parse_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "Console.ReadLine().ToLower().Equals(a0)" as Console_ReadLine_ToLower_Equals_a0 #LightGreen
+participant "Console.ReadLine().ToLower()" as Console_ReadLine_ToLower #LightGreen
+autonumber
+loop Console.ReadLine().ToLower().Equals("j") && idx != -1
+    alt idx == -1
+        ReadPupil_p0 -> Console_WriteLine_a0 : ("Kein Speicherplatz mehr verfügbar!")
+        else
+            ReadPupil_p0 -> Console_Write_a0 : ("Katalognummer: ")
+            ReadPupil_p0 -> int_Parse_a0 : (Console.ReadLine())
+            int_Parse_a0 --> ReadPupil_p0 : pupil.CatalogNumber
+            ReadPupil_p0 -> Console_Write_a0 : ("Vorname: ")
+            ReadPupil_p0 -> Console_ReadLine
+            Console_ReadLine --> ReadPupil_p0 : pupil.FirstName
+            ReadPupil_p0 -> Console_Write_a0 : ("Familienname: ")
+            ReadPupil_p0 -> Console_ReadLine
+            Console_ReadLine --> ReadPupil_p0 : pupil.LastName
+            ReadPupil_p0 -> Console_Write_a0 : ("PLZ: ")
+            ReadPupil_p0 -> Console_ReadLine
+            Console_ReadLine --> ReadPupil_p0 : pupil.PostalCode
+            ReadPupil_p0 -> Console_Write_a0 : ("Weiteren Schüler einlesen (j/n)? ")
+    end
+    ReadPupil_p0 -> Console_ReadLine_ToLower_Equals_a0 : ("j")
+end
+@enduml

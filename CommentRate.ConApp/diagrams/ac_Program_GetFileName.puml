@@ -1,0 +1,18 @@
+@startuml Program.GetFileName
+title Program.GetFileName
+start
+#LightSkyBlue:int counter = 0\nstring result = string.Empty\nstring input;
+repeat
+        if (counter++ == 0) then (<color:green>yes)
+                #WhiteSmoke:Print("Dateiname ohne Endung: ");
+            else (<color:red>no)
+                    #WhiteSmoke:Print(@"Dateiname ohne Endung <im Anwendungsverzeichnis \bin\debug>: ");
+        endif
+        #WhiteSmoke:input = $"{ReadLine()}.cs";
+        if (File.Exists(input)) then (<color:green>yes)
+                #WhiteSmoke:result = input;
+        endif
+repeat while (string.IsNullOrEmpty(result)) is (<color:green>yes)
+#Lavender:return result;
+stop
+@enduml

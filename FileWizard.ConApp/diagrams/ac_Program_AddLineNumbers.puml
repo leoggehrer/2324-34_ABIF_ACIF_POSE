@@ -1,0 +1,18 @@
+@startuml Program.AddLineNumbers
+title Program.AddLineNumbers
+start
+#LightGreen:Params(string fileName);
+if (File.Exists(fileName)) then (<color:green>yes)
+        #LightSkyBlue:string[] lines = File.ReadAllLines(fileName);
+        #LightSkyBlue:List<string> numberedLines = new List<string>();
+        #LightSkyBlue:int i = 0;
+        while (i < lines.Length) is (<color:green>yes)
+                #WhiteSmoke:numberedLines.Add($"{i + 1}: {lines[i]}");
+        :i++;
+        endwhile (<color:red>no)
+        #WhiteSmoke:File.WriteAllLines(fileName, numberedLines);
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine($"Die Datei '{fileName}' existiert nicht!");
+endif
+stop
+@enduml

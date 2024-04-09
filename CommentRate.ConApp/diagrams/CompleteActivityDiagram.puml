@@ -1,0 +1,84 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:12
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("Kommentarquote für C#-Dateien");
+#WhiteSmoke:PrintLine("=============================");
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:string fileName\nint codeChars, commentChars\ndouble relationShip;
+#WhiteSmoke:fileName = GetFileName();
+#WhiteSmoke:AnalyzeFile(fileName, out codeChars, out commentChars);
+#WhiteSmoke:relationShip = (double)commentChars / (codeChars + commentChars) * 100;
+#WhiteSmoke:PrintLine($"Von {codeChars + commentChars} Zeichen waren {commentChars} Kommentare, das ergibt {relationShip:f} % Kommentarquote.");
+#WhiteSmoke:Thread.Sleep(3000);
+stop
+start
+note right:  Program.GetFileName
+#LightSkyBlue:int counter = 0\nstring result = string.Empty\nstring input;
+repeat
+        if (counter++ == 0) then (<color:green>yes)
+                #WhiteSmoke:Print("Dateiname ohne Endung: ");
+            else (<color:red>no)
+                    #WhiteSmoke:Print(@"Dateiname ohne Endung <im Anwendungsverzeichnis \bin\debug>: ");
+        endif
+        #WhiteSmoke:input = $"{ReadLine()}.cs";
+        if (File.Exists(input)) then (<color:green>yes)
+                #WhiteSmoke:result = input;
+        endif
+repeat while (string.IsNullOrEmpty(result)) is (<color:green>yes)
+#Lavender:return result;
+stop
+start
+note right:  Program.AnalyzeFile
+#LightGreen:Params(string fileName,out int codeChars,out int commentChars);
+#LightSkyBlue:int blockCommentStartIdx = -1, blockCommentEndIdx = -1\nint lineCommentStartIdx = -1, lineCommentEndIdx = -1\nstring text = File.ReadAllText(fileName);
+#WhiteSmoke:codeChars = 0;
+#WhiteSmoke:commentChars = 0;
+#LightSkyBlue:int i = 0;
+while (i < text.Length) is (<color:green>yes)
+        if (blockCommentStartIdx == -1 && lineCommentStartIdx == -1) then (<color:green>yes)
+                #WhiteSmoke:blockCommentStartIdx = text.IndexOf("/" + "*", i);
+                if (blockCommentStartIdx > -1) then (<color:green>yes)
+                        #WhiteSmoke:blockCommentEndIdx = text.IndexOf("*" + "/", blockCommentStartIdx);
+                        if (blockCommentEndIdx > blockCommentStartIdx) then (<color:green>yes)
+                                #WhiteSmoke:blockCommentEndIdx += 2;
+                            else (<color:red>no)
+                                    #WhiteSmoke:blockCommentStartIdx = blockCommentEndIdx = -1;
+                        endif
+                endif
+            else (<color:red>no)
+                if (i >= blockCommentEndIdx) then (<color:green>yes)
+                        #WhiteSmoke:blockCommentStartIdx = blockCommentEndIdx = -1;
+                endif
+        endif
+        if (blockCommentStartIdx == -1 && lineCommentStartIdx == -1) then (<color:green>yes)
+                #WhiteSmoke:lineCommentStartIdx = text.IndexOf("/" + "/", i);
+                if (lineCommentStartIdx > -1) then (<color:green>yes)
+                        #WhiteSmoke:lineCommentEndIdx = text.IndexOf("\n", lineCommentStartIdx);
+                        if (lineCommentEndIdx > lineCommentStartIdx) then (<color:green>yes)
+                                #WhiteSmoke:lineCommentEndIdx += 2;
+                            else (<color:red>no)
+                                    #WhiteSmoke:lineCommentStartIdx = lineCommentEndIdx = -1;
+                        endif
+                endif
+            else (<color:red>no)
+                if (i >= lineCommentEndIdx) then (<color:green>yes)
+                        #WhiteSmoke:lineCommentStartIdx = lineCommentEndIdx = -1;
+                endif
+        endif
+        if ((i >= blockCommentStartIdx && i <= blockCommentEndIdx) || (i >= lineCommentStartIdx && i <= lineCommentEndIdx)) then (<color:green>yes)
+                #WhiteSmoke:commentChars = char.IsLetterOrDigit(text[i]) ? commentChars + 1 : commentChars;
+            else (<color:red>no)
+                    #WhiteSmoke:codeChars = char.IsLetterOrDigit(text[i]) ? codeChars + 1 : codeChars;
+        endif
+:i++;
+endwhile (<color:red>no)
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

@@ -1,0 +1,15 @@
+@startuml Program.IsCorrectTipp
+title Program.IsCorrectTipp
+start
+#LightGreen:Params(Horse[] horses,int tipp);
+#LightSkyBlue:bool result = false;
+#LightSkyBlue:int i = 0;
+while (i < horses.Length && result == false) is (<color:green>yes)
+        if (horses[i].Number == tipp) then (<color:green>yes)
+                #WhiteSmoke:result = true;
+        endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

@@ -8,6 +8,7 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "uint.TryParse(a0,a1)" as uint_TryParse_a0_a1 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
+<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Find all Bits")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("=============")
 Main_p0 -[#grey]> Console_WriteLine
@@ -28,4 +29,26 @@ end
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit... ")
 Main_p0 -[#grey]> Console_ReadKey
+=======
+Main_p0 -> Console_WriteLine_a0 : ("Find all Bits")
+Main_p0 -> Console_WriteLine_a0 : ("=============")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ($"Geben Sie eine Zahl zwischen 1 und {uint.MaxValue} ein (0 für Ende): ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+alt uint.TryParse(input, out number) && number > 0
+    Main_p0 -> uint_TryParse_a0_a1 : (input, out number)
+    uint_TryParse_a0_a1 --> Main_p0 : result
+    loop number > 0
+        Main_p0 -> Console_WriteLine_a0 : ($"{bit} * 2^{idx++} = {numPow}")
+    end
+    Main_p0 -> Console_WriteLine_a0 : ("=========================")
+    Main_p0 -> Console_WriteLine_a0 : ($"Dezimalzahl:          {input:n0}")
+    Main_p0 -> Console_WriteLine_a0 : ($"Summe aller Bitwerte: {sumBit:n0}")
+    Main_p0 -> Console_WriteLine_a0 : ("=========================")
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit... ")
+Main_p0 -> Console_ReadKey
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

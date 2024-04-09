@@ -70,46 +70,48 @@ Testen Sie ihre Methoden im Hauptprogramm. Eine mögliche Bildschirmausgabe kön
 
 ![Illustration](Task.002.png)
 
+## Class Diagram
+
+### Program (CD)
+
+![Program (CD)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/cd_Program.puml)
+
 ## Activity Diagrams
 
-### Program.Main
+### Program.Main (AC)
 
-![Program.Main](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_Main.puml)
+![Program.Main (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_Main.puml)
 
-### Program.AddBigInteger
+### Program.AddBigInteger (AC)
 
-![Program.AddBigInteger](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_AddBigInteger.puml)
+![Program.AddBigInteger (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_AddBigInteger.puml)
 
-### Program.AddLeadingCharacters
+### Program.AddLeadingCharacters (AC)
 
-![Program.AddLeadingCharacters](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_AddLeadingCharacters.puml)
+![Program.AddLeadingCharacters (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_AddLeadingCharacters.puml)
 
-### Program.ReadBigInteger
+### Program.ReadBigInteger (AC)
 
-![Program.ReadBigInteger](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_ReadBigInteger.puml)
+![Program.ReadBigInteger (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_ReadBigInteger.puml)
 
-### Program.IsBigNumber
+### Program.IsBigNumber (AC)
 
-![Program.IsBigNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_IsBigNumber.puml)
+![Program.IsBigNumber (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/ac_Program_IsBigNumber.puml)
 
-## Sequnce Diagrams
+## Sequence Diagrams
 
-### Program.Main
+### Program.Main (SQ)
 
-![Program.Main](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_Main.puml)
+![Program.Main (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_Main.puml)
 
-### Program.AddBigInteger
+### Program.AddBigInteger (SQ)
 
-![Program.AddBigInteger](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_AddBigInteger.puml)
+![Program.AddBigInteger (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_AddBigInteger.puml)
 
-### Program.AddLeadingCharacters
+### Program.ReadBigInteger (SQ)
 
-![Program.AddLeadingCharacters](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_AddLeadingCharacters.puml)
+![Program.ReadBigInteger (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_ReadBigInteger.puml)
 
-### Program.ReadBigInteger
+### Program.IsBigNumber (SQ)
 
-![Program.ReadBigInteger](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_ReadBigInteger.puml)
-
-### Program.IsBigNumber
-
-![Program.IsBigNumber](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_IsBigNumber.puml)
+![Program.IsBigNumber (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/AddBigInteger.ConApp/diagrams/sq_Program_IsBigNumber.puml)

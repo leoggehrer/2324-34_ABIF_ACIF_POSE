@@ -6,6 +6,7 @@ participant "File.ReadAllLines(a0)" as File_ReadAllLines_a0 #LightGreen
 participant "lines[r].Split(a0)" as lines_r_Split_a0 #LightGreen
 participant "int.Parse(a0)" as int_Parse_a0 #LightGreen
 autonumber
+<<<<<<< HEAD
 alt#LightBlue File.Exists(filePath)
     ReadFieldFromCsvFile_p0 -[#grey]> File_Exists_a0 : (filePath)
     ReadFieldFromCsvFile_p0 -[#grey]> File_ReadAllLines_a0 : (filePath)
@@ -16,6 +17,18 @@ alt#LightBlue File.Exists(filePath)
         loop#LightCoral c < values.Length
             ReadFieldFromCsvFile_p0 -[#grey]> int_Parse_a0 : (values[c])
             int_Parse_a0 -[#blue]-> ReadFieldFromCsvFile_p0 : result[r, c]
+=======
+alt File.Exists(filePath)
+    ReadFieldFromCsvFile_p0 -> File_Exists_a0 : (filePath)
+    ReadFieldFromCsvFile_p0 -> File_ReadAllLines_a0 : (filePath)
+    File_ReadAllLines_a0 --> ReadFieldFromCsvFile_p0 : lines
+    loop r < lines.Length
+        ReadFieldFromCsvFile_p0 -> lines_r_Split_a0 : (';')
+        lines_r_Split_a0 --> ReadFieldFromCsvFile_p0 : values
+        loop c < values.Length
+            ReadFieldFromCsvFile_p0 -> int_Parse_a0 : (values[c])
+            int_Parse_a0 --> ReadFieldFromCsvFile_p0 : result[r, c]
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
         end
     end
 end

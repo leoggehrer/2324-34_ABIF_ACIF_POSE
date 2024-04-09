@@ -1,16 +1,4 @@
-﻿/// <summary>
-/// Represents the entry point of the program.
-/// </summary>
-/// <summary>
-/// Represents the entry point of the program.
-/// </summary>
-/// <summary>
-/// Represents the entry point of the program.
-/// </summary>
-/// <summary>
-/// Represents the entry point of the program.
-/// </summary>
-/*----------------------------------------------------------
+﻿/*----------------------------------------------------------
 *                 HTBLA-Leonding / Class: 3ABIF/3ACIF
 *----------------------------------------------------------
 *                 Hermann Mustermann

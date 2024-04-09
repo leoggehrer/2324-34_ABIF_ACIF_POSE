@@ -9,6 +9,7 @@ participant "char.IsWhiteSpace(a0)" as char_IsWhiteSpace_a0 #LightGreen
 participant "char.IsDigit(a0)" as char_IsDigit_a0 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
+<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("* Kreditkarten-Prüfer                             *")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
@@ -31,4 +32,28 @@ end
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
 Main_p0 -[#grey]> Console_ReadKey
+=======
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine_a0 : ("* Kreditkarten-Prüfer                             *")
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Geben Sie Ihre 16-stellige Kreditkartennummer ein: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> char_IsWhiteSpace_a0 : (input[i])
+char_IsWhiteSpace_a0 --> Main_p0 : result
+loop valid && idx < cardNumber.Length
+    Main_p0 -> char_IsDigit_a0 : (cardNumber[idx++])
+    char_IsDigit_a0 --> Main_p0 : valid
+end
+Main_p0 -> Console_WriteLine
+alt valid
+    Main_p0 -> Console_WriteLine_a0 : ($"Die Kreditkartennummer '{input}' ist gültig.")
+    else
+        Main_p0 -> Console_WriteLine_a0 : ($"Die Kreditkartennummer '{input}' ist ungültig.")
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

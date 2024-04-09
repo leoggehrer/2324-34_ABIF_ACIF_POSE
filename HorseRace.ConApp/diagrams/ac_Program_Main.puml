@@ -1,0 +1,7 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#WhiteSmoke:RunApp();
+stop
+@enduml

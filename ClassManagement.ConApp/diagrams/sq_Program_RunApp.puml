@@ -1,0 +1,31 @@
+@startuml Program.RunApp
+title Program.RunApp
+participant "RunApp" as RunApp #LightYellow
+participant "ReadPupilsFromCsvFile(a0)" as ReadPupilsFromCsvFile_a0 #LightGreen
+participant "PrintAndExecuteMenu()" as PrintAndExecuteMenu #LightGreen
+participant "ReadPupil(a0)" as ReadPupil_a0 #LightGreen
+participant "SortPupilsByCatalogNumber(a0)" as SortPupilsByCatalogNumber_a0 #LightGreen
+participant "SortPupilsByLastName(a0)" as SortPupilsByLastName_a0 #LightGreen
+participant "PrintPupils(a0)" as PrintPupils_a0 #LightGreen
+participant "SearchPupilsByLastName(a0)" as SearchPupilsByLastName_a0 #LightGreen
+participant "SearchPupilsByPostalCode(a0)" as SearchPupilsByPostalCode_a0 #LightGreen
+participant "WritePupilsToCsvFile(a0,a1)" as WritePupilsToCsvFile_a0_a1 #LightGreen
+autonumber
+RunApp -> ReadPupilsFromCsvFile_a0 : (FILE_NAME)
+ReadPupilsFromCsvFile_a0 --> RunApp : pupils
+RunApp -> PrintAndExecuteMenu
+PrintAndExecuteMenu --> RunApp : choice
+loop exit == false
+    RunApp -> ReadPupil_a0 : (pupils)
+    RunApp -> SortPupilsByCatalogNumber_a0 : (pupils)
+    RunApp -> SortPupilsByLastName_a0 : (pupils)
+    RunApp -> PrintPupils_a0 : (pupils)
+    RunApp -> SearchPupilsByLastName_a0 : (pupils)
+    RunApp -> SearchPupilsByPostalCode_a0 : (pupils)
+    RunApp -> WritePupilsToCsvFile_a0_a1 : (FILE_NAME, pupils)
+    alt !exit
+        RunApp -> PrintAndExecuteMenu
+        PrintAndExecuteMenu --> RunApp : choice
+    end
+end
+@enduml

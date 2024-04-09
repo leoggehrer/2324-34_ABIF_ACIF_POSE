@@ -2,9 +2,15 @@
 title Program.SumOfDigits
 participant "Char.IsDigit(a0)" as Char_IsDigit_a0 #LightGreen
 autonumber
+<<<<<<< HEAD
 loop#LightCoral i < text.Length
     alt#LightBlue Char.IsDigit(text[i])
         SumOfDigits_p0 -[#grey]> Char_IsDigit_a0 : (text[i])
+=======
+loop i < text.Length
+    alt Char.IsDigit(text[i])
+        SumOfDigits_p0 -> Char_IsDigit_a0 : (text[i])
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
     end
 end
 @enduml

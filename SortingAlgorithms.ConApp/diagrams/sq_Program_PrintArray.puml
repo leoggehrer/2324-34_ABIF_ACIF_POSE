@@ -4,6 +4,11 @@ participant "PrintArray(stringtitle,int[]array)" as PrintArray_p0_p1 #LightYello
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 participant "PrintArray(a0)" as PrintArray_a0 #LightGreen
 autonumber
+<<<<<<< HEAD
 PrintArray_p0_p1 -[#grey]> Console_WriteLine_a0 : (title)
 PrintArray_p0_p1 -[#grey]> PrintArray_a0 : (array)
+=======
+PrintArray_p0_p1 -> Console_WriteLine_a0 : (title)
+PrintArray_p0_p1 -> PrintArray_a0 : (array)
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

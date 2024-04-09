@@ -15,6 +15,7 @@ participant "diagramData.Insert(a0,a1)" as diagramData_Insert_a0_a1 #LightGreen
 participant "diagramData.Add(a0)" as diagramData_Add_a0 #LightGreen
 participant "File.WriteAllLines(a0,a1)" as File_WriteAllLines_a0_a1 #LightGreen
 autonumber
+<<<<<<< HEAD
 CreateActivityDiagram_p0_p1 -[#grey]> CSharpSyntaxTree_ParseText_a0 : (source)
 CSharpSyntaxTree_ParseText_a0 -[#blue]-> CreateActivityDiagram_p0_p1 : syntaxTree
 CreateActivityDiagram_p0_p1 -[#grey]> syntaxTree_GetRoot
@@ -39,6 +40,32 @@ loop#LightCoral classNodes
         CreateActivityDiagram_p0_p1 -[#grey]> diagramData_Add_a0 : ("stop")
         CreateActivityDiagram_p0_p1 -[#grey]> diagramData_Add_a0 : ("@enduml")
         CreateActivityDiagram_p0_p1 -[#grey]> File_WriteAllLines_a0_a1 : (filePath, diagramData)
+=======
+CreateActivityDiagram_p0_p1 -> CSharpSyntaxTree_ParseText_a0 : (source)
+CSharpSyntaxTree_ParseText_a0 --> CreateActivityDiagram_p0_p1 : syntaxTree
+CreateActivityDiagram_p0_p1 -> syntaxTree_GetRoot
+syntaxTree_GetRoot --> CreateActivityDiagram_p0_p1 : syntaxRoot
+CreateActivityDiagram_p0_p1 -> syntaxRoot_DescendantNodes_OfType_ClassDeclarationSyntax_
+syntaxRoot_DescendantNodes_OfType_ClassDeclarationSyntax_ --> CreateActivityDiagram_p0_p1 : classNodes
+alt Path.Exists(path) == false
+    CreateActivityDiagram_p0_p1 -> Path_Exists_a0 : (path)
+    CreateActivityDiagram_p0_p1 -> Directory_CreateDirectory_a0 : (path)
+end
+loop classNodes
+    CreateActivityDiagram_p0_p1 -> classNode_DescendantNodes_OfType_MethodDeclarationSyntax_
+    classNode_DescendantNodes_OfType_MethodDeclarationSyntax_ --> CreateActivityDiagram_p0_p1 : methodNodes
+    loop methodNodes
+        CreateActivityDiagram_p0_p1 -> Path_Combine_a0_a1 : (path, fileName)
+        Path_Combine_a0_a1 --> CreateActivityDiagram_p0_p1 : filePath
+        CreateActivityDiagram_p0_p1 -> CreateActivityDiagram_a0 : (methodNode)
+        CreateActivityDiagram_a0 --> CreateActivityDiagram_p0_p1 : diagramData
+        CreateActivityDiagram_p0_p1 -> diagramData_Insert_a0_a1 : (0, $"@startuml {classNode.Identifier.Text}.{methodNode.Identifier.Text}")
+        CreateActivityDiagram_p0_p1 -> diagramData_Insert_a0_a1 : (1, $"title {classNode.Identifier.Text}.{methodNode.Identifier.Text}")
+        CreateActivityDiagram_p0_p1 -> diagramData_Insert_a0_a1 : (2, "start")
+        CreateActivityDiagram_p0_p1 -> diagramData_Add_a0 : ("stop")
+        CreateActivityDiagram_p0_p1 -> diagramData_Add_a0 : ("@enduml")
+        CreateActivityDiagram_p0_p1 -> File_WriteAllLines_a0_a1 : (filePath, diagramData)
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
     end
 end
 @enduml

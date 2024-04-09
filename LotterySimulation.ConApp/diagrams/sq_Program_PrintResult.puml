@@ -3,7 +3,13 @@ title Program.PrintResult
 participant "PrintResult(int[]results)" as PrintResult_p0 #LightYellow
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
+<<<<<<< HEAD
 PrintResult_p0 -[#grey]> Console_WriteLine_a0 : ($"{i}er: {results[i], 10}")
 PrintResult_p0 -[#grey]> Console_WriteLine_a0 : (new string('-' , 20))
 PrintResult_p0 -[#grey]> Console_WriteLine_a0 : ($"Summe: {resultSum, 8}")
+=======
+PrintResult_p0 -> Console_WriteLine_a0 : ($"{i}er: {results[i], 10}")
+PrintResult_p0 -> Console_WriteLine_a0 : (new string('-' , 20))
+PrintResult_p0 -> Console_WriteLine_a0 : ($"Summe: {resultSum, 8}")
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

@@ -1,0 +1,22 @@
+@startuml Program.SearchPupilsByLastName
+title Program.SearchPupilsByLastName
+start
+#LightGreen:Params(Pupil[] pupils);
+#LightSkyBlue:int printIdx = 0\nPupil[] printList = new Pupil[40];
+#WhiteSmoke:Print("Familiennamen eingeben: ");
+#LightSkyBlue:string input = Console.ReadLine();
+#LightSkyBlue:int i = 0;
+while (i < pupils.Length) is (<color:green>yes)
+        #LightSkyBlue:Pupil pupil = pupils[i];
+        if (pupil != null && pupil.LastName.Equals(input)) then (<color:green>yes)
+                #WhiteSmoke:printList[printIdx++] = pupil;
+        endif
+:i++;
+endwhile (<color:red>no)
+if (printIdx > 0) then (<color:green>yes)
+        #WhiteSmoke:PrintPupils(printList);
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine("Keine Schüler mit diesem Familiennamen gefunden!");
+endif
+stop
+@enduml

@@ -3,5 +3,9 @@ title Program.WriteTippsToFile
 participant "WriteTippsToFile(LotteryTip[]tipps,stringfilePath)" as WriteTippsToFile_p0_p1 #LightYellow
 participant "File.WriteAllLines(a0,a1)" as File_WriteAllLines_a0_a1 #LightGreen
 autonumber
+<<<<<<< HEAD
 WriteTippsToFile_p0_p1 -[#grey]> File_WriteAllLines_a0_a1 : (filePath, lines)
+=======
+WriteTippsToFile_p0_p1 -> File_WriteAllLines_a0_a1 : (filePath, lines)
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

@@ -3,6 +3,11 @@ title Program.CreateTipps
 participant "CreateTipps(intcountTipps)" as CreateTipps_p0 #LightYellow
 participant "CreateTip()" as CreateTip #LightGreen
 autonumber
+<<<<<<< HEAD
 CreateTipps_p0 -[#grey]> CreateTip
 CreateTip -[#blue]-> CreateTipps_p0 : tip
+=======
+CreateTipps_p0 -> CreateTip
+CreateTip --> CreateTipps_p0 : tip
+>>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml
