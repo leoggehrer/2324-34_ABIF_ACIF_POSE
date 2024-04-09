@@ -1,0 +1,28 @@
+title:Program.Main (AC)
+fileName:ac_Program_Main.puml
+generated_on:09/04/2024 14:47:03
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.PrintResult (AC)
+fileName:ac_Program_PrintResult.puml
+generated_on:09/04/2024 14:47:03
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.EqualsTo (AC)
+fileName:ac_Program_EqualsTo.puml
+generated_on:09/04/2024 14:47:03
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.AnalyzeLottery (AC)
+fileName:ac_Program_AnalyzeLottery.puml
+generated_on:09/04/2024 14:47:03
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.CountNumberOfHits (AC)
+fileName:ac_Program_CountNumberOfHits.puml
+generated_on:09/04/2024 14:47:03
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.CreateTipps (AC)
+fileName:ac_Program_CreateTipps.puml
+generated_on:09/04/2024 14:47:03
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.CreateTip (AC)
+fileName:ac_Program_CreateTip.puml
+generated_on:09/04/2024 14:47:03
+generated_by:generated with the DiagramCreator by Prof.Gehrer

@@ -1,0 +1,8 @@
+@startuml Program.CalculateJump
+title Program.CalculateJump
+start
+#LightGreen:Params(double far);
+#WhiteSmoke:far = (int)far;
+#Lavender:return far >= 120 ? 60 + (far - 120) * 1.8 : far * 1.8;
+stop
+@enduml

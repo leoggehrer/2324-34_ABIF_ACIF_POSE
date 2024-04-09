@@ -1,0 +1,15 @@
+@startuml Program.PrintArray
+title Program.PrintArray
+start
+#LightGreen:Params(int[] array);
+#LightSkyBlue:int i = 0;
+while (i < array.Length) is (<color:green>yes)
+        if (i > 0) then (<color:green>yes)
+                #WhiteSmoke:Print(" ");
+        endif
+        #WhiteSmoke:Print(array[i]);
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+stop
+@enduml

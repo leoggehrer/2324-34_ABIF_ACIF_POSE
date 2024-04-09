@@ -1,25 +1,25 @@
 @startuml CompleteActivityDiagram
 header
-generated on 13.03.2024 08:32:44
+generated on 09/04/2024 14:46:34
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
-#Lavender:Params(string[] args);
-:PrintLine("Visitenkarte");
-#LightBlue:string username, adress;
-:Print("Write your name:   ");
-:username = ReadLine();
-:Print("write your adress: ");
-:adress = ReadLine();
-:PrintLine();
-:PrintLine("****************************************");
-:Print($"* {username,-37}");
-:PrintLine("*");
-:PrintLine("****************************************");
-:Print($"* {adress,-37}");
-:PrintLine("*");
-:PrintLine("****************************************");
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("Visitenkarte");
+#LightSkyBlue:string username, adress;
+#WhiteSmoke:Print("Write your name:   ");
+#WhiteSmoke:username = ReadLine();
+#WhiteSmoke:Print("write your adress: ");
+#WhiteSmoke:adress = ReadLine();
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("****************************************");
+#WhiteSmoke:Print($"* {username,-37}");
+#WhiteSmoke:PrintLine("*");
+#WhiteSmoke:PrintLine("****************************************");
+#WhiteSmoke:Print($"* {adress,-37}");
+#WhiteSmoke:PrintLine("*");
+#WhiteSmoke:PrintLine("****************************************");
 stop
 footer
 generated with the DiagramCreator by Prof.Gehrer

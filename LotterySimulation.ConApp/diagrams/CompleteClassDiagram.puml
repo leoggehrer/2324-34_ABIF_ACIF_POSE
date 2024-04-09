@@ -1,0 +1,19 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Program #GhostWhite {
+- {const} int TIP_SIZE = 6
+- {const} int MIN_NUMBER = 1
+- {const} int MAX_NUMBER = 45
+- {const} int TIPPS_COUNT = 1_000_000
+- {static} Random random = new Random(1)
+---
+---
+- {static} void Main()
++ {static} void PrintResult(int[] results)
++ {static} bool EqualsTo(int[] arrayOne, int[] arrayTwo)
+- {static} int[] AnalyzeLottery(int[,] lottoTipps, int[] thrownNumbers)
++ {static} int CountNumberOfHits(int index, int[,] tipps, int[] thrownNumbers)
++ {static} int[,] CreateTipps(int countTipps)
++ {static} int[] CreateTip()
+}
+@enduml

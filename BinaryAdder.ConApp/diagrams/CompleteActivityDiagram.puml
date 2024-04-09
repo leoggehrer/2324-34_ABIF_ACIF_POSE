@@ -1,126 +1,121 @@
 @startuml CompleteActivityDiagram
 header
-generated on 13.03.2024 08:32:44
+generated on 09/04/2024 14:46:34
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
-#Lavender:Params(string[] args);
-#LightBlue:string number1, number2, result;
-:PrintLine("Binäraddierer");
-:PrintLine("=============");
-:number1 = ReadBinaryNumber(1);
-:number2 = ReadBinaryNumber(2);
-:result = AddBinaryNumbers(number1, number2);
-:PrintLine($"{FormatBinary(number1, 8)} + {FormatBinary(number2, 8)} =  {FormatBinary(result, 8)}");
-:PrintLine();
-:PrintLine("Beenden mit Eingabetaste... ");
-:ReadLine();
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string number1, number2, result;
+#WhiteSmoke:PrintLine("Binäraddierer");
+#WhiteSmoke:PrintLine("=============");
+#WhiteSmoke:number1 = ReadBinaryNumber(1);
+#WhiteSmoke:number2 = ReadBinaryNumber(2);
+#WhiteSmoke:result = AddBinaryNumbers(number1, number2);
+#WhiteSmoke:PrintLine($"{FormatBinary(number1, 8)} + {FormatBinary(number2, 8)} =  {FormatBinary(result, 8)}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Beenden mit Eingabetaste... ");
+#WhiteSmoke:ReadLine();
 stop
 start
 note right:  Program.FormatBinary
-#Lavender:Params(string number, int wide);
-#LightBlue:string result = string.Empty
-int expandLength = wide - number.Length % wide + number.Length;
-:number = ExpandNumber(number, expandLength);
-#LightBlue:int i = 0;
+#LightGreen:Params(string number,int wide);
+#LightSkyBlue:string result = string.Empty\nint expandLength = wide - number.Length % wide + number.Length;
+#WhiteSmoke:number = ExpandNumber(number, expandLength);
+#LightSkyBlue:int i = 0;
 while (i < number.Length) is (<color:green>yes)
-    if (i > 0 && i % wide == 0) then (<color:green>yes)
-        :result += ' ';
-    endif
-    :result += number[i];
+        if (i > 0 && i % wide == 0) then (<color:green>yes)
+                #WhiteSmoke:result += ' ';
+        endif
+        #WhiteSmoke:result += number[i];
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;
 stop
 start
 note right:  Program.AddBinaryNumbers
-#Lavender:Params(string number1, string number2);
-#LightBlue:bool carry = false
-string result = string.Empty
-int numberLength = Math.Max(number1.Length, number2.Length) + 1;
-:number1 = ExpandNumber(number1, numberLength);
-:number2 = ExpandNumber(number2, numberLength);
-#LightBlue:int i = numberLength - 1;
+#LightGreen:Params(string number1,string number2);
+#LightSkyBlue:bool carry = false\nstring result = string.Empty\nint numberLength = Math.Max(number1.Length, number2.Length) + 1;
+#WhiteSmoke:number1 = ExpandNumber(number1, numberLength);
+#WhiteSmoke:number2 = ExpandNumber(number2, numberLength);
+#LightSkyBlue:int i = numberLength - 1;
 while (i >= 0) is (<color:green>yes)
-    if (carry == false && number1[i] == '0' && number2[i] == '0') then (<color:green>yes)
-        :result = '0' + result;
-      else (<color:red>no)
-        if (carry == false && number1[i] == '1' && number2[i] == '0') then (<color:green>yes)
-            :result = '1' + result;
-          else (<color:red>no)
-            if (carry == false && number1[i] == '0' && number2[i] == '1') then (<color:green>yes)
-                :result = '1' + result;
-              else (<color:red>no)
-                if (carry == false && number1[i] == '1' && number2[i] == '1') then (<color:green>yes)
-                    :carry = true;
-                    :result = '0' + result;
-                  else (<color:red>no)
-                    if (carry && number1[i] == '0' && number2[i] == '0') then (<color:green>yes)
-                        :carry = false;
-                        :result = '1' + result;
-                      else (<color:red>no)
-                        if (carry && number1[i] == '1' && number2[i] == '0') then (<color:green>yes)
-                            :result = '0' + result;
-                          else (<color:red>no)
-                            if (carry && number1[i] == '0' && number2[i] == '1') then (<color:green>yes)
-                                :result = '0' + result;
-                              else (<color:red>no)
-                                if (carry && number1[i] == '1' && number2[i] == '1') then (<color:green>yes)
-                                    :result = '1' + result;
+        if (carry == false && number1[i] == '0' && number2[i] == '0') then (<color:green>yes)
+                #WhiteSmoke:result = '0' + result;
+            else (<color:red>no)
+                if (carry == false && number1[i] == '1' && number2[i] == '0') then (<color:green>yes)
+                        #WhiteSmoke:result = '1' + result;
+                    else (<color:red>no)
+                        if (carry == false && number1[i] == '0' && number2[i] == '1') then (<color:green>yes)
+                                #WhiteSmoke:result = '1' + result;
+                            else (<color:red>no)
+                                if (carry == false && number1[i] == '1' && number2[i] == '1') then (<color:green>yes)
+                                        #WhiteSmoke:carry = true;
+                                        #WhiteSmoke:result = '0' + result;
+                                    else (<color:red>no)
+                                        if (carry && number1[i] == '0' && number2[i] == '0') then (<color:green>yes)
+                                                #WhiteSmoke:carry = false;
+                                                #WhiteSmoke:result = '1' + result;
+                                            else (<color:red>no)
+                                                if (carry && number1[i] == '1' && number2[i] == '0') then (<color:green>yes)
+                                                        #WhiteSmoke:result = '0' + result;
+                                                    else (<color:red>no)
+                                                        if (carry && number1[i] == '0' && number2[i] == '1') then (<color:green>yes)
+                                                                #WhiteSmoke:result = '0' + result;
+                                                            else (<color:red>no)
+                                                                if (carry && number1[i] == '1' && number2[i] == '1') then (<color:green>yes)
+                                                                        #WhiteSmoke:result = '1' + result;
+                                                                endif
+                                                        endif
+                                                endif
+                                        endif
                                 endif
-                            endif
                         endif
-                    endif
                 endif
-            endif
         endif
-    endif
 :i--;
 endwhile (<color:red>no)
 #Lavender:return ShrinkNumber(result);
 stop
 start
 note right:  Program.ShrinkNumber
-#Lavender:Params(string number);
+#LightGreen:Params(string number);
 #Lavender:return number.TrimStart('0');
 stop
 start
 note right:  Program.ExpandNumber
-#Lavender:Params(string number, int numberLength);
+#LightGreen:Params(string number,int numberLength);
 while (number.Length < numberLength) is (<color:green>yes)
-    :number = '0' + number;
+        #WhiteSmoke:number = '0' + number;
 endwhile (<color:red>no)
 #Lavender:return number;
 stop
 start
 note right:  Program.ReadBinaryNumber
-#Lavender:Params(int number);
-#LightBlue:string result
-bool validInput;
+#LightGreen:Params(int number);
+#LightSkyBlue:string result\nbool validInput;
 repeat
-    :Print($"Geben Sie die {number}. Binärzahl ein: ");
-    :result = ReadLine();
-    :validInput = CheckBinaryNumber(result);
-    if (!validInput) then (<color:green>yes)
-        :PrintLine("Fehler: In einer Binärzahl sind nur 1 und 0 erlaubt!");
-    endif
+        #WhiteSmoke:Print($"Geben Sie die {number}. Binärzahl ein: ");
+        #WhiteSmoke:result = ReadLine();
+        #WhiteSmoke:validInput = CheckBinaryNumber(result);
+        if (!validInput) then (<color:green>yes)
+                #WhiteSmoke:PrintLine("Fehler: In einer Binärzahl sind nur 1 und 0 erlaubt!");
+        endif
 repeat while (validInput == false) is (<color:green>yes)
 #Lavender:return result;
 stop
 start
 note right:  Program.CheckBinaryNumber
-#Lavender:Params(string number);
-#LightBlue:bool result = true
-int idx = 0;
+#LightGreen:Params(string number);
+#LightSkyBlue:bool result = true\nint idx = 0;
 while (idx < number.Length && result) is (<color:green>yes)
-    :result = IsBinaryDigit(number[idx++]);
+        #WhiteSmoke:result = IsBinaryDigit(number[idx++]);
 endwhile (<color:red>no)
 #Lavender:return result;
 stop
 start
 note right:  Program.IsBinaryDigit
-#Lavender:Params(char chr);
+#LightGreen:Params(char chr);
 #Lavender:return chr == '0' || chr == '1';
 stop
 footer

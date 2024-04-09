@@ -1,0 +1,17 @@
+@startuml Program.ReadPosturePoints
+title Program.ReadPosturePoints
+start
+#LightGreen:Params(int count);
+#LightSkyBlue:int idx = 0\nstring input\ndouble[] result = new double[count];
+while (idx < count) is (<color:green>yes)
+        #WhiteSmoke:Print($"Wertungsrichter {idx + 1} [0-20]: ");
+        #WhiteSmoke:input = ReadLine();
+        if (double.TryParse(input, out result[idx]) && result[idx] >= 0 && result[idx] <= 20 && (result[idx] % 1 == 0 || result[idx] % 1 == 0.5)) then (<color:green>yes)
+                #WhiteSmoke:idx++;
+            else (<color:red>no)
+                    #WhiteSmoke:PrintLine("Ungültige Eingabe!");
+        endif
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

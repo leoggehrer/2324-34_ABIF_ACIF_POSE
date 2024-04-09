@@ -1,0 +1,17 @@
+@startuml Sort.BruteForceSort
+title Sort.BruteForceSort
+start
+#LightGreen:Params(int[] array);
+#LightSkyBlue:int i = 0;
+while (i < array.Length) is (<color:green>yes)
+        #LightSkyBlue:int j = 0;
+        while (j < array.Length - 1) is (<color:green>yes)
+                if (array[j] > array[j + 1]) then (<color:green>yes)
+                        #WhiteSmoke:Swap(ref array[j], ref array[j + 1]);
+                endif
+        :j++;
+        endwhile (<color:red>no)
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

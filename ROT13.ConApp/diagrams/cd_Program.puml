@@ -1,0 +1,10 @@
+@startuml Program
+title Program
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} string Decrypt(string encrypted)
+- {static} string Encrypt(string input)
+}
+@enduml

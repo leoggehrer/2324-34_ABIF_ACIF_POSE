@@ -1,0 +1,12 @@
+@startuml Sort.BruteForceSort
+title Sort.BruteForceSort
+participant "Swap(a0,a1)" as Swap_a0_a1 #LightGreen
+autonumber
+loop#LightCoral i < array.Length
+    loop#LightCoral j < array.Length - 1
+        alt#LightBlue array[j] > array[j + 1]
+            BruteForceSort_p0 -[#grey]> Swap_a0_a1 : (ref array[j], ref array[j + 1])
+        end
+    end
+end
+@enduml

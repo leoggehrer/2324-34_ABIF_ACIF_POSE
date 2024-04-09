@@ -1,0 +1,33 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09/04/2024 14:47:07
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\ndouble sum\nint fiftyCentCount, oneEuroCount, twoEuroCount;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Sparschwein - Meine Bank, meine Zukunft         *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Wie viele Fünfzigerl?     ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:fiftyCentCount = Convert.ToInt32(input);
+#WhiteSmoke:Print("Wie viele Euro Stücke?    ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:oneEuroCount = Convert.ToInt32(input);
+#WhiteSmoke:Print("Wie viele Zweieurostücke? ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:twoEuroCount = Convert.ToInt32(input);
+#WhiteSmoke:sum = fiftyCentCount * 0.5 + oneEuroCount * 1 + twoEuroCount * 2;
+#WhiteSmoke:PrintLine("===================================================");
+#WhiteSmoke:PrintLine($"Dein Sparschwein enthält {sum:f2} EUR");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press enter to exit: ");
+#WhiteSmoke:ReadLine();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

@@ -1,0 +1,56 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09/04/2024 14:47:02
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input, fuel\ndouble distance, consumption, consumptionPer100;
+#WhiteSmoke:PrintLine("Fuel Calculator");
+#WhiteSmoke:PrintLine("===============");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Welchen Kraftstoff tanken Sie (Diesel/Benzin)? ");
+#WhiteSmoke:fuel = ReadLine();
+#WhiteSmoke:Print("Wieviel Kilometer sind Sie gefahren?           ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:distance = Convert.ToDouble(input);
+#WhiteSmoke:Print("Wieviel Kraftstoff haben Sie getankt?          ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:consumption = Convert.ToDouble(input);
+#WhiteSmoke:consumptionPer100 = consumption / distance * 100;
+#WhiteSmoke:PrintLine();
+if (fuel.ToLower() != "benzin" && fuel.ToLower() != "diesel") then (<color:green>yes)
+        #WhiteSmoke:PrintLine("Ungültige Kraftstoff!");
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine($"Der errechnete Durchschnittsverbrauch ist {consumptionPer100:F2} Liter pro 100 km");
+            if (fuel.ToLower() == "Diesel") then (<color:green>yes)
+                    if (consumptionPer100 < 5.0) then (<color:green>yes)
+                            #WhiteSmoke:PrintLine("Ihr Auto ist sparsam!");
+                        else (<color:red>no)
+                            if (consumptionPer100 <= 6.0) then (<color:green>yes)
+                                    #WhiteSmoke:PrintLine("Ihr Auto ist im Normbereich!");
+                                else (<color:red>no)
+                                        #WhiteSmoke:PrintLine("Ihr Auto verbraucht zu viel!");
+                            endif
+                    endif
+                else (<color:red>no)
+                        if (consumptionPer100 < 6.0) then (<color:green>yes)
+                                #WhiteSmoke:PrintLine("Ihr Auto ist sparsam!");
+                            else (<color:red>no)
+                                if (consumptionPer100 <= 7.0) then (<color:green>yes)
+                                        #WhiteSmoke:PrintLine("Ihr Auto ist im Normbereich!");
+                                    else (<color:red>no)
+                                            #WhiteSmoke:PrintLine("Ihr Auto verbraucht zu viel!");
+                                endif
+                        endif
+            endif
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

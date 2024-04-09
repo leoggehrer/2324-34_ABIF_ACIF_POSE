@@ -1,0 +1,12 @@
+@startuml Program.GetCurrentSolutionPath
+title Program.GetCurrentSolutionPath
+participant "GetCurrentSolutionPath" as GetCurrentSolutionPath #LightYellow
+participant "AppContext.BaseDirectory.IndexOf(a0,a1)" as AppContext_BaseDirectory_IndexOf_a0_a1 #LightGreen
+participant "result.EndsWith(a0)" as result_EndsWith_a0 #LightGreen
+autonumber
+GetCurrentSolutionPath -[#grey]> AppContext_BaseDirectory_IndexOf_a0_a1 : ($"{nameof(PlantUML)}", StringComparison.CurrentCultureIgnoreCase)
+AppContext_BaseDirectory_IndexOf_a0_a1 -[#blue]-> GetCurrentSolutionPath : endPos
+loop#LightCoral result.EndsWith(Path.DirectorySeparatorChar)
+    GetCurrentSolutionPath -[#grey]> result_EndsWith_a0 : (Path.DirectorySeparatorChar)
+end
+@enduml

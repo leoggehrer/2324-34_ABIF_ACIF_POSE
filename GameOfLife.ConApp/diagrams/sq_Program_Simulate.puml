@@ -1,16 +1,19 @@
 @startuml Program.Simulate
 title Program.Simulate
-participant "Simulate(int[,] field,int iterations,int delay)" as Simulate_p0_p1_p2 #LightYellow
+participant "Simulate(int[,]field,intiterations,intdelay)" as Simulate_p0_p1_p2 #LightYellow
 participant "PrintField(a0)" as PrintField_a0 #LightGreen
-participant "Thread.Sleep(a0)" as Thread.Sleep_a0 #LightGreen
+participant "Thread.Sleep(a0)" as Thread_Sleep_a0 #LightGreen
 participant "SumCellValues(a0)" as SumCellValues_a0 #LightGreen
 participant "CreateNextGeneration(a0)" as CreateNextGeneration_a0 #LightGreen
 autonumber
-Simulate_p0_p1_p2 -> PrintField_a0 : (field)
-Simulate_p0_p1_p2 -> Thread.Sleep_a0 : (delay)
-Simulate_p0_p1_p2 -> SumCellValues_a0 : (field)
-Simulate_p0_p1_p2 -> CreateNextGeneration_a0 : (field)
-CreateNextGeneration_a0 --> Simulate_p0_p1_p2 : field
-Simulate_p0_p1_p2 -> PrintField_a0 : (field)
-Simulate_p0_p1_p2 -> Thread.Sleep_a0 : (delay)
+Simulate_p0_p1_p2 -[#grey]> PrintField_a0 : (field)
+Simulate_p0_p1_p2 -[#grey]> Thread_Sleep_a0 : (delay)
+loop#LightCoral i < iterations && SumCellValues(field) > 0
+    Simulate_p0_p1_p2 -[#grey]> SumCellValues_a0 : (field)
+    SumCellValues_a0 -[#blue]-> Simulate_p0_p1_p2 : result
+    Simulate_p0_p1_p2 -[#grey]> CreateNextGeneration_a0 : (field)
+    CreateNextGeneration_a0 -[#blue]-> Simulate_p0_p1_p2 : field
+    Simulate_p0_p1_p2 -[#grey]> PrintField_a0 : (field)
+    Simulate_p0_p1_p2 -[#grey]> Thread_Sleep_a0 : (delay)
+end
 @enduml

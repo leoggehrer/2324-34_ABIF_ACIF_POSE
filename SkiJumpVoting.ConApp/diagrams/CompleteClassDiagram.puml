@@ -1,0 +1,12 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} double CalculateJump(double far)
+- {static} double CalculatePosturePoints(double[] posturePoints)
+- {static} double[] ReadPosturePoints(int count)
+- {static} double ReadJumpFar()
+}
+@enduml

@@ -1,0 +1,29 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+autonumber
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("* Steuerrechner für leistbare Grundnahrungsmittel *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -[#grey]> Console_Write_a0 : ("Aktueller Verkaufspreis:            ")
+Main_p0 -[#grey]> Console_ReadLine
+Console_ReadLine -[#blue]-> Main_p0 : input
+Main_p0 -[#grey]> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 -[#blue]-> Main_p0 : grossPrice10
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Nettopreis:                    {netPrice,10:f} EUR")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Derzeitige Merwehrtsteuer:     {tax10,10:f} EUR")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Werte bei 5% Steuer")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"-------------------")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Mehrwertsteuer:                {tax5,10:f} EUR")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Zukünftiger Verkaufspreis:     {grossPrice5,10:f} EUR")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_Write_a0 : ("Zum Beenden Eingabetaste drücken...")
+Main_p0 -[#grey]> Console_ReadLine
+@enduml

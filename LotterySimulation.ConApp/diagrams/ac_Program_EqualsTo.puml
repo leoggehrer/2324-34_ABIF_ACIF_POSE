@@ -1,0 +1,12 @@
+@startuml Program.EqualsTo
+title Program.EqualsTo
+start
+#LightGreen:Params(int[] arrayOne,int[] arrayTwo);
+#LightSkyBlue:int idx = 0\nbool result = arrayOne.Length == arrayTwo.Length;
+while (result && idx < arrayOne.Length) is (<color:green>yes)
+        #WhiteSmoke:result = arrayOne[idx] == arrayTwo[idx];
+        #WhiteSmoke:idx++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

@@ -1,17 +1,15 @@
 @startuml Program.Main
 title Program.Main
 start
-#Lavender:Params(string[] args);
-:PrintLine("Count Different Digits");
-:PrintLine("======================");
-:PrintLine();
-#LightBlue:int[] digits = ReadDigits()
-string output = string.Join("", digits)
-string uniqueDigits = GetUniqueDigitsString(digits);
-:PrintLine($"Eingegebene Ziffern im Array: {output}");
-:PrintLine($"Eindeutige Ziffern im Array : {uniqueDigits}");
-:PrintLine();
-:PrintLine("Beenden mit Eingabetaste... ");
-:ReadLine();
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("Count Different Digits");
+#WhiteSmoke:PrintLine("======================");
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:int[] digits = ReadDigits()\nstring output = string.Join("", digits)\nstring uniqueDigits = GetUniqueDigitsString(digits);
+#WhiteSmoke:PrintLine($"Eingegebene Ziffern im Array: {output}");
+#WhiteSmoke:PrintLine($"Eindeutige Ziffern im Array : {uniqueDigits}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Beenden mit Eingabetaste... ");
+#WhiteSmoke:ReadLine();
 stop
 @enduml

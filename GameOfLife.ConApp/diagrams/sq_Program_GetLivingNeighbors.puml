@@ -1,6 +1,10 @@
 @startuml Program.GetLivingNeighbors
 title Program.GetLivingNeighbors
-participant "GetLivingNeighbors(int[,] field,int row,int col)" as GetLivingNeighbors_p0_p1_p2 #LightYellow
-participant "field.GetLength(a0)" as field.GetLength_a0 #LightGreen
+participant "GetLivingNeighbors(int[,]field,introw,intcol)" as GetLivingNeighbors_p0_p1_p2 #LightYellow
+participant "field.GetLength(a0)" as field_GetLength_a0 #LightGreen
 autonumber
+GetLivingNeighbors_p0_p1_p2 -[#grey]> field_GetLength_a0 : (0)
+field_GetLength_a0 -[#blue]-> GetLivingNeighbors_p0_p1_p2 : rowCount
+GetLivingNeighbors_p0_p1_p2 -[#grey]> field_GetLength_a0 : (1)
+field_GetLength_a0 -[#blue]-> GetLivingNeighbors_p0_p1_p2 : colCount
 @enduml

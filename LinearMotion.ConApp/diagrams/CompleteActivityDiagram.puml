@@ -1,0 +1,49 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09/04/2024 14:47:03
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nint counterInSec = 0\ndouble distanceInKm, distanceInM, way = 0\ndouble speedInKmh_A, speedInKmh_B, speedInSec_A, speedInSec_B\ndouble distanceInM_A, distanceInM_B;
+#WhiteSmoke:PrintLine("Lienar Motion");
+#WhiteSmoke:PrintLine("=============");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Begegnung zweier entgegenfahrender Fahrzeuge");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Entfernung [positive Ganzzahl in km]:                         ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:distanceInKm = Convert.ToDouble(input);
+#WhiteSmoke:distanceInM = distanceInKm * 1_000;
+#WhiteSmoke:Print("Geschwindigkeit des Fahrzeuges A [positive Ganzzahl in km/h]: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:speedInKmh_A = Convert.ToDouble(input);
+#WhiteSmoke:speedInSec_A = speedInKmh_A / 3.6;
+#WhiteSmoke:Print("Geschwindigkeit des Fahrzeuges B [positive Ganzzahl in km/h]: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:speedInKmh_B = Convert.ToDouble(input);
+#WhiteSmoke:speedInSec_B = speedInKmh_B / 3.6;
+#WhiteSmoke:PrintLine();
+while (way < distanceInM) is (<color:green>yes)
+        #WhiteSmoke:way = (speedInSec_A + speedInSec_B) * counterInSec;
+        #WhiteSmoke:distanceInM_A = way * speedInSec_A / (speedInSec_A + speedInSec_B);
+        #WhiteSmoke:distanceInM_B = way * speedInSec_B / (speedInSec_A + speedInSec_B);
+        if (counterInSec % 60 == 0) then (<color:green>yes)
+                #WhiteSmoke:PrintLine($"Minute: {counterInSec / 60,4} | Position A: {distanceInM_A / 1_000,6:f} km | Position B: {distanceInM_B / 1_000,6:f} km | Distanz: {Math.Abs(distanceInM - distanceInM_A - distanceInM_B) / 1_000,6:f}");
+        endif
+        #WhiteSmoke:counterInSec++;
+endwhile (<color:red>no)
+#WhiteSmoke:counterInSec = counterInSec > 0 ? counterInSec - 1 : counterInSec;
+#WhiteSmoke:distanceInM_A = distanceInM * speedInSec_A / (speedInSec_A + speedInSec_B);
+#WhiteSmoke:distanceInM_B = distanceInM * speedInSec_B / (speedInSec_A + speedInSec_B);
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"Treffpunkt von A nach {distanceInM_A / 1_000:f} km und von B nach {distanceInM_B / 1_000:f} km nach {counterInSec / 3_600} Stunden, {(counterInSec % 3_600) / 60} Minuten und {counterInSec % 60} Sekunden");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

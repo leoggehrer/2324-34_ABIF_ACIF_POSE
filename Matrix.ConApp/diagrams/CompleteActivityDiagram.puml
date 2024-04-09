@@ -1,0 +1,125 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09/04/2024 14:47:03
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightSkyBlue:string input\nint rows, cols;
+repeat
+        #WhiteSmoke:ReadMatrixDimensions(out rows, out cols);
+        #LightSkyBlue:int[,] matrix = CreateMatrix(rows, cols);
+        #WhiteSmoke:CompareAndPrintMatrix(matrix);
+        #WhiteSmoke:Print("Weitere Matrix anzeigen (j/n)? ");
+        #WhiteSmoke:input = ReadLine();
+repeat while (input.ToLower() == "j") is (<color:green>yes)
+stop
+start
+note right:  Program.ReadMatrixDimensions
+#LightGreen:Params(out int rows,out int cols);
+#LightSkyBlue:string input\nbool validInput;
+repeat
+        #WhiteSmoke:Print("Zeilen:  ");
+        #WhiteSmoke:input = ReadLine();
+        #WhiteSmoke:validInput = int.TryParse(input, out rows);
+        if (!validInput) then (<color:green>yes)
+                #WhiteSmoke:PrintLine("Ungültige Eingabe. Bitte geben Sie eine positive ganze Zahl ein.");
+        endif
+repeat while (!validInput) is (<color:green>yes)
+repeat
+        #WhiteSmoke:Print("Spalten: ");
+        #WhiteSmoke:input = ReadLine();
+        #WhiteSmoke:validInput = int.TryParse(input, out cols);
+        if (!validInput) then (<color:green>yes)
+                #WhiteSmoke:PrintLine("Ungültige Eingabe. Bitte geben Sie eine positive ganze Zahl ein.");
+        endif
+repeat while (!validInput) is (<color:green>yes)
+stop
+start
+note right:  Program.CreateMatrix
+#LightGreen:Params(int rows,int cols);
+#LightSkyBlue:int[,] result = new int[Math.Max(0, rows), Math.Max(0, cols)];
+#LightSkyBlue:int i = 0;
+while (i < result.GetLength(0)) is (<color:green>yes)
+        #LightSkyBlue:int j = 0;
+        while (j < result.GetLength(1)) is (<color:green>yes)
+                #WhiteSmoke:result[i, j] = Random.Shared.Next(MIN_NUMBER, MAX_NUMBER + 1);
+        :j++;
+        endwhile (<color:red>no)
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+start
+note right:  Program.CompareAndPrintMatrix
+#LightGreen:Params(int[,] matrix);
+#LightSkyBlue:ConsoleColor originalColor = Console.ForegroundColor;
+#LightSkyBlue:int r = 0;
+while (r < matrix.GetLength(0)) is (<color:green>yes)
+        #WhiteSmoke:CompareAndPrintMatrixValues(matrix, r);
+        #WhiteSmoke:PrintLine();
+        if (r < matrix.GetLength(0) - 1) then (<color:green>yes)
+                #WhiteSmoke:CompareAndPrintMatrixRows(matrix, r, r + 1);
+                #WhiteSmoke:PrintLine();
+        endif
+:r++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Console.ForegroundColor = originalColor;
+stop
+start
+note right:  Program.CompareAndPrintMatrixValues
+#LightGreen:Params(int[,] matrix,int row);
+#LightSkyBlue:ConsoleColor originalColor = Console.ForegroundColor\nConsoleColor valueColor = ConsoleColor.Yellow\nConsoleColor relationColor = ConsoleColor.Red\nConsoleColor equalsColor = ConsoleColor.Green;
+#LightSkyBlue:int c = 0;
+while (c < matrix.GetLength(1)) is (<color:green>yes)
+        #WhiteSmoke:Console.ForegroundColor = valueColor;
+        #WhiteSmoke:Print($"{matrix[row, c]}");
+        if (c < matrix.GetLength(1) - 1) then (<color:green>yes)
+                if (matrix[row, c] > matrix[row, c + 1]) then (<color:green>yes)
+                        #WhiteSmoke:Console.ForegroundColor = relationColor;
+                        #WhiteSmoke:Print(" > ");
+                    else (<color:red>no)
+                        if (matrix[row, c] < matrix[row, c + 1]) then (<color:green>yes)
+                                #WhiteSmoke:Console.ForegroundColor = relationColor;
+                                #WhiteSmoke:Print(" < ");
+                            else (<color:red>no)
+                                    #WhiteSmoke:Console.ForegroundColor = equalsColor;
+                                    #WhiteSmoke:Print(" = ");
+                        endif
+                endif
+            else (<color:red>no)
+                    #WhiteSmoke:Print(" ");
+        endif
+:c++;
+endwhile (<color:red>no)
+#WhiteSmoke:Console.ForegroundColor = originalColor;
+stop
+start
+note right:  Program.CompareAndPrintMatrixRows
+#LightGreen:Params(int[,] matrix,int firstRow,int secondRow);
+#LightSkyBlue:ConsoleColor originalColor = Console.ForegroundColor\nConsoleColor relationColor = ConsoleColor.Red\nConsoleColor equalsColor = ConsoleColor.Green;
+if (firstRow >= 0 && firstRow < matrix.GetLength(0) && secondRow >= 0 && secondRow < matrix.GetLength(0)) then (<color:green>yes)
+        #LightSkyBlue:int c = 0;
+        while (c < matrix.GetLength(1)) is (<color:green>yes)
+                if (matrix[firstRow, c] > matrix[secondRow, c]) then (<color:green>yes)
+                        #WhiteSmoke:Console.ForegroundColor = relationColor;
+                        #WhiteSmoke:Print("V   ");
+                    else (<color:red>no)
+                        if (matrix[firstRow, c] < matrix[secondRow, c]) then (<color:green>yes)
+                                #WhiteSmoke:Console.ForegroundColor = relationColor;
+                                #WhiteSmoke:Print("A   ");
+                            else (<color:red>no)
+                                    #WhiteSmoke:Console.ForegroundColor = equalsColor;
+                                    #WhiteSmoke:Print("=   ");
+                        endif
+                endif
+        :c++;
+        endwhile (<color:red>no)
+endif
+#WhiteSmoke:Console.ForegroundColor = originalColor;
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

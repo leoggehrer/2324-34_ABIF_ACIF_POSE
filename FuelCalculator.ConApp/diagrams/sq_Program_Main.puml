@@ -1,0 +1,64 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
+participant "fuel.ToLower()" as fuel_ToLower #LightGreen
+participant "Console.ReadKey()" as Console_ReadKey #LightGreen
+autonumber
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Fuel Calculator")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("===============")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_Write_a0 : ("Welchen Kraftstoff tanken Sie (Diesel/Benzin)? ")
+Main_p0 -[#grey]> Console_ReadLine
+Console_ReadLine -[#blue]-> Main_p0 : fuel
+Main_p0 -[#grey]> Console_Write_a0 : ("Wieviel Kilometer sind Sie gefahren?           ")
+Main_p0 -[#grey]> Console_ReadLine
+Console_ReadLine -[#blue]-> Main_p0 : input
+Main_p0 -[#grey]> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 -[#blue]-> Main_p0 : distance
+Main_p0 -[#grey]> Console_Write_a0 : ("Wieviel Kraftstoff haben Sie getankt?          ")
+Main_p0 -[#grey]> Console_ReadLine
+Console_ReadLine -[#blue]-> Main_p0 : input
+Main_p0 -[#grey]> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 -[#blue]-> Main_p0 : consumption
+Main_p0 -[#grey]> Console_WriteLine
+alt#LightBlue fuel.ToLower() != "benzin" && fuel.ToLower() != "diesel"
+    Main_p0 -[#grey]> fuel_ToLower
+    fuel_ToLower -[#blue]-> Main_p0 : result
+    Main_p0 -[#grey]> fuel_ToLower
+    fuel_ToLower -[#blue]-> Main_p0 : result
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ungültige Kraftstoff!")
+    else
+        Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Der errechnete Durchschnittsverbrauch ist {consumptionPer100:F2} Liter pro 100 km")
+        alt#LightBlue fuel.ToLower() == "Diesel"
+            Main_p0 -[#grey]> fuel_ToLower
+            fuel_ToLower -[#blue]-> Main_p0 : result
+            alt#LightBlue consumptionPer100 < 5.0
+                Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ihr Auto ist sparsam!")
+                else
+                    alt#LightBlue consumptionPer100 <= 6.0
+                        Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ihr Auto ist im Normbereich!")
+                        else
+                            Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ihr Auto verbraucht zu viel!")
+                    end
+            end
+            else
+                alt#LightBlue consumptionPer100 < 6.0
+                    Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ihr Auto ist sparsam!")
+                    else
+                        alt#LightBlue consumptionPer100 <= 7.0
+                            Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ihr Auto ist im Normbereich!")
+                            else
+                                Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ihr Auto verbraucht zu viel!")
+                        end
+                end
+        end
+end
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -[#grey]> Console_ReadKey
+@enduml

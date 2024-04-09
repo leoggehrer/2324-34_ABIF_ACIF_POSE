@@ -1,0 +1,10 @@
+@startuml Program
+title Program
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+# {static} string GetCurrentSolutionPath()
+- {static} List<string> GetSourceCodeFiles(string path, string[] searchPatterns)
+}
+@enduml

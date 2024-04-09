@@ -1,0 +1,26 @@
+@startuml Program.CompareAndPrintMatrixRows
+title Program.CompareAndPrintMatrixRows
+participant "CompareAndPrintMatrixRows(int[,]matrix,intfirstRow,intsecondRow)" as CompareAndPrintMatrixRows_p0_p1_p2 #LightYellow
+participant "matrix.GetLength(a0)" as matrix_GetLength_a0 #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+autonumber
+alt#LightBlue firstRow >= 0 && firstRow < matrix.GetLength(0) && secondRow >= 0 && secondRow < matrix.GetLength(0)
+    CompareAndPrintMatrixRows_p0_p1_p2 -[#grey]> matrix_GetLength_a0 : (0)
+    matrix_GetLength_a0 -[#blue]-> CompareAndPrintMatrixRows_p0_p1_p2 : result
+    CompareAndPrintMatrixRows_p0_p1_p2 -[#grey]> matrix_GetLength_a0 : (0)
+    matrix_GetLength_a0 -[#blue]-> CompareAndPrintMatrixRows_p0_p1_p2 : result
+    loop#LightCoral c < matrix.GetLength(1)
+        CompareAndPrintMatrixRows_p0_p1_p2 -[#grey]> matrix_GetLength_a0 : (1)
+        matrix_GetLength_a0 -[#blue]-> CompareAndPrintMatrixRows_p0_p1_p2 : result
+        alt#LightBlue matrix[firstRow, c] > matrix[secondRow, c]
+            CompareAndPrintMatrixRows_p0_p1_p2 -[#grey]> Console_Write_a0 : ("V   ")
+            else
+                alt#LightBlue matrix[firstRow, c] < matrix[secondRow, c]
+                    CompareAndPrintMatrixRows_p0_p1_p2 -[#grey]> Console_Write_a0 : ("A   ")
+                    else
+                        CompareAndPrintMatrixRows_p0_p1_p2 -[#grey]> Console_Write_a0 : ("=   ")
+                end
+        end
+    end
+end
+@enduml

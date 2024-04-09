@@ -1,0 +1,32 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09/04/2024 14:47:12
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("Word Shuffle");
+#WhiteSmoke:PrintLine("============");
+#WhiteSmoke:Print("Please enter 1st word: ");
+#LightSkyBlue:string word1 = Console.ReadLine();
+#WhiteSmoke:Print("Please enter 2nd word: ");
+#LightSkyBlue:string word2 = Console.ReadLine();
+#WhiteSmoke:Print("Please enter 1rd word: ");
+#LightSkyBlue:string word3 = Console.ReadLine();
+#WhiteSmoke:PrintLine("Shuffling words ... six possible combinations:");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine(word1 + " " + word2 + " " + word3);
+#WhiteSmoke:PrintLine(word1 + " " + word3 + " " + word2);
+#WhiteSmoke:PrintLine(word2 + " " + word1 + " " + word3);
+#WhiteSmoke:PrintLine(word2 + " " + word3 + " " + word1);
+#WhiteSmoke:PrintLine(word3 + " " + word1 + " " + word2);
+#WhiteSmoke:PrintLine(word3 + " " + word2 + " " + word1);
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

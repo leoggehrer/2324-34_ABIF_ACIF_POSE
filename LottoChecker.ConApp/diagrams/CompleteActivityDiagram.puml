@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 19.03.2024 20:13:13
+generated on 09/04/2024 14:47:03
 end header
 title CompleteActivityDiagram
 start
@@ -9,9 +9,7 @@ note right:  Program.Main
 #WhiteSmoke:PrintLine("============");
 #WhiteSmoke:PrintLine();
 #WhiteSmoke:PrintLine();
-#LightSkyBlue:LotteryTip[] tipps = ReadTippsFromFile(FileName)
-LotteryTip[] correctTipps = GetCorrectTipps(tipps)
-LotteryTip[] incorrectTipps = GetIncorrectTipps(tipps);
+#LightSkyBlue:LotteryTip[] tipps = ReadTippsFromFile(FileName)\nLotteryTip[] correctTipps = GetCorrectTipps(tipps)\nLotteryTip[] incorrectTipps = GetIncorrectTipps(tipps);
 #WhiteSmoke:WriteTippsToFile(correctTipps, CorrectFileName);
 #WhiteSmoke:WriteTippsToFile(incorrectTipps, IncorrectFileName);
 #WhiteSmoke:PrintLine("Incorrect Tips:");
@@ -23,20 +21,19 @@ stop
 start
 note right:  Program.ReadTippsFromFile
 #LightGreen:Params(string filePath);
-#LightSkyBlue:string[] lines = File.ReadAllLines(filePath)
-LotteryTip[] tipps = new LotteryTip[lines.Length];
+#LightSkyBlue:string[] lines = File.ReadAllLines(filePath)\nLotteryTip[] tipps = new LotteryTip[lines.Length];
 #LightSkyBlue:int i = 0;
 while (i < lines.Length) is (<color:green>yes)
-    #LightSkyBlue:LotteryTip tip = new LotteryTip();
-    #LightSkyBlue:string[] parts = lines[i].Split(';');
-    #WhiteSmoke:tip.Id = parts[0];
-    #WhiteSmoke:tip.Numbers[0] = int.Parse(parts[1]);
-    #WhiteSmoke:tip.Numbers[1] = int.Parse(parts[2]);
-    #WhiteSmoke:tip.Numbers[2] = int.Parse(parts[3]);
-    #WhiteSmoke:tip.Numbers[3] = int.Parse(parts[4]);
-    #WhiteSmoke:tip.Numbers[4] = int.Parse(parts[5]);
-    #WhiteSmoke:tip.Numbers[5] = int.Parse(parts[6]);
-    #WhiteSmoke:tipps[i] = tip;
+        #LightSkyBlue:LotteryTip tip = new LotteryTip();
+        #LightSkyBlue:string[] parts = lines[i].Split(';');
+        #WhiteSmoke:tip.Id = parts[0];
+        #WhiteSmoke:tip.Numbers[0] = int.Parse(parts[1]);
+        #WhiteSmoke:tip.Numbers[1] = int.Parse(parts[2]);
+        #WhiteSmoke:tip.Numbers[2] = int.Parse(parts[3]);
+        #WhiteSmoke:tip.Numbers[3] = int.Parse(parts[4]);
+        #WhiteSmoke:tip.Numbers[4] = int.Parse(parts[5]);
+        #WhiteSmoke:tip.Numbers[5] = int.Parse(parts[6]);
+        #WhiteSmoke:tipps[i] = tip;
 :i++;
 endwhile (<color:red>no)
 #Lavender:return tipps;
@@ -46,7 +43,7 @@ note right:  Program.PrintTipps
 #LightGreen:Params(LotteryTip[] tipps);
 #LightSkyBlue:int i = 0;
 while (i < tipps.Length) is (<color:green>yes)
-    #WhiteSmoke:PrintLine($"{tipps[i].Id}: {tipps[i].Numbers[0],3} {tipps[i].Numbers[1],3} {tipps[i].Numbers[2],3} {tipps[i].Numbers[3],3} {tipps[i].Numbers[4],3} {tipps[i].Numbers[5],3}");
+        #WhiteSmoke:PrintLine($"{tipps[i].Id}: {tipps[i].Numbers[0],3} {tipps[i].Numbers[1],3} {tipps[i].Numbers[2],3} {tipps[i].Numbers[3],3} {tipps[i].Numbers[4],3} {tipps[i].Numbers[5],3}");
 :i++;
 endwhile (<color:red>no)
 stop
@@ -56,7 +53,7 @@ note right:  Program.WriteTippsToFile
 #LightSkyBlue:string[] lines = new string[tipps.Length];
 #LightSkyBlue:int i = 0;
 while (i < tipps.Length) is (<color:green>yes)
-    #WhiteSmoke:lines[i] = $"{tipps[i].Id};{tipps[i].Numbers[0]};{tipps[i].Numbers[1]};{tipps[i].Numbers[2]};{tipps[i].Numbers[3]};{tipps[i].Numbers[4]};{tipps[i].Numbers[5]}";
+        #WhiteSmoke:lines[i] = $"{tipps[i].Id};{tipps[i].Numbers[0]};{tipps[i].Numbers[1]};{tipps[i].Numbers[2]};{tipps[i].Numbers[3]};{tipps[i].Numbers[4]};{tipps[i].Numbers[5]}";
 :i++;
 endwhile (<color:red>no)
 #WhiteSmoke:File.WriteAllLines(filePath, lines);
@@ -67,9 +64,9 @@ note right:  Program.GetCorrectTipps
 #LightSkyBlue:List<LotteryTip> result = new List<LotteryTip>();
 #LightSkyBlue:int i = 0;
 while (i < tipps.Length) is (<color:green>yes)
-    if (IsTipValid(tipps[i])) then (<color:green>yes)
-        #WhiteSmoke:result.Add(tipps[i]);
-    endif
+        if (IsTipValid(tipps[i])) then (<color:green>yes)
+                #WhiteSmoke:result.Add(tipps[i]);
+        endif
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result.ToArray();
@@ -80,9 +77,9 @@ note right:  Program.GetIncorrectTipps
 #LightSkyBlue:List<LotteryTip> result = new List<LotteryTip>();
 #LightSkyBlue:int i = 0;
 while (i < tipps.Length) is (<color:green>yes)
-    if (IsTipValid(tipps[i]) == false) then (<color:green>yes)
-        #WhiteSmoke:result.Add(tipps[i]);
-    endif
+        if (IsTipValid(tipps[i]) == false) then (<color:green>yes)
+                #WhiteSmoke:result.Add(tipps[i]);
+        endif
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result.ToArray();
@@ -93,11 +90,9 @@ note right:  Program.IsTipValid
 #LightSkyBlue:bool result = true;
 #LightSkyBlue:int i = 0;
 while (i < tip.Numbers.Length && result) is (<color:green>yes)
-    if (tip.Numbers[i] < 1 
-                    || tip.Numbers[i] > 45
-                    || CountNumberInTip(tip.Numbers[i], tip) != 1) then (<color:green>yes)
-        #WhiteSmoke:result = false;
-    endif
+        if (tip.Numbers[i] < 1 || tip.Numbers[i] > 45 || CountNumberInTip(tip.Numbers[i], tip) != 1) then (<color:green>yes)
+                #WhiteSmoke:result = false;
+        endif
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;
@@ -108,9 +103,9 @@ note right:  Program.CountNumberInTip
 #LightSkyBlue:int result = 0;
 #LightSkyBlue:int i = 0;
 while (i < tip.Numbers.Length) is (<color:green>yes)
-    if (number == tip.Numbers[i]) then (<color:green>yes)
-        #WhiteSmoke:result++;
-    endif
+        if (number == tip.Numbers[i]) then (<color:green>yes)
+                #WhiteSmoke:result++;
+        endif
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;

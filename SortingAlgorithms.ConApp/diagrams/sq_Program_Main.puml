@@ -1,0 +1,92 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "CreateRandomArray(a0)" as CreateRandomArray_a0 #LightGreen
+participant "PrintArray(a0,a1)" as PrintArray_a0_a1 #LightGreen
+participant "Sort.BruteForceSort(a0)" as Sort_BruteForceSort_a0 #LightGreen
+participant "Sort.BubbleSort(a0)" as Sort_BubbleSort_a0 #LightGreen
+participant "Sort.InsertionSort(a0)" as Sort_InsertionSort_a0 #LightGreen
+participant "Sort.SelectionSort(a0)" as Sort_SelectionSort_a0 #LightGreen
+participant "sw.Start()" as sw_Start #LightGreen
+participant "sw.Stop()" as sw_Stop #LightGreen
+participant "sw.Restart()" as sw_Restart #LightGreen
+participant "Array.Sort(a0)" as Array_Sort_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+autonumber
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Sort-Algorithmen!")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("=================")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Test BruteForceSort")
+Main_p0 -[#grey]> CreateRandomArray_a0 : (TEST_SIZE)
+CreateRandomArray_a0 -[#blue]-> Main_p0 : array
+Main_p0 -[#grey]> PrintArray_a0_a1 : ("Unsorted:", array)
+Main_p0 -[#grey]> Sort_BruteForceSort_a0 : (array)
+Main_p0 -[#grey]> PrintArray_a0_a1 : ("BruteForceSort:", array)
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Test BubbleSort")
+Main_p0 -[#grey]> CreateRandomArray_a0 : (TEST_SIZE)
+CreateRandomArray_a0 -[#blue]-> Main_p0 : array
+Main_p0 -[#grey]> PrintArray_a0_a1 : ("Unsorted:", array)
+Main_p0 -[#grey]> Sort_BubbleSort_a0 : (array)
+Main_p0 -[#grey]> PrintArray_a0_a1 : ("BubbleSort:", array)
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Test InsertionSort")
+Main_p0 -[#grey]> CreateRandomArray_a0 : (TEST_SIZE)
+CreateRandomArray_a0 -[#blue]-> Main_p0 : array
+Main_p0 -[#grey]> PrintArray_a0_a1 : ("Unsorted:", array)
+Main_p0 -[#grey]> Sort_InsertionSort_a0 : (array)
+Main_p0 -[#grey]> PrintArray_a0_a1 : ("InsertionSort:", array)
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Test SelectionSort")
+Main_p0 -[#grey]> CreateRandomArray_a0 : (TEST_SIZE)
+CreateRandomArray_a0 -[#blue]-> Main_p0 : array
+Main_p0 -[#grey]> PrintArray_a0_a1 : ("Unsorted:", array)
+Main_p0 -[#grey]> Sort_SelectionSort_a0 : (array)
+Main_p0 -[#grey]> PrintArray_a0_a1 : ("SelectionSort:", array)
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Performance Testing")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("===================")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Machine:   " + Environment.MachineName)
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Version:   " + Environment.Version)
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Processor: Apple M2")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Processor: " + Environment.ProcessorCount + " cores")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("OS:        " + Environment.OSVersion)
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> CreateRandomArray_a0 : (PERFORMANCE_SIZE)
+CreateRandomArray_a0 -[#blue]-> Main_p0 : randomArray
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"{nameof(Sort.BruteForceSort)}(0...{randomArray.Length})")
+Main_p0 -[#grey]> sw_Start
+Main_p0 -[#grey]> Sort_BruteForceSort_a0 : (arrayToSort)
+Main_p0 -[#grey]> sw_Stop
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Zeitmessung: {sw.ElapsedMilliseconds} ms")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"{nameof(Sort.BubbleSort)}(0...{randomArray.Length})")
+Main_p0 -[#grey]> sw_Restart
+Main_p0 -[#grey]> Sort_BubbleSort_a0 : (arrayToSort)
+Main_p0 -[#grey]> sw_Stop
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Zeitmessung: {sw.ElapsedMilliseconds} ms")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"{nameof(Sort.InsertionSort)}(0...{randomArray.Length})")
+Main_p0 -[#grey]> sw_Restart
+Main_p0 -[#grey]> Sort_InsertionSort_a0 : (arrayToSort)
+Main_p0 -[#grey]> sw_Stop
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Zeitmessung: {sw.ElapsedMilliseconds} ms")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"{nameof(Sort.SelectionSort)}(0...{randomArray.Length})")
+Main_p0 -[#grey]> sw_Restart
+Main_p0 -[#grey]> Sort_SelectionSort_a0 : (arrayToSort)
+Main_p0 -[#grey]> sw_Stop
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Zeitmessung: {sw.ElapsedMilliseconds} ms")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Array.Sort(0...{randomArray.Length})")
+Main_p0 -[#grey]> sw_Restart
+Main_p0 -[#grey]> Array_Sort_a0 : (arrayToSort)
+Main_p0 -[#grey]> sw_Stop
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Zeitmessung: {sw.ElapsedMilliseconds} ms")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Exit with ENTER...")
+Main_p0 -[#grey]> Console_ReadLine
+@enduml

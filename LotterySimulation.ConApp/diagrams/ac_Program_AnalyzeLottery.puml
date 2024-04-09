@@ -1,0 +1,14 @@
+@startuml Program.AnalyzeLottery
+title Program.AnalyzeLottery
+start
+#LightGreen:Params(int[,] lottoTipps,int[] thrownNumbers);
+#LightSkyBlue:int[] result = new int[TIP_SIZE + 1];
+#LightSkyBlue:int i = 0;
+while (i < lottoTipps.GetLength(0)) is (<color:green>yes)
+        #LightSkyBlue:int hits = CountNumberOfHits(i, lottoTipps, thrownNumbers);
+        #WhiteSmoke:result[hits]++;
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

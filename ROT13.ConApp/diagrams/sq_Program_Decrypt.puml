@@ -1,0 +1,8 @@
+@startuml Program.Decrypt
+title Program.Decrypt
+participant "Decrypt(stringencrypted)" as Decrypt_p0 #LightYellow
+participant "Encrypt(a0)" as Encrypt_a0 #LightGreen
+autonumber
+Decrypt_p0 -[#grey]> Encrypt_a0 : (encrypted)
+Encrypt_a0 -[#blue]-> Decrypt_p0 : result
+@enduml

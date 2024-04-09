@@ -1,0 +1,24 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "FilterVocals(a0)" as FilterVocals_a0 #LightGreen
+participant "Console.ReadKey()" as Console_ReadKey #LightGreen
+autonumber
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("* Vocal Filter with Method                        *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_Write_a0 : ("Eingabetext: ")
+Main_p0 -[#grey]> Console_ReadLine
+Console_ReadLine -[#blue]-> Main_p0 : input
+Main_p0 -[#grey]> FilterVocals_a0 : (input)
+FilterVocals_a0 -[#blue]-> Main_p0 : output
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Ausgabetext: {output}")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -[#grey]> Console_ReadKey
+@enduml

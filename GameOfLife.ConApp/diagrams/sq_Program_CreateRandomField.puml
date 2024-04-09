@@ -1,10 +1,16 @@
 @startuml Program.CreateRandomField
 title Program.CreateRandomField
-participant "CreateRandomField(int rows,int cols,int occupancy)" as CreateRandomField_p0_p1_p2 #LightYellow
-participant "Math.Max(a0, a1)" as Math.Max_a0_a1 #LightGreen
-participant "Math.Min(a0, a1)" as Math.Min_a0_a1 #LightGreen
-participant "Random.Shared.Next(a0, a1)" as Random.Shared.Next_a0_a1 #LightGreen
+participant "CreateRandomField(introws,intcols,intoccupancy)" as CreateRandomField_p0_p1_p2 #LightYellow
+participant "Math.Max(a0,a1)" as Math_Max_a0_a1 #LightGreen
+participant "Math.Min(a0,a1)" as Math_Min_a0_a1 #LightGreen
+participant "Random.Shared.Next(a0,a1)" as Random_Shared_Next_a0_a1 #LightGreen
 autonumber
-CreateRandomField_p0_p1_p2 -> Math.Min_a0_a1 : (occupancy ,rows * cols)
-Math.Min_a0_a1 --> CreateRandomField_p0_p1_p2 : occupancy
+CreateRandomField_p0_p1_p2 -[#grey]> Math_Max_a0_a1 : (rows, 0)
+CreateRandomField_p0_p1_p2 -[#grey]> Math_Max_a0_a1 : (cols, 0)
+CreateRandomField_p0_p1_p2 -[#grey]> Math_Min_a0_a1 : (occupancy, rows * cols)
+Math_Min_a0_a1 -[#blue]-> CreateRandomField_p0_p1_p2 : occupancy
+CreateRandomField_p0_p1_p2 -[#grey]> Random_Shared_Next_a0_a1 : (0, rows)
+Random_Shared_Next_a0_a1 -[#blue]-> CreateRandomField_p0_p1_p2 : r
+CreateRandomField_p0_p1_p2 -[#grey]> Random_Shared_Next_a0_a1 : (0, cols)
+Random_Shared_Next_a0_a1 -[#blue]-> CreateRandomField_p0_p1_p2 : c
 @enduml

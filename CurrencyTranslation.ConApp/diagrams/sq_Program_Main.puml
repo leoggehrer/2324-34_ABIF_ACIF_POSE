@@ -1,0 +1,39 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine().ToUpper()" as Console_ReadLine_ToUpper #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
+autonumber
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("* Währungsrechner - Der faire Austausch von Geld  *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("*                   EURO    -> DOLLAR             *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("*                   EURO    -> FRANKEN            *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("* oder              DOLLAR  -> EURO               *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("*                   DOLLAR  -> FRANKEN            *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("* oder              FRANKEN -> EURO               *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("*                   FRANKEN -> DOLLAR             *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_Write_a0 : ("Eingabe der Ausgangswaehrung (D=Dollar, E=Euro, F=Franken): ")
+Main_p0 -[#grey]> Console_ReadLine_ToUpper
+Console_ReadLine_ToUpper -[#blue]-> Main_p0 : sourceCurrency
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_Write_a0 : ("Betrag: ")
+Main_p0 -[#grey]> Console_ReadLine
+Console_ReadLine -[#blue]-> Main_p0 : input
+Main_p0 -[#grey]> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 -[#blue]-> Main_p0 : value
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ungültige Eingabe!")
+alt#LightBlue validInput
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Euro:    {euroValue:f2}")
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Dollar:  {dollarValue:f2}")
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Franken: {francValue:f2}")
+end
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press enter to exit: ")
+Main_p0 -[#grey]> Console_ReadLine
+@enduml

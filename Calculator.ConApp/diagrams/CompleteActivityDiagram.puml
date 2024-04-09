@@ -1,30 +1,29 @@
 @startuml CompleteActivityDiagram
 header
-generated on 13.03.2024 08:32:44
+generated on 09/04/2024 14:46:35
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
-#Lavender:Params(string[] args);
-#LightBlue:string input
-int number1, number2, sum;
-:PrintLine("****************************************");
-:PrintLine("* Calculator - Ihr Zahlenbegleiter     *");
-:PrintLine("****************************************");
-:Print("Erste Zahl:  ");
-:input = ReadLine();
-:number1 = Convert.ToInt32(input);
-:Print("Zweite Zahl: ");
-:input = ReadLine();
-:number2 = Convert.ToInt32(input);
-:sum = number1 + number2;
-:PrintLine("Ergebnis:");
-:PrintLine("====================");
-:PrintLine($"{number1,20}");
-:PrintLine($"+{number2,19}");
-:PrintLine("--------------------");
-:PrintLine($"{sum,20}");
-:PrintLine("====================");
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nint number1, number2, sum;
+#WhiteSmoke:PrintLine("****************************************");
+#WhiteSmoke:PrintLine("* Calculator - Ihr Zahlenbegleiter     *");
+#WhiteSmoke:PrintLine("****************************************");
+#WhiteSmoke:Print("Erste Zahl:  ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:number1 = Convert.ToInt32(input);
+#WhiteSmoke:Print("Zweite Zahl: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:number2 = Convert.ToInt32(input);
+#WhiteSmoke:sum = number1 + number2;
+#WhiteSmoke:PrintLine("Ergebnis:");
+#WhiteSmoke:PrintLine("====================");
+#WhiteSmoke:PrintLine($"{number1,20}");
+#WhiteSmoke:PrintLine($"+{number2,19}");
+#WhiteSmoke:PrintLine("--------------------");
+#WhiteSmoke:PrintLine($"{sum,20}");
+#WhiteSmoke:PrintLine("====================");
 stop
 footer
 generated with the DiagramCreator by Prof.Gehrer

@@ -1,0 +1,51 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:int counter = 0\nstring englishWord, germanWord\nstring translation;
+#WhiteSmoke:PrintLine("Lerne die Vokabeln!");
+#WhiteSmoke:PrintLine("===================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("* --------------------------- *");
+#WhiteSmoke:PrintLine("*      Expertenabschnitt      *");
+#WhiteSmoke:PrintLine("* --------------------------- *");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Englisches Wort:      ");
+#WhiteSmoke:englishWord = ReadLine()!;
+#WhiteSmoke:Print("Deutsche Übersetzung: ");
+#WhiteSmoke:germanWord = ReadLine()!;
+#WhiteSmoke:Console.Clear();
+#WhiteSmoke:PrintLine("* --------------------------- *");
+#WhiteSmoke:PrintLine("*      Schülerabschnitt       *");
+#WhiteSmoke:PrintLine("* --------------------------- *");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"Gib die deutsche Übersetzung für '{englishWord}' an:");
+#WhiteSmoke:PrintLine();
+repeat
+        #WhiteSmoke:Print($"{++counter}. Versuch: ");
+        #WhiteSmoke:translation = ReadLine()!;
+repeat while (translation != germanWord && counter < 10) is (<color:green>yes)
+if (counter == 1) then (<color:green>yes)
+        #WhiteSmoke:PrintLine("Ausgezeichnet, sofort gewußt!");
+    else (<color:red>no)
+        if ((counter == 2) || (counter == 3)) then (<color:green>yes)
+                #WhiteSmoke:PrintLine("Gut gemacht, nur {0} Versuche!", counter);
+            else (<color:red>no)
+                if ((counter == 4) || (counter == 5)) then (<color:green>yes)
+                        #WhiteSmoke:PrintLine("Ein bisschen üben, das wird schon.");
+                    else (<color:red>no)
+                        if ((counter > 5) && (counter < 10)) then (<color:green>yes)
+                                #WhiteSmoke:PrintLine("Üben, üben, üben!");
+                            else (<color:red>no)
+                                if (counter == 10) then (<color:green>yes)
+                                        #WhiteSmoke:PrintLine("Das war wohl nichts!!");
+                                endif
+                        endif
+                endif
+        endif
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

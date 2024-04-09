@@ -1,0 +1,30 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input, splitText;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* StringSplit - Ein einfacher Textsplit           *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabetext:  ");
+#WhiteSmoke:input = ReadLine();
+repeat
+        #WhiteSmoke:Print("Splitzeichen: ");
+        #WhiteSmoke:splitText = ReadLine();
+repeat while (splitText.Length != 1) is (<color:green>yes)
+#WhiteSmoke:PrintLine("*** Ausgabetext ***");
+#LightSkyBlue:int i = 0;
+while (i < input.Length) is (<color:green>yes)
+        if (input[i] == splitText[0]) then (<color:green>yes)
+                #WhiteSmoke:PrintLine();
+            else (<color:red>no)
+                    #WhiteSmoke:Print(input[i]);
+        endif
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

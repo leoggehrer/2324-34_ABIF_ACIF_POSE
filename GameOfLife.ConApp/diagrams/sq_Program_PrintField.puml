@@ -1,14 +1,20 @@
 @startuml Program.PrintField
 title Program.PrintField
-participant "PrintField(int[,] field)" as PrintField_p0 #LightYellow
-participant "Console.Clear()" as Console.Clear #LightGreen
-participant "field.GetLength(a0)" as field.GetLength_a0 #LightGreen
-participant "Console.Write(a0)" as Console.Write_a0 #LightGreen
-participant "Console.WriteLine()" as Console.WriteLine #LightGreen
+participant "PrintField(int[,]field)" as PrintField_p0 #LightYellow
+participant "Console.Clear()" as Console_Clear #LightGreen
+participant "field.GetLength(a0)" as field_GetLength_a0 #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 autonumber
-PrintField_p0 -> Console.Clear
-PrintField_p0 -> field.GetLength_a0 : (0)
-PrintField_p0 -> field.GetLength_a0 : (1)
-PrintField_p0 -> Console.Write_a0 : ($" {sign} ")
-PrintField_p0 -> Console.WriteLine
+PrintField_p0 -[#grey]> Console_Clear
+loop#LightCoral r < field.GetLength(0)
+    PrintField_p0 -[#grey]> field_GetLength_a0 : (0)
+    field_GetLength_a0 -[#blue]-> PrintField_p0 : result
+    loop#LightCoral c < field.GetLength(1)
+        PrintField_p0 -[#grey]> field_GetLength_a0 : (1)
+        field_GetLength_a0 -[#blue]-> PrintField_p0 : result
+        PrintField_p0 -[#grey]> Console_Write_a0 : ($" {sign} ")
+    end
+    PrintField_p0 -[#grey]> Console_WriteLine
+end
 @enduml

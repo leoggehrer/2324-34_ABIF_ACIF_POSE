@@ -1,0 +1,12 @@
+@startuml Program
+title Program
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
++ {static} void WriteStars(int count)
++ {static} void WriteCharacters(int count, char character)
++ {static} int SumOfDigits(string text)
++ {static} string SubString(string text, int startIndex, int length)
+}
+@enduml

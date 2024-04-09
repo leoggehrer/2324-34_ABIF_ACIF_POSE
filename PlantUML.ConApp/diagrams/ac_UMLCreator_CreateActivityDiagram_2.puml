@@ -1,0 +1,13 @@
+@startuml UMLCreator.CreateActivityDiagram
+title UMLCreator.CreateActivityDiagram
+start
+#LightGreen:Params(MethodDeclarationSyntax methodNode);
+#LightSkyBlue:var diagramData = new List<string>()\nvar statements = methodNode?.Body?.Statements;
+:iterator = statements!.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:statement = iterator.Current();
+            #WhiteSmoke:AnalysisStatement(statement, diagramData, 0);
+endwhile (<color:red>no)
+#Lavender:return diagramData;
+stop
+@enduml

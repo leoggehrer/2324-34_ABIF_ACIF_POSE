@@ -1,0 +1,16 @@
+title:Program.Main (SQ)
+fileName:sq_Program_Main.puml
+generated_on:09/04/2024 14:47:08
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.WriteStars (SQ)
+fileName:sq_Program_WriteStars.puml
+generated_on:09/04/2024 14:47:08
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.WriteCharacters (SQ)
+fileName:sq_Program_WriteCharacters.puml
+generated_on:09/04/2024 14:47:08
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.SumOfDigits (SQ)
+fileName:sq_Program_SumOfDigits.puml
+generated_on:09/04/2024 14:47:08
+generated_by:generated with the DiagramCreator by Prof.Gehrer

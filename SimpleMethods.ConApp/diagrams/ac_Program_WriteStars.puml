@@ -1,0 +1,12 @@
+@startuml Program.WriteStars
+title Program.WriteStars
+start
+#LightGreen:Params(int count);
+#LightSkyBlue:int i = 0;
+while (i < count) is (<color:green>yes)
+        #WhiteSmoke:Print("*");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+stop
+@enduml

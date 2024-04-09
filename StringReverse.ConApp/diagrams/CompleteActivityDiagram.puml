@@ -1,0 +1,28 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09/04/2024 14:47:12
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nstring reverse = string.Empty;
+#WhiteSmoke:PrintLine("String Reverse");
+#WhiteSmoke:PrintLine("==============");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabe: ");
+#WhiteSmoke:input = ReadLine();
+#LightSkyBlue:int i = input.Length - 1;
+while (i >= 0) is (<color:green>yes)
+        #WhiteSmoke:reverse = reverse + input[i];
+:i--;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine(reverse);
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

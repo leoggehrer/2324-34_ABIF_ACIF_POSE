@@ -1,0 +1,14 @@
+@startuml Program.PrintTicket
+title Program.PrintTicket
+participant "PrintTicket(intpaymentInCents)" as PrintTicket_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "ToMinutes(a0)" as ToMinutes_a0 #LightGreen
+autonumber
+PrintTicket_p0 -[#grey]> Console_WriteLine_a0 : ("Ticket ausgeben:")
+alt#LightBlue paymentInCents > _maxPaymentInCents
+    PrintTicket_p0 -[#grey]> Console_WriteLine_a0 : ($"Danke für Ihre Spende von {paymentInCents - _maxPaymentInCents} Cent")
+end
+PrintTicket_p0 -[#grey]> ToMinutes_a0 : (Math.Min(paymentInCents, _maxPaymentInCents))
+ToMinutes_a0 -[#blue]-> PrintTicket_p0 : minutes
+PrintTicket_p0 -[#grey]> Console_WriteLine_a0 : ($"Sie dürfen {ToHoursFormat(minutes)} Stunden parken")
+@enduml

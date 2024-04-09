@@ -1,0 +1,28 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\ndouble netPrice, grossPrice10, tax10, grossPrice5, tax5;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Steuerrechner für leistbare Grundnahrungsmittel *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:Print("Aktueller Verkaufspreis:            ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:grossPrice10 = Convert.ToDouble(input);
+#WhiteSmoke:netPrice = grossPrice10 / 1.1;
+#WhiteSmoke:tax10 = grossPrice10 - netPrice;
+#WhiteSmoke:grossPrice5 = netPrice * 1.05;
+#WhiteSmoke:tax5 = grossPrice5 - netPrice;
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"Nettopreis:                    {netPrice,10:f} EUR");
+#WhiteSmoke:PrintLine($"Derzeitige Merwehrtsteuer:     {tax10,10:f} EUR");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"Werte bei 5% Steuer");
+#WhiteSmoke:PrintLine($"-------------------");
+#WhiteSmoke:PrintLine($"Mehrwertsteuer:                {tax5,10:f} EUR");
+#WhiteSmoke:PrintLine($"Zukünftiger Verkaufspreis:     {grossPrice5,10:f} EUR");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Zum Beenden Eingabetaste drücken...");
+#WhiteSmoke:ReadLine();
+stop
+@enduml

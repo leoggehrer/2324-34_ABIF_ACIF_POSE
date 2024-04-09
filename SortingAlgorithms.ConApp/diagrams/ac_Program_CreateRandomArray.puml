@@ -1,0 +1,7 @@
+@startuml Program.CreateRandomArray
+title Program.CreateRandomArray
+start
+#LightGreen:Params(int size);
+#Lavender:return CreateRandomArray(size, 0, size);
+stop
+@enduml

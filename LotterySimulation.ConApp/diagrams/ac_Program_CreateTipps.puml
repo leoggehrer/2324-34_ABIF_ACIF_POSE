@@ -1,0 +1,18 @@
+@startuml Program.CreateTipps
+title Program.CreateTipps
+start
+#LightGreen:Params(int countTipps);
+#LightSkyBlue:int[,] result = new int[countTipps, TIP_SIZE];
+#LightSkyBlue:int tippNummer = 0;
+while (tippNummer < countTipps) is (<color:green>yes)
+        #LightSkyBlue:int[] tip = CreateTip();
+        #LightSkyBlue:int zahlNummer = 0;
+        while (zahlNummer < 6) is (<color:green>yes)
+                #WhiteSmoke:result[tippNummer, zahlNummer] = tip[zahlNummer];
+        :zahlNummer++;
+        endwhile (<color:red>no)
+:tippNummer++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

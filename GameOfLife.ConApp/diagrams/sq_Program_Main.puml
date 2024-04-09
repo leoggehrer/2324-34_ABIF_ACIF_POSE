@@ -1,40 +1,55 @@
 @startuml Program.Main
 title Program.Main
-participant "Main(string[] args)" as Main_p0 #LightYellow
-participant "Console.Clear()" as Console.Clear #LightGreen
-participant "Console.WriteLine(a0)" as Console.WriteLine_a0 #LightGreen
-participant "Console.WriteLine()" as Console.WriteLine #LightGreen
-participant "Console.Write(a0)" as Console.Write_a0 #LightGreen
-participant "Console.ReadLine()" as Console.ReadLine #LightGreen
-participant "int.TryParse(a0, a1)" as int.TryParse_a0_a1 #LightGreen
-participant "CreateRandomField(a0, a1, a2)" as CreateRandomField_a0_a1_a2 #LightGreen
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.Clear()" as Console_Clear #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "int.TryParse(a0,a1)" as int_TryParse_a0_a1 #LightGreen
+participant "CreateRandomField(a0,a1,a2)" as CreateRandomField_a0_a1_a2 #LightGreen
 participant "ReadFieldFromCsvFile(a0)" as ReadFieldFromCsvFile_a0 #LightGreen
-participant "Simulate(a0, a1, a2)" as Simulate_a0_a1_a2 #LightGreen
+participant "Simulate(a0,a1,a2)" as Simulate_a0_a1_a2 #LightGreen
 autonumber
-Main_p0 -> Console.Clear
-Main_p0 -> Console.WriteLine_a0 : ("GameOfLife")
-Main_p0 -> Console.WriteLine_a0 : ("==========")
-Main_p0 -> Console.WriteLine
-Main_p0 -> Console.WriteLine_a0 : ("1...Erstellen eines zufälligen Feldes (79 * 20 Zellen)")
-Main_p0 -> Console.WriteLine_a0 : ("2...Erstellen eines Blinkers (Blinker.csv)")
-Main_p0 -> Console.WriteLine_a0 : ("3...Erstellen eines Blinkers II (Blinker2.csv)")
-Main_p0 -> Console.WriteLine_a0 : ("4...Erstellen eines Bipols (Bipol.csv)")
-Main_p0 -> Console.WriteLine
-Main_p0 -> Console.Write_a0 : ("Wählen Sie eine Option: ")
-Main_p0 -> Console.ReadLine
-Console.ReadLine --> Main_p0 : input
-Main_p0 -> Console.Write_a0 : ($"Wieviele Zellen sollen lebendig sein <Max: {MAX_ROWS * MAX_COLS}> ? ")
-Main_p0 -> Console.ReadLine
-Console.ReadLine --> Main_p0 : input
-Main_p0 -> int.TryParse_a0_a1 : (input ,out occupancy)
-Main_p0 -> CreateRandomField_a0_a1_a2 : (MAX_ROWS ,MAX_COLS ,occupancy)
-CreateRandomField_a0_a1_a2 --> Main_p0 : field
-Main_p0 -> ReadFieldFromCsvFile_a0 : ("Blinker.csv")
-ReadFieldFromCsvFile_a0 --> Main_p0 : field
-Main_p0 -> ReadFieldFromCsvFile_a0 : ("Blinker2.csv")
-ReadFieldFromCsvFile_a0 --> Main_p0 : field
-Main_p0 -> ReadFieldFromCsvFile_a0 : ("Bipol.csv")
-ReadFieldFromCsvFile_a0 --> Main_p0 : field
-Main_p0 -> Console.WriteLine_a0 : ("Ungültige Eingabe!")
-Main_p0 -> Simulate_a0_a1_a2 : (field ,1000 ,250)
+Main_p0 -[#grey]> Console_Clear
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("GameOfLife")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("==========")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("1...Erstellen eines zufälligen Feldes (79 * 20 Zellen)")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("2...Erstellen eines Blinkers (Blinker.csv)")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("3...Erstellen eines Blinkers II (Blinker2.csv)")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("4...Erstellen eines Bipols (Bipol.csv)")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_Write_a0 : ("Wählen Sie eine Option: ")
+Main_p0 -[#grey]> Console_ReadLine
+Console_ReadLine -[#blue]-> Main_p0 : input
+alt#LightBlue input == "1"
+    loop#LightCoral !int.TryParse(input, out occupancy) || occupancy < 0 || occupancy > MAX_ROWS * MAX_COLS
+        Main_p0 -[#grey]> Console_Write_a0 : ($"Wieviele Zellen sollen lebendig sein <Max: {MAX_ROWS * MAX_COLS}> ? ")
+        Main_p0 -[#grey]> Console_ReadLine
+        Console_ReadLine -[#blue]-> Main_p0 : input
+        Main_p0 -[#grey]> int_TryParse_a0_a1 : (input, out occupancy)
+        int_TryParse_a0_a1 -[#blue]-> Main_p0 : result
+    end
+    Main_p0 -[#grey]> CreateRandomField_a0_a1_a2 : (MAX_ROWS, MAX_COLS, occupancy)
+    CreateRandomField_a0_a1_a2 -[#blue]-> Main_p0 : field
+    else
+        alt#LightBlue input == "2"
+            Main_p0 -[#grey]> ReadFieldFromCsvFile_a0 : ("Blinker.csv")
+            ReadFieldFromCsvFile_a0 -[#blue]-> Main_p0 : field
+            else
+                alt#LightBlue input == "3"
+                    Main_p0 -[#grey]> ReadFieldFromCsvFile_a0 : ("Blinker2.csv")
+                    ReadFieldFromCsvFile_a0 -[#blue]-> Main_p0 : field
+                    else
+                        alt#LightBlue input == "4"
+                            Main_p0 -[#grey]> ReadFieldFromCsvFile_a0 : ("Bipol.csv")
+                            ReadFieldFromCsvFile_a0 -[#blue]-> Main_p0 : field
+                            else
+                                Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ungültige Eingabe!")
+                        end
+                end
+        end
+end
+Main_p0 -[#grey]> Simulate_a0_a1_a2 : (field, 1000, 250)
 @enduml

@@ -1,11 +1,7 @@
 @startuml Program.Main
 title Program.Main
 start
-<<<<<<< HEAD
 #LightGreen:Params(string[] args);
-=======
-#LightGreen:Params(string[] args)
->>>>>>> c49a88c6559cc263bc6a855e1f0daab06cce608a
 #LightSkyBlue:string number1, number2, result;
 #WhiteSmoke:PrintLine("Addieren von sehr großen Zahlen (Integer)");
 #WhiteSmoke:PrintLine("=========================================");

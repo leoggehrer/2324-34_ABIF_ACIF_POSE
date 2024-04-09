@@ -1,0 +1,35 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nint counter = 0\nint guessNumber\nint randomNumber = Random.Shared.Next(1, 101);
+#WhiteSmoke:PrintLine("Zahlenraten");
+#WhiteSmoke:PrintLine("===========");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Ich habe mir eine Zahl zwischen 1 und 100 ausgedacht. Kannst du sie erraten?");
+repeat
+        #WhiteSmoke:Print($"{++counter}. Versuch: ");
+        #WhiteSmoke:input = ReadLine();
+        #WhiteSmoke:guessNumber = Convert.ToInt32(input);
+        if (guessNumber < randomNumber) then (<color:green>yes)
+                #WhiteSmoke:Print("Die gesuchte Zahl ist größer, ");
+            else (<color:red>no)
+                if (guessNumber > randomNumber) then (<color:green>yes)
+                        #WhiteSmoke:Print("Die gesuchte Zahl ist kleiner, ");
+                endif
+        endif
+repeat while (guessNumber != randomNumber) is (<color:green>yes)
+if (counter > 1 && counter <= 5) then (<color:green>yes)
+        #WhiteSmoke:PrintLine("Tolle Leistung!");
+    else (<color:red>no)
+        if (counter > 5 && counter <= 10) then (<color:green>yes)
+                #WhiteSmoke:PrintLine("Schon ganz gut!");
+            else (<color:red>no)
+                    #WhiteSmoke:PrintLine("Endlich geschafft!");
+        endif
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

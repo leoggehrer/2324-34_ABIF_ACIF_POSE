@@ -1,0 +1,43 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09/04/2024 14:46:35
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string inputText, eliminatorText, outputText;
+#WhiteSmoke:PrintLine("Delete Chars!");
+#WhiteSmoke:PrintLine("=============");
+#WhiteSmoke:outputText = string.Empty;
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabetext....: ");
+#WhiteSmoke:inputText = ReadLine();
+if (inputText != "") then (<color:green>yes)
+        #WhiteSmoke:Print("Eliminatortext..: ");
+        #WhiteSmoke:eliminatorText = ReadLine();
+        #LightSkyBlue:int i = 0;
+        while (i < inputText.Length) is (<color:green>yes)
+                #LightSkyBlue:bool contains = false;
+                #LightSkyBlue:int j = 0;
+                while (j < eliminatorText.Length && contains == false) is (<color:green>yes)
+                        if (inputText[i] == eliminatorText[j]) then (<color:green>yes)
+                                #WhiteSmoke:contains = true;
+                        endif
+                :j++;
+                endwhile (<color:red>no)
+                if (contains == false) then (<color:green>yes)
+                        #WhiteSmoke:outputText = outputText + inputText[i];
+                endif
+        :i++;
+        endwhile (<color:red>no)
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:PrintLine($"Ausgabetext....: {outputText}");
+        #WhiteSmoke:Print("Weiter mit beliebiger Taste ...");
+        #WhiteSmoke:ReadKey();
+endif
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

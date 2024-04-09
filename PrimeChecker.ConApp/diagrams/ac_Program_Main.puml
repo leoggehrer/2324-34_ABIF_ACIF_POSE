@@ -1,0 +1,31 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nint number, divider\nbool isPrime;
+#WhiteSmoke:PrintLine("Prime Checker");
+#WhiteSmoke:PrintLine("=============");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Geben Sie eine Ganzzahl ein: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:number = Convert.ToInt32(input);
+#WhiteSmoke:isPrime = number > 1 && (number == 2 || number % 2 != 0);
+#WhiteSmoke:divider = 3;
+while (isPrime && divider <= number / 2) is (<color:green>yes)
+        #WhiteSmoke:isPrime = number % divider != 0;
+        #WhiteSmoke:divider += 2;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine($"Variante while: Die Zahl {number} {(isPrime ? "ist" : "keine")} Primzahl!");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:isPrime = number > 1 && (number == 2 || number % 2 != 0);
+#LightSkyBlue:int i = 3;
+while (isPrime && i <= number / 2) is (<color:green>yes)
+        #WhiteSmoke:isPrime = number % i != 0;
+:i = i + 2;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine($"Variante for: Die Zahl {number} {(isPrime ? "ist" : "keine")} Primzahl!");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

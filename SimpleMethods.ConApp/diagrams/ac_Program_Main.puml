@@ -1,0 +1,60 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:char characterDisplayed\nint menueNumber = 0, numChars = 0, numStars = 0, sumOfAllDigits = 0, indexSubString = 0, lengthSubString = 0\nstring inputSumOfDigits, searchedSubString, inputString;
+repeat
+        #WhiteSmoke:Console.Clear();
+        #WhiteSmoke:PrintLine("Simple Methods");
+        #WhiteSmoke:PrintLine("==============");
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:PrintLine("Welche Methode möchten Sie verwenden?");
+        #WhiteSmoke:PrintLine("1 ... WriteStars");
+        #WhiteSmoke:PrintLine("2 ... WriteCharacters");
+        #WhiteSmoke:PrintLine("3 ... SumOfDigits");
+        #WhiteSmoke:PrintLine("4 ... SubString");
+        #WhiteSmoke:PrintLine("0 ... Exit");
+        #WhiteSmoke:Print("Geben Sie eine Zahl ein [1-4]: ");
+        #WhiteSmoke:menueNumber = Convert.ToInt32(ReadLine());
+        #WhiteSmoke:PrintLine();
+        switch (menueNumber)
+            case( 1 )
+            #WhiteSmoke:Print("Geben Sie die Anzahl der Sterne ein, die Sie anzeigen möchten: ");
+            #WhiteSmoke:numStars = Convert.ToInt32(ReadLine());
+            #WhiteSmoke:WriteStars(numStars);
+            #WhiteSmoke:PrintLine();
+            #WhiteSmoke:Print("Weiter mit Eingabe...");
+            #WhiteSmoke:ReadLine();
+            case( 2 )
+            #WhiteSmoke:Print("Geben Sie das Zeichen ein, das Sie anzeigen möchten: ");
+            #WhiteSmoke:characterDisplayed = Convert.ToChar(ReadLine());
+            #WhiteSmoke:Print($"Geben Sie an, wie oft {characterDisplayed} angezeigt werden soll: ");
+            #WhiteSmoke:numChars = Convert.ToInt32(ReadLine());
+            #WhiteSmoke:WriteCharacters(numChars, characterDisplayed);
+            #WhiteSmoke:PrintLine();
+            #WhiteSmoke:Print("Weiter mit Eingabe...");
+            #WhiteSmoke:ReadLine();
+            case( 3 )
+            #WhiteSmoke:Print("Geben Sie Ihren Text ein, sie erhalten eine Zusammenfassung: ");
+            #WhiteSmoke:inputSumOfDigits = ReadLine();
+            #WhiteSmoke:sumOfAllDigits = SumOfDigits(inputSumOfDigits);
+            #WhiteSmoke:PrintLine();
+            #WhiteSmoke:PrintLine($"Die Summe aller Zahlen ist gleich {sumOfAllDigits}");
+            #WhiteSmoke:Print("Weiter mit Eingabe...");
+            #WhiteSmoke:ReadLine();
+            case( 4 )
+            #WhiteSmoke:Print("Geben Sie Ihren Text ein: ");
+            #WhiteSmoke:inputString = ReadLine();
+            #WhiteSmoke:Print("Geben Sie den Index ein, an dem der SubString beginnt: ");
+            #WhiteSmoke:indexSubString = Convert.ToInt32(ReadLine());
+            #WhiteSmoke:Print("Geben Sie die Länge des SubStrings ein: ");
+            #WhiteSmoke:lengthSubString = Convert.ToInt32(ReadLine());
+            #WhiteSmoke:searchedSubString = SubString(inputString, indexSubString, lengthSubString);
+            #WhiteSmoke:PrintLine($"Der Teiltext ist: {searchedSubString}");
+            #WhiteSmoke:PrintLine();
+            #WhiteSmoke:Print("Weiter mit Eingabe...");
+            #WhiteSmoke:ReadLine();
+        endswitch
+repeat while (menueNumber != 0) is (<color:green>yes)
+stop
+@enduml

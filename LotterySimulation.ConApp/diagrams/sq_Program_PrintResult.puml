@@ -1,0 +1,9 @@
+@startuml Program.PrintResult
+title Program.PrintResult
+participant "PrintResult(int[]results)" as PrintResult_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+autonumber
+PrintResult_p0 -[#grey]> Console_WriteLine_a0 : ($"{i}er: {results[i], 10}")
+PrintResult_p0 -[#grey]> Console_WriteLine_a0 : (new string('-' , 20))
+PrintResult_p0 -[#grey]> Console_WriteLine_a0 : ($"Summe: {resultSum, 8}")
+@enduml

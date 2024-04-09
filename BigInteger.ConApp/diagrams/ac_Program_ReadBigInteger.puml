@@ -1,16 +1,15 @@
 @startuml Program.ReadBigInteger
 title Program.ReadBigInteger
 start
-#Lavender:Params(string prompt);
-#LightBlue:string result
-bool validInput;
+#LightGreen:Params(string prompt);
+#LightSkyBlue:string result\nbool validInput;
 repeat
-    :Print(prompt);
-    :result = ReadLine();
-    :validInput = IsBigNumber(result);
-    if (validInput == false) then (<color:green>yes)
-        :PrintLine("Ungültige Eingabe!");
-    endif
+        #WhiteSmoke:Print(prompt);
+        #WhiteSmoke:result = ReadLine();
+        #WhiteSmoke:validInput = IsBigNumber(result);
+        if (validInput == false) then (<color:green>yes)
+                #WhiteSmoke:PrintLine("Ungültige Eingabe!");
+        endif
 repeat while (validInput == false) is (<color:green>yes)
 #Lavender:return result;
 stop

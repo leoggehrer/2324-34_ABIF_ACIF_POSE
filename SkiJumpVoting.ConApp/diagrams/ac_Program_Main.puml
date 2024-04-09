@@ -1,0 +1,18 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:double far, points\ndouble[] posturePoints;
+#WhiteSmoke:PrintLine("Notenermittlung für Skispringer");
+#WhiteSmoke:PrintLine("===============================");
+#WhiteSmoke:far = ReadJumpFar();
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:posturePoints = ReadPosturePoints(5);
+#WhiteSmoke:points = CalculateJump(far) + CalculatePosturePoints(posturePoints);
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"Weitenpunkte: {CalculateJump(far):f} Haltungsnote: {CalculatePosturePoints(posturePoints):f} Gesamt: {points:f}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Beenden mit Eingabetaste... ");
+#WhiteSmoke:ReadLine();
+stop
+@enduml

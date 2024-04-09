@@ -1,0 +1,26 @@
+@startuml Program.ReadParkingPayment
+title Program.ReadParkingPayment
+start
+#LightSkyBlue:int result = 0\nbool exit = false\nstring input;
+repeat
+        #WhiteSmoke:Print($"Parkzeit bisher: {(result >= _minPaymentInCents ? ToHoursFormat(ToMinutes(result)) : "00:00")}, Einwurf bisher: {result} Cent,  d für Ticket, Einwurf in Cent: ");
+        #WhiteSmoke:input = ReadLine();
+        if (input.ToLower() == "d") then (<color:green>yes)
+                if (result < _minPaymentInCents) then (<color:green>yes)
+                        #WhiteSmoke:Print($"Mindesteinwurf {_minPaymentInCents} Cent, bisher haben Sie {result} eingeworfen");
+                    else (<color:red>no)
+                            #WhiteSmoke:exit = true;
+                endif
+            else (<color:red>no)
+                if (int.TryParse(input, out int coin)) then (<color:green>yes)
+                        if (_coins.Contains(coin)) then (<color:green>yes)
+                                #WhiteSmoke:result += coin;
+                            else (<color:red>no)
+                                    #WhiteSmoke:PrintLine($"'{coin}' ist ein ungültiger Wert!");
+                        endif
+                endif
+        endif
+repeat while (exit == false && result < _maxPaymentInCents) is (<color:green>yes)
+#Lavender:return result;
+stop
+@enduml

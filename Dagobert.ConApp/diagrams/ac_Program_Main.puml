@@ -1,0 +1,31 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("Das große Rätsel von Dagobert!");
+#WhiteSmoke:PrintLine("==============================");
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:int UPPER_RANGE = 2_000_000\nint LOWER_RANGE = 1_000_000\nint tSum, t = 1_000, qSum, q = 1_000;
+repeat
+        #WhiteSmoke:tSum = (t + 1) * t / 2;
+        #WhiteSmoke:qSum = q * q;
+        if (tSum < qSum) then (<color:green>yes)
+                #WhiteSmoke:t++;
+            else (<color:red>no)
+                if (qSum < tSum) then (<color:green>yes)
+                        #WhiteSmoke:q++;
+                endif
+        endif
+repeat while (tSum != qSum && tSum <= UPPER_RANGE) is (<color:green>yes)
+if (tSum == qSum) then (<color:green>yes)
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:PrintLine($"Die Lösung des Rätsels [{t},{q}]: Es sind {qSum} Dukaten!");
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine();
+            #WhiteSmoke:PrintLine($"Es gibt keine Dreieckszahl und Quadratzahl welche im Bereich {LOWER_RANGE} - {UPPER_RANGE} gleich sind!");
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

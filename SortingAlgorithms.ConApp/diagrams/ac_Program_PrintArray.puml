@@ -1,0 +1,8 @@
+@startuml Program.PrintArray
+title Program.PrintArray
+start
+#LightGreen:Params(string title,int[] array);
+#WhiteSmoke:PrintLine(title);
+#WhiteSmoke:PrintArray(array);
+stop
+@enduml

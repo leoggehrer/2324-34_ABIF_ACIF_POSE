@@ -1,0 +1,20 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input, encrypted, decrypted;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Einfache Verschlüsselung nach ROT13             *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Zu verschlüsselnden Text: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:encrypted = Encrypt(input);
+#WhiteSmoke:PrintLine($"Verschlüsselter Text: {encrypted}");
+#WhiteSmoke:decrypted = Decrypt(encrypted);
+#WhiteSmoke:PrintLine($"Entschlüsselter Text: {decrypted}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Press enter to exit...");
+#WhiteSmoke:ReadLine();
+stop
+@enduml

@@ -1,0 +1,19 @@
+@startuml Program
+title Program
+ class Program #GhostWhite {
+- {static} int[] _coins = new int[] { 5, 10, 20, 50, 100, 200 }
+- {const} int _minTimeInMinutes = 30
+- {const} int _maxTimeInMinutes = 90
+- {const} int _minPaymentInCents = 50
+- {const} int _maxPaymentInCents = 150
+- {const} double _costPerMinute = 30 / 50.0
+---
+---
+- {static} void Main(string[] args)
+- {static} void PrintHeader()
+- {static} int ReadParkingPayment()
+- {static} void PrintTicket(int paymentInCents)
+- {static} int ToMinutes(int throwInCents)
+- {static} string ToHoursFormat(int minutes)
+}
+@enduml

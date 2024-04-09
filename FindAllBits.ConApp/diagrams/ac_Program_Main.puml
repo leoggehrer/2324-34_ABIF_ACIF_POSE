@@ -1,0 +1,28 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nuint number = 0\ndouble numPow = 0\nint idx = 0, bit = 0, sumBit = 0;
+#WhiteSmoke:PrintLine("Find all Bits");
+#WhiteSmoke:PrintLine("=============");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print($"Geben Sie eine Zahl zwischen 1 und {uint.MaxValue} ein (0 für Ende): ");
+#WhiteSmoke:input = ReadLine();
+if (uint.TryParse(input, out number) && number > 0) then (<color:green>yes)
+        while (number > 0) is (<color:green>yes)
+                #WhiteSmoke:bit = (int)number % 2;
+                #WhiteSmoke:number = number / 2;
+                #WhiteSmoke:numPow = bit * Math.Pow(2, idx);
+                #WhiteSmoke:sumBit += (int)numPow;
+                #WhiteSmoke:PrintLine($"{bit} * 2^{idx++} = {numPow}");
+        endwhile (<color:red>no)
+        #WhiteSmoke:PrintLine("=========================");
+        #WhiteSmoke:PrintLine($"Dezimalzahl:          {input:n0}");
+        #WhiteSmoke:PrintLine($"Summe aller Bitwerte: {sumBit:n0}");
+        #WhiteSmoke:PrintLine("=========================");
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit... ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

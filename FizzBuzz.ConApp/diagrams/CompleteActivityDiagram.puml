@@ -1,0 +1,37 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09/04/2024 14:47:02
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:int idx = 1\nint number = 100;
+#WhiteSmoke:PrintLine("***************************************");
+#WhiteSmoke:PrintLine("* Ausgabe für Fizz-Buzz von 1 bis 100 *");
+#WhiteSmoke:PrintLine("* Fizz, wenn durch 3 teilbar ist      *");
+#WhiteSmoke:PrintLine("* Buzz, wenn durch 5 teilbar ist      *");
+#WhiteSmoke:PrintLine("***************************************");
+while (idx <= number) is (<color:green>yes)
+        if (idx % 3 != 0 && idx % 5 != 0) then (<color:green>yes)
+                #WhiteSmoke:Print($"{idx} ");
+        endif
+        if (idx % 3 == 0) then (<color:green>yes)
+                #WhiteSmoke:Print("Fizz ");
+        endif
+        if (idx % 5 == 0) then (<color:green>yes)
+                #WhiteSmoke:Print("Buzz ");
+        endif
+        if (idx % 5 == 0 && idx % 3 == 0) then (<color:green>yes)
+                #WhiteSmoke:Print("Fizz Buzz ");
+        endif
+        #WhiteSmoke:idx++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

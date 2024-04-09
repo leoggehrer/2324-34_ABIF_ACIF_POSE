@@ -1,0 +1,8 @@
+@startuml Program.CreateTipps
+title Program.CreateTipps
+participant "CreateTipps(intcountTipps)" as CreateTipps_p0 #LightYellow
+participant "CreateTip()" as CreateTip #LightGreen
+autonumber
+CreateTipps_p0 -[#grey]> CreateTip
+CreateTip -[#blue]-> CreateTipps_p0 : tip
+@enduml

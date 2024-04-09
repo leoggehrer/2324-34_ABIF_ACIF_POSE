@@ -1,0 +1,13 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightSkyBlue:string input\nint rows, cols;
+repeat
+        #WhiteSmoke:ReadMatrixDimensions(out rows, out cols);
+        #LightSkyBlue:int[,] matrix = CreateMatrix(rows, cols);
+        #WhiteSmoke:CompareAndPrintMatrix(matrix);
+        #WhiteSmoke:Print("Weitere Matrix anzeigen (j/n)? ");
+        #WhiteSmoke:input = ReadLine();
+repeat while (input.ToLower() == "j") is (<color:green>yes)
+stop
+@enduml

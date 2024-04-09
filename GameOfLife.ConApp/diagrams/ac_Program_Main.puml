@@ -2,9 +2,7 @@
 title Program.Main
 start
 #LightGreen:Params(string[] args);
-#LightSkyBlue:string input
-int[,] field = new int[0, 0]
-int occupancy;
+#LightSkyBlue:string input\nint[,] field = new int[0, 0]\nint occupancy;
 #WhiteSmoke:Console.Clear();
 #WhiteSmoke:PrintLine("GameOfLife");
 #WhiteSmoke:PrintLine("==========");
@@ -17,25 +15,25 @@ int occupancy;
 #WhiteSmoke:Print("Wählen Sie eine Option: ");
 #WhiteSmoke:input = ReadLine();
 if (input == "1") then (<color:green>yes)
-    repeat
-        #WhiteSmoke:Print($"Wieviele Zellen sollen lebendig sein <Max: {MAX_ROWS * MAX_COLS}> ? ");
-        #WhiteSmoke:input = ReadLine();
-    repeat while (!int.TryParse(input, out occupancy) || occupancy < 0 || occupancy > MAX_ROWS * MAX_COLS) is (<color:green>yes)
-    #WhiteSmoke:field = CreateRandomField(MAX_ROWS, MAX_COLS, occupancy);
-  else (<color:red>no)
-    if (input == "2") then (<color:green>yes)
-        #WhiteSmoke:field = ReadFieldFromCsvFile("Blinker.csv");
-      else (<color:red>no)
-        if (input == "3") then (<color:green>yes)
-            #WhiteSmoke:field = ReadFieldFromCsvFile("Blinker2.csv");
-          else (<color:red>no)
-            if (input == "4") then (<color:green>yes)
-                #WhiteSmoke:field = ReadFieldFromCsvFile("Bipol.csv");
-              else (<color:red>no)
-                  #WhiteSmoke:PrintLine("Ungültige Eingabe!");
-            endif
+        repeat
+                #WhiteSmoke:Print($"Wieviele Zellen sollen lebendig sein <Max: {MAX_ROWS * MAX_COLS}> ? ");
+                #WhiteSmoke:input = ReadLine();
+        repeat while (!int.TryParse(input, out occupancy) || occupancy < 0 || occupancy > MAX_ROWS * MAX_COLS) is (<color:green>yes)
+        #WhiteSmoke:field = CreateRandomField(MAX_ROWS, MAX_COLS, occupancy);
+    else (<color:red>no)
+        if (input == "2") then (<color:green>yes)
+                #WhiteSmoke:field = ReadFieldFromCsvFile("Blinker.csv");
+            else (<color:red>no)
+                if (input == "3") then (<color:green>yes)
+                        #WhiteSmoke:field = ReadFieldFromCsvFile("Blinker2.csv");
+                    else (<color:red>no)
+                        if (input == "4") then (<color:green>yes)
+                                #WhiteSmoke:field = ReadFieldFromCsvFile("Bipol.csv");
+                            else (<color:red>no)
+                                    #WhiteSmoke:PrintLine("Ungültige Eingabe!");
+                        endif
+                endif
         endif
-    endif
 endif
 #WhiteSmoke:Simulate(field, 1000, 250);
 stop

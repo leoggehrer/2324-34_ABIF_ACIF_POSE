@@ -1,0 +1,22 @@
+@startuml Program.CompareAndPrintMatrix
+title Program.CompareAndPrintMatrix
+participant "CompareAndPrintMatrix(int[,]matrix)" as CompareAndPrintMatrix_p0 #LightYellow
+participant "matrix.GetLength(a0)" as matrix_GetLength_a0 #LightGreen
+participant "CompareAndPrintMatrixValues(a0,a1)" as CompareAndPrintMatrixValues_a0_a1 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "CompareAndPrintMatrixRows(a0,a1,a2)" as CompareAndPrintMatrixRows_a0_a1_a2 #LightGreen
+autonumber
+loop#LightCoral r < matrix.GetLength(0)
+    CompareAndPrintMatrix_p0 -[#grey]> matrix_GetLength_a0 : (0)
+    matrix_GetLength_a0 -[#blue]-> CompareAndPrintMatrix_p0 : result
+    CompareAndPrintMatrix_p0 -[#grey]> CompareAndPrintMatrixValues_a0_a1 : (matrix, r)
+    CompareAndPrintMatrix_p0 -[#grey]> Console_WriteLine
+    alt#LightBlue r < matrix.GetLength(0) - 1
+        CompareAndPrintMatrix_p0 -[#grey]> matrix_GetLength_a0 : (0)
+        matrix_GetLength_a0 -[#blue]-> CompareAndPrintMatrix_p0 : result
+        CompareAndPrintMatrix_p0 -[#grey]> CompareAndPrintMatrixRows_a0_a1_a2 : (matrix, r, r + 1)
+        CompareAndPrintMatrix_p0 -[#grey]> Console_WriteLine
+    end
+end
+CompareAndPrintMatrix_p0 -[#grey]> Console_WriteLine
+@enduml

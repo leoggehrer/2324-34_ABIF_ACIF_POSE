@@ -1,0 +1,15 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Program #GhostWhite {
+- {const} int MIN_NUMBER = 1
+- {const} int MAX_NUMBER = 9
+---
+---
+- {static} void Main()
+- {static} void ReadMatrixDimensions(int rows, int cols)
++ {static} int[,] CreateMatrix(int rows, int cols)
+- {static} void CompareAndPrintMatrix(int[,] matrix)
+- {static} void CompareAndPrintMatrixValues(int[,] matrix, int row)
+- {static} void CompareAndPrintMatrixRows(int[,] matrix, int firstRow, int secondRow)
+}
+@enduml

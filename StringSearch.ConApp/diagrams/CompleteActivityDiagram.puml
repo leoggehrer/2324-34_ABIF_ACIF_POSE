@@ -1,0 +1,42 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09/04/2024 14:47:12
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string inputText, searchText\nint index = -1;
+#WhiteSmoke:PrintLine("String Search!");
+#WhiteSmoke:PrintLine("==============");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabetext....: ");
+#WhiteSmoke:inputText = ReadLine();
+if (inputText != "") then (<color:green>yes)
+        #WhiteSmoke:Print("Suchtext.......: ");
+        #WhiteSmoke:searchText = ReadLine();
+        #LightSkyBlue:int i = 0;
+        while (index == -1 && searchText.Length > 0 && i <= inputText.Length - searchText.Length) is (<color:green>yes)
+                #LightSkyBlue:int j = 0;
+                #LightSkyBlue:bool check = true;
+                while (check && j < searchText.Length) is (<color:green>yes)
+                        #WhiteSmoke:check = char.ToLower(inputText[i + j]) == char.ToLower(searchText[j++]);
+                endwhile (<color:red>no)
+                #WhiteSmoke:index = check ? i : index;
+        :i++;
+        endwhile (<color:red>no)
+        if (index >= 0) then (<color:green>yes)
+                #WhiteSmoke:PrintLine();
+                #WhiteSmoke:PrintLine($"Der Suchtext wurde an der Position {index} gefunden.");
+            else (<color:red>no)
+                    #WhiteSmoke:PrintLine();
+                    #WhiteSmoke:PrintLine($"Der Suchtext wurde nicht gefunden.");
+        endif
+        #WhiteSmoke:Print("Weiter mit Enter...");
+        #WhiteSmoke:ReadLine();
+endif
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

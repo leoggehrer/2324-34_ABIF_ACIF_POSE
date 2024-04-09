@@ -1,0 +1,16 @@
+@startuml StringExtensions.SetIndent
+title StringExtensions.SetIndent
+start
+#LightGreen:Params(this string text,int count);
+#LightSkyBlue:StringBuilder sb = new();
+if (text != null) then (<color:green>yes)
+        #LightSkyBlue:int i = 0;
+        while (i < count) is (<color:green>yes)
+            #WhiteSmoke:sb.Append(Indent);
+        :i++;
+        endwhile (<color:red>no)
+endif
+#WhiteSmoke:sb.Append(text);
+#Lavender:return sb.ToString();
+stop
+@enduml

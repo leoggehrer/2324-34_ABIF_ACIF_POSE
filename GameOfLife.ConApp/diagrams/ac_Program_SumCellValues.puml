@@ -5,11 +5,11 @@ start
 #LightSkyBlue:int sum = 0;
 #LightSkyBlue:int r = 0;
 while (r < field.GetLength(0)) is (<color:green>yes)
-    #LightSkyBlue:int c = 0;
-    while (c < field.GetLength(1)) is (<color:green>yes)
-        #WhiteSmoke:sum += field[r, c];
-    :c++;
-    endwhile (<color:red>no)
+        #LightSkyBlue:int c = 0;
+        while (c < field.GetLength(1)) is (<color:green>yes)
+                #WhiteSmoke:sum += field[r, c];
+        :c++;
+        endwhile (<color:red>no)
 :r++;
 endwhile (<color:red>no)
 #Lavender:return sum;

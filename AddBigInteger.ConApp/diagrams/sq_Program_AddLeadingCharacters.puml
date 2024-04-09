@@ -1,5 +1,0 @@
-@startuml Program.AddLeadingCharacters
-title Program.AddLeadingCharacters
-participant "AddLeadingCharacters(string number,char chr,int count)" as AddLeadingCharacters_p0_p1_p2 #LightYellow
-autonumber
-@enduml
