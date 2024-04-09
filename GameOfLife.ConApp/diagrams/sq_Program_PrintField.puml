@@ -6,7 +6,6 @@ participant "field.GetLength(a0)" as field_GetLength_a0 #LightGreen
 participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 autonumber
-<<<<<<< HEAD
 PrintField_p0 -[#grey]> Console_Clear
 loop#LightCoral r < field.GetLength(0)
     PrintField_p0 -[#grey]> field_GetLength_a0 : (0)
@@ -17,17 +16,5 @@ loop#LightCoral r < field.GetLength(0)
         PrintField_p0 -[#grey]> Console_Write_a0 : ($" {sign} ")
     end
     PrintField_p0 -[#grey]> Console_WriteLine
-=======
-PrintField_p0 -> Console_Clear
-loop r < field.GetLength(0)
-    PrintField_p0 -> field_GetLength_a0 : (0)
-    field_GetLength_a0 --> PrintField_p0 : result
-    loop c < field.GetLength(1)
-        PrintField_p0 -> field_GetLength_a0 : (1)
-        field_GetLength_a0 --> PrintField_p0 : result
-        PrintField_p0 -> Console_Write_a0 : ($" {sign} ")
-    end
-    PrintField_p0 -> Console_WriteLine
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 end
 @enduml

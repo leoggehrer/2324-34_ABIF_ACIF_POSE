@@ -6,7 +6,6 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "int.TryParse(a0,a1)" as int_TryParse_a0_a1 #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-<<<<<<< HEAD
 loop#LightCoral !validInput
     ReadMatrixDimensions_p0_p1 -[#grey]> Console_Write_a0 : ("Zeilen:  ")
     ReadMatrixDimensions_p0_p1 -[#grey]> Console_ReadLine
@@ -25,26 +24,6 @@ loop#LightCoral !validInput
     int_TryParse_a0_a1 -[#blue]-> ReadMatrixDimensions_p0_p1 : validInput
     alt#LightBlue !validInput
         ReadMatrixDimensions_p0_p1 -[#grey]> Console_WriteLine_a0 : ("Ungültige Eingabe. Bitte geben Sie eine positive ganze Zahl ein.")
-=======
-loop !validInput
-    ReadMatrixDimensions_p0_p1 -> Console_Write_a0 : ("Zeilen:  ")
-    ReadMatrixDimensions_p0_p1 -> Console_ReadLine
-    Console_ReadLine --> ReadMatrixDimensions_p0_p1 : input
-    ReadMatrixDimensions_p0_p1 -> int_TryParse_a0_a1 : (input, out rows)
-    int_TryParse_a0_a1 --> ReadMatrixDimensions_p0_p1 : validInput
-    alt !validInput
-        ReadMatrixDimensions_p0_p1 -> Console_WriteLine_a0 : ("Ungültige Eingabe. Bitte geben Sie eine positive ganze Zahl ein.")
-    end
-end
-loop !validInput
-    ReadMatrixDimensions_p0_p1 -> Console_Write_a0 : ("Spalten: ")
-    ReadMatrixDimensions_p0_p1 -> Console_ReadLine
-    Console_ReadLine --> ReadMatrixDimensions_p0_p1 : input
-    ReadMatrixDimensions_p0_p1 -> int_TryParse_a0_a1 : (input, out cols)
-    int_TryParse_a0_a1 --> ReadMatrixDimensions_p0_p1 : validInput
-    alt !validInput
-        ReadMatrixDimensions_p0_p1 -> Console_WriteLine_a0 : ("Ungültige Eingabe. Bitte geben Sie eine positive ganze Zahl ein.")
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
     end
 end
 @enduml

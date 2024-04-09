@@ -3,19 +3,10 @@ title StringExtensions.SetIndent
 participant "SetIndent(thisstringtext,intcount)" as SetIndent_p0_p1 #LightYellow
 participant "sb.Append(a0)" as sb_Append_a0 #LightGreen
 autonumber
-<<<<<<< HEAD
 alt#LightBlue text != null
     loop#LightCoral i < count
         SetIndent_p0_p1 -[#grey]> sb_Append_a0 : (Indent)
     end
 end
 SetIndent_p0_p1 -[#grey]> sb_Append_a0 : (text)
-=======
-alt text != null
-    loop i < count
-        SetIndent_p0_p1 -> sb_Append_a0 : (Indent)
-    end
-end
-SetIndent_p0_p1 -> sb_Append_a0 : (text)
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

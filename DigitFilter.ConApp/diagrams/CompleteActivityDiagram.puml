@@ -1,10 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-<<<<<<< HEAD
-generated on 09/04/2024 14:46:35
-=======
-generated on 09.04.2024 09:47:18
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
+generated on 09/04/2024 14:50:33
 end header
 title CompleteActivityDiagram
 start

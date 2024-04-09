@@ -8,7 +8,6 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Convert.ToInt32(a0)" as Convert_ToInt32_a0 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("MinMax Calculator")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("=================")
 Main_p0 -[#grey]> Console_WriteLine
@@ -33,30 +32,4 @@ Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Min = {nMin, 10}")
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
 Main_p0 -[#grey]> Console_ReadKey
-=======
-Main_p0 -> Console_WriteLine_a0 : ("MinMax Calculator")
-Main_p0 -> Console_WriteLine_a0 : ("=================")
-Main_p0 -> Console_WriteLine
-Main_p0 -> Console_Write_a0 : ("Eingabe Zahl 1: ")
-Main_p0 -> Console_ReadLine
-Console_ReadLine --> Main_p0 : input
-Main_p0 -> Convert_ToInt32_a0 : (input)
-Convert_ToInt32_a0 --> Main_p0 : nOne
-Main_p0 -> Console_Write_a0 : ("Eingabe Zahl 2: ")
-Main_p0 -> Console_ReadLine
-Console_ReadLine --> Main_p0 : input
-Main_p0 -> Convert_ToInt32_a0 : (input)
-Convert_ToInt32_a0 --> Main_p0 : nTwo
-Main_p0 -> Console_Write_a0 : ("Eingabe Zahl 3: ")
-Main_p0 -> Console_ReadLine
-Console_ReadLine --> Main_p0 : input
-Main_p0 -> Convert_ToInt32_a0 : (input)
-Convert_ToInt32_a0 --> Main_p0 : nThree
-Main_p0 -> Console_WriteLine
-Main_p0 -> Console_WriteLine_a0 : ($"Max = {nMax, 10}")
-Main_p0 -> Console_WriteLine_a0 : ($"Min = {nMin, 10}")
-Main_p0 -> Console_WriteLine
-Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -> Console_ReadKey
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

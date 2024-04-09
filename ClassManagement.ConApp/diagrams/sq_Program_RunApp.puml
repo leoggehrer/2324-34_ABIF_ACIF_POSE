@@ -11,21 +11,21 @@ participant "SearchPupilsByLastName(a0)" as SearchPupilsByLastName_a0 #LightGree
 participant "SearchPupilsByPostalCode(a0)" as SearchPupilsByPostalCode_a0 #LightGreen
 participant "WritePupilsToCsvFile(a0,a1)" as WritePupilsToCsvFile_a0_a1 #LightGreen
 autonumber
-RunApp -> ReadPupilsFromCsvFile_a0 : (FILE_NAME)
-ReadPupilsFromCsvFile_a0 --> RunApp : pupils
-RunApp -> PrintAndExecuteMenu
-PrintAndExecuteMenu --> RunApp : choice
-loop exit == false
-    RunApp -> ReadPupil_a0 : (pupils)
-    RunApp -> SortPupilsByCatalogNumber_a0 : (pupils)
-    RunApp -> SortPupilsByLastName_a0 : (pupils)
-    RunApp -> PrintPupils_a0 : (pupils)
-    RunApp -> SearchPupilsByLastName_a0 : (pupils)
-    RunApp -> SearchPupilsByPostalCode_a0 : (pupils)
-    RunApp -> WritePupilsToCsvFile_a0_a1 : (FILE_NAME, pupils)
-    alt !exit
-        RunApp -> PrintAndExecuteMenu
-        PrintAndExecuteMenu --> RunApp : choice
+RunApp -[#grey]> ReadPupilsFromCsvFile_a0 : (FILE_NAME)
+ReadPupilsFromCsvFile_a0 -[#blue]-> RunApp : pupils
+RunApp -[#grey]> PrintAndExecuteMenu
+PrintAndExecuteMenu -[#blue]-> RunApp : choice
+loop#LightCoral exit == false
+    RunApp -[#grey]> ReadPupil_a0 : (pupils)
+    RunApp -[#grey]> SortPupilsByCatalogNumber_a0 : (pupils)
+    RunApp -[#grey]> SortPupilsByLastName_a0 : (pupils)
+    RunApp -[#grey]> PrintPupils_a0 : (pupils)
+    RunApp -[#grey]> SearchPupilsByLastName_a0 : (pupils)
+    RunApp -[#grey]> SearchPupilsByPostalCode_a0 : (pupils)
+    RunApp -[#grey]> WritePupilsToCsvFile_a0_a1 : (FILE_NAME, pupils)
+    alt#LightBlue !exit
+        RunApp -[#grey]> PrintAndExecuteMenu
+        PrintAndExecuteMenu -[#blue]-> RunApp : choice
     end
 end
 @enduml

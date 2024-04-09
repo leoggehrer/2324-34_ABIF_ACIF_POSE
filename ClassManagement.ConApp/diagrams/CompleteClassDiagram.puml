@@ -1,5 +1,21 @@
 @startuml CompleteClassDiagram
 title CompleteClassDiagram
+ class Program #GhostWhite {
+- {const} string FILE_NAME = "pupils.csv"
+---
+---
+- {static} void Main(string[] args)
+- {static} void RunApp()
+- {static} int PrintAndExecuteMenu()
+- {static} Pupil[] ReadPupilsFromCsvFile(string fileName)
+- {static} void WritePupilsToCsvFile(string fileName, Pupil[] pupils)
+- {static} void ReadPupil(Pupil[] pupils)
+- {static} void PrintPupils(Pupil[] pupils)
+- {static} void SortPupilsByCatalogNumber(Pupil[] pupils)
+- {static} void SortPupilsByLastName(Pupil[] pupils)
+- {static} void SearchPupilsByLastName(Pupil[] pupils)
+- {static} void SearchPupilsByPostalCode(Pupil[] pupils)
+}
  class Pupil #GhostWhite {
 - int catalogNumber
 - string firstName = string.Empty
@@ -16,21 +32,5 @@ title CompleteClassDiagram
 + Void setPostalCode(string value)
 ---
 + string ToString()
-}
- class Program #GhostWhite {
-- {const} string FILE_NAME = "pupils.csv"
----
----
-- {static} void Main(string[] args)
-- {static} void RunApp()
-- {static} int PrintAndExecuteMenu()
-- {static} Pupil[] ReadPupilsFromCsvFile(string fileName)
-- {static} void WritePupilsToCsvFile(string fileName, Pupil[] pupils)
-- {static} void ReadPupil(Pupil[] pupils)
-- {static} void PrintPupils(Pupil[] pupils)
-- {static} void SortPupilsByCatalogNumber(Pupil[] pupils)
-- {static} void SortPupilsByLastName(Pupil[] pupils)
-- {static} void SearchPupilsByLastName(Pupil[] pupils)
-- {static} void SearchPupilsByPostalCode(Pupil[] pupils)
 }
 @enduml

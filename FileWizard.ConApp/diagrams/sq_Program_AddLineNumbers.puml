@@ -7,15 +7,15 @@ participant "numberedLines.Add(a0)" as numberedLines_Add_a0 #LightGreen
 participant "File.WriteAllLines(a0,a1)" as File_WriteAllLines_a0_a1 #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-alt File.Exists(fileName)
-    AddLineNumbers_p0 -> File_Exists_a0 : (fileName)
-    AddLineNumbers_p0 -> File_ReadAllLines_a0 : (fileName)
-    File_ReadAllLines_a0 --> AddLineNumbers_p0 : lines
-    loop i < lines.Length
-        AddLineNumbers_p0 -> numberedLines_Add_a0 : ($"{i + 1}: {lines[i]}")
+alt#LightBlue File.Exists(fileName)
+    AddLineNumbers_p0 -[#grey]> File_Exists_a0 : (fileName)
+    AddLineNumbers_p0 -[#grey]> File_ReadAllLines_a0 : (fileName)
+    File_ReadAllLines_a0 -[#blue]-> AddLineNumbers_p0 : lines
+    loop#LightCoral i < lines.Length
+        AddLineNumbers_p0 -[#grey]> numberedLines_Add_a0 : ($"{i + 1}: {lines[i]}")
     end
-    AddLineNumbers_p0 -> File_WriteAllLines_a0_a1 : (fileName, numberedLines)
+    AddLineNumbers_p0 -[#grey]> File_WriteAllLines_a0_a1 : (fileName, numberedLines)
     else
-        AddLineNumbers_p0 -> Console_WriteLine_a0 : ($"Die Datei '{fileName}' existiert nicht!")
+        AddLineNumbers_p0 -[#grey]> Console_WriteLine_a0 : ($"Die Datei '{fileName}' existiert nicht!")
 end
 @enduml

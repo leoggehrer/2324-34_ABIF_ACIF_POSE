@@ -6,7 +6,6 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "double.TryParse(a0,a1)" as double_TryParse_a0_a1 #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-<<<<<<< HEAD
 loop#LightCoral idx < count
     ReadPosturePoints_p0 -[#grey]> Console_Write_a0 : ($"Wertungsrichter {idx + 1} [0-20]: ")
     ReadPosturePoints_p0 -[#grey]> Console_ReadLine
@@ -19,20 +18,6 @@ loop#LightCoral idx < count
         double_TryParse_a0_a1 -[#blue]-> ReadPosturePoints_p0 : result
         else
             ReadPosturePoints_p0 -[#grey]> Console_WriteLine_a0 : ("Ungültige Eingabe!")
-=======
-loop idx < count
-    ReadPosturePoints_p0 -> Console_Write_a0 : ($"Wertungsrichter {idx + 1} [0-20]: ")
-    ReadPosturePoints_p0 -> Console_ReadLine
-    Console_ReadLine --> ReadPosturePoints_p0 : input
-    alt double.TryParse(input, out result[idx]) 
-                    && result[idx] >= 0 
-                    && result[idx] <= 20 
-                    && (result[idx] % 1 == 0 || result[idx] % 1 == 0.5)
-        ReadPosturePoints_p0 -> double_TryParse_a0_a1 : (input, out result[idx])
-        double_TryParse_a0_a1 --> ReadPosturePoints_p0 : result
-        else
-            ReadPosturePoints_p0 -> Console_WriteLine_a0 : ("Ungültige Eingabe!")
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
     end
 end
 @enduml

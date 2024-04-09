@@ -3,14 +3,8 @@ title Program.CheckBinaryNumber
 participant "CheckBinaryNumber(stringnumber)" as CheckBinaryNumber_p0 #LightYellow
 participant "IsBinaryDigit(a0)" as IsBinaryDigit_a0 #LightGreen
 autonumber
-<<<<<<< HEAD
 loop#LightCoral idx < number.Length && result
     CheckBinaryNumber_p0 -[#grey]> IsBinaryDigit_a0 : (number[idx++])
     IsBinaryDigit_a0 -[#blue]-> CheckBinaryNumber_p0 : result
-=======
-loop idx < number.Length && result
-    CheckBinaryNumber_p0 -> IsBinaryDigit_a0 : (number[idx++])
-    IsBinaryDigit_a0 --> CheckBinaryNumber_p0 : result
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 end
 @enduml

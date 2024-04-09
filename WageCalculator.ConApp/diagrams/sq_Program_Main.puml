@@ -7,7 +7,6 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 autonumber
-<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("* Der Lohnrechner für eine gerechte Entlohnung!   *")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
@@ -27,25 +26,4 @@ Main_p0 -[#grey]> Console_WriteLine_a0 : ($"{name} hat in {hours:f} Stunden {sal
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_Write_a0 : ("Zum Beenden Eingabetaste drücken...")
 Main_p0 -[#grey]> Console_ReadLine
-=======
-Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
-Main_p0 -> Console_WriteLine_a0 : ("* Der Lohnrechner für eine gerechte Entlohnung!   *")
-Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
-Main_p0 -> Console_Write_a0 : ("Name des Arbeiters:        ")
-Main_p0 -> Console_ReadLine
-Console_ReadLine --> Main_p0 : name
-Main_p0 -> Console_Write_a0 : ("Anzahl der Arbeitsstunden: ")
-Main_p0 -> Convert_ToDouble_a0 : (Console.ReadLine())
-Convert_ToDouble_a0 --> Main_p0 : hours
-Main_p0 -> Console_Write_a0 : ("Stundenlohn:               ")
-Main_p0 -> Console_ReadLine
-Console_ReadLine --> Main_p0 : input
-Main_p0 -> Convert_ToDouble_a0 : (input)
-Convert_ToDouble_a0 --> Main_p0 : pricePerHour
-Main_p0 -> Console_WriteLine
-Main_p0 -> Console_WriteLine_a0 : ($"{name} hat in {hours:f} Stunden {salary} EUR verdient.")
-Main_p0 -> Console_WriteLine
-Main_p0 -> Console_Write_a0 : ("Zum Beenden Eingabetaste drücken...")
-Main_p0 -> Console_ReadLine
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

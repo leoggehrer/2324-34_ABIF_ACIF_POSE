@@ -4,9 +4,9 @@ participant "PrintSimulation(Horse[]horses)" as PrintSimulation_p0 #LightYellow
 participant "Console.Clear()" as Console_Clear #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-PrintSimulation_p0 -> Console_Clear
-PrintSimulation_p0 -> Console_WriteLine_a0 : ("Pferderennen - Simulation")
-loop i < horses.Length
-    PrintSimulation_p0 -> Console_WriteLine_a0 : ($"Pferd {horses[i].Number, 2}: {new string(' ', horses[i].Position)}*")
+PrintSimulation_p0 -[#grey]> Console_Clear
+PrintSimulation_p0 -[#grey]> Console_WriteLine_a0 : ("Pferderennen - Simulation")
+loop#LightCoral i < horses.Length
+    PrintSimulation_p0 -[#grey]> Console_WriteLine_a0 : ($"Pferd {horses[i].Number, 2}: {new string(' ', horses[i].Position)}*")
 end
 @enduml

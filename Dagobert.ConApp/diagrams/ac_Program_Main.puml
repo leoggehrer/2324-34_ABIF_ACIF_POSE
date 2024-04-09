@@ -25,12 +25,7 @@ if (tSum == qSum) then (<color:green>yes)
             #WhiteSmoke:PrintLine($"Es gibt keine Dreieckszahl und Quadratzahl welche im Bereich {LOWER_RANGE} - {UPPER_RANGE} gleich sind!");
 endif
 #WhiteSmoke:PrintLine();
-<<<<<<< HEAD
-#WhiteSmoke:PrintLine("Press any key to exit: ");
-#WhiteSmoke:ReadKey();
-=======
 #WhiteSmoke:PrintLine("Press enter to exit: ");
 #WhiteSmoke:ReadLine();
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 stop
 @enduml

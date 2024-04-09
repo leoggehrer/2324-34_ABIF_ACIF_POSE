@@ -5,20 +5,20 @@ participant "File.ReadAllLines(a0)" as File_ReadAllLines_a0 #LightGreen
 participant "lines[i].Split(a0)" as lines_i_Split_a0 #LightGreen
 participant "int.Parse(a0)" as int_Parse_a0 #LightGreen
 autonumber
-ReadTippsFromFile_p0 -> File_ReadAllLines_a0 : (filePath)
-File_ReadAllLines_a0 --> ReadTippsFromFile_p0 : lines
-ReadTippsFromFile_p0 -> lines_i_Split_a0 : (';')
-lines_i_Split_a0 --> ReadTippsFromFile_p0 : parts
-ReadTippsFromFile_p0 -> int_Parse_a0 : (parts[1])
-int_Parse_a0 --> ReadTippsFromFile_p0 : tip.Numbers[0]
-ReadTippsFromFile_p0 -> int_Parse_a0 : (parts[2])
-int_Parse_a0 --> ReadTippsFromFile_p0 : tip.Numbers[1]
-ReadTippsFromFile_p0 -> int_Parse_a0 : (parts[3])
-int_Parse_a0 --> ReadTippsFromFile_p0 : tip.Numbers[2]
-ReadTippsFromFile_p0 -> int_Parse_a0 : (parts[4])
-int_Parse_a0 --> ReadTippsFromFile_p0 : tip.Numbers[3]
-ReadTippsFromFile_p0 -> int_Parse_a0 : (parts[5])
-int_Parse_a0 --> ReadTippsFromFile_p0 : tip.Numbers[4]
-ReadTippsFromFile_p0 -> int_Parse_a0 : (parts[6])
-int_Parse_a0 --> ReadTippsFromFile_p0 : tip.Numbers[5]
+ReadTippsFromFile_p0 -[#grey]> File_ReadAllLines_a0 : (filePath)
+File_ReadAllLines_a0 -[#blue]-> ReadTippsFromFile_p0 : lines
+ReadTippsFromFile_p0 -[#grey]> lines_i_Split_a0 : (';')
+lines_i_Split_a0 -[#blue]-> ReadTippsFromFile_p0 : parts
+ReadTippsFromFile_p0 -[#grey]> int_Parse_a0 : (parts[1])
+int_Parse_a0 -[#blue]-> ReadTippsFromFile_p0 : tip.Numbers[0]
+ReadTippsFromFile_p0 -[#grey]> int_Parse_a0 : (parts[2])
+int_Parse_a0 -[#blue]-> ReadTippsFromFile_p0 : tip.Numbers[1]
+ReadTippsFromFile_p0 -[#grey]> int_Parse_a0 : (parts[3])
+int_Parse_a0 -[#blue]-> ReadTippsFromFile_p0 : tip.Numbers[2]
+ReadTippsFromFile_p0 -[#grey]> int_Parse_a0 : (parts[4])
+int_Parse_a0 -[#blue]-> ReadTippsFromFile_p0 : tip.Numbers[3]
+ReadTippsFromFile_p0 -[#grey]> int_Parse_a0 : (parts[5])
+int_Parse_a0 -[#blue]-> ReadTippsFromFile_p0 : tip.Numbers[4]
+ReadTippsFromFile_p0 -[#grey]> int_Parse_a0 : (parts[6])
+int_Parse_a0 -[#blue]-> ReadTippsFromFile_p0 : tip.Numbers[5]
 @enduml

@@ -6,7 +6,6 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "int.TryParse(a0,a1)" as int_TryParse_a0_a1 #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-<<<<<<< HEAD
 loop#LightCoral count <= MAX_NUMBERS
     ReadDigits -[#grey]> Console_Write_a0 : ($"{count, 2}. Ziffer [0-9] eingeben: ")
     ReadDigits -[#grey]> Console_ReadLine
@@ -17,18 +16,6 @@ loop#LightCoral count <= MAX_NUMBERS
         ReadDigits -[#grey]> Console_WriteLine_a0 : ("Fehleingabe, Ziffer muss zwischen 0 und 9 liegen!")
         else
             ReadDigits -[#grey]> Console_WriteLine_a0 : ("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!")
-=======
-loop count <= MAX_NUMBERS
-    ReadDigits -> Console_Write_a0 : ($"{count, 2}. Ziffer [0-9] eingeben: ")
-    ReadDigits -> Console_ReadLine
-    Console_ReadLine --> ReadDigits : input
-    alt int.TryParse(input, out result[index])
-        ReadDigits -> int_TryParse_a0_a1 : (input, out result[index])
-        int_TryParse_a0_a1 --> ReadDigits : result
-        ReadDigits -> Console_WriteLine_a0 : ("Fehleingabe, Ziffer muss zwischen 0 und 9 liegen!")
-        else
-            ReadDigits -> Console_WriteLine_a0 : ("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!")
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
     end
 end
 @enduml

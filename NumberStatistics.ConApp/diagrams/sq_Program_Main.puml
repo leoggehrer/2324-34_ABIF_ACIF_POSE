@@ -8,7 +8,6 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Convert.ToInt32(a0)" as Convert_ToInt32_a0 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine_a0 : (" Zahlen Statistik ")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("==================")
 Main_p0 -[#grey]> Console_WriteLine
@@ -34,31 +33,4 @@ end
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
 Main_p0 -[#grey]> Console_ReadKey
-=======
-Main_p0 -> Console_WriteLine_a0 : (" Zahlen Statistik ")
-Main_p0 -> Console_WriteLine_a0 : ("==================")
-Main_p0 -> Console_WriteLine
-Main_p0 -> Console_WriteLine_a0 : ("Geben Sie positive ganze Zahlen ein [0..Ende]")
-loop num != 0
-    Main_p0 -> Console_Write_a0 : ($"Zahl {idx}: ")
-    Main_p0 -> Console_ReadLine
-    Console_ReadLine --> Main_p0 : input
-    Main_p0 -> Convert_ToInt32_a0 : (input)
-    Convert_ToInt32_a0 --> Main_p0 : num
-end
-Main_p0 -> Console_WriteLine
-alt idx > 1
-    Main_p0 -> Console_WriteLine_a0 : ($"Sie haben {idx - 1} Zahlen eingegeben.")
-    Main_p0 -> Console_WriteLine_a0 : ($"Die Summe der eingegebenen Zahlen ist {sum}.")
-    Main_p0 -> Console_WriteLine_a0 : ($"Der maximale Wert ist {max}.")
-    alt idx > 2
-        Main_p0 -> Console_WriteLine_a0 : ($"Die zweitgrößte Zahl ist {prvMax}.")
-    end
-    Main_p0 -> Console_WriteLine_a0 : ($"Der minimale Wert ist {min}.")
-    Main_p0 -> Console_WriteLine_a0 : ($"Der Durchschnittswert ist {average:f}")
-end
-Main_p0 -> Console_WriteLine
-Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -> Console_ReadKey
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

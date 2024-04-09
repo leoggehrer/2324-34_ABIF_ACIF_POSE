@@ -1,32 +1,32 @@
 title:Program.Main (SQ)
 fileName:sq_Program_Main.puml
-generated_on:09.04.2024 09:47:18
+generated_on:09/04/2024 14:50:33
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.RunApp (SQ)
 fileName:sq_Program_RunApp.puml
-generated_on:09.04.2024 09:47:18
+generated_on:09/04/2024 14:50:33
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.SimulateRace (SQ)
 fileName:sq_Program_SimulateRace.puml
-generated_on:09.04.2024 09:47:18
+generated_on:09/04/2024 14:50:33
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.PrintSimulation (SQ)
 fileName:sq_Program_PrintSimulation.puml
-generated_on:09.04.2024 09:47:18
+generated_on:09/04/2024 14:50:33
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ReadFromCsvFile (SQ)
 fileName:sq_Program_ReadFromCsvFile.puml
-generated_on:09.04.2024 09:47:18
+generated_on:09/04/2024 14:50:33
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.PrintHorses (SQ)
 fileName:sq_Program_PrintHorses.puml
-generated_on:09.04.2024 09:47:18
+generated_on:09/04/2024 14:50:33
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.GetTipp (SQ)
 fileName:sq_Program_GetTipp.puml
-generated_on:09.04.2024 09:47:18
+generated_on:09/04/2024 14:50:33
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.GetHorseByNumber (SQ)
 fileName:sq_Program_GetHorseByNumber.puml
-generated_on:09.04.2024 09:47:18
+generated_on:09/04/2024 14:50:33
 generated_by:generated with the DiagramCreator by Prof.Gehrer

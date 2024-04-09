@@ -7,14 +7,14 @@ participant "pupil.PostalCode.Equals(a0)" as pupil_PostalCode_Equals_a0 #LightGr
 participant "PrintPupils(a0)" as PrintPupils_a0 #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-SearchPupilsByPostalCode_p0 -> Console_Write_a0 : ("Postleitzahl eingeben: ")
-SearchPupilsByPostalCode_p0 -> Console_ReadLine
-Console_ReadLine --> SearchPupilsByPostalCode_p0 : input
-SearchPupilsByPostalCode_p0 -> pupil_PostalCode_Equals_a0 : (input)
-pupil_PostalCode_Equals_a0 --> SearchPupilsByPostalCode_p0 : result
-alt printIdx > 0
-    SearchPupilsByPostalCode_p0 -> PrintPupils_a0 : (printList)
+SearchPupilsByPostalCode_p0 -[#grey]> Console_Write_a0 : ("Postleitzahl eingeben: ")
+SearchPupilsByPostalCode_p0 -[#grey]> Console_ReadLine
+Console_ReadLine -[#blue]-> SearchPupilsByPostalCode_p0 : input
+SearchPupilsByPostalCode_p0 -[#grey]> pupil_PostalCode_Equals_a0 : (input)
+pupil_PostalCode_Equals_a0 -[#blue]-> SearchPupilsByPostalCode_p0 : result
+alt#LightBlue printIdx > 0
+    SearchPupilsByPostalCode_p0 -[#grey]> PrintPupils_a0 : (printList)
     else
-        SearchPupilsByPostalCode_p0 -> Console_WriteLine_a0 : ("Keine Schüler mit diesem Familiennamen gefunden!")
+        SearchPupilsByPostalCode_p0 -[#grey]> Console_WriteLine_a0 : ("Keine Schüler mit diesem Familiennamen gefunden!")
 end
 @enduml

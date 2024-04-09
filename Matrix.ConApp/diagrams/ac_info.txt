@@ -1,48 +1,24 @@
 title:Program.Main (AC)
 fileName:ac_Program_Main.puml
-<<<<<<< HEAD
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:37
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ReadMatrixDimensions (AC)
 fileName:ac_Program_ReadMatrixDimensions.puml
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:37
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.CreateMatrix (AC)
 fileName:ac_Program_CreateMatrix.puml
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:37
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.CompareAndPrintMatrix (AC)
 fileName:ac_Program_CompareAndPrintMatrix.puml
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:37
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.CompareAndPrintMatrixValues (AC)
 fileName:ac_Program_CompareAndPrintMatrixValues.puml
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:37
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.CompareAndPrintMatrixRows (AC)
 fileName:ac_Program_CompareAndPrintMatrixRows.puml
-generated_on:09/04/2024 14:47:03
-=======
-generated_on:09.04.2024 09:47:21
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.ReadMatrixDimensions (AC)
-fileName:ac_Program_ReadMatrixDimensions.puml
-generated_on:09.04.2024 09:47:21
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.CreateMatrix (AC)
-fileName:ac_Program_CreateMatrix.puml
-generated_on:09.04.2024 09:47:21
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.CompareAndPrintMatrix (AC)
-fileName:ac_Program_CompareAndPrintMatrix.puml
-generated_on:09.04.2024 09:47:21
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.CompareAndPrintMatrixValues (AC)
-fileName:ac_Program_CompareAndPrintMatrixValues.puml
-generated_on:09.04.2024 09:47:21
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.CompareAndPrintMatrixRows (AC)
-fileName:ac_Program_CompareAndPrintMatrixRows.puml
-generated_on:09.04.2024 09:47:21
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
+generated_on:09/04/2024 14:50:37
 generated_by:generated with the DiagramCreator by Prof.Gehrer

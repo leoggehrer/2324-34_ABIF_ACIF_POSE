@@ -8,7 +8,6 @@ participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "input.ToLower()" as input_ToLower #LightGreen
 autonumber
-<<<<<<< HEAD
 loop#LightCoral input.ToLower() == "j"
     Main -[#grey]> ReadMatrixDimensions_a0_a1 : (out rows, out cols)
     Main -[#grey]> CreateMatrix_a0_a1 : (rows, cols)
@@ -19,17 +18,5 @@ loop#LightCoral input.ToLower() == "j"
     Console_ReadLine -[#blue]-> Main : input
     Main -[#grey]> input_ToLower
     input_ToLower -[#blue]-> Main : result
-=======
-loop input.ToLower() == "j"
-    Main -> ReadMatrixDimensions_a0_a1 : (out rows, out cols)
-    Main -> CreateMatrix_a0_a1 : (rows, cols)
-    CreateMatrix_a0_a1 --> Main : matrix
-    Main -> CompareAndPrintMatrix_a0 : (matrix)
-    Main -> Console_Write_a0 : ("Weitere Matrix anzeigen (j/n)? ")
-    Main -> Console_ReadLine
-    Console_ReadLine --> Main : input
-    Main -> input_ToLower
-    input_ToLower --> Main : result
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 end
 @enduml

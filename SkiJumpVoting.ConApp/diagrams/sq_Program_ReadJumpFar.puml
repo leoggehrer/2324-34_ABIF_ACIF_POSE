@@ -6,7 +6,6 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "double.TryParse(a0,a1)" as double_TryParse_a0_a1 #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-<<<<<<< HEAD
 loop#LightCoral valid == false
     ReadJumpFar -[#grey]> Console_Write_a0 : ($"Weite in Meter [0-200]: ")
     ReadJumpFar -[#grey]> Console_ReadLine
@@ -16,17 +15,6 @@ loop#LightCoral valid == false
         double_TryParse_a0_a1 -[#blue]-> ReadJumpFar : result
         else
             ReadJumpFar -[#grey]> Console_WriteLine_a0 : ("Ungültige Eingabe!")
-=======
-loop valid == false
-    ReadJumpFar -> Console_Write_a0 : ($"Weite in Meter [0-200]: ")
-    ReadJumpFar -> Console_ReadLine
-    Console_ReadLine --> ReadJumpFar : input
-    alt double.TryParse(input, out result) && result >= 0 && result <= 200
-        ReadJumpFar -> double_TryParse_a0_a1 : (input, out result)
-        double_TryParse_a0_a1 --> ReadJumpFar : result
-        else
-            ReadJumpFar -> Console_WriteLine_a0 : ("Ungültige Eingabe!")
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
     end
 end
 @enduml

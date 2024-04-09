@@ -4,7 +4,6 @@ participant "PrintArray(int[]array)" as PrintArray_p0 #LightYellow
 participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 autonumber
-<<<<<<< HEAD
 loop#LightCoral i < array.Length
     alt#LightBlue i > 0
         PrintArray_p0 -[#grey]> Console_Write_a0 : (" ")
@@ -12,13 +11,4 @@ loop#LightCoral i < array.Length
     PrintArray_p0 -[#grey]> Console_Write_a0 : (array[i])
 end
 PrintArray_p0 -[#grey]> Console_WriteLine
-=======
-loop i < array.Length
-    alt i > 0
-        PrintArray_p0 -> Console_Write_a0 : (" ")
-    end
-    PrintArray_p0 -> Console_Write_a0 : (array[i])
-end
-PrintArray_p0 -> Console_WriteLine
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

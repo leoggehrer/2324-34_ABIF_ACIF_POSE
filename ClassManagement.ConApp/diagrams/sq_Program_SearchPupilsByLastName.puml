@@ -7,14 +7,14 @@ participant "pupil.LastName.Equals(a0)" as pupil_LastName_Equals_a0 #LightGreen
 participant "PrintPupils(a0)" as PrintPupils_a0 #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-SearchPupilsByLastName_p0 -> Console_Write_a0 : ("Familiennamen eingeben: ")
-SearchPupilsByLastName_p0 -> Console_ReadLine
-Console_ReadLine --> SearchPupilsByLastName_p0 : input
-SearchPupilsByLastName_p0 -> pupil_LastName_Equals_a0 : (input)
-pupil_LastName_Equals_a0 --> SearchPupilsByLastName_p0 : result
-alt printIdx > 0
-    SearchPupilsByLastName_p0 -> PrintPupils_a0 : (printList)
+SearchPupilsByLastName_p0 -[#grey]> Console_Write_a0 : ("Familiennamen eingeben: ")
+SearchPupilsByLastName_p0 -[#grey]> Console_ReadLine
+Console_ReadLine -[#blue]-> SearchPupilsByLastName_p0 : input
+SearchPupilsByLastName_p0 -[#grey]> pupil_LastName_Equals_a0 : (input)
+pupil_LastName_Equals_a0 -[#blue]-> SearchPupilsByLastName_p0 : result
+alt#LightBlue printIdx > 0
+    SearchPupilsByLastName_p0 -[#grey]> PrintPupils_a0 : (printList)
     else
-        SearchPupilsByLastName_p0 -> Console_WriteLine_a0 : ("Keine Schüler mit diesem Familiennamen gefunden!")
+        SearchPupilsByLastName_p0 -[#grey]> Console_WriteLine_a0 : ("Keine Schüler mit diesem Familiennamen gefunden!")
 end
 @enduml

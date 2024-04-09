@@ -4,15 +4,8 @@ participant "AnalyzeLottery(int[,]lottoTipps,int[]thrownNumbers)" as AnalyzeLott
 participant "lottoTipps.GetLength(a0)" as lottoTipps_GetLength_a0 #LightGreen
 participant "CountNumberOfHits(a0,a1,a2)" as CountNumberOfHits_a0_a1_a2 #LightGreen
 autonumber
-<<<<<<< HEAD
 AnalyzeLottery_p0_p1 -[#grey]> lottoTipps_GetLength_a0 : (0)
 lottoTipps_GetLength_a0 -[#blue]-> AnalyzeLottery_p0_p1 : result
 AnalyzeLottery_p0_p1 -[#grey]> CountNumberOfHits_a0_a1_a2 : (i, lottoTipps, thrownNumbers)
 CountNumberOfHits_a0_a1_a2 -[#blue]-> AnalyzeLottery_p0_p1 : hits
-=======
-AnalyzeLottery_p0_p1 -> lottoTipps_GetLength_a0 : (0)
-lottoTipps_GetLength_a0 --> AnalyzeLottery_p0_p1 : result
-AnalyzeLottery_p0_p1 -> CountNumberOfHits_a0_a1_a2 : (i, lottoTipps, thrownNumbers)
-CountNumberOfHits_a0_a1_a2 --> AnalyzeLottery_p0_p1 : hits
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

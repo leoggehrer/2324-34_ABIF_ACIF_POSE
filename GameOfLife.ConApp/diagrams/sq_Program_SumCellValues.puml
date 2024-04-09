@@ -3,15 +3,8 @@ title Program.SumCellValues
 participant "SumCellValues(int[,]field)" as SumCellValues_p0 #LightYellow
 participant "field.GetLength(a0)" as field_GetLength_a0 #LightGreen
 autonumber
-<<<<<<< HEAD
 SumCellValues_p0 -[#grey]> field_GetLength_a0 : (0)
 field_GetLength_a0 -[#blue]-> SumCellValues_p0 : result
 SumCellValues_p0 -[#grey]> field_GetLength_a0 : (1)
 field_GetLength_a0 -[#blue]-> SumCellValues_p0 : result
-=======
-SumCellValues_p0 -> field_GetLength_a0 : (0)
-field_GetLength_a0 --> SumCellValues_p0 : result
-SumCellValues_p0 -> field_GetLength_a0 : (1)
-field_GetLength_a0 --> SumCellValues_p0 : result
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

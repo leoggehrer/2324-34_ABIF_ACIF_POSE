@@ -10,7 +10,6 @@ participant "Math.Min(a0,a1)" as Math_Min_a0_a1 #LightGreen
 participant "input.ToLower()" as input_ToLower #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-<<<<<<< HEAD
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("**********************************")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("         CASH MASHINE             ")
@@ -69,64 +68,4 @@ end
 Main_p0 -[#grey]> Console_WriteLine
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
 Main_p0 -[#grey]> Console_ReadKey
-=======
-Main_p0 -> Console_WriteLine
-Main_p0 -> Console_WriteLine_a0 : ("**********************************")
-Main_p0 -> Console_WriteLine_a0 : ("         CASH MASHINE             ")
-Main_p0 -> Console_WriteLine_a0 : ("**********************************")
-loop numberOfInvalidPins < MAX_INCORRECT_ENTRIES && userPinCorrect == false
-    Main_p0 -> Console_WriteLine
-    Main_p0 -> Console_Write_a0 : ("Bitte geben Sie ihren 4 stelligen PIN-Code ein: ")
-    Main_p0 -> Console_ReadLine
-    Console_ReadLine --> Main_p0 : input
-    Main_p0 -> Convert_ToInt32_a0 : (input)
-    Convert_ToInt32_a0 --> Main_p0 : userPin
-    Main_p0 -> Console_WriteLine_a0 : ($"Sie haben {numberOfInvalidPins} mal einen falschen PIN eingegeben.")
-end
-alt numberOfInvalidPins >= MAX_INCORRECT_ENTRIES
-    Main_p0 -> Console_WriteLine
-    Main_p0 -> Console_WriteLine_a0 : ("Sie haben Ihren PIN zu oft eingegeben!")
-    Main_p0 -> Console_WriteLine_a0 : (" => Ihre Karte wird eingezogen!")
-    else
-        alt userPinCorrect
-            Main_p0 -> Math_Min_a0_a1 : (machineBalance, userBalance + COVER_FRAME)
-            Math_Min_a0_a1 --> Main_p0 : maxAmount
-            Main_p0 -> Console_WriteLine_a0 : ($"Ihr Kontostand:                 {userBalance} EUR")
-            Main_p0 -> Console_WriteLine_a0 : ($"Ihr Überziehungsrahmen:         {COVER_FRAME} EUR")
-            Main_p0 -> Console_WriteLine_a0 : ("-----------------------------------------------------")
-            Main_p0 -> Console_WriteLine_a0 : ($"maximaler Betrag                {maxAmount} EUR")
-            Main_p0 -> Console_WriteLine
-            Main_p0 -> Console_Write_a0 : ("Geben Sie den Betrag ein, den Sie abheben wollen: ")
-            Main_p0 -> Console_ReadLine
-            Console_ReadLine --> Main_p0 : input
-            Main_p0 -> Convert_ToInt32_a0 : (input)
-            Convert_ToInt32_a0 --> Main_p0 : amount
-            alt amount <= 0 || amount > maxAmount
-                Main_p0 -> Console_WriteLine_a0 : ("Ungültiger Betrag - bitte versuchen Sie es erneut!")
-                Main_p0 -> Console_WriteLine
-                Main_p0 -> Console_Write_a0 : ("Geben Sie den Betrag ein, den Sie abheben wollen: ")
-                Main_p0 -> Console_ReadLine
-                Console_ReadLine --> Main_p0 : input
-                Main_p0 -> Convert_ToInt32_a0 : (input)
-                Convert_ToInt32_a0 --> Main_p0 : amount
-            end
-            alt amount > 0 && amount <= maxAmount
-                Main_p0 -> Console_Write_a0 : ($"Soll der Betrag {amount:f2} EUR abgehoben werden [j/n]?: ")
-                Main_p0 -> Console_ReadLine
-                Console_ReadLine --> Main_p0 : input
-                alt input.ToLower() == "j"
-                    Main_p0 -> input_ToLower
-                    input_ToLower --> Main_p0 : result
-                    Main_p0 -> Console_WriteLine_a0 : ($"Auszahlung des Betrages {amount:f2} EUR")
-                    Main_p0 -> Console_WriteLine_a0 : ($"Ihr neuer Kontostand: {userBalance:f2} EUR")
-                end
-                else
-                    Main_p0 -> Console_WriteLine_a0 : ("Die Abhebung wurde ohne Auszahlung beendet!")
-            end
-        end
-end
-Main_p0 -> Console_WriteLine
-Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -> Console_ReadKey
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

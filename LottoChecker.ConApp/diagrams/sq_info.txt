@@ -1,56 +1,28 @@
 title:Program.Main (SQ)
 fileName:sq_Program_Main.puml
-<<<<<<< HEAD
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:34
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.ReadTippsFromFile (SQ)
 fileName:sq_Program_ReadTippsFromFile.puml
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:34
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.PrintTipps (SQ)
 fileName:sq_Program_PrintTipps.puml
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:34
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.WriteTippsToFile (SQ)
 fileName:sq_Program_WriteTippsToFile.puml
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:34
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.GetCorrectTipps (SQ)
 fileName:sq_Program_GetCorrectTipps.puml
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:34
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.GetIncorrectTipps (SQ)
 fileName:sq_Program_GetIncorrectTipps.puml
-generated_on:09/04/2024 14:47:03
+generated_on:09/04/2024 14:50:34
 generated_by:generated with the DiagramCreator by Prof.Gehrer
 title:Program.IsTipValid (SQ)
 fileName:sq_Program_IsTipValid.puml
-generated_on:09/04/2024 14:47:03
-=======
-generated_on:09.04.2024 09:47:18
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.ReadTippsFromFile (SQ)
-fileName:sq_Program_ReadTippsFromFile.puml
-generated_on:09.04.2024 09:47:18
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.PrintTipps (SQ)
-fileName:sq_Program_PrintTipps.puml
-generated_on:09.04.2024 09:47:18
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.WriteTippsToFile (SQ)
-fileName:sq_Program_WriteTippsToFile.puml
-generated_on:09.04.2024 09:47:18
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.GetCorrectTipps (SQ)
-fileName:sq_Program_GetCorrectTipps.puml
-generated_on:09.04.2024 09:47:18
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.GetIncorrectTipps (SQ)
-fileName:sq_Program_GetIncorrectTipps.puml
-generated_on:09.04.2024 09:47:18
-generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.IsTipValid (SQ)
-fileName:sq_Program_IsTipValid.puml
-generated_on:09.04.2024 09:47:18
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
+generated_on:09/04/2024 14:50:34
 generated_by:generated with the DiagramCreator by Prof.Gehrer

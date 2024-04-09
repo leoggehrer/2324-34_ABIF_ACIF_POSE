@@ -3,11 +3,6 @@ title Program.FormatBinary
 participant "FormatBinary(stringnumber,intwide)" as FormatBinary_p0_p1 #LightYellow
 participant "ExpandNumber(a0,a1)" as ExpandNumber_a0_a1 #LightGreen
 autonumber
-<<<<<<< HEAD
 FormatBinary_p0_p1 -[#grey]> ExpandNumber_a0_a1 : (number, expandLength)
 ExpandNumber_a0_a1 -[#blue]-> FormatBinary_p0_p1 : number
-=======
-FormatBinary_p0_p1 -> ExpandNumber_a0_a1 : (number, expandLength)
-ExpandNumber_a0_a1 --> FormatBinary_p0_p1 : number
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

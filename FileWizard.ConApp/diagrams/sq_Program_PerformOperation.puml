@@ -12,26 +12,26 @@ participant "ReplaceCharacters(a0)" as ReplaceCharacters_a0 #LightGreen
 participant "GetFileName()" as GetFileName #LightGreen
 participant "CreateBackup(a0)" as CreateBackup_a0 #LightGreen
 autonumber
-PerformOperation_p0 -> Console_WriteLine
-PerformOperation_p0 -> Console_WriteLine_a0 : ("Was kann ich für dich tun?")
-PerformOperation_p0 -> Console_WriteLine_a0 : ($"FileName: {fileName}")
-PerformOperation_p0 -> Console_WriteLine
-PerformOperation_p0 -> Console_WriteLine_a0 : ("(1) Datei am Bildschirm ausgeben")
-PerformOperation_p0 -> Console_WriteLine_a0 : ("(2) Zeilennummern hinzufügen")
-PerformOperation_p0 -> Console_WriteLine_a0 : ("(3) Zeilen reversieren")
-PerformOperation_p0 -> Console_WriteLine_a0 : ("(4) Zeichenketten ersetzen")
-PerformOperation_p0 -> Console_WriteLine_a0 : ("(5) Neue Datei einlesen")
-PerformOperation_p0 -> Console_WriteLine_a0 : ("(0) Ende")
-PerformOperation_p0 -> Console_WriteLine
-PerformOperation_p0 -> Console_Write_a0 : ("Deine Wahl: ")
-PerformOperation_p0 -> Console_ReadLine
-Console_ReadLine --> PerformOperation_p0 : input
-PerformOperation_p0 -> PrintFile_a0 : (fileName)
-PerformOperation_p0 -> AddLineNumbers_a0 : (fileName)
-PerformOperation_p0 -> ReverseLines_a0 : (fileName)
-PerformOperation_p0 -> ReplaceCharacters_a0 : (fileName)
-PerformOperation_p0 -> GetFileName
-GetFileName --> PerformOperation_p0 : fileName
-PerformOperation_p0 -> CreateBackup_a0 : (fileName)
-PerformOperation_p0 -> Console_WriteLine_a0 : ("Ungültige Eingabe!")
+PerformOperation_p0 -[#grey]> Console_WriteLine
+PerformOperation_p0 -[#grey]> Console_WriteLine_a0 : ("Was kann ich für dich tun?")
+PerformOperation_p0 -[#grey]> Console_WriteLine_a0 : ($"FileName: {fileName}")
+PerformOperation_p0 -[#grey]> Console_WriteLine
+PerformOperation_p0 -[#grey]> Console_WriteLine_a0 : ("(1) Datei am Bildschirm ausgeben")
+PerformOperation_p0 -[#grey]> Console_WriteLine_a0 : ("(2) Zeilennummern hinzufügen")
+PerformOperation_p0 -[#grey]> Console_WriteLine_a0 : ("(3) Zeilen reversieren")
+PerformOperation_p0 -[#grey]> Console_WriteLine_a0 : ("(4) Zeichenketten ersetzen")
+PerformOperation_p0 -[#grey]> Console_WriteLine_a0 : ("(5) Neue Datei einlesen")
+PerformOperation_p0 -[#grey]> Console_WriteLine_a0 : ("(0) Ende")
+PerformOperation_p0 -[#grey]> Console_WriteLine
+PerformOperation_p0 -[#grey]> Console_Write_a0 : ("Deine Wahl: ")
+PerformOperation_p0 -[#grey]> Console_ReadLine
+Console_ReadLine -[#blue]-> PerformOperation_p0 : input
+PerformOperation_p0 -[#grey]> PrintFile_a0 : (fileName)
+PerformOperation_p0 -[#grey]> AddLineNumbers_a0 : (fileName)
+PerformOperation_p0 -[#grey]> ReverseLines_a0 : (fileName)
+PerformOperation_p0 -[#grey]> ReplaceCharacters_a0 : (fileName)
+PerformOperation_p0 -[#grey]> GetFileName
+GetFileName -[#blue]-> PerformOperation_p0 : fileName
+PerformOperation_p0 -[#grey]> CreateBackup_a0 : (fileName)
+PerformOperation_p0 -[#grey]> Console_WriteLine_a0 : ("Ungültige Eingabe!")
 @enduml

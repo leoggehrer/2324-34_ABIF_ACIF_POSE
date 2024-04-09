@@ -3,11 +3,6 @@ title Program.Decrypt
 participant "Decrypt(stringencrypted)" as Decrypt_p0 #LightYellow
 participant "Encrypt(a0)" as Encrypt_a0 #LightGreen
 autonumber
-<<<<<<< HEAD
 Decrypt_p0 -[#grey]> Encrypt_a0 : (encrypted)
 Encrypt_a0 -[#blue]-> Decrypt_p0 : result
-=======
-Decrypt_p0 -> Encrypt_a0 : (encrypted)
-Encrypt_a0 --> Decrypt_p0 : result
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

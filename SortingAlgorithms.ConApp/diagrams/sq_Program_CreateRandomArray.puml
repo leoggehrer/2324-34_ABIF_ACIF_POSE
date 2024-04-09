@@ -3,11 +3,6 @@ title Program.CreateRandomArray
 participant "CreateRandomArray(intsize)" as CreateRandomArray_p0 #LightYellow
 participant "CreateRandomArray(a0,a1,a2)" as CreateRandomArray_a0_a1_a2 #LightGreen
 autonumber
-<<<<<<< HEAD
 CreateRandomArray_p0 -[#grey]> CreateRandomArray_a0_a1_a2 : (size, 0, size)
 CreateRandomArray_a0_a1_a2 -[#blue]-> CreateRandomArray_p0 : result
-=======
-CreateRandomArray_p0 -> CreateRandomArray_a0_a1_a2 : (size, 0, size)
-CreateRandomArray_a0_a1_a2 --> CreateRandomArray_p0 : result
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

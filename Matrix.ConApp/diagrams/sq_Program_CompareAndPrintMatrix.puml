@@ -6,7 +6,6 @@ participant "CompareAndPrintMatrixValues(a0,a1)" as CompareAndPrintMatrixValues_
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 participant "CompareAndPrintMatrixRows(a0,a1,a2)" as CompareAndPrintMatrixRows_a0_a1_a2 #LightGreen
 autonumber
-<<<<<<< HEAD
 loop#LightCoral r < matrix.GetLength(0)
     CompareAndPrintMatrix_p0 -[#grey]> matrix_GetLength_a0 : (0)
     matrix_GetLength_a0 -[#blue]-> CompareAndPrintMatrix_p0 : result
@@ -20,19 +19,4 @@ loop#LightCoral r < matrix.GetLength(0)
     end
 end
 CompareAndPrintMatrix_p0 -[#grey]> Console_WriteLine
-=======
-loop r < matrix.GetLength(0)
-    CompareAndPrintMatrix_p0 -> matrix_GetLength_a0 : (0)
-    matrix_GetLength_a0 --> CompareAndPrintMatrix_p0 : result
-    CompareAndPrintMatrix_p0 -> CompareAndPrintMatrixValues_a0_a1 : (matrix, r)
-    CompareAndPrintMatrix_p0 -> Console_WriteLine
-    alt r < matrix.GetLength(0) - 1
-        CompareAndPrintMatrix_p0 -> matrix_GetLength_a0 : (0)
-        matrix_GetLength_a0 --> CompareAndPrintMatrix_p0 : result
-        CompareAndPrintMatrix_p0 -> CompareAndPrintMatrixRows_a0_a1_a2 : (matrix, r, r + 1)
-        CompareAndPrintMatrix_p0 -> Console_WriteLine
-    end
-end
-CompareAndPrintMatrix_p0 -> Console_WriteLine
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
 @enduml

@@ -6,7 +6,6 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "IsBigNumber(a0)" as IsBigNumber_a0 #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-<<<<<<< HEAD
 loop#LightCoral validInput == false
     ReadBigInteger_p0 -[#grey]> Console_Write_a0 : (prompt)
     ReadBigInteger_p0 -[#grey]> Console_ReadLine
@@ -15,16 +14,6 @@ loop#LightCoral validInput == false
     IsBigNumber_a0 -[#blue]-> ReadBigInteger_p0 : validInput
     alt#LightBlue validInput == false
         ReadBigInteger_p0 -[#grey]> Console_WriteLine_a0 : ("Ungültige Eingabe!")
-=======
-loop validInput == false
-    ReadBigInteger_p0 -> Console_Write_a0 : (prompt)
-    ReadBigInteger_p0 -> Console_ReadLine
-    Console_ReadLine --> ReadBigInteger_p0 : result
-    ReadBigInteger_p0 -> IsBigNumber_a0 : (result)
-    IsBigNumber_a0 --> ReadBigInteger_p0 : validInput
-    alt validInput == false
-        ReadBigInteger_p0 -> Console_WriteLine_a0 : ("Ungültige Eingabe!")
->>>>>>> 56b6a5fe7a1f15ad4e8b92b13f46a4ac7ce2347a
     end
 end
 @enduml

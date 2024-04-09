@@ -5,22 +5,22 @@ participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "int.TryParse(a0,a1)" as int_TryParse_a0_a1 #LightGreen
 autonumber
-loop validChoice == false
-    PrintAndExecuteMenu -> Console_WriteLine_a0 : ("Klassen-Management")
-    PrintAndExecuteMenu -> Console_WriteLine_a0 : ("==================")
-    PrintAndExecuteMenu -> Console_WriteLine
-    PrintAndExecuteMenu -> Console_WriteLine_a0 : ("1 - Neuen Schüler einlesen")
-    PrintAndExecuteMenu -> Console_WriteLine_a0 : ("2 - Schüler nach Katalognummer sortieren")
-    PrintAndExecuteMenu -> Console_WriteLine_a0 : ("3 - Schüler nach Familiennamen sortieren")
-    PrintAndExecuteMenu -> Console_WriteLine_a0 : ("4 - Schülerliste ausgeben")
-    PrintAndExecuteMenu -> Console_WriteLine_a0 : ("5 - Schüler nach Familiennamen suchen und ausgeben")
-    PrintAndExecuteMenu -> Console_WriteLine_a0 : ("6 - Schüler nach Postleitzahl suchen und ausgeben")
-    PrintAndExecuteMenu -> Console_WriteLine_a0 : ("7 - Schülerliste speichern")
-    PrintAndExecuteMenu -> Console_WriteLine_a0 : ("8 - Beenden")
-    PrintAndExecuteMenu -> Console_WriteLine
-    PrintAndExecuteMenu -> Console_Write_a0 : ("Ihre Wahl: ")
-    alt int.TryParse(Console.ReadLine(), out choice)
-        PrintAndExecuteMenu -> int_TryParse_a0_a1 : (Console.ReadLine(), out choice)
+loop#LightCoral validChoice == false
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine_a0 : ("Klassen-Management")
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine_a0 : ("==================")
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine_a0 : ("1 - Neuen Schüler einlesen")
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine_a0 : ("2 - Schüler nach Katalognummer sortieren")
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine_a0 : ("3 - Schüler nach Familiennamen sortieren")
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine_a0 : ("4 - Schülerliste ausgeben")
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine_a0 : ("5 - Schüler nach Familiennamen suchen und ausgeben")
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine_a0 : ("6 - Schüler nach Postleitzahl suchen und ausgeben")
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine_a0 : ("7 - Schülerliste speichern")
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine_a0 : ("8 - Beenden")
+    PrintAndExecuteMenu -[#grey]> Console_WriteLine
+    PrintAndExecuteMenu -[#grey]> Console_Write_a0 : ("Ihre Wahl: ")
+    alt#LightBlue int.TryParse(Console.ReadLine(), out choice)
+        PrintAndExecuteMenu -[#grey]> int_TryParse_a0_a1 : (Console.ReadLine(), out choice)
     end
 end
 @enduml

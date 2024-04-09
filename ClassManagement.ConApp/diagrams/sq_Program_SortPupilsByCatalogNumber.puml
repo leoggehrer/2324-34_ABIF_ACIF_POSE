@@ -1,6 +1,6 @@
 @startuml Program.SortPupilsByCatalogNumber
 title Program.SortPupilsByCatalogNumber
 autonumber
-loop exchange == true
+loop#LightCoral exchange == true
 end
 @enduml
