@@ -25,7 +25,7 @@ namespace UPNCalculator.ConApp
         /// <param name="args">The command-line arguments.</param>
         static void Main(string[] args)
         {
-            string input, splitText;
+            string input;
 
             Console.WriteLine("********************");
             Console.WriteLine("* UPNCalculator    *");
@@ -61,29 +61,29 @@ namespace UPNCalculator.ConApp
             {
                 if (parts[i] == "+")
                 {
-                    double a = stack.Pop();
                     double b = stack.Pop();
+                    double a = stack.Pop();
 
                     stack.Push(a + b);
                 }
                 else if (parts[i] == "-")
                 {
-                    double a = stack.Pop();
                     double b = stack.Pop();
+                    double a = stack.Pop();
 
                     stack.Push(a - b);
                 }
                 else if (parts[i] == "*")
                 {
-                    double a = stack.Pop();
                     double b = stack.Pop();
+                    double a = stack.Pop();
 
                     stack.Push(a * b);
                 }
                 else if (parts[i] == "/")
                 {
-                    double a = stack.Pop();
                     double b = stack.Pop();
+                    double a = stack.Pop();
 
                     stack.Push(a / b);
                 }

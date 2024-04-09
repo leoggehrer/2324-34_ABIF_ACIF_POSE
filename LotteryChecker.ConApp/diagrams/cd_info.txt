@@ -1,4 +1,0 @@
-title:LotteryTip (CD)
-fileName:cd_LotteryTip.puml
-title:Program (CD)
-fileName:cd_Program.puml
