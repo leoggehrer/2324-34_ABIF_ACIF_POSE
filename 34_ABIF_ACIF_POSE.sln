@@ -121,6 +121,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileWizard.ConApp", "FileWi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentRate.ConApp", "CommentRate.ConApp\CommentRate.ConApp.csproj", "{4009BD21-9D48-4D00-8A68-8FAD7C220AC5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassManagement.ConApp", "ClassManagement.ConApp\ClassManagement.ConApp.csproj", "{A7D6E46A-4D72-4594-ACFD-74160414F45E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorseRace.ConApp", "HorseRace.ConApp\HorseRace.ConApp.csproj", "{9B8DA326-2A71-49B5-AAC1-7EB18617D261}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -363,6 +367,14 @@ Global
 		{4009BD21-9D48-4D00-8A68-8FAD7C220AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4009BD21-9D48-4D00-8A68-8FAD7C220AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4009BD21-9D48-4D00-8A68-8FAD7C220AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D6E46A-4D72-4594-ACFD-74160414F45E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D6E46A-4D72-4594-ACFD-74160414F45E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D6E46A-4D72-4594-ACFD-74160414F45E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D6E46A-4D72-4594-ACFD-74160414F45E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B8DA326-2A71-49B5-AAC1-7EB18617D261}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B8DA326-2A71-49B5-AAC1-7EB18617D261}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B8DA326-2A71-49B5-AAC1-7EB18617D261}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B8DA326-2A71-49B5-AAC1-7EB18617D261}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

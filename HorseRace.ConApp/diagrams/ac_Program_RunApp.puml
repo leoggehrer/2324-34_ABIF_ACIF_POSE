@@ -1,0 +1,17 @@
+@startuml Program.RunApp
+title Program.RunApp
+start
+#LightSkyBlue:Horse[] horses = ReadFromCsvFile(FILE_NAME)\nint tipp = GetTipp(horses);
+if (IsCorrectTipp(horses, tipp)) then (<color:green>yes)
+        #LightSkyBlue:Horse horse = GetHorseByNumber(horses, tipp);
+        #WhiteSmoke:PrintLine("Ihr Tipp mit der Startnummer {tipp} heisst {horse.Name} und ist {horse.Age} Jahre alt.");
+        #WhiteSmoke:PrintLine("Das Rennen beginnt ...");
+        #WhiteSmoke:SimulateRace(horses);
+        #WhiteSmoke:SortHorsesByPosition(horses);
+        #LightSkyBlue:int index = GetHorseIndexByNumber(horses, tipp);
+        #WhiteSmoke:PrintLine($"Ihr Startnummer {tipp} Name {horse.Name} {horse.Age} Jahre alt erzielte Rang {index + 1}!");
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine("Ihr Tipp ist falsch!");
+endif
+stop
+@enduml

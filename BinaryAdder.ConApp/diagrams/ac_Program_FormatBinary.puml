@@ -2,8 +2,7 @@
 title Program.FormatBinary
 start
 #LightGreen:Params(string number,int wide);
-#LightSkyBlue:string result = string.Empty
-int expandLength = wide - number.Length % wide + number.Length;
+#LightSkyBlue:string result = string.Empty\nint expandLength = wide - number.Length % wide + number.Length;
 #WhiteSmoke:number = ExpandNumber(number, expandLength);
 #LightSkyBlue:int i = 0;
 while (i < number.Length) is (<color:green>yes)

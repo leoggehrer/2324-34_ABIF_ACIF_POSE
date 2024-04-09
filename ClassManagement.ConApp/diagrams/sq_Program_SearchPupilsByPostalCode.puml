@@ -1,0 +1,20 @@
+@startuml Program.SearchPupilsByPostalCode
+title Program.SearchPupilsByPostalCode
+participant "SearchPupilsByPostalCode(Pupil[]pupils)" as SearchPupilsByPostalCode_p0 #LightYellow
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "pupil.PostalCode.Equals(a0)" as pupil_PostalCode_Equals_a0 #LightGreen
+participant "PrintPupils(a0)" as PrintPupils_a0 #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+autonumber
+SearchPupilsByPostalCode_p0 -> Console_Write_a0 : ("Postleitzahl eingeben: ")
+SearchPupilsByPostalCode_p0 -> Console_ReadLine
+Console_ReadLine --> SearchPupilsByPostalCode_p0 : input
+SearchPupilsByPostalCode_p0 -> pupil_PostalCode_Equals_a0 : (input)
+pupil_PostalCode_Equals_a0 --> SearchPupilsByPostalCode_p0 : result
+alt printIdx > 0
+    SearchPupilsByPostalCode_p0 -> PrintPupils_a0 : (printList)
+    else
+        SearchPupilsByPostalCode_p0 -> Console_WriteLine_a0 : ("Keine Schüler mit diesem Familiennamen gefunden!")
+end
+@enduml

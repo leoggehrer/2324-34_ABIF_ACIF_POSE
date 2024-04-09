@@ -1,0 +1,10 @@
+@startuml Program
+title Program
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} string GetFileName()
+- {static} void AnalyzeFile(string fileName, int codeChars, int commentChars)
+}
+@enduml

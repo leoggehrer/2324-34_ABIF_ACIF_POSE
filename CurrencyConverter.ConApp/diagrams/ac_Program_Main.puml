@@ -1,0 +1,23 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\ndouble euroToFranc = 0.95, euroToDollar = 1.05\ndouble euroValue, francValue, dollarValue;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Währungsrechner - Der faire Austausch von Geld  *");
+#WhiteSmoke:PrintLine("*                   EURO -> DOLLAR                *");
+#WhiteSmoke:PrintLine("*                   EURO -> FRANKEN               *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabe des Betrages in Euro: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:euroValue = Convert.ToDouble(input);
+#WhiteSmoke:dollarValue = euroValue * euroToDollar;
+#WhiteSmoke:francValue = euroValue * euroToFranc;
+#WhiteSmoke:PrintLine($"Dollar:  {dollarValue,10:f4}");
+#WhiteSmoke:PrintLine($"Franken: {francValue,10:f4}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

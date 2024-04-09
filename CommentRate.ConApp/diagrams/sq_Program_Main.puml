@@ -1,0 +1,18 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "GetFileName()" as GetFileName #LightGreen
+participant "AnalyzeFile(a0,a1,a2)" as AnalyzeFile_a0_a1_a2 #LightGreen
+participant "Thread.Sleep(a0)" as Thread_Sleep_a0 #LightGreen
+autonumber
+Main_p0 -> Console_WriteLine_a0 : ("Kommentarquote für C#-Dateien")
+Main_p0 -> Console_WriteLine_a0 : ("=============================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> GetFileName
+GetFileName --> Main_p0 : fileName
+Main_p0 -> AnalyzeFile_a0_a1_a2 : (fileName, out codeChars, out commentChars)
+Main_p0 -> Console_WriteLine_a0 : ($"Von {codeChars + commentChars} Zeichen waren {commentChars} Kommentare, das ergibt {relationShip:f} % Kommentarquote.")
+Main_p0 -> Thread_Sleep_a0 : (3000)
+@enduml

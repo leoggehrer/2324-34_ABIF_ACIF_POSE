@@ -1,23 +1,20 @@
 @startuml Program.ReadDigits
 title Program.ReadDigits
 start
-#LightBlue:int MAX_NUMBERS = 10
-int[] result = new int[MAX_NUMBERS]
-int count = 1, index = 0
-string input = string.Empty;
+#LightSkyBlue:int MAX_NUMBERS = 10\nint[] result = new int[MAX_NUMBERS]\nint count = 1, index = 0\nstring input = string.Empty;
 while (count <= MAX_NUMBERS) is (<color:green>yes)
-    :Print($"{count, 2}. Ziffer [0-9] eingeben: ");
-    :input = ReadLine();
-    if (int.TryParse(input, out result[index])) then (<color:green>yes)
-        if (result[index] < 0 || result[index] > 9) then (<color:green>yes)
-            :PrintLine("Fehleingabe, Ziffer muss zwischen 0 und 9 liegen!");
-          else (<color:red>no)
-              :count++;
-              :index++;
+        #WhiteSmoke:Print($"{count, 2}. Ziffer [0-9] eingeben: ");
+        #WhiteSmoke:input = ReadLine();
+        if (int.TryParse(input, out result[index])) then (<color:green>yes)
+                if (result[index] < 0 || result[index] > 9) then (<color:green>yes)
+                        #WhiteSmoke:PrintLine("Fehleingabe, Ziffer muss zwischen 0 und 9 liegen!");
+                    else (<color:red>no)
+                            #WhiteSmoke:count++;
+                            #WhiteSmoke:index++;
+                endif
+            else (<color:red>no)
+                    #WhiteSmoke:PrintLine("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!");
         endif
-      else (<color:red>no)
-          :PrintLine("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!");
-    endif
 endwhile (<color:red>no)
 #Lavender:return result;
 stop

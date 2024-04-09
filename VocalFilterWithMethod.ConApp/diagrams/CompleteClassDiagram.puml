@@ -1,0 +1,9 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
++ {static} string FilterVocals(string input)
+}
+@enduml

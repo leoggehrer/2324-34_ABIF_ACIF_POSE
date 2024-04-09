@@ -1,0 +1,10 @@
+@startuml Program
+title Program
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
++ {static} int[] ReadDigits()
++ {static} string GetUniqueDigitsString(int[] digits)
+}
+@enduml

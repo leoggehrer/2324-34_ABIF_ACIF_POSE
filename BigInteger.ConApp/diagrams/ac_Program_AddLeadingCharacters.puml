@@ -2,8 +2,7 @@
 title Program.AddLeadingCharacters
 start
 #LightGreen:Params(string number,char chr,int count);
-#LightSkyBlue:string result = number
-int length = number.Length + count;
+#LightSkyBlue:string result = number\nint length = number.Length + count;
 while (result.Length < length) is (<color:green>yes)
         #WhiteSmoke:result = chr + result;
 endwhile (<color:red>no)

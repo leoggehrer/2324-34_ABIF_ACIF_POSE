@@ -2,9 +2,7 @@
 title Program.AddBigInteger
 start
 #LightGreen:Params(string number1,string number2);
-#LightSkyBlue:string result = string.Empty
-int maxNumber = Math.Max(number1.Length, number2.Length) + 1
-bool carry = false;
+#LightSkyBlue:string result = string.Empty\nint maxNumber = Math.Max(number1.Length, number2.Length) + 1\nbool carry = false;
 #WhiteSmoke:number1 = AddLeadingCharacters(number1, '0', maxNumber - number1.Length);
 #WhiteSmoke:number2 = AddLeadingCharacters(number2, '0', maxNumber - number2.Length);
 #LightSkyBlue:int i = number1.Length - 1;

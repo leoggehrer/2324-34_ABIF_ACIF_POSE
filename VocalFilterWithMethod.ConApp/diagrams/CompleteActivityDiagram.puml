@@ -1,0 +1,41 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:25
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input, output = string.Empty;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Vocal Filter with Method                        *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabetext: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:output = FilterVocals(input);
+#WhiteSmoke:PrintLine($"Ausgabetext: {output}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+start
+note right:  Program.FilterVocals
+#LightGreen:Params(string input);
+#LightSkyBlue:string result = string.Empty;
+#LightSkyBlue:int i = 0;
+while (i < input.Length) is (<color:green>yes)
+        #LightSkyBlue:char chr = char.ToLower(input[i]);
+        if (chr == 'a' || chr == 'e' || chr == 'i' || chr == 'o' || chr == 'u') then (<color:green>yes)
+                if (result.Contains(input[i]) == false) then (<color:green>yes)
+                        #WhiteSmoke:result += input[i];
+                endif
+        endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

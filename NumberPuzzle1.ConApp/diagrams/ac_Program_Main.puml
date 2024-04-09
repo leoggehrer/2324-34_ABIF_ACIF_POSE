@@ -1,0 +1,39 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:int A_plus_B_x_C = 2024\nint A_x_B_plus_C = 2023\nint a, b, c, equation_1, equation_2\nbool solved = false;
+#WhiteSmoke:PrintLine("Number Puzzel");
+#WhiteSmoke:PrintLine("=============");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Solve:");
+#WhiteSmoke:PrintLine("  a + bc = 2024");
+#WhiteSmoke:PrintLine("  ab + c = 2023");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:a = 0;
+#WhiteSmoke:b = 0;
+#WhiteSmoke:c = 0;
+while (solved == false && a < A_plus_B_x_C) is (<color:green>yes)
+        #WhiteSmoke:a++;
+        #WhiteSmoke:b = 0;
+        while (solved == false && b < A_plus_B_x_C) is (<color:green>yes)
+                #WhiteSmoke:b++;
+                #WhiteSmoke:c = 0;
+                while (solved == false && c < A_plus_B_x_C) is (<color:green>yes)
+                        #WhiteSmoke:c++;
+                        #WhiteSmoke:equation_1 = a + (b * c);
+                        #WhiteSmoke:equation_2 = (a * b) + c;
+                        #WhiteSmoke:solved = equation_1 == A_plus_B_x_C && equation_2 == A_x_B_plus_C;
+                endwhile (<color:red>no)
+        endwhile (<color:red>no)
+endwhile (<color:red>no)
+if (solved) then (<color:green>yes)
+        #WhiteSmoke:PrintLine($"The solution: a == {a}, b == {b} and c == {c}");
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine("No solution found!");
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

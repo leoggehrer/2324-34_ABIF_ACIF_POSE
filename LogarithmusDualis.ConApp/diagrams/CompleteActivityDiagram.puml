@@ -1,0 +1,29 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:18
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nint number, logarithmus = 0;
+#WhiteSmoke:PrintLine("Logarithmus Dualis");
+#WhiteSmoke:PrintLine("==================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Zahl: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:number = Convert.ToInt32(input);
+while (number > 1) is (<color:green>yes)
+        #WhiteSmoke:number /= 2;
+        #WhiteSmoke:logarithmus++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"Der Logarithmus Dualis von {number} ist {logarithmus}.");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

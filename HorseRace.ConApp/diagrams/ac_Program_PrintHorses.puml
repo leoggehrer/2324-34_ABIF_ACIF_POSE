@@ -1,0 +1,19 @@
+@startuml Program.PrintHorses
+title Program.PrintHorses
+start
+#LightGreen:Params(Horse[] horses);
+#LightSkyBlue:string format = "{0,-4} {1,-20} {2,-5}"\nstring output = string.Format(format, "Nr.", "Name", "Alter");
+#WhiteSmoke:PrintLine(output);
+#WhiteSmoke:Print(new string('=', output.Length));
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:int i = 0;
+while (i < horses.Length) is (<color:green>yes)
+        #LightSkyBlue:Horse horse = horses[i];
+        if (horse != null) then (<color:green>yes)
+                #WhiteSmoke:output = string.Format(format, horse.Number, horse.Name, horse.Age);
+                #WhiteSmoke:PrintLine(output);
+        endif
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

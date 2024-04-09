@@ -1,0 +1,76 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "input.ToLower()" as input_ToLower #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
+participant "Convert.ToInt32(a0)" as Convert_ToInt32_a0 #LightGreen
+participant "giftOption.ToLower()" as giftOption_ToLower #LightGreen
+participant "location.ToLower()" as location_ToLower #LightGreen
+participant "Console.ReadKey()" as Console_ReadKey #LightGreen
+autonumber
+Main_p0 -> Console_WriteLine_a0 : ("===========================================")
+Main_p0 -> Console_WriteLine_a0 : (" Shopping Cart                             ")
+Main_p0 -> Console_WriteLine_a0 : ("===========================================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> input_ToLower
+input_ToLower --> Main_p0 : result
+Main_p0 -> Console_WriteLine_a0 : ($"Eingabe von Produkt Nr. {++idx}")
+Main_p0 -> Console_Write_a0 : ("Netto-Stückpreis: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : nettoPrice
+Main_p0 -> Console_Write_a0 : ("Stückzahl:        ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToInt32_a0 : (input)
+Convert_ToInt32_a0 --> Main_p0 : numberOfPieces
+Main_p0 -> Console_Write_a0 : ("Geschenkoption ((j)a / (n)ein)? : ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : giftOption
+Main_p0 -> giftOption_ToLower
+giftOption_ToLower --> Main_p0 : result
+Main_p0 -> Console_WriteLine_a0 : ($"=> Nettopreis = {sumNettoPrice + sumGift,2:f2} EUR")
+alt sumGift > 0
+    Main_p0 -> Console_WriteLine_a0 : ($"=> zuzügl. Geschenkoption = {sumGift} EUR")
+end
+Main_p0 -> Console_Write_a0 : ("Ein weiteres Produkt eingeben ((j)a / (n)ein) ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Lieferung nach de oder at? ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : location
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("===========================================")
+Main_p0 -> Console_WriteLine_a0 : ("Ihre Einkaufsrechnung                      ")
+Main_p0 -> Console_WriteLine_a0 : ("===========================================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Nettopreis gesamt: ")
+Main_p0 -> Console_WriteLine_a0 : ($"{sumNettoPriceAll + sumGift,20:f2} EUR")
+alt sumNettoPriceAll < 29
+    Main_p0 -> Console_Write_a0 : ("Versandkosten:     ")
+    Main_p0 -> Console_WriteLine_a0 : ($"{sumDeliveryCost,20:f2} EUR")
+end
+Main_p0 -> location_ToLower
+location_ToLower --> Main_p0 : result
+Main_p0 -> Console_Write_a0 : ("Gesamtpreis:       ")
+Main_p0 -> Console_WriteLine_a0 : ($"{sumGrossPriceAll + sumDeliveryCost,20:f2} EUR")
+Main_p0 -> Console_WriteLine_a0 : ("===========================================")
+alt location.ToLower() == "at"
+    Main_p0 -> location_ToLower
+    location_ToLower --> Main_p0 : result
+    Main_p0 -> Console_Write_a0 : ("Darin enthalten sind 20,00 % MWSt. ")
+    Main_p0 -> Console_WriteLine_a0 : ($"{sumTaxAll:f2} EUR")
+    else
+        Main_p0 -> Console_Write_a0 : ("Darin enthalten sind 19,00 % MWSt. ")
+        Main_p0 -> Console_WriteLine_a0 : ($"{sumTaxAll:f2} EUR")
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+@enduml

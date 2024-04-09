@@ -2,8 +2,7 @@
 title Program.IsBigNumber
 start
 #LightGreen:Params(string number);
-#LightSkyBlue:bool result = number.Length > 0
-int idx = 0;
+#LightSkyBlue:bool result = number.Length > 0\nint idx = 0;
 while (idx < number.Length && result) is (<color:green>yes)
         #WhiteSmoke:result = char.IsDigit(number[idx++]);
 endwhile (<color:red>no)

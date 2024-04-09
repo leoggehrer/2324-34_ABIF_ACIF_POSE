@@ -1,0 +1,46 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nint sum = 0, prvMax = Int32.MinValue, max = Int32.MinValue, min = Int32.MaxValue, num = 0, idx = 0\ndouble average = 0;
+#WhiteSmoke:PrintLine(" Zahlen Statistik ");
+#WhiteSmoke:PrintLine("==================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Geben Sie positive ganze Zahlen ein [0..Ende]");
+repeat
+        #WhiteSmoke:idx = idx + 1;
+        #WhiteSmoke:Print($"Zahl {idx}: ");
+        #WhiteSmoke:input = ReadLine();
+        #WhiteSmoke:num = Convert.ToInt32(input);
+        if (num != 0) then (<color:green>yes)
+                #WhiteSmoke:sum = sum + num;
+                if (num > max) then (<color:green>yes)
+                        #WhiteSmoke:prvMax = max;
+                        #WhiteSmoke:max = num;
+                    else (<color:red>no)
+                        if (num > prvMax && num < max) then (<color:green>yes)
+                                #WhiteSmoke:prvMax = num;
+                        endif
+                endif
+                if (num < min) then (<color:green>yes)
+                        #WhiteSmoke:min = num;
+                endif
+                #WhiteSmoke:average = sum / (double)idx;
+        endif
+repeat while (num != 0) is (<color:green>yes)
+#WhiteSmoke:PrintLine();
+if (idx > 1) then (<color:green>yes)
+        #WhiteSmoke:PrintLine($"Sie haben {idx - 1} Zahlen eingegeben.");
+        #WhiteSmoke:PrintLine($"Die Summe der eingegebenen Zahlen ist {sum}.");
+        #WhiteSmoke:PrintLine($"Der maximale Wert ist {max}.");
+        if (idx > 2) then (<color:green>yes)
+                #WhiteSmoke:PrintLine($"Die zweitgrößte Zahl ist {prvMax}.");
+        endif
+        #WhiteSmoke:PrintLine($"Der minimale Wert ist {min}.");
+        #WhiteSmoke:PrintLine($"Der Durchschnittswert ist {average:f}");
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

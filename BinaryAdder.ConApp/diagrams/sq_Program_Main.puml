@@ -1,6 +1,6 @@
 @startuml Program.Main
 title Program.Main
-participant "Main(string[] args)" as Main_p0 #LightYellow
+participant "Main(string[]args)" as Main_p0 #LightYellow
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 participant "ReadBinaryNumber(a0)" as ReadBinaryNumber_a0 #LightGreen
 participant "AddBinaryNumbers(a0,a1)" as AddBinaryNumbers_a0_a1 #LightGreen
@@ -10,9 +10,9 @@ autonumber
 Main_p0 -> Console_WriteLine_a0 : ("Binäraddierer")
 Main_p0 -> Console_WriteLine_a0 : ("=============")
 Main_p0 -> ReadBinaryNumber_a0 : (1)
-ReadBinaryNumber_a0 --> Main_p0 : result
+ReadBinaryNumber_a0 --> Main_p0 : number1
 Main_p0 -> ReadBinaryNumber_a0 : (2)
-ReadBinaryNumber_a0 --> Main_p0 : result
+ReadBinaryNumber_a0 --> Main_p0 : number2
 Main_p0 -> AddBinaryNumbers_a0_a1 : (number1, number2)
 AddBinaryNumbers_a0_a1 --> Main_p0 : result
 Main_p0 -> Console_WriteLine_a0 : ($"{FormatBinary(number1, 8)} + {FormatBinary(number2, 8)} =  {FormatBinary(result, 8)}")

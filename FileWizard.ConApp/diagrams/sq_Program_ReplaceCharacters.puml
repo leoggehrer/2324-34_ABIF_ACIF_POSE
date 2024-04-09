@@ -1,0 +1,28 @@
+@startuml Program.ReplaceCharacters
+title Program.ReplaceCharacters
+participant "ReplaceCharacters(stringfileName)" as ReplaceCharacters_p0 #LightYellow
+participant "File.Exists(a0)" as File_Exists_a0 #LightGreen
+participant "File.ReadAllText(a0)" as File_ReadAllText_a0 #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "content.Replace(a0,a1)" as content_Replace_a0_a1 #LightGreen
+participant "File.WriteAllText(a0,a1)" as File_WriteAllText_a0_a1 #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+autonumber
+alt File.Exists(fileName)
+    ReplaceCharacters_p0 -> File_Exists_a0 : (fileName)
+    ReplaceCharacters_p0 -> File_ReadAllText_a0 : (fileName)
+    File_ReadAllText_a0 --> ReplaceCharacters_p0 : content
+    ReplaceCharacters_p0 -> Console_Write_a0 : ("Welche Zeichenkette soll ersetzt werden?:       ")
+    ReplaceCharacters_p0 -> Console_ReadLine
+    Console_ReadLine --> ReplaceCharacters_p0 : oldString
+    ReplaceCharacters_p0 -> Console_Write_a0 : ("Durch welche Zeichenkette soll ersetzt werden?: ")
+    ReplaceCharacters_p0 -> Console_ReadLine
+    Console_ReadLine --> ReplaceCharacters_p0 : newString
+    ReplaceCharacters_p0 -> content_Replace_a0_a1 : (oldString, newString)
+    content_Replace_a0_a1 --> ReplaceCharacters_p0 : content
+    ReplaceCharacters_p0 -> File_WriteAllText_a0_a1 : (fileName, content)
+    else
+        ReplaceCharacters_p0 -> Console_WriteLine_a0 : ($"Die Datei '{fileName}' existiert nicht!")
+end
+@enduml

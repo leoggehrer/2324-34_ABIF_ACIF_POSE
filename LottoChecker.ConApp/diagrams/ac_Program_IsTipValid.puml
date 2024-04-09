@@ -5,11 +5,9 @@ start
 #LightSkyBlue:bool result = true;
 #LightSkyBlue:int i = 0;
 while (i < tip.Numbers.Length && result) is (<color:green>yes)
-    if (tip.Numbers[i] < 1 
-                    || tip.Numbers[i] > 45
-                    || CountNumberInTip(tip.Numbers[i], tip) != 1) then (<color:green>yes)
-        #WhiteSmoke:result = false;
-    endif
+        if (tip.Numbers[i] < 1 || tip.Numbers[i] > 45 || CountNumberInTip(tip.Numbers[i], tip) != 1) then (<color:green>yes)
+                #WhiteSmoke:result = false;
+        endif
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;

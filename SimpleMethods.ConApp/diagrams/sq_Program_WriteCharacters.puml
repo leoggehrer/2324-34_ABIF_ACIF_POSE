@@ -1,0 +1,11 @@
+@startuml Program.WriteCharacters
+title Program.WriteCharacters
+participant "WriteCharacters(intcount,charcharacter)" as WriteCharacters_p0_p1 #LightYellow
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+autonumber
+loop i < count
+    WriteCharacters_p0_p1 -> Console_Write_a0 : (character)
+end
+WriteCharacters_p0_p1 -> Console_WriteLine
+@enduml

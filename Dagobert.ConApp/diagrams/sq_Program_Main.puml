@@ -1,0 +1,23 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+autonumber
+Main_p0 -> Console_WriteLine_a0 : ("Das große Rätsel von Dagobert!")
+Main_p0 -> Console_WriteLine_a0 : ("==============================")
+Main_p0 -> Console_WriteLine
+loop tSum != qSum && tSum <= UPPER_RANGE
+end
+alt tSum == qSum
+    Main_p0 -> Console_WriteLine
+    Main_p0 -> Console_WriteLine_a0 : ($"Die Lösung des Rätsels [{t},{q}]: Es sind {qSum} Dukaten!")
+    else
+        Main_p0 -> Console_WriteLine
+        Main_p0 -> Console_WriteLine_a0 : ($"Es gibt keine Dreieckszahl und Quadratzahl welche im Bereich {LOWER_RANGE} - {UPPER_RANGE} gleich sind!")
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press enter to exit: ")
+Main_p0 -> Console_ReadLine
+@enduml

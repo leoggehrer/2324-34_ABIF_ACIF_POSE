@@ -1,0 +1,78 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:21
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:double DELIVERI_COST = 5.90\nstring input = string.Empty, giftOption, location\nint idx = 0, numberOfPieces\ndouble nettoPrice, sumNettoPrice, sumNettoPriceAll = 0, sumGift = 0, sumGiftAll = 0\ndouble sumGrossPriceAll, sumTaxAll, sumDeliveryCost = 0;
+#WhiteSmoke:PrintLine("===========================================");
+#WhiteSmoke:PrintLine(" Shopping Cart                             ");
+#WhiteSmoke:PrintLine("===========================================");
+#WhiteSmoke:PrintLine();
+while (input.ToLower() != "n") is (<color:green>yes)
+        #WhiteSmoke:PrintLine($"Eingabe von Produkt Nr. {++idx}");
+        #WhiteSmoke:Print("Netto-Stückpreis: ");
+        #WhiteSmoke:input = ReadLine();
+        #WhiteSmoke:nettoPrice = Convert.ToDouble(input);
+        #WhiteSmoke:Print("Stückzahl:        ");
+        #WhiteSmoke:input = ReadLine();
+        #WhiteSmoke:numberOfPieces = Convert.ToInt32(input);
+        #WhiteSmoke:Print("Geschenkoption ((j)a / (n)ein)? : ");
+        #WhiteSmoke:giftOption = ReadLine();
+        #WhiteSmoke:sumGift = 0;
+        #WhiteSmoke:sumNettoPrice = nettoPrice * numberOfPieces;
+        if (giftOption.ToLower() == "j") then (<color:green>yes)
+                #WhiteSmoke:sumGift = numberOfPieces * 2.50;
+        endif
+        #WhiteSmoke:sumNettoPriceAll += sumNettoPrice;
+        #WhiteSmoke:sumGiftAll += sumGift;
+        #WhiteSmoke:PrintLine($"=> Nettopreis = {sumNettoPrice + sumGift,2:f2} EUR");
+        if (sumGift > 0) then (<color:green>yes)
+                #WhiteSmoke:PrintLine($"=> zuzügl. Geschenkoption = {sumGift} EUR");
+        endif
+        #WhiteSmoke:Print("Ein weiteres Produkt eingeben ((j)a / (n)ein) ");
+        #WhiteSmoke:input = ReadLine();
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:idx++;
+endwhile (<color:red>no)
+#WhiteSmoke:Print("Lieferung nach de oder at? ");
+#WhiteSmoke:location = ReadLine();
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("===========================================");
+#WhiteSmoke:PrintLine("Ihre Einkaufsrechnung                      ");
+#WhiteSmoke:PrintLine("===========================================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Nettopreis gesamt: ");
+#WhiteSmoke:PrintLine($"{sumNettoPriceAll + sumGift,20:f2} EUR");
+if (sumNettoPriceAll < 29) then (<color:green>yes)
+        #WhiteSmoke:sumDeliveryCost = DELIVERI_COST;
+        #WhiteSmoke:Print("Versandkosten:     ");
+        #WhiteSmoke:PrintLine($"{sumDeliveryCost,20:f2} EUR");
+endif
+if (location.ToLower() == "de") then (<color:green>yes)
+        #WhiteSmoke:sumGrossPriceAll = (sumNettoPriceAll + sumGiftAll) * 1.19;
+        #WhiteSmoke:sumTaxAll = sumGrossPriceAll - sumNettoPriceAll - sumGiftAll;
+    else (<color:red>no)
+            #WhiteSmoke:sumGrossPriceAll = (sumNettoPriceAll + sumGiftAll) * 1.20;
+            #WhiteSmoke:sumTaxAll = sumGrossPriceAll - sumNettoPriceAll - sumGiftAll;
+endif
+#WhiteSmoke:Print("Gesamtpreis:       ");
+#WhiteSmoke:PrintLine($"{sumGrossPriceAll + sumDeliveryCost,20:f2} EUR");
+#WhiteSmoke:PrintLine("===========================================");
+if (location.ToLower() == "at") then (<color:green>yes)
+        #WhiteSmoke:Print("Darin enthalten sind 20,00 % MWSt. ");
+        #WhiteSmoke:PrintLine($"{sumTaxAll:f2} EUR");
+    else (<color:red>no)
+            #WhiteSmoke:Print("Darin enthalten sind 19,00 % MWSt. ");
+            #WhiteSmoke:PrintLine($"{sumTaxAll:f2} EUR");
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

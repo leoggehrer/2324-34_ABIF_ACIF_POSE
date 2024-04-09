@@ -1,0 +1,10 @@
+@startuml Program.SortPupilsByLastName
+title Program.SortPupilsByLastName
+participant "SortPupilsByLastName(Pupil[]pupils)" as SortPupilsByLastName_p0 #LightYellow
+participant "pupils[i].LastName.CompareTo(a0)" as pupils_i_LastName_CompareTo_a0 #LightGreen
+autonumber
+loop exchange == true
+    SortPupilsByLastName_p0 -> pupils_i_LastName_CompareTo_a0 : (pupils[i + 1].LastName)
+    pupils_i_LastName_CompareTo_a0 --> SortPupilsByLastName_p0 : result
+end
+@enduml

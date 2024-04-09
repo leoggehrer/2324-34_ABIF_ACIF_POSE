@@ -2,14 +2,13 @@
 title Program.Main
 start
 #LightGreen:Params(string[] args);
-#LightSkyBlue:string fileName
-string logo = File.ReadAllText(LOGO_FILE, Encoding.Default);
+#LightSkyBlue:string fileName\nstring logo = File.ReadAllText(LOGO_FILE, Encoding.Default);
 #WhiteSmoke:PrintLine(logo);
 #WhiteSmoke:fileName = GetFileName();
 #WhiteSmoke:CreateBackup(fileName);
 #LightSkyBlue:bool finished;
 repeat
-    #WhiteSmoke:finished = PerformOperation(ref fileName);
+        #WhiteSmoke:finished = PerformOperation(ref fileName);
 repeat while (finished == false) is (<color:green>yes)
 #WhiteSmoke:PrintLine("Vielen Dank, dass ich Dir helfen durfte!");
 #WhiteSmoke:Thread.Sleep(3000);

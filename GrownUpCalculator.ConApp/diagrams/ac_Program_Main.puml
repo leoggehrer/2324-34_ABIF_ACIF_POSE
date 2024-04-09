@@ -1,0 +1,39 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:int GROWN_UP_AGE = 18\nstring input\nint age, ageDiff;
+#WhiteSmoke:PrintLine("GrownUp Calculator");
+#WhiteSmoke:PrintLine("==================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("How old are you? ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:age = Convert.ToInt32(input);
+#WhiteSmoke:ageDiff = age - GROWN_UP_AGE;
+if (ageDiff >= 0) then (<color:green>yes)
+        #WhiteSmoke:PrintLine($"In approx. {ageDiff} you will be grwon-up");
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine("You are to old");
+endif
+if (age < 18) then (<color:green>yes)
+        #WhiteSmoke:PrintLine("You are under 18. ");
+    else (<color:red>no)
+        if (age == 18) then (<color:green>yes)
+                #WhiteSmoke:PrintLine("You are right now 18");
+            else (<color:red>no)
+                if (age > 18 || age <= 20) then (<color:green>yes)
+                        #WhiteSmoke:PrintLine($"You are {age}");
+                    else (<color:red>no)
+                        if (age > 20 || age <= 25) then (<color:green>yes)
+                                #WhiteSmoke:PrintLine($"You are between 21 and 25. Right now You are {age}");
+                            else (<color:red>no)
+                                    #WhiteSmoke:PrintLine("You are living your life. Keep growing!!!");
+                        endif
+                endif
+        endif
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

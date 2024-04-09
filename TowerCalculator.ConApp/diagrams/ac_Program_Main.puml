@@ -1,0 +1,32 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nint number, operand, result;
+#WhiteSmoke:PrintLine("Pyramid of Numbres");
+#WhiteSmoke:PrintLine("==================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Please enter a number: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:number = Convert.ToInt32(input);
+#WhiteSmoke:operand = number;
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:int i = 2;
+while (i < 10) is (<color:green>yes)
+        #WhiteSmoke:result = operand * i;
+        #WhiteSmoke:PrintLine($"{operand} * {i} = {result}");
+        #WhiteSmoke:operand = result;
+:i++;
+endwhile (<color:red>no)
+#LightSkyBlue:int i = 2;
+while (i < 10) is (<color:green>yes)
+        #WhiteSmoke:result = operand / i;
+        #WhiteSmoke:PrintLine($"{operand} / {i} = {result}");
+        #WhiteSmoke:operand = result;
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

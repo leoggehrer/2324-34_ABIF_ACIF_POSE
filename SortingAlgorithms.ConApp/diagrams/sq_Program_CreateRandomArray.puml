@@ -1,0 +1,8 @@
+@startuml Program.CreateRandomArray
+title Program.CreateRandomArray
+participant "CreateRandomArray(intsize)" as CreateRandomArray_p0 #LightYellow
+participant "CreateRandomArray(a0,a1,a2)" as CreateRandomArray_a0_a1_a2 #LightGreen
+autonumber
+CreateRandomArray_p0 -> CreateRandomArray_a0_a1_a2 : (size, 0, size)
+CreateRandomArray_a0_a1_a2 --> CreateRandomArray_p0 : result
+@enduml

@@ -1,56 +1,51 @@
 @startuml Program.Main
 title Program.Main
 start
-#Lavender:Params(string[] args);
-#LightBlue:string input, cardNumber = string.Empty
-int idx
-int sum = 0
-int digit, diff
-int evenSum = 0, oddSum = 0
-bool valid = true;
-:PrintLine("***************************************************");
-:PrintLine("* Kreditkarten-Prüfer                             *");
-:PrintLine("***************************************************");
-:PrintLine();
-:Print("Geben Sie Ihre 16-stellige Kreditkartennummer ein: ");
-:input = ReadLine();
-#LightBlue:int i = 0;
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input, cardNumber = string.Empty\nint idx\nint sum = 0\nint digit, diff\nint evenSum = 0, oddSum = 0\nbool valid = true;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Kreditkarten-Prüfer                             *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Geben Sie Ihre 16-stellige Kreditkartennummer ein: ");
+#WhiteSmoke:input = ReadLine();
+#LightSkyBlue:int i = 0;
 while (i < input.Length) is (<color:green>yes)
-    if (char.IsWhiteSpace(input[i]) == false) then (<color:green>yes)
-        :cardNumber += input[i];
-    endif
+        if (char.IsWhiteSpace(input[i]) == false) then (<color:green>yes)
+                #WhiteSmoke:cardNumber += input[i];
+        endif
 :i++;
 endwhile (<color:red>no)
-:valid = cardNumber.Length == 16;
-:idx = 0;
+#WhiteSmoke:valid = cardNumber.Length == 16;
+#WhiteSmoke:idx = 0;
 while (valid && idx < cardNumber.Length) is (<color:green>yes)
-    :valid = char.IsDigit(cardNumber[idx++]);
+        #WhiteSmoke:valid = char.IsDigit(cardNumber[idx++]);
 endwhile (<color:red>no)
-:idx = 0;
+#WhiteSmoke:idx = 0;
 while (valid && idx < cardNumber.Length - 1) is (<color:green>yes)
-    :digit = (cardNumber[idx] - '0') * 2;
-    :evenSum = digit > 9 ? evenSum + digit % 10 + (digit / 10 % 10)
+        #WhiteSmoke:digit = (cardNumber[idx] - '0') * 2;
+        #WhiteSmoke:evenSum = digit > 9 ? evenSum + digit % 10 + (digit / 10 % 10)
                                     : evenSum + digit;
-    :idx = idx + 2;
+        #WhiteSmoke:idx = idx + 2;
 endwhile (<color:red>no)
-:idx = 1;
+#WhiteSmoke:idx = 1;
 while (valid && idx < cardNumber.Length - 1) is (<color:green>yes)
-    :oddSum = oddSum + (cardNumber[idx] - '0');
-    :idx = idx + 2;
+        #WhiteSmoke:oddSum = oddSum + (cardNumber[idx] - '0');
+        #WhiteSmoke:idx = idx + 2;
 endwhile (<color:red>no)
 if (valid) then (<color:green>yes)
-    :sum = evenSum + oddSum;
-    :diff = (10 - sum % 10) % 10;
-    :valid = diff == cardNumber[cardNumber.Length - 1] - '0';
+        #WhiteSmoke:sum = evenSum + oddSum;
+        #WhiteSmoke:diff = (10 - sum % 10) % 10;
+        #WhiteSmoke:valid = diff == cardNumber[cardNumber.Length - 1] - '0';
 endif
-:PrintLine();
+#WhiteSmoke:PrintLine();
 if (valid) then (<color:green>yes)
-    :PrintLine($"Die Kreditkartennummer '{input}' ist gültig.");
-  else (<color:red>no)
-      :PrintLine($"Die Kreditkartennummer '{input}' ist ungültig.");
+        #WhiteSmoke:PrintLine($"Die Kreditkartennummer '{input}' ist gültig.");
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine($"Die Kreditkartennummer '{input}' ist ungültig.");
 endif
-:PrintLine();
-:PrintLine("Press any key to exit: ");
-:ReadKey();
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
 stop
 @enduml

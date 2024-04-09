@@ -1,0 +1,18 @@
+@startuml Program.ReadFromCsvFile
+title Program.ReadFromCsvFile
+participant "ReadFromCsvFile(stringfileName)" as ReadFromCsvFile_p0 #LightYellow
+participant "File.Exists(a0)" as File_Exists_a0 #LightGreen
+participant "File.ReadAllLines(a0)" as File_ReadAllLines_a0 #LightGreen
+participant "lines[i].Split(a0)" as lines_i_Split_a0 #LightGreen
+participant "int.Parse(a0)" as int_Parse_a0 #LightGreen
+autonumber
+alt File.Exists(fileName)
+    ReadFromCsvFile_p0 -> File_Exists_a0 : (fileName)
+    ReadFromCsvFile_p0 -> File_ReadAllLines_a0 : (fileName)
+    File_ReadAllLines_a0 --> ReadFromCsvFile_p0 : lines
+    ReadFromCsvFile_p0 -> lines_i_Split_a0 : (';')
+    lines_i_Split_a0 --> ReadFromCsvFile_p0 : data
+    ReadFromCsvFile_p0 -> int_Parse_a0 : (data[1])
+    int_Parse_a0 --> ReadFromCsvFile_p0 : Age
+end
+@enduml

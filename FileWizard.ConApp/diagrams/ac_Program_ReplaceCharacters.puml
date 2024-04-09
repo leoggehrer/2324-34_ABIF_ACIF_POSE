@@ -3,15 +3,15 @@ title Program.ReplaceCharacters
 start
 #LightGreen:Params(string fileName);
 if (File.Exists(fileName)) then (<color:green>yes)
-    #LightSkyBlue:string content = File.ReadAllText(fileName);
-    #WhiteSmoke:Print("Welche Zeichenkette soll ersetzt werden?:       ");
-    #LightSkyBlue:string oldString = Console.ReadLine();
-    #WhiteSmoke:Print("Durch welche Zeichenkette soll ersetzt werden?: ");
-    #LightSkyBlue:string newString = Console.ReadLine();
-    #WhiteSmoke:content = content.Replace(oldString, newString);
-    #WhiteSmoke:File.WriteAllText(fileName, content);
-  else (<color:red>no)
-      #WhiteSmoke:PrintLine($"Die Datei '{fileName}' existiert nicht!");
+        #LightSkyBlue:string content = File.ReadAllText(fileName);
+        #WhiteSmoke:Print("Welche Zeichenkette soll ersetzt werden?:       ");
+        #LightSkyBlue:string oldString = Console.ReadLine();
+        #WhiteSmoke:Print("Durch welche Zeichenkette soll ersetzt werden?: ");
+        #LightSkyBlue:string newString = Console.ReadLine();
+        #WhiteSmoke:content = content.Replace(oldString, newString);
+        #WhiteSmoke:File.WriteAllText(fileName, content);
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine($"Die Datei '{fileName}' existiert nicht!");
 endif
 stop
 @enduml

@@ -1,0 +1,32 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
+participant "Console.ReadKey()" as Console_ReadKey #LightGreen
+autonumber
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine_a0 : ("* Lieblingstante - Die Fahrt zu meiner Tante      *")
+Main_p0 -> Console_WriteLine_a0 : ("*                  Berechnung der Ankunftszeit    *")
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Enfernung in km:         ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : distance
+Main_p0 -> Console_Write_a0 : ("Geschwindigkeit in km/h: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : speed
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ($"Für die Strecke von {distance:f2} benötigen Sie {time:f2} Stunden.")
+Main_p0 -> Console_WriteLine_a0 : ($"Sie kommen um {hour:D2}:{min:D2}:{sec:D2} an.")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+@enduml

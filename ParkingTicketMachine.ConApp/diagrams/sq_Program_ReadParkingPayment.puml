@@ -1,0 +1,31 @@
+@startuml Program.ReadParkingPayment
+title Program.ReadParkingPayment
+participant "ReadParkingPayment" as ReadParkingPayment #LightYellow
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "input.ToLower()" as input_ToLower #LightGreen
+participant "int.TryParse(a0,a1)" as int_TryParse_a0_a1 #LightGreen
+participant "_coins.Contains(a0)" as _coins_Contains_a0 #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+autonumber
+loop exit == false && result < _maxPaymentInCents
+    ReadParkingPayment -> Console_Write_a0 : ($"Parkzeit bisher: {(result >= _minPaymentInCents ? ToHoursFormat(ToMinutes(result)) : "00:00")}, Einwurf bisher: {result} Cent,  d für Ticket, Einwurf in Cent: ")
+    ReadParkingPayment -> Console_ReadLine
+    Console_ReadLine --> ReadParkingPayment : input
+    alt input.ToLower() == "d"
+        ReadParkingPayment -> input_ToLower
+        input_ToLower --> ReadParkingPayment : result
+        ReadParkingPayment -> Console_Write_a0 : ($"Mindesteinwurf {_minPaymentInCents} Cent, bisher haben Sie {result} eingeworfen")
+        else
+            alt int.TryParse(input, out int coin)
+                ReadParkingPayment -> int_TryParse_a0_a1 : (input, out int coin)
+                int_TryParse_a0_a1 --> ReadParkingPayment : result
+                alt _coins.Contains(coin)
+                    ReadParkingPayment -> _coins_Contains_a0 : (coin)
+                    else
+                        ReadParkingPayment -> Console_WriteLine_a0 : ($"'{coin}' ist ein ungültiger Wert!")
+                end
+            end
+    end
+end
+@enduml

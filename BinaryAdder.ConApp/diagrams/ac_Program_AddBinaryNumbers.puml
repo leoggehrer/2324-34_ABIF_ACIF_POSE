@@ -2,9 +2,7 @@
 title Program.AddBinaryNumbers
 start
 #LightGreen:Params(string number1,string number2);
-#LightSkyBlue:bool carry = false
-string result = string.Empty
-int numberLength = Math.Max(number1.Length, number2.Length) + 1;
+#LightSkyBlue:bool carry = false\nstring result = string.Empty\nint numberLength = Math.Max(number1.Length, number2.Length) + 1;
 #WhiteSmoke:number1 = ExpandNumber(number1, numberLength);
 #WhiteSmoke:number2 = ExpandNumber(number2, numberLength);
 #LightSkyBlue:int i = numberLength - 1;

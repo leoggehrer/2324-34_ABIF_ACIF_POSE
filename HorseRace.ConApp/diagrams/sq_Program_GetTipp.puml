@@ -1,0 +1,19 @@
+@startuml Program.GetTipp
+title Program.GetTipp
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "PrintHorses(a0)" as PrintHorses_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "int.TryParse(a0,a1)" as int_TryParse_a0_a1 #LightGreen
+autonumber
+loop validChoice == false
+    GetTipp_p0 -> Console_WriteLine_a0 : ("Pferderennen - Starterliste")
+    GetTipp_p0 -> Console_WriteLine_a0 : ("===========================")
+    GetTipp_p0 -> PrintHorses_a0 : (horses)
+    GetTipp_p0 -> Console_WriteLine
+    GetTipp_p0 -> Console_Write_a0 : ("Auf welches Pferd wollen Sie setzen? (0 für Ende): ")
+    alt int.TryParse(Console.ReadLine(), out tipp)
+        GetTipp_p0 -> int_TryParse_a0_a1 : (Console.ReadLine(), out tipp)
+    end
+end
+@enduml

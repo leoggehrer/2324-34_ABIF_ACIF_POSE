@@ -1,0 +1,50 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:21
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\ndouble percentValue\nint grade;
+#WhiteSmoke:PrintLine("Prozent --> Noten");
+#WhiteSmoke:PrintLine("=================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabe Prozentwert: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:percentValue = Convert.ToDouble(input);
+if (percentValue >= 88) then (<color:green>yes)
+        #WhiteSmoke:grade = 1;
+    else (<color:red>no)
+        if (percentValue > 75) then (<color:green>yes)
+                #WhiteSmoke:grade = 2;
+            else (<color:red>no)
+                if (percentValue >= 63) then (<color:green>yes)
+                        #WhiteSmoke:grade = 3;
+                    else (<color:red>no)
+                        if (percentValue >= 50) then (<color:green>yes)
+                                #WhiteSmoke:grade = 4;
+                            else (<color:red>no)
+                                if (percentValue >= 0) then (<color:green>yes)
+                                        #WhiteSmoke:grade = 5;
+                                    else (<color:red>no)
+                                            #WhiteSmoke:grade = -1;
+                                endif
+                        endif
+                endif
+        endif
+endif
+#WhiteSmoke:PrintLine();
+if (grade == -1) then (<color:green>yes)
+        #WhiteSmoke:PrintLine("Ungültige Eingabe!");
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine($"Note = {grade, 3}");
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

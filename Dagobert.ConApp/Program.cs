@@ -64,8 +64,8 @@ namespace Dagobert.ConApp
             }
 
             Console.WriteLine();
-            Console.WriteLine("Press any key to exit: ");
-            Console.ReadKey();
+            Console.WriteLine("Press enter to exit: ");
+            Console.ReadLine();
         }
     }
 }

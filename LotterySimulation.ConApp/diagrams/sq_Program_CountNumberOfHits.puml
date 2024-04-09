@@ -1,0 +1,8 @@
+@startuml Program.CountNumberOfHits
+title Program.CountNumberOfHits
+participant "CountNumberOfHits(intindex,int[,]tipps,int[]thrownNumbers)" as CountNumberOfHits_p0_p1_p2 #LightYellow
+participant "tipps.GetLength(a0)" as tipps_GetLength_a0 #LightGreen
+autonumber
+CountNumberOfHits_p0_p1_p2 -> tipps_GetLength_a0 : (1)
+tipps_GetLength_a0 --> CountNumberOfHits_p0_p1_p2 : result
+@enduml

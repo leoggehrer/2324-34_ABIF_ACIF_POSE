@@ -1,0 +1,20 @@
+@startuml Pupil
+title Pupil
+ class Pupil #GhostWhite {
+- int catalogNumber
+- string firstName = string.Empty
+- string lastName = string.Empty
+- string postalCode = string.Empty
+---
++ int getCatalogNumber()
++ Void setCatalogNumber(int value)
++ string getFirstName()
++ Void setFirstName(string value)
++ string getLastName()
++ Void setLastName(string value)
++ string getPostalCode()
++ Void setPostalCode(string value)
+---
++ string ToString()
+}
+@enduml

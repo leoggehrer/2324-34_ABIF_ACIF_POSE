@@ -1,0 +1,73 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.Clear()" as Console_Clear #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Convert.ToInt32(a0)" as Convert_ToInt32_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "WriteStars(a0)" as WriteStars_a0 #LightGreen
+participant "Convert.ToChar(a0)" as Convert_ToChar_a0 #LightGreen
+participant "WriteCharacters(a0,a1)" as WriteCharacters_a0_a1 #LightGreen
+participant "SumOfDigits(a0)" as SumOfDigits_a0 #LightGreen
+participant "SubString(a0,a1,a2)" as SubString_a0_a1_a2 #LightGreen
+autonumber
+loop menueNumber != 0
+    Main_p0 -> Console_Clear
+    Main_p0 -> Console_WriteLine_a0 : ("Simple Methods")
+    Main_p0 -> Console_WriteLine_a0 : ("==============")
+    Main_p0 -> Console_WriteLine
+    Main_p0 -> Console_WriteLine_a0 : ("Welche Methode möchten Sie verwenden?")
+    Main_p0 -> Console_WriteLine_a0 : ("1 ... WriteStars")
+    Main_p0 -> Console_WriteLine_a0 : ("2 ... WriteCharacters")
+    Main_p0 -> Console_WriteLine_a0 : ("3 ... SumOfDigits")
+    Main_p0 -> Console_WriteLine_a0 : ("4 ... SubString")
+    Main_p0 -> Console_WriteLine_a0 : ("0 ... Exit")
+    Main_p0 -> Console_Write_a0 : ("Geben Sie eine Zahl ein [1-4]: ")
+    Main_p0 -> Convert_ToInt32_a0 : (Console.ReadLine())
+    Convert_ToInt32_a0 --> Main_p0 : menueNumber
+    Main_p0 -> Console_WriteLine
+    Main_p0 -> Console_Write_a0 : ("Geben Sie die Anzahl der Sterne ein, die Sie anzeigen möchten: ")
+    Main_p0 -> Convert_ToInt32_a0 : (Console.ReadLine())
+    Convert_ToInt32_a0 --> Main_p0 : numStars
+    Main_p0 -> WriteStars_a0 : (numStars)
+    Main_p0 -> Console_WriteLine
+    Main_p0 -> Console_Write_a0 : ("Weiter mit Eingabe...")
+    Main_p0 -> Console_ReadLine
+    Main_p0 -> Console_Write_a0 : ("Geben Sie das Zeichen ein, das Sie anzeigen möchten: ")
+    Main_p0 -> Convert_ToChar_a0 : (Console.ReadLine())
+    Convert_ToChar_a0 --> Main_p0 : characterDisplayed
+    Main_p0 -> Console_Write_a0 : ($"Geben Sie an, wie oft {characterDisplayed} angezeigt werden soll: ")
+    Main_p0 -> Convert_ToInt32_a0 : (Console.ReadLine())
+    Convert_ToInt32_a0 --> Main_p0 : numChars
+    Main_p0 -> WriteCharacters_a0_a1 : (numChars, characterDisplayed)
+    Main_p0 -> Console_WriteLine
+    Main_p0 -> Console_Write_a0 : ("Weiter mit Eingabe...")
+    Main_p0 -> Console_ReadLine
+    Main_p0 -> Console_Write_a0 : ("Geben Sie Ihren Text ein, sie erhalten eine Zusammenfassung: ")
+    Main_p0 -> Console_ReadLine
+    Console_ReadLine --> Main_p0 : inputSumOfDigits
+    Main_p0 -> SumOfDigits_a0 : (inputSumOfDigits)
+    SumOfDigits_a0 --> Main_p0 : sumOfAllDigits
+    Main_p0 -> Console_WriteLine
+    Main_p0 -> Console_WriteLine_a0 : ($"Die Summe aller Zahlen ist gleich {sumOfAllDigits}")
+    Main_p0 -> Console_Write_a0 : ("Weiter mit Eingabe...")
+    Main_p0 -> Console_ReadLine
+    Main_p0 -> Console_Write_a0 : ("Geben Sie Ihren Text ein: ")
+    Main_p0 -> Console_ReadLine
+    Console_ReadLine --> Main_p0 : inputString
+    Main_p0 -> Console_Write_a0 : ("Geben Sie den Index ein, an dem der SubString beginnt: ")
+    Main_p0 -> Convert_ToInt32_a0 : (Console.ReadLine())
+    Convert_ToInt32_a0 --> Main_p0 : indexSubString
+    Main_p0 -> Console_Write_a0 : ("Geben Sie die Länge des SubStrings ein: ")
+    Main_p0 -> Convert_ToInt32_a0 : (Console.ReadLine())
+    Convert_ToInt32_a0 --> Main_p0 : lengthSubString
+    Main_p0 -> SubString_a0_a1_a2 : (inputString, indexSubString, lengthSubString)
+    SubString_a0_a1_a2 --> Main_p0 : searchedSubString
+    Main_p0 -> Console_WriteLine_a0 : ($"Der Teiltext ist: {searchedSubString}")
+    Main_p0 -> Console_WriteLine
+    Main_p0 -> Console_Write_a0 : ("Weiter mit Eingabe...")
+    Main_p0 -> Console_ReadLine
+end
+@enduml

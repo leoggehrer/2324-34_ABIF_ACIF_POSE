@@ -1,0 +1,19 @@
+@startuml Program.SortHorsesByPosition
+title Program.SortHorsesByPosition
+start
+#LightGreen:Params(Horse[] horses);
+#LightSkyBlue:int i = 0;
+while (i < horses.Length -1) is (<color:green>yes)
+        #LightSkyBlue:int j = i + 1;
+        while (j < horses.Length) is (<color:green>yes)
+                if (horses[i].Position < horses[j].Position) then (<color:green>yes)
+                        #LightSkyBlue:Horse temp = horses[i];
+                        #WhiteSmoke:horses[i] = horses[j];
+                        #WhiteSmoke:horses[j] = temp;
+                endif
+        :j++;
+        endwhile (<color:red>no)
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

@@ -16,7 +16,7 @@ namespace CommentRate.ConApp
     /// Represents the entry point of the program.
     /// </summary>
     internal class Program
-    {
+    {        
         /// <summary>
         /// The main method of the program.
         /// </summary>

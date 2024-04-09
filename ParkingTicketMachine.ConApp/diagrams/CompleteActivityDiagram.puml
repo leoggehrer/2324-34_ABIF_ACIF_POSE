@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 23.03.2024 08:05:41
+generated on 09.04.2024 09:47:21
 end header
 title CompleteActivityDiagram
 start
@@ -26,27 +26,25 @@ note right:  Program.PrintHeader
 stop
 start
 note right:  Program.ReadParkingPayment
-#LightSkyBlue:int result = 0
-bool exit = false
-string input;
+#LightSkyBlue:int result = 0\nbool exit = false\nstring input;
 repeat
-    #WhiteSmoke:Print($"Parkzeit bisher: {(result >= _minPaymentInCents ? ToHoursFormat(ToMinutes(result)) : "00:00")}, Einwurf bisher: {result} Cent,  d für Ticket, Einwurf in Cent: ");
-    #WhiteSmoke:input = ReadLine();
-    if (input.ToLower() == "d") then (<color:green>yes)
-        if (result < _minPaymentInCents) then (<color:green>yes)
-            #WhiteSmoke:Print($"Mindesteinwurf {_minPaymentInCents} Cent, bisher haben Sie {result} eingeworfen");
-          else (<color:red>no)
-              #WhiteSmoke:exit = true;
+        #WhiteSmoke:Print($"Parkzeit bisher: {(result >= _minPaymentInCents ? ToHoursFormat(ToMinutes(result)) : "00:00")}, Einwurf bisher: {result} Cent,  d für Ticket, Einwurf in Cent: ");
+        #WhiteSmoke:input = ReadLine();
+        if (input.ToLower() == "d") then (<color:green>yes)
+                if (result < _minPaymentInCents) then (<color:green>yes)
+                        #WhiteSmoke:Print($"Mindesteinwurf {_minPaymentInCents} Cent, bisher haben Sie {result} eingeworfen");
+                    else (<color:red>no)
+                            #WhiteSmoke:exit = true;
+                endif
+            else (<color:red>no)
+                if (int.TryParse(input, out int coin)) then (<color:green>yes)
+                        if (_coins.Contains(coin)) then (<color:green>yes)
+                                #WhiteSmoke:result += coin;
+                            else (<color:red>no)
+                                    #WhiteSmoke:PrintLine($"'{coin}' ist ein ungültiger Wert!");
+                        endif
+                endif
         endif
-      else (<color:red>no)
-        if (int.TryParse(input, out int coin)) then (<color:green>yes)
-            if (_coins.Contains(coin)) then (<color:green>yes)
-                #WhiteSmoke:result += coin;
-              else (<color:red>no)
-                  #WhiteSmoke:PrintLine($"'{coin}' ist ein ungültiger Wert!");
-            endif
-        endif
-    endif
 repeat while (exit == false && result < _maxPaymentInCents) is (<color:green>yes)
 #Lavender:return result;
 stop
@@ -55,7 +53,7 @@ note right:  Program.PrintTicket
 #LightGreen:Params(int paymentInCents);
 #WhiteSmoke:PrintLine("Ticket ausgeben:");
 if (paymentInCents > _maxPaymentInCents) then (<color:green>yes)
-    #WhiteSmoke:PrintLine($"Danke für Ihre Spende von {paymentInCents - _maxPaymentInCents} Cent");
+        #WhiteSmoke:PrintLine($"Danke für Ihre Spende von {paymentInCents - _maxPaymentInCents} Cent");
 endif
 #LightSkyBlue:int minutes = ToMinutes(Math.Min(paymentInCents, _maxPaymentInCents));
 #WhiteSmoke:PrintLine($"Sie dürfen {ToHoursFormat(minutes)} Stunden parken");

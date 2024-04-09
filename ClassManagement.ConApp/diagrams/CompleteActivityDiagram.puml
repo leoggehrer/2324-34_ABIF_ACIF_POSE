@@ -1,0 +1,222 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:12
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#WhiteSmoke:RunApp();
+stop
+start
+note right:  Program.RunApp
+#LightSkyBlue:bool exit = false\nPupil[] pupils = ReadPupilsFromCsvFile(FILE_NAME)\nint choice = PrintAndExecuteMenu();
+repeat
+        switch (choice)
+            case( 1 )
+            #WhiteSmoke:ReadPupil(pupils);
+            case( 2 )
+            #WhiteSmoke:SortPupilsByCatalogNumber(pupils);
+            case( 3 )
+            #WhiteSmoke:SortPupilsByLastName(pupils);
+            case( 4 )
+            #WhiteSmoke:PrintPupils(pupils);
+            case( 5 )
+            #WhiteSmoke:SearchPupilsByLastName(pupils);
+            case( 6 )
+            #WhiteSmoke:SearchPupilsByPostalCode(pupils);
+            case( 7 )
+            #WhiteSmoke:WritePupilsToCsvFile(FILE_NAME, pupils);
+            case( 8 )
+            #WhiteSmoke:exit = true;
+        endswitch
+        if (!exit) then (<color:green>yes)
+                #WhiteSmoke:choice = PrintAndExecuteMenu();
+        endif
+repeat while (exit == false) is (<color:green>yes)
+stop
+start
+note right:  Program.PrintAndExecuteMenu
+#LightSkyBlue:int choice\nbool validChoice = false;
+repeat
+        #WhiteSmoke:PrintLine("Klassen-Management");
+        #WhiteSmoke:PrintLine("==================");
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:PrintLine("1 - Neuen Schüler einlesen");
+        #WhiteSmoke:PrintLine("2 - Schüler nach Katalognummer sortieren");
+        #WhiteSmoke:PrintLine("3 - Schüler nach Familiennamen sortieren");
+        #WhiteSmoke:PrintLine("4 - Schülerliste ausgeben");
+        #WhiteSmoke:PrintLine("5 - Schüler nach Familiennamen suchen und ausgeben");
+        #WhiteSmoke:PrintLine("6 - Schüler nach Postleitzahl suchen und ausgeben");
+        #WhiteSmoke:PrintLine("7 - Schülerliste speichern");
+        #WhiteSmoke:PrintLine("8 - Beenden");
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:Print("Ihre Wahl: ");
+        if (int.TryParse(Console.ReadLine(), out choice)) then (<color:green>yes)
+                #WhiteSmoke:validChoice = choice >= 1 && choice <= 8;
+        endif
+repeat while (validChoice == false) is (<color:green>yes)
+#Lavender:return choice;
+stop
+start
+note right:  Program.ReadPupilsFromCsvFile
+#LightGreen:Params(string fileName);
+#LightSkyBlue:Pupil[] result = new Pupil[40];
+if (File.Exists(fileName)) then (<color:green>yes)
+        #LightSkyBlue:string[] lines = File.ReadAllLines(fileName);
+        #LightSkyBlue:int i = 1;
+        while (i < lines.Length && i < result.Length) is (<color:green>yes)
+                #LightSkyBlue:string[] data = lines[i].Split(';');
+                #LightSkyBlue:Pupil pupil = new Pupil
+                    {
+                        CatalogNumber = int.Parse(data[0]),
+                        FirstName = data[1],
+                        LastName = data[2],
+                        PostalCode = data[3],
+                    };
+start
+note right:  Program.WritePupilsToCsvFile
+#LightGreen:Params(string fileName,Pupil[] pupils);
+#LightSkyBlue:List<string> lines = new List<string>();
+#WhiteSmoke:lines.Add("Katalognummer;Vorname;Familienname;PLZ");
+#LightSkyBlue:int i = 0;
+while (i < pupils.Length) is (<color:green>yes)
+        #LightSkyBlue:Pupil pupil = pupils[i];
+        if (pupil != null) then (<color:green>yes)
+                #WhiteSmoke:lines.Add($"{pupil.CatalogNumber};{pupil.FirstName};{pupil.LastName};{pupil.PostalCode}");
+        endif
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:File.WriteAllLines(fileName, lines);
+stop
+start
+note right:  Program.ReadPupil
+#LightGreen:Params(Pupil[] pupils);
+#LightSkyBlue:int idx;
+repeat
+        #WhiteSmoke:idx = -1;
+        #LightSkyBlue:int i = 0;
+        while (i < pupils.Length && idx == -1) is (<color:green>yes)
+                if (pupils[i] == null) then (<color:green>yes)
+                        #WhiteSmoke:idx = i;
+                endif
+        :i++;
+        endwhile (<color:red>no)
+        if (idx == -1) then (<color:green>yes)
+                #WhiteSmoke:PrintLine("Kein Speicherplatz mehr verfügbar!");
+            else (<color:red>no)
+                    #LightSkyBlue:Pupil pupil = new Pupil();
+                    #WhiteSmoke:Print("Katalognummer: ");
+                    #WhiteSmoke:pupil.CatalogNumber = int.Parse(ReadLine());
+                    #WhiteSmoke:Print("Vorname: ");
+                    #WhiteSmoke:pupil.FirstName = ReadLine();
+                    #WhiteSmoke:Print("Familienname: ");
+                    #WhiteSmoke:pupil.LastName = ReadLine();
+                    #WhiteSmoke:Print("PLZ: ");
+                    #WhiteSmoke:pupil.PostalCode = ReadLine();
+                    #WhiteSmoke:pupils[idx] = pupil;
+                    #WhiteSmoke:Print("Weiteren Schüler einlesen (j/n)? ");
+        endif
+repeat while (Console.ReadLine().ToLower().Equals("j") && idx != -1) is (<color:green>yes)
+stop
+start
+note right:  Program.PrintPupils
+#LightGreen:Params(Pupil[] pupils);
+#LightSkyBlue:string format = "{0,-4} {1,-20} {2,-20} {3,-5}"\nstring output = string.Format(format, "Nr.", "Vorname", "Familienname", "PLZ");
+#WhiteSmoke:PrintLine(output);
+#WhiteSmoke:Print(new string('=', output.Length));
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:int i = 0;
+while (i < pupils.Length) is (<color:green>yes)
+        #LightSkyBlue:Pupil pupil = pupils[i];
+        if (pupil != null) then (<color:green>yes)
+                #WhiteSmoke:output = string.Format(format, pupil.CatalogNumber, pupil.FirstName, pupil.LastName, pupil.PostalCode);
+                #WhiteSmoke:PrintLine(output);
+        endif
+:i++;
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.SortPupilsByCatalogNumber
+#LightGreen:Params(Pupil[] pupils);
+#LightSkyBlue:bool exchange;
+repeat
+        #WhiteSmoke:exchange = false;
+        #LightSkyBlue:int i = 0;
+        while (i < pupils.Length - 1) is (<color:green>yes)
+                if (pupils[i] != null && pupils[i + 1] != null && pupils[i].CatalogNumber > pupils[i + 1].CatalogNumber) then (<color:green>yes)
+                        #LightSkyBlue:Pupil temp = pupils[i];
+                        #WhiteSmoke:pupils[i] = pupils[i + 1];
+                        #WhiteSmoke:pupils[i + 1] = temp;
+                        #WhiteSmoke:exchange = true;
+                endif
+        :i++;
+        endwhile (<color:red>no)
+repeat while (exchange == true) is (<color:green>yes)
+stop
+start
+note right:  Program.SortPupilsByLastName
+#LightGreen:Params(Pupil[] pupils);
+#LightSkyBlue:bool exchange;
+repeat
+        #WhiteSmoke:exchange = false;
+        #LightSkyBlue:int i = 0;
+        while (i < pupils.Length - 1) is (<color:green>yes)
+                if (pupils[i] != null && pupils[i + 1] != null && pupils[i].LastName.CompareTo(pupils[i + 1].LastName) > 0) then (<color:green>yes)
+                        #LightSkyBlue:Pupil temp = pupils[i];
+                        #WhiteSmoke:pupils[i] = pupils[i + 1];
+                        #WhiteSmoke:pupils[i + 1] = temp;
+                        #WhiteSmoke:exchange = true;
+                endif
+        :i++;
+        endwhile (<color:red>no)
+repeat while (exchange == true) is (<color:green>yes)
+stop
+start
+note right:  Program.SearchPupilsByLastName
+#LightGreen:Params(Pupil[] pupils);
+#LightSkyBlue:int printIdx = 0\nPupil[] printList = new Pupil[40];
+#WhiteSmoke:Print("Familiennamen eingeben: ");
+#LightSkyBlue:string input = Console.ReadLine();
+#LightSkyBlue:int i = 0;
+while (i < pupils.Length) is (<color:green>yes)
+        #LightSkyBlue:Pupil pupil = pupils[i];
+        if (pupil != null && pupil.LastName.Equals(input)) then (<color:green>yes)
+                #WhiteSmoke:printList[printIdx++] = pupil;
+        endif
+:i++;
+endwhile (<color:red>no)
+if (printIdx > 0) then (<color:green>yes)
+        #WhiteSmoke:PrintPupils(printList);
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine("Keine Schüler mit diesem Familiennamen gefunden!");
+endif
+stop
+start
+note right:  Program.SearchPupilsByPostalCode
+#LightGreen:Params(Pupil[] pupils);
+#LightSkyBlue:int printIdx = 0\nPupil[] printList = new Pupil[40];
+#WhiteSmoke:Print("Postleitzahl eingeben: ");
+#LightSkyBlue:string input = Console.ReadLine();
+#LightSkyBlue:int i = 0;
+while (i < pupils.Length) is (<color:green>yes)
+        #LightSkyBlue:Pupil pupil = pupils[i];
+        if (pupil != null && pupil.PostalCode.Equals(input)) then (<color:green>yes)
+                #WhiteSmoke:printList[printIdx++] = pupil;
+        endif
+:i++;
+endwhile (<color:red>no)
+if (printIdx > 0) then (<color:green>yes)
+        #WhiteSmoke:PrintPupils(printList);
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine("Keine Schüler mit diesem Familiennamen gefunden!");
+endif
+stop
+start
+note right:  Pupil.ToString
+#Lavender:return $"{CatalogNumber, 2} {FirstName, 20} {LastName, 20} {PostalCode}";
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

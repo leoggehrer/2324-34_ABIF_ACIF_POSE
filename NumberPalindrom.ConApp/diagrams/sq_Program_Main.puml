@@ -1,0 +1,30 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.Clear()" as Console_Clear #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "int.TryParse(a0,a1)" as int_TryParse_a0_a1 #LightGreen
+participant "Console.ReadKey()" as Console_ReadKey #LightGreen
+autonumber
+Main_p0 -> Console_Clear
+Main_p0 -> Console_WriteLine_a0 : ("Palindrom number")
+Main_p0 -> Console_WriteLine_a0 : ("================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Number [>...0]: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+alt int.TryParse(input, out number) && number > 0
+    Main_p0 -> int_TryParse_a0_a1 : (input, out number)
+    int_TryParse_a0_a1 --> Main_p0 : result
+    else
+        Main_p0 -> Console_WriteLine_a0 : ("Invalid number!")
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ($"{number} {(number == reverseNumber ? "ist" : "kein")} Palindrom!")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+@enduml

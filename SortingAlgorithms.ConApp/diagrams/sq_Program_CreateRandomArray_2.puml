@@ -1,0 +1,10 @@
+@startuml Program.CreateRandomArray
+title Program.CreateRandomArray
+participant "CreateRandomArray(intsize,intmin,intmax)" as CreateRandomArray_p0_p1_p2 #LightYellow
+participant "Random.Shared.Next(a0,a1)" as Random_Shared_Next_a0_a1 #LightGreen
+autonumber
+loop i < result.Length
+    CreateRandomArray_p0_p1_p2 -> Random_Shared_Next_a0_a1 : (min, max)
+    Random_Shared_Next_a0_a1 --> CreateRandomArray_p0_p1_p2 : result[i]
+end
+@enduml

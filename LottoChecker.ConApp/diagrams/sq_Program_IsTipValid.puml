@@ -1,0 +1,8 @@
+@startuml Program.IsTipValid
+title Program.IsTipValid
+participant "IsTipValid(LotteryTiptip)" as IsTipValid_p0 #LightYellow
+participant "CountNumberInTip(a0,a1)" as CountNumberInTip_a0_a1 #LightGreen
+autonumber
+IsTipValid_p0 -> CountNumberInTip_a0_a1 : (tip.Numbers[i], tip)
+CountNumberInTip_a0_a1 --> IsTipValid_p0 : result
+@enduml

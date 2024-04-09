@@ -1,0 +1,30 @@
+@startuml Program.CompareAndPrintMatrixValues
+title Program.CompareAndPrintMatrixValues
+start
+#LightGreen:Params(int[,] matrix,int row);
+#LightSkyBlue:ConsoleColor originalColor = Console.ForegroundColor\nConsoleColor valueColor = ConsoleColor.Yellow\nConsoleColor relationColor = ConsoleColor.Red\nConsoleColor equalsColor = ConsoleColor.Green;
+#LightSkyBlue:int c = 0;
+while (c < matrix.GetLength(1)) is (<color:green>yes)
+        #WhiteSmoke:Console.ForegroundColor = valueColor;
+        #WhiteSmoke:Print($"{matrix[row, c]}");
+        if (c < matrix.GetLength(1) - 1) then (<color:green>yes)
+                if (matrix[row, c] > matrix[row, c + 1]) then (<color:green>yes)
+                        #WhiteSmoke:Console.ForegroundColor = relationColor;
+                        #WhiteSmoke:Print(" > ");
+                    else (<color:red>no)
+                        if (matrix[row, c] < matrix[row, c + 1]) then (<color:green>yes)
+                                #WhiteSmoke:Console.ForegroundColor = relationColor;
+                                #WhiteSmoke:Print(" < ");
+                            else (<color:red>no)
+                                    #WhiteSmoke:Console.ForegroundColor = equalsColor;
+                                    #WhiteSmoke:Print(" = ");
+                        endif
+                endif
+            else (<color:red>no)
+                    #WhiteSmoke:Print(" ");
+        endif
+:c++;
+endwhile (<color:red>no)
+#WhiteSmoke:Console.ForegroundColor = originalColor;
+stop
+@enduml

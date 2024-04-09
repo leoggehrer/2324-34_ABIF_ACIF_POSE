@@ -1,0 +1,26 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\ndouble celsius, fahrenheit;
+#WhiteSmoke:PrintLine("Umrechnung Celsius  ->  Fahrenheit");
+#WhiteSmoke:PrintLine("==================================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabe Grad Celsius: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:celsius = Convert.ToDouble(input);
+#WhiteSmoke:fahrenheit = (celsius * 9.0 / 5.0) + 32;
+#WhiteSmoke:Print("Das Ergebnis: ");
+if (fahrenheit >= 0) then (<color:green>yes)
+        #WhiteSmoke:Print("Ist größer oder gleich 0", 10);
+    else (<color:red>no)
+            #WhiteSmoke:Print("Ist kleiner 0", 10);
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"Celsius:    {celsius:f1}");
+#WhiteSmoke:PrintLine($"Fahrenheit: {fahrenheit:f1}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

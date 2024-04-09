@@ -1,0 +1,23 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string name, input\ndouble hours, pricePerHour, salary;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Der Lohnrechner für eine gerechte Entlohnung!   *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:Print("Name des Arbeiters:        ");
+#WhiteSmoke:name = ReadLine();
+#WhiteSmoke:Print("Anzahl der Arbeitsstunden: ");
+#WhiteSmoke:hours = Convert.ToDouble(ReadLine());
+#WhiteSmoke:Print("Stundenlohn:               ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:pricePerHour = Convert.ToDouble(input);
+#WhiteSmoke:salary = hours * pricePerHour;
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"{name} hat in {hours:f} Stunden {salary} EUR verdient.");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Zum Beenden Eingabetaste drücken...");
+#WhiteSmoke:ReadLine();
+stop
+@enduml

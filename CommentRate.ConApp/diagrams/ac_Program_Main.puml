@@ -5,9 +5,7 @@ start
 #WhiteSmoke:PrintLine("Kommentarquote für C#-Dateien");
 #WhiteSmoke:PrintLine("=============================");
 #WhiteSmoke:PrintLine();
-#LightSkyBlue:string fileName
-int codeChars, commentChars
-double relationShip;
+#LightSkyBlue:string fileName\nint codeChars, commentChars\ndouble relationShip;
 #WhiteSmoke:fileName = GetFileName();
 #WhiteSmoke:AnalyzeFile(fileName, out codeChars, out commentChars);
 #WhiteSmoke:relationShip = (double)commentChars / (codeChars + commentChars) * 100;

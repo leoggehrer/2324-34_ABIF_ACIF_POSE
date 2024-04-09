@@ -1,0 +1,12 @@
+@startuml Program.GetUniqueDigitsString
+title Program.GetUniqueDigitsString
+participant "GetUniqueDigitsString(int[]digits)" as GetUniqueDigitsString_p0 #LightYellow
+participant "result.Contains(a0)" as result_Contains_a0 #LightGreen
+autonumber
+loop i < digits.Length
+    alt result.Contains(digits[i].ToString()) == false
+        GetUniqueDigitsString_p0 -> result_Contains_a0 : (digits[i].ToString())
+        result_Contains_a0 --> GetUniqueDigitsString_p0 : result
+    end
+end
+@enduml

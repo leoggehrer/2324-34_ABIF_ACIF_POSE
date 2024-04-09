@@ -1,0 +1,12 @@
+@startuml Program.SimulateRace
+title Program.SimulateRace
+participant "Random.Shared.Next(a0,a1)" as Random_Shared_Next_a0_a1 #LightGreen
+participant "PrintSimulation(a0)" as PrintSimulation_a0 #LightGreen
+participant "Thread.Sleep(a0)" as Thread_Sleep_a0 #LightGreen
+autonumber
+loop raceFinished == false
+    SimulateRace_p0 -> Random_Shared_Next_a0_a1 : (0, 2)
+    SimulateRace_p0 -> PrintSimulation_a0 : (horses)
+    SimulateRace_p0 -> Thread_Sleep_a0 : (100)
+end
+@enduml

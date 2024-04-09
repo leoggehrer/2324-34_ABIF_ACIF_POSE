@@ -1,0 +1,14 @@
+@startuml StringExtensions.SetIndent
+title StringExtensions.SetIndent
+participant "SetIndent(thisstring[]lines,intcount)" as SetIndent_p0_p1 #LightYellow
+participant "lines[i].SetIndent(a0)" as lines_i_SetIndent_a0 #LightGreen
+participant "Array.Empty<string>()" as Array_Empty_string_ #LightGreen
+autonumber
+alt lines != null
+    loop i < lines.Length
+        SetIndent_p0_p1 -> lines_i_SetIndent_a0 : (count)
+        lines_i_SetIndent_a0 --> SetIndent_p0_p1 : lines[i]
+    end
+end
+SetIndent_p0_p1 -> Array_Empty_string_
+@enduml

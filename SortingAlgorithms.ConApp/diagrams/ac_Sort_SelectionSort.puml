@@ -1,0 +1,21 @@
+@startuml Sort.SelectionSort
+title Sort.SelectionSort
+start
+#LightGreen:Params(int[] array);
+#LightSkyBlue:int i = 0;
+while (i < array.Length - 1) is (<color:green>yes)
+        #LightSkyBlue:int minIdx = i;
+        #LightSkyBlue:int j = i + 1;
+        while (j < array.Length) is (<color:green>yes)
+                if (array[j] < array[minIdx]) then (<color:green>yes)
+                        #WhiteSmoke:minIdx = j;
+                endif
+        :j++;
+        endwhile (<color:red>no)
+        if (minIdx != i) then (<color:green>yes)
+                #WhiteSmoke:Swap(ref array[i], ref array[minIdx]);
+        endif
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

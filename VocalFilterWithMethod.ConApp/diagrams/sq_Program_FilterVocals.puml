@@ -1,0 +1,11 @@
+@startuml Program.FilterVocals
+title Program.FilterVocals
+participant "FilterVocals(stringinput)" as FilterVocals_p0 #LightYellow
+participant "char.ToLower(a0)" as char_ToLower_a0 #LightGreen
+participant "result.Contains(a0)" as result_Contains_a0 #LightGreen
+autonumber
+FilterVocals_p0 -> char_ToLower_a0 : (input[i])
+char_ToLower_a0 --> FilterVocals_p0 : chr
+FilterVocals_p0 -> result_Contains_a0 : (input[i])
+result_Contains_a0 --> FilterVocals_p0 : result
+@enduml

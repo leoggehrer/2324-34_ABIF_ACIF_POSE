@@ -1,0 +1,19 @@
+@startuml Program.CountNumberOfHits
+title Program.CountNumberOfHits
+start
+#LightGreen:Params(int index,int[,] tipps,int[] thrownNumbers);
+#LightSkyBlue:int result = 0;
+#LightSkyBlue:int i = 0;
+while (i < tipps.GetLength(1)) is (<color:green>yes)
+        #LightSkyBlue:int j = 0;
+        while (j < thrownNumbers.Length) is (<color:green>yes)
+                if (tipps[index, i] == thrownNumbers[j]) then (<color:green>yes)
+                        #WhiteSmoke:result++;
+                endif
+        :j++;
+        endwhile (<color:red>no)
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

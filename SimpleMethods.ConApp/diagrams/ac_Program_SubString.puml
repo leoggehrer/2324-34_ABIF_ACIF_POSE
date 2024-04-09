@@ -1,0 +1,13 @@
+@startuml Program.SubString
+title Program.SubString
+start
+#LightGreen:Params(string text,int startIndex,int length);
+#LightSkyBlue:string result = string.Empty;
+#LightSkyBlue:int i = startIndex;
+while (i >= 0 && i < text.Length && i < startIndex + length) is (<color:green>yes)
+        #WhiteSmoke:result += text[i];
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

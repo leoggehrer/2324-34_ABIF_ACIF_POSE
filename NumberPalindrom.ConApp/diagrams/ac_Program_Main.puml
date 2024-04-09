@@ -1,0 +1,27 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nint number, divider = 1, reverseNumber = 0;
+#WhiteSmoke:Console.Clear();
+#WhiteSmoke:PrintLine("Palindrom number");
+#WhiteSmoke:PrintLine("================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Number [>...0]: ");
+#WhiteSmoke:input = ReadLine();
+if (int.TryParse(input, out number) && number > 0) then (<color:green>yes)
+        while (divider <= number) is (<color:green>yes)
+                #WhiteSmoke:reverseNumber = reverseNumber * 10;
+                #WhiteSmoke:reverseNumber = reverseNumber + number / divider % 10;
+                #WhiteSmoke:divider = divider * 10;
+        endwhile (<color:red>no)
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine("Invalid number!");
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"{number} {(number == reverseNumber ? "ist" : "kein")} Palindrom!");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

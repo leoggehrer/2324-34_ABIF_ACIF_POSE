@@ -2,8 +2,7 @@
 title Program.ReadBigInteger
 start
 #LightGreen:Params(string prompt);
-#LightSkyBlue:string result
-bool validInput;
+#LightSkyBlue:string result\nbool validInput;
 repeat
         #WhiteSmoke:Print(prompt);
         #WhiteSmoke:result = ReadLine();

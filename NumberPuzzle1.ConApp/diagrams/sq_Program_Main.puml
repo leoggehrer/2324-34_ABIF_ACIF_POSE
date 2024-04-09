@@ -1,0 +1,23 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.ReadKey()" as Console_ReadKey #LightGreen
+autonumber
+Main_p0 -> Console_WriteLine_a0 : ("Number Puzzel")
+Main_p0 -> Console_WriteLine_a0 : ("=============")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Solve:")
+Main_p0 -> Console_WriteLine_a0 : ("  a + bc = 2024")
+Main_p0 -> Console_WriteLine_a0 : ("  ab + c = 2023")
+Main_p0 -> Console_WriteLine
+alt solved
+    Main_p0 -> Console_WriteLine_a0 : ($"The solution: a == {a}, b == {b} and c == {c}")
+    else
+        Main_p0 -> Console_WriteLine_a0 : ("No solution found!")
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+@enduml

@@ -1,0 +1,15 @@
+@startuml Program.GetHorseIndexByNumber
+title Program.GetHorseIndexByNumber
+start
+#LightGreen:Params(Horse[] horses,int number);
+#LightSkyBlue:int result = -1;
+#LightSkyBlue:int i = 0;
+while (i < horses.Length && result == -1) is (<color:green>yes)
+        if (horses[i].Number == number) then (<color:green>yes)
+                #WhiteSmoke:result = i;
+        endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

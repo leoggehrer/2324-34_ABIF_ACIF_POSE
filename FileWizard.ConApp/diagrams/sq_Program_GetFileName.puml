@@ -1,0 +1,22 @@
+@startuml Program.GetFileName
+title Program.GetFileName
+participant "GetFileName" as GetFileName #LightYellow
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "File.Exists(a0)" as File_Exists_a0 #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "string.IsNullOrEmpty(a0)" as string_IsNullOrEmpty_a0 #LightGreen
+autonumber
+loop string.IsNullOrEmpty(result)
+    GetFileName -> Console_Write_a0 : ("Welche Datei soll ich öffnen?: ")
+    GetFileName -> Console_ReadLine
+    Console_ReadLine --> GetFileName : input
+    alt File.Exists(input)
+        GetFileName -> File_Exists_a0 : (input)
+        else
+            GetFileName -> Console_WriteLine_a0 : ("Diese Datei existiert nicht!")
+    end
+    GetFileName -> string_IsNullOrEmpty_a0 : (result)
+    string_IsNullOrEmpty_a0 --> GetFileName : result
+end
+@enduml

@@ -1,0 +1,31 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:18
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input, output = string.Empty;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Digit Filter                                    *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabetext: ");
+#WhiteSmoke:input = ReadLine();
+#LightSkyBlue:int i = 0;
+while (i < input.Length) is (<color:green>yes)
+        if (char.IsDigit(input[i])) then (<color:green>yes)
+                #WhiteSmoke:output += input[i];
+        endif
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine($"Ausgabetext: {output}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

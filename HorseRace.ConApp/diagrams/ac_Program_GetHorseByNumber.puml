@@ -1,0 +1,11 @@
+@startuml Program.GetHorseByNumber
+title Program.GetHorseByNumber
+start
+#LightGreen:Params(Horse[] horses,int number);
+#LightSkyBlue:Horse result = null\nint index = GetHorseIndexByNumber(horses, number);
+if (index != -1) then (<color:green>yes)
+        #WhiteSmoke:result = horses[index];
+endif
+#Lavender:return result;
+stop
+@enduml

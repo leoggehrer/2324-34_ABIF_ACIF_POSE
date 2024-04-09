@@ -1,0 +1,50 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:21
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\nint nOne, nTwo, nThree, nMax, nMin;
+#WhiteSmoke:PrintLine("MinMax Calculator");
+#WhiteSmoke:PrintLine("=================");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabe Zahl 1: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:nOne = Convert.ToInt32(input);
+#WhiteSmoke:Print("Eingabe Zahl 2: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:nTwo = Convert.ToInt32(input);
+#WhiteSmoke:Print("Eingabe Zahl 3: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:nThree = Convert.ToInt32(input);
+if (nOne >= nTwo && nTwo >= nThree) then (<color:green>yes)
+        #WhiteSmoke:nMax = nOne;
+    else (<color:red>no)
+        if (nTwo >= nOne && nOne >= nThree) then (<color:green>yes)
+                #WhiteSmoke:nMax = nTwo;
+            else (<color:red>no)
+                    #WhiteSmoke:nMax = nThree;
+        endif
+endif
+if (nOne <= nTwo && nTwo <= nThree) then (<color:green>yes)
+        #WhiteSmoke:nMin = nOne;
+    else (<color:red>no)
+        if (nTwo <= nOne && nOne <= nThree) then (<color:green>yes)
+                #WhiteSmoke:nMin = nTwo;
+            else (<color:red>no)
+                    #WhiteSmoke:nMin = nThree;
+        endif
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"Max = {nMax, 10}");
+#WhiteSmoke:PrintLine($"Min = {nMin, 10}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

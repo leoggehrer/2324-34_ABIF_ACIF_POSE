@@ -1,0 +1,29 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.ReadKey()" as Console_ReadKey #LightGreen
+autonumber
+Main_p0 -> Console_WriteLine_a0 : ("***************************************")
+Main_p0 -> Console_WriteLine_a0 : ("* Ausgabe für Fizz-Buzz von 1 bis 100 *")
+Main_p0 -> Console_WriteLine_a0 : ("* Fizz, wenn durch 3 teilbar ist      *")
+Main_p0 -> Console_WriteLine_a0 : ("* Buzz, wenn durch 5 teilbar ist      *")
+Main_p0 -> Console_WriteLine_a0 : ("***************************************")
+alt idx % 3 != 0 && idx % 5 != 0
+    Main_p0 -> Console_Write_a0 : ($"{idx} ")
+end
+alt idx % 3 == 0
+    Main_p0 -> Console_Write_a0 : ("Fizz ")
+end
+alt idx % 5 == 0
+    Main_p0 -> Console_Write_a0 : ("Buzz ")
+end
+alt idx % 5 == 0 && idx % 3 == 0
+    Main_p0 -> Console_Write_a0 : ("Fizz Buzz ")
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+@enduml

@@ -1,0 +1,17 @@
+@startuml Program.WritePupilsToCsvFile
+title Program.WritePupilsToCsvFile
+start
+#LightGreen:Params(string fileName,Pupil[] pupils);
+#LightSkyBlue:List<string> lines = new List<string>();
+#WhiteSmoke:lines.Add("Katalognummer;Vorname;Familienname;PLZ");
+#LightSkyBlue:int i = 0;
+while (i < pupils.Length) is (<color:green>yes)
+        #LightSkyBlue:Pupil pupil = pupils[i];
+        if (pupil != null) then (<color:green>yes)
+                #WhiteSmoke:lines.Add($"{pupil.CatalogNumber};{pupil.FirstName};{pupil.LastName};{pupil.PostalCode}");
+        endif
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:File.WriteAllLines(fileName, lines);
+stop
+@enduml

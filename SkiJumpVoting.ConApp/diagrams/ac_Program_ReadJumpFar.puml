@@ -1,0 +1,16 @@
+@startuml Program.ReadJumpFar
+title Program.ReadJumpFar
+start
+#LightSkyBlue:double result\nstring input\nbool valid = false;
+repeat
+        #WhiteSmoke:Print($"Weite in Meter [0-200]: ");
+        #WhiteSmoke:input = ReadLine();
+        if (double.TryParse(input, out result) && result >= 0 && result <= 200) then (<color:green>yes)
+                #WhiteSmoke:valid = true;
+            else (<color:red>no)
+                    #WhiteSmoke:PrintLine("Ungültige Eingabe!");
+        endif
+repeat while (valid == false) is (<color:green>yes)
+#Lavender:return result;
+stop
+@enduml

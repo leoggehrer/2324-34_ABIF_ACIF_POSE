@@ -1,9 +1,17 @@
 @startuml Program.CreateNextGeneration
 title Program.CreateNextGeneration
-participant "CreateNextGeneration(int[,] currentField)" as CreateNextGeneration_p0 #LightYellow
-participant "currentField.GetLength(a0)" as currentField.GetLength_a0 #LightGreen
-participant "GetLivingNeighbors(a0, a1, a2)" as GetLivingNeighbors_a0_a1_a2 #LightGreen
+participant "CreateNextGeneration(int[,]currentField)" as CreateNextGeneration_p0 #LightYellow
+participant "currentField.GetLength(a0)" as currentField_GetLength_a0 #LightGreen
+participant "GetLivingNeighbors(a0,a1,a2)" as GetLivingNeighbors_a0_a1_a2 #LightGreen
 autonumber
-CreateNextGeneration_p0 -> currentField.GetLength_a0 : (0)
-CreateNextGeneration_p0 -> currentField.GetLength_a0 : (1)
+CreateNextGeneration_p0 -> currentField_GetLength_a0 : (0)
+currentField_GetLength_a0 --> CreateNextGeneration_p0 : result
+CreateNextGeneration_p0 -> currentField_GetLength_a0 : (1)
+currentField_GetLength_a0 --> CreateNextGeneration_p0 : result
+CreateNextGeneration_p0 -> currentField_GetLength_a0 : (0)
+currentField_GetLength_a0 --> CreateNextGeneration_p0 : result
+CreateNextGeneration_p0 -> currentField_GetLength_a0 : (1)
+currentField_GetLength_a0 --> CreateNextGeneration_p0 : result
+CreateNextGeneration_p0 -> GetLivingNeighbors_a0_a1_a2 : (currentField, r, c)
+GetLivingNeighbors_a0_a1_a2 --> CreateNextGeneration_p0 : neighbors
 @enduml

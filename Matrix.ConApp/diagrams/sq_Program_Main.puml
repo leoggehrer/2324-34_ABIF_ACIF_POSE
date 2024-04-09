@@ -1,0 +1,22 @@
+@startuml Program.Main
+title Program.Main
+participant "Main" as Main #LightYellow
+participant "ReadMatrixDimensions(a0,a1)" as ReadMatrixDimensions_a0_a1 #LightGreen
+participant "CreateMatrix(a0,a1)" as CreateMatrix_a0_a1 #LightGreen
+participant "CompareAndPrintMatrix(a0)" as CompareAndPrintMatrix_a0 #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "input.ToLower()" as input_ToLower #LightGreen
+autonumber
+loop input.ToLower() == "j"
+    Main -> ReadMatrixDimensions_a0_a1 : (out rows, out cols)
+    Main -> CreateMatrix_a0_a1 : (rows, cols)
+    CreateMatrix_a0_a1 --> Main : matrix
+    Main -> CompareAndPrintMatrix_a0 : (matrix)
+    Main -> Console_Write_a0 : ("Weitere Matrix anzeigen (j/n)? ")
+    Main -> Console_ReadLine
+    Console_ReadLine --> Main : input
+    Main -> input_ToLower
+    input_ToLower --> Main : result
+end
+@enduml

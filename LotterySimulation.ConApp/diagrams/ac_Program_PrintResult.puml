@@ -1,0 +1,15 @@
+@startuml Program.PrintResult
+title Program.PrintResult
+start
+#LightGreen:Params(int[] results);
+#LightSkyBlue:int resultSum = 0;
+#LightSkyBlue:int i = TIP_SIZE;
+while (i >= 0) is (<color:green>yes)
+        #WhiteSmoke:PrintLine($"{i}er: {results[i], 10}");
+        #WhiteSmoke:resultSum += results[i];
+:i--;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine(new string('-' , 20));
+#WhiteSmoke:PrintLine($"Summe: {resultSum, 8}");
+stop
+@enduml

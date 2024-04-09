@@ -1,0 +1,21 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:int FIRST_ASCII = 32\nint LAST_ASCII = 127;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* ASCII - Tabelle                                 *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:int idx = FIRST_ASCII;
+while (idx <= LAST_ASCII) is (<color:green>yes)
+        #LightSkyBlue:char printChar = Convert.ToChar(FIRST_ASCII + idx);
+        #LightSkyBlue:string output = $"Zeichen: {printChar} Code: {idx,4} (dec) {idx.ToString("X4")} (hex)";
+        #WhiteSmoke:PrintLine(output);
+:idx++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

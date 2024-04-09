@@ -1,0 +1,14 @@
+@startuml Program.WritePupilsToCsvFile
+title Program.WritePupilsToCsvFile
+participant "WritePupilsToCsvFile(stringfileName,Pupil[]pupils)" as WritePupilsToCsvFile_p0_p1 #LightYellow
+participant "lines.Add(a0)" as lines_Add_a0 #LightGreen
+participant "File.WriteAllLines(a0,a1)" as File_WriteAllLines_a0_a1 #LightGreen
+autonumber
+WritePupilsToCsvFile_p0_p1 -> lines_Add_a0 : ("Katalognummer;Vorname;Familienname;PLZ")
+loop i < pupils.Length
+    alt pupil != null
+        WritePupilsToCsvFile_p0_p1 -> lines_Add_a0 : ($"{pupil.CatalogNumber};{pupil.FirstName};{pupil.LastName};{pupil.PostalCode}")
+    end
+end
+WritePupilsToCsvFile_p0_p1 -> File_WriteAllLines_a0_a1 : (fileName, lines)
+@enduml

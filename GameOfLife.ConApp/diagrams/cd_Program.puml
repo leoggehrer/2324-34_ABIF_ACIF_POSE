@@ -1,0 +1,17 @@
+@startuml Program
+title Program
+ class Program #GhostWhite {
+- {const} int MAX_ROWS = 20
+- {const} int MAX_COLS = 79
+---
+---
+- {static} void Main(string[] args)
++ {static} void Simulate(int[,] field, int iterations, int delay)
++ {static} int SumCellValues(int[,] field)
++ {static} int GetLivingNeighbors(int[,] field, int row, int col)
+- {static} int[,] CreateNextGeneration(int[,] currentField)
++ {static} void PrintField(int[,] field)
++ {static} int[,] CreateRandomField(int rows, int cols, int occupancy)
++ {static} int[,] ReadFieldFromCsvFile(string filePath)
+}
+@enduml

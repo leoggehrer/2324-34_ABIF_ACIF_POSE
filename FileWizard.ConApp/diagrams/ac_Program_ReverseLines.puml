@@ -3,11 +3,11 @@ title Program.ReverseLines
 start
 #LightGreen:Params(string fileName);
 if (File.Exists(fileName)) then (<color:green>yes)
-    #LightSkyBlue:string[] lines = File.ReadAllLines(fileName);
-    #WhiteSmoke:Array.Reverse(lines);
-    #WhiteSmoke:File.WriteAllLines(fileName, lines);
-  else (<color:red>no)
-      #WhiteSmoke:PrintLine($"Die Datei '{fileName}' existiert nicht!");
+        #LightSkyBlue:string[] lines = File.ReadAllLines(fileName);
+        #WhiteSmoke:Array.Reverse(lines);
+        #WhiteSmoke:File.WriteAllLines(fileName, lines);
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine($"Die Datei '{fileName}' existiert nicht!");
 endif
 stop
 @enduml

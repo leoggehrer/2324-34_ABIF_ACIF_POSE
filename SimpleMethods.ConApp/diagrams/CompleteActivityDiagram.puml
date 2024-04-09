@@ -1,0 +1,111 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:24
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:char characterDisplayed\nint menueNumber = 0, numChars = 0, numStars = 0, sumOfAllDigits = 0, indexSubString = 0, lengthSubString = 0\nstring inputSumOfDigits, searchedSubString, inputString;
+repeat
+        #WhiteSmoke:Console.Clear();
+        #WhiteSmoke:PrintLine("Simple Methods");
+        #WhiteSmoke:PrintLine("==============");
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:PrintLine("Welche Methode möchten Sie verwenden?");
+        #WhiteSmoke:PrintLine("1 ... WriteStars");
+        #WhiteSmoke:PrintLine("2 ... WriteCharacters");
+        #WhiteSmoke:PrintLine("3 ... SumOfDigits");
+        #WhiteSmoke:PrintLine("4 ... SubString");
+        #WhiteSmoke:PrintLine("0 ... Exit");
+        #WhiteSmoke:Print("Geben Sie eine Zahl ein [1-4]: ");
+        #WhiteSmoke:menueNumber = Convert.ToInt32(ReadLine());
+        #WhiteSmoke:PrintLine();
+        switch (menueNumber)
+            case( 1 )
+            #WhiteSmoke:Print("Geben Sie die Anzahl der Sterne ein, die Sie anzeigen möchten: ");
+            #WhiteSmoke:numStars = Convert.ToInt32(ReadLine());
+            #WhiteSmoke:WriteStars(numStars);
+            #WhiteSmoke:PrintLine();
+            #WhiteSmoke:Print("Weiter mit Eingabe...");
+            #WhiteSmoke:ReadLine();
+            case( 2 )
+            #WhiteSmoke:Print("Geben Sie das Zeichen ein, das Sie anzeigen möchten: ");
+            #WhiteSmoke:characterDisplayed = Convert.ToChar(ReadLine());
+            #WhiteSmoke:Print($"Geben Sie an, wie oft {characterDisplayed} angezeigt werden soll: ");
+            #WhiteSmoke:numChars = Convert.ToInt32(ReadLine());
+            #WhiteSmoke:WriteCharacters(numChars, characterDisplayed);
+            #WhiteSmoke:PrintLine();
+            #WhiteSmoke:Print("Weiter mit Eingabe...");
+            #WhiteSmoke:ReadLine();
+            case( 3 )
+            #WhiteSmoke:Print("Geben Sie Ihren Text ein, sie erhalten eine Zusammenfassung: ");
+            #WhiteSmoke:inputSumOfDigits = ReadLine();
+            #WhiteSmoke:sumOfAllDigits = SumOfDigits(inputSumOfDigits);
+            #WhiteSmoke:PrintLine();
+            #WhiteSmoke:PrintLine($"Die Summe aller Zahlen ist gleich {sumOfAllDigits}");
+            #WhiteSmoke:Print("Weiter mit Eingabe...");
+            #WhiteSmoke:ReadLine();
+            case( 4 )
+            #WhiteSmoke:Print("Geben Sie Ihren Text ein: ");
+            #WhiteSmoke:inputString = ReadLine();
+            #WhiteSmoke:Print("Geben Sie den Index ein, an dem der SubString beginnt: ");
+            #WhiteSmoke:indexSubString = Convert.ToInt32(ReadLine());
+            #WhiteSmoke:Print("Geben Sie die Länge des SubStrings ein: ");
+            #WhiteSmoke:lengthSubString = Convert.ToInt32(ReadLine());
+            #WhiteSmoke:searchedSubString = SubString(inputString, indexSubString, lengthSubString);
+            #WhiteSmoke:PrintLine($"Der Teiltext ist: {searchedSubString}");
+            #WhiteSmoke:PrintLine();
+            #WhiteSmoke:Print("Weiter mit Eingabe...");
+            #WhiteSmoke:ReadLine();
+        endswitch
+repeat while (menueNumber != 0) is (<color:green>yes)
+stop
+start
+note right:  Program.WriteStars
+#LightGreen:Params(int count);
+#LightSkyBlue:int i = 0;
+while (i < count) is (<color:green>yes)
+        #WhiteSmoke:Print("*");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+stop
+start
+note right:  Program.WriteCharacters
+#LightGreen:Params(int count,char character);
+#LightSkyBlue:int i = 0;
+while (i < count) is (<color:green>yes)
+        #WhiteSmoke:Print(character);
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+stop
+start
+note right:  Program.SumOfDigits
+#LightGreen:Params(string text);
+#LightSkyBlue:int result = 0;
+#LightSkyBlue:int i = 0;
+while (i < text.Length) is (<color:green>yes)
+        if (Char.IsDigit(text[i])) then (<color:green>yes)
+                #WhiteSmoke:result += text[i] - '0';
+        endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+start
+note right:  Program.SubString
+#LightGreen:Params(string text,int startIndex,int length);
+#LightSkyBlue:string result = string.Empty;
+#LightSkyBlue:int i = startIndex;
+while (i >= 0 && i < text.Length && i < startIndex + length) is (<color:green>yes)
+        #WhiteSmoke:result += text[i];
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

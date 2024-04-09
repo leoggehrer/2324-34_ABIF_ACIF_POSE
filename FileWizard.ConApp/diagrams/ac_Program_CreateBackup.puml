@@ -2,20 +2,18 @@
 title Program.CreateBackup
 start
 #LightGreen:Params(string fileName);
-#LightSkyBlue:int counter = 1
-string backupExtension = ".bak"
-string backupFileName = $"{fileName}{backupExtension}";
+#LightSkyBlue:int counter = 1\nstring backupExtension = ".bak"\nstring backupFileName = $"{fileName}{backupExtension}";
 while (File.Exists(backupFileName)) is (<color:green>yes)
-    #WhiteSmoke:backupFileName = $"{fileName}{backupExtension}{counter}";
-    #WhiteSmoke:counter++;
+        #WhiteSmoke:backupFileName = $"{fileName}{backupExtension}{counter}";
+        #WhiteSmoke:counter++;
 endwhile (<color:red>no)
 if (File.Exists(fileName)) then (<color:green>yes)
-    #WhiteSmoke:File.Copy(fileName, backupFileName);
-    #WhiteSmoke:Console.ForegroundColor = ConsoleColor.Yellow;
-    #WhiteSmoke:PrintLine($"Die Sicherungskopie '{backupFileName}' wurde erstellt.");
-    #WhiteSmoke:Console.ForegroundColor = DefaultColor;
-  else (<color:red>no)
-      #WhiteSmoke:PrintLine($"Die Datei '{fileName}' existiert nicht!");
+        #WhiteSmoke:File.Copy(fileName, backupFileName);
+        #WhiteSmoke:Console.ForegroundColor = ConsoleColor.Yellow;
+        #WhiteSmoke:PrintLine($"Die Sicherungskopie '{backupFileName}' wurde erstellt.");
+        #WhiteSmoke:Console.ForegroundColor = DefaultColor;
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine($"Die Datei '{fileName}' existiert nicht!");
 endif
 stop
 @enduml

@@ -1,0 +1,19 @@
+@startuml Program.PrintPupils
+title Program.PrintPupils
+start
+#LightGreen:Params(Pupil[] pupils);
+#LightSkyBlue:string format = "{0,-4} {1,-20} {2,-20} {3,-5}"\nstring output = string.Format(format, "Nr.", "Vorname", "Familienname", "PLZ");
+#WhiteSmoke:PrintLine(output);
+#WhiteSmoke:Print(new string('=', output.Length));
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:int i = 0;
+while (i < pupils.Length) is (<color:green>yes)
+        #LightSkyBlue:Pupil pupil = pupils[i];
+        if (pupil != null) then (<color:green>yes)
+                #WhiteSmoke:output = string.Format(format, pupil.CatalogNumber, pupil.FirstName, pupil.LastName, pupil.PostalCode);
+                #WhiteSmoke:PrintLine(output);
+        endif
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

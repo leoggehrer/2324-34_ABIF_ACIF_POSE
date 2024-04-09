@@ -1,0 +1,25 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightSkyBlue:int[] results\nint[] correctResult = { 400874, 423358, 151635, 22687, 1416, 30, 0 }\nint[] thrownNumbers\nint[,] lottoTipps = CreateTipps(TIPPS_COUNT)\nStopwatch stopWatch = new Stopwatch();
+#WhiteSmoke:PrintLine("Lottosimulator");
+#WhiteSmoke:PrintLine("==============");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("{0} Tippkolonnen", lottoTipps.GetLength(0));
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:thrownNumbers = CreateTip();
+#WhiteSmoke:stopWatch.Start();
+#WhiteSmoke:results = AnalyzeLottery(lottoTipps, thrownNumbers);
+#WhiteSmoke:stopWatch.Stop();
+#WhiteSmoke:PrintResult(results);
+#WhiteSmoke:PrintLine();
+if (EqualsTo(results, correctResult)) then (<color:green>yes)
+        #WhiteSmoke:PrintLine("Das Ergebnis ist richtig!");
+    else (<color:red>no)
+            #WhiteSmoke:PrintLine("Für 1 Mio Versuche ist das Ergebnis falsch!");
+endif
+#WhiteSmoke:PrintLine("Rechenzeit: {0} Millisekunden!", stopWatch.ElapsedMilliseconds);
+#WhiteSmoke:PrintLine("Exit with Enter...");
+#WhiteSmoke:ReadLine();
+stop
+@enduml

@@ -1,12 +1,12 @@
 @startuml Program.AddBigInteger
 title Program.AddBigInteger
-participant "AddBigInteger(string number1,string number2)" as AddBigInteger_p0_p1 #LightYellow
+participant "AddBigInteger(stringnumber1,stringnumber2)" as AddBigInteger_p0_p1 #LightYellow
 participant "Math.Max(a0,a1)" as Math_Max_a0_a1 #LightGreen
 participant "AddLeadingCharacters(a0,a1,a2)" as AddLeadingCharacters_a0_a1_a2 #LightGreen
 autonumber
 AddBigInteger_p0_p1 -> Math_Max_a0_a1 : (number1.Length, number2.Length)
 AddBigInteger_p0_p1 -> AddLeadingCharacters_a0_a1_a2 : (number1, '0', maxNumber - number1.Length)
-AddLeadingCharacters_a0_a1_a2 --> AddBigInteger_p0_p1 : result
+AddLeadingCharacters_a0_a1_a2 --> AddBigInteger_p0_p1 : number1
 AddBigInteger_p0_p1 -> AddLeadingCharacters_a0_a1_a2 : (number2, '0', maxNumber - number2.Length)
-AddLeadingCharacters_a0_a1_a2 --> AddBigInteger_p0_p1 : result
+AddLeadingCharacters_a0_a1_a2 --> AddBigInteger_p0_p1 : number2
 @enduml

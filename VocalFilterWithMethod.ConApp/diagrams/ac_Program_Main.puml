@@ -1,0 +1,18 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input, output = string.Empty;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Vocal Filter with Method                        *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabetext: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:output = FilterVocals(input);
+#WhiteSmoke:PrintLine($"Ausgabetext: {output}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+@enduml

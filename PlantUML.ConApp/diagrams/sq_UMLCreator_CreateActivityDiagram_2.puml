@@ -1,0 +1,8 @@
+@startuml UMLCreator.CreateActivityDiagram
+title UMLCreator.CreateActivityDiagram
+participant "AnalysisStatement(a0,a1,a2)" as AnalysisStatement_a0_a1_a2 #LightGreen
+autonumber
+loop statements!
+    CreateActivityDiagram_p0 -> AnalysisStatement_a0_a1_a2 : (statement, diagramData, 0)
+end
+@enduml

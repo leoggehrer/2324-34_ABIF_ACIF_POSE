@@ -1,0 +1,51 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:21
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input, encrypted, decrypted;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Einfache Verschlüsselung nach ROT13             *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Zu verschlüsselnden Text: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:encrypted = Encrypt(input);
+#WhiteSmoke:PrintLine($"Verschlüsselter Text: {encrypted}");
+#WhiteSmoke:decrypted = Decrypt(encrypted);
+#WhiteSmoke:PrintLine($"Entschlüsselter Text: {decrypted}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Press enter to exit...");
+#WhiteSmoke:ReadLine();
+stop
+start
+note right:  Program.Decrypt
+#LightGreen:Params(string encrypted);
+#Lavender:return Encrypt(encrypted);
+stop
+start
+note right:  Program.Encrypt
+#LightGreen:Params(string input);
+#LightSkyBlue:string result = string.Empty;
+#LightSkyBlue:int i = 0;
+while (i < input.Length) is (<color:green>yes)
+        #LightSkyBlue:char chr = char.ToLower(input[i]);
+        if (chr >= 'a' && chr <= 'm') then (<color:green>yes)
+                #WhiteSmoke:chr = Convert.ToChar(input[i] + 13);
+            else (<color:red>no)
+                if (chr >= 'n' && chr <= 'z') then (<color:green>yes)
+                        #WhiteSmoke:chr = Convert.ToChar(input[i] - 13);
+                endif
+        endif
+        #WhiteSmoke:result += chr;
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

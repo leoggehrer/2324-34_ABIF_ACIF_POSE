@@ -5,9 +5,9 @@ start
 #LightSkyBlue:int result = 0;
 #LightSkyBlue:int i = 0;
 while (i < tip.Numbers.Length) is (<color:green>yes)
-    if (number == tip.Numbers[i]) then (<color:green>yes)
-        #WhiteSmoke:result++;
-    endif
+        if (number == tip.Numbers[i]) then (<color:green>yes)
+                #WhiteSmoke:result++;
+        endif
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;

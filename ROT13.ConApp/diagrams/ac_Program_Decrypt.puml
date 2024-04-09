@@ -1,0 +1,7 @@
+@startuml Program.Decrypt
+title Program.Decrypt
+start
+#LightGreen:Params(string encrypted);
+#Lavender:return Encrypt(encrypted);
+stop
+@enduml

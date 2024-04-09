@@ -1,0 +1,39 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
+participant "Console.ReadKey()" as Console_ReadKey #LightGreen
+autonumber
+Main_p0 -> Console_WriteLine_a0 : ("CalculatorWithSwitch")
+Main_p0 -> Console_WriteLine_a0 : ("====================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Eingabe Zahl 1: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : left
+Main_p0 -> Console_Write_a0 : ("Eingabe Zahl 2: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : right
+Main_p0 -> Console_Write_a0 : ("Eingabe Operation [+, -, *, /]: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : operation
+Main_p0 -> Console_WriteLine
+alt operation == "+" || operation == "-" || operation == "*" || operation == "/"
+    Main_p0 -> Console_WriteLine_a0 : ($"{left,10:f}")
+    Main_p0 -> Console_WriteLine_a0 : ($"{operation}{right,9:f}")
+    Main_p0 -> Console_WriteLine_a0 : ("----------")
+    Main_p0 -> Console_WriteLine_a0 : ($"{result,10:f}")
+    else
+        Main_p0 -> Console_WriteLine_a0 : ("Ungültige Operation!")
+end
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
+@enduml

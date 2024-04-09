@@ -1,32 +1,32 @@
-title:Program.Main
+title:Program.Main (AC)
 fileName:ac_Program_Main.puml
-generated_on:19.03.2024 20:13:13
+generated_on:09.04.2024 09:47:18
 generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.ReadTippsFromFile
+title:Program.ReadTippsFromFile (AC)
 fileName:ac_Program_ReadTippsFromFile.puml
-generated_on:19.03.2024 20:13:13
+generated_on:09.04.2024 09:47:18
 generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.PrintTipps
+title:Program.PrintTipps (AC)
 fileName:ac_Program_PrintTipps.puml
-generated_on:19.03.2024 20:13:13
+generated_on:09.04.2024 09:47:18
 generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.WriteTippsToFile
+title:Program.WriteTippsToFile (AC)
 fileName:ac_Program_WriteTippsToFile.puml
-generated_on:19.03.2024 20:13:13
+generated_on:09.04.2024 09:47:18
 generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.GetCorrectTipps
+title:Program.GetCorrectTipps (AC)
 fileName:ac_Program_GetCorrectTipps.puml
-generated_on:19.03.2024 20:13:13
+generated_on:09.04.2024 09:47:18
 generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.GetIncorrectTipps
+title:Program.GetIncorrectTipps (AC)
 fileName:ac_Program_GetIncorrectTipps.puml
-generated_on:19.03.2024 20:13:13
+generated_on:09.04.2024 09:47:18
 generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.IsTipValid
+title:Program.IsTipValid (AC)
 fileName:ac_Program_IsTipValid.puml
-generated_on:19.03.2024 20:13:13
+generated_on:09.04.2024 09:47:18
 generated_by:generated with the DiagramCreator by Prof.Gehrer
-title:Program.CountNumberInTip
+title:Program.CountNumberInTip (AC)
 fileName:ac_Program_CountNumberInTip.puml
-generated_on:19.03.2024 20:13:13
+generated_on:09.04.2024 09:47:18
 generated_by:generated with the DiagramCreator by Prof.Gehrer

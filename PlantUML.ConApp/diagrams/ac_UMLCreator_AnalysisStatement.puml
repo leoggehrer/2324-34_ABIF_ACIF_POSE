@@ -1,0 +1,119 @@
+@startuml UMLCreator.AnalysisStatement
+title UMLCreator.AnalysisStatement
+start
+#LightGreen:Params(SyntaxNode syntaxNode,List<string> diagramData,int level);
+if (syntaxNode is LocalDeclarationStatementSyntax localDeclarationStatement) then (<color:green>yes)
+        #WhiteSmoke:diagramData.Add($":{localDeclarationStatement.Declaration};".SetIndent(level));
+    else (<color:red>no)
+        if (syntaxNode is ExpressionStatementSyntax expressionStatement) then (<color:green>yes)
+                #LightSkyBlue:var expression = expressionStatement.ToString();
+                #WhiteSmoke:expression = expression.Replace("PrintLine", "PrintLine");
+                #WhiteSmoke:expression = expression.Replace("PrintLine", "PrintLine");
+                #WhiteSmoke:expression = expression.Replace("Print", "Print");
+                #WhiteSmoke:expression = expression.Replace("Print", "Print");
+                #WhiteSmoke:expression = expression.Replace("ReadLine", "ReadLine");
+                #WhiteSmoke:expression = expression.Replace("ReadLine", "ReadLine");
+                #WhiteSmoke:expression = expression.Replace("Read", "Read");
+                #WhiteSmoke:expression = expression.Replace("Read", "Read");
+                #WhiteSmoke:diagramData.Add($":{expression}".SetIndent(level));
+            else (<color:red>no)
+                if (syntaxNode is BlockSyntax blockSyntax) then (<color:green>yes)
+                        :iterator = blockSyntax.ChildNodes().GetIterator();
+                        while (iterator.MoveNext()) is (<color:green>yes)
+                        :node = iterator.Current();
+                                                            if (node is StatementSyntax statementSyntax) then (<color:green>yes)
+                                                                    #WhiteSmoke:AnalysisStatement(statementSyntax, diagramData, level + 1);
+                                                            endif
+                        endwhile (<color:red>no)
+                    else (<color:red>no)
+                        if (syntaxNode is IfStatementSyntax ifStatement) then (<color:green>yes)
+                                #WhiteSmoke:diagramData.Add($"if ({ifStatement.Condition}) then (yes)".SetIndent(level));
+                                #WhiteSmoke:AnalysisStatement(ifStatement.Statement, diagramData, level + 1);
+                                if (ifStatement.Else != null) then (<color:green>yes)
+                                    #WhiteSmoke:AnalysisStatement(ifStatement.Else, diagramData, level + 1);
+                                endif
+                                #WhiteSmoke:diagramData.Add("endif".SetIndent(level));
+                            else (<color:red>no)
+                                if (syntaxNode is ElseClauseSyntax elseClause) then (<color:green>yes)
+                                        #WhiteSmoke:diagramData.Add($"else (no)".SetIndent(level));
+                                        #WhiteSmoke:AnalysisStatement(elseClause.Statement, diagramData, level + 1);
+                                    else (<color:red>no)
+                                        if (syntaxNode is SwitchStatementSyntax switchStatement) then (<color:green>yes)
+                                                #WhiteSmoke:diagramData.Add($"switch ({switchStatement.Expression})".SetIndent(level));
+                                                :iterator = switchStatement.Sections.GetIterator();
+                                                while (iterator.MoveNext()) is (<color:green>yes)
+                                                :section = iterator.Current();
+                                                                                                            #LightSkyBlue:var labels = $"{section.Labels}".Replace("case", "case(");
+                                                                                                            if (labels.Contains("default:")) then (<color:green>yes)
+                                                                                                                #WhiteSmoke:labels = labels.Replace("default:", "case ( default )");
+                                                                                                                else (<color:red>no)
+                                                                                                                    #WhiteSmoke:labels = labels.Replace(":", " )");
+                                                                                                            endif
+                                                                                                            #WhiteSmoke:diagramData.Add($"{labels}".SetIndent(level + 1));
+                                                                                                            :iterator = section.ChildNodes().GetIterator();
+                                                                                                            while (iterator.MoveNext()) is (<color:green>yes)
+                                                                                                            :node = iterator.Current();
+                                                                                                                                                                                if (node is StatementSyntax statementSyntax) then (<color:green>yes)
+                                                                                                                                                                                        #WhiteSmoke:AnalysisStatement(statementSyntax, diagramData, level + 1);
+                                                                                                                                                                                endif
+                                                                                                            endwhile (<color:red>no)
+                                                endwhile (<color:red>no)
+                                                #WhiteSmoke:diagramData.Add("endswitch".SetIndent(level));
+                                            else (<color:red>no)
+                                                if (syntaxNode is BreakStatementSyntax breakStatement) then (<color:green>yes)
+                                                        #WhiteSmoke:System.Diagnostics.Debug.WriteLine($"{nameof(breakStatement)} is known but not used!");
+                                                    else (<color:red>no)
+                                                        if (syntaxNode is ContinueStatementSyntax continueStatement) then (<color:green>yes)
+                                                                #WhiteSmoke:System.Diagnostics.Debug.WriteLine($"{nameof(continueStatement)} is known but not used!");
+                                                            else (<color:red>no)
+                                                                if (syntaxNode is DoStatementSyntax doStatement) then (<color:green>yes)
+                                                                        #WhiteSmoke:diagramData.Add("repeat".SetIndent(level));
+                                                                        #WhiteSmoke:AnalysisStatement(doStatement.Statement, diagramData, level + 1);
+                                                                        #WhiteSmoke:diagramData.Add($"repeat while ({doStatement.Condition}) is (yes)".SetIndent(level));
+                                                                    else (<color:red>no)
+                                                                        if (syntaxNode is WhileStatementSyntax whileStatement) then (<color:green>yes)
+                                                                                #WhiteSmoke:diagramData.Add($"while ({whileStatement.Condition}) is (yes)".SetIndent(level));
+                                                                                #WhiteSmoke:AnalysisStatement(whileStatement.Statement, diagramData, level + 1);
+                                                                                #WhiteSmoke:diagramData.Add("endwhile (no)".SetIndent(level));
+                                                                            else (<color:red>no)
+                                                                                if (syntaxNode is ForStatementSyntax forStatement) then (<color:green>yes)
+                                                                                        #WhiteSmoke:diagramData.Add($":{forStatement.Declaration};".SetIndent(level));
+                                                                                        #WhiteSmoke:diagramData.Add($"while ({forStatement.Condition}) is (yes)".SetIndent(level));
+                                                                                        #WhiteSmoke:AnalysisStatement(forStatement.Statement, diagramData, level + 1);
+                                                                                        if (forStatement.Incrementors.Count > 0) then (<color:green>yes)
+                                                                                            #WhiteSmoke:diagramData.Add($":{forStatement.Incrementors};".SetIndent(level));
+                                                                                        endif
+                                                                                        #WhiteSmoke:diagramData.Add("endwhile (no)".SetIndent(level));
+                                                                                    else (<color:red>no)
+                                                                                        if (syntaxNode is ForEachStatementSyntax forEachStatement) then (<color:green>yes)
+                                                                                                #LightSkyBlue:var statements = new List<string>();
+                                                                                                #WhiteSmoke:diagramData.Add($":iterator = {forEachStatement.Expression}.GetIterator();".SetIndent(level));
+                                                                                                #WhiteSmoke:diagramData.Add($"while (iterator.MoveNext()) is (yes)".SetIndent(level));
+                                                                                                #WhiteSmoke:diagramData.Add($":current = iterator.Current();".SetIndent(level));
+                                                                                                #WhiteSmoke:AnalysisStatement(forEachStatement.Statement, statements, level + 1);
+                                                                                                :iterator = statements.GetIterator();
+                                                                                                while (iterator.MoveNext()) is (<color:green>yes)
+                                                                                                :statement = iterator.Current();
+                                                                                                                                                                                                            #WhiteSmoke:diagramData.Add(statement.Replace(forEachStatement.Identifier.ToString(), "current").SetIndent(level + 1));
+                                                                                                endwhile (<color:red>no)
+                                                                                                #WhiteSmoke:diagramData.Add("endwhile (no)".SetIndent(level));
+                                                                                            else (<color:red>no)
+                                                                                                if (syntaxNode is ReturnStatementSyntax returnStatement) then (<color:green>yes)
+                                                                                                        #WhiteSmoke:System.Diagnostics.Debug.WriteLine($"{nameof(returnStatement)} is known but not used!");
+                                                                                                    else (<color:red>no)
+                                                                                                            #WhiteSmoke:System.Diagnostics.Debug.WriteLine($"{syntaxNode.GetType().Name} is unknown!");
+                                                                                                endif
+                                                                                        endif
+                                                                                endif
+                                                                        endif
+                                                                endif
+                                                        endif
+                                                endif
+                                        endif
+                                endif
+                        endif
+                endif
+        endif
+endif
+stop
+@enduml

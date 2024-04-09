@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 03.04.2024 13:40:42
+generated on 09.04.2024 09:47:12
 end header
 title CompleteActivityDiagram
 start
@@ -21,9 +21,7 @@ stop
 start
 note right:  Program.AddBigInteger
 #LightGreen:Params(string number1,string number2);
-#LightSkyBlue:string result = string.Empty
-int maxNumber = Math.Max(number1.Length, number2.Length) + 1
-bool carry = false;
+#LightSkyBlue:string result = string.Empty\nint maxNumber = Math.Max(number1.Length, number2.Length) + 1\nbool carry = false;
 #WhiteSmoke:number1 = AddLeadingCharacters(number1, '0', maxNumber - number1.Length);
 #WhiteSmoke:number2 = AddLeadingCharacters(number2, '0', maxNumber - number2.Length);
 #LightSkyBlue:int i = number1.Length - 1;
@@ -43,8 +41,7 @@ stop
 start
 note right:  Program.AddLeadingCharacters
 #LightGreen:Params(string number,char chr,int count);
-#LightSkyBlue:string result = number
-int length = number.Length + count;
+#LightSkyBlue:string result = number\nint length = number.Length + count;
 while (result.Length < length) is (<color:green>yes)
         #WhiteSmoke:result = chr + result;
 endwhile (<color:red>no)
@@ -53,8 +50,7 @@ stop
 start
 note right:  Program.ReadBigInteger
 #LightGreen:Params(string prompt);
-#LightSkyBlue:string result
-bool validInput;
+#LightSkyBlue:string result\nbool validInput;
 repeat
         #WhiteSmoke:Print(prompt);
         #WhiteSmoke:result = ReadLine();
@@ -68,8 +64,7 @@ stop
 start
 note right:  Program.IsBigNumber
 #LightGreen:Params(string number);
-#LightSkyBlue:bool result = number.Length > 0
-int idx = 0;
+#LightSkyBlue:bool result = number.Length > 0\nint idx = 0;
 while (idx < number.Length && result) is (<color:green>yes)
         #WhiteSmoke:result = char.IsDigit(number[idx++]);
 endwhile (<color:red>no)

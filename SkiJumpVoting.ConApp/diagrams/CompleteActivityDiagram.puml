@@ -1,0 +1,77 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:24
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:double far, points\ndouble[] posturePoints;
+#WhiteSmoke:PrintLine("Notenermittlung für Skispringer");
+#WhiteSmoke:PrintLine("===============================");
+#WhiteSmoke:far = ReadJumpFar();
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:posturePoints = ReadPosturePoints(5);
+#WhiteSmoke:points = CalculateJump(far) + CalculatePosturePoints(posturePoints);
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"Weitenpunkte: {CalculateJump(far):f} Haltungsnote: {CalculatePosturePoints(posturePoints):f} Gesamt: {points:f}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Beenden mit Eingabetaste... ");
+#WhiteSmoke:ReadLine();
+stop
+start
+note right:  Program.CalculateJump
+#LightGreen:Params(double far);
+#WhiteSmoke:far = (int)far;
+#Lavender:return far >= 120 ? 60 + (far - 120) * 1.8 : far * 1.8;
+stop
+start
+note right:  Program.CalculatePosturePoints
+#LightGreen:Params(double[] posturePoints);
+#LightSkyBlue:double result = 0\ndouble max = Double.MinValue\ndouble min = Double.MaxValue;
+#LightSkyBlue:int i = 0;
+while (i < posturePoints.Length) is (<color:green>yes)
+        if (posturePoints[i] > max) then (<color:green>yes)
+                #WhiteSmoke:max = posturePoints[i];
+        endif
+        if (posturePoints[i] < min) then (<color:green>yes)
+                #WhiteSmoke:min = posturePoints[i];
+        endif
+        #WhiteSmoke:result += posturePoints[i];
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result - max - min;
+stop
+start
+note right:  Program.ReadPosturePoints
+#LightGreen:Params(int count);
+#LightSkyBlue:int idx = 0\nstring input\ndouble[] result = new double[count];
+while (idx < count) is (<color:green>yes)
+        #WhiteSmoke:Print($"Wertungsrichter {idx + 1} [0-20]: ");
+        #WhiteSmoke:input = ReadLine();
+        if (double.TryParse(input, out result[idx]) && result[idx] >= 0 && result[idx] <= 20 && (result[idx] % 1 == 0 || result[idx] % 1 == 0.5)) then (<color:green>yes)
+                #WhiteSmoke:idx++;
+            else (<color:red>no)
+                    #WhiteSmoke:PrintLine("Ungültige Eingabe!");
+        endif
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+start
+note right:  Program.ReadJumpFar
+#LightSkyBlue:double result\nstring input\nbool valid = false;
+repeat
+        #WhiteSmoke:Print($"Weite in Meter [0-200]: ");
+        #WhiteSmoke:input = ReadLine();
+        if (double.TryParse(input, out result) && result >= 0 && result <= 200) then (<color:green>yes)
+                #WhiteSmoke:valid = true;
+            else (<color:red>no)
+                    #WhiteSmoke:PrintLine("Ungültige Eingabe!");
+        endif
+repeat while (valid == false) is (<color:green>yes)
+#Lavender:return result;
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

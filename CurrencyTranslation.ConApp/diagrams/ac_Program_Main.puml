@@ -1,0 +1,48 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:bool validInput = true\nstring input, sourceCurrency\ndouble value, euroValue = 0, dollarValue = 0, francValue = 0;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Währungsrechner - Der faire Austausch von Geld  *");
+#WhiteSmoke:PrintLine("*                   EURO    -> DOLLAR             *");
+#WhiteSmoke:PrintLine("*                   EURO    -> FRANKEN            *");
+#WhiteSmoke:PrintLine("* oder              DOLLAR  -> EURO               *");
+#WhiteSmoke:PrintLine("*                   DOLLAR  -> FRANKEN            *");
+#WhiteSmoke:PrintLine("* oder              FRANKEN -> EURO               *");
+#WhiteSmoke:PrintLine("*                   FRANKEN -> DOLLAR             *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Eingabe der Ausgangswaehrung (D=Dollar, E=Euro, F=Franken): ");
+#WhiteSmoke:sourceCurrency = ReadLine().ToUpper();
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Betrag: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:value = Convert.ToDouble(input);
+switch (sourceCurrency)
+    case( "E" )
+    #WhiteSmoke:euroValue = value;
+    #WhiteSmoke:dollarValue = value * 1.06;
+    #WhiteSmoke:francValue = value * 0.95;
+    case( "F" )
+    #WhiteSmoke:francValue = value;
+    #WhiteSmoke:dollarValue = value * 1.12;
+    #WhiteSmoke:euroValue = value * 1.06;
+    case( "D" )
+    #WhiteSmoke:dollarValue = value;
+    #WhiteSmoke:francValue = value * 0.89;
+    #WhiteSmoke:euroValue = value * 0.94;
+    case ( default )
+    #WhiteSmoke:validInput = false;
+    #WhiteSmoke:PrintLine("Ungültige Eingabe!");
+endswitch
+if (validInput) then (<color:green>yes)
+        #WhiteSmoke:PrintLine($"Euro:    {euroValue:f2}");
+        #WhiteSmoke:PrintLine($"Dollar:  {dollarValue:f2}");
+        #WhiteSmoke:PrintLine($"Franken: {francValue:f2}");
+endif
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press enter to exit: ");
+#WhiteSmoke:ReadLine();
+stop
+@enduml

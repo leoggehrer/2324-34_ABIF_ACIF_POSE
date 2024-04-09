@@ -1,0 +1,17 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Program #GhostWhite {
+- {static} ConsoleColor DefaultColor = Console.ForegroundColor
+- {const} string LOGO_FILE = "logo.txt"
+---
+---
+- {static} void Main(string[] args)
+- {static} string GetFileName()
+- {static} bool PerformOperation(string fileName)
+- {static} void CreateBackup(string fileName)
+- {static} void ReverseLines(string fileName)
+- {static} void AddLineNumbers(string fileName)
+- {static} void ReplaceCharacters(string fileName)
+- {static} void PrintFile(string fileName)
+}
+@enduml

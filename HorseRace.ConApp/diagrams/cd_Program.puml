@@ -1,0 +1,19 @@
+@startuml Program
+title Program
+ class Program #GhostWhite {
+- {const} string FILE_NAME = "horses.csv"
+---
+---
+- {static} void Main(string[] args)
+- {static} void RunApp()
+- {static} void SimulateRace(Horse[] horses)
+- {static} void PrintSimulation(Horse[] horses)
+- {static} Horse[] ReadFromCsvFile(string fileName)
+- {static} void PrintHorses(Horse[] horses)
+- {static} int GetTipp(Horse[] horses)
+- {static} bool IsCorrectTipp(Horse[] horses, int tipp)
+- {static} Horse GetHorseByNumber(Horse[] horses, int number)
+- {static} int GetHorseIndexByNumber(Horse[] horses, int number)
+- {static} void SortHorsesByPosition(Horse[] horses)
+}
+@enduml

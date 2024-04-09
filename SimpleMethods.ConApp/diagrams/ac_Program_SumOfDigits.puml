@@ -1,0 +1,15 @@
+@startuml Program.SumOfDigits
+title Program.SumOfDigits
+start
+#LightGreen:Params(string text);
+#LightSkyBlue:int result = 0;
+#LightSkyBlue:int i = 0;
+while (i < text.Length) is (<color:green>yes)
+        if (Char.IsDigit(text[i])) then (<color:green>yes)
+                #WhiteSmoke:result += text[i] - '0';
+        endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

@@ -1,0 +1,19 @@
+@startuml Program.CompareAndPrintMatrix
+title Program.CompareAndPrintMatrix
+start
+#LightGreen:Params(int[,] matrix);
+#LightSkyBlue:ConsoleColor originalColor = Console.ForegroundColor;
+#LightSkyBlue:int r = 0;
+while (r < matrix.GetLength(0)) is (<color:green>yes)
+        #WhiteSmoke:CompareAndPrintMatrixValues(matrix, r);
+        #WhiteSmoke:PrintLine();
+        if (r < matrix.GetLength(0) - 1) then (<color:green>yes)
+                #WhiteSmoke:CompareAndPrintMatrixRows(matrix, r, r + 1);
+                #WhiteSmoke:PrintLine();
+        endif
+:r++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Console.ForegroundColor = originalColor;
+stop
+@enduml

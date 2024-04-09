@@ -1,0 +1,31 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+autonumber
+Main_p0 -> Console_WriteLine_a0 : ("String Search!")
+Main_p0 -> Console_WriteLine_a0 : ("==============")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Eingabetext....: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : inputText
+alt inputText != ""
+    Main_p0 -> Console_Write_a0 : ("Suchtext.......: ")
+    Main_p0 -> Console_ReadLine
+    Console_ReadLine --> Main_p0 : searchText
+    loop check && j < searchText.Length
+    end
+    alt index >= 0
+        Main_p0 -> Console_WriteLine
+        Main_p0 -> Console_WriteLine_a0 : ($"Der Suchtext wurde an der Position {index} gefunden.")
+        else
+            Main_p0 -> Console_WriteLine
+            Main_p0 -> Console_WriteLine_a0 : ($"Der Suchtext wurde nicht gefunden.")
+    end
+    Main_p0 -> Console_Write_a0 : ("Weiter mit Enter...")
+    Main_p0 -> Console_ReadLine
+end
+@enduml

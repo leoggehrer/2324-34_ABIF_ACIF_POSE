@@ -1,0 +1,20 @@
+@startuml Program.ReadJumpFar
+title Program.ReadJumpFar
+participant "ReadJumpFar" as ReadJumpFar #LightYellow
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "double.TryParse(a0,a1)" as double_TryParse_a0_a1 #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+autonumber
+loop valid == false
+    ReadJumpFar -> Console_Write_a0 : ($"Weite in Meter [0-200]: ")
+    ReadJumpFar -> Console_ReadLine
+    Console_ReadLine --> ReadJumpFar : input
+    alt double.TryParse(input, out result) && result >= 0 && result <= 200
+        ReadJumpFar -> double_TryParse_a0_a1 : (input, out result)
+        double_TryParse_a0_a1 --> ReadJumpFar : result
+        else
+            ReadJumpFar -> Console_WriteLine_a0 : ("Ungültige Eingabe!")
+    end
+end
+@enduml

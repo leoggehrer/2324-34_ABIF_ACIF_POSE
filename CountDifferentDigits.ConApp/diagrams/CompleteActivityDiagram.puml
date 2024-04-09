@@ -1,54 +1,49 @@
 @startuml CompleteActivityDiagram
 header
-generated on 13.03.2024 08:32:44
+generated on 09.04.2024 09:47:12
 end header
 title CompleteActivityDiagram
 start
 note right:  Program.Main
-#Lavender:Params(string[] args);
-:PrintLine("Count Different Digits");
-:PrintLine("======================");
-:PrintLine();
-#LightBlue:int[] digits = ReadDigits()
-string output = string.Join("", digits)
-string uniqueDigits = GetUniqueDigitsString(digits);
-:PrintLine($"Eingegebene Ziffern im Array: {output}");
-:PrintLine($"Eindeutige Ziffern im Array : {uniqueDigits}");
-:PrintLine();
-:PrintLine("Beenden mit Eingabetaste... ");
-:ReadLine();
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("Count Different Digits");
+#WhiteSmoke:PrintLine("======================");
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:int[] digits = ReadDigits()\nstring output = string.Join("", digits)\nstring uniqueDigits = GetUniqueDigitsString(digits);
+#WhiteSmoke:PrintLine($"Eingegebene Ziffern im Array: {output}");
+#WhiteSmoke:PrintLine($"Eindeutige Ziffern im Array : {uniqueDigits}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Beenden mit Eingabetaste... ");
+#WhiteSmoke:ReadLine();
 stop
 start
 note right:  Program.ReadDigits
-#LightBlue:int MAX_NUMBERS = 10
-int[] result = new int[MAX_NUMBERS]
-int count = 1, index = 0
-string input = string.Empty;
+#LightSkyBlue:int MAX_NUMBERS = 10\nint[] result = new int[MAX_NUMBERS]\nint count = 1, index = 0\nstring input = string.Empty;
 while (count <= MAX_NUMBERS) is (<color:green>yes)
-    :Print($"{count, 2}. Ziffer [0-9] eingeben: ");
-    :input = ReadLine();
-    if (int.TryParse(input, out result[index])) then (<color:green>yes)
-        if (result[index] < 0 || result[index] > 9) then (<color:green>yes)
-            :PrintLine("Fehleingabe, Ziffer muss zwischen 0 und 9 liegen!");
-          else (<color:red>no)
-              :count++;
-              :index++;
+        #WhiteSmoke:Print($"{count, 2}. Ziffer [0-9] eingeben: ");
+        #WhiteSmoke:input = ReadLine();
+        if (int.TryParse(input, out result[index])) then (<color:green>yes)
+                if (result[index] < 0 || result[index] > 9) then (<color:green>yes)
+                        #WhiteSmoke:PrintLine("Fehleingabe, Ziffer muss zwischen 0 und 9 liegen!");
+                    else (<color:red>no)
+                            #WhiteSmoke:count++;
+                            #WhiteSmoke:index++;
+                endif
+            else (<color:red>no)
+                    #WhiteSmoke:PrintLine("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!");
         endif
-      else (<color:red>no)
-          :PrintLine("Fehleingabe, es muss eine Ziffer zwischen 0 und 9 sein!");
-    endif
 endwhile (<color:red>no)
 #Lavender:return result;
 stop
 start
 note right:  Program.GetUniqueDigitsString
-#Lavender:Params(int[] digits);
-#LightBlue:string result = string.Empty;
-#LightBlue:int i = 0;
+#LightGreen:Params(int[] digits);
+#LightSkyBlue:string result = string.Empty;
+#LightSkyBlue:int i = 0;
 while (i < digits.Length) is (<color:green>yes)
-    if (result.Contains(digits[i].ToString()) == false) then (<color:green>yes)
-        :result += digits[i].ToString();
-    endif
+        if (result.Contains(digits[i].ToString()) == false) then (<color:green>yes)
+                #WhiteSmoke:result += digits[i].ToString();
+        endif
 :i++;
 endwhile (<color:red>no)
 #Lavender:return result;

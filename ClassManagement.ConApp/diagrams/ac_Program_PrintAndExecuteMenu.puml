@@ -1,0 +1,25 @@
+@startuml Program.PrintAndExecuteMenu
+title Program.PrintAndExecuteMenu
+start
+#LightSkyBlue:int choice\nbool validChoice = false;
+repeat
+        #WhiteSmoke:PrintLine("Klassen-Management");
+        #WhiteSmoke:PrintLine("==================");
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:PrintLine("1 - Neuen Schüler einlesen");
+        #WhiteSmoke:PrintLine("2 - Schüler nach Katalognummer sortieren");
+        #WhiteSmoke:PrintLine("3 - Schüler nach Familiennamen sortieren");
+        #WhiteSmoke:PrintLine("4 - Schülerliste ausgeben");
+        #WhiteSmoke:PrintLine("5 - Schüler nach Familiennamen suchen und ausgeben");
+        #WhiteSmoke:PrintLine("6 - Schüler nach Postleitzahl suchen und ausgeben");
+        #WhiteSmoke:PrintLine("7 - Schülerliste speichern");
+        #WhiteSmoke:PrintLine("8 - Beenden");
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:Print("Ihre Wahl: ");
+        if (int.TryParse(Console.ReadLine(), out choice)) then (<color:green>yes)
+                #WhiteSmoke:validChoice = choice >= 1 && choice <= 8;
+        endif
+repeat while (validChoice == false) is (<color:green>yes)
+#Lavender:return choice;
+stop
+@enduml

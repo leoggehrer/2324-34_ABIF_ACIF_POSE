@@ -1,0 +1,20 @@
+@startuml Program.CreateMatrix
+title Program.CreateMatrix
+participant "CreateMatrix(introws,intcols)" as CreateMatrix_p0_p1 #LightYellow
+participant "Math.Max(a0,a1)" as Math_Max_a0_a1 #LightGreen
+participant "result.GetLength(a0)" as result_GetLength_a0 #LightGreen
+participant "Random.Shared.Next(a0,a1)" as Random_Shared_Next_a0_a1 #LightGreen
+autonumber
+CreateMatrix_p0_p1 -> Math_Max_a0_a1 : (0, rows)
+CreateMatrix_p0_p1 -> Math_Max_a0_a1 : (0, cols)
+loop i < result.GetLength(0)
+    CreateMatrix_p0_p1 -> result_GetLength_a0 : (0)
+    result_GetLength_a0 --> CreateMatrix_p0_p1 : result
+    loop j < result.GetLength(1)
+        CreateMatrix_p0_p1 -> result_GetLength_a0 : (1)
+        result_GetLength_a0 --> CreateMatrix_p0_p1 : result
+        CreateMatrix_p0_p1 -> Random_Shared_Next_a0_a1 : (MIN_NUMBER, MAX_NUMBER + 1)
+        Random_Shared_Next_a0_a1 --> CreateMatrix_p0_p1 : result[i, j]
+    end
+end
+@enduml

@@ -2,8 +2,7 @@
 title Program.ReadBinaryNumber
 start
 #LightGreen:Params(int number);
-#LightSkyBlue:string result
-bool validInput;
+#LightSkyBlue:string result\nbool validInput;
 repeat
         #WhiteSmoke:Print($"Geben Sie die {number}. Binärzahl ein: ");
         #WhiteSmoke:result = ReadLine();

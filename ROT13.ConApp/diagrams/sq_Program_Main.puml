@@ -1,0 +1,27 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[]args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "Encrypt(a0)" as Encrypt_a0 #LightGreen
+participant "Decrypt(a0)" as Decrypt_a0 #LightGreen
+autonumber
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine_a0 : ("* Einfache Verschlüsselung nach ROT13             *")
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Zu verschlüsselnden Text: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Encrypt_a0 : (input)
+Encrypt_a0 --> Main_p0 : encrypted
+Main_p0 -> Console_WriteLine_a0 : ($"Verschlüsselter Text: {encrypted}")
+Main_p0 -> Decrypt_a0 : (encrypted)
+Decrypt_a0 --> Main_p0 : decrypted
+Main_p0 -> Console_WriteLine_a0 : ($"Entschlüsselter Text: {decrypted}")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Press enter to exit...")
+Main_p0 -> Console_ReadLine
+@enduml

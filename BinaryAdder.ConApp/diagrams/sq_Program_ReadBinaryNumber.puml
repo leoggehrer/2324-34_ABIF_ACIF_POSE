@@ -1,14 +1,19 @@
 @startuml Program.ReadBinaryNumber
 title Program.ReadBinaryNumber
-participant "ReadBinaryNumber(int number)" as ReadBinaryNumber_p0 #LightYellow
+participant "ReadBinaryNumber(intnumber)" as ReadBinaryNumber_p0 #LightYellow
 participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "CheckBinaryNumber(a0)" as CheckBinaryNumber_a0 #LightGreen
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-ReadBinaryNumber_p0 -> Console_Write_a0 : ($"Geben Sie die {number}. Binärzahl ein: ")
-ReadBinaryNumber_p0 -> Console_ReadLine
-ReadBinaryNumber_p0 -> CheckBinaryNumber_a0 : (result)
-CheckBinaryNumber_a0 --> ReadBinaryNumber_p0 : result
-ReadBinaryNumber_p0 -> Console_WriteLine_a0 : ("Fehler: In einer Binärzahl sind nur 1 und 0 erlaubt!")
+loop validInput == false
+    ReadBinaryNumber_p0 -> Console_Write_a0 : ($"Geben Sie die {number}. Binärzahl ein: ")
+    ReadBinaryNumber_p0 -> Console_ReadLine
+    Console_ReadLine --> ReadBinaryNumber_p0 : result
+    ReadBinaryNumber_p0 -> CheckBinaryNumber_a0 : (result)
+    CheckBinaryNumber_a0 --> ReadBinaryNumber_p0 : validInput
+    alt !validInput
+        ReadBinaryNumber_p0 -> Console_WriteLine_a0 : ("Fehler: In einer Binärzahl sind nur 1 und 0 erlaubt!")
+    end
+end
 @enduml

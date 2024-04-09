@@ -1,0 +1,10 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
++ {static} int[] ReadDigits()
++ {static} string GetUniqueDigitsString(int[] digits)
+}
+@enduml

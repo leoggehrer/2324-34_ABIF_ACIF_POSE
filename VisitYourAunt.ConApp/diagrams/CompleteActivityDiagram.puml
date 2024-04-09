@@ -1,0 +1,36 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 09:47:25
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input\ndouble distance, speed, time\nint hour, min, sec, timeInSec;
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine("* Lieblingstante - Die Fahrt zu meiner Tante      *");
+#WhiteSmoke:PrintLine("*                  Berechnung der Ankunftszeit    *");
+#WhiteSmoke:PrintLine("***************************************************");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:Print("Enfernung in km:         ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:distance = Convert.ToDouble(input);
+#WhiteSmoke:Print("Geschwindigkeit in km/h: ");
+#WhiteSmoke:input = ReadLine();
+#WhiteSmoke:speed = Convert.ToDouble(input);
+#WhiteSmoke:time = distance / speed;
+#WhiteSmoke:timeInSec = (int)(time * 3600);
+#WhiteSmoke:hour = 10 + ((timeInSec / 3600) % 24);
+#WhiteSmoke:min = (timeInSec % 3600) / 60;
+#WhiteSmoke:sec = timeInSec % 60;
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"Für die Strecke von {distance:f2} benötigen Sie {time:f2} Stunden.");
+#WhiteSmoke:PrintLine($"Sie kommen um {hour:D2}:{min:D2}:{sec:D2} an.");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press any key to exit: ");
+#WhiteSmoke:ReadKey();
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

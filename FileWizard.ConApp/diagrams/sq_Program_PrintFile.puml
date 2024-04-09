@@ -1,0 +1,18 @@
+@startuml Program.PrintFile
+title Program.PrintFile
+participant "PrintFile(stringfileName)" as PrintFile_p0 #LightYellow
+participant "File.Exists(a0)" as File_Exists_a0 #LightGreen
+participant "File.ReadAllLines(a0)" as File_ReadAllLines_a0 #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+autonumber
+alt File.Exists(fileName)
+    PrintFile_p0 -> File_Exists_a0 : (fileName)
+    PrintFile_p0 -> File_ReadAllLines_a0 : (fileName)
+    File_ReadAllLines_a0 --> PrintFile_p0 : lines
+    loop lines
+        PrintFile_p0 -> Console_WriteLine_a0 : (line)
+    end
+    else
+        PrintFile_p0 -> Console_WriteLine_a0 : ($"Die Datei '{fileName}' existiert nicht!")
+end
+@enduml
