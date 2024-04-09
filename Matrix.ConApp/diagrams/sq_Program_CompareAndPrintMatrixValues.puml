@@ -4,24 +4,24 @@ participant "CompareAndPrintMatrixValues(int[,]matrix,introw)" as CompareAndPrin
 participant "matrix.GetLength(a0)" as matrix_GetLength_a0 #LightGreen
 participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 autonumber
-loop#LightCoral c < matrix.GetLength(1)
-    CompareAndPrintMatrixValues_p0_p1 -[#grey]> matrix_GetLength_a0 : (1)
-    matrix_GetLength_a0 -[#blue]-> CompareAndPrintMatrixValues_p0_p1 : result
-    CompareAndPrintMatrixValues_p0_p1 -[#grey]> Console_Write_a0 : ($"{matrix[row, c]}")
-    alt#LightBlue c < matrix.GetLength(1) - 1
-        CompareAndPrintMatrixValues_p0_p1 -[#grey]> matrix_GetLength_a0 : (1)
-        matrix_GetLength_a0 -[#blue]-> CompareAndPrintMatrixValues_p0_p1 : result
-        alt#LightBlue matrix[row, c] > matrix[row, c + 1]
-            CompareAndPrintMatrixValues_p0_p1 -[#grey]> Console_Write_a0 : (" > ")
+loop c < matrix.GetLength(1)
+    CompareAndPrintMatrixValues_p0_p1 -> matrix_GetLength_a0 : (1)
+    matrix_GetLength_a0 --> CompareAndPrintMatrixValues_p0_p1 : result
+    CompareAndPrintMatrixValues_p0_p1 -> Console_Write_a0 : ($"{matrix[row, c]}")
+    alt c < matrix.GetLength(1) - 1
+        CompareAndPrintMatrixValues_p0_p1 -> matrix_GetLength_a0 : (1)
+        matrix_GetLength_a0 --> CompareAndPrintMatrixValues_p0_p1 : result
+        alt matrix[row, c] > matrix[row, c + 1]
+            CompareAndPrintMatrixValues_p0_p1 -> Console_Write_a0 : (" > ")
             else
-                alt#LightBlue matrix[row, c] < matrix[row, c + 1]
-                    CompareAndPrintMatrixValues_p0_p1 -[#grey]> Console_Write_a0 : (" < ")
+                alt matrix[row, c] < matrix[row, c + 1]
+                    CompareAndPrintMatrixValues_p0_p1 -> Console_Write_a0 : (" < ")
                     else
-                        CompareAndPrintMatrixValues_p0_p1 -[#grey]> Console_Write_a0 : (" = ")
+                        CompareAndPrintMatrixValues_p0_p1 -> Console_Write_a0 : (" = ")
                 end
         end
         else
-            CompareAndPrintMatrixValues_p0_p1 -[#grey]> Console_Write_a0 : (" ")
+            CompareAndPrintMatrixValues_p0_p1 -> Console_Write_a0 : (" ")
     end
 end
 @enduml

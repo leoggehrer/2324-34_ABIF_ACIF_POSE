@@ -1,0 +1,76 @@
+@startuml CompleteActivityDiagram
+header
+generated on 09.04.2024 22:12:12
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input;
+#WhiteSmoke:PrintLine("********************");
+#WhiteSmoke:PrintLine("* UPNCalculator    *");
+#WhiteSmoke:PrintLine("********************");
+#WhiteSmoke:PrintLine();
+repeat
+        #WhiteSmoke:Print("Rechenoperation [Enter...Exit]:  ");
+        #WhiteSmoke:input = ReadLine();
+        if (input != string.Empty) then (<color:green>yes)
+                #LightSkyBlue:double result = Parse(input);
+                #WhiteSmoke:PrintLine($"{input} = {result}");
+        endif
+repeat while (input != string.Empty) is (<color:green>yes)
+stop
+start
+note right:  Program.Parse
+#LightGreen:Params(string input);
+#LightSkyBlue:string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries)\nStack stack= new Stack();
+#LightSkyBlue:int i = 0;
+while (i < parts.Length) is (<color:green>yes)
+        if (parts[i] == "+") then (<color:green>yes)
+                #LightSkyBlue:double b = stack.Pop();
+                #LightSkyBlue:double a = stack.Pop();
+                #WhiteSmoke:stack.Push(a + b);
+            else (<color:red>no)
+                if (parts[i] == "-") then (<color:green>yes)
+                        #LightSkyBlue:double b = stack.Pop();
+                        #LightSkyBlue:double a = stack.Pop();
+                        #WhiteSmoke:stack.Push(a - b);
+                    else (<color:red>no)
+                        if (parts[i] == "*") then (<color:green>yes)
+                                #LightSkyBlue:double b = stack.Pop();
+                                #LightSkyBlue:double a = stack.Pop();
+                                #WhiteSmoke:stack.Push(a * b);
+                            else (<color:red>no)
+                                if (parts[i] == "/") then (<color:green>yes)
+                                        #LightSkyBlue:double b = stack.Pop();
+                                        #LightSkyBlue:double a = stack.Pop();
+                                        #WhiteSmoke:stack.Push(a / b);
+                                    else (<color:red>no)
+                                        if (double.TryParse(parts[i], out double opd)) then (<color:green>yes)
+                                                #WhiteSmoke:stack.Push(opd);
+                                        endif
+                                endif
+                        endif
+                endif
+        endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return stack.Pop();
+stop
+start
+note right:  Stack.Push
+#LightGreen:Params(double data);
+#WhiteSmoke:head = new Element(data, head);
+stop
+start
+note right:  Stack.Pop
+if (IsEmpty) then (<color:green>yes)
+endif
+#LightSkyBlue:Element tmp = head!;
+#WhiteSmoke:head = tmp.Next;
+#Lavender:return tmp.Data;
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

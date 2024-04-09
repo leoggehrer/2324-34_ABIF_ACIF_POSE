@@ -9,22 +9,22 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "int.TryParse(a0,a1)" as int_TryParse_a0_a1 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_Clear
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Palindrom number")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("================")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_Write_a0 : ("Number [>...0]: ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : input
-alt#LightBlue int.TryParse(input, out number) && number > 0
-    Main_p0 -[#grey]> int_TryParse_a0_a1 : (input, out number)
-    int_TryParse_a0_a1 -[#blue]-> Main_p0 : result
+Main_p0 -> Console_Clear
+Main_p0 -> Console_WriteLine_a0 : ("Palindrom number")
+Main_p0 -> Console_WriteLine_a0 : ("================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Number [>...0]: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+alt int.TryParse(input, out number) && number > 0
+    Main_p0 -> int_TryParse_a0_a1 : (input, out number)
+    int_TryParse_a0_a1 --> Main_p0 : result
     else
-        Main_p0 -[#grey]> Console_WriteLine_a0 : ("Invalid number!")
+        Main_p0 -> Console_WriteLine_a0 : ("Invalid number!")
 end
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ($"{number} {(number == reverseNumber ? "ist" : "kein")} Palindrom!")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -[#grey]> Console_ReadKey
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ($"{number} {(number == reverseNumber ? "ist" : "kein")} Palindrom!")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
 @enduml

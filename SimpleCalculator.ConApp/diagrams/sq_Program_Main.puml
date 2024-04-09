@@ -6,22 +6,22 @@ participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Einfacher Rechner")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("=================")
-Main_p0 -[#grey]> Console_Write_a0 : ("Linker Operand [double]: ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : input
-Main_p0 -[#grey]> Convert_ToDouble_a0 : (input)
-Convert_ToDouble_a0 -[#blue]-> Main_p0 : leftOpd
-Main_p0 -[#grey]> Console_Write_a0 : ("Operation [+ - * /]: ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : operation
-Main_p0 -[#grey]> Console_Write_a0 : ("Rechter Operand [double]: ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : input
-Main_p0 -[#grey]> Convert_ToDouble_a0 : (input)
-Convert_ToDouble_a0 -[#blue]-> Main_p0 : rightOpd
-Main_p0 -[#grey]> Console_WriteLine_a0 : (output)
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Beenden mit der Eingabetaste")
-Main_p0 -[#grey]> Console_ReadLine
+Main_p0 -> Console_WriteLine_a0 : ("Einfacher Rechner")
+Main_p0 -> Console_WriteLine_a0 : ("=================")
+Main_p0 -> Console_Write_a0 : ("Linker Operand [double]: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : leftOpd
+Main_p0 -> Console_Write_a0 : ("Operation [+ - * /]: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : operation
+Main_p0 -> Console_Write_a0 : ("Rechter Operand [double]: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : rightOpd
+Main_p0 -> Console_WriteLine_a0 : (output)
+Main_p0 -> Console_WriteLine_a0 : ("Beenden mit der Eingabetaste")
+Main_p0 -> Console_ReadLine
 @enduml

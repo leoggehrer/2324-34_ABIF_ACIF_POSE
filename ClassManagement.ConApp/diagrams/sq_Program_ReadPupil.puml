@@ -8,24 +8,24 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Console.ReadLine().ToLower().Equals(a0)" as Console_ReadLine_ToLower_Equals_a0 #LightGreen
 participant "Console.ReadLine().ToLower()" as Console_ReadLine_ToLower #LightGreen
 autonumber
-loop#LightCoral Console.ReadLine().ToLower().Equals("j") && idx != -1
-    alt#LightBlue idx == -1
-        ReadPupil_p0 -[#grey]> Console_WriteLine_a0 : ("Kein Speicherplatz mehr verfügbar!")
+loop Console.ReadLine().ToLower().Equals("j") && idx != -1
+    alt idx == -1
+        ReadPupil_p0 -> Console_WriteLine_a0 : ("Kein Speicherplatz mehr verfügbar!")
         else
-            ReadPupil_p0 -[#grey]> Console_Write_a0 : ("Katalognummer: ")
-            ReadPupil_p0 -[#grey]> int_Parse_a0 : (Console.ReadLine())
-            int_Parse_a0 -[#blue]-> ReadPupil_p0 : pupil.CatalogNumber
-            ReadPupil_p0 -[#grey]> Console_Write_a0 : ("Vorname: ")
-            ReadPupil_p0 -[#grey]> Console_ReadLine
-            Console_ReadLine -[#blue]-> ReadPupil_p0 : pupil.FirstName
-            ReadPupil_p0 -[#grey]> Console_Write_a0 : ("Familienname: ")
-            ReadPupil_p0 -[#grey]> Console_ReadLine
-            Console_ReadLine -[#blue]-> ReadPupil_p0 : pupil.LastName
-            ReadPupil_p0 -[#grey]> Console_Write_a0 : ("PLZ: ")
-            ReadPupil_p0 -[#grey]> Console_ReadLine
-            Console_ReadLine -[#blue]-> ReadPupil_p0 : pupil.PostalCode
-            ReadPupil_p0 -[#grey]> Console_Write_a0 : ("Weiteren Schüler einlesen (j/n)? ")
+            ReadPupil_p0 -> Console_Write_a0 : ("Katalognummer: ")
+            ReadPupil_p0 -> int_Parse_a0 : (Console.ReadLine())
+            int_Parse_a0 --> ReadPupil_p0 : pupil.CatalogNumber
+            ReadPupil_p0 -> Console_Write_a0 : ("Vorname: ")
+            ReadPupil_p0 -> Console_ReadLine
+            Console_ReadLine --> ReadPupil_p0 : pupil.FirstName
+            ReadPupil_p0 -> Console_Write_a0 : ("Familienname: ")
+            ReadPupil_p0 -> Console_ReadLine
+            Console_ReadLine --> ReadPupil_p0 : pupil.LastName
+            ReadPupil_p0 -> Console_Write_a0 : ("PLZ: ")
+            ReadPupil_p0 -> Console_ReadLine
+            Console_ReadLine --> ReadPupil_p0 : pupil.PostalCode
+            ReadPupil_p0 -> Console_Write_a0 : ("Weiteren Schüler einlesen (j/n)? ")
     end
-    ReadPupil_p0 -[#grey]> Console_ReadLine_ToLower_Equals_a0 : ("j")
+    ReadPupil_p0 -> Console_ReadLine_ToLower_Equals_a0 : ("j")
 end
 @enduml

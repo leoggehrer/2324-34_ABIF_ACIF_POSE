@@ -6,13 +6,13 @@ participant "File.ReadAllLines(a0)" as File_ReadAllLines_a0 #LightGreen
 participant "lines[i].Split(a0)" as lines_i_Split_a0 #LightGreen
 participant "int.Parse(a0)" as int_Parse_a0 #LightGreen
 autonumber
-alt#LightBlue File.Exists(fileName)
-    ReadPupilsFromCsvFile_p0 -[#grey]> File_Exists_a0 : (fileName)
-    ReadPupilsFromCsvFile_p0 -[#grey]> File_ReadAllLines_a0 : (fileName)
-    File_ReadAllLines_a0 -[#blue]-> ReadPupilsFromCsvFile_p0 : lines
-    ReadPupilsFromCsvFile_p0 -[#grey]> lines_i_Split_a0 : (';')
-    lines_i_Split_a0 -[#blue]-> ReadPupilsFromCsvFile_p0 : data
-    ReadPupilsFromCsvFile_p0 -[#grey]> int_Parse_a0 : (data[0])
-    int_Parse_a0 -[#blue]-> ReadPupilsFromCsvFile_p0 : CatalogNumber
+alt File.Exists(fileName)
+    ReadPupilsFromCsvFile_p0 -> File_Exists_a0 : (fileName)
+    ReadPupilsFromCsvFile_p0 -> File_ReadAllLines_a0 : (fileName)
+    File_ReadAllLines_a0 --> ReadPupilsFromCsvFile_p0 : lines
+    ReadPupilsFromCsvFile_p0 -> lines_i_Split_a0 : (';')
+    lines_i_Split_a0 --> ReadPupilsFromCsvFile_p0 : data
+    ReadPupilsFromCsvFile_p0 -> int_Parse_a0 : (data[0])
+    int_Parse_a0 --> ReadPupilsFromCsvFile_p0 : CatalogNumber
 end
 @enduml

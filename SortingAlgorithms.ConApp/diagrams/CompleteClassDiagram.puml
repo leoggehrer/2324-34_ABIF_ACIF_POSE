@@ -1,14 +1,5 @@
 @startuml CompleteClassDiagram
 title CompleteClassDiagram
- class Program #GhostWhite {
----
----
-- {static} void Main(string[] args)
-- {static} void PrintArray(string title, int[] array)
-- {static} void PrintArray(int[] array)
-- {static} int[] CreateRandomArray(int size)
-- {static} int[] CreateRandomArray(int size, int min, int max)
-}
 {static} class Sort #GhostWhite {
 ---
 ---
@@ -17,5 +8,14 @@ title CompleteClassDiagram
 + {static} void InsertionSort(int[] array)
 + {static} void SelectionSort(int[] array)
 + {static} void Swap(int v1, int v2)
+}
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} void PrintArray(string title, int[] array)
+- {static} void PrintArray(int[] array)
+- {static} int[] CreateRandomArray(int size)
+- {static} int[] CreateRandomArray(int size, int min, int max)
 }
 @enduml

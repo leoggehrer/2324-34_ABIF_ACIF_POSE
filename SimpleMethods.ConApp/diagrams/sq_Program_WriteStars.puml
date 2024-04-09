@@ -4,8 +4,8 @@ participant "WriteStars(intcount)" as WriteStars_p0 #LightYellow
 participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 autonumber
-loop#LightCoral i < count
-    WriteStars_p0 -[#grey]> Console_Write_a0 : ("*")
+loop i < count
+    WriteStars_p0 -> Console_Write_a0 : ("*")
 end
-WriteStars_p0 -[#grey]> Console_WriteLine
+WriteStars_p0 -> Console_WriteLine
 @enduml

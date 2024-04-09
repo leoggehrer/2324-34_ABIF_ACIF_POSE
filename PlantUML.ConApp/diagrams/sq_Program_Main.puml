@@ -9,18 +9,18 @@ participant "Path.Combine(a0,a1)" as Path_Combine_a0_a1 #LightGreen
 participant "File.ReadAllText(a0)" as File_ReadAllText_a0 #LightGreen
 participant "UMLCreator.CreateActivityDiagram(a0,a1)" as UMLCreator_CreateActivityDiagram_a0_a1 #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("PlantUML-Creator")
-Main_p0 -[#grey]> GetCurrentSolutionPath
-GetCurrentSolutionPath -[#blue]-> Main_p0 : slnPath
-Main_p0 -[#grey]> GetSourceCodeFiles_a0_a1 : (slnPath, ["*.cs"])
-GetSourceCodeFiles_a0_a1 -[#blue]-> Main_p0 : files
-loop#LightCoral files
-    Main_p0 -[#grey]> Path_GetDirectoryName_a0 : (file)
-    Path_GetDirectoryName_a0 -[#blue]-> Main_p0 : sourcePath
-    Main_p0 -[#grey]> Path_Combine_a0_a1 : (sourcePath!, "Diagrams")
-    Path_Combine_a0_a1 -[#blue]-> Main_p0 : diagramsPath
-    Main_p0 -[#grey]> File_ReadAllText_a0 : (file!)
-    File_ReadAllText_a0 -[#blue]-> Main_p0 : source
-    Main_p0 -[#grey]> UMLCreator_CreateActivityDiagram_a0_a1 : (diagramsPath, source)
+Main_p0 -> Console_WriteLine_a0 : ("PlantUML-Creator")
+Main_p0 -> GetCurrentSolutionPath
+GetCurrentSolutionPath --> Main_p0 : slnPath
+Main_p0 -> GetSourceCodeFiles_a0_a1 : (slnPath, ["*.cs"])
+GetSourceCodeFiles_a0_a1 --> Main_p0 : files
+loop files
+    Main_p0 -> Path_GetDirectoryName_a0 : (file)
+    Path_GetDirectoryName_a0 --> Main_p0 : sourcePath
+    Main_p0 -> Path_Combine_a0_a1 : (sourcePath!, "Diagrams")
+    Path_Combine_a0_a1 --> Main_p0 : diagramsPath
+    Main_p0 -> File_ReadAllText_a0 : (file!)
+    File_ReadAllText_a0 --> Main_p0 : source
+    Main_p0 -> UMLCreator_CreateActivityDiagram_a0_a1 : (diagramsPath, source)
 end
 @enduml

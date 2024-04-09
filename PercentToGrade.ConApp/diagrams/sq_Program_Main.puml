@@ -8,21 +8,21 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Prozent --> Noten")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("=================")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_Write_a0 : ("Eingabe Prozentwert: ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : input
-Main_p0 -[#grey]> Convert_ToDouble_a0 : (input)
-Convert_ToDouble_a0 -[#blue]-> Main_p0 : percentValue
-Main_p0 -[#grey]> Console_WriteLine
-alt#LightBlue grade == -1
-    Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ungültige Eingabe!")
+Main_p0 -> Console_WriteLine_a0 : ("Prozent --> Noten")
+Main_p0 -> Console_WriteLine_a0 : ("=================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Eingabe Prozentwert: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : percentValue
+Main_p0 -> Console_WriteLine
+alt grade == -1
+    Main_p0 -> Console_WriteLine_a0 : ("Ungültige Eingabe!")
     else
-        Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Note = {grade, 3}")
+        Main_p0 -> Console_WriteLine_a0 : ($"Note = {grade, 3}")
 end
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -[#grey]> Console_ReadKey
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
 @enduml

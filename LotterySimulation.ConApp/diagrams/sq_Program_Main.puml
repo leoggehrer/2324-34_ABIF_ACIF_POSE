@@ -13,29 +13,29 @@ participant "PrintResult(a0)" as PrintResult_a0 #LightGreen
 participant "EqualsTo(a0,a1)" as EqualsTo_a0_a1 #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 autonumber
-Main -[#grey]> CreateTipps_a0 : (TIPPS_COUNT)
-CreateTipps_a0 -[#blue]-> Main : lottoTipps
-Main -[#grey]> Console_WriteLine_a0 : ("Lottosimulator")
-Main -[#grey]> Console_WriteLine_a0 : ("==============")
-Main -[#grey]> Console_WriteLine
-Main -[#grey]> Console_WriteLine_a0_a1 : ("{0} Tippkolonnen", lottoTipps.GetLength(0))
-Main -[#grey]> Console_WriteLine
-Main -[#grey]> CreateTip
-CreateTip -[#blue]-> Main : thrownNumbers
-Main -[#grey]> stopWatch_Start
-Main -[#grey]> AnalyzeLottery_a0_a1 : (lottoTipps, thrownNumbers)
-AnalyzeLottery_a0_a1 -[#blue]-> Main : results
-Main -[#grey]> stopWatch_Stop
-Main -[#grey]> PrintResult_a0 : (results)
-Main -[#grey]> Console_WriteLine
-alt#LightBlue EqualsTo(results, correctResult)
-    Main -[#grey]> EqualsTo_a0_a1 : (results, correctResult)
-    EqualsTo_a0_a1 -[#blue]-> Main : result
-    Main -[#grey]> Console_WriteLine_a0 : ("Das Ergebnis ist richtig!")
+Main -> CreateTipps_a0 : (TIPPS_COUNT)
+CreateTipps_a0 --> Main : lottoTipps
+Main -> Console_WriteLine_a0 : ("Lottosimulator")
+Main -> Console_WriteLine_a0 : ("==============")
+Main -> Console_WriteLine
+Main -> Console_WriteLine_a0_a1 : ("{0} Tippkolonnen", lottoTipps.GetLength(0))
+Main -> Console_WriteLine
+Main -> CreateTip
+CreateTip --> Main : thrownNumbers
+Main -> stopWatch_Start
+Main -> AnalyzeLottery_a0_a1 : (lottoTipps, thrownNumbers)
+AnalyzeLottery_a0_a1 --> Main : results
+Main -> stopWatch_Stop
+Main -> PrintResult_a0 : (results)
+Main -> Console_WriteLine
+alt EqualsTo(results, correctResult)
+    Main -> EqualsTo_a0_a1 : (results, correctResult)
+    EqualsTo_a0_a1 --> Main : result
+    Main -> Console_WriteLine_a0 : ("Das Ergebnis ist richtig!")
     else
-        Main -[#grey]> Console_WriteLine_a0 : ("Für 1 Mio Versuche ist das Ergebnis falsch!")
+        Main -> Console_WriteLine_a0 : ("Für 1 Mio Versuche ist das Ergebnis falsch!")
 end
-Main -[#grey]> Console_WriteLine_a0_a1 : ("Rechenzeit: {0} Millisekunden!", stopWatch.ElapsedMilliseconds)
-Main -[#grey]> Console_WriteLine_a0 : ("Exit with Enter...")
-Main -[#grey]> Console_ReadLine
+Main -> Console_WriteLine_a0_a1 : ("Rechenzeit: {0} Millisekunden!", stopWatch.ElapsedMilliseconds)
+Main -> Console_WriteLine_a0 : ("Exit with Enter...")
+Main -> Console_ReadLine
 @enduml

@@ -5,22 +5,22 @@ participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Käpt'n Hooks Rätsel")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("===================")
-Main_p0 -[#grey]> Console_WriteLine
-loop#LightCoral children * age * shipLength != PARAMS_PRODUCT && age < MAX_AGE
+Main_p0 -> Console_WriteLine_a0 : ("Käpt'n Hooks Rätsel")
+Main_p0 -> Console_WriteLine_a0 : ("===================")
+Main_p0 -> Console_WriteLine
+loop children * age * shipLength != PARAMS_PRODUCT && age < MAX_AGE
 end
-alt#LightBlue children * age * shipLength == PARAMS_PRODUCT
-    Main_p0 -[#grey]> Console_WriteLine
-    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Die Lösung des Rätsels:")
-    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Anzahl der Kinder:     {children}")
-    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Alter des Kapitains:   {age}")
-    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Schiffslänge in Meter: {shipLength}")
+alt children * age * shipLength == PARAMS_PRODUCT
+    Main_p0 -> Console_WriteLine
+    Main_p0 -> Console_WriteLine_a0 : ($"Die Lösung des Rätsels:")
+    Main_p0 -> Console_WriteLine_a0 : ($"Anzahl der Kinder:     {children}")
+    Main_p0 -> Console_WriteLine_a0 : ($"Alter des Kapitains:   {age}")
+    Main_p0 -> Console_WriteLine_a0 : ($"Schiffslänge in Meter: {shipLength}")
     else
-        Main_p0 -[#grey]> Console_WriteLine
-        Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Es gibt keine Lösung für das Produkt der Parameter von {PARAMS_PRODUCT}!")
+        Main_p0 -> Console_WriteLine
+        Main_p0 -> Console_WriteLine_a0 : ($"Es gibt keine Lösung für das Produkt der Parameter von {PARAMS_PRODUCT}!")
 end
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -[#grey]> Console_ReadKey
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
 @enduml

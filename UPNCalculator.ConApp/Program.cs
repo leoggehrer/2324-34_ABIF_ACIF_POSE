@@ -46,10 +46,6 @@ namespace UPNCalculator.ConApp
                     Console.WriteLine($"{input} = {result}");
                 }
             } while (input != string.Empty);
-
-            Console.WriteLine();
-            Console.WriteLine("Press any key to exit: ");
-            Console.ReadKey();
         }
 
         private static double Parse(string input)

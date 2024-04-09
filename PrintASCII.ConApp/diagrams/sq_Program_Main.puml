@@ -6,16 +6,16 @@ participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 participant "Convert.ToChar(a0)" as Convert_ToChar_a0 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("* ASCII - Tabelle                                 *")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
-Main_p0 -[#grey]> Console_WriteLine
-loop#LightCoral idx <= LAST_ASCII
-    Main_p0 -[#grey]> Convert_ToChar_a0 : (FIRST_ASCII + idx)
-    Convert_ToChar_a0 -[#blue]-> Main_p0 : printChar
-    Main_p0 -[#grey]> Console_WriteLine_a0 : (output)
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine_a0 : ("* ASCII - Tabelle                                 *")
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine
+loop idx <= LAST_ASCII
+    Main_p0 -> Convert_ToChar_a0 : (FIRST_ASCII + idx)
+    Convert_ToChar_a0 --> Main_p0 : printChar
+    Main_p0 -> Console_WriteLine_a0 : (output)
 end
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -[#grey]> Console_ReadKey
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
 @enduml

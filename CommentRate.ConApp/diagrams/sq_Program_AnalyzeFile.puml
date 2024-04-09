@@ -4,18 +4,18 @@ participant "AnalyzeFile(stringfileName,outintcodeChars,outintcommentChars)" as 
 participant "File.ReadAllText(a0)" as File_ReadAllText_a0 #LightGreen
 participant "text.IndexOf(a0,a1)" as text_IndexOf_a0_a1 #LightGreen
 autonumber
-AnalyzeFile_p0_p1_p2 -[#grey]> File_ReadAllText_a0 : (fileName)
-File_ReadAllText_a0 -[#blue]-> AnalyzeFile_p0_p1_p2 : text
-loop#LightCoral i < text.Length
-    AnalyzeFile_p0_p1_p2 -[#grey]> text_IndexOf_a0_a1 : ("/" + "*", i)
-    text_IndexOf_a0_a1 -[#blue]-> AnalyzeFile_p0_p1_p2 : blockCommentStartIdx
-    AnalyzeFile_p0_p1_p2 -[#grey]> text_IndexOf_a0_a1 : ("*" + "/", blockCommentStartIdx)
-    text_IndexOf_a0_a1 -[#blue]-> AnalyzeFile_p0_p1_p2 : blockCommentEndIdx
-    AnalyzeFile_p0_p1_p2 -[#grey]> text_IndexOf_a0_a1 : ("/" + "/", i)
-    text_IndexOf_a0_a1 -[#blue]-> AnalyzeFile_p0_p1_p2 : lineCommentStartIdx
-    AnalyzeFile_p0_p1_p2 -[#grey]> text_IndexOf_a0_a1 : ("\n", lineCommentStartIdx)
-    text_IndexOf_a0_a1 -[#blue]-> AnalyzeFile_p0_p1_p2 : lineCommentEndIdx
-    alt#LightBlue (i >= blockCommentStartIdx && i <= blockCommentEndIdx)
+AnalyzeFile_p0_p1_p2 -> File_ReadAllText_a0 : (fileName)
+File_ReadAllText_a0 --> AnalyzeFile_p0_p1_p2 : text
+loop i < text.Length
+    AnalyzeFile_p0_p1_p2 -> text_IndexOf_a0_a1 : ("/" + "*", i)
+    text_IndexOf_a0_a1 --> AnalyzeFile_p0_p1_p2 : blockCommentStartIdx
+    AnalyzeFile_p0_p1_p2 -> text_IndexOf_a0_a1 : ("*" + "/", blockCommentStartIdx)
+    text_IndexOf_a0_a1 --> AnalyzeFile_p0_p1_p2 : blockCommentEndIdx
+    AnalyzeFile_p0_p1_p2 -> text_IndexOf_a0_a1 : ("/" + "/", i)
+    text_IndexOf_a0_a1 --> AnalyzeFile_p0_p1_p2 : lineCommentStartIdx
+    AnalyzeFile_p0_p1_p2 -> text_IndexOf_a0_a1 : ("\n", lineCommentStartIdx)
+    text_IndexOf_a0_a1 --> AnalyzeFile_p0_p1_p2 : lineCommentEndIdx
+    alt (i >= blockCommentStartIdx && i <= blockCommentEndIdx)
                     || (i >= lineCommentStartIdx && i <= lineCommentEndIdx)
         else
     end

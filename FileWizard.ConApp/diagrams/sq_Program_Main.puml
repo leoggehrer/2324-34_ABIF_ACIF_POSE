@@ -8,16 +8,16 @@ participant "CreateBackup(a0)" as CreateBackup_a0 #LightGreen
 participant "PerformOperation(a0)" as PerformOperation_a0 #LightGreen
 participant "Thread.Sleep(a0)" as Thread_Sleep_a0 #LightGreen
 autonumber
-Main_p0 -[#grey]> File_ReadAllText_a0_a1 : (LOGO_FILE, Encoding.Default)
-File_ReadAllText_a0_a1 -[#blue]-> Main_p0 : logo
-Main_p0 -[#grey]> Console_WriteLine_a0 : (logo)
-Main_p0 -[#grey]> GetFileName
-GetFileName -[#blue]-> Main_p0 : fileName
-Main_p0 -[#grey]> CreateBackup_a0 : (fileName)
-loop#LightCoral finished == false
-    Main_p0 -[#grey]> PerformOperation_a0 : (ref fileName)
-    PerformOperation_a0 -[#blue]-> Main_p0 : finished
+Main_p0 -> File_ReadAllText_a0_a1 : (LOGO_FILE, Encoding.Default)
+File_ReadAllText_a0_a1 --> Main_p0 : logo
+Main_p0 -> Console_WriteLine_a0 : (logo)
+Main_p0 -> GetFileName
+GetFileName --> Main_p0 : fileName
+Main_p0 -> CreateBackup_a0 : (fileName)
+loop finished == false
+    Main_p0 -> PerformOperation_a0 : (ref fileName)
+    PerformOperation_a0 --> Main_p0 : finished
 end
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Vielen Dank, dass ich Dir helfen durfte!")
-Main_p0 -[#grey]> Thread_Sleep_a0 : (3000)
+Main_p0 -> Console_WriteLine_a0 : ("Vielen Dank, dass ich Dir helfen durfte!")
+Main_p0 -> Thread_Sleep_a0 : (3000)
 @enduml

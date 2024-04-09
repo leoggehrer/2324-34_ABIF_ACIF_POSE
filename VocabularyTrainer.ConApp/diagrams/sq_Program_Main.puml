@@ -8,45 +8,45 @@ participant "Console.Clear()" as Console_Clear #LightGreen
 participant "Console.WriteLine(a0,a1)" as Console_WriteLine_a0_a1 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Lerne die Vokabeln!")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("===================")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("* --------------------------- *")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("*      Expertenabschnitt      *")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("* --------------------------- *")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_Write_a0 : ("Englisches Wort:      ")
-Main_p0 -[#grey]> Console_Write_a0 : ("Deutsche Übersetzung: ")
-Main_p0 -[#grey]> Console_Clear
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("* --------------------------- *")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("*      Schülerabschnitt       *")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("* --------------------------- *")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Gib die deutsche Übersetzung für '{englishWord}' an:")
-Main_p0 -[#grey]> Console_WriteLine
-loop#LightCoral translation != germanWord && counter < 10
-    Main_p0 -[#grey]> Console_Write_a0 : ($"{++counter}. Versuch: ")
+Main_p0 -> Console_WriteLine_a0 : ("Lerne die Vokabeln!")
+Main_p0 -> Console_WriteLine_a0 : ("===================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("* --------------------------- *")
+Main_p0 -> Console_WriteLine_a0 : ("*      Expertenabschnitt      *")
+Main_p0 -> Console_WriteLine_a0 : ("* --------------------------- *")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Englisches Wort:      ")
+Main_p0 -> Console_Write_a0 : ("Deutsche Übersetzung: ")
+Main_p0 -> Console_Clear
+Main_p0 -> Console_WriteLine_a0 : ("* --------------------------- *")
+Main_p0 -> Console_WriteLine_a0 : ("*      Schülerabschnitt       *")
+Main_p0 -> Console_WriteLine_a0 : ("* --------------------------- *")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ($"Gib die deutsche Übersetzung für '{englishWord}' an:")
+Main_p0 -> Console_WriteLine
+loop translation != germanWord && counter < 10
+    Main_p0 -> Console_Write_a0 : ($"{++counter}. Versuch: ")
 end
-alt#LightBlue counter == 1
-    Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ausgezeichnet, sofort gewußt!")
+alt counter == 1
+    Main_p0 -> Console_WriteLine_a0 : ("Ausgezeichnet, sofort gewußt!")
     else
-        alt#LightBlue (counter == 2) || (counter == 3)
-            Main_p0 -[#grey]> Console_WriteLine_a0_a1 : ("Gut gemacht, nur {0} Versuche!", counter)
+        alt (counter == 2) || (counter == 3)
+            Main_p0 -> Console_WriteLine_a0_a1 : ("Gut gemacht, nur {0} Versuche!", counter)
             else
-                alt#LightBlue (counter == 4) || (counter == 5)
-                    Main_p0 -[#grey]> Console_WriteLine_a0 : ("Ein bisschen üben, das wird schon.")
+                alt (counter == 4) || (counter == 5)
+                    Main_p0 -> Console_WriteLine_a0 : ("Ein bisschen üben, das wird schon.")
                     else
-                        alt#LightBlue (counter > 5) && (counter < 10)
-                            Main_p0 -[#grey]> Console_WriteLine_a0 : ("Üben, üben, üben!")
+                        alt (counter > 5) && (counter < 10)
+                            Main_p0 -> Console_WriteLine_a0 : ("Üben, üben, üben!")
                             else
-                                alt#LightBlue counter == 10
-                                    Main_p0 -[#grey]> Console_WriteLine_a0 : ("Das war wohl nichts!!")
+                                alt counter == 10
+                                    Main_p0 -> Console_WriteLine_a0 : ("Das war wohl nichts!!")
                                 end
                         end
                 end
         end
 end
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -[#grey]> Console_ReadKey
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
 @enduml

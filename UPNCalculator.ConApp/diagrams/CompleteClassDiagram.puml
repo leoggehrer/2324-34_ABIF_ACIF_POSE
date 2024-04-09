@@ -1,0 +1,27 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Element #GhostWhite {
+- double _data
+- Element? _next
+---
++ double getData()
++ Void setData(double value)
++ Element? getNext()
++ Void setNext(Element? value)
+---
+}
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} double Parse(string input)
+}
+ class Stack #GhostWhite {
+- Element? head = null
+---
++ bool getIsEmpty()
+---
++ void Push(double data)
++ double Pop()
+}
+@enduml

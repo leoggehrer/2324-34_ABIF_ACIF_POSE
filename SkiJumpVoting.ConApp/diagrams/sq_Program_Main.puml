@@ -7,16 +7,16 @@ participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 participant "ReadPosturePoints(a0)" as ReadPosturePoints_a0 #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Notenermittlung für Skispringer")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("===============================")
-Main_p0 -[#grey]> ReadJumpFar
-ReadJumpFar -[#blue]-> Main_p0 : far
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> ReadPosturePoints_a0 : (5)
-ReadPosturePoints_a0 -[#blue]-> Main_p0 : posturePoints
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Weitenpunkte: {CalculateJump(far):f} Haltungsnote: {CalculatePosturePoints(posturePoints):f} Gesamt: {points:f}")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Beenden mit Eingabetaste... ")
-Main_p0 -[#grey]> Console_ReadLine
+Main_p0 -> Console_WriteLine_a0 : ("Notenermittlung für Skispringer")
+Main_p0 -> Console_WriteLine_a0 : ("===============================")
+Main_p0 -> ReadJumpFar
+ReadJumpFar --> Main_p0 : far
+Main_p0 -> Console_WriteLine
+Main_p0 -> ReadPosturePoints_a0 : (5)
+ReadPosturePoints_a0 --> Main_p0 : posturePoints
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ($"Weitenpunkte: {CalculateJump(far):f} Haltungsnote: {CalculatePosturePoints(posturePoints):f} Gesamt: {points:f}")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Beenden mit Eingabetaste... ")
+Main_p0 -> Console_ReadLine
 @enduml

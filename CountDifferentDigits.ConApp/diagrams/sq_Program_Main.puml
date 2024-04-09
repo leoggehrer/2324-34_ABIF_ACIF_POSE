@@ -8,18 +8,18 @@ participant "string.Join(a0,a1)" as string_Join_a0_a1 #LightGreen
 participant "GetUniqueDigitsString(a0)" as GetUniqueDigitsString_a0 #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Count Different Digits")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("======================")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> ReadDigits
-ReadDigits -[#blue]-> Main_p0 : digits
-Main_p0 -[#grey]> string_Join_a0_a1 : ("", digits)
-string_Join_a0_a1 -[#blue]-> Main_p0 : output
-Main_p0 -[#grey]> GetUniqueDigitsString_a0 : (digits)
-GetUniqueDigitsString_a0 -[#blue]-> Main_p0 : uniqueDigits
-Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Eingegebene Ziffern im Array: {output}")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Eindeutige Ziffern im Array : {uniqueDigits}")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Beenden mit Eingabetaste... ")
-Main_p0 -[#grey]> Console_ReadLine
+Main_p0 -> Console_WriteLine_a0 : ("Count Different Digits")
+Main_p0 -> Console_WriteLine_a0 : ("======================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> ReadDigits
+ReadDigits --> Main_p0 : digits
+Main_p0 -> string_Join_a0_a1 : ("", digits)
+string_Join_a0_a1 --> Main_p0 : output
+Main_p0 -> GetUniqueDigitsString_a0 : (digits)
+GetUniqueDigitsString_a0 --> Main_p0 : uniqueDigits
+Main_p0 -> Console_WriteLine_a0 : ($"Eingegebene Ziffern im Array: {output}")
+Main_p0 -> Console_WriteLine_a0 : ($"Eindeutige Ziffern im Array : {uniqueDigits}")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Beenden mit Eingabetaste... ")
+Main_p0 -> Console_ReadLine
 @enduml

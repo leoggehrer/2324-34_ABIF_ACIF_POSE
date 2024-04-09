@@ -10,23 +10,23 @@ participant "SimulateRace(a0)" as SimulateRace_a0 #LightGreen
 participant "SortHorsesByPosition(a0)" as SortHorsesByPosition_a0 #LightGreen
 participant "GetHorseIndexByNumber(a0,a1)" as GetHorseIndexByNumber_a0_a1 #LightGreen
 autonumber
-RunApp -[#grey]> ReadFromCsvFile_a0 : (FILE_NAME)
-ReadFromCsvFile_a0 -[#blue]-> RunApp : horses
-RunApp -[#grey]> GetTipp_a0 : (horses)
-GetTipp_a0 -[#blue]-> RunApp : tipp
-alt#LightBlue IsCorrectTipp(horses, tipp)
-    RunApp -[#grey]> IsCorrectTipp_a0_a1 : (horses, tipp)
-    IsCorrectTipp_a0_a1 -[#blue]-> RunApp : result
-    RunApp -[#grey]> GetHorseByNumber_a0_a1 : (horses, tipp)
-    GetHorseByNumber_a0_a1 -[#blue]-> RunApp : horse
-    RunApp -[#grey]> Console_WriteLine_a0 : ("Ihr Tipp mit der Startnummer {tipp} heisst {horse.Name} und ist {horse.Age} Jahre alt.")
-    RunApp -[#grey]> Console_WriteLine_a0 : ("Das Rennen beginnt ...")
-    RunApp -[#grey]> SimulateRace_a0 : (horses)
-    RunApp -[#grey]> SortHorsesByPosition_a0 : (horses)
-    RunApp -[#grey]> GetHorseIndexByNumber_a0_a1 : (horses, tipp)
-    GetHorseIndexByNumber_a0_a1 -[#blue]-> RunApp : index
-    RunApp -[#grey]> Console_WriteLine_a0 : ($"Ihr Startnummer {tipp} Name {horse.Name} {horse.Age} Jahre alt erzielte Rang {index + 1}!")
+RunApp -> ReadFromCsvFile_a0 : (FILE_NAME)
+ReadFromCsvFile_a0 --> RunApp : horses
+RunApp -> GetTipp_a0 : (horses)
+GetTipp_a0 --> RunApp : tipp
+alt IsCorrectTipp(horses, tipp)
+    RunApp -> IsCorrectTipp_a0_a1 : (horses, tipp)
+    IsCorrectTipp_a0_a1 --> RunApp : result
+    RunApp -> GetHorseByNumber_a0_a1 : (horses, tipp)
+    GetHorseByNumber_a0_a1 --> RunApp : horse
+    RunApp -> Console_WriteLine_a0 : ("Ihr Tipp mit der Startnummer {tipp} heisst {horse.Name} und ist {horse.Age} Jahre alt.")
+    RunApp -> Console_WriteLine_a0 : ("Das Rennen beginnt ...")
+    RunApp -> SimulateRace_a0 : (horses)
+    RunApp -> SortHorsesByPosition_a0 : (horses)
+    RunApp -> GetHorseIndexByNumber_a0_a1 : (horses, tipp)
+    GetHorseIndexByNumber_a0_a1 --> RunApp : index
+    RunApp -> Console_WriteLine_a0 : ($"Ihr Startnummer {tipp} Name {horse.Name} {horse.Age} Jahre alt erzielte Rang {index + 1}!")
     else
-        RunApp -[#grey]> Console_WriteLine_a0 : ("Ihr Tipp ist falsch!")
+        RunApp -> Console_WriteLine_a0 : ("Ihr Tipp ist falsch!")
 end
 @enduml

@@ -7,18 +7,18 @@ title CompleteClassDiagram
 # {static} string GetCurrentSolutionPath()
 - {static} List<string> GetSourceCodeFiles(string path, string[] searchPatterns)
 }
-{static} class StringExtensions #GhostWhite {
-+ {static} string Indent = "  "
----
----
-+ {static} string SetIndent(string text, int count)
-+ {static} string[] SetIndent(string[] lines, int count)
-}
  class UMLCreator #GhostWhite {
 ---
 ---
 + {static} void CreateActivityDiagram(string path, string source)
 + {static} List<string> CreateActivityDiagram(MethodDeclarationSyntax methodNode)
 + {static} void AnalysisStatement(SyntaxNode syntaxNode, List<string> diagramData, int level)
+}
+{static} class StringExtensions #GhostWhite {
++ {static} string Indent = "  "
+---
+---
++ {static} string SetIndent(string text, int count)
++ {static} string[] SetIndent(string[] lines, int count)
 }
 @enduml

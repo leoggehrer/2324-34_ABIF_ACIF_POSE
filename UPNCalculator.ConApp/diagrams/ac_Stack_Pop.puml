@@ -1,0 +1,10 @@
+@startuml Stack.Pop
+title Stack.Pop
+start
+if (IsEmpty) then (<color:green>yes)
+endif
+#LightSkyBlue:Element tmp = head!;
+#WhiteSmoke:head = tmp.Next;
+#Lavender:return tmp.Data;
+stop
+@enduml

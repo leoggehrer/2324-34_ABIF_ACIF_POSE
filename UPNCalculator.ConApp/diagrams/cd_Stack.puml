@@ -1,0 +1,11 @@
+@startuml Stack
+title Stack
+ class Stack #GhostWhite {
+- Element? head = null
+---
++ bool getIsEmpty()
+---
++ void Push(double data)
++ double Pop()
+}
+@enduml

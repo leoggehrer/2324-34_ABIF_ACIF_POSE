@@ -2,7 +2,7 @@
 title Sort.BubbleSort
 participant "Swap(a0,a1)" as Swap_a0_a1 #LightGreen
 autonumber
-loop#LightCoral exchange
-    BubbleSort_p0 -[#grey]> Swap_a0_a1 : (ref array[i], ref array[i + 1])
+loop exchange
+    BubbleSort_p0 -> Swap_a0_a1 : (ref array[i], ref array[i + 1])
 end
 @enduml

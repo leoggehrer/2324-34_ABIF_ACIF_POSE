@@ -7,28 +7,28 @@ participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Convert.ToInt32(a0)" as Convert_ToInt32_a0 #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("* Sparschwein - Meine Bank, meine Zukunft         *")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("***************************************************")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_Write_a0 : ("Wie viele Fünfzigerl?     ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : input
-Main_p0 -[#grey]> Convert_ToInt32_a0 : (input)
-Convert_ToInt32_a0 -[#blue]-> Main_p0 : fiftyCentCount
-Main_p0 -[#grey]> Console_Write_a0 : ("Wie viele Euro Stücke?    ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : input
-Main_p0 -[#grey]> Convert_ToInt32_a0 : (input)
-Convert_ToInt32_a0 -[#blue]-> Main_p0 : oneEuroCount
-Main_p0 -[#grey]> Console_Write_a0 : ("Wie viele Zweieurostücke? ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : input
-Main_p0 -[#grey]> Convert_ToInt32_a0 : (input)
-Convert_ToInt32_a0 -[#blue]-> Main_p0 : twoEuroCount
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("===================================================")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Dein Sparschwein enthält {sum:f2} EUR")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press enter to exit: ")
-Main_p0 -[#grey]> Console_ReadLine
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine_a0 : ("* Sparschwein - Meine Bank, meine Zukunft         *")
+Main_p0 -> Console_WriteLine_a0 : ("***************************************************")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Wie viele Fünfzigerl?     ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToInt32_a0 : (input)
+Convert_ToInt32_a0 --> Main_p0 : fiftyCentCount
+Main_p0 -> Console_Write_a0 : ("Wie viele Euro Stücke?    ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToInt32_a0 : (input)
+Convert_ToInt32_a0 --> Main_p0 : oneEuroCount
+Main_p0 -> Console_Write_a0 : ("Wie viele Zweieurostücke? ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToInt32_a0 : (input)
+Convert_ToInt32_a0 --> Main_p0 : twoEuroCount
+Main_p0 -> Console_WriteLine_a0 : ("===================================================")
+Main_p0 -> Console_WriteLine_a0 : ($"Dein Sparschwein enthält {sum:f2} EUR")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press enter to exit: ")
+Main_p0 -> Console_ReadLine
 @enduml

@@ -7,26 +7,26 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Word Shuffle")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("============")
-Main_p0 -[#grey]> Console_Write_a0 : ("Please enter 1st word: ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : word1
-Main_p0 -[#grey]> Console_Write_a0 : ("Please enter 2nd word: ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : word2
-Main_p0 -[#grey]> Console_Write_a0 : ("Please enter 1rd word: ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : word3
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Shuffling words ... six possible combinations:")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : (word1 + " " + word2 + " " + word3)
-Main_p0 -[#grey]> Console_WriteLine_a0 : (word1 + " " + word3 + " " + word2)
-Main_p0 -[#grey]> Console_WriteLine_a0 : (word2 + " " + word1 + " " + word3)
-Main_p0 -[#grey]> Console_WriteLine_a0 : (word2 + " " + word3 + " " + word1)
-Main_p0 -[#grey]> Console_WriteLine_a0 : (word3 + " " + word1 + " " + word2)
-Main_p0 -[#grey]> Console_WriteLine_a0 : (word3 + " " + word2 + " " + word1)
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -[#grey]> Console_ReadKey
+Main_p0 -> Console_WriteLine_a0 : ("Word Shuffle")
+Main_p0 -> Console_WriteLine_a0 : ("============")
+Main_p0 -> Console_Write_a0 : ("Please enter 1st word: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : word1
+Main_p0 -> Console_Write_a0 : ("Please enter 2nd word: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : word2
+Main_p0 -> Console_Write_a0 : ("Please enter 1rd word: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : word3
+Main_p0 -> Console_WriteLine_a0 : ("Shuffling words ... six possible combinations:")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : (word1 + " " + word2 + " " + word3)
+Main_p0 -> Console_WriteLine_a0 : (word1 + " " + word3 + " " + word2)
+Main_p0 -> Console_WriteLine_a0 : (word2 + " " + word1 + " " + word3)
+Main_p0 -> Console_WriteLine_a0 : (word2 + " " + word3 + " " + word1)
+Main_p0 -> Console_WriteLine_a0 : (word3 + " " + word1 + " " + word2)
+Main_p0 -> Console_WriteLine_a0 : (word3 + " " + word2 + " " + word1)
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
 @enduml

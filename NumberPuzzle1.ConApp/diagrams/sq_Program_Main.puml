@@ -5,19 +5,19 @@ participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Number Puzzel")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("=============")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Solve:")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("  a + bc = 2024")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("  ab + c = 2023")
-Main_p0 -[#grey]> Console_WriteLine
-alt#LightBlue solved
-    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"The solution: a == {a}, b == {b} and c == {c}")
+Main_p0 -> Console_WriteLine_a0 : ("Number Puzzel")
+Main_p0 -> Console_WriteLine_a0 : ("=============")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Solve:")
+Main_p0 -> Console_WriteLine_a0 : ("  a + bc = 2024")
+Main_p0 -> Console_WriteLine_a0 : ("  ab + c = 2023")
+Main_p0 -> Console_WriteLine
+alt solved
+    Main_p0 -> Console_WriteLine_a0 : ($"The solution: a == {a}, b == {b} and c == {c}")
     else
-        Main_p0 -[#grey]> Console_WriteLine_a0 : ("No solution found!")
+        Main_p0 -> Console_WriteLine_a0 : ("No solution found!")
 end
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -[#grey]> Console_ReadKey
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
 @enduml

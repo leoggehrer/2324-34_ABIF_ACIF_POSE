@@ -11,111 +11,111 @@ participant "labels.Replace(a0,a1)" as labels_Replace_a0_a1 #LightGreen
 participant "section.ChildNodes()" as section_ChildNodes #LightGreen
 participant "System.Diagnostics.Debug.WriteLine(a0)" as System_Diagnostics_Debug_WriteLine_a0 #LightGreen
 autonumber
-alt#LightBlue syntaxNode is LocalDeclarationStatementSyntax localDeclarationStatement
-    AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($":{localDeclarationStatement.Declaration};".SetIndent(level))
+alt syntaxNode is LocalDeclarationStatementSyntax localDeclarationStatement
+    AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($":{localDeclarationStatement.Declaration};".SetIndent(level))
     else
-        alt#LightBlue syntaxNode is ExpressionStatementSyntax expressionStatement
-            AnalysisStatement_p0_p1_p2 -[#grey]> expression_Replace_a0_a1 : ("System.Console.WriteLine", "PrintLine")
-            expression_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : expression
-            AnalysisStatement_p0_p1_p2 -[#grey]> expression_Replace_a0_a1 : ("Console.WriteLine", "PrintLine")
-            expression_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : expression
-            AnalysisStatement_p0_p1_p2 -[#grey]> expression_Replace_a0_a1 : ("System.Console.Write", "Print")
-            expression_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : expression
-            AnalysisStatement_p0_p1_p2 -[#grey]> expression_Replace_a0_a1 : ("Console.Write", "Print")
-            expression_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : expression
-            AnalysisStatement_p0_p1_p2 -[#grey]> expression_Replace_a0_a1 : ("System.Console.ReadLine", "ReadLine")
-            expression_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : expression
-            AnalysisStatement_p0_p1_p2 -[#grey]> expression_Replace_a0_a1 : ("Console.ReadLine", "ReadLine")
-            expression_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : expression
-            AnalysisStatement_p0_p1_p2 -[#grey]> expression_Replace_a0_a1 : ("System.Console.Read", "Read")
-            expression_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : expression
-            AnalysisStatement_p0_p1_p2 -[#grey]> expression_Replace_a0_a1 : ("Console.Read", "Read")
-            expression_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : expression
-            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($":{expression}".SetIndent(level))
+        alt syntaxNode is ExpressionStatementSyntax expressionStatement
+            AnalysisStatement_p0_p1_p2 -> expression_Replace_a0_a1 : ("System.Console.WriteLine", "PrintLine")
+            expression_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : expression
+            AnalysisStatement_p0_p1_p2 -> expression_Replace_a0_a1 : ("Console.WriteLine", "PrintLine")
+            expression_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : expression
+            AnalysisStatement_p0_p1_p2 -> expression_Replace_a0_a1 : ("System.Console.Write", "Print")
+            expression_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : expression
+            AnalysisStatement_p0_p1_p2 -> expression_Replace_a0_a1 : ("Console.Write", "Print")
+            expression_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : expression
+            AnalysisStatement_p0_p1_p2 -> expression_Replace_a0_a1 : ("System.Console.ReadLine", "ReadLine")
+            expression_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : expression
+            AnalysisStatement_p0_p1_p2 -> expression_Replace_a0_a1 : ("Console.ReadLine", "ReadLine")
+            expression_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : expression
+            AnalysisStatement_p0_p1_p2 -> expression_Replace_a0_a1 : ("System.Console.Read", "Read")
+            expression_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : expression
+            AnalysisStatement_p0_p1_p2 -> expression_Replace_a0_a1 : ("Console.Read", "Read")
+            expression_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : expression
+            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($":{expression}".SetIndent(level))
             else
-                alt#LightBlue syntaxNode is BlockSyntax blockSyntax
-                    loop#LightCoral blockSyntax.ChildNodes()
-                        AnalysisStatement_p0_p1_p2 -[#grey]> blockSyntax_ChildNodes
-                        alt#LightBlue node is StatementSyntax statementSyntax
-                            AnalysisStatement_p0_p1_p2 -[#grey]> AnalysisStatement_a0_a1_a2 : (statementSyntax, diagramData, level + 1)
+                alt syntaxNode is BlockSyntax blockSyntax
+                    loop blockSyntax.ChildNodes()
+                        AnalysisStatement_p0_p1_p2 -> blockSyntax_ChildNodes
+                        alt node is StatementSyntax statementSyntax
+                            AnalysisStatement_p0_p1_p2 -> AnalysisStatement_a0_a1_a2 : (statementSyntax, diagramData, level + 1)
                         end
                     end
                     else
-                        alt#LightBlue syntaxNode is IfStatementSyntax ifStatement
-                            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($"if ({ifStatement.Condition}) then (yes)".SetIndent(level))
-                            AnalysisStatement_p0_p1_p2 -[#grey]> AnalysisStatement_a0_a1_a2 : (ifStatement.Statement, diagramData, level + 1)
-                            alt#LightBlue ifStatement.Else != null
-                                AnalysisStatement_p0_p1_p2 -[#grey]> AnalysisStatement_a0_a1_a2 : (ifStatement.Else, diagramData, level + 1)
+                        alt syntaxNode is IfStatementSyntax ifStatement
+                            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($"if ({ifStatement.Condition}) then (yes)".SetIndent(level))
+                            AnalysisStatement_p0_p1_p2 -> AnalysisStatement_a0_a1_a2 : (ifStatement.Statement, diagramData, level + 1)
+                            alt ifStatement.Else != null
+                                AnalysisStatement_p0_p1_p2 -> AnalysisStatement_a0_a1_a2 : (ifStatement.Else, diagramData, level + 1)
                             end
-                            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ("endif".SetIndent(level))
+                            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ("endif".SetIndent(level))
                             else
-                                alt#LightBlue syntaxNode is ElseClauseSyntax elseClause
-                                    AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($"else (no)".SetIndent(level))
-                                    AnalysisStatement_p0_p1_p2 -[#grey]> AnalysisStatement_a0_a1_a2 : (elseClause.Statement, diagramData, level + 1)
+                                alt syntaxNode is ElseClauseSyntax elseClause
+                                    AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($"else (no)".SetIndent(level))
+                                    AnalysisStatement_p0_p1_p2 -> AnalysisStatement_a0_a1_a2 : (elseClause.Statement, diagramData, level + 1)
                                     else
-                                        alt#LightBlue syntaxNode is SwitchStatementSyntax switchStatement
-                                            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($"switch ({switchStatement.Expression})".SetIndent(level))
-                                            loop#LightCoral switchStatement.Sections
-                                                AnalysisStatement_p0_p1_p2 -[#grey]> _section_Labels_Replace_a0_a1 : ("case", "case(")
-                                                _section_Labels_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : labels
-                                                alt#LightBlue labels.Contains("default:")
-                                                    AnalysisStatement_p0_p1_p2 -[#grey]> labels_Contains_a0 : ("default:")
-                                                    labels_Contains_a0 -[#blue]-> AnalysisStatement_p0_p1_p2 : result
-                                                    AnalysisStatement_p0_p1_p2 -[#grey]> labels_Replace_a0_a1 : ("default:", "case ( default )")
-                                                    labels_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : labels
+                                        alt syntaxNode is SwitchStatementSyntax switchStatement
+                                            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($"switch ({switchStatement.Expression})".SetIndent(level))
+                                            loop switchStatement.Sections
+                                                AnalysisStatement_p0_p1_p2 -> _section_Labels_Replace_a0_a1 : ("case", "case(")
+                                                _section_Labels_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : labels
+                                                alt labels.Contains("default:")
+                                                    AnalysisStatement_p0_p1_p2 -> labels_Contains_a0 : ("default:")
+                                                    labels_Contains_a0 --> AnalysisStatement_p0_p1_p2 : result
+                                                    AnalysisStatement_p0_p1_p2 -> labels_Replace_a0_a1 : ("default:", "case ( default )")
+                                                    labels_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : labels
                                                     else
-                                                        AnalysisStatement_p0_p1_p2 -[#grey]> labels_Replace_a0_a1 : (":", " )")
-                                                        labels_Replace_a0_a1 -[#blue]-> AnalysisStatement_p0_p1_p2 : labels
+                                                        AnalysisStatement_p0_p1_p2 -> labels_Replace_a0_a1 : (":", " )")
+                                                        labels_Replace_a0_a1 --> AnalysisStatement_p0_p1_p2 : labels
                                                 end
-                                                AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($"{labels}".SetIndent(level + 1))
-                                                loop#LightCoral section.ChildNodes()
-                                                    AnalysisStatement_p0_p1_p2 -[#grey]> section_ChildNodes
-                                                    alt#LightBlue node is StatementSyntax statementSyntax
-                                                        AnalysisStatement_p0_p1_p2 -[#grey]> AnalysisStatement_a0_a1_a2 : (statementSyntax, diagramData, level + 1)
+                                                AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($"{labels}".SetIndent(level + 1))
+                                                loop section.ChildNodes()
+                                                    AnalysisStatement_p0_p1_p2 -> section_ChildNodes
+                                                    alt node is StatementSyntax statementSyntax
+                                                        AnalysisStatement_p0_p1_p2 -> AnalysisStatement_a0_a1_a2 : (statementSyntax, diagramData, level + 1)
                                                     end
                                                 end
                                             end
-                                            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ("endswitch".SetIndent(level))
+                                            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ("endswitch".SetIndent(level))
                                             else
-                                                alt#LightBlue syntaxNode is BreakStatementSyntax breakStatement
-                                                    AnalysisStatement_p0_p1_p2 -[#grey]> System_Diagnostics_Debug_WriteLine_a0 : ($"{nameof(breakStatement)} is known but not used!")
+                                                alt syntaxNode is BreakStatementSyntax breakStatement
+                                                    AnalysisStatement_p0_p1_p2 -> System_Diagnostics_Debug_WriteLine_a0 : ($"{nameof(breakStatement)} is known but not used!")
                                                     else
-                                                        alt#LightBlue syntaxNode is ContinueStatementSyntax continueStatement
-                                                            AnalysisStatement_p0_p1_p2 -[#grey]> System_Diagnostics_Debug_WriteLine_a0 : ($"{nameof(continueStatement)} is known but not used!")
+                                                        alt syntaxNode is ContinueStatementSyntax continueStatement
+                                                            AnalysisStatement_p0_p1_p2 -> System_Diagnostics_Debug_WriteLine_a0 : ($"{nameof(continueStatement)} is known but not used!")
                                                             else
-                                                                alt#LightBlue syntaxNode is DoStatementSyntax doStatement
-                                                                    AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ("repeat".SetIndent(level))
-                                                                    AnalysisStatement_p0_p1_p2 -[#grey]> AnalysisStatement_a0_a1_a2 : (doStatement.Statement, diagramData, level + 1)
-                                                                    AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($"repeat while ({doStatement.Condition}) is (yes)".SetIndent(level))
+                                                                alt syntaxNode is DoStatementSyntax doStatement
+                                                                    AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ("repeat".SetIndent(level))
+                                                                    AnalysisStatement_p0_p1_p2 -> AnalysisStatement_a0_a1_a2 : (doStatement.Statement, diagramData, level + 1)
+                                                                    AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($"repeat while ({doStatement.Condition}) is (yes)".SetIndent(level))
                                                                     else
-                                                                        alt#LightBlue syntaxNode is WhileStatementSyntax whileStatement
-                                                                            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($"while ({whileStatement.Condition}) is (yes)".SetIndent(level))
-                                                                            AnalysisStatement_p0_p1_p2 -[#grey]> AnalysisStatement_a0_a1_a2 : (whileStatement.Statement, diagramData, level + 1)
-                                                                            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ("endwhile (no)".SetIndent(level))
+                                                                        alt syntaxNode is WhileStatementSyntax whileStatement
+                                                                            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($"while ({whileStatement.Condition}) is (yes)".SetIndent(level))
+                                                                            AnalysisStatement_p0_p1_p2 -> AnalysisStatement_a0_a1_a2 : (whileStatement.Statement, diagramData, level + 1)
+                                                                            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ("endwhile (no)".SetIndent(level))
                                                                             else
-                                                                                alt#LightBlue syntaxNode is ForStatementSyntax forStatement
-                                                                                    AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($":{forStatement.Declaration};".SetIndent(level))
-                                                                                    AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($"while ({forStatement.Condition}) is (yes)".SetIndent(level))
-                                                                                    AnalysisStatement_p0_p1_p2 -[#grey]> AnalysisStatement_a0_a1_a2 : (forStatement.Statement, diagramData, level + 1)
-                                                                                    alt#LightBlue forStatement.Incrementors.Count > 0
-                                                                                        AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($":{forStatement.Incrementors};".SetIndent(level))
+                                                                                alt syntaxNode is ForStatementSyntax forStatement
+                                                                                    AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($":{forStatement.Declaration};".SetIndent(level))
+                                                                                    AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($"while ({forStatement.Condition}) is (yes)".SetIndent(level))
+                                                                                    AnalysisStatement_p0_p1_p2 -> AnalysisStatement_a0_a1_a2 : (forStatement.Statement, diagramData, level + 1)
+                                                                                    alt forStatement.Incrementors.Count > 0
+                                                                                        AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($":{forStatement.Incrementors};".SetIndent(level))
                                                                                     end
-                                                                                    AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ("endwhile (no)".SetIndent(level))
+                                                                                    AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ("endwhile (no)".SetIndent(level))
                                                                                     else
-                                                                                        alt#LightBlue syntaxNode is ForEachStatementSyntax forEachStatement
-                                                                                            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($":iterator = {forEachStatement.Expression}.GetIterator();".SetIndent(level))
-                                                                                            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($"while (iterator.MoveNext()) is (yes)".SetIndent(level))
-                                                                                            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ($":current = iterator.Current();".SetIndent(level))
-                                                                                            AnalysisStatement_p0_p1_p2 -[#grey]> AnalysisStatement_a0_a1_a2 : (forEachStatement.Statement, statements, level + 1)
-                                                                                            loop#LightCoral statements
-                                                                                                AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : (statement.Replace(forEachStatement.Identifier.ToString(), "current").SetIndent(level + 1))
+                                                                                        alt syntaxNode is ForEachStatementSyntax forEachStatement
+                                                                                            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($":iterator = {forEachStatement.Expression}.GetIterator();".SetIndent(level))
+                                                                                            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($"while (iterator.MoveNext()) is (yes)".SetIndent(level))
+                                                                                            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ($":current = iterator.Current();".SetIndent(level))
+                                                                                            AnalysisStatement_p0_p1_p2 -> AnalysisStatement_a0_a1_a2 : (forEachStatement.Statement, statements, level + 1)
+                                                                                            loop statements
+                                                                                                AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : (statement.Replace(forEachStatement.Identifier.ToString(), "current").SetIndent(level + 1))
                                                                                             end
-                                                                                            AnalysisStatement_p0_p1_p2 -[#grey]> diagramData_Add_a0 : ("endwhile (no)".SetIndent(level))
+                                                                                            AnalysisStatement_p0_p1_p2 -> diagramData_Add_a0 : ("endwhile (no)".SetIndent(level))
                                                                                             else
-                                                                                                alt#LightBlue syntaxNode is ReturnStatementSyntax returnStatement
-                                                                                                    AnalysisStatement_p0_p1_p2 -[#grey]> System_Diagnostics_Debug_WriteLine_a0 : ($"{nameof(returnStatement)} is known but not used!")
+                                                                                                alt syntaxNode is ReturnStatementSyntax returnStatement
+                                                                                                    AnalysisStatement_p0_p1_p2 -> System_Diagnostics_Debug_WriteLine_a0 : ($"{nameof(returnStatement)} is known but not used!")
                                                                                                     else
-                                                                                                        AnalysisStatement_p0_p1_p2 -[#grey]> System_Diagnostics_Debug_WriteLine_a0 : ($"{syntaxNode.GetType().Name} is unknown!")
+                                                                                                        AnalysisStatement_p0_p1_p2 -> System_Diagnostics_Debug_WriteLine_a0 : ($"{syntaxNode.GetType().Name} is unknown!")
                                                                                                 end
                                                                                         end
                                                                                 end

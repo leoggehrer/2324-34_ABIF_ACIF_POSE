@@ -9,24 +9,24 @@ participant "Convert.ToDouble(a0)" as Convert_ToDouble_a0 #LightGreen
 participant "Console.Write(a0,a1)" as Console_Write_a0_a1 #LightGreen
 participant "Console.ReadKey()" as Console_ReadKey #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Umrechnung Celsius  ->  Fahrenheit")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("==================================")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_Write_a0 : ("Eingabe Grad Celsius: ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : input
-Main_p0 -[#grey]> Convert_ToDouble_a0 : (input)
-Convert_ToDouble_a0 -[#blue]-> Main_p0 : celsius
-Main_p0 -[#grey]> Console_Write_a0 : ("Das Ergebnis: ")
-alt#LightBlue fahrenheit >= 0
-    Main_p0 -[#grey]> Console_Write_a0_a1 : ("Ist größer oder gleich 0", 10)
+Main_p0 -> Console_WriteLine_a0 : ("Umrechnung Celsius  ->  Fahrenheit")
+Main_p0 -> Console_WriteLine_a0 : ("==================================")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_Write_a0 : ("Eingabe Grad Celsius: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : input
+Main_p0 -> Convert_ToDouble_a0 : (input)
+Convert_ToDouble_a0 --> Main_p0 : celsius
+Main_p0 -> Console_Write_a0 : ("Das Ergebnis: ")
+alt fahrenheit >= 0
+    Main_p0 -> Console_Write_a0_a1 : ("Ist größer oder gleich 0", 10)
     else
-        Main_p0 -[#grey]> Console_Write_a0_a1 : ("Ist kleiner 0", 10)
+        Main_p0 -> Console_Write_a0_a1 : ("Ist kleiner 0", 10)
 end
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Celsius:    {celsius:f1}")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Fahrenheit: {fahrenheit:f1}")
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press any key to exit: ")
-Main_p0 -[#grey]> Console_ReadKey
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ($"Celsius:    {celsius:f1}")
+Main_p0 -> Console_WriteLine_a0 : ($"Fahrenheit: {fahrenheit:f1}")
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("Press any key to exit: ")
+Main_p0 -> Console_ReadKey
 @enduml

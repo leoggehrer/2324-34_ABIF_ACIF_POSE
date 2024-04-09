@@ -6,16 +6,16 @@ participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 autonumber
-PrintPupils_p0 -[#grey]> string_Format_a0_a1_a2_a3_a4 : (format, "Nr.", "Vorname", "Familienname", "PLZ")
-string_Format_a0_a1_a2_a3_a4 -[#blue]-> PrintPupils_p0 : output
-PrintPupils_p0 -[#grey]> Console_WriteLine_a0 : (output)
-PrintPupils_p0 -[#grey]> Console_Write_a0 : (new string('=', output.Length))
-PrintPupils_p0 -[#grey]> Console_WriteLine
-loop#LightCoral i < pupils.Length
-    alt#LightBlue pupil != null
-        PrintPupils_p0 -[#grey]> string_Format_a0_a1_a2_a3_a4 : (format, pupil.CatalogNumber, pupil.FirstName, pupil.LastName, pupil.PostalCode)
-        string_Format_a0_a1_a2_a3_a4 -[#blue]-> PrintPupils_p0 : output
-        PrintPupils_p0 -[#grey]> Console_WriteLine_a0 : (output)
+PrintPupils_p0 -> string_Format_a0_a1_a2_a3_a4 : (format, "Nr.", "Vorname", "Familienname", "PLZ")
+string_Format_a0_a1_a2_a3_a4 --> PrintPupils_p0 : output
+PrintPupils_p0 -> Console_WriteLine_a0 : (output)
+PrintPupils_p0 -> Console_Write_a0 : (new string('=', output.Length))
+PrintPupils_p0 -> Console_WriteLine
+loop i < pupils.Length
+    alt pupil != null
+        PrintPupils_p0 -> string_Format_a0_a1_a2_a3_a4 : (format, pupil.CatalogNumber, pupil.FirstName, pupil.LastName, pupil.PostalCode)
+        string_Format_a0_a1_a2_a3_a4 --> PrintPupils_p0 : output
+        PrintPupils_p0 -> Console_WriteLine_a0 : (output)
     end
 end
 @enduml

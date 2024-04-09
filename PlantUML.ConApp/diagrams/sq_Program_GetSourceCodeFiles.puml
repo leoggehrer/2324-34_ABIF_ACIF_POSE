@@ -2,8 +2,8 @@
 title Program.GetSourceCodeFiles
 participant "result.AddRange(a0)" as result_AddRange_a0 #LightGreen
 autonumber
-loop#LightCoral searchPatterns
-    GetSourceCodeFiles_p0_p1 -[#grey]> result_AddRange_a0 : (Directory.GetFiles(path, searchPattern, SearchOption.AllDirectories)
+loop searchPatterns
+    GetSourceCodeFiles_p0_p1 -> result_AddRange_a0 : (Directory.GetFiles(path, searchPattern, SearchOption.AllDirectories)
                       .Where(f => ignoreFolders.Any(e => f.Contains(e)) == false)
                       .OrderBy(i => i))
 end

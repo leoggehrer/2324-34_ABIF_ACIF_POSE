@@ -6,19 +6,19 @@ participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
 participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Console.WriteLine()" as Console_WriteLine #LightGreen
 autonumber
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("Visitenkarte")
-Main_p0 -[#grey]> Console_Write_a0 : ("Write your name:   ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : username
-Main_p0 -[#grey]> Console_Write_a0 : ("write your adress: ")
-Main_p0 -[#grey]> Console_ReadLine
-Console_ReadLine -[#blue]-> Main_p0 : adress
-Main_p0 -[#grey]> Console_WriteLine
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("****************************************")
-Main_p0 -[#grey]> Console_Write_a0 : ($"* {username,-37}")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("*")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("****************************************")
-Main_p0 -[#grey]> Console_Write_a0 : ($"* {adress,-37}")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("*")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("****************************************")
+Main_p0 -> Console_WriteLine_a0 : ("Visitenkarte")
+Main_p0 -> Console_Write_a0 : ("Write your name:   ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : username
+Main_p0 -> Console_Write_a0 : ("write your adress: ")
+Main_p0 -> Console_ReadLine
+Console_ReadLine --> Main_p0 : adress
+Main_p0 -> Console_WriteLine
+Main_p0 -> Console_WriteLine_a0 : ("****************************************")
+Main_p0 -> Console_Write_a0 : ($"* {username,-37}")
+Main_p0 -> Console_WriteLine_a0 : ("*")
+Main_p0 -> Console_WriteLine_a0 : ("****************************************")
+Main_p0 -> Console_Write_a0 : ($"* {adress,-37}")
+Main_p0 -> Console_WriteLine_a0 : ("*")
+Main_p0 -> Console_WriteLine_a0 : ("****************************************")
 @enduml

@@ -1,0 +1,16 @@
+@startuml Program.Main
+title Program.Main
+start
+#WhiteSmoke:PrintLine("LottoChecker");
+#WhiteSmoke:PrintLine("============");
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:LotteryTip[] tipps = ReadTippsFromFile(FileName)\nLotteryTip[] correctTipps = GetCorrectTipps(tipps)\nLotteryTip[] incorrectTipps = GetIncorrectTipps(tipps);
+#WhiteSmoke:WriteTippsToFile(correctTipps, CorrectFileName);
+#WhiteSmoke:WriteTippsToFile(incorrectTipps, IncorrectFileName);
+#WhiteSmoke:PrintLine("Incorrect Tips:");
+#WhiteSmoke:PrintTipps(incorrectTipps);
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Exit with Enter...");
+#WhiteSmoke:ReadLine();
+stop
+@enduml
