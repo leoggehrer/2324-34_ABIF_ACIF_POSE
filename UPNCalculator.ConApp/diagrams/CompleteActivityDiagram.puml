@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 10.04.2024 07:30:46
+generated on 10.04.2024 08:27:38
 end header
 title CompleteActivityDiagram
 start
@@ -76,6 +76,8 @@ stop
 start
 note right:  Stack.Pop
 if (IsEmpty) then (<color:green>yes)
+        #Red:throw new InvalidOperationException("Stack is empty!");
+        kill
 endif
 #LightSkyBlue:Element tmp = head!;
 #WhiteSmoke:head = tmp.Next;

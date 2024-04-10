@@ -3,7 +3,7 @@
     using PlantUML.Logic;
     public static class ObjectDiagram
     {
-        public const string FilePath = @"diagrams/od_Stack.puml";
+        public const string FilePath = @"/Users/ggehrer/source/Test/UPNCalculator/od_Stack.puml";
 
         public static void Generate(object obj)
         {

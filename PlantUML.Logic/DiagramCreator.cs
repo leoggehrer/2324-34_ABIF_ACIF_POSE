@@ -116,6 +116,8 @@ namespace PlantUML.Logic
             public static string Enum { get; set; } = "#LightBlue";
             public static string Struct { get; set; } = "#LightYellow";
             public static string Class { get; set; } = "#GhostWhite";
+            public static string RootObject { get; set; } = "#LightBlue";
+            public static string Object { get; set; } = "#LightGoldenRodYellow";
             public static string AbstractClass { get; set; } = "#White";
             public static string Interface { get; set; } = "#LightGrey";
 
@@ -127,6 +129,8 @@ namespace PlantUML.Logic
 
             public static string Participant { get; set; } = "#LightGreen";
             public static string StartParticipant { get; set; } = "#LightYellow";
+
+            public static string Throw { get; set; } = "#Red";
         }
         #endregion skinparam
 
@@ -790,15 +794,17 @@ namespace PlantUML.Logic
             var createdObjects = new List<object>();
             void CreateMapStateRec(Object[] objects, List<string> lines, int deep)
             {
-                static void CreateMapObjectState(Object obj, List<string> lines)
+                static void CreateMapObjectState(Object obj, List<string> lines, int deep)
                 {
-                    lines.Add($"map {CreateObjectName(obj)} " + "{");
+                    string color = deep == 0 ? Color.RootObject : Color.Object;
+
+                    lines.Add($"map {CreateObjectName(obj)}{color} " + "{");
                     lines.AddRange(CreateObjectState(obj).SetIndent(1));
                     lines.Add("}");
                 }
                 static void CreateMapCollectionState(IEnumerable collection, List<string> lines)
                 {
-                    lines.Add($"map {CreateCollectionName(collection)} " + "{");
+                    lines.Add($"map {CreateCollectionName(collection)}{Color.Object} " + "{");
                     lines.AddRange(CreateCollectionState(collection).SetIndent(1));
                     lines.Add("}");
                 }
@@ -808,7 +814,7 @@ namespace PlantUML.Logic
                     if (createdObjects.Contains(obj) == false)
                     {
                         createdObjects.Add(obj);
-                        CreateMapObjectState(obj, lines);
+                        CreateMapObjectState(obj, lines, deep);
 
                         if (deep + 1 <= maxDeep)
                         {
@@ -1030,9 +1036,13 @@ namespace PlantUML.Logic
                 var declaration = ConvertModifiers(classDeclaration.Modifiers);
                 var autoProperties = classDeclaration.Members.OfType<PropertyDeclarationSyntax>()
                                                      .Where(IsAutoProperty);
+                var isStatic = declaration.Contains("{static}");
+                var isAbstract = declaration.Contains("abstract");
 
+                declaration = declaration.Replace("{static}", string.Empty);
                 declaration += $" class {classDeclaration.Identifier}";
-                declaration += declaration.Contains("abstract") ? $" {Color.AbstractClass}" : $" {Color.Class}";
+                declaration += isStatic ? $" << static >> " : " ";
+                declaration += isAbstract ? $"{Color.AbstractClass}" : $"{Color.Class}";
                 declaration += " {";
                 diagramData.Add(declaration);
 
@@ -1475,6 +1485,11 @@ namespace PlantUML.Logic
             else if (syntaxNode is ReturnStatementSyntax returnStatement)
             {
                 diagramData.Add($"{Color.Return}:return {returnStatement.Expression};".SetIndent(level));
+            }
+            else if (syntaxNode is ThrowStatementSyntax throwStatement)
+            {
+                diagramData.Add($"{Color.Throw}:throw {throwStatement.Expression};".SetIndent(level));
+                diagramData.Add("kill".SetIndent(level));
             }
             else
             {

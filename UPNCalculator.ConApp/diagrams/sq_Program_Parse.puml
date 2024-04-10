@@ -6,47 +6,47 @@ participant "stack.Pop()" as stack_Pop #LightGreen
 participant "stack.Push(a0)" as stack_Push_a0 #LightGreen
 participant "double.TryParse(a0,a1)" as double_TryParse_a0_a1 #LightGreen
 autonumber
-Parse_p0 -> input_Split_a0_a1 : (' ', StringSplitOptions.RemoveEmptyEntries)
-input_Split_a0_a1 --> Parse_p0 : parts
-loop i < parts.Length
-    alt parts[i] == "+"
-        Parse_p0 -> stack_Pop
-        stack_Pop --> Parse_p0 : b
-        Parse_p0 -> stack_Pop
-        stack_Pop --> Parse_p0 : a
-        Parse_p0 -> stack_Push_a0 : (a + b)
+Parse_p0 -[#grey]> input_Split_a0_a1 : (' ', StringSplitOptions.RemoveEmptyEntries)
+input_Split_a0_a1 -[#blue]-> Parse_p0 : parts
+loop#LightCoral i < parts.Length
+    alt#LightBlue parts[i] == "+"
+        Parse_p0 -[#grey]> stack_Pop
+        stack_Pop -[#blue]-> Parse_p0 : b
+        Parse_p0 -[#grey]> stack_Pop
+        stack_Pop -[#blue]-> Parse_p0 : a
+        Parse_p0 -[#grey]> stack_Push_a0 : (a + b)
         else
-            alt parts[i] == "-"
-                Parse_p0 -> stack_Pop
-                stack_Pop --> Parse_p0 : b
-                Parse_p0 -> stack_Pop
-                stack_Pop --> Parse_p0 : a
-                Parse_p0 -> stack_Push_a0 : (a - b)
+            alt#LightBlue parts[i] == "-"
+                Parse_p0 -[#grey]> stack_Pop
+                stack_Pop -[#blue]-> Parse_p0 : b
+                Parse_p0 -[#grey]> stack_Pop
+                stack_Pop -[#blue]-> Parse_p0 : a
+                Parse_p0 -[#grey]> stack_Push_a0 : (a - b)
                 else
-                    alt parts[i] == "*"
-                        Parse_p0 -> stack_Pop
-                        stack_Pop --> Parse_p0 : b
-                        Parse_p0 -> stack_Pop
-                        stack_Pop --> Parse_p0 : a
-                        Parse_p0 -> stack_Push_a0 : (a * b)
+                    alt#LightBlue parts[i] == "*"
+                        Parse_p0 -[#grey]> stack_Pop
+                        stack_Pop -[#blue]-> Parse_p0 : b
+                        Parse_p0 -[#grey]> stack_Pop
+                        stack_Pop -[#blue]-> Parse_p0 : a
+                        Parse_p0 -[#grey]> stack_Push_a0 : (a * b)
                         else
-                            alt parts[i] == "/"
-                                Parse_p0 -> stack_Pop
-                                stack_Pop --> Parse_p0 : b
-                                Parse_p0 -> stack_Pop
-                                stack_Pop --> Parse_p0 : a
-                                Parse_p0 -> stack_Push_a0 : (a / b)
+                            alt#LightBlue parts[i] == "/"
+                                Parse_p0 -[#grey]> stack_Pop
+                                stack_Pop -[#blue]-> Parse_p0 : b
+                                Parse_p0 -[#grey]> stack_Pop
+                                stack_Pop -[#blue]-> Parse_p0 : a
+                                Parse_p0 -[#grey]> stack_Push_a0 : (a / b)
                                 else
-                                    alt double.TryParse(parts[i], out double opd)
-                                        Parse_p0 -> double_TryParse_a0_a1 : (parts[i], out double opd)
-                                        double_TryParse_a0_a1 --> Parse_p0 : result
-                                        Parse_p0 -> stack_Push_a0 : (opd)
+                                    alt#LightBlue double.TryParse(parts[i], out double opd)
+                                        Parse_p0 -[#grey]> double_TryParse_a0_a1 : (parts[i], out double opd)
+                                        double_TryParse_a0_a1 -[#blue]-> Parse_p0 : result
+                                        Parse_p0 -[#grey]> stack_Push_a0 : (opd)
                                     end
                             end
                     end
             end
     end
 end
-Parse_p0 -> stack_Pop
-stack_Pop --> Parse_p0 : result
+Parse_p0 -[#grey]> stack_Pop
+stack_Pop -[#blue]-> Parse_p0 : result
 @enduml

@@ -3,5 +3,5 @@ title Stack.Pop
 participant "Pop" as Pop #LightYellow
 participant "ObjectDiagram.Generate(a0)" as ObjectDiagram_Generate_a0 #LightGreen
 autonumber
-Pop -> ObjectDiagram_Generate_a0 : (this)
+Pop -[#grey]> ObjectDiagram_Generate_a0 : (this)
 @enduml
