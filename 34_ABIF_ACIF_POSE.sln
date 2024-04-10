@@ -101,8 +101,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigInteger.ConApp", "BigInt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingTicketMachine.ConApp", "ParkingTicketMachine.ConApp\ParkingTicketMachine.ConApp.csproj", "{D56F3F91-1560-4531-8E46-B653B6CD4633}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantUML.ConApp", "PlantUML.ConApp\PlantUML.ConApp.csproj", "{E69413A2-A2BB-4CB9-A08D-7923D767EFC9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithms.ConApp", "SortingAlgorithms.ConApp\SortingAlgorithms.ConApp.csproj", "{F4A94837-957A-4548-B30F-7256E78B1206}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotterySimulation.ConApp", "LotterySimulation.ConApp\LotterySimulation.ConApp.csproj", "{59ADF887-805D-4A52-9DC0-1AFEA8C9ACFA}"
@@ -126,6 +124,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorseRace.ConApp", "HorseRace.ConApp\HorseRace.ConApp.csproj", "{9B8DA326-2A71-49B5-AAC1-7EB18617D261}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPNCalculator.ConApp", "UPNCalculator.ConApp\UPNCalculator.ConApp.csproj", "{B1538207-5878-41D1-8C6C-F37DD4AD1E57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantUML.Logic", "PlantUML.Logic\PlantUML.Logic.csproj", "{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -329,10 +329,6 @@ Global
 		{D56F3F91-1560-4531-8E46-B653B6CD4633}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D56F3F91-1560-4531-8E46-B653B6CD4633}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D56F3F91-1560-4531-8E46-B653B6CD4633}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E69413A2-A2BB-4CB9-A08D-7923D767EFC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E69413A2-A2BB-4CB9-A08D-7923D767EFC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E69413A2-A2BB-4CB9-A08D-7923D767EFC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E69413A2-A2BB-4CB9-A08D-7923D767EFC9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F4A94837-957A-4548-B30F-7256E78B1206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F4A94837-957A-4548-B30F-7256E78B1206}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4A94837-957A-4548-B30F-7256E78B1206}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -381,6 +377,10 @@ Global
 		{B1538207-5878-41D1-8C6C-F37DD4AD1E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1538207-5878-41D1-8C6C-F37DD4AD1E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1538207-5878-41D1-8C6C-F37DD4AD1E57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

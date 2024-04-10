@@ -31,10 +31,18 @@ namespace UPNCalculator.ConApp
         }
         #endregion properties
 
+        #region constructors
+        public Stack()
+        {
+            ObjectDiagram.Generate(this);
+        }
+        #endregion constructors
+
         #region  methods
         public void Push(double data)
         {
             head = new Element(data, head);
+            ObjectDiagram.Generate(this);
         }
         public double Pop()
         {
@@ -46,6 +54,7 @@ namespace UPNCalculator.ConApp
             Element tmp = head!;
 
             head = tmp.Next;
+            ObjectDiagram.Generate(this);
             return tmp.Data;
         }
         #endregion methods

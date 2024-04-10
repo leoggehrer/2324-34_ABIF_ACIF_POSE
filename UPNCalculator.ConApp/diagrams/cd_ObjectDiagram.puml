@@ -1,0 +1,9 @@
+@startuml ObjectDiagram
+title ObjectDiagram
+ class ObjectDiagram << static >> #GhostWhite {
++ {const} string FilePath = @"diagrams/od_Stack.puml"
+---
+---
++ {static} void Generate(object obj)
+}
+@enduml

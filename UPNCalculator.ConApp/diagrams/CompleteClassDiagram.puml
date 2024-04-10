@@ -16,6 +16,12 @@ title CompleteClassDiagram
 - {static} void Main(string[] args)
 - {static} double Parse(string input)
 }
+ class ObjectDiagram << static >> #GhostWhite {
++ {const} string FilePath = @"diagrams/od_Stack.puml"
+---
+---
++ {static} void Generate(object obj)
+}
  class Stack #GhostWhite {
 - Element? head = null
 ---

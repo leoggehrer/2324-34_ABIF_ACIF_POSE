@@ -1,8 +1,18 @@
 @startuml CompleteActivityDiagram
 header
-generated on 09.04.2024 22:12:12
+generated on 10.04.2024 07:30:46
 end header
 title CompleteActivityDiagram
+start
+note right:  ObjectDiagram.Generate
+#LightGreen:Params(object obj);
+#LightSkyBlue:var diagramData = DiagramCreator.CreateObjectDiagram(100, obj).ToList();
+if (diagramData.Any()) then (<color:green>yes)
+        #WhiteSmoke:diagramData.Insert(0, "@start" + "uml stack");
+        #WhiteSmoke:diagramData.Add("@end" + "uml");
+endif
+#WhiteSmoke:File.WriteAllLines(FilePath, diagramData);
+stop
 start
 note right:  Program.Main
 #LightGreen:Params(string[] args);
@@ -61,6 +71,7 @@ start
 note right:  Stack.Push
 #LightGreen:Params(double data);
 #WhiteSmoke:head = new Element(data, head);
+#WhiteSmoke:ObjectDiagram.Generate(this);
 stop
 start
 note right:  Stack.Pop
@@ -68,6 +79,7 @@ if (IsEmpty) then (<color:green>yes)
 endif
 #LightSkyBlue:Element tmp = head!;
 #WhiteSmoke:head = tmp.Next;
+#WhiteSmoke:ObjectDiagram.Generate(this);
 #Lavender:return tmp.Data;
 stop
 footer

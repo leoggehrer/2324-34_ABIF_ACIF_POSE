@@ -1,0 +1,18 @@
+@startuml ObjectDiagram.Generate
+title ObjectDiagram.Generate
+participant "Generate(objectobj)" as Generate_p0 #LightYellow
+participant "DiagramCreator.CreateObjectDiagram(100,obj).ToList()" as DiagramCreator_CreateObjectDiagram_100_obj_ToList #LightGreen
+participant "diagramData.Any()" as diagramData_Any #LightGreen
+participant "diagramData.Insert(a0,a1)" as diagramData_Insert_a0_a1 #LightGreen
+participant "diagramData.Add(a0)" as diagramData_Add_a0 #LightGreen
+participant "File.WriteAllLines(a0,a1)" as File_WriteAllLines_a0_a1 #LightGreen
+autonumber
+Generate_p0 -> DiagramCreator_CreateObjectDiagram_100_obj_ToList
+DiagramCreator_CreateObjectDiagram_100_obj_ToList --> Generate_p0 : diagramData
+alt diagramData.Any()
+    Generate_p0 -> diagramData_Any
+    Generate_p0 -> diagramData_Insert_a0_a1 : (0, "@start" + "uml stack")
+    Generate_p0 -> diagramData_Add_a0 : ("@end" + "uml")
+end
+Generate_p0 -> File_WriteAllLines_a0_a1 : (FilePath, diagramData)
+@enduml

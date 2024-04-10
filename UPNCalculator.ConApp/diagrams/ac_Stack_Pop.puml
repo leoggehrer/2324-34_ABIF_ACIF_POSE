@@ -5,6 +5,7 @@ if (IsEmpty) then (<color:green>yes)
 endif
 #LightSkyBlue:Element tmp = head!;
 #WhiteSmoke:head = tmp.Next;
+#WhiteSmoke:ObjectDiagram.Generate(this);
 #Lavender:return tmp.Data;
 stop
 @enduml

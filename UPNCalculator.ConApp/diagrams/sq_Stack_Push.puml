@@ -1,0 +1,7 @@
+@startuml Stack.Push
+title Stack.Push
+participant "Push(doubledata)" as Push_p0 #LightYellow
+participant "ObjectDiagram.Generate(a0)" as ObjectDiagram_Generate_a0 #LightGreen
+autonumber
+Push_p0 -> ObjectDiagram_Generate_a0 : (this)
+@enduml
