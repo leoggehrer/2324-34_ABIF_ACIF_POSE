@@ -3,8 +3,8 @@
     using PlantUML.Logic;
     public static class ObjectDiagram
     {
-        public const string DiagramPath = @"/Users/ggehrer/source/Test/StackCalculator";
-        public const string FilePath = $"{DiagramPath}/od_Stack.puml";
+        public const string DiagramPath = @"C:\Temp\StackCalculator";
+        public const string FilePath = $"{DiagramPath}\\od_Stack.puml";
 
         public static void Generate(params object[] items)
         {
