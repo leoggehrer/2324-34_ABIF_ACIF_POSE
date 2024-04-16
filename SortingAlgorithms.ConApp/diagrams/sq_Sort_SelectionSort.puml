@@ -1,10 +1,11 @@
 @startuml Sort.SelectionSort
 title Sort.SelectionSort
+participant "SelectionSort(int[] array)" as SelectionSort_p0 #LightYellow
 participant "Swap(a0,a1)" as Swap_a0_a1 #LightGreen
 autonumber
-loop i < array.Length - 1
-    alt minIdx != i
-        SelectionSort_p0 -> Swap_a0_a1 : (ref array[i], ref array[minIdx])
+loop#LightCoral i < array.Length - 1
+    alt#LightBlue minIdx != i
+        SelectionSort_p0 -[#grey]> Swap_a0_a1 : (ref array[i], ref array[minIdx])
     end
 end
 @enduml

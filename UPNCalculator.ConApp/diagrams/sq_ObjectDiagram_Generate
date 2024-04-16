@@ -1,6 +1,6 @@
 @startuml ObjectDiagram.Generate
 title ObjectDiagram.Generate
-participant "Generate(objectobj)" as Generate_p0 #LightYellow
+participant "Generate(object obj)" as Generate_p0 #LightYellow
 participant "DiagramCreator.CreateObjectDiagram(100,obj).ToList()" as DiagramCreator_CreateObjectDiagram_100_obj_ToList #LightGreen
 participant "diagramData.Any()" as diagramData_Any #LightGreen
 participant "diagramData.Insert(a0,a1)" as diagramData_Insert_a0_a1 #LightGreen

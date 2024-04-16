@@ -8,4 +8,7 @@ title Stack
 + void Push(double data)
 + double Pop()
 }
+' CustomUML
+Stack *-- Element
+' CustomUML
 @enduml

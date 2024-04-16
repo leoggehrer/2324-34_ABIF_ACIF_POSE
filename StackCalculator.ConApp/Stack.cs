@@ -41,9 +41,8 @@ namespace StackCalculator.ConApp
         #region  methods
         public void Push(double data)
         {
-            string[] arra = new string[] { "Hallo", "Welt" };
             head = new Element(data, head);
-            ObjectDiagram.Generate(this, arra);
+            ObjectDiagram.Generate(this);
         }
         public double Pop()
         {

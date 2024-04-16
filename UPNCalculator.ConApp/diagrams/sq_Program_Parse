@@ -1,6 +1,6 @@
 @startuml Program.Parse
 title Program.Parse
-participant "Parse(stringinput)" as Parse_p0 #LightYellow
+participant "Parse(string input)" as Parse_p0 #LightYellow
 participant "input.Split(a0,a1)" as input_Split_a0_a1 #LightGreen
 participant "stack.Pop()" as stack_Pop #LightGreen
 participant "stack.Push(a0)" as stack_Push_a0 #LightGreen

@@ -1,6 +1,6 @@
 @startuml Sort
 title Sort
-{static} class Sort #GhostWhite {
+ class Sort << static >> #GhostWhite {
 ---
 ---
 + {static} void BruteForceSort(int[] array)

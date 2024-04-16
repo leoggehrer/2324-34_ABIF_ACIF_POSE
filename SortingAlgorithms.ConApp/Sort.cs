@@ -1,6 +1,6 @@
 ﻿namespace SortingAlgorithms.ConApp
 {
-    public static class Sort
+    public static partial class Sort
     {
         /// <summary>
         /// Sorts an array using the brute force sorting algorithm.

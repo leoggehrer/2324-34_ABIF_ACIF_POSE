@@ -1,7 +1,7 @@
 @startuml ObjectDiagram
 title ObjectDiagram
  class ObjectDiagram << static >> #GhostWhite {
-+ {const} string FilePath = @"diagrams/od_Stack.puml"
++ {const} string FilePath = @"/Users/ggehrer/source/Test/UPNCalculator/od_Stack.puml"
 ---
 ---
 + {static} void Generate(object obj)

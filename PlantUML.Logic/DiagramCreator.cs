@@ -64,6 +64,7 @@ namespace PlantUML.Logic
         /// Gets or sets the extension for PlantUML files.
         /// </summary>
         public static string PlantUMLExtension => ".puml";
+        public static string CustomUMLLabel => "CustomUML";
         #endregion properties
 
         #region skinparam
@@ -185,6 +186,9 @@ namespace PlantUML.Logic
                         fileName = $"{fileName}_{++fileCounter}{PlantUMLExtension}";
                     }
 
+                    var filePath = Path.Combine(path, fileName);
+
+                    diagramData.AddRange(ReadCustomUMLFromFle(filePath));
                     diagramData.Insert(0, $"@startuml {title}");
                     // diagramData.Insert(1, "header");
                     // diagramData.Insert(2, $"generated on {DateTime.UtcNow}");
@@ -197,8 +201,6 @@ namespace PlantUML.Logic
                     // diagramData.Add("end footer");
                     diagramData.Add("stop");
                     diagramData.Add("@enduml");
-
-                    var filePath = Path.Combine(path, fileName);
 
                     if (force || Path.Exists(filePath) == false)
                     {
@@ -396,12 +398,13 @@ namespace PlantUML.Logic
                 }
 
                 AnalyzeDeclarationSyntax(semanticModel, itemNode, diagramData, 0);
-                diagramData.Insert(0, $"@startuml {title}");
-                diagramData.Insert(1, $"title {title}");
-
-                diagramData.Add("@enduml");
 
                 var filePath = Path.Combine(path, fileName);
+
+                diagramData.AddRange(ReadCustomUMLFromFle(filePath));
+                diagramData.Insert(0, $"@startuml {title}");
+                diagramData.Insert(1, $"title {title}");
+                diagramData.Add("@enduml");
 
                 if (force || Path.Exists(filePath) == false)
                 {
@@ -480,6 +483,7 @@ namespace PlantUML.Logic
 
             if (diagramData.Count > 0)
             {
+                diagramData.AddRange(ReadCustomUMLFromFle(filePath));
                 diagramData.Insert(0, "@startuml CompleteClassDiagram");
                 diagramData.Insert(1, "title CompleteClassDiagram");
                 diagramData.Add("@enduml");
@@ -551,6 +555,8 @@ namespace PlantUML.Logic
                         {
                             fileName = $"{fileName}_{++fileCounter}{PlantUMLExtension}";
                         }
+                        
+                        var filePath = Path.Combine(path, fileName);
 
                         diagramData.Insert(0, $"@startuml {title}");
                         // diagramData.Insert(1, "header");
@@ -563,9 +569,8 @@ namespace PlantUML.Logic
                         // diagramData.Add("generated with the DiagramCreator by Prof.Gehrer");
                         // diagramData.Add("end footer");
                         //diagramData.Add("stop");
+                        diagramData.AddRange(ReadCustomUMLFromFle(filePath));
                         diagramData.Add("@enduml");
-
-                        var filePath = Path.Combine(path, fileName);
 
                         if (force || Path.Exists(filePath) == false)
                         {
@@ -612,8 +617,7 @@ namespace PlantUML.Logic
 
             for (var i = 0; i < participants.Count && i < participantAliasse.Count; i++)
             {
-                var isReferenced = messages.Any(l => l.StartsWith($"{participantAliasse[i]}")
-                                                  || l.Contains($"> {participantAliasse[i]}"));
+                var isReferenced = messages.Any(l => l.Contains($"{participantAliasse[i]}"));
 
                 if (isReferenced)
                 {
@@ -630,77 +634,6 @@ namespace PlantUML.Logic
         #endregion create sequence diagram
 
         #region create object and class diagrams with types
-        /// <summary>
-        /// Extracts UML items from the given lines.
-        /// </summary>
-        /// <param name="lines">The lines to extract UML items from.</param>
-        /// <returns>An enumerable collection of UML items.</returns>
-        private static List<UMLItem> ExtractUMLItems(IEnumerable<string> lines)
-        {
-            var result = new List<UMLItem>();
-            var isItem = false;
-            var umlItem = default(UMLItem);
-
-            foreach (var line in lines)
-            {
-                if (isItem == false && line.Trim().EndsWith('{') && (line.Contains("class") || line.Contains("interface")))
-                {
-                    // item is class or interface
-                    isItem = true;
-                    umlItem = new UMLItem
-                    {
-                        line
-                    };
-                }
-                else if (isItem == false && line.Trim().StartsWith("start", StringComparison.CurrentCultureIgnoreCase))
-                {
-                    // item is activity 
-                    isItem = true;
-                    umlItem = new UMLItem
-                    {
-                        line
-                    };
-                }
-                else if (isItem && umlItem != default && line.Trim().StartsWith('}') == false && line.Trim().StartsWith("stop", StringComparison.CurrentCultureIgnoreCase) == false)
-                {
-                    umlItem.Add(line);
-                }
-                else if (isItem && umlItem != default && line.Trim().StartsWith('}'))
-                {
-                    // end of item from class or interface
-                    umlItem.Add(line);
-                    result.Add(umlItem);
-                    umlItem = default;
-                    isItem = false;
-                }
-                else if (isItem && umlItem != default && line.Trim().StartsWith("stop", StringComparison.CurrentCultureIgnoreCase))
-                {
-                    // end of item from activity
-                    umlItem.Add(line);
-                    result.Add(umlItem);
-                    umlItem = default;
-                    isItem = false;
-                }
-            }
-            return result;
-        }
-        /// <summary>
-        /// Represents a UML item.
-        /// </summary>
-        private static UMLItem ExtractUMLRelations(IEnumerable<string> lines)
-        {
-            var result = new UMLItem();
-
-            foreach (var line in lines)
-            {
-                if (line.Contains("<|--") || line.Contains("--|>"))
-                {
-                    result.Add(line);
-                }
-            }
-            return result;
-        }
-
         /// <summary>
         /// Creates a class diagram based on specified creation flags and types.
         /// </summary>
@@ -786,20 +719,20 @@ namespace PlantUML.Logic
         /// </summary>
         /// <param name="obj">The object for which a collection name is to be created.</param>
         /// <returns>A string representing the collection name.</returns>
-        private static string CreateCollectionName(Object obj) => $"Colletion_{obj.GetHashCode()}";
+        private static string CreateCollectionName(object obj) => $"Colletion_{obj.GetHashCode()}";
         /// <summary>
         /// Creates an object diagram for the given objects up to a specified depth.
         /// </summary>
         /// <param name="maxDeep">The maximum depth of the object diagram.</param>
         /// <param name="objects">The objects to include in the object diagram.</param>
         /// <returns>The lines representing the object diagram.</returns>
-        public static IEnumerable<string> CreateObjectDiagram(int maxDeep, params Object[] objects)
+        public static IEnumerable<string> CreateObjectDiagram(int maxDeep, params object[] objects)
         {
             var result = new List<string>();
             var createdObjects = new List<object>();
-            void CreateMapStateRec(Object[] objects, List<string> lines, int deep)
+            void CreateMapStateRec(object[] objects, List<string> lines, int deep)
             {
-                static void CreateMapObjectState(Object obj, List<string> lines, int deep)
+                static void CreateMapObjectState(object obj, List<string> lines, int deep)
                 {
                     string color = deep == 0 ? Color.RootObject : Color.Object;
 
@@ -1275,7 +1208,8 @@ namespace PlantUML.Logic
                 AnalyzeCallSequence(semanticModel, methodDeclaration, binaryExpression.Left, participantAliasse, messages, methodResults, level);
                 AnalyzeCallSequence(semanticModel, methodDeclaration, binaryExpression.Right, participantAliasse, messages, methodResults, level);
             }
-            else if (syntaxNode is DoStatementSyntax doStatement)
+            else if (syntaxNode is DoStatementSyntax doStatement
+                     && HasInvocationExpression(doStatement))
             {
                 messages.Add($"loop#LightCoral {doStatement.Condition}".SetIndent(level));
                 foreach (var item in doStatement.ChildNodes())
@@ -1348,9 +1282,11 @@ namespace PlantUML.Logic
 
             if (result == false)
             {
-                foreach (var item in syntaxNode.ChildNodes())
+                var iterator = syntaxNode.ChildNodes().GetEnumerator();
+
+                while (result == false && iterator.MoveNext())
                 {
-                    result = HasInvocationExpression(item);
+                    result = HasInvocationExpression(iterator.Current);
                 }
             }
             return result;
@@ -1774,7 +1710,7 @@ namespace PlantUML.Logic
         /// </summary>
         /// <param name="obj">The object for which to create the state.</param>
         /// <returns>An enumerable collection of string representations of the object state.</returns>
-        public static IEnumerable<string> CreateObjectState(Object obj)
+        public static IEnumerable<string> CreateObjectState(object obj)
         {
             var counter = 0;
             var result = new List<string>();
@@ -1806,12 +1742,13 @@ namespace PlantUML.Logic
             {
                 var array = obj as Array;
 
-                for (int i = 0; i < array.Length; i++)
+                for (int i = 0; i < array!.Length; i++)
                 {
                     result.Add($"{i} => {array.GetValue(i)}");
                 }
             }
             #endregion object is an array
+
             return result;
         }
         /// <summary>
@@ -1840,6 +1777,77 @@ namespace PlantUML.Logic
         #endregion diagram helpers
 
         #region helpers
+        /// <summary>
+        /// Extracts UML items from the given lines.
+        /// </summary>
+        /// <param name="lines">The lines to extract UML items from.</param>
+        /// <returns>An enumerable collection of UML items.</returns>
+        private static List<UMLItem> ExtractUMLItems(IEnumerable<string> lines)
+        {
+            var result = new List<UMLItem>();
+            var isItem = false;
+            var umlItem = default(UMLItem);
+
+            foreach (var line in lines)
+            {
+                if (isItem == false && line.Trim().EndsWith('{') && (line.Contains("class") || line.Contains("interface")))
+                {
+                    // item is class or interface
+                    isItem = true;
+                    umlItem = new UMLItem
+                    {
+                        line
+                    };
+                }
+                else if (isItem == false && line.Trim().StartsWith("start", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    // item is activity 
+                    isItem = true;
+                    umlItem = new UMLItem
+                    {
+                        line
+                    };
+                }
+                else if (isItem && umlItem != default && line.Trim().StartsWith('}') == false && line.Trim().StartsWith("stop", StringComparison.CurrentCultureIgnoreCase) == false)
+                {
+                    umlItem.Add(line);
+                }
+                else if (isItem && umlItem != default && line.Trim().StartsWith('}'))
+                {
+                    // end of item from class or interface
+                    umlItem.Add(line);
+                    result.Add(umlItem);
+                    umlItem = default;
+                    isItem = false;
+                }
+                else if (isItem && umlItem != default && line.Trim().StartsWith("stop", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    // end of item from activity
+                    umlItem.Add(line);
+                    result.Add(umlItem);
+                    umlItem = default;
+                    isItem = false;
+                }
+            }
+            return result;
+        }
+        /// <summary>
+        /// Represents a UML item.
+        /// </summary>
+        private static UMLItem ExtractUMLRelations(IEnumerable<string> lines)
+        {
+            var result = new UMLItem();
+
+            foreach (var line in lines)
+            {
+                if (line.Contains("<|--") || line.Contains("--|>"))
+                {
+                    result.Add(line);
+                }
+            }
+            return result;
+        }
+
         /// <summary>
         /// Updates the diagram path by deleting any diagram files that do not have a corresponding entry in the info files.
         /// </summary>
@@ -1921,8 +1929,8 @@ namespace PlantUML.Logic
             var parameters = methodSyntax.ParameterList?.Parameters ?? [];
             var paramsStatement = parameters.Any() ? $"({string.Join(",", parameters)})" : string.Empty;
 
-            return $"{methodSyntax?.Identifier}{paramsStatement}".Replace($"{Environment.NewLine}", string.Empty)
-                                                                 .Replace(" ", string.Empty);
+            return $"{methodSyntax?.Identifier}{paramsStatement}".Replace($"{Environment.NewLine}", string.Empty);
+//                                                                 .Replace(" ", string.Empty);
         }
         /// <summary>
         /// Creates an alias for a participant based on the given method syntax.
@@ -2124,7 +2132,7 @@ namespace PlantUML.Logic
         /// <param name="obj">The object whose state value is to be retrieved.</param>
         /// <param name="fieldInfo">The FieldInfo of the field to retrieve the state value from.</param>
         /// <returns>The state value of the object's field.</returns>
-        public static string GetStateValue(Object obj, FieldInfo fieldInfo)
+        public static string GetStateValue(object obj, FieldInfo fieldInfo)
         {
             return GetStateValue(obj, fieldInfo, 15);
         }
@@ -2172,7 +2180,54 @@ namespace PlantUML.Logic
                 && accessorList.Accessors.All(accessor => accessor.Body == null
                                               && accessor.ExpressionBody == null);
         }
-       #endregion helpers
+
+        /// <summary>
+        /// Reads custom UML lines from a file.
+        /// </summary>
+        /// <param name="filePath">The path of the file to read.</param>
+        /// <returns>An array of custom UML lines read from the file.</returns>
+        public static string[] ReadCustomUMLFromFle(string filePath)
+        {
+            var result = new List<string>();
+
+            if (File.Exists(filePath))
+            {
+                var lines = File.ReadAllLines(filePath);
+                var customUMLLines = ReadCustomUML(lines);
+
+                if (customUMLLines.Any())
+                {
+                    customUMLLines.Insert(0, $"' {CustomUMLLabel}");
+                    customUMLLines.Add($"' {CustomUMLLabel}");
+                }
+                result.AddRange(customUMLLines);
+            }
+            return result.ToArray();
+        }
+        /// <summary>
+        /// Reads custom UML lines from the given collection of lines.
+        /// </summary>
+        /// <param name="lines">The collection of lines to read from.</param>
+        /// <returns>A list of custom UML lines.</returns>
+        private static List<string> ReadCustomUML(IEnumerable<string> lines)
+        {
+            var result = new List<string>();
+            var counter = 0;
+
+            foreach (var line in lines)
+            {
+                if (line.Contains($"{CustomUMLLabel}", StringComparison.CurrentCultureIgnoreCase))
+                {
+                    counter++;
+                }
+                else if (counter > 0 && counter % 2 > 0)
+                {
+                    result.Add(line);
+                }
+            }
+            return result;
+        }
+        #endregion helpers
     }
 }
 //MdEnd
