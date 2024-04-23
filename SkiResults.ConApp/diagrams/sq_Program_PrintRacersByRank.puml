@@ -1,0 +1,13 @@
+@startuml Program.PrintRacersByRank
+title Program.PrintRacersByRank
+participant "PrintRacersByRank(string title,Racer[] racers)" as PrintRacersByRank_p0_p1 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+autonumber
+PrintRacersByRank_p0_p1 -[#grey]> Console_WriteLine_a0 : (title)
+PrintRacersByRank_p0_p1 -[#grey]> Console_WriteLine
+PrintRacersByRank_p0_p1 -[#grey]> Console_WriteLine_a0 : ($"{"",-5}{"Name",-35}{"Country",-10}{"Time",-8}{ "Time",-8}{"Total Time"}")
+loop#LightCoral i < racers.Length
+    PrintRacersByRank_p0_p1 -[#grey]> Console_WriteLine_a0 : ($"{i + 1, -5}{racers[i].Name,-35}{racers[i].Country, -10}{racers[i].TimeOne,-8:f2}{racers[i].TimeTwo, -8:f2}{racers[i].TotalTime:f2}")
+end
+@enduml

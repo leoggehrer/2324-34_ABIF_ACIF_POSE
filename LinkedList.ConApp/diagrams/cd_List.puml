@@ -1,0 +1,13 @@
+@startuml List
+title List
+ class List #GhostWhite {
+- Node? _head
+---
++ int getCount()
+---
++ void Clear()
++ void Add(double value)
++ void RemoveAt(int index)
++ void Insert(int index, double value)
+}
+@enduml

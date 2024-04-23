@@ -1,0 +1,10 @@
+@startuml ObjectDiagram
+title ObjectDiagram
+ class ObjectDiagram << static >> #GhostWhite {
++ {const} string DiagramPath = @"C:\Temp\StackCalculator"
++ {const} string FilePath = $"{DiagramPath}\\od_Stack.puml"
+---
+---
++ {static} void Generate(object[] items)
+}
+@enduml

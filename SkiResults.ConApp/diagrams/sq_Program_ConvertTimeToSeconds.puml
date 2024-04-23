@@ -1,0 +1,18 @@
+@startuml Program.ConvertTimeToSeconds
+title Program.ConvertTimeToSeconds
+participant "ConvertTimeToSeconds(string time)" as ConvertTimeToSeconds_p0 #LightYellow
+participant "time.Replace(":",".").Split(a0)" as time_Replace_Split_a0 #LightGreen
+participant "int.Parse(a0)" as int_Parse_a0 #LightGreen
+autonumber
+ConvertTimeToSeconds_p0 -[#grey]> time_Replace_Split_a0 : ('.')
+time_Replace_Split_a0 -[#blue]-> ConvertTimeToSeconds_p0 : parts
+alt#LightBlue parts.Length == 3
+    ConvertTimeToSeconds_p0 -[#grey]> int_Parse_a0 : (parts[1])
+    int_Parse_a0 -[#blue]-> ConvertTimeToSeconds_p0 : result
+    else
+        alt#LightBlue parts.Length == 2
+            ConvertTimeToSeconds_p0 -[#grey]> int_Parse_a0 : (parts[0])
+            int_Parse_a0 -[#blue]-> ConvertTimeToSeconds_p0 : result
+        end
+end
+@enduml

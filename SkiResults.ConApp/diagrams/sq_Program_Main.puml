@@ -1,0 +1,16 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[] args)" as Main_p0 #LightYellow
+participant "ReadRacersFromCsv(a0,a1)" as ReadRacersFromCsv_a0_a1 #LightGreen
+participant "RunApp(a0)" as RunApp_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+autonumber
+Main_p0 -[#grey]> ReadRacersFromCsv_a0_a1 : (FileNameResultsOne, FileNameResultsTwo)
+ReadRacersFromCsv_a0_a1 -[#blue]-> Main_p0 : racers
+Main_p0 -[#grey]> RunApp_a0 : (racers)
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press enter to exit: ")
+Main_p0 -[#grey]> Console_ReadLine
+@enduml

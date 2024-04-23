@@ -1,0 +1,36 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Element #GhostWhite {
+- double _data
+- Element? _next
+---
++ double getData()
++ Void setData(double value)
++ Element? getNext()
++ Void setNext(Element? value)
+---
+}
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} double Parse(string input)
+}
+ class ObjectDiagram << static >> #GhostWhite {
++ {const} string DiagramPath = @"C:\Temp\StackCalculator"
++ {const} string FilePath = $"{DiagramPath}\\od_Stack.puml"
+---
+---
++ {static} void Generate(object[] items)
+}
+ class Stack #GhostWhite {
+- Element? head = null
+---
++ bool getIsEmpty()
+---
++ void Push(double data)
++ double Pop()
+}
+Element "0..1" *-- "1" Element : _next
+Stack "0..1" *-- "1" Element : head
+@enduml

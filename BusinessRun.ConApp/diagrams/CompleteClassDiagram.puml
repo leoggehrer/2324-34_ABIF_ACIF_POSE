@@ -1,0 +1,40 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Program #GhostWhite {
+- {const} string FileName = "BusinessRun.csv"
+---
+---
+- {static} void Main(string[] args)
+- {static} Racer[] ReadRacersFromFile(string fileName)
+- {static} void DisplayTheFirstThreeRacers(Racer[] racers)
++ {static} void SortRacerByTime(Racer[] racers)
+- {static} double CalculateAverageTime(Racer[] racers)
+- {static} double ConvertTimeToSeconds(string time)
+- {static} bool IsValidTimeParts(string[] parts)
+}
+ class Racer #GhostWhite {
+- string _number
+- string _name
+- int _vintage
+- string _nationality
+- string _company
+- string _team
+- double _time
+---
++ string getNumber()
++ Void setNumber(string value)
++ string getName()
++ Void setName(string value)
++ int getVintage()
++ Void setVintage(int value)
++ string getNationality()
++ Void setNationality(string value)
++ string getCompany()
++ Void setCompany(string value)
++ string getTeam()
++ Void setTeam(string value)
++ double getTime()
++ Void setTime(double value)
+---
+}
+@enduml

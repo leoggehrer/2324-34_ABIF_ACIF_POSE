@@ -1,0 +1,28 @@
+@startuml List.Insert
+title List.Insert
+start
+#LightGreen:Params(int index,double value);
+#LightYellow:if (index < 0 || index > Count) then (<color:green>yes)
+        #Red:throw new IndexOutOfRangeException(nameof(index));
+        kill
+endif
+#LightSkyBlue:Node? newNode = new Node { Value = value };
+#LightYellow:if (index == 0) then (<color:green>yes)
+        #WhiteSmoke:newNode.Next = _head;
+        #WhiteSmoke:_head = newNode;
+    else (<color:red>no)
+            #LightSkyBlue:Node? run = _head;
+            #LightSkyBlue:int i = 0;
+            while (i < index - 1) is (<color:green>yes)
+                    #WhiteSmoke:run = run!.Next;
+            :i++;
+            endwhile (<color:red>no)
+            #WhiteSmoke:newNode.Next = run!.Next;
+            #WhiteSmoke:newNode.Prev = run;
+            #WhiteSmoke:run.Next = newNode;
+            #LightYellow:if (newNode.Next != null) then (<color:green>yes)
+                    #WhiteSmoke:newNode.Next.Prev = newNode;
+            endif
+endif
+stop
+@enduml

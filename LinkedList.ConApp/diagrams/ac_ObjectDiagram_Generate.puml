@@ -1,0 +1,14 @@
+@startuml ObjectDiagram.Generate
+title ObjectDiagram.Generate
+start
+#LightGreen:Params(params object[] items);
+#LightSkyBlue:var diagramData = DiagramCreator.CreateObjectDiagram(100, items).ToList();
+#WhiteSmoke:diagramData.Insert(0, "@start" + "uml stack");
+#WhiteSmoke:diagramData.Insert(1, "title Object Diagram for LinkedList");
+#WhiteSmoke:diagramData.Add("@end" + "uml");
+#LightYellow:if (Path.Exists(DiagramPath) == false) then (<color:green>yes)
+        #WhiteSmoke:Directory.CreateDirectory(DiagramPath);
+endif
+#WhiteSmoke:File.WriteAllLines(FilePath, diagramData);
+stop
+@enduml

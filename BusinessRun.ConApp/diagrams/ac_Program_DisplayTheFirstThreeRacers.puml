@@ -1,0 +1,12 @@
+@startuml Program.DisplayTheFirstThreeRacers
+title Program.DisplayTheFirstThreeRacers
+start
+#LightGreen:Params(Racer[] racers);
+#WhiteSmoke:PrintLine($"{"Nr", -7}{"Name",-25}{"JG",-5}{"Nation",-7}{"Team",-30}{"Zeit[sec]",-10}");
+#LightSkyBlue:int i = 0;
+while (i < 3 && i < racers.Length) is (<color:green>yes)
+        #WhiteSmoke:PrintLine($"{racers[i].Number, -7}{racers[i].Name,-25}{racers[i].Vintage,-5}{racers[i].Nationality,-7}{racers[i].Team,-30}{racers[i].Time,-10:f2}");
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

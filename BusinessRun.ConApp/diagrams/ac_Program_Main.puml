@@ -1,0 +1,17 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("******************************************************");
+#WhiteSmoke:PrintLine("* BusinessRun - Die zuverlässige Software für Läufer *");
+#WhiteSmoke:PrintLine("******************************************************");
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:Racer[] racers = ReadRacersFromFile(FileName);
+#WhiteSmoke:SortRacerByTime(racers);
+#WhiteSmoke:DisplayTheFirstThreeRacers(racers);
+#WhiteSmoke:PrintLine($"Durchschnittliche Laufzeit [sek]: {CalculateAverageTime(racers):f2}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Beenden mit Eingabetaste... ");
+#WhiteSmoke:ReadLine();
+stop
+@enduml

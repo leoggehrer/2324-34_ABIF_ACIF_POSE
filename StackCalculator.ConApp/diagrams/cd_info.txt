@@ -1,0 +1,8 @@
+title:ObjectDiagram (CD)
+fileName:cd_ObjectDiagram.puml
+title:Program (CD)
+fileName:cd_Program.puml
+title:Stack (CD)
+fileName:cd_Stack.puml
+title:Element (CD)
+fileName:cd_Element.puml

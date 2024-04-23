@@ -1,0 +1,14 @@
+@startuml Program.PrintRacersByRank
+title Program.PrintRacersByRank
+start
+#LightGreen:Params(string title,Racer[] racers);
+#WhiteSmoke:PrintLine(title);
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine($"{"",-5}{"Name",-35}{"Country",-10}{"Time",-8}{ "Time",-8}{"Total Time"}");
+#LightSkyBlue:int i = 0;
+while (i < racers.Length) is (<color:green>yes)
+        #WhiteSmoke:PrintLine($"{i + 1, -5}{racers[i].Name,-35}{racers[i].Country, -10}{racers[i].TimeOne,-8:f2}{racers[i].TimeTwo, -8:f2}{racers[i].TotalTime:f2}");
+:i++;
+endwhile (<color:red>no)
+stop
+@enduml

@@ -1,0 +1,131 @@
+@startuml CompleteActivityDiagram
+header
+generated on 18.04.2024 21:14:01
+end header
+title CompleteActivityDiagram
+start
+note right:  List.Clear
+#WhiteSmoke:_head = null;
+stop
+start
+note right:  List.Add
+#LightGreen:Params(double value);
+#LightSkyBlue:Node? newNode = new Node { Value = value };
+#LightYellow:if (_head == null) then (<color:green>yes)
+        #WhiteSmoke:_head = newNode;
+    else (<color:red>no)
+            #LightSkyBlue:Node? run = _head;
+            while (run?.Next != null) is (<color:green>yes)
+                    #WhiteSmoke:run = run.Next;
+            endwhile (<color:red>no)
+            #WhiteSmoke:run!.Next = newNode;
+            #WhiteSmoke:newNode.Prev = run;
+endif
+stop
+start
+note right:  List.RemoveAt
+#LightGreen:Params(int index);
+#LightYellow:if (index < 0 || index >= Count) then (<color:green>yes)
+        #Red:throw new IndexOutOfRangeException(nameof(index));
+        kill
+endif
+#LightSkyBlue:Node? run = _head;
+#LightSkyBlue:int i = 0;
+while (i < index) is (<color:green>yes)
+        #WhiteSmoke:run = run!.Next;
+:i++;
+endwhile (<color:red>no)
+#LightYellow:if (run!.Prev != null) then (<color:green>yes)
+        #WhiteSmoke:run.Prev.Next = run.Next;
+    else (<color:red>no)
+            #WhiteSmoke:_head = run.Next;
+endif
+#LightYellow:if (run.Next != null) then (<color:green>yes)
+        #WhiteSmoke:run.Next.Prev = run.Prev;
+endif
+stop
+start
+note right:  List.Insert
+#LightGreen:Params(int index,double value);
+#LightYellow:if (index < 0 || index > Count) then (<color:green>yes)
+        #Red:throw new IndexOutOfRangeException(nameof(index));
+        kill
+endif
+#LightSkyBlue:Node? newNode = new Node { Value = value };
+#LightYellow:if (index == 0) then (<color:green>yes)
+        #WhiteSmoke:newNode.Next = _head;
+        #WhiteSmoke:_head = newNode;
+    else (<color:red>no)
+            #LightSkyBlue:Node? run = _head;
+            #LightSkyBlue:int i = 0;
+            while (i < index - 1) is (<color:green>yes)
+                    #WhiteSmoke:run = run!.Next;
+            :i++;
+            endwhile (<color:red>no)
+            #WhiteSmoke:newNode.Next = run!.Next;
+            #WhiteSmoke:newNode.Prev = run;
+            #WhiteSmoke:run.Next = newNode;
+            #LightYellow:if (newNode.Next != null) then (<color:green>yes)
+                    #WhiteSmoke:newNode.Next.Prev = newNode;
+            endif
+endif
+stop
+start
+note right:  ObjectDiagram.Generate
+#LightGreen:Params(params object[] items);
+#LightSkyBlue:var diagramData = DiagramCreator.CreateObjectDiagram(100, items).ToList();
+#WhiteSmoke:diagramData.Insert(0, "@start" + "uml stack");
+#WhiteSmoke:diagramData.Insert(1, "title Object Diagram for LinkedList");
+#WhiteSmoke:diagramData.Add("@end" + "uml");
+#LightYellow:if (Path.Exists(DiagramPath) == false) then (<color:green>yes)
+        #WhiteSmoke:Directory.CreateDirectory(DiagramPath);
+endif
+#WhiteSmoke:File.WriteAllLines(FilePath, diagramData);
+stop
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input;
+#WhiteSmoke:PrintLine("**********************");
+#WhiteSmoke:PrintLine("* LinkedList         *");
+#WhiteSmoke:PrintLine("**********************");
+#WhiteSmoke:PrintLine();
+repeat
+        #WhiteSmoke:Print("List aktion [Enter...Exit]:  ");
+        #WhiteSmoke:input = ReadLine();
+        #LightYellow:if (input != string.Empty) then (<color:green>yes)
+                #WhiteSmoke:Parse(input);
+        endif
+repeat while (input != string.Empty) is (<color:green>yes)
+stop
+start
+note right:  Program.Parse
+#LightGreen:Params(string input);
+#LightSkyBlue:string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries)\nList list= new List();
+#WhiteSmoke:ObjectDiagram.Generate(list);
+#LightSkyBlue:int i = 0;
+while (i < parts.Length) is (<color:green>yes)
+        #LightYellow:if (parts[i] == "a") then (<color:green>yes)
+                #WhiteSmoke:list.Add(double.Parse(parts[++i]));
+            else (<color:red>no)
+                #LightYellow:if (parts[i] == "i") then (<color:green>yes)
+                        #LightSkyBlue:int idx = int.Parse(parts[++i]);
+                        #LightSkyBlue:double val = double.Parse(parts[++i]);
+                        #WhiteSmoke:list.Insert(idx, val);
+                    else (<color:red>no)
+                        #LightYellow:if (parts[i] == "r") then (<color:green>yes)
+                                #LightSkyBlue:int idx = int.Parse(parts[++i]);
+                                #WhiteSmoke:list.RemoveAt(idx);
+                        endif
+                endif
+        endif
+        #WhiteSmoke:ObjectDiagram.Generate(list);
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:list.Clear();
+#WhiteSmoke:ObjectDiagram.Generate(list);
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

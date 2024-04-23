@@ -1,0 +1,7 @@
+@startuml Program.IsValidTimeParts
+title Program.IsValidTimeParts
+start
+#LightGreen:Params(string[] parts);
+#Lavender:return parts.Length == 2;
+stop
+@enduml

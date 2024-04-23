@@ -1,0 +1,18 @@
+@startuml Program.ConvertTimeToSeconds
+title Program.ConvertTimeToSeconds
+start
+#LightGreen:Params(string time);
+#LightSkyBlue:double result = 0\nstring[] parts = time.Replace(":", ".").Split('.');
+#LightYellow:if (parts.Length == 3) then (<color:green>yes)
+        #WhiteSmoke:result = int.Parse(parts[0]) * 60;
+        #WhiteSmoke:result += int.Parse(parts[1]);
+        #WhiteSmoke:result += double.Parse(parts[2]) / 10.0;
+    else (<color:red>no)
+        #LightYellow:if (parts.Length == 2) then (<color:green>yes)
+                #WhiteSmoke:result = int.Parse(parts[0]);
+                #WhiteSmoke:result += double.Parse(parts[1]) / 10.0;
+        endif
+endif
+#Lavender:return result;
+stop
+@enduml

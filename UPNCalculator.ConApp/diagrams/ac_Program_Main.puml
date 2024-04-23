@@ -10,7 +10,7 @@ start
 repeat
         #WhiteSmoke:Print("Rechenoperation [Enter...Exit]:  ");
         #WhiteSmoke:input = ReadLine();
-        if (input != string.Empty) then (<color:green>yes)
+        #LightYellow:if (input != string.Empty) then (<color:green>yes)
                 #LightSkyBlue:double result = Parse(input);
                 #WhiteSmoke:PrintLine($"{input} = {result}");
         endif

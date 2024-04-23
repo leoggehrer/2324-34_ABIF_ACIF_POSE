@@ -1,0 +1,12 @@
+@startuml Program.WriteRacersToCsv
+title Program.WriteRacersToCsv
+participant "WriteRacersToCsv(string fileName,Racer[] racers)" as WriteRacersToCsv_p0_p1 #LightYellow
+participant "lines.Add(a0)" as lines_Add_a0 #LightGreen
+participant "File.WriteAllLines(a0,a1)" as File_WriteAllLines_a0_a1 #LightGreen
+autonumber
+WriteRacersToCsv_p0_p1 -[#grey]> lines_Add_a0 : ("Rang;Country;Name;TimeOne;TimeTwo;TotalTime")
+loop#LightCoral i < racers.Length
+    WriteRacersToCsv_p0_p1 -[#grey]> lines_Add_a0 : ($"{rank};{racers[i].Country};{racers[i].Name};{racers[i].TimeOne};{racers[i].TimeTwo};{racers[i].TotalTime}")
+end
+WriteRacersToCsv_p0_p1 -[#grey]> File_WriteAllLines_a0_a1 : (fileName, lines)
+@enduml

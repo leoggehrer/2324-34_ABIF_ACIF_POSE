@@ -1,0 +1,28 @@
+@startuml Program.ReadRacersFromFile
+title Program.ReadRacersFromFile
+participant "ReadRacersFromFile(string fileName)" as ReadRacersFromFile_p0 #LightYellow
+participant "File.Exists(a0)" as File_Exists_a0 #LightGreen
+participant "File.ReadAllLines(a0)" as File_ReadAllLines_a0 #LightGreen
+participant "line.Split(a0)" as line_Split_a0 #LightGreen
+participant "int.Parse(a0)" as int_Parse_a0 #LightGreen
+participant "ConvertTimeToSeconds(a0)" as ConvertTimeToSeconds_a0 #LightGreen
+participant "racers.Add(a0)" as racers_Add_a0 #LightGreen
+participant "racers.ToArray()" as racers_ToArray #LightGreen
+autonumber
+alt#LightBlue File.Exists(fileName)
+    ReadRacersFromFile_p0 -[#grey]> File_Exists_a0 : (fileName)
+    ReadRacersFromFile_p0 -[#grey]> File_ReadAllLines_a0 : (fileName)
+    File_ReadAllLines_a0 -[#blue]-> ReadRacersFromFile_p0 : lines
+    loop#LightCoral lines
+        ReadRacersFromFile_p0 -[#grey]> line_Split_a0 : (';')
+        line_Split_a0 -[#blue]-> ReadRacersFromFile_p0 : parts
+        ReadRacersFromFile_p0 -[#grey]> int_Parse_a0 : (parts[2])
+        int_Parse_a0 -[#blue]-> ReadRacersFromFile_p0 : Vintage
+        ReadRacersFromFile_p0 -[#grey]> ConvertTimeToSeconds_a0 : (parts[6])
+        ConvertTimeToSeconds_a0 -[#blue]-> ReadRacersFromFile_p0 : Time
+        ReadRacersFromFile_p0 -[#grey]> racers_Add_a0 : (racer)
+    end
+end
+ReadRacersFromFile_p0 -[#grey]> racers_ToArray
+racers_ToArray -[#blue]-> ReadRacersFromFile_p0 : result
+@enduml

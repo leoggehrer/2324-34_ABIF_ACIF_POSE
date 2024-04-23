@@ -1,0 +1,6 @@
+@startuml List.Clear
+title List.Clear
+start
+#WhiteSmoke:_head = null;
+stop
+@enduml

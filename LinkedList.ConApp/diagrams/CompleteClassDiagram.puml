@@ -1,0 +1,42 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Node #GhostWhite {
+- double _value
+- Node? _prev
+- Node? _next
+---
++ double getValue()
++ Void setValue(double value)
++ Node? getPrev()
++ Void setPrev(Node? value)
++ Node? getNext()
++ Void setNext(Node? value)
+---
+}
+ class List #GhostWhite {
+- Node? _head
+---
++ int getCount()
+---
++ void Clear()
++ void Add(double value)
++ void RemoveAt(int index)
++ void Insert(int index, double value)
+}
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} void Parse(string input)
+}
+ class ObjectDiagram << static >> #GhostWhite {
++ {const} string DiagramPath = @"C:\Temp\LinkedList"
++ {const} string FilePath = $"{DiagramPath}\\od_LinkedList.puml"
+---
+---
++ {static} void Generate(object[] items)
+}
+Node "0..1" *-- "1" Node : _prev
+Node "0..1" *-- "1" Node : _next
+List "0..1" *-- "1" Node : _head
+@enduml

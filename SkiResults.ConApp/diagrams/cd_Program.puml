@@ -1,0 +1,19 @@
+@startuml Program
+title Program
+ class Program #GhostWhite {
+- {const} string FileNameResultsOne = "results_run1.csv"
+- {const} string FileNameResultsTwo = "results_run2.csv"
+---
+---
+- {static} void Main(string[] args)
+- {static} void RunApp(Racer[] racers)
+- {static} void WriteRacersToCsv(string fileName, Racer[] racers)
+- {static} Racer[] ReadRacersFromCsv(string fileNameResultsOne, string fileNameResultsTwo)
+- {static} Racer GetRacerByName(Racer[] racers, string name)
+- {static} void SortRacersByTotalTime(Racer[] racers)
+- {static} Racer[] GetDisqualifiersRacers(Racer[] racers)
+- {static} Racer[] DeleteDisqualifiersRacers(Racer[] racers)
+- {static} void PrintRacersByRank(string title, Racer[] racers)
+- {static} double ConvertTimeToSeconds(string time)
+}
+@enduml

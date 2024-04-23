@@ -1,0 +1,40 @@
+@startuml Program.ReadRacersFromCsv
+title Program.ReadRacersFromCsv
+participant "ReadRacersFromCsv(string fileNameResultsOne,string fileNameResultsTwo)" as ReadRacersFromCsv_p0_p1 #LightYellow
+participant "File.Exists(a0)" as File_Exists_a0 #LightGreen
+participant "File.ReadAllLines(a0)" as File_ReadAllLines_a0 #LightGreen
+participant "lines[i].Split(a0)" as lines_i_Split_a0 #LightGreen
+participant "ConvertTimeToSeconds(a0)" as ConvertTimeToSeconds_a0 #LightGreen
+participant "GetRacerByName(a0,a1)" as GetRacerByName_a0_a1 #LightGreen
+autonumber
+alt#LightBlue File.Exists(fileNameResultsOne)
+    ReadRacersFromCsv_p0_p1 -[#grey]> File_Exists_a0 : (fileNameResultsOne)
+    ReadRacersFromCsv_p0_p1 -[#grey]> File_ReadAllLines_a0 : (fileNameResultsOne)
+    File_ReadAllLines_a0 -[#blue]-> ReadRacersFromCsv_p0_p1 : lines
+    loop#LightCoral i < lines.Length
+        ReadRacersFromCsv_p0_p1 -[#grey]> lines_i_Split_a0 : (';')
+        lines_i_Split_a0 -[#blue]-> ReadRacersFromCsv_p0_p1 : parts
+        alt#LightBlue parts.Length > 1
+            ReadRacersFromCsv_p0_p1 -[#grey]> ConvertTimeToSeconds_a0 : (parts[2])
+            ConvertTimeToSeconds_a0 -[#blue]-> ReadRacersFromCsv_p0_p1 : TimeOne
+        end
+    end
+end
+alt#LightBlue File.Exists(fileNameResultsTwo)
+    ReadRacersFromCsv_p0_p1 -[#grey]> File_Exists_a0 : (fileNameResultsTwo)
+    ReadRacersFromCsv_p0_p1 -[#grey]> File_ReadAllLines_a0 : (fileNameResultsTwo)
+    File_ReadAllLines_a0 -[#blue]-> ReadRacersFromCsv_p0_p1 : lines
+    loop#LightCoral i < lines.Length
+        ReadRacersFromCsv_p0_p1 -[#grey]> lines_i_Split_a0 : (';')
+        lines_i_Split_a0 -[#blue]-> ReadRacersFromCsv_p0_p1 : parts
+        alt#LightBlue parts.Length > 1
+            ReadRacersFromCsv_p0_p1 -[#grey]> GetRacerByName_a0_a1 : (result, parts[1])
+            GetRacerByName_a0_a1 -[#blue]-> ReadRacersFromCsv_p0_p1 : racer
+            alt#LightBlue racer != null
+                ReadRacersFromCsv_p0_p1 -[#grey]> ConvertTimeToSeconds_a0 : (parts[2])
+                ConvertTimeToSeconds_a0 -[#blue]-> ReadRacersFromCsv_p0_p1 : racer.TimeTwo
+            end
+        end
+    end
+end
+@enduml

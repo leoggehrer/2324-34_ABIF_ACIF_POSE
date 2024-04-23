@@ -1,0 +1,20 @@
+@startuml Program.SortRacersByTotalTime
+title Program.SortRacersByTotalTime
+start
+#LightGreen:Params(Racer[] racers);
+#LightSkyBlue:bool swapped;
+repeat
+        #WhiteSmoke:swapped = false;
+        #LightSkyBlue:int i = 0;
+        while (i < racers.Length - 1) is (<color:green>yes)
+                #LightYellow:if (racers[i].TotalTime > racers[i + 1].TotalTime) then (<color:green>yes)
+                        #LightSkyBlue:Racer temp = racers[i];
+                        #WhiteSmoke:racers[i] = racers[i + 1];
+                        #WhiteSmoke:racers[i + 1] = temp;
+                        #WhiteSmoke:swapped = true;
+                endif
+        :i++;
+        endwhile (<color:red>no)
+repeat while (swapped) is (<color:green>yes)
+stop
+@enduml

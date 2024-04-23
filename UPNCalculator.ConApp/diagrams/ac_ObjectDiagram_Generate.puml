@@ -3,7 +3,7 @@ title ObjectDiagram.Generate
 start
 #LightGreen:Params(object obj);
 #LightSkyBlue:var diagramData = DiagramCreator.CreateObjectDiagram(100, obj).ToList();
-if (diagramData.Any()) then (<color:green>yes)
+#LightYellow:if (diagramData.Any()) then (<color:green>yes)
         #WhiteSmoke:diagramData.Insert(0, "@start" + "uml stack");
         #WhiteSmoke:diagramData.Add("@end" + "uml");
 endif

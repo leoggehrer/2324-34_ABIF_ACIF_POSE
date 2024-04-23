@@ -1,0 +1,40 @@
+@startuml Program.ReadRacersFromCsv
+title Program.ReadRacersFromCsv
+start
+#LightGreen:Params(string fileNameResultsOne,string fileNameResultsTwo);
+#LightSkyBlue:Racer[] result = new Racer[0];
+#LightYellow:if (File.Exists(fileNameResultsOne)) then (<color:green>yes)
+        #LightSkyBlue:var lines = File.ReadAllLines(fileNameResultsOne);
+        #WhiteSmoke:result = new Racer[lines.Length - 1];
+        #LightSkyBlue:int i = 1;
+        while (i < lines.Length) is (<color:green>yes)
+                #LightSkyBlue:var parts = lines[i].Split(';');
+                #LightYellow:if (parts.Length > 1) then (<color:green>yes)
+                        #LightSkyBlue:var racer = new Racer
+                        {
+                            Country = parts[0],
+                            Name = parts[1],
+                            TimeOne = ConvertTimeToSeconds(parts[2]),
+                        };
+                        #WhiteSmoke:result[i - 1] = racer;
+                endif
+        :i++;
+        endwhile (<color:red>no)
+endif
+#LightYellow:if (File.Exists(fileNameResultsTwo)) then (<color:green>yes)
+        #LightSkyBlue:var lines = File.ReadAllLines(fileNameResultsTwo);
+        #LightSkyBlue:int i = 1;
+        while (i < lines.Length) is (<color:green>yes)
+                #LightSkyBlue:var parts = lines[i].Split(';');
+                #LightYellow:if (parts.Length > 1) then (<color:green>yes)
+                        #LightSkyBlue:var racer = GetRacerByName(result, parts[1]);
+                        #LightYellow:if (racer != null) then (<color:green>yes)
+                                #WhiteSmoke:racer.TimeTwo = ConvertTimeToSeconds(parts[2]);
+                        endif
+                endif
+        :i++;
+        endwhile (<color:red>no)
+endif
+#Lavender:return result;
+stop
+@enduml

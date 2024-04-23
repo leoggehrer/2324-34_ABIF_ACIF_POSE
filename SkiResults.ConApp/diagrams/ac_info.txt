@@ -1,0 +1,40 @@
+title:Program.Main (AC)
+fileName:ac_Program_Main.puml
+generated_on:23.04.2024 13:12:33
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.RunApp (AC)
+fileName:ac_Program_RunApp.puml
+generated_on:23.04.2024 13:12:33
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.WriteRacersToCsv (AC)
+fileName:ac_Program_WriteRacersToCsv.puml
+generated_on:23.04.2024 13:12:33
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.ReadRacersFromCsv (AC)
+fileName:ac_Program_ReadRacersFromCsv.puml
+generated_on:23.04.2024 13:12:33
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.GetRacerByName (AC)
+fileName:ac_Program_GetRacerByName.puml
+generated_on:23.04.2024 13:12:33
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.SortRacersByTotalTime (AC)
+fileName:ac_Program_SortRacersByTotalTime.puml
+generated_on:23.04.2024 13:12:33
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.GetDisqualifiersRacers (AC)
+fileName:ac_Program_GetDisqualifiersRacers.puml
+generated_on:23.04.2024 13:12:33
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.DeleteDisqualifiersRacers (AC)
+fileName:ac_Program_DeleteDisqualifiersRacers.puml
+generated_on:23.04.2024 13:12:33
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.PrintRacersByRank (AC)
+fileName:ac_Program_PrintRacersByRank.puml
+generated_on:23.04.2024 13:12:33
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.ConvertTimeToSeconds (AC)
+fileName:ac_Program_ConvertTimeToSeconds.puml
+generated_on:23.04.2024 13:12:33
+generated_by:generated with the DiagramCreator by Prof.Gehrer

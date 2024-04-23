@@ -1,0 +1,23 @@
+@startuml Program.ConvertTimeToSeconds
+title Program.ConvertTimeToSeconds
+participant "ConvertTimeToSeconds(string time)" as ConvertTimeToSeconds_p0 #LightYellow
+participant "time.Split(a0)" as time_Split_a0 #LightGreen
+participant "IsValidTimeParts(a0)" as IsValidTimeParts_a0 #LightGreen
+participant "int.Parse(a0)" as int_Parse_a0 #LightGreen
+participant "parts[1].Split(a0)" as parts_1_Split_a0 #LightGreen
+autonumber
+ConvertTimeToSeconds_p0 -[#grey]> time_Split_a0 : (':')
+time_Split_a0 -[#blue]-> ConvertTimeToSeconds_p0 : parts
+alt#LightBlue IsValidTimeParts(parts)
+    ConvertTimeToSeconds_p0 -[#grey]> IsValidTimeParts_a0 : (parts)
+    IsValidTimeParts_a0 -[#blue]-> ConvertTimeToSeconds_p0 : result
+    ConvertTimeToSeconds_p0 -[#grey]> parts_1_Split_a0 : (',')
+    parts_1_Split_a0 -[#blue]-> ConvertTimeToSeconds_p0 : innerParts
+    alt#LightBlue IsValidTimeParts(innerParts)
+        ConvertTimeToSeconds_p0 -[#grey]> IsValidTimeParts_a0 : (innerParts)
+        IsValidTimeParts_a0 -[#blue]-> ConvertTimeToSeconds_p0 : result
+        ConvertTimeToSeconds_p0 -[#grey]> int_Parse_a0 : (innerParts[0])
+        int_Parse_a0 -[#blue]-> ConvertTimeToSeconds_p0 : result
+    end
+end
+@enduml

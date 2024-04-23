@@ -1,0 +1,11 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:Racer[] racers = ReadRacersFromCsv(FileNameResultsOne, FileNameResultsTwo);
+#WhiteSmoke:RunApp(racers);
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press enter to exit: ");
+#WhiteSmoke:ReadLine();
+stop
+@enduml

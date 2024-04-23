@@ -1,0 +1,40 @@
+@startuml Program.RunApp
+title Program.RunApp
+start
+#LightGreen:Params(Racer[] racers);
+#LightSkyBlue:bool exit;
+repeat
+        #WhiteSmoke:exit = false;
+        #WhiteSmoke:PrintLine();
+        #WhiteSmoke:PrintLine("1...Rangliste Ausgeben");
+        #WhiteSmoke:PrintLine("2...Disqualifizierte Läufer ausgeben");
+        #WhiteSmoke:PrintLine("3...Disqualifizierte Läufer löschen");
+        #WhiteSmoke:PrintLine("4...Ergbnisse speichern");
+        #WhiteSmoke:PrintLine("0...Beenden");
+        #WhiteSmoke:Print("Ihre Wahl: ");
+        #LightSkyBlue:string input = Console.ReadLine();
+        #LightYellow:if (input == "1") then (<color:green>yes)
+                #WhiteSmoke:SortRacersByTotalTime(racers);
+                #WhiteSmoke:PrintRacersByRank("Rangliste:", racers);
+            else (<color:red>no)
+                #LightYellow:if (input == "2") then (<color:green>yes)
+                        #LightSkyBlue:Racer[] disqualifiers = GetDisqualifiersRacers(racers);
+                        #WhiteSmoke:PrintRacersByRank("Disqualifizierte Läufer:", disqualifiers);
+                    else (<color:red>no)
+                        #LightYellow:if (input == "3") then (<color:green>yes)
+                                #WhiteSmoke:racers = DeleteDisqualifiersRacers(racers);
+                            else (<color:red>no)
+                                #LightYellow:if (input == "4") then (<color:green>yes)
+                                        #WhiteSmoke:SortRacersByTotalTime(racers);
+                                        #WhiteSmoke:WriteRacersToCsv("results.csv", racers);
+                                    else (<color:red>no)
+                                        #LightYellow:if (input == "0") then (<color:green>yes)
+                                                #WhiteSmoke:exit = true;
+                                        endif
+                                endif
+                        endif
+                endif
+        endif
+repeat while (exit == false) is (<color:green>yes)
+stop
+@enduml

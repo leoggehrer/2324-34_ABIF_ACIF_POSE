@@ -1,0 +1,15 @@
+@startuml Program.GetRacerByName
+title Program.GetRacerByName
+start
+#LightGreen:Params(Racer[] racers,string name);
+#LightSkyBlue:Racer result = null;
+#LightSkyBlue:int i = 0;
+while (i < racers.Length && result == null) is (<color:green>yes)
+        #LightYellow:if (racers[i].Name == name) then (<color:green>yes)
+                #WhiteSmoke:result = racers[i];
+        endif
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

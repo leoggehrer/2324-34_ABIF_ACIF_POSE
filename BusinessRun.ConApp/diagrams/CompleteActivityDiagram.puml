@@ -1,0 +1,102 @@
+@startuml CompleteActivityDiagram
+header
+generated on 23.04.2024 08:36:57
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("******************************************************");
+#WhiteSmoke:PrintLine("* BusinessRun - Die zuverlässige Software für Läufer *");
+#WhiteSmoke:PrintLine("******************************************************");
+#WhiteSmoke:PrintLine();
+#LightSkyBlue:Racer[] racers = ReadRacersFromFile(FileName);
+#WhiteSmoke:SortRacerByTime(racers);
+#WhiteSmoke:DisplayTheFirstThreeRacers(racers);
+#WhiteSmoke:PrintLine($"Durchschnittliche Laufzeit [sek]: {CalculateAverageTime(racers):f2}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Beenden mit Eingabetaste... ");
+#WhiteSmoke:ReadLine();
+stop
+start
+note right:  Program.ReadRacersFromFile
+#LightGreen:Params(string fileName);
+#LightSkyBlue:List<Racer> racers = new List<Racer>();
+#LightYellow:if (File.Exists(fileName)) then (<color:green>yes)
+        #LightSkyBlue:string[] lines = File.ReadAllLines(fileName);
+        :iterator = lines.GetIterator();
+        while (iterator.MoveNext()) is (<color:green>yes)
+        :line = iterator.Current();
+                            #LightSkyBlue:string[] parts = line.Split(';');
+                            #LightSkyBlue:Racer racer = new Racer
+                    {
+                        Number = parts[0],
+                        Name = parts[1],
+                        Vintage = int.Parse(parts[2]),
+                        Nationality = parts[3],
+                        Company = parts[4],
+                        Team = parts[5],
+                        Time = ConvertTimeToSeconds(parts[6])
+                    };
+start
+note right:  Program.DisplayTheFirstThreeRacers
+#LightGreen:Params(Racer[] racers);
+#WhiteSmoke:PrintLine($"{"Nr", -7}{"Name",-25}{"JG",-5}{"Nation",-7}{"Team",-30}{"Zeit[sec]",-10}");
+#LightSkyBlue:int i = 0;
+while (i < 3 && i < racers.Length) is (<color:green>yes)
+        #WhiteSmoke:PrintLine($"{racers[i].Number, -7}{racers[i].Name,-25}{racers[i].Vintage,-5}{racers[i].Nationality,-7}{racers[i].Team,-30}{racers[i].Time,-10:f2}");
+:i++;
+endwhile (<color:red>no)
+stop
+start
+note right:  Program.SortRacerByTime
+#LightGreen:Params(Racer[] racers);
+#LightSkyBlue:bool swapped;
+repeat
+        #WhiteSmoke:swapped = false;
+        #LightSkyBlue:int i = 0;
+        while (i < racers.Length - 1) is (<color:green>yes)
+                #LightYellow:if (racers[i].Time > racers[i + 1].Time) then (<color:green>yes)
+                        #LightSkyBlue:Racer temp = racers[i];
+                        #WhiteSmoke:racers[i] = racers[i + 1];
+                        #WhiteSmoke:racers[i + 1] = temp;
+                        #WhiteSmoke:swapped = true;
+                endif
+        :i++;
+        endwhile (<color:red>no)
+repeat while (swapped) is (<color:green>yes)
+stop
+start
+note right:  Program.CalculateAverageTime
+#LightGreen:Params(Racer[] racers);
+#LightSkyBlue:double result = 0;
+:iterator = racers.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:racer = iterator.Current();
+            #WhiteSmoke:result += racer.Time;
+endwhile (<color:red>no)
+#Lavender:return racers.Length > 0 ? result / racers.Length : 0.0;
+stop
+start
+note right:  Program.ConvertTimeToSeconds
+#LightGreen:Params(string time);
+#LightSkyBlue:double result = 0\nstring[] parts = time.Split(':');
+#LightYellow:if (IsValidTimeParts(parts)) then (<color:green>yes)
+        #WhiteSmoke:result = int.Parse(parts[0]) * 60;
+        #LightSkyBlue:string[] innerParts = parts[1].Split(',');
+        #LightYellow:if (IsValidTimeParts(innerParts)) then (<color:green>yes)
+                #WhiteSmoke:result += int.Parse(innerParts[0]);
+                #WhiteSmoke:result += int.Parse(innerParts[1]) / 10.0;
+        endif
+endif
+#Lavender:return result;
+stop
+start
+note right:  Program.IsValidTimeParts
+#LightGreen:Params(string[] parts);
+#Lavender:return parts.Length == 2;
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

@@ -1,0 +1,20 @@
+@startuml Racer
+title Racer
+ class Racer #GhostWhite {
+- string _name
+- string _country
+- double _timeone
+- double _timetwo
+---
++ string getName()
++ Void setName(string value)
++ string getCountry()
++ Void setCountry(string value)
++ double getTimeOne()
++ Void setTimeOne(double value)
++ double getTimeTwo()
++ Void setTimeTwo(double value)
++ double getTotalTime()
+---
+}
+@enduml

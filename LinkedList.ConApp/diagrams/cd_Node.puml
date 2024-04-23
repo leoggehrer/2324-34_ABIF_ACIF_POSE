@@ -1,0 +1,16 @@
+@startuml Node
+title Node
+ class Node #GhostWhite {
+- double _value
+- Node? _prev
+- Node? _next
+---
++ double getValue()
++ Void setValue(double value)
++ Node? getPrev()
++ Void setPrev(Node? value)
++ Node? getNext()
++ Void setNext(Node? value)
+---
+}
+@enduml

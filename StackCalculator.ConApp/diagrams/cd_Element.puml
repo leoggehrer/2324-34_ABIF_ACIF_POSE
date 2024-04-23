@@ -1,0 +1,13 @@
+@startuml Element
+title Element
+ class Element #GhostWhite {
+- double _data
+- Element? _next
+---
++ double getData()
++ Void setData(double value)
++ Element? getNext()
++ Void setNext(Element? value)
+---
+}
+@enduml

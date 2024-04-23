@@ -1,0 +1,27 @@
+@startuml Program.ReadRacersFromFile
+title Program.ReadRacersFromFile
+start
+#LightGreen:Params(string fileName);
+#LightSkyBlue:List<Racer> racers = new List<Racer>();
+#LightYellow:if (File.Exists(fileName)) then (<color:green>yes)
+        #LightSkyBlue:string[] lines = File.ReadAllLines(fileName);
+        :iterator = lines.GetIterator();
+        while (iterator.MoveNext()) is (<color:green>yes)
+        :line = iterator.Current();
+                            #LightSkyBlue:string[] parts = line.Split(';');
+                            #LightSkyBlue:Racer racer = new Racer
+                    {
+                        Number = parts[0],
+                        Name = parts[1],
+                        Vintage = int.Parse(parts[2]),
+                        Nationality = parts[3],
+                        Company = parts[4],
+                        Team = parts[5],
+                        Time = ConvertTimeToSeconds(parts[6])
+                    };
+                            #WhiteSmoke:racers.Add(racer);
+        endwhile (<color:red>no)
+endif
+#Lavender:return racers.ToArray();
+stop
+@enduml

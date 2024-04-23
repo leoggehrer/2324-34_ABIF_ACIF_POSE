@@ -1,0 +1,23 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[] args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "ReadRacersFromFile(a0)" as ReadRacersFromFile_a0 #LightGreen
+participant "SortRacerByTime(a0)" as SortRacerByTime_a0 #LightGreen
+participant "DisplayTheFirstThreeRacers(a0)" as DisplayTheFirstThreeRacers_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+autonumber
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("******************************************************")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("* BusinessRun - Die zuverlässige Software für Läufer *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("******************************************************")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> ReadRacersFromFile_a0 : (FileName)
+ReadRacersFromFile_a0 -[#blue]-> Main_p0 : racers
+Main_p0 -[#grey]> SortRacerByTime_a0 : (racers)
+Main_p0 -[#grey]> DisplayTheFirstThreeRacers_a0 : (racers)
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Durchschnittliche Laufzeit [sek]: {CalculateAverageTime(racers):f2}")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Beenden mit Eingabetaste... ")
+Main_p0 -[#grey]> Console_ReadLine
+@enduml

@@ -1,0 +1,14 @@
+@startuml Program.DeleteDisqualifiersRacers
+title Program.DeleteDisqualifiersRacers
+participant "DeleteDisqualifiersRacers(Racer[] racers)" as DeleteDisqualifiersRacers_p0 #LightYellow
+participant "result.Add(a0)" as result_Add_a0 #LightGreen
+participant "result.ToArray()" as result_ToArray #LightGreen
+autonumber
+loop#LightCoral racers
+    alt#LightBlue racer.TimeOne != 0 && racer.TimeTwo != 0
+        DeleteDisqualifiersRacers_p0 -[#grey]> result_Add_a0 : (racer)
+    end
+end
+DeleteDisqualifiersRacers_p0 -[#grey]> result_ToArray
+result_ToArray -[#blue]-> DeleteDisqualifiersRacers_p0 : result
+@enduml

@@ -1,0 +1,10 @@
+@startuml ObjectDiagram
+title ObjectDiagram
+ class ObjectDiagram << static >> #GhostWhite {
++ {const} string DiagramPath = @"C:\Temp\LinkedList"
++ {const} string FilePath = $"{DiagramPath}\\od_LinkedList.puml"
+---
+---
++ {static} void Generate(object[] items)
+}
+@enduml

@@ -1,0 +1,15 @@
+@startuml Program.DeleteDisqualifiersRacers
+title Program.DeleteDisqualifiersRacers
+start
+#LightGreen:Params(Racer[] racers);
+#LightSkyBlue:List<Racer> result = new List<Racer>();
+:iterator = racers.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:racer = iterator.Current();
+            #LightYellow:if (racer.TimeOne != 0 && racer.TimeTwo != 0) then (<color:green>yes)
+                    #WhiteSmoke:result.Add(racer);
+            endif
+endwhile (<color:red>no)
+#Lavender:return result.ToArray();
+stop
+@enduml

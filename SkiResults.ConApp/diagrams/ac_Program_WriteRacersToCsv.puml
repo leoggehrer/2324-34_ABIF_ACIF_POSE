@@ -1,0 +1,15 @@
+@startuml Program.WriteRacersToCsv
+title Program.WriteRacersToCsv
+start
+#LightGreen:Params(string fileName,Racer[] racers);
+#LightSkyBlue:List<string> lines = new List<string>();
+#WhiteSmoke:lines.Add("Rang;Country;Name;TimeOne;TimeTwo;TotalTime");
+#LightSkyBlue:int i = 0;
+while (i < racers.Length) is (<color:green>yes)
+        #LightSkyBlue:int rank = racers[i].TimeOne == 0 || racers[i].TimeTwo == 0 ? -1 : i + 1;
+        #WhiteSmoke:lines.Add($"{rank};{racers[i].Country};{racers[i].Name};{racers[i].TimeOne};{racers[i].TimeTwo};{racers[i].TotalTime}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:File.WriteAllLines(fileName, lines);
+stop
+@enduml

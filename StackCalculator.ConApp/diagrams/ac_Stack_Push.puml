@@ -1,0 +1,8 @@
+@startuml Stack.Push
+title Stack.Push
+start
+#LightGreen:Params(double data);
+#WhiteSmoke:head = new Element(data, head);
+#WhiteSmoke:ObjectDiagram.Generate(this);
+stop
+@enduml

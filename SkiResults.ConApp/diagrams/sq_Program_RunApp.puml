@@ -1,0 +1,45 @@
+@startuml Program.RunApp
+title Program.RunApp
+participant "RunApp(Racer[] racers)" as RunApp_p0 #LightYellow
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.Write(a0)" as Console_Write_a0 #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+participant "SortRacersByTotalTime(a0)" as SortRacersByTotalTime_a0 #LightGreen
+participant "PrintRacersByRank(a0,a1)" as PrintRacersByRank_a0_a1 #LightGreen
+participant "GetDisqualifiersRacers(a0)" as GetDisqualifiersRacers_a0 #LightGreen
+participant "DeleteDisqualifiersRacers(a0)" as DeleteDisqualifiersRacers_a0 #LightGreen
+participant "WriteRacersToCsv(a0,a1)" as WriteRacersToCsv_a0_a1 #LightGreen
+autonumber
+loop#LightCoral exit == false
+    RunApp_p0 -[#grey]> Console_WriteLine
+    RunApp_p0 -[#grey]> Console_WriteLine_a0 : ("1...Rangliste Ausgeben")
+    RunApp_p0 -[#grey]> Console_WriteLine_a0 : ("2...Disqualifizierte Läufer ausgeben")
+    RunApp_p0 -[#grey]> Console_WriteLine_a0 : ("3...Disqualifizierte Läufer löschen")
+    RunApp_p0 -[#grey]> Console_WriteLine_a0 : ("4...Ergbnisse speichern")
+    RunApp_p0 -[#grey]> Console_WriteLine_a0 : ("0...Beenden")
+    RunApp_p0 -[#grey]> Console_Write_a0 : ("Ihre Wahl: ")
+    RunApp_p0 -[#grey]> Console_ReadLine
+    Console_ReadLine -[#blue]-> RunApp_p0 : input
+    alt#LightBlue input == "1"
+        RunApp_p0 -[#grey]> SortRacersByTotalTime_a0 : (racers)
+        RunApp_p0 -[#grey]> PrintRacersByRank_a0_a1 : ("Rangliste:", racers)
+        else
+            alt#LightBlue input == "2"
+                RunApp_p0 -[#grey]> GetDisqualifiersRacers_a0 : (racers)
+                GetDisqualifiersRacers_a0 -[#blue]-> RunApp_p0 : disqualifiers
+                RunApp_p0 -[#grey]> PrintRacersByRank_a0_a1 : ("Disqualifizierte Läufer:", disqualifiers)
+                else
+                    alt#LightBlue input == "3"
+                        RunApp_p0 -[#grey]> DeleteDisqualifiersRacers_a0 : (racers)
+                        DeleteDisqualifiersRacers_a0 -[#blue]-> RunApp_p0 : racers
+                        else
+                            alt#LightBlue input == "4"
+                                RunApp_p0 -[#grey]> SortRacersByTotalTime_a0 : (racers)
+                                RunApp_p0 -[#grey]> WriteRacersToCsv_a0_a1 : ("results.csv", racers)
+                            end
+                    end
+            end
+    end
+end
+@enduml

@@ -30,9 +30,6 @@ title CompleteClassDiagram
 + void Push(double data)
 + double Pop()
 }
-Element *-- Element : _next
-Stack *-- Element : head
-' CustomUML
-' Stack *-- Element
-' CustomUML
+Element "0..1" *-- "1" Element : _next
+Stack "0..1" *-- "1" Element : head
 @enduml

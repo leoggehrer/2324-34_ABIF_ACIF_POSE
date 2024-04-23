@@ -1,0 +1,13 @@
+@startuml Program.CalculateAverageTime
+title Program.CalculateAverageTime
+start
+#LightGreen:Params(Racer[] racers);
+#LightSkyBlue:double result = 0;
+:iterator = racers.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:racer = iterator.Current();
+            #WhiteSmoke:result += racer.Time;
+endwhile (<color:red>no)
+#Lavender:return racers.Length > 0 ? result / racers.Length : 0.0;
+stop
+@enduml

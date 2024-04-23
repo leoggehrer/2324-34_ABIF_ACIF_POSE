@@ -1,0 +1,18 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:string input;
+#WhiteSmoke:PrintLine("**********************");
+#WhiteSmoke:PrintLine("* LinkedList         *");
+#WhiteSmoke:PrintLine("**********************");
+#WhiteSmoke:PrintLine();
+repeat
+        #WhiteSmoke:Print("List aktion [Enter...Exit]:  ");
+        #WhiteSmoke:input = ReadLine();
+        #LightYellow:if (input != string.Empty) then (<color:green>yes)
+                #WhiteSmoke:Parse(input);
+        endif
+repeat while (input != string.Empty) is (<color:green>yes)
+stop
+@enduml
