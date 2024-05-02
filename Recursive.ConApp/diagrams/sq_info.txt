@@ -1,0 +1,8 @@
+title:Program.Main (SQ)
+fileName:sq_Program_Main.puml
+generated_on:01.05.2024 20:56:57
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.FibonacciRecursive (SQ)
+fileName:sq_Program_FibonacciRecursive.puml
+generated_on:01.05.2024 20:56:57
+generated_by:generated with the DiagramCreator by Prof.Gehrer

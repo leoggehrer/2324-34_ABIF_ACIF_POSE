@@ -1,0 +1,11 @@
+@startuml Program.WriteRacersToFile
+title Program.WriteRacersToFile
+participant "WriteRacersToFile(string fileName,Racer[] racers)" as WriteRacersToFile_p0_p1 #LightYellow
+participant "lines.Add(a0)" as lines_Add_a0 #LightGreen
+participant "File.WriteAllLines(a0,a1)" as File_WriteAllLines_a0_a1 #LightGreen
+autonumber
+loop#LightCoral racers
+    WriteRacersToFile_p0_p1 -[#grey]> lines_Add_a0 : (line)
+end
+WriteRacersToFile_p0_p1 -[#grey]> File_WriteAllLines_a0_a1 : (fileName, lines)
+@enduml

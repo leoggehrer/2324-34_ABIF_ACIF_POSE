@@ -1,0 +1,15 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #WhiteSmoke:PrintLine($"Recursive {i, -3}: = {FibonacciRecursive(i)}");
+        #WhiteSmoke:PrintLine($"Iterative {i, -3}: = {FibonacciIterative(i)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press enter to exit: ");
+#WhiteSmoke:ReadLine();
+stop
+@enduml

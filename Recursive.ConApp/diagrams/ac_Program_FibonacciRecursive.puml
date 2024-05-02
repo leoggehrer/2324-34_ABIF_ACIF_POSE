@@ -1,0 +1,14 @@
+@startuml Program.FibonacciRecursive
+title Program.FibonacciRecursive
+start
+#LightGreen:Params(int n);
+#LightYellow:if (n < 2) then (<color:green>yes)
+        #Lavender:return n;
+    else (<color:red>no)
+            #Lavender:return FibonacciRecursive(n - 1) + FibonacciRecursive(n - 2);
+endif
+' CustomUML
+header: Rekursive Lösung der Fibonacci-Berechnung
+' CustomUML
+stop
+@enduml

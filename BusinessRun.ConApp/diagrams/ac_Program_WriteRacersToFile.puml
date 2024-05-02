@@ -1,0 +1,14 @@
+@startuml Program.WriteRacersToFile
+title Program.WriteRacersToFile
+start
+#LightGreen:Params(string fileName,Racer[] racers);
+#LightSkyBlue:List<string> lines = new List<string>();
+:iterator = racers.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:racer = iterator.Current();
+            #LightSkyBlue:string line = $"{racer.Number};{racer.Name};{racer.Vintage};{racer.Nationality};{racer.Company};{racer.Team};{racer.Time}";
+            #WhiteSmoke:lines.Add(line);
+endwhile (<color:red>no)
+#WhiteSmoke:File.WriteAllLines(fileName, lines);
+stop
+@enduml

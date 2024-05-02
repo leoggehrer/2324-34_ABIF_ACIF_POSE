@@ -1,0 +1,13 @@
+@startuml Program.FibonacciIterative
+title Program.FibonacciIterative
+start
+#LightGreen:Params(int n);
+#LightSkyBlue:long result = 1\nlong n_2 = 1;
+while (n > 2) is (<color:green>yes)
+        #WhiteSmoke:result = result + n_2;
+        #WhiteSmoke:n_2 = result - n_2;
+        #WhiteSmoke:n--;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+@enduml

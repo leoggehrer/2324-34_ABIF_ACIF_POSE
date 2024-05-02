@@ -1,0 +1,13 @@
+@startuml Program.FibonacciRecursive
+title Program.FibonacciRecursive
+participant "FibonacciRecursive(int n)" as FibonacciRecursive_p0 #LightYellow
+participant "FibonacciRecursive(a0)" as FibonacciRecursive_a0 #LightGreen
+autonumber
+alt#LightBlue n < 2
+    else
+        FibonacciRecursive_p0 -[#grey]> FibonacciRecursive_a0 : (n - 1)
+        FibonacciRecursive_a0 -[#blue]-> FibonacciRecursive_p0 : result
+        FibonacciRecursive_p0 -[#grey]> FibonacciRecursive_a0 : (n - 2)
+        FibonacciRecursive_a0 -[#blue]-> FibonacciRecursive_p0 : result
+end
+@enduml

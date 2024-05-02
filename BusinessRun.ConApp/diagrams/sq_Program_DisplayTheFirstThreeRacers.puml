@@ -3,8 +3,8 @@ title Program.DisplayTheFirstThreeRacers
 participant "DisplayTheFirstThreeRacers(Racer[] racers)" as DisplayTheFirstThreeRacers_p0 #LightYellow
 participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 autonumber
-DisplayTheFirstThreeRacers_p0 -[#grey]> Console_WriteLine_a0 : ($"{"Nr", -7}{"Name",-25}{"JG",-5}{"Nation",-7}{"Team",-30}{"Zeit[sec]",-10}")
+DisplayTheFirstThreeRacers_p0 -[#grey]> Console_WriteLine_a0 : ($"{"Nr",-7}{"Name",-25}{"JG",-5}{"Nation",-7}{"Team",-40}{"Zeit[sec]",-10}")
 loop#LightCoral i < 3 && i < racers.Length
-    DisplayTheFirstThreeRacers_p0 -[#grey]> Console_WriteLine_a0 : ($"{racers[i].Number, -7}{racers[i].Name,-25}{racers[i].Vintage,-5}{racers[i].Nationality,-7}{racers[i].Team,-30}{racers[i].Time,-10:f2}")
+    DisplayTheFirstThreeRacers_p0 -[#grey]> Console_WriteLine_a0 : ($"{racers[i].Number,-7}{racers[i].Name,-25}{racers[i].Vintage,-5}{racers[i].Nationality,-7}{racers[i].Team,-40}{racers[i].Time,-10:f2}")
 end
 @enduml

@@ -39,10 +39,14 @@ namespace BusinessRun.ConApp
             SortRacerByTime(racers);
 
             //Ausgabe (A)
+            SortRacerByStartNumber(racers);
+            DisplayRacers(racers);
+
+            Console.WriteLine();
+            SortRacerByTime(racers);
             DisplayTheFirstThreeRacers(racers);
             Console.WriteLine($"Durchschnittliche Laufzeit [sek]: {CalculateAverageTime(racers):f2}");
 
-            SortRacerByStartNumber(racers);
             WriteRacersToFile(OutputFileName, racers);
 
             Console.WriteLine();
@@ -100,16 +104,30 @@ namespace BusinessRun.ConApp
         }
 
         /// <summary>
+        /// Displays the details of the racers.
+        /// </summary>
+        /// <param name="racers">An array of Racer objects.</param>
+        private static void DisplayRacers(Racer[] racers)
+        {
+            Console.WriteLine($"{"Nr",-7}{"Name",-25}{"JG",-5}{"Nation",-7}{"Team",-40}{"Zeit[sec]",-10}");
+
+            for (int i = 0; i < racers.Length; i++)
+            {
+                Console.WriteLine($"{racers[i].Number,-7}{racers[i].Name,-25}{racers[i].Vintage,-5}{racers[i].Nationality,-7}{racers[i].Team,-40}{racers[i].Time,-10:f2}");
+            }
+        }
+
+        /// <summary>
         /// Displays the information of the first three racers in the given array of racers.
         /// </summary>
         /// <param name="racers">The array of racers.</param>
         private static void DisplayTheFirstThreeRacers(Racer[] racers)
         {
-            Console.WriteLine($"{"Nr",-7}{"Name",-25}{"JG",-5}{"Nation",-7}{"Team",-30}{"Zeit[sec]",-10}");
+            Console.WriteLine($"{"Nr",-7}{"Name",-25}{"JG",-5}{"Nation",-7}{"Team",-40}{"Zeit[sec]",-10}");
 
             for (int i = 0; i < 3 && i < racers.Length; i++)
             {
-                Console.WriteLine($"{racers[i].Number,-7}{racers[i].Name,-25}{racers[i].Vintage,-5}{racers[i].Nationality,-7}{racers[i].Team,-30}{racers[i].Time,-10:f2}");
+                Console.WriteLine($"{racers[i].Number,-7}{racers[i].Name,-25}{racers[i].Vintage,-5}{racers[i].Nationality,-7}{racers[i].Team,-40}{racers[i].Time,-10:f2}");
             }
         }
 

@@ -1,0 +1,15 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[] args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+autonumber
+loop#LightCoral i <= 10
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Recursive {i, -3}: = {FibonacciRecursive(i)}")
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Iterative {i, -3}: = {FibonacciIterative(i)}")
+end
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press enter to exit: ")
+Main_p0 -[#grey]> Console_ReadLine
+@enduml

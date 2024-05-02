@@ -1,13 +1,17 @@
 @startuml Program
 title Program
  class Program #GhostWhite {
-- {const} string FileName = "BusinessRun.csv"
+- {const} string InputFileName = "BusinessRun.csv"
+- {const} string OutputFileName = "RUN-Start.csv"
 ---
 ---
 - {static} void Main(string[] args)
 - {static} Racer[] ReadRacersFromFile(string fileName)
+- {static} void WriteRacersToFile(string fileName, Racer[] racers)
+- {static} void DisplayRacers(Racer[] racers)
 - {static} void DisplayTheFirstThreeRacers(Racer[] racers)
 + {static} void SortRacerByTime(Racer[] racers)
++ {static} void SortRacerByStartNumber(Racer[] racers)
 - {static} double CalculateAverageTime(Racer[] racers)
 - {static} double ConvertTimeToSeconds(string time)
 - {static} bool IsValidTimeParts(string[] parts)

@@ -1,0 +1,10 @@
+@startuml Program
+title Program
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} long FibonacciRecursive(int n)
+- {static} long FibonacciIterative(int n)
+}
+@enduml

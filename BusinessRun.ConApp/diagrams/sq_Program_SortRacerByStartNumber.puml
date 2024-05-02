@@ -1,0 +1,14 @@
+@startuml Program.SortRacerByStartNumber
+title Program.SortRacerByStartNumber
+participant "SortRacerByStartNumber(Racer[] racers)" as SortRacerByStartNumber_p0 #LightYellow
+participant "racers[i].Number.CompareTo(a0)" as racers_i_Number_CompareTo_a0 #LightGreen
+autonumber
+loop#LightCoral swapped
+    loop#LightCoral i < racers.Length - 1
+        alt#LightBlue racers[i].Number.CompareTo(racers[i + 1].Number) < 0
+            SortRacerByStartNumber_p0 -[#grey]> racers_i_Number_CompareTo_a0 : (racers[i + 1].Number)
+            racers_i_Number_CompareTo_a0 -[#blue]-> SortRacerByStartNumber_p0 : result
+        end
+    end
+end
+@enduml

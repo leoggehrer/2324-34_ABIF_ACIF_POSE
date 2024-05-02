@@ -6,10 +6,15 @@ start
 #WhiteSmoke:PrintLine("* BusinessRun - Die zuverlässige Software für Läufer *");
 #WhiteSmoke:PrintLine("******************************************************");
 #WhiteSmoke:PrintLine();
-#LightSkyBlue:Racer[] racers = ReadRacersFromFile(FileName);
+#LightSkyBlue:Racer[] racers = ReadRacersFromFile(InputFileName);
+#WhiteSmoke:SortRacerByTime(racers);
+#WhiteSmoke:SortRacerByStartNumber(racers);
+#WhiteSmoke:DisplayRacers(racers);
+#WhiteSmoke:PrintLine();
 #WhiteSmoke:SortRacerByTime(racers);
 #WhiteSmoke:DisplayTheFirstThreeRacers(racers);
 #WhiteSmoke:PrintLine($"Durchschnittliche Laufzeit [sek]: {CalculateAverageTime(racers):f2}");
+#WhiteSmoke:WriteRacersToFile(OutputFileName, racers);
 #WhiteSmoke:PrintLine();
 #WhiteSmoke:PrintLine("Beenden mit Eingabetaste... ");
 #WhiteSmoke:ReadLine();
