@@ -1,0 +1,19 @@
+@startuml Program.IsPalindromeIterative
+title Program.IsPalindromeIterative
+participant "IsPalindromeIterative(string text,int start,int end)" as IsPalindromeIterative_p0_p1_p2 #LightYellow
+participant "char.ToLower(a0)" as char_ToLower_a0 #LightGreen
+participant "IsPalindromeIterative(a0,a1,a2)" as IsPalindromeIterative_a0_a1_a2 #LightGreen
+autonumber
+alt#LightBlue start >= end
+    else
+        alt#LightBlue char.ToLower(text[start]) != char.ToLower(text[end])
+            IsPalindromeIterative_p0_p1_p2 -[#grey]> char_ToLower_a0 : (text[start])
+            char_ToLower_a0 -[#blue]-> IsPalindromeIterative_p0_p1_p2 : result
+            IsPalindromeIterative_p0_p1_p2 -[#grey]> char_ToLower_a0 : (text[end])
+            char_ToLower_a0 -[#blue]-> IsPalindromeIterative_p0_p1_p2 : result
+            else
+                IsPalindromeIterative_p0_p1_p2 -[#grey]> IsPalindromeIterative_a0_a1_a2 : (text, start + 1, end - 1)
+                IsPalindromeIterative_a0_a1_a2 -[#blue]-> IsPalindromeIterative_p0_p1_p2 : result
+        end
+end
+@enduml

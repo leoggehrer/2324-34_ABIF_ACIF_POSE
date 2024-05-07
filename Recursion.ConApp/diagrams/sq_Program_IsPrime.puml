@@ -1,0 +1,8 @@
+@startuml Program.IsPrime
+title Program.IsPrime
+participant "IsPrime(int n)" as IsPrime_p0 #LightYellow
+participant "IsPrimeRecursive(a0,a1)" as IsPrimeRecursive_a0_a1 #LightGreen
+autonumber
+IsPrime_p0 -[#grey]> IsPrimeRecursive_a0_a1 : (n, n - 1)
+IsPrimeRecursive_a0_a1 -[#blue]-> IsPrime_p0 : result
+@enduml

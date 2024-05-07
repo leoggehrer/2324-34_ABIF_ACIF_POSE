@@ -1,0 +1,56 @@
+@startuml Program.Main
+title Program.Main
+participant "Main(string[] args)" as Main_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
+participant "Random.Shared.Next(a0,a1)" as Random_Shared_Next_a0_a1 #LightGreen
+participant "Console.WriteLine()" as Console_WriteLine #LightGreen
+participant "Console.ReadLine()" as Console_ReadLine #LightGreen
+autonumber
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Fibonacci numbers:")
+loop#LightCoral i <= 10
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Recursive {i, -3}: = {FibonacciRecursive(i)}")
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Iterative {i, -3}: = {FibonacciIterative(i)}")
+end
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Add rekursive:")
+loop#LightCoral i <= 10
+    Main_p0 -[#grey]> Random_Shared_Next_a0_a1 : (0, 100)
+    Random_Shared_Next_a0_a1 -[#blue]-> Main_p0 : a
+    Main_p0 -[#grey]> Random_Shared_Next_a0_a1 : (0, 100)
+    Random_Shared_Next_a0_a1 -[#blue]-> Main_p0 : b
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Add({a, 2}, {b, 2}): = {AddRecursive(a, b)}")
+end
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Mul rekursive:")
+loop#LightCoral i <= 10
+    Main_p0 -[#grey]> Random_Shared_Next_a0_a1 : (0, 10)
+    Random_Shared_Next_a0_a1 -[#blue]-> Main_p0 : a
+    Main_p0 -[#grey]> Random_Shared_Next_a0_a1 : (0, 10)
+    Random_Shared_Next_a0_a1 -[#blue]-> Main_p0 : b
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"Mul({a, 2}, {b, 2}): = {MulRecursive(a, b)}")
+end
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("GGT rekursive:")
+loop#LightCoral i <= 10
+    Main_p0 -[#grey]> Random_Shared_Next_a0_a1 : (0, 100)
+    Random_Shared_Next_a0_a1 -[#blue]-> Main_p0 : a
+    Main_p0 -[#grey]> Random_Shared_Next_a0_a1 : (0, 100)
+    Random_Shared_Next_a0_a1 -[#blue]-> Main_p0 : b
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"GGT({a, 2}, {b, 2}): = {CgdRecursive(a, b)}")
+end
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("IsPrime rekursive:")
+loop#LightCoral i <= 10
+    Main_p0 -[#grey]> Random_Shared_Next_a0_a1 : (2, 100)
+    Random_Shared_Next_a0_a1 -[#blue]-> Main_p0 : n
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"IsPrime({n, 2}): = {IsPrime(n)}")
+end
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Function rekursive:")
+loop#LightCoral i <= 10
+    Main_p0 -[#grey]> Random_Shared_Next_a0_a1 : (1, 100)
+    Random_Shared_Next_a0_a1 -[#blue]-> Main_p0 : n
+    Main_p0 -[#grey]> Console_WriteLine_a0 : ($"f({n, 2}): = {Function(n)}")
+end
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"IsPalindrome({text}): = {IsPalindrome(text)}")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"IsPalindrome({text}): = {IsPalindrome(text)}")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ($"IsPalindrome({text}): = {IsPalindrome(text)}")
+Main_p0 -[#grey]> Console_WriteLine
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("Press enter to exit: ")
+Main_p0 -[#grey]> Console_ReadLine
+@enduml

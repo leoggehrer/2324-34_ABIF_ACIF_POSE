@@ -1,0 +1,7 @@
+@startuml Program.IsPrime
+title Program.IsPrime
+start
+#LightGreen:Params(int n);
+#Lavender:return IsPrimeRecursive(n, n - 1);
+stop
+@enduml

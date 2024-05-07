@@ -1,0 +1,11 @@
+@startuml Program.CgdRecursive
+title Program.CgdRecursive
+start
+#LightGreen:Params(int a,int b);
+#LightYellow:if (b == 0) then (<color:green>yes)
+        #Lavender:return a;
+    else (<color:red>no)
+            #Lavender:return CgdRecursive(b, a % b);
+endif
+stop
+@enduml

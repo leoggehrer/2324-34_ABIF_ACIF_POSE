@@ -1,0 +1,11 @@
+@startuml Program.CgdRecursive
+title Program.CgdRecursive
+participant "CgdRecursive(int a,int b)" as CgdRecursive_p0_p1 #LightYellow
+participant "CgdRecursive(a0,a1)" as CgdRecursive_a0_a1 #LightGreen
+autonumber
+alt#LightBlue b == 0
+    else
+        CgdRecursive_p0_p1 -[#grey]> CgdRecursive_a0_a1 : (b, a % b)
+        CgdRecursive_a0_a1 -[#blue]-> CgdRecursive_p0_p1 : result
+end
+@enduml

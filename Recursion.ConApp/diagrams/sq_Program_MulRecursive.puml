@@ -1,0 +1,17 @@
+@startuml Program.MulRecursive
+title Program.MulRecursive
+participant "MulRecursive(int a,int b)" as MulRecursive_p0_p1 #LightYellow
+participant "MulRecursive(a0,a1)" as MulRecursive_a0_a1 #LightGreen
+autonumber
+alt#LightBlue a == 0 || b == 0
+    else
+        alt#LightBlue a == 1
+            else
+                alt#LightBlue b == 1
+                    else
+                        MulRecursive_p0_p1 -[#grey]> MulRecursive_a0_a1 : (a, b - 1)
+                        MulRecursive_a0_a1 -[#blue]-> MulRecursive_p0_p1 : result
+                end
+        end
+end
+@enduml

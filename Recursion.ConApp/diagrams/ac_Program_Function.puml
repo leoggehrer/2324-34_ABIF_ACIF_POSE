@@ -1,0 +1,11 @@
+@startuml Program.Function
+title Program.Function
+start
+#LightGreen:Params(int n);
+#LightYellow:if (n == 1) then (<color:green>yes)
+        #Lavender:return 1;
+    else (<color:red>no)
+            #Lavender:return Function(n - 1) + 2 * n - 1;
+endif
+stop
+@enduml

@@ -1,0 +1,18 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class Program #GhostWhite {
+---
+---
+- {static} void Main(string[] args)
+- {static} long FibonacciRecursive(int n)
+- {static} long FibonacciIterative(int n)
+- {static} int AddRecursive(int a, int b)
+- {static} int MulRecursive(int a, int b)
+- {static} int CgdRecursive(int a, int b)
+- {static} bool IsPrime(int n)
+- {static} bool IsPrimeRecursive(int n, int p)
+- {static} int Function(int n)
+- {static} bool IsPalindrome(string text)
+- {static} bool IsPalindromeIterative(string text, int start, int end)
+}
+@enduml

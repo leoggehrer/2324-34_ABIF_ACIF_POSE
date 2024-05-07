@@ -1,0 +1,171 @@
+@startuml CompleteActivityDiagram
+header
+generated on 06.05.2024 14:59:53
+end header
+title CompleteActivityDiagram
+start
+note right:  Program.Main
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("Fibonacci numbers:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #WhiteSmoke:PrintLine($"Recursive {i, -3}: = {FibonacciRecursive(i)}");
+        #WhiteSmoke:PrintLine($"Iterative {i, -3}: = {FibonacciIterative(i)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine("Add rekursive:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #LightSkyBlue:int a = Random.Shared.Next(0, 100);
+        #LightSkyBlue:int b = Random.Shared.Next(0, 100);
+        #WhiteSmoke:PrintLine($"Add({a, 2}, {b, 2}): = {AddRecursive(a, b)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine("Mul rekursive:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #LightSkyBlue:int a = Random.Shared.Next(0, 10);
+        #LightSkyBlue:int b = Random.Shared.Next(0, 10);
+        #WhiteSmoke:PrintLine($"Mul({a, 2}, {b, 2}): = {MulRecursive(a, b)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine("GGT rekursive:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #LightSkyBlue:int a = Random.Shared.Next(0, 100);
+        #LightSkyBlue:int b = Random.Shared.Next(0, 100);
+        #WhiteSmoke:PrintLine($"GGT({a, 2}, {b, 2}): = {CgdRecursive(a, b)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine("IsPrime rekursive:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #LightSkyBlue:int n = Random.Shared.Next(2, 100);
+        #WhiteSmoke:PrintLine($"IsPrime({n, 2}): = {IsPrime(n)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine("Function rekursive:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #LightSkyBlue:int n = Random.Shared.Next(1, 100);
+        #WhiteSmoke:PrintLine($"f({n, 2}): = {Function(n)}");
+:i++;
+endwhile (<color:red>no)
+#LightSkyBlue:string text = "otto";
+#WhiteSmoke:PrintLine($"IsPalindrome({text}): = {IsPalindrome(text)}");
+#WhiteSmoke:text = "Reittier";
+#WhiteSmoke:PrintLine($"IsPalindrome({text}): = {IsPalindrome(text)}");
+#WhiteSmoke:text = "Das ist kein Palindrom";
+#WhiteSmoke:PrintLine($"IsPalindrome({text}): = {IsPalindrome(text)}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press enter to exit: ");
+#WhiteSmoke:ReadLine();
+stop
+start
+note right:  Program.FibonacciRecursive
+#LightGreen:Params(int n);
+#LightYellow:if (n < 2) then (<color:green>yes)
+        #Lavender:return n;
+    else (<color:red>no)
+            #Lavender:return FibonacciRecursive(n - 1) + FibonacciRecursive(n - 2);
+endif
+stop
+start
+note right:  Program.FibonacciIterative
+#LightGreen:Params(int n);
+#LightSkyBlue:long result = 1\nlong n_2 = 1;
+while (n > 2) is (<color:green>yes)
+        #WhiteSmoke:result = result + n_2;
+        #WhiteSmoke:n_2 = result - n_2;
+        #WhiteSmoke:n--;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+start
+note right:  Program.AddRecursive
+#LightGreen:Params(int a,int b);
+#LightYellow:if (a == 0) then (<color:green>yes)
+        #Lavender:return b;
+    else (<color:red>no)
+        #LightYellow:if (b == 0) then (<color:green>yes)
+                #Lavender:return a;
+            else (<color:red>no)
+                    #Lavender:return 2 + AddRecursive(a - 1, b - 1);
+        endif
+endif
+stop
+start
+note right:  Program.MulRecursive
+#LightGreen:Params(int a,int b);
+#LightYellow:if (a == 0 || b == 0) then (<color:green>yes)
+        #Lavender:return 0;
+    else (<color:red>no)
+        #LightYellow:if (a == 1) then (<color:green>yes)
+                #Lavender:return b;
+            else (<color:red>no)
+                #LightYellow:if (b == 1) then (<color:green>yes)
+                        #Lavender:return a;
+                    else (<color:red>no)
+                            #Lavender:return a + MulRecursive(a, b - 1);
+                endif
+        endif
+endif
+stop
+start
+note right:  Program.CgdRecursive
+#LightGreen:Params(int a,int b);
+#LightYellow:if (b == 0) then (<color:green>yes)
+        #Lavender:return a;
+    else (<color:red>no)
+            #Lavender:return CgdRecursive(b, a % b);
+endif
+stop
+start
+note right:  Program.IsPrime
+#LightGreen:Params(int n);
+#Lavender:return IsPrimeRecursive(n, n - 1);
+stop
+start
+note right:  Program.IsPrimeRecursive
+#LightGreen:Params(int n,int p);
+#LightYellow:if (p == 1) then (<color:green>yes)
+        #Lavender:return true;
+    else (<color:red>no)
+        #LightYellow:if (n % p == 0) then (<color:green>yes)
+                #Lavender:return false;
+            else (<color:red>no)
+                    #Lavender:return IsPrimeRecursive(n, p - 1);
+        endif
+endif
+stop
+start
+note right:  Program.Function
+#LightGreen:Params(int n);
+#LightYellow:if (n == 1) then (<color:green>yes)
+        #Lavender:return 1;
+    else (<color:red>no)
+            #Lavender:return Function(n - 1) + 2 * n - 1;
+endif
+stop
+start
+note right:  Program.IsPalindrome
+#LightGreen:Params(string text);
+#Lavender:return IsPalindromeIterative(text, 0, text.Length - 1);
+stop
+start
+note right:  Program.IsPalindromeIterative
+#LightGreen:Params(string text,int start,int end);
+#LightYellow:if (start >= end) then (<color:green>yes)
+        #Lavender:return true;
+    else (<color:red>no)
+        #LightYellow:if (char.ToLower(text[start]) != char.ToLower(text[end])) then (<color:green>yes)
+                #Lavender:return false;
+            else (<color:red>no)
+                    #Lavender:return IsPalindromeIterative(text, start + 1, end - 1);
+        endif
+endif
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

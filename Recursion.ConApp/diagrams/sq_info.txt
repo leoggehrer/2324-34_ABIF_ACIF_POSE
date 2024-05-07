@@ -1,0 +1,40 @@
+title:Program.Main (SQ)
+fileName:sq_Program_Main.puml
+generated_on:06.05.2024 14:59:54
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.FibonacciRecursive (SQ)
+fileName:sq_Program_FibonacciRecursive.puml
+generated_on:06.05.2024 14:59:54
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.AddRecursive (SQ)
+fileName:sq_Program_AddRecursive.puml
+generated_on:06.05.2024 14:59:54
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.MulRecursive (SQ)
+fileName:sq_Program_MulRecursive.puml
+generated_on:06.05.2024 14:59:54
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.CgdRecursive (SQ)
+fileName:sq_Program_CgdRecursive.puml
+generated_on:06.05.2024 14:59:54
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.IsPrime (SQ)
+fileName:sq_Program_IsPrime.puml
+generated_on:06.05.2024 14:59:54
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.IsPrimeRecursive (SQ)
+fileName:sq_Program_IsPrimeRecursive.puml
+generated_on:06.05.2024 14:59:54
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.Function (SQ)
+fileName:sq_Program_Function.puml
+generated_on:06.05.2024 14:59:54
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.IsPalindrome (SQ)
+fileName:sq_Program_IsPalindrome.puml
+generated_on:06.05.2024 14:59:54
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.IsPalindromeIterative (SQ)
+fileName:sq_Program_IsPalindromeIterative.puml
+generated_on:06.05.2024 14:59:54
+generated_by:generated with the DiagramCreator by Prof.Gehrer

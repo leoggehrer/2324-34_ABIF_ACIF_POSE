@@ -1,0 +1,11 @@
+@startuml Program.Function
+title Program.Function
+participant "Function(int n)" as Function_p0 #LightYellow
+participant "Function(a0)" as Function_a0 #LightGreen
+autonumber
+alt#LightBlue n == 1
+    else
+        Function_p0 -[#grey]> Function_a0 : (n - 1)
+        Function_a0 -[#blue]-> Function_p0 : result
+end
+@enduml

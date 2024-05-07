@@ -1,0 +1,44 @@
+title:Program.Main (AC)
+fileName:ac_Program_Main.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.FibonacciRecursive (AC)
+fileName:ac_Program_FibonacciRecursive.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.FibonacciIterative (AC)
+fileName:ac_Program_FibonacciIterative.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.AddRecursive (AC)
+fileName:ac_Program_AddRecursive.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.MulRecursive (AC)
+fileName:ac_Program_MulRecursive.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.CgdRecursive (AC)
+fileName:ac_Program_CgdRecursive.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.IsPrime (AC)
+fileName:ac_Program_IsPrime.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.IsPrimeRecursive (AC)
+fileName:ac_Program_IsPrimeRecursive.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.Function (AC)
+fileName:ac_Program_Function.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.IsPalindrome (AC)
+fileName:ac_Program_IsPalindrome.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer
+title:Program.IsPalindromeIterative (AC)
+fileName:ac_Program_IsPalindromeIterative.puml
+generated_on:06.05.2024 14:59:53
+generated_by:generated with the DiagramCreator by Prof.Gehrer

@@ -1,0 +1,14 @@
+@startuml Program.AddRecursive
+title Program.AddRecursive
+participant "AddRecursive(int a,int b)" as AddRecursive_p0_p1 #LightYellow
+participant "AddRecursive(a0,a1)" as AddRecursive_a0_a1 #LightGreen
+autonumber
+alt#LightBlue a == 0
+    else
+        alt#LightBlue b == 0
+            else
+                AddRecursive_p0_p1 -[#grey]> AddRecursive_a0_a1 : (a - 1, b - 1)
+                AddRecursive_a0_a1 -[#blue]-> AddRecursive_p0_p1 : result
+        end
+end
+@enduml

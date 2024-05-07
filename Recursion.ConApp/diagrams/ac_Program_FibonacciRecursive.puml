@@ -7,8 +7,5 @@ start
     else (<color:red>no)
             #Lavender:return FibonacciRecursive(n - 1) + FibonacciRecursive(n - 2);
 endif
-' CustomUML
-header: Rekursive Lösung der Fibonacci-Berechnung
-' CustomUML
 stop
 @enduml

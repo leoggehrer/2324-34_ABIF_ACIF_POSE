@@ -1,0 +1,15 @@
+@startuml Program.IsPalindromeIterative
+title Program.IsPalindromeIterative
+start
+#LightGreen:Params(string text,int start,int end);
+#LightYellow:if (start >= end) then (<color:green>yes)
+        #Lavender:return true;
+    else (<color:red>no)
+        #LightYellow:if (char.ToLower(text[start]) != char.ToLower(text[end])) then (<color:green>yes)
+                #Lavender:return false;
+            else (<color:red>no)
+                    #Lavender:return IsPalindromeIterative(text, start + 1, end - 1);
+        endif
+endif
+stop
+@enduml

@@ -1,0 +1,15 @@
+@startuml Program.IsPrimeRecursive
+title Program.IsPrimeRecursive
+start
+#LightGreen:Params(int n,int p);
+#LightYellow:if (p == 1) then (<color:green>yes)
+        #Lavender:return true;
+    else (<color:red>no)
+        #LightYellow:if (n % p == 0) then (<color:green>yes)
+                #Lavender:return false;
+            else (<color:red>no)
+                    #Lavender:return IsPrimeRecursive(n, p - 1);
+        endif
+endif
+stop
+@enduml

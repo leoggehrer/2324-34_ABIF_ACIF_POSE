@@ -1,0 +1,19 @@
+@startuml Program.MulRecursive
+title Program.MulRecursive
+start
+#LightGreen:Params(int a,int b);
+#LightYellow:if (a == 0 || b == 0) then (<color:green>yes)
+        #Lavender:return 0;
+    else (<color:red>no)
+        #LightYellow:if (a == 1) then (<color:green>yes)
+                #Lavender:return b;
+            else (<color:red>no)
+                #LightYellow:if (b == 1) then (<color:green>yes)
+                        #Lavender:return a;
+                    else (<color:red>no)
+                            #Lavender:return a + MulRecursive(a, b - 1);
+                endif
+        endif
+endif
+stop
+@enduml

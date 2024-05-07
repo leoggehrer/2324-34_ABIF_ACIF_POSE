@@ -1,0 +1,60 @@
+@startuml Program.Main
+title Program.Main
+start
+#LightGreen:Params(string[] args);
+#WhiteSmoke:PrintLine("Fibonacci numbers:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #WhiteSmoke:PrintLine($"Recursive {i, -3}: = {FibonacciRecursive(i)}");
+        #WhiteSmoke:PrintLine($"Iterative {i, -3}: = {FibonacciIterative(i)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine("Add rekursive:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #LightSkyBlue:int a = Random.Shared.Next(0, 100);
+        #LightSkyBlue:int b = Random.Shared.Next(0, 100);
+        #WhiteSmoke:PrintLine($"Add({a, 2}, {b, 2}): = {AddRecursive(a, b)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine("Mul rekursive:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #LightSkyBlue:int a = Random.Shared.Next(0, 10);
+        #LightSkyBlue:int b = Random.Shared.Next(0, 10);
+        #WhiteSmoke:PrintLine($"Mul({a, 2}, {b, 2}): = {MulRecursive(a, b)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine("GGT rekursive:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #LightSkyBlue:int a = Random.Shared.Next(0, 100);
+        #LightSkyBlue:int b = Random.Shared.Next(0, 100);
+        #WhiteSmoke:PrintLine($"GGT({a, 2}, {b, 2}): = {CgdRecursive(a, b)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine("IsPrime rekursive:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #LightSkyBlue:int n = Random.Shared.Next(2, 100);
+        #WhiteSmoke:PrintLine($"IsPrime({n, 2}): = {IsPrime(n)}");
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine("Function rekursive:");
+#LightSkyBlue:int i = 1;
+while (i <= 10) is (<color:green>yes)
+        #LightSkyBlue:int n = Random.Shared.Next(1, 100);
+        #WhiteSmoke:PrintLine($"f({n, 2}): = {Function(n)}");
+:i++;
+endwhile (<color:red>no)
+#LightSkyBlue:string text = "otto";
+#WhiteSmoke:PrintLine($"IsPalindrome({text}): = {IsPalindrome(text)}");
+#WhiteSmoke:text = "Reittier";
+#WhiteSmoke:PrintLine($"IsPalindrome({text}): = {IsPalindrome(text)}");
+#WhiteSmoke:text = "Das ist kein Palindrom";
+#WhiteSmoke:PrintLine($"IsPalindrome({text}): = {IsPalindrome(text)}");
+#WhiteSmoke:PrintLine();
+#WhiteSmoke:PrintLine("Press enter to exit: ");
+#WhiteSmoke:ReadLine();
+stop
+@enduml

@@ -1,0 +1,8 @@
+@startuml Program.IsPalindrome
+title Program.IsPalindrome
+participant "IsPalindrome(string text)" as IsPalindrome_p0 #LightYellow
+participant "IsPalindromeIterative(a0,a1,a2)" as IsPalindromeIterative_a0_a1_a2 #LightGreen
+autonumber
+IsPalindrome_p0 -[#grey]> IsPalindromeIterative_a0_a1_a2 : (text, 0, text.Length - 1)
+IsPalindromeIterative_a0_a1_a2 -[#blue]-> IsPalindrome_p0 : result
+@enduml

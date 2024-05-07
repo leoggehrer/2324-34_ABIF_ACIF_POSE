@@ -1,0 +1,7 @@
+@startuml Program.IsPalindrome
+title Program.IsPalindrome
+start
+#LightGreen:Params(string text);
+#Lavender:return IsPalindromeIterative(text, 0, text.Length - 1);
+stop
+@enduml

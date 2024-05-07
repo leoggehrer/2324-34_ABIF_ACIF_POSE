@@ -1,0 +1,15 @@
+@startuml Program.AddRecursive
+title Program.AddRecursive
+start
+#LightGreen:Params(int a,int b);
+#LightYellow:if (a == 0) then (<color:green>yes)
+        #Lavender:return b;
+    else (<color:red>no)
+        #LightYellow:if (b == 0) then (<color:green>yes)
+                #Lavender:return a;
+            else (<color:red>no)
+                    #Lavender:return 2 + AddRecursive(a - 1, b - 1);
+        endif
+endif
+stop
+@enduml
