@@ -259,7 +259,7 @@ namespace Recursion.ConApp
         /// <param name="start">The starting index of the substring to check.</param>
         /// <param name="end">The ending index of the substring to check.</param>
         /// <returns>True if the substring is a palindrome, false otherwise.</returns>
-        static bool IsPalindromeIterative(string text, int start, int end)
+        static bool IsPalindromeRecursive(string text, int start, int end)
         {
             if (start >= end)
             {
@@ -271,7 +271,7 @@ namespace Recursion.ConApp
             }
             else
             {
-                return IsPalindromeIterative(text, start + 1, end - 1);
+                return IsPalindromeRecursive(text, start + 1, end - 1);
             }
         }
     }
