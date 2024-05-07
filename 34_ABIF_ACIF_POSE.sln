@@ -139,6 +139,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiResults.ConApp", "SkiRes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursion.ConApp", "Recursion.ConApp\Recursion.ConApp.csproj", "{F96C7D50-4852-4F84-9253-A77592069C17}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractPattern.ConApp", "ExtractPattern.ConApp\ExtractPattern.ConApp.csproj", "{20635C92-C0AA-44C1-8D60-04C23F4541F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -417,6 +419,10 @@ Global
 		{F96C7D50-4852-4F84-9253-A77592069C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F96C7D50-4852-4F84-9253-A77592069C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F96C7D50-4852-4F84-9253-A77592069C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20635C92-C0AA-44C1-8D60-04C23F4541F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20635C92-C0AA-44C1-8D60-04C23F4541F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20635C92-C0AA-44C1-8D60-04C23F4541F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20635C92-C0AA-44C1-8D60-04C23F4541F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

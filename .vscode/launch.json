@@ -4,6 +4,17 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+    {
+      "name": "ExtractPattern",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/ExtractPattern.ConApp/bin/Debug/net8.0/ExtractPattern.ConApp.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/ExtractPattern.ConApp",
+      "stopAtEntry": false,
+      "console": "externalTerminal"
+    },
   
     {
       "name": "GameOfLife",
