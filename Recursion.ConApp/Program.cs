@@ -250,7 +250,7 @@ namespace Recursion.ConApp
         /// <returns>True if the string is a palindrome; otherwise, false.</returns>
         static bool IsPalindrome(string text)
         {
-            return IsPalindromeIterative(text, 0, text.Length - 1);
+            return IsPalindromeRecursive(text, 0, text.Length - 1);
         }
         /// <summary>
         /// Determines whether a given string is a palindrome using an iterative approach.
