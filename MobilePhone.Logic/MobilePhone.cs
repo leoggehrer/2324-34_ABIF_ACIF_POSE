@@ -6,6 +6,16 @@
     public class MobilePhone
     {
         #region fields
+        private string _name = string.Empty;
+        private string _phoneNumber = string.Empty;
+        private string _lastCalledNumber = string.Empty;
+        private int _secondsActive = 0;
+        private int _secondsPassive = 0;
+        private int _centsToPay = 0;
+
+        private DateTime _startCallTime;
+        private MobilePhone? _other = null;
+        private MobilePhone? _passive = null;
         #endregion fields
 
         /// <summary>
@@ -13,55 +23,64 @@
         /// </summary>
         public MobilePhone(string phoneNumber)
         {
+            PhoneNumber = phoneNumber;
         }
 
-        public MobilePhone(string phoneNumber, string name):this(phoneNumber)
+        public MobilePhone(string phoneNumber, string? name)
+            :this(phoneNumber)
         {
+            Name = name ?? string.Empty;
         }
 
-        /// <summary>
-        /// Properties
-        /// </summary>
+        #region properties
+        public string Name
+        {
+            get { return _name; }
+            set 
+            {
+                if (string.IsNullOrEmpty(value) || char.IsLetter(value[0]) == false || value.Length < 2)
+                {
+                    _name = "ERROR";
+                }
+                else
+                {
+                    _name = value;
+                }
+            }
+        }
 
         public string PhoneNumber
         {
-            get { return null; }
-            set {  }
+            get { return _phoneNumber; }
+            set 
+            {
+                _phoneNumber = value;
+            }
         }
 
         public string LastCalledNumber
         {
-            get { return null; }
-            set { }
+            get { return _lastCalledNumber; }
         }
 
         public int SecondsActive
         {
-            get { return -1; }
+            get { return _secondsActive; }
         }
 
         public int SecondsPassive
         {
-            get { return -1; }
+            get { return _secondsPassive; }
         }
 
         public int CentsToPay
         {
             get 
             { 
-                return -1; 
+                return _centsToPay; 
             }
         }
-
-        /// <summary>
-        /// With Errorhandling (see taskdescription)
-        /// </summary>
-        public string Name
-        {
-            get { return null; }
-            set { }
-        }
-
+        #endregion properties
 
         /// <summary>
         /// Mobile initiates a call to a passive mobile phone. Time starts counting
@@ -71,7 +90,19 @@
         /// <returns>Returns true when phone call started correctly. False when active or passive phone is already busy (already talking).</returns>
         public bool StartCallTo(MobilePhone passive)
         {
-            throw new NotImplementedException();
+            bool result = false;
+
+            if (_other == null 
+                && _passive == null 
+                && passive != this
+                && passive.StartCallFrom(this) == true)
+            {
+                result = true;
+                _passive = passive;
+                _startCallTime = DateTime.Now;
+                _lastCalledNumber = passive.PhoneNumber;
+            }
+            return result;
         }
 
         /// <summary>
@@ -80,7 +111,19 @@
         /// <param name="other"></param>
         private bool StartCallFrom(MobilePhone other)
         {
-            throw new NotImplementedException();
+            bool result = false;
+
+            if (_other == null 
+                && _passive == null 
+                && other != this
+                && other.StartCallTo(this) == true)
+            {
+                result = true;
+                _other = other;
+                _startCallTime = DateTime.Now;
+                _lastCalledNumber = other.PhoneNumber;
+            }
+            return result;
         }
 
         /// <summary>
@@ -90,7 +133,28 @@
         /// <returns>false, if there is no call pending</returns>
         public bool StopCall()
         {
-            throw new NotImplementedException();
+            bool result = false;
+
+            if (_passive != null || _other != null)
+            {
+                DateTime stopCallTime = DateTime.Now;
+
+                result = true;
+                if (_passive != null)
+                {
+                    _secondsPassive += (int)(stopCallTime - _startCallTime).TotalSeconds;
+                    _passive.StartCallFrom(this);
+                    _passive = null;
+                }
+                if (_other != null)
+                {
+                    _secondsActive += (int)(stopCallTime - _startCallTime).TotalSeconds;
+                    _centsToPay = _secondsActive / 60;
+                    _other.StartCallFrom(this);
+                    _other = null;
+                }
+            }
+            return result;
         }
     }
 }
