@@ -101,49 +101,53 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BigInteger.ConApp", "BigInt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParkingTicketMachine.ConApp", "ParkingTicketMachine.ConApp\ParkingTicketMachine.ConApp.csproj", "{D56F3F91-1560-4531-8E46-B653B6CD4633}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithms.ConApp", "SortingAlgorithms.ConApp\SortingAlgorithms.ConApp.csproj", "{F4A94837-957A-4548-B30F-7256E78B1206}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingAlgorithms.ConApp", "SortingAlgorithms.ConApp\SortingAlgorithms.ConApp.csproj", "{F4A94837-957A-4548-B30F-7256E78B1206}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotterySimulation.ConApp", "LotterySimulation.ConApp\LotterySimulation.ConApp.csproj", "{59ADF887-805D-4A52-9DC0-1AFEA8C9ACFA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotterySimulation.ConApp", "LotterySimulation.ConApp\LotterySimulation.ConApp.csproj", "{59ADF887-805D-4A52-9DC0-1AFEA8C9ACFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddBigInteger.ConApp", "AddBigInteger.ConApp\AddBigInteger.ConApp.csproj", "{4EB03658-925C-4362-B5D7-9D9A7DAC288C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddBigInteger.ConApp", "AddBigInteger.ConApp\AddBigInteger.ConApp.csproj", "{4EB03658-925C-4362-B5D7-9D9A7DAC288C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife.ConApp", "GameOfLife.ConApp\GameOfLife.ConApp.csproj", "{E580B4DB-A440-454D-B3E2-43E8B965018A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameOfLife.ConApp", "GameOfLife.ConApp\GameOfLife.ConApp.csproj", "{E580B4DB-A440-454D-B3E2-43E8B965018A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Matrix.ConApp", "Matrix.ConApp\Matrix.ConApp.csproj", "{E85EBFD6-32C9-4EBE-B620-FCF00C9E5C55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Matrix.ConApp", "Matrix.ConApp\Matrix.ConApp.csproj", "{E85EBFD6-32C9-4EBE-B620-FCF00C9E5C55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LottoChecker.ConApp", "LottoChecker.ConApp\LottoChecker.ConApp.csproj", "{5FBCD215-6EF7-4F31-BC2F-DC702800FC10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LottoChecker.ConApp", "LottoChecker.ConApp\LottoChecker.ConApp.csproj", "{5FBCD215-6EF7-4F31-BC2F-DC702800FC10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LotteryChecker.ConApp", "LotteryChecker.ConApp\LotteryChecker.ConApp.csproj", "{F894728A-686E-4530-8F7E-0F6C005CE111}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LotteryChecker.ConApp", "LotteryChecker.ConApp\LotteryChecker.ConApp.csproj", "{F894728A-686E-4530-8F7E-0F6C005CE111}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileWizard.ConApp", "FileWizard.ConApp\FileWizard.ConApp.csproj", "{A37C7FF3-BC24-40F0-97EA-8683193D4AC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileWizard.ConApp", "FileWizard.ConApp\FileWizard.ConApp.csproj", "{A37C7FF3-BC24-40F0-97EA-8683193D4AC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommentRate.ConApp", "CommentRate.ConApp\CommentRate.ConApp.csproj", "{4009BD21-9D48-4D00-8A68-8FAD7C220AC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommentRate.ConApp", "CommentRate.ConApp\CommentRate.ConApp.csproj", "{4009BD21-9D48-4D00-8A68-8FAD7C220AC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassManagement.ConApp", "ClassManagement.ConApp\ClassManagement.ConApp.csproj", "{A7D6E46A-4D72-4594-ACFD-74160414F45E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClassManagement.ConApp", "ClassManagement.ConApp\ClassManagement.ConApp.csproj", "{A7D6E46A-4D72-4594-ACFD-74160414F45E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorseRace.ConApp", "HorseRace.ConApp\HorseRace.ConApp.csproj", "{9B8DA326-2A71-49B5-AAC1-7EB18617D261}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HorseRace.ConApp", "HorseRace.ConApp\HorseRace.ConApp.csproj", "{9B8DA326-2A71-49B5-AAC1-7EB18617D261}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPNCalculator.ConApp", "UPNCalculator.ConApp\UPNCalculator.ConApp.csproj", "{B1538207-5878-41D1-8C6C-F37DD4AD1E57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UPNCalculator.ConApp", "UPNCalculator.ConApp\UPNCalculator.ConApp.csproj", "{B1538207-5878-41D1-8C6C-F37DD4AD1E57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantUML.Logic", "PlantUML.Logic\PlantUML.Logic.csproj", "{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantUML.Logic", "PlantUML.Logic\PlantUML.Logic.csproj", "{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackCalculator.ConApp", "StackCalculator.ConApp\StackCalculator.ConApp.csproj", "{DDF0ECC9-F548-4F55-B8FF-80F3F5306616}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackCalculator.ConApp", "StackCalculator.ConApp\StackCalculator.ConApp.csproj", "{DDF0ECC9-F548-4F55-B8FF-80F3F5306616}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList.ConApp", "LinkedList.ConApp\LinkedList.ConApp.csproj", "{846FFEA5-37FC-4658-B677-7745690E07E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList.ConApp", "LinkedList.ConApp\LinkedList.ConApp.csproj", "{846FFEA5-37FC-4658-B677-7745690E07E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessRun.ConApp", "BusinessRun.ConApp\BusinessRun.ConApp.csproj", "{FF0AB897-27EA-4F0D-91A3-DA5F4CF0E1E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessRun.ConApp", "BusinessRun.ConApp\BusinessRun.ConApp.csproj", "{FF0AB897-27EA-4F0D-91A3-DA5F4CF0E1E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabularyTrainerWithCsv.ConApp", "VocabularyTrainerWithCsv.ConApp\VocabularyTrainerWithCsv.ConApp.csproj", "{F54A77E0-3437-4DD2-B0EC-59A1598647A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VocabularyTrainerWithCsv.ConApp", "VocabularyTrainerWithCsv.ConApp\VocabularyTrainerWithCsv.ConApp.csproj", "{F54A77E0-3437-4DD2-B0EC-59A1598647A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkiResults.ConApp", "SkiResults.ConApp\SkiResults.ConApp.csproj", "{EE732C97-B917-443B-8FDE-C82CE54EB9C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkiResults.ConApp", "SkiResults.ConApp\SkiResults.ConApp.csproj", "{EE732C97-B917-443B-8FDE-C82CE54EB9C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursion.ConApp", "Recursion.ConApp\Recursion.ConApp.csproj", "{F96C7D50-4852-4F84-9253-A77592069C17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Recursion.ConApp", "Recursion.ConApp\Recursion.ConApp.csproj", "{F96C7D50-4852-4F84-9253-A77592069C17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractPattern.ConApp", "ExtractPattern.ConApp\ExtractPattern.ConApp.csproj", "{20635C92-C0AA-44C1-8D60-04C23F4541F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtractPattern.ConApp", "ExtractPattern.ConApp\ExtractPattern.ConApp.csproj", "{20635C92-C0AA-44C1-8D60-04C23F4541F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionWithMethods.ConApp", "FractionWithMethods.ConApp\FractionWithMethods.ConApp.csproj", "{39C46470-0245-4635-893D-466F9777487B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FractionWithMethods.ConApp", "FractionWithMethods.ConApp\FractionWithMethods.ConApp.csproj", "{39C46470-0245-4635-893D-466F9777487B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionWithOperators.ConApp", "FractionWithOperators.ConApp\FractionWithOperators.ConApp.csproj", "{45846AFA-58B4-4981-8009-351EE3B73184}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FractionWithOperators.ConApp", "FractionWithOperators.ConApp\FractionWithOperators.ConApp.csproj", "{45846AFA-58B4-4981-8009-351EE3B73184}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonTool", "..\CommonTool\CommonTool\CommonTool.csproj", "{1F9365C3-684C-46D3-966B-BE1D56151FA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionWithMethods.ConApp.UnitTests", "FractionWithMethods.ConApp.UnitTests\FractionWithMethods.ConApp.UnitTests.csproj", "{51BA9A4F-E440-4BBF-8C2A-064D9C32B030}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -435,6 +439,14 @@ Global
 		{45846AFA-58B4-4981-8009-351EE3B73184}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45846AFA-58B4-4981-8009-351EE3B73184}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45846AFA-58B4-4981-8009-351EE3B73184}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F9365C3-684C-46D3-966B-BE1D56151FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F9365C3-684C-46D3-966B-BE1D56151FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F9365C3-684C-46D3-966B-BE1D56151FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F9365C3-684C-46D3-966B-BE1D56151FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51BA9A4F-E440-4BBF-8C2A-064D9C32B030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51BA9A4F-E440-4BBF-8C2A-064D9C32B030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51BA9A4F-E440-4BBF-8C2A-064D9C32B030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51BA9A4F-E440-4BBF-8C2A-064D9C32B030}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

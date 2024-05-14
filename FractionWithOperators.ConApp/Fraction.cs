@@ -29,6 +29,7 @@
             set { _nominator = value; }
         }
         #endregion properties
+
         #region constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="Fraction"/> class with default values.
@@ -46,8 +47,8 @@
         /// <param name="b">The denominator of the fraction.</param>
         public Fraction(int a, int b)
         {
-            _nominator = a != 0 ? a : 0;
-            _denominator = b > 0 ? b : 1;
+            _nominator = a;
+            _denominator = b != 0 ? b : 1;
         }
 
         /// <summary>
@@ -82,6 +83,17 @@
         }
 
         /// <summary>
+        /// Reduces the numerator and denominator.
+        /// </summary>
+        public void Shorten()
+        {
+            int cgd = CGD(Nominator, Denominator);
+
+            Nominator /= cgd;
+            Denominator /= cgd;
+        }
+
+        /// <summary>
         /// Adds two fractions and returns the result.
         /// </summary>
         /// <param name="a">The first fraction.</param>
@@ -95,7 +107,7 @@
                 result = new Fraction(a.Nominator + b.Nominator, a.Denominator);
             else
                 result = new Fraction((a.Nominator * b.Denominator + b.Nominator * a.Denominator), (a.Denominator * b.Denominator));
-            
+
             int cgd = CGD(result.Nominator, result.Denominator);
 
             result.Denominator /= cgd;
