@@ -141,6 +141,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recursion.ConApp", "Recursi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtractPattern.ConApp", "ExtractPattern.ConApp\ExtractPattern.ConApp.csproj", "{20635C92-C0AA-44C1-8D60-04C23F4541F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionWithMethods.ConApp", "FractionWithMethods.ConApp\FractionWithMethods.ConApp.csproj", "{39C46470-0245-4635-893D-466F9777487B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionWithOperators.ConApp", "FractionWithOperators.ConApp\FractionWithOperators.ConApp.csproj", "{45846AFA-58B4-4981-8009-351EE3B73184}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -423,6 +427,14 @@ Global
 		{20635C92-C0AA-44C1-8D60-04C23F4541F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20635C92-C0AA-44C1-8D60-04C23F4541F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20635C92-C0AA-44C1-8D60-04C23F4541F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39C46470-0245-4635-893D-466F9777487B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C46470-0245-4635-893D-466F9777487B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C46470-0245-4635-893D-466F9777487B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C46470-0245-4635-893D-466F9777487B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45846AFA-58B4-4981-8009-351EE3B73184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45846AFA-58B4-4981-8009-351EE3B73184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45846AFA-58B4-4981-8009-351EE3B73184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45846AFA-58B4-4981-8009-351EE3B73184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
