@@ -1,6 +1,7 @@
 ﻿namespace UPNCalculator.ConApp
 {
     using PlantUML.Logic;
+
     public static class ObjectDiagram
     {
         public static string UserPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
@@ -8,8 +9,7 @@
 
         public static void Generate(object obj)
         {
-            var listItems = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            var diagramData = DiagramCreator.CreateObjectDiagram(100, listItems).ToList();
+            var diagramData = DiagramCreator.CreateObjectDiagram(100, obj).ToList();
 
             if (diagramData.Any())
             {
