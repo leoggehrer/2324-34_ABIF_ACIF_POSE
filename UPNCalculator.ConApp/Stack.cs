@@ -14,7 +14,6 @@ namespace UPNCalculator.ConApp
             }
             public double Data { get; set; }
             public Element? Next { get; set; }
-            public int[] Items = new int[] { 48, 23, 34, 14, 25 };
         }
         #endregion  nested class
 

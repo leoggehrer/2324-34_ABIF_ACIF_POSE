@@ -5,7 +5,7 @@
     public static class ObjectDiagram
     {
         public static string DiagramPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        public static string FilePath = Path.Combine(DiagramPath, "od_LinkedList.puml");
+        public static string FilePath = Path.Combine(DiagramPath, "od_Stack.puml");
 
         public static void Generate(object obj)
         {
