@@ -125,8 +125,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HorseRace.ConApp", "HorseRa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UPNCalculator.ConApp", "UPNCalculator.ConApp\UPNCalculator.ConApp.csproj", "{B1538207-5878-41D1-8C6C-F37DD4AD1E57}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantUML.Logic", "PlantUML.Logic\PlantUML.Logic.csproj", "{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StackCalculator.ConApp", "StackCalculator.ConApp\StackCalculator.ConApp.csproj", "{DDF0ECC9-F548-4F55-B8FF-80F3F5306616}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList.ConApp", "LinkedList.ConApp\LinkedList.ConApp.csproj", "{846FFEA5-37FC-4658-B677-7745690E07E0}"
@@ -145,13 +143,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FractionWithMethods.ConApp"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FractionWithOperators.ConApp", "FractionWithOperators.ConApp\FractionWithOperators.ConApp.csproj", "{45846AFA-58B4-4981-8009-351EE3B73184}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonTool", "..\CommonTool\CommonTool\CommonTool.csproj", "{1F9365C3-684C-46D3-966B-BE1D56151FA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FractionWithMethods.ConApp.UnitTests", "FractionWithMethods.ConApp.UnitTests\FractionWithMethods.ConApp.UnitTests.csproj", "{51BA9A4F-E440-4BBF-8C2A-064D9C32B030}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionWithMethods.ConApp.UnitTests", "FractionWithMethods.ConApp.UnitTests\FractionWithMethods.ConApp.UnitTests.csproj", "{51BA9A4F-E440-4BBF-8C2A-064D9C32B030}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilePhone.Logic", "MobilePhone.Logic\MobilePhone.Logic.csproj", "{378761A3-7E80-443E-8832-41F116676ECE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.Logic", "MobilePhone.Logic\MobilePhone.Logic.csproj", "{378761A3-7E80-443E-8832-41F116676ECE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilePhone.UnitTest", "MobilePhone.UnitTest\MobilePhone.UnitTest.csproj", "{3A75547B-596C-4FCC-8C66-B6E3ACB1B2CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.UnitTest", "MobilePhone.UnitTest\MobilePhone.UnitTest.csproj", "{3A75547B-596C-4FCC-8C66-B6E3ACB1B2CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantUML.Logic", "..\PlantUML\PlantUML.Logic\PlantUML.Logic.csproj", "{28BB0665-48A9-4C42-9E7D-F7CE4ACA5456}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -403,10 +401,6 @@ Global
 		{B1538207-5878-41D1-8C6C-F37DD4AD1E57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1538207-5878-41D1-8C6C-F37DD4AD1E57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1538207-5878-41D1-8C6C-F37DD4AD1E57}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D776944-15EE-4ECA-BAB9-E9A1E2D486CB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DDF0ECC9-F548-4F55-B8FF-80F3F5306616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DDF0ECC9-F548-4F55-B8FF-80F3F5306616}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDF0ECC9-F548-4F55-B8FF-80F3F5306616}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -443,10 +437,6 @@ Global
 		{45846AFA-58B4-4981-8009-351EE3B73184}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45846AFA-58B4-4981-8009-351EE3B73184}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45846AFA-58B4-4981-8009-351EE3B73184}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1F9365C3-684C-46D3-966B-BE1D56151FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1F9365C3-684C-46D3-966B-BE1D56151FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1F9365C3-684C-46D3-966B-BE1D56151FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1F9365C3-684C-46D3-966B-BE1D56151FA1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{51BA9A4F-E440-4BBF-8C2A-064D9C32B030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{51BA9A4F-E440-4BBF-8C2A-064D9C32B030}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51BA9A4F-E440-4BBF-8C2A-064D9C32B030}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -459,6 +449,10 @@ Global
 		{3A75547B-596C-4FCC-8C66-B6E3ACB1B2CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A75547B-596C-4FCC-8C66-B6E3ACB1B2CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A75547B-596C-4FCC-8C66-B6E3ACB1B2CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28BB0665-48A9-4C42-9E7D-F7CE4ACA5456}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28BB0665-48A9-4C42-9E7D-F7CE4ACA5456}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28BB0665-48A9-4C42-9E7D-F7CE4ACA5456}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28BB0665-48A9-4C42-9E7D-F7CE4ACA5456}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

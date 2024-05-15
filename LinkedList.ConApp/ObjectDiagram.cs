@@ -3,8 +3,8 @@
     using PlantUML.Logic;
     public static class ObjectDiagram
     {
-        public const string DiagramPath = @"C:\Temp\LinkedList";
-        public const string FilePath = $"{DiagramPath}\\od_LinkedList.puml";
+        public static string DiagramPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        public static string FilePath = Path.Combine(DiagramPath, "od_LinkedList.puml");
 
         public static void Generate(params object[] items)
         {
