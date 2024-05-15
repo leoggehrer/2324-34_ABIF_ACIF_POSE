@@ -87,7 +87,7 @@ namespace MobilePhone.UnitTest
             MobilePhone active = new MobilePhone("0123456", "Active");
             MobilePhone passive = new MobilePhone("9876543", "Passive");
             active.StartCallTo(passive);
-            System.Threading.Thread.Sleep(3000);
+            Thread.Sleep(3000);
             Assert.IsTrue(active.StopCall());
             Assert.AreEqual("9876543", active.LastCalledNumber, "LastCalledNumber");
             Assert.AreEqual(60, active.SecondsActive, "Active Seconds");
@@ -104,7 +104,7 @@ namespace MobilePhone.UnitTest
             MobilePhone active = new MobilePhone("0123456", "Active");
             MobilePhone passive = new MobilePhone("9876543", "Passive");
             active.StartCallTo(passive);
-            System.Threading.Thread.Sleep(3000);
+            Thread.Sleep(3000);
             Assert.IsTrue(active.StopCall());
             Assert.AreEqual(8, active.CentsToPay, "60 seconds ==> 1 minute ==> 8 cents");
         }
@@ -118,7 +118,7 @@ namespace MobilePhone.UnitTest
             MobilePhone active = new MobilePhone("0123456", "Active");
             MobilePhone passive = new MobilePhone("9876543", "Passive");
             active.StartCallTo(passive);
-            System.Threading.Thread.Sleep(3100);
+            Thread.Sleep(3100);
             Assert.IsTrue(active.StopCall());
             Assert.AreEqual(12, active.CentsToPay, "62 seconds > 1 minute ==> 12 cents");
         }
@@ -133,10 +133,10 @@ namespace MobilePhone.UnitTest
             MobilePhone passive1 = new MobilePhone("1111111", "Passive1");
             MobilePhone passive2 = new MobilePhone("2222222", "Passive2");
             active.StartCallTo(passive1);
-            System.Threading.Thread.Sleep(3000);
+            Thread.Sleep(3000);
             Assert.IsTrue(active.StopCall(), "Stop Call passive1");
             active.StartCallTo(passive2);
-            System.Threading.Thread.Sleep(2200);
+            Thread.Sleep(2200);
             Assert.IsTrue(active.StopCall(), "Stop Call passive2");
             Assert.AreEqual(16, active.CentsToPay);
             Assert.AreEqual(60, passive1.SecondsPassive, 1, "Passive 1 Sekunden");
@@ -152,7 +152,7 @@ namespace MobilePhone.UnitTest
             MobilePhone active = new MobilePhone("0123456", "Active");
             MobilePhone passive = new MobilePhone("9876543", "Passive");
             active.StartCallTo(passive);
-            System.Threading.Thread.Sleep(3100);
+            Thread.Sleep(3100);
             Assert.IsTrue(passive.StopCall());
             Assert.AreEqual(12, active.CentsToPay, "62 seconds > 1 minute ==> 12 cents");
             Assert.AreEqual(0, passive.CentsToPay);
@@ -183,7 +183,7 @@ namespace MobilePhone.UnitTest
             Assert.AreEqual(false, result, "Active phone already busy! Returnvalue false expected!");
             result = active2.StartCallTo(passive);
             Assert.AreEqual(false, result, "Passive phone already busy! Returnvalue false expected!");
-            System.Threading.Thread.Sleep(1000);
+            Thread.Sleep(1000);
             Assert.IsTrue(active.StopCall());
             result = active.StartCallTo(passive2);
             Assert.AreEqual(true, result, "After call has ended, a new call shall be available");

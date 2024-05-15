@@ -3,11 +3,13 @@
     using PlantUML.Logic;
     public static class ObjectDiagram
     {
-        public const string FilePath = @"/Users/ggehrer/source/Test/UPNCalculator/od_Stack.puml";
+        public static string UserPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        public static string FilePath = Path.Combine(UserPath, "od_Stack.puml");
 
         public static void Generate(object obj)
         {
-            var diagramData = DiagramCreator.CreateObjectDiagram(100, obj).ToList();
+            var listItems = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var diagramData = DiagramCreator.CreateObjectDiagram(100, listItems).ToList();
 
             if (diagramData.Any())
             {

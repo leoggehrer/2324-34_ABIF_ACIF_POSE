@@ -14,8 +14,9 @@
         private int _centsToPay = 0;
 
         private DateTime _startCallTime;
-        private MobilePhone? _other = null;
-        private MobilePhone? _passive = null;
+        private MobilePhone? _callFrom = null;
+        private MobilePhone? _callTo = null;
+        private bool _inProcess = false;
         #endregion fields
 
         /// <summary>
@@ -80,6 +81,14 @@
                 return _centsToPay; 
             }
         }
+        private bool IsConnected
+        {
+            get
+            {
+                return _callTo != null || _callFrom != null;
+            }
+        }
+
         #endregion properties
 
         /// <summary>
@@ -92,15 +101,18 @@
         {
             bool result = false;
 
-            if (_other == null 
-                && _passive == null 
-                && passive != this
-                && passive.StartCallFrom(this) == true)
+            if (_inProcess == false
+                && IsConnected == false
+                && passive.IsConnected == false)
             {
-                result = true;
-                _passive = passive;
+                _inProcess = true;
+                passive.StartCallFrom(this);
+                _callFrom = null;
+                _callTo = passive;
                 _startCallTime = DateTime.Now;
                 _lastCalledNumber = passive.PhoneNumber;
+                result = true;
+                _inProcess = false;
             }
             return result;
         }
@@ -113,15 +125,18 @@
         {
             bool result = false;
 
-            if (_other == null 
-                && _passive == null 
-                && other != this
-                && other.StartCallTo(this) == true)
+            if (_inProcess == false
+                && IsConnected == false
+                && other.IsConnected == false)
             {
-                result = true;
-                _other = other;
+                _inProcess = true;
+                other.StartCallTo(this);
+                _callFrom = other;
+                _callTo = null;
                 _startCallTime = DateTime.Now;
                 _lastCalledNumber = other.PhoneNumber;
+                result = true;
+                _inProcess = false;
             }
             return result;
         }
@@ -135,25 +150,31 @@
         {
             bool result = false;
 
-            if (_passive != null || _other != null)
+            if (_inProcess == false && IsConnected)
             {
                 DateTime stopCallTime = DateTime.Now;
+                int duration = (int)((stopCallTime - _startCallTime).TotalSeconds * 20);
+                int payUnits = (duration / 30);
 
+                payUnits += (duration % 30) != 0 ? 1 : 0;
+
+                _inProcess = true;
+                if (_callTo != null)
+                {
+                    _secondsActive += duration;
+                    _centsToPay += payUnits * 4;
+                    _callTo.StopCall();
+                    _callTo = null;
+                }
+                if (_callFrom != null)
+                {
+                    _secondsPassive += duration;
+                    _callFrom.StopCall();
+                    _callFrom = null;
+                }
                 result = true;
-                if (_passive != null)
-                {
-                    _secondsPassive += (int)(stopCallTime - _startCallTime).TotalSeconds;
-                    _passive.StartCallFrom(this);
-                    _passive = null;
-                }
-                if (_other != null)
-                {
-                    _secondsActive += (int)(stopCallTime - _startCallTime).TotalSeconds;
-                    _centsToPay = _secondsActive / 60;
-                    _other.StartCallFrom(this);
-                    _other = null;
-                }
             }
+            _inProcess = false;
             return result;
         }
     }
