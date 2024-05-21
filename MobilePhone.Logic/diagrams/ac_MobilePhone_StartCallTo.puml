@@ -1,0 +1,18 @@
+@startuml MobilePhone.StartCallTo
+title MobilePhone.StartCallTo
+start
+#LightGreen:Params(MobilePhone passive);
+#LightSkyBlue:bool result = false;
+#LightYellow:if (_inProcess == false && IsConnected == false && passive.IsConnected == false) then (<color:green>yes)
+        #WhiteSmoke:_inProcess = true;
+        #WhiteSmoke:passive.StartCallFrom(this);
+        #WhiteSmoke:_callFrom = null;
+        #WhiteSmoke:_callTo = passive;
+        #WhiteSmoke:_startCallTime = DateTime.Now;
+        #WhiteSmoke:_lastCalledNumber = passive.PhoneNumber;
+        #WhiteSmoke:result = true;
+        #WhiteSmoke:_inProcess = false;
+endif
+#Lavender:return result;
+stop
+@enduml

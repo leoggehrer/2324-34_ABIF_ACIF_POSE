@@ -1,0 +1,17 @@
+@startuml MobilePhone.StopCall
+title MobilePhone.StopCall
+participant "StopCall" as StopCall #LightYellow
+participant "_callTo.StopCall()" as _callTo_StopCall #LightGreen
+participant "_callFrom.StopCall()" as _callFrom_StopCall #LightGreen
+autonumber
+alt#LightBlue _inProcess == false && IsConnected
+    alt#LightBlue _callTo != null
+        StopCall -[#grey]> _callTo_StopCall
+        _callTo_StopCall -[#blue]-> StopCall : result
+    end
+    alt#LightBlue _callFrom != null
+        StopCall -[#grey]> _callFrom_StopCall
+        _callFrom_StopCall -[#blue]-> StopCall : result
+    end
+end
+@enduml

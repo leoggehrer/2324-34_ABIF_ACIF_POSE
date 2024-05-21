@@ -1,0 +1,66 @@
+@startuml CompleteActivityDiagram
+header
+generated on 21.05.2024 12:05:36
+end header
+title CompleteActivityDiagram
+start
+note right:  MobilePhone.StartCallTo
+#LightGreen:Params(MobilePhone passive);
+#LightSkyBlue:bool result = false;
+#LightYellow:if (_inProcess == false && IsConnected == false && passive.IsConnected == false) then (<color:green>yes)
+        #WhiteSmoke:_inProcess = true;
+        #WhiteSmoke:passive.StartCallFrom(this);
+        #WhiteSmoke:_callFrom = null;
+        #WhiteSmoke:_callTo = passive;
+        #WhiteSmoke:_startCallTime = DateTime.Now;
+        #WhiteSmoke:_lastCalledNumber = passive.PhoneNumber;
+        #WhiteSmoke:result = true;
+        #WhiteSmoke:_inProcess = false;
+endif
+#Lavender:return result;
+stop
+start
+note right:  MobilePhone.StartCallFrom
+#LightGreen:Params(MobilePhone other);
+#LightSkyBlue:bool result = false;
+#LightYellow:if (_inProcess == false && IsConnected == false && other.IsConnected == false) then (<color:green>yes)
+        #WhiteSmoke:_inProcess = true;
+        #WhiteSmoke:other.StartCallTo(this);
+        #WhiteSmoke:_callFrom = other;
+        #WhiteSmoke:_callTo = null;
+        #WhiteSmoke:_startCallTime = DateTime.Now;
+        #WhiteSmoke:_lastCalledNumber = other.PhoneNumber;
+        #WhiteSmoke:result = true;
+        #WhiteSmoke:_inProcess = false;
+endif
+#Lavender:return result;
+stop
+start
+note right:  MobilePhone.StopCall
+#LightSkyBlue:bool result = false;
+#LightYellow:if (_inProcess == false && IsConnected) then (<color:green>yes)
+        #LightSkyBlue:DateTime stopCallTime = DateTime.Now;
+        #LightSkyBlue:int duration = (int)((stopCallTime - _startCallTime).TotalSeconds * 20);
+        #LightSkyBlue:int payUnits = (duration / 30);
+        #WhiteSmoke:payUnits += (duration % 30) != 0 ? 1 : 0;
+        #WhiteSmoke:_inProcess = true;
+        #LightYellow:if (_callTo != null) then (<color:green>yes)
+                #WhiteSmoke:_secondsActive += duration;
+                #WhiteSmoke:_centsToPay += payUnits * 4;
+                #WhiteSmoke:_callTo.StopCall();
+                #WhiteSmoke:_callTo = null;
+        endif
+        #LightYellow:if (_callFrom != null) then (<color:green>yes)
+                #WhiteSmoke:_secondsPassive += duration;
+                #WhiteSmoke:_callFrom.StopCall();
+                #WhiteSmoke:_callFrom = null;
+        endif
+        #WhiteSmoke:result = true;
+endif
+#WhiteSmoke:_inProcess = false;
+#Lavender:return result;
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
+@enduml

@@ -1,0 +1,27 @@
+@startuml MobilePhone.StopCall
+title MobilePhone.StopCall
+start
+#LightSkyBlue:bool result = false;
+#LightYellow:if (_inProcess == false && IsConnected) then (<color:green>yes)
+        #LightSkyBlue:DateTime stopCallTime = DateTime.Now;
+        #LightSkyBlue:int duration = (int)((stopCallTime - _startCallTime).TotalSeconds * 20);
+        #LightSkyBlue:int payUnits = (duration / 30);
+        #WhiteSmoke:payUnits += (duration % 30) != 0 ? 1 : 0;
+        #WhiteSmoke:_inProcess = true;
+        #LightYellow:if (_callTo != null) then (<color:green>yes)
+                #WhiteSmoke:_secondsActive += duration;
+                #WhiteSmoke:_centsToPay += payUnits * 4;
+                #WhiteSmoke:_callTo.StopCall();
+                #WhiteSmoke:_callTo = null;
+        endif
+        #LightYellow:if (_callFrom != null) then (<color:green>yes)
+                #WhiteSmoke:_secondsPassive += duration;
+                #WhiteSmoke:_callFrom.StopCall();
+                #WhiteSmoke:_callFrom = null;
+        endif
+        #WhiteSmoke:result = true;
+endif
+#WhiteSmoke:_inProcess = false;
+#Lavender:return result;
+stop
+@enduml

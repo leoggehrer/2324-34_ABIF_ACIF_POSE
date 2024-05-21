@@ -1,0 +1,31 @@
+@startuml CompleteClassDiagram
+title CompleteClassDiagram
+ class MobilePhone #GhostWhite {
+- string _name = string.Empty
+- string _phoneNumber = string.Empty
+- string _lastCalledNumber = string.Empty
+- int _secondsActive = 0
+- int _secondsPassive = 0
+- int _centsToPay = 0
+- DateTime _startCallTime
+- MobilePhone? _callFrom = null
+- MobilePhone? _callTo = null
+- bool _inProcess = false
+---
++ string getName()
++ Void setName(string value)
++ string getPhoneNumber()
+- Void setPhoneNumber(string value)
++ string getLastCalledNumber()
++ int getSecondsActive()
++ int getSecondsPassive()
++ int getCentsToPay()
+- bool getIsConnected()
+---
++ bool StartCallTo(MobilePhone passive)
+- bool StartCallFrom(MobilePhone other)
++ bool StopCall()
+}
+MobilePhone "0..1" *-- "1" MobilePhone : _callFrom
+MobilePhone "0..1" *-- "1" MobilePhone : _callTo
+@enduml

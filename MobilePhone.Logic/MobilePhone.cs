@@ -53,7 +53,7 @@
         public string PhoneNumber
         {
             get { return _phoneNumber; }
-            set 
+            private set 
             {
                 _phoneNumber = value;
             }

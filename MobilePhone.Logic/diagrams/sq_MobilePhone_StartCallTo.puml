@@ -1,0 +1,12 @@
+@startuml MobilePhone.StartCallTo
+title MobilePhone.StartCallTo
+participant "StartCallTo(MobilePhone passive)" as StartCallTo_p0 #LightYellow
+participant "passive.StartCallFrom(a0)" as passive_StartCallFrom_a0 #LightGreen
+autonumber
+alt#LightBlue _inProcess == false
+                && IsConnected == false
+                && passive.IsConnected == false
+    StartCallTo_p0 -[#grey]> passive_StartCallFrom_a0 : (this)
+    passive_StartCallFrom_a0 -[#blue]-> StartCallTo_p0 : result
+end
+@enduml
