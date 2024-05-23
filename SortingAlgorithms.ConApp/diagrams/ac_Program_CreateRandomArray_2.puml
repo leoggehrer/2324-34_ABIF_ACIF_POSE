@@ -3,7 +3,6 @@ title Program.CreateRandomArray
 start
 #LightGreen:Params(int size,int min,int max);
 #LightSkyBlue:int[] result = new int[size];
-#LightSkyBlue:int i = 0;
 while (i < result.Length) is (<color:green>yes)
         #WhiteSmoke:result[i] = Random.Shared.Next(min, max);
 :i++;

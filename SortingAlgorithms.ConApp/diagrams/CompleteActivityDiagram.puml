@@ -1,6 +1,10 @@
-@startuml Program.Main
-title Program.Main
+@startuml CompleteActivityDiagram
+header
+generated on 23.05.2024 20:59:08
+end header
+title CompleteActivityDiagram
 start
+note right:  Program.Main
 #LightGreen:Params(string[] args);
 #LightSkyBlue:int TEST_SIZE = 20\nint PERFORMANCE_SIZE = 50_000\nint[] array;
 #WhiteSmoke:PrintLine("Sort-Algorithmen!");
@@ -78,4 +82,104 @@ start
 #WhiteSmoke:PrintLine("Exit with ENTER...");
 #WhiteSmoke:ReadLine();
 stop
+start
+note right:  Program.PrintArray
+#LightGreen:Params(string title,int[] array);
+#WhiteSmoke:PrintLine(title);
+#WhiteSmoke:PrintArray(array);
+stop
+start
+note right:  Program.PrintArray
+#LightGreen:Params(int[] array);
+while (i < array.Length) is (<color:green>yes)
+        #LightYellow:if (i > 0) then (<color:green>yes)
+                #WhiteSmoke:Print(" ");
+        endif
+        #WhiteSmoke:Print(array[i]);
+:i++;
+endwhile (<color:red>no)
+#WhiteSmoke:PrintLine();
+stop
+start
+note right:  Program.CreateRandomArray
+#LightGreen:Params(int size);
+#Lavender:return CreateRandomArray(size, 0, size);
+stop
+start
+note right:  Program.CreateRandomArray
+#LightGreen:Params(int size,int min,int max);
+#LightSkyBlue:int[] result = new int[size];
+while (i < result.Length) is (<color:green>yes)
+        #WhiteSmoke:result[i] = Random.Shared.Next(min, max);
+:i++;
+endwhile (<color:red>no)
+#Lavender:return result;
+stop
+start
+note right:  Sort.BruteForceSort
+#LightGreen:Params(int[] array);
+while (i < array.Length - 1) is (<color:green>yes)
+        while (j < array.Length) is (<color:green>yes)
+                #LightYellow:if (array[i] < array[j]) then (<color:green>yes)
+                        #WhiteSmoke:Swap(ref array[i], ref array[j]);
+                endif
+        :j++;
+        endwhile (<color:red>no)
+:i++;
+endwhile (<color:red>no)
+stop
+start
+note right:  Sort.BubbleSort
+#LightGreen:Params(int[] array);
+#LightSkyBlue:bool exchange\nint length = array.Length;
+repeat
+        #WhiteSmoke:exchange = false;
+        while (i < length - 1) is (<color:green>yes)
+                #LightYellow:if (array[i] > array[i + 1]) then (<color:green>yes)
+                        #WhiteSmoke:Swap(ref array[i], ref array[i + 1]);
+                        #WhiteSmoke:exchange = true;
+                endif
+        :i++;
+        endwhile (<color:red>no)
+        #WhiteSmoke:length--;
+repeat while (exchange) is (<color:green>yes)
+stop
+start
+note right:  Sort.InsertionSort
+#LightGreen:Params(int[] array);
+while (i < array.Length) is (<color:green>yes)
+        while (j > 0 && array[j - 1] > current) is (<color:green>yes)
+                #WhiteSmoke:array[j] = array[j - 1];
+                #WhiteSmoke:j--;
+        endwhile (<color:red>no)
+        #WhiteSmoke:array[j] = current;
+:i++;
+endwhile (<color:red>no)
+stop
+start
+note right:  Sort.SelectionSort
+#LightGreen:Params(int[] array);
+while (i < array.Length - 1) is (<color:green>yes)
+        while (j < array.Length) is (<color:green>yes)
+                #LightYellow:if (array[j] < array[minIdx]) then (<color:green>yes)
+                        #WhiteSmoke:minIdx = j;
+                endif
+        :j++;
+        endwhile (<color:red>no)
+        #LightYellow:if (minIdx != i) then (<color:green>yes)
+                #WhiteSmoke:Swap(ref array[i], ref array[minIdx]);
+        endif
+:i++;
+endwhile (<color:red>no)
+stop
+start
+note right:  Sort.Swap
+#LightGreen:Params(ref int v1,ref int v2);
+#LightSkyBlue:int tmp = v1;
+#WhiteSmoke:v1 = v2;
+#WhiteSmoke:v2 = tmp;
+stop
+footer
+generated with the DiagramCreator by Prof.Gehrer
+end footer
 @enduml

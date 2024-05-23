@@ -3,10 +3,10 @@ title Sort.BruteForceSort
 participant "BruteForceSort(int[] array)" as BruteForceSort_p0 #LightYellow
 participant "Swap(a0,a1)" as Swap_a0_a1 #LightGreen
 autonumber
-loop#LightCoral i < array.Length
-    loop#LightCoral j < array.Length - 1
-        alt#LightBlue array[j] > array[j + 1]
-            BruteForceSort_p0 -[#grey]> Swap_a0_a1 : (ref array[j], ref array[j + 1])
+loop#LightCoral i < array.Length - 1
+    loop#LightCoral j < array.Length
+        alt#LightBlue array[i] < array[j]
+            BruteForceSort_p0 -[#grey]> Swap_a0_a1 : (ref array[i], ref array[j])
         end
     end
 end
