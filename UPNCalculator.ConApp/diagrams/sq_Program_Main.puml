@@ -12,7 +12,7 @@ Main_p0 -[#grey]> Console_WriteLine_a0 : ("* UPNCalculator *")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("********************")
 Main_p0 -[#grey]> Console_WriteLine
 loop#LightCoral input != string.Empty
- Main_p0 -[#grey]> Console_Write_a0 : ("Rechenoperation [Enter...Exit]: ")
+ Main_p0 -[#grey]> Console_Write_a0 : ("Arithmetic operation (form 3 5 + 2 *) [Enter...Exit]: ")
  Main_p0 -[#grey]> Console_ReadLine
  Console_ReadLine -[#blue]-> Main_p0 : input
  alt#LightBlue input != string.Empty

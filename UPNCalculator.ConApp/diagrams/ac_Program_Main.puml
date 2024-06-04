@@ -8,7 +8,7 @@ start
 #WhiteSmoke:PrintLine("********************");
 #WhiteSmoke:PrintLine();
 repeat
-  #WhiteSmoke:Print("Rechenoperation [Enter...Exit]: ");
+  #WhiteSmoke:Print("Arithmetic operation (form 3 5 + 2 *) [Enter...Exit]: ");
   #WhiteSmoke:input = ReadLine();
   #LightYellow:if (input != string.Empty) then (<color:green>yes)
     #WhiteSmoke:PrintLine($"{input} = {result}");

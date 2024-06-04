@@ -1,7 +1,7 @@
 @startuml Stack.Pop
 title Stack.Pop
 participant "Pop" as Pop #LightYellow
-participant "ObjectDiagram.Generate(a0)" as ObjectDiagram_Generate_a0 #LightGreen
+participant "ObjectDiagram.Create(a0,a1)" as ObjectDiagram_Create_a0_a1 #LightGreen
 autonumber
-Pop -[#grey]> ObjectDiagram_Generate_a0 : (this)
+Pop -[#grey]> ObjectDiagram_Create_a0_a1 : (this, $"title Stack after Pop() => { Expression }")
 @enduml

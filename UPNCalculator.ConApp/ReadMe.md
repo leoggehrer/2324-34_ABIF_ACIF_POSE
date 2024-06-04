@@ -71,9 +71,9 @@ Eine mögliche Ausgabe zeigt die folgende Abbildung:
 
 ## Activity Diagrams
 
-### ObjectDiagram.Generate (AC)
+### ObjectDiagram.Create (AC)
 
-![ObjectDiagram.Generate (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/UPNCalculator.ConApp/diagrams/ac_ObjectDiagram_Generate.puml)
+![ObjectDiagram.Create (AC)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/UPNCalculator.ConApp/diagrams/ac_ObjectDiagram_Create.puml)
 
 ### Program.Main (AC)
 
@@ -93,9 +93,9 @@ Eine mögliche Ausgabe zeigt die folgende Abbildung:
 
 ## Sequence Diagrams
 
-### ObjectDiagram.Generate (SQ)
+### ObjectDiagram.Create (SQ)
 
-![ObjectDiagram.Generate (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/UPNCalculator.ConApp/diagrams/sq_ObjectDiagram_Generate.puml)
+![ObjectDiagram.Create (SQ)](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/leoggehrer/2324-34_ABIF_ACIF_POSE/master/UPNCalculator.ConApp/diagrams/sq_ObjectDiagram_Create.puml)
 
 ### Program.Main (SQ)
 

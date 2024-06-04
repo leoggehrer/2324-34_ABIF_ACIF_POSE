@@ -10,11 +10,17 @@ class Element #GhostWhite {
 + Void setNext(Element? value)
 ---
 }
+class ObjectDiagram << static >>  #GhostWhite {
+- {static} PlantUML.Logic.ObjectDiagramCreator diagramCreator = new("od_Stack.puml")
+---
+---
++ {static} void Create(object obj, string[] notes)
+}
 class Program #GhostWhite {
 ---
 ---
 - {static} void Main(string[] args)
-- {static} double Parse(string input)
++ {static} double Parse(string input)
 }
 class Stack #GhostWhite {
 - Element? _head = null
@@ -26,10 +32,4 @@ class Stack #GhostWhite {
 }
 Element "0..1" *-- "1" Element : _next
 Stack "0..1" *-- "1" Element : _head
-' CustomUML
-Program "0..1" *-- "1" Stack 
-note right of Program
-Parse uses Stack
-end note
-' CustomUML
 @enduml
