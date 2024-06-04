@@ -7,7 +7,6 @@
         #endregion fields
 
         #region properties
-
         #endregion properties
 
         #region constructors
