@@ -12,7 +12,7 @@
 */
 #nullable disable
 
-namespace NumberGuessing.ConApp
+namespace NumberPuzzle.ConApp
 {
     /// <summary>
     /// Represents the entry point of the program.
