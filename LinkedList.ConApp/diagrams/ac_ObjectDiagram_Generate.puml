@@ -7,7 +7,7 @@ start
 #WhiteSmoke:diagramData.Insert(1, "title Object Diagram for LinkedList");
 #WhiteSmoke:diagramData.Add("@end" + "uml");
 #LightYellow:if (Path.Exists(DiagramPath) == false) then (<color:green>yes)
-        #WhiteSmoke:Directory.CreateDirectory(DiagramPath);
+  #WhiteSmoke:Directory.CreateDirectory(DiagramPath);
 endif
 #WhiteSmoke:File.WriteAllLines(FilePath, diagramData);
 stop

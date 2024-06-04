@@ -10,9 +10,9 @@ autonumber
 Generate_p0 -[#grey]> DiagramCreator_CreateObjectDiagram_100_obj_ToList
 DiagramCreator_CreateObjectDiagram_100_obj_ToList -[#blue]-> Generate_p0 : diagramData
 alt#LightBlue diagramData.Any()
-    Generate_p0 -[#grey]> diagramData_Any
-    Generate_p0 -[#grey]> diagramData_Insert_a0_a1 : (0, "@start" + "uml stack")
-    Generate_p0 -[#grey]> diagramData_Add_a0 : ("@end" + "uml")
+ Generate_p0 -[#grey]> diagramData_Any
+ Generate_p0 -[#grey]> diagramData_Insert_a0_a1 : (0, "@start" + "uml stack")
+ Generate_p0 -[#grey]> diagramData_Add_a0 : ("@end" + "uml")
 end
 Generate_p0 -[#grey]> File_WriteAllLines_a0_a1 : (FilePath, diagramData)
 @enduml

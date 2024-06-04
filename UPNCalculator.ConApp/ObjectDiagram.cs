@@ -1,22 +1,24 @@
 ﻿namespace UPNCalculator.ConApp
 {
-    using PlantUML.Logic;
-
     public static class ObjectDiagram
     {
-        public static string DiagramPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-        public static string FilePath = Path.Combine(DiagramPath, "od_Stack.puml");
+        #region fields
+        private static PlantUML.Logic.ObjectDiagramCreator diagramCreator = new("od_Stack.puml");
+        #endregion fields
 
-        public static void Generate(object obj)
+        #region properties
+
+        #endregion properties
+
+        #region constructors
+        #endregion constructors
+
+        #region methods
+        public static void Create(object obj, params string[] notes)
         {
-            var diagramData = DiagramCreator.CreateObjectDiagram(100, obj).ToList();
-
-            if (diagramData.Any())
-            {
-                diagramData.Insert(0, "@start" + "uml stack");
-                diagramData.Add("@end" + "uml");
-            }
-            File.WriteAllLines(FilePath, diagramData);
+            diagramCreator.CreateToFile(obj, notes);
         }
+        #endregion methods
     }
 }
+

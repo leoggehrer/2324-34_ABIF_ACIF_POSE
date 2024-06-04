@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 22.04.2024 21:23:18
+generated on 01.06.2024 13:08:36
 end header
 title CompleteActivityDiagram
 start
@@ -8,8 +8,8 @@ note right:  ObjectDiagram.Generate
 #LightGreen:Params(object obj);
 #LightSkyBlue:var diagramData = DiagramCreator.CreateObjectDiagram(100, obj).ToList();
 #LightYellow:if (diagramData.Any()) then (<color:green>yes)
-        #WhiteSmoke:diagramData.Insert(0, "@start" + "uml stack");
-        #WhiteSmoke:diagramData.Add("@end" + "uml");
+  #WhiteSmoke:diagramData.Insert(0, "@start" + "uml stack");
+  #WhiteSmoke:diagramData.Add("@end" + "uml");
 endif
 #WhiteSmoke:File.WriteAllLines(FilePath, diagramData);
 stop
@@ -18,51 +18,41 @@ note right:  Program.Main
 #LightGreen:Params(string[] args);
 #LightSkyBlue:string input;
 #WhiteSmoke:PrintLine("********************");
-#WhiteSmoke:PrintLine("* UPNCalculator    *");
+#WhiteSmoke:PrintLine("* UPNCalculator *");
 #WhiteSmoke:PrintLine("********************");
 #WhiteSmoke:PrintLine();
 repeat
-        #WhiteSmoke:Print("Rechenoperation [Enter...Exit]:  ");
-        #WhiteSmoke:input = ReadLine();
-        #LightYellow:if (input != string.Empty) then (<color:green>yes)
-                #LightSkyBlue:double result = Parse(input);
-                #WhiteSmoke:PrintLine($"{input} = {result}");
-        endif
+  #WhiteSmoke:Print("Rechenoperation [Enter...Exit]: ");
+  #WhiteSmoke:input = ReadLine();
+  #LightYellow:if (input != string.Empty) then (<color:green>yes)
+    #WhiteSmoke:PrintLine($"{input} = {result}");
+  endif
 repeat while (input != string.Empty) is (<color:green>yes)
 stop
 start
 note right:  Program.Parse
 #LightGreen:Params(string input);
 #LightSkyBlue:string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries)\nStack stack= new Stack();
-#LightSkyBlue:int i = 0;
 while (i < parts.Length) is (<color:green>yes)
-        #LightYellow:if (parts[i] == "+") then (<color:green>yes)
-                #LightSkyBlue:double b = stack.Pop();
-                #LightSkyBlue:double a = stack.Pop();
-                #WhiteSmoke:stack.Push(a + b);
+  #LightYellow:if (parts[i] == "+") then (<color:green>yes)
+    #WhiteSmoke:stack.Push(a + b);
+    else (<color:red>no)
+      #LightYellow:if (parts[i] == "-") then (<color:green>yes)
+        #WhiteSmoke:stack.Push(a - b);
+        else (<color:red>no)
+          #LightYellow:if (parts[i] == "*") then (<color:green>yes)
+            #WhiteSmoke:stack.Push(a * b);
             else (<color:red>no)
-                #LightYellow:if (parts[i] == "-") then (<color:green>yes)
-                        #LightSkyBlue:double b = stack.Pop();
-                        #LightSkyBlue:double a = stack.Pop();
-                        #WhiteSmoke:stack.Push(a - b);
-                    else (<color:red>no)
-                        #LightYellow:if (parts[i] == "*") then (<color:green>yes)
-                                #LightSkyBlue:double b = stack.Pop();
-                                #LightSkyBlue:double a = stack.Pop();
-                                #WhiteSmoke:stack.Push(a * b);
-                            else (<color:red>no)
-                                #LightYellow:if (parts[i] == "/") then (<color:green>yes)
-                                        #LightSkyBlue:double b = stack.Pop();
-                                        #LightSkyBlue:double a = stack.Pop();
-                                        #WhiteSmoke:stack.Push(a / b);
-                                    else (<color:red>no)
-                                        #LightYellow:if (double.TryParse(parts[i], out double opd)) then (<color:green>yes)
-                                                #WhiteSmoke:stack.Push(opd);
-                                        endif
-                                endif
-                        endif
-                endif
-        endif
+              #LightYellow:if (parts[i] == "/") then (<color:green>yes)
+                #WhiteSmoke:stack.Push(a / b);
+                else (<color:red>no)
+                  #LightYellow:if (double.TryParse(parts[i], out double opd)) then (<color:green>yes)
+                    #WhiteSmoke:stack.Push(opd);
+                  endif
+              endif
+          endif
+      endif
+  endif
 :i++;
 endwhile (<color:red>no)
 #Lavender:return stack.Pop();
@@ -70,17 +60,17 @@ stop
 start
 note right:  Stack.Push
 #LightGreen:Params(double data);
-#WhiteSmoke:head = new Element(data, head);
+#WhiteSmoke:_head = new Element(data, _head);
 #WhiteSmoke:ObjectDiagram.Generate(this);
 stop
 start
 note right:  Stack.Pop
 #LightYellow:if (IsEmpty) then (<color:green>yes)
-        #Red:throw new InvalidOperationException("Stack is empty!");
-        kill
+  #Red:throw new InvalidOperationException("Stack is empty!");
+  kill
 endif
-#LightSkyBlue:Element tmp = head!;
-#WhiteSmoke:head = tmp.Next;
+#LightSkyBlue:Element tmp = _head!;
+#WhiteSmoke:_head = tmp.Next;
 #WhiteSmoke:ObjectDiagram.Generate(this);
 #Lavender:return tmp.Data;
 stop

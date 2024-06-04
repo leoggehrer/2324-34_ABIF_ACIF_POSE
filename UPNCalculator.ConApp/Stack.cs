@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace UPNCalculator.ConApp
+﻿namespace UPNCalculator.ConApp
 {
     public class Stack
     {
@@ -18,7 +16,7 @@ namespace UPNCalculator.ConApp
         #endregion  nested class
 
         #region  fields
-        private Element? head = null;
+        private Element? _head = null;
         #endregion fields
 
         #region  properties
@@ -26,7 +24,7 @@ namespace UPNCalculator.ConApp
         {
             get
             {
-                return head == null;
+                return _head == null;
             }
         }
         #endregion properties
@@ -34,27 +32,27 @@ namespace UPNCalculator.ConApp
         #region constructors
         public Stack()
         {
-            ObjectDiagram.Generate(this);
+            ObjectDiagram.Create(this, "title Stack after create instance");
         }
         #endregion constructors
 
         #region  methods
         public void Push(double data)
         {
-            head = new Element(data, head);
-            ObjectDiagram.Generate(this);
+            _head = new Element(data, _head);
+            ObjectDiagram.Create(this, $"title Stack after Push({data})");
         }
         public double Pop()
         {
             if (IsEmpty)
             {
-                throw new InvalidOperationException("Stack is empty!");
+                throw new InvalidOperationException("title Stack is empty!");
             }
             
-            Element tmp = head!;
+            Element tmp = _head!;
 
-            head = tmp.Next;
-            ObjectDiagram.Generate(this);
+            _head = tmp.Next;
+            ObjectDiagram.Create(this, $"title Stack after Pop() => {tmp.Data}");
             return tmp.Data;
         }
         #endregion methods

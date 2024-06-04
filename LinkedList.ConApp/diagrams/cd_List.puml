@@ -1,6 +1,6 @@
 @startuml List
 title List
- class List #GhostWhite {
+class List #GhostWhite {
 - Node? _head
 ---
 + int getCount()
@@ -10,4 +10,20 @@ title List
 + void RemoveAt(int index)
 + void Insert(int index, double value)
 }
+class Node #GhostWhite {
+- double _value
+- Node? _prev
+- Node? _next
+---
++ double getValue()
++ Void setValue(double value)
++ Node? getPrev()
++ Void setPrev(Node? value)
++ Node? getNext()
++ Void setNext(Node? value)
+---
+}
+List "0..1" *-- "1" Node : _head
+Node "0..1" *-- "1" Node : _prev
+Node "0..1" *-- "1" Node : _next
 @enduml

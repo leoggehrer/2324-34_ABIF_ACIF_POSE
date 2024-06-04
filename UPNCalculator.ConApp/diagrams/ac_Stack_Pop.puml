@@ -2,11 +2,11 @@
 title Stack.Pop
 start
 #LightYellow:if (IsEmpty) then (<color:green>yes)
-        #Red:throw new InvalidOperationException("Stack is empty!");
-        kill
+  #Red:throw new InvalidOperationException("Stack is empty!");
+  kill
 endif
-#LightSkyBlue:Element tmp = head!;
-#WhiteSmoke:head = tmp.Next;
+#LightSkyBlue:Element tmp = _head!;
+#WhiteSmoke:_head = tmp.Next;
 #WhiteSmoke:ObjectDiagram.Generate(this);
 #Lavender:return tmp.Data;
 stop

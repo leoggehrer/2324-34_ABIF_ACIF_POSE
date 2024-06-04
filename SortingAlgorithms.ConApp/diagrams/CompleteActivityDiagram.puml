@@ -1,6 +1,6 @@
 @startuml CompleteActivityDiagram
 header
-generated on 23.05.2024 20:59:08
+generated on 25.05.2024 12:57:36
 end header
 title CompleteActivityDiagram
 start
@@ -118,6 +118,11 @@ stop
 start
 note right:  Sort.BruteForceSort
 #LightGreen:Params(int[] array);
+:iterator = array.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:i = iterator.Current();
+            #WhiteSmoke:PrintLine(i);
+endwhile (<color:red>no)
 while (i < array.Length - 1) is (<color:green>yes)
         while (j < array.Length) is (<color:green>yes)
                 #LightYellow:if (array[i] < array[j]) then (<color:green>yes)

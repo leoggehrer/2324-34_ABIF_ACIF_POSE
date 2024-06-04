@@ -1,8 +1,8 @@
 @startuml ObjectDiagram
 title ObjectDiagram
- class ObjectDiagram << static >> #GhostWhite {
-+ {const} string DiagramPath = @"C:\Temp\LinkedList"
-+ {const} string FilePath = $"{DiagramPath}\\od_LinkedList.puml"
+class ObjectDiagram << static >>  #GhostWhite {
++ {static} string DiagramPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
++ {static} string FilePath = Path.Combine(DiagramPath, "od_LinkedList.puml")
 ---
 ---
 + {static} void Generate(object[] items)

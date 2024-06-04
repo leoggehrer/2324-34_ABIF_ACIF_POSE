@@ -1,6 +1,6 @@
 @startuml Node
 title Node
- class Node #GhostWhite {
+class Node #GhostWhite {
 - double _value
 - Node? _prev
 - Node? _next
@@ -13,4 +13,6 @@ title Node
 + Void setNext(Node? value)
 ---
 }
+Node "0..1" *-- "1" Node : _prev
+Node "0..1" *-- "1" Node : _next
 @enduml

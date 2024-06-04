@@ -8,15 +8,15 @@ participant "Console.ReadLine()" as Console_ReadLine #LightGreen
 participant "Parse(a0)" as Parse_a0 #LightGreen
 autonumber
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("**********************")
-Main_p0 -[#grey]> Console_WriteLine_a0 : ("* LinkedList         *")
+Main_p0 -[#grey]> Console_WriteLine_a0 : ("* LinkedList *")
 Main_p0 -[#grey]> Console_WriteLine_a0 : ("**********************")
 Main_p0 -[#grey]> Console_WriteLine
 loop#LightCoral input != string.Empty
-    Main_p0 -[#grey]> Console_Write_a0 : ("List aktion [Enter...Exit]:  ")
-    Main_p0 -[#grey]> Console_ReadLine
-    Console_ReadLine -[#blue]-> Main_p0 : input
-    alt#LightBlue input != string.Empty
-        Main_p0 -[#grey]> Parse_a0 : (input)
-    end
+ Main_p0 -[#grey]> Console_Write_a0 : ("List aktion [Enter...Exit]: ")
+ Main_p0 -[#grey]> Console_ReadLine
+ Console_ReadLine -[#blue]-> Main_p0 : input
+ alt#LightBlue input != string.Empty
+ Main_p0 -[#grey]> Parse_a0 : (input)
+ end
 end
 @enduml

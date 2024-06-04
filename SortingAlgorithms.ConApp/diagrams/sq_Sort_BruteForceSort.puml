@@ -1,8 +1,12 @@
 @startuml Sort.BruteForceSort
 title Sort.BruteForceSort
 participant "BruteForceSort(int[] array)" as BruteForceSort_p0 #LightYellow
+participant "Console.WriteLine(a0)" as Console_WriteLine_a0 #LightGreen
 participant "Swap(a0,a1)" as Swap_a0_a1 #LightGreen
 autonumber
+loop#LightCoral array
+    BruteForceSort_p0 -[#grey]> Console_WriteLine_a0 : (i)
+end
 loop#LightCoral i < array.Length - 1
     loop#LightCoral j < array.Length
         alt#LightBlue array[i] < array[j]

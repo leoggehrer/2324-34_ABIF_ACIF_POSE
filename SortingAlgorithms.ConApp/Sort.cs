@@ -1,4 +1,6 @@
-﻿namespace SortingAlgorithms.ConApp
+﻿using System.Diagnostics;
+
+namespace SortingAlgorithms.ConApp
 {
     public static partial class Sort
     {
@@ -8,6 +10,10 @@
         /// <param name="array">The array to be sorted.</param>
         public static void BruteForceSort(int[] array)
         {
+            foreach (int i in array)
+            {
+                Console.WriteLine(i);
+            }
             for (int i = 0; i < array.Length - 1; i++)
             {
                 for (int j = i + 1; j < array.Length; j++)

@@ -14,24 +14,25 @@ Parse_p0 -[#grey]> input_Split_a0_a1 : (' ', StringSplitOptions.RemoveEmptyEntri
 input_Split_a0_a1 -[#blue]-> Parse_p0 : parts
 Parse_p0 -[#grey]> ObjectDiagram_Generate_a0 : (list)
 loop#LightCoral i < parts.Length
-    alt#LightBlue parts[i] == "a"
-        Parse_p0 -[#grey]> list_Add_a0 : (double.Parse(parts[++i]))
-        else
-            alt#LightBlue parts[i] == "i"
-                Parse_p0 -[#grey]> int_Parse_a0 : (parts[++i])
-                int_Parse_a0 -[#blue]-> Parse_p0 : idx
-                Parse_p0 -[#grey]> double_Parse_a0 : (parts[++i])
-                double_Parse_a0 -[#blue]-> Parse_p0 : val
-                Parse_p0 -[#grey]> list_Insert_a0_a1 : (idx, val)
-                else
-                    alt#LightBlue parts[i] == "r"
-                        Parse_p0 -[#grey]> int_Parse_a0 : (parts[++i])
-                        int_Parse_a0 -[#blue]-> Parse_p0 : idx
-                        Parse_p0 -[#grey]> list_RemoveAt_a0 : (idx)
-                    end
-            end
-    end
-    Parse_p0 -[#grey]> ObjectDiagram_Generate_a0 : (list)
+ alt#LightBlue parts[i] == "a"
+ Parse_p0 -[#grey]> list_Add_a0 : (double.Parse(parts[++i]))
+ list_Add_a0 -[#grey]> double_Parse_a0 : (double.Parse(parts[++i]))
+ else
+ alt#LightBlue parts[i] == "i"
+ Parse_p0 -[#grey]> int_Parse_a0 : (parts[++i])
+ int_Parse_a0 -[#blue]-> Parse_p0 : idx
+ Parse_p0 -[#grey]> double_Parse_a0 : (parts[++i])
+ double_Parse_a0 -[#blue]-> Parse_p0 : val
+ Parse_p0 -[#grey]> list_Insert_a0_a1 : (idx, val)
+ else
+ alt#LightBlue parts[i] == "r"
+ Parse_p0 -[#grey]> int_Parse_a0 : (parts[++i])
+ int_Parse_a0 -[#blue]-> Parse_p0 : idx
+ Parse_p0 -[#grey]> list_RemoveAt_a0 : (idx)
+ end
+ end
+ end
+ Parse_p0 -[#grey]> ObjectDiagram_Generate_a0 : (list)
 end
 Parse_p0 -[#grey]> list_Clear
 Parse_p0 -[#grey]> ObjectDiagram_Generate_a0 : (list)
