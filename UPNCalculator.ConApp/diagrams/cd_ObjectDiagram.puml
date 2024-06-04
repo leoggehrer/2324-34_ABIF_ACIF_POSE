@@ -1,0 +1,9 @@
+@startuml ObjectDiagram
+title ObjectDiagram
+class ObjectDiagram << static >>  #GhostWhite {
+- {static} PlantUML.Logic.ObjectDiagramCreator diagramCreator = new("od_Stack.puml")
+---
+---
++ {static} void Create(object obj, string[] notes)
+}
+@enduml

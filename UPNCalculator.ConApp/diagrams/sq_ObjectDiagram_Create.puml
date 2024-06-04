@@ -1,0 +1,7 @@
+@startuml ObjectDiagram.Create
+title ObjectDiagram.Create
+participant "Create(object obj,params string[] notes)" as Create_p0_p1 #LightYellow
+participant "diagramCreator.CreateToFile(a0,a1)" as diagramCreator_CreateToFile_a0_a1 #LightGreen
+autonumber
+Create_p0_p1 -[#grey]> diagramCreator_CreateToFile_a0_a1 : (obj, notes)
+@enduml

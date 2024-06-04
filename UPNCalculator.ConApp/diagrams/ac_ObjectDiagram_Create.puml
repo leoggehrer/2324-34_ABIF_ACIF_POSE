@@ -1,0 +1,7 @@
+@startuml ObjectDiagram.Create
+title ObjectDiagram.Create
+start
+#LightGreen:Params(object obj,params string[] notes);
+#WhiteSmoke:diagramCreator.CreateToFile(obj, notes);
+stop
+@enduml
