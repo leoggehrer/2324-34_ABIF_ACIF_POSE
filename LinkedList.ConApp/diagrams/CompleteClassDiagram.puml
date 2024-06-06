@@ -1,6 +1,16 @@
 @startuml CompleteClassDiagram
 title CompleteClassDiagram
- class Node #GhostWhite {
+class List #GhostWhite {
+- Node? _head
+---
++ int getCount()
+---
++ void Clear()
++ void Add(double value)
++ void RemoveAt(int index)
++ void Insert(int index, double value)
+}
+class Node #GhostWhite {
 - double _value
 - Node? _prev
 - Node? _next
@@ -13,30 +23,20 @@ title CompleteClassDiagram
 + Void setNext(Node? value)
 ---
 }
- class List #GhostWhite {
-- Node? _head
+class ObjectDiagram << static >>  #GhostWhite {
++ {static} string DiagramPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile)
++ {static} string FilePath = Path.Combine(DiagramPath, "od_LinkedList.puml")
 ---
-+ int getCount()
 ---
-+ void Clear()
-+ void Add(double value)
-+ void RemoveAt(int index)
-+ void Insert(int index, double value)
++ {static} void Generate(object[] items)
 }
- class Program #GhostWhite {
+class Program #GhostWhite {
 ---
 ---
 - {static} void Main(string[] args)
 - {static} void Parse(string input)
 }
- class ObjectDiagram << static >> #GhostWhite {
-+ {const} string DiagramPath = @"C:\Temp\LinkedList"
-+ {const} string FilePath = $"{DiagramPath}\\od_LinkedList.puml"
----
----
-+ {static} void Generate(object[] items)
-}
+List "0..1" *-- "1" Node : _head
 Node "0..1" *-- "1" Node : _prev
 Node "0..1" *-- "1" Node : _next
-List "0..1" *-- "1" Node : _head
 @enduml

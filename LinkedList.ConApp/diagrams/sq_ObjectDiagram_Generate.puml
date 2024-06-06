@@ -14,8 +14,8 @@ Generate_p0 -[#grey]> diagramData_Insert_a0_a1 : (0, "@start" + "uml stack")
 Generate_p0 -[#grey]> diagramData_Insert_a0_a1 : (1, "title Object Diagram for LinkedList")
 Generate_p0 -[#grey]> diagramData_Add_a0 : ("@end" + "uml")
 alt#LightBlue Path.Exists(DiagramPath) == false
-    Generate_p0 -[#grey]> Path_Exists_a0 : (DiagramPath)
-    Generate_p0 -[#grey]> Directory_CreateDirectory_a0 : (DiagramPath)
+ Generate_p0 -[#grey]> Path_Exists_a0 : (DiagramPath)
+ Generate_p0 -[#grey]> Directory_CreateDirectory_a0 : (DiagramPath)
 end
 Generate_p0 -[#grey]> File_WriteAllLines_a0_a1 : (FilePath, diagramData)
 @enduml

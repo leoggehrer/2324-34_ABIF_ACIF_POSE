@@ -4,16 +4,15 @@ start
 #LightGreen:Params(string[] args);
 #LightSkyBlue:string input;
 #WhiteSmoke:PrintLine("********************");
-#WhiteSmoke:PrintLine("* UPNCalculator    *");
+#WhiteSmoke:PrintLine("* UPNCalculator *");
 #WhiteSmoke:PrintLine("********************");
 #WhiteSmoke:PrintLine();
 repeat
-        #WhiteSmoke:Print("Rechenoperation [Enter...Exit]:  ");
-        #WhiteSmoke:input = ReadLine();
-        #LightYellow:if (input != string.Empty) then (<color:green>yes)
-                #LightSkyBlue:double result = Parse(input);
-                #WhiteSmoke:PrintLine($"{input} = {result}");
-        endif
+  #WhiteSmoke:Print("Arithmetic operation (form 3 5 + 2 *) [Enter...Exit]: ");
+  #WhiteSmoke:input = ReadLine();
+  #LightYellow:if (input != string.Empty) then (<color:green>yes)
+    #WhiteSmoke:PrintLine($"{input} = {result}");
+  endif
 repeat while (input != string.Empty) is (<color:green>yes)
 stop
 @enduml

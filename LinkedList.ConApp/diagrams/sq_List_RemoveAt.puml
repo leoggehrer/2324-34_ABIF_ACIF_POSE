@@ -1,6 +1,0 @@
-@startuml List.RemoveAt
-title List.RemoveAt
-autonumber
-alt#LightBlue index < 0 || index >= Count
-end
-@enduml

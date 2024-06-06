@@ -1,4 +1,6 @@
-﻿namespace LinkedList.ConApp
+﻿using System.Text;
+
+namespace LinkedList.ConApp
 {
     public partial class List {
         private class Node {
@@ -178,6 +180,27 @@
                     newNode.Next.Prev = newNode;
                 }
             }
+        }
+        /// <summary>
+        /// Returns a string representation of the linked list.
+        /// </summary>
+        /// <returns>A string representation of the linked list.</returns>
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            Node? run = _head;
+
+            while (run != null)
+            {
+                if (sb.Length > 0)
+                {
+                    sb.Append(" -> ");
+                }
+                sb.Append(run.Value);
+                run = run.Next;
+            }
+            
+            return $"[ {sb} ]";
         }
         #endregion methods
     }

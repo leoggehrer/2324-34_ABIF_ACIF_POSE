@@ -23,12 +23,20 @@ namespace LinkedList.ConApp
         static void Main(string[] args)
         {
             string input;
+            List list= new List();
+
+            ObjectDiagram.Create(list);
 
             Console.WriteLine("**********************");
             Console.WriteLine("* LinkedList         *");
             Console.WriteLine("**********************");
             Console.WriteLine();
 
+            Console.WriteLine("Befehle:");
+            Console.WriteLine("  a <value>   - Fügt ein Element am Ende der Liste ein.");
+            Console.WriteLine("  i <index> <value> - Fügt ein Element an der angegebenen Position ein.");
+            Console.WriteLine("  r <index>   - Entfernt das Element an der angegebenen Position.");
+            Console.WriteLine("  p           - Gibt die Liste aus.");
             // Eingabe (E)
             do
             {
@@ -37,16 +45,19 @@ namespace LinkedList.ConApp
                 if (input != string.Empty)
                 {
                     // Verarbeitung (V)
-                    Parse(input);
+                    Parse(input, list);
                 }
             } while (input != string.Empty);
         }
 
-        private static void Parse(string input)
+        /// <summary>
+        /// Parses the input string and performs operations on the provided list.
+        /// </summary>
+        /// <param name="input">The input string to parse.</param>
+        /// <param name="list">The list to perform operations on.</param>
+        private static void Parse(string input, List list)
         {
             string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
-            List list= new List();
-            ObjectDiagram.Generate(list);
 
             for (int i = 0; i < parts.Length; i++)
             {
@@ -67,10 +78,12 @@ namespace LinkedList.ConApp
 
                     list.RemoveAt(idx);
                 }
-                ObjectDiagram.Generate(list);
+                else if (parts[i] == "p")
+                {
+                    Console.WriteLine($"Content: {list}");
+                }
+                ObjectDiagram.Create(list);
             }
-            list.Clear();
-            ObjectDiagram.Generate(list);
         }
     }
 }

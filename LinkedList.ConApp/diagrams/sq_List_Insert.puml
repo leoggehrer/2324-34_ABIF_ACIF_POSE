@@ -1,6 +1,0 @@
-@startuml List.Insert
-title List.Insert
-autonumber
-alt#LightBlue index < 0 || index > Count
-end
-@enduml

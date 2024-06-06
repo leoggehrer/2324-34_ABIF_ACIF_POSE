@@ -3,35 +3,26 @@ title Program.Parse
 start
 #LightGreen:Params(string input);
 #LightSkyBlue:string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries)\nStack stack= new Stack();
-#LightSkyBlue:int i = 0;
 while (i < parts.Length) is (<color:green>yes)
-        #LightYellow:if (parts[i] == "+") then (<color:green>yes)
-                #LightSkyBlue:double b = stack.Pop();
-                #LightSkyBlue:double a = stack.Pop();
-                #WhiteSmoke:stack.Push(a + b);
+  #LightYellow:if (parts[i] == "+") then (<color:green>yes)
+    #WhiteSmoke:stack.Push(a + b);
+    else (<color:red>no)
+      #LightYellow:if (parts[i] == "-") then (<color:green>yes)
+        #WhiteSmoke:stack.Push(a - b);
+        else (<color:red>no)
+          #LightYellow:if (parts[i] == "*") then (<color:green>yes)
+            #WhiteSmoke:stack.Push(a * b);
             else (<color:red>no)
-                #LightYellow:if (parts[i] == "-") then (<color:green>yes)
-                        #LightSkyBlue:double b = stack.Pop();
-                        #LightSkyBlue:double a = stack.Pop();
-                        #WhiteSmoke:stack.Push(a - b);
-                    else (<color:red>no)
-                        #LightYellow:if (parts[i] == "*") then (<color:green>yes)
-                                #LightSkyBlue:double b = stack.Pop();
-                                #LightSkyBlue:double a = stack.Pop();
-                                #WhiteSmoke:stack.Push(a * b);
-                            else (<color:red>no)
-                                #LightYellow:if (parts[i] == "/") then (<color:green>yes)
-                                        #LightSkyBlue:double b = stack.Pop();
-                                        #LightSkyBlue:double a = stack.Pop();
-                                        #WhiteSmoke:stack.Push(a / b);
-                                    else (<color:red>no)
-                                        #LightYellow:if (double.TryParse(parts[i], out double opd)) then (<color:green>yes)
-                                                #WhiteSmoke:stack.Push(opd);
-                                        endif
-                                endif
-                        endif
-                endif
-        endif
+              #LightYellow:if (parts[i] == "/") then (<color:green>yes)
+                #WhiteSmoke:stack.Push(a / b);
+                else (<color:red>no)
+                  #LightYellow:if (double.TryParse(parts[i], out double opd)) then (<color:green>yes)
+                    #WhiteSmoke:stack.Push(opd);
+                  endif
+              endif
+          endif
+      endif
+  endif
 :i++;
 endwhile (<color:red>no)
 #Lavender:return stack.Pop();

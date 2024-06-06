@@ -1,6 +1,6 @@
 @startuml CompleteClassDiagram
 title CompleteClassDiagram
- class Element #GhostWhite {
+class Element #GhostWhite {
 - double _data
 - Element? _next
 ---
@@ -10,20 +10,20 @@ title CompleteClassDiagram
 + Void setNext(Element? value)
 ---
 }
- class Program #GhostWhite {
+class ObjectDiagram << static >>  #GhostWhite {
+- {static} PlantUML.Logic.ObjectDiagramCreator diagramCreator = new("od_Stack.puml")
+---
+---
++ {static} void Create(object obj, string[] notes)
+}
+class Program #GhostWhite {
 ---
 ---
 - {static} void Main(string[] args)
-- {static} double Parse(string input)
++ {static} double Parse(string input)
 }
- class ObjectDiagram << static >> #GhostWhite {
-+ {const} string FilePath = @"/Users/ggehrer/source/Test/UPNCalculator/od_Stack.puml"
----
----
-+ {static} void Generate(object obj)
-}
- class Stack #GhostWhite {
-- Element? head = null
+class Stack #GhostWhite {
+- Element? _head = null
 ---
 + bool getIsEmpty()
 ---
@@ -31,5 +31,5 @@ title CompleteClassDiagram
 + double Pop()
 }
 Element "0..1" *-- "1" Element : _next
-Stack "0..1" *-- "1" Element : head
+Stack "0..1" *-- "1" Element : _head
 @enduml

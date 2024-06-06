@@ -1,9 +1,9 @@
 @startuml Program
 title Program
- class Program #GhostWhite {
+class Program #GhostWhite {
 ---
 ---
 - {static} void Main(string[] args)
-- {static} double Parse(string input)
++ {static} double Parse(string input)
 }
 @enduml

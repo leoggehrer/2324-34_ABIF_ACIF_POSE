@@ -2,7 +2,7 @@
 title Stack.Push
 start
 #LightGreen:Params(double data);
-#WhiteSmoke:head = new Element(data, head);
-#WhiteSmoke:ObjectDiagram.Generate(this);
+#WhiteSmoke:_head = new Element(data, _head);
+#WhiteSmoke:ObjectDiagram.Create(this, $"title Stack after Push({data})");
 stop
 @enduml

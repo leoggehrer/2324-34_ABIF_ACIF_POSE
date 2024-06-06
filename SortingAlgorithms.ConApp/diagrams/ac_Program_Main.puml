@@ -33,11 +33,11 @@ start
 #WhiteSmoke:PrintLine("Performance Testing");
 #WhiteSmoke:PrintLine("===================");
 #WhiteSmoke:PrintLine();
-#WhiteSmoke:PrintLine("Machine:   " + Environment.MachineName);
-#WhiteSmoke:PrintLine("Version:   " + Environment.Version);
+#WhiteSmoke:PrintLine("Machine: " + Environment.MachineName);
+#WhiteSmoke:PrintLine("Version: " + Environment.Version);
 #WhiteSmoke:PrintLine("Processor: Apple M2");
 #WhiteSmoke:PrintLine("Processor: " + Environment.ProcessorCount + " cores");
-#WhiteSmoke:PrintLine("OS:        " + Environment.OSVersion);
+#WhiteSmoke:PrintLine("OS: " + Environment.OSVersion);
 #WhiteSmoke:PrintLine();
 #LightSkyBlue:Stopwatch sw = new Stopwatch()\nint[] randomArray = CreateRandomArray(PERFORMANCE_SIZE)\nint[] arrayToSort;
 #WhiteSmoke:arrayToSort = (int[])randomArray.Clone();

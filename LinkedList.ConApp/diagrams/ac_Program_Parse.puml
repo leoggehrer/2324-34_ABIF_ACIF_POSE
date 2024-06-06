@@ -4,23 +4,19 @@ start
 #LightGreen:Params(string input);
 #LightSkyBlue:string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries)\nList list= new List();
 #WhiteSmoke:ObjectDiagram.Generate(list);
-#LightSkyBlue:int i = 0;
 while (i < parts.Length) is (<color:green>yes)
-        #LightYellow:if (parts[i] == "a") then (<color:green>yes)
-                #WhiteSmoke:list.Add(double.Parse(parts[++i]));
-            else (<color:red>no)
-                #LightYellow:if (parts[i] == "i") then (<color:green>yes)
-                        #LightSkyBlue:int idx = int.Parse(parts[++i]);
-                        #LightSkyBlue:double val = double.Parse(parts[++i]);
-                        #WhiteSmoke:list.Insert(idx, val);
-                    else (<color:red>no)
-                        #LightYellow:if (parts[i] == "r") then (<color:green>yes)
-                                #LightSkyBlue:int idx = int.Parse(parts[++i]);
-                                #WhiteSmoke:list.RemoveAt(idx);
-                        endif
-                endif
-        endif
-        #WhiteSmoke:ObjectDiagram.Generate(list);
+  #LightYellow:if (parts[i] == "a") then (<color:green>yes)
+    #WhiteSmoke:list.Add(double.Parse(parts[++i]));
+    else (<color:red>no)
+      #LightYellow:if (parts[i] == "i") then (<color:green>yes)
+        #WhiteSmoke:list.Insert(idx, val);
+        else (<color:red>no)
+          #LightYellow:if (parts[i] == "r") then (<color:green>yes)
+            #WhiteSmoke:list.RemoveAt(idx);
+          endif
+      endif
+  endif
+  #WhiteSmoke:ObjectDiagram.Generate(list);
 :i++;
 endwhile (<color:red>no)
 #WhiteSmoke:list.Clear();

@@ -3,22 +3,21 @@ title List.RemoveAt
 start
 #LightGreen:Params(int index);
 #LightYellow:if (index < 0 || index >= Count) then (<color:green>yes)
-        #Red:throw new IndexOutOfRangeException(nameof(index));
-        kill
+  #Red:throw new IndexOutOfRangeException(nameof(index));
+  kill
 endif
 #LightSkyBlue:Node? run = _head;
-#LightSkyBlue:int i = 0;
 while (i < index) is (<color:green>yes)
-        #WhiteSmoke:run = run!.Next;
+  #WhiteSmoke:run = run!.Next;
 :i++;
 endwhile (<color:red>no)
 #LightYellow:if (run!.Prev != null) then (<color:green>yes)
-        #WhiteSmoke:run.Prev.Next = run.Next;
-    else (<color:red>no)
-            #WhiteSmoke:_head = run.Next;
+  #WhiteSmoke:run.Prev.Next = run.Next;
+  else (<color:red>no)
+    #WhiteSmoke:_head = run.Next;
 endif
 #LightYellow:if (run.Next != null) then (<color:green>yes)
-        #WhiteSmoke:run.Next.Prev = run.Prev;
+  #WhiteSmoke:run.Next.Prev = run.Prev;
 endif
 stop
 @enduml

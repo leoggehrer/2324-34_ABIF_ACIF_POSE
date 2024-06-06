@@ -5,9 +5,8 @@ start
 #LightSkyBlue:bool exchange\nint length = array.Length;
 repeat
         #WhiteSmoke:exchange = false;
-        #LightSkyBlue:int i = 0;
         while (i < length - 1) is (<color:green>yes)
-                if (array[i] > array[i + 1]) then (<color:green>yes)
+                #LightYellow:if (array[i] > array[i + 1]) then (<color:green>yes)
                         #WhiteSmoke:Swap(ref array[i], ref array[i + 1]);
                         #WhiteSmoke:exchange = true;
                 endif

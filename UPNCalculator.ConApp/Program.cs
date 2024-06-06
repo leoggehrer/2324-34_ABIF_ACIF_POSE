@@ -35,7 +35,7 @@ namespace UPNCalculator.ConApp
             // Eingabe (E)
             do
             {
-                Console.Write("Rechenoperation [Enter...Exit]:  ");
+                Console.Write("Arithmetic operation (form 3 5 + 2 *) [Enter...Exit]:  ");
                 input = Console.ReadLine();
                 if (input != string.Empty)
                 {
@@ -48,7 +48,12 @@ namespace UPNCalculator.ConApp
             } while (input != string.Empty);
         }
 
-        private static double Parse(string input)
+        /// <summary>
+        /// Parses a string input and evaluates it as a Reverse Polish Notation (RPN) expression.
+        /// </summary>
+        /// <param name="input">The string input representing the RPN expression.</param>
+        /// <returns>The result of the evaluated RPN expression.</returns>
+        public static double Parse(string input)
         {
             string[] parts = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
             Stack stack= new Stack();

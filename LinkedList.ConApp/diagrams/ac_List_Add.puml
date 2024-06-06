@@ -4,14 +4,13 @@ start
 #LightGreen:Params(double value);
 #LightSkyBlue:Node? newNode = new Node { Value = value };
 #LightYellow:if (_head == null) then (<color:green>yes)
-        #WhiteSmoke:_head = newNode;
-    else (<color:red>no)
-            #LightSkyBlue:Node? run = _head;
-            while (run?.Next != null) is (<color:green>yes)
-                    #WhiteSmoke:run = run.Next;
-            endwhile (<color:red>no)
-            #WhiteSmoke:run!.Next = newNode;
-            #WhiteSmoke:newNode.Prev = run;
+  #WhiteSmoke:_head = newNode;
+  else (<color:red>no)
+    while (run?.Next != null) is (<color:green>yes)
+      #WhiteSmoke:run = run.Next;
+    endwhile (<color:red>no)
+    #WhiteSmoke:run!.Next = newNode;
+    #WhiteSmoke:newNode.Prev = run;
 endif
 stop
 @enduml

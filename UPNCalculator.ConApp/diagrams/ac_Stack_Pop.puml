@@ -2,12 +2,12 @@
 title Stack.Pop
 start
 #LightYellow:if (IsEmpty) then (<color:green>yes)
-        #Red:throw new InvalidOperationException("Stack is empty!");
-        kill
+  #Red:throw new InvalidOperationException("title Stack is empty!");
+  kill
 endif
-#LightSkyBlue:Element tmp = head!;
-#WhiteSmoke:head = tmp.Next;
-#WhiteSmoke:ObjectDiagram.Generate(this);
+#LightSkyBlue:Element tmp = _head!;
+#WhiteSmoke:_head = tmp.Next;
+#WhiteSmoke:ObjectDiagram.Create(this, $"title Stack after Pop() => {tmp.Data}");
 #Lavender:return tmp.Data;
 stop
 @enduml

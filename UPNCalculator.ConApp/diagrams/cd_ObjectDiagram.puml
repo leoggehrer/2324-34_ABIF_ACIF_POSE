@@ -1,9 +1,9 @@
 @startuml ObjectDiagram
 title ObjectDiagram
- class ObjectDiagram << static >> #GhostWhite {
-+ {const} string FilePath = @"/Users/ggehrer/source/Test/UPNCalculator/od_Stack.puml"
+class ObjectDiagram << static >>  #GhostWhite {
+- {static} PlantUML.Logic.ObjectDiagramCreator diagramCreator = new("od_Stack.puml")
 ---
 ---
-+ {static} void Generate(object obj)
++ {static} void Create(object obj, string[] notes)
 }
 @enduml

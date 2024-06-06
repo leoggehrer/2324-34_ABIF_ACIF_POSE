@@ -2,12 +2,15 @@
 title Sort.BruteForceSort
 start
 #LightGreen:Params(int[] array);
-#LightSkyBlue:int i = 0;
-while (i < array.Length) is (<color:green>yes)
-        #LightSkyBlue:int j = 0;
-        while (j < array.Length - 1) is (<color:green>yes)
-                if (array[j] > array[j + 1]) then (<color:green>yes)
-                        #WhiteSmoke:Swap(ref array[j], ref array[j + 1]);
+:iterator = array.GetIterator();
+while (iterator.MoveNext()) is (<color:green>yes)
+:i = iterator.Current();
+            #WhiteSmoke:PrintLine(i);
+endwhile (<color:red>no)
+while (i < array.Length - 1) is (<color:green>yes)
+        while (j < array.Length) is (<color:green>yes)
+                #LightYellow:if (array[i] < array[j]) then (<color:green>yes)
+                        #WhiteSmoke:Swap(ref array[i], ref array[j]);
                 endif
         :j++;
         endwhile (<color:red>no)

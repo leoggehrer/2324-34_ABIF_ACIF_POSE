@@ -1,6 +1,6 @@
 @startuml Element
 title Element
- class Element #GhostWhite {
+class Element #GhostWhite {
 - double _data
 - Element? _next
 ---
@@ -10,4 +10,5 @@ title Element
 + Void setNext(Element? value)
 ---
 }
+Element "0..1" *-- "1" Element : _next
 @enduml

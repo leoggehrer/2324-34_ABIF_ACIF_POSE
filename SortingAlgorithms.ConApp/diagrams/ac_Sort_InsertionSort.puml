@@ -2,10 +2,7 @@
 title Sort.InsertionSort
 start
 #LightGreen:Params(int[] array);
-#LightSkyBlue:int i = 1;
 while (i < array.Length) is (<color:green>yes)
-        #LightSkyBlue:int j = i;
-        #LightSkyBlue:int current = array[i];
         while (j > 0 && array[j - 1] > current) is (<color:green>yes)
                 #WhiteSmoke:array[j] = array[j - 1];
                 #WhiteSmoke:j--;

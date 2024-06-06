@@ -1,7 +1,7 @@
 @startuml Stack.Push
 title Stack.Push
 participant "Push(double data)" as Push_p0 #LightYellow
-participant "ObjectDiagram.Generate(a0)" as ObjectDiagram_Generate_a0 #LightGreen
+participant "ObjectDiagram.Create(a0,a1)" as ObjectDiagram_Create_a0_a1 #LightGreen
 autonumber
-Push_p0 -[#grey]> ObjectDiagram_Generate_a0 : (this)
+Push_p0 -[#grey]> ObjectDiagram_Create_a0_a1 : (this, $"title Stack after Push({data})")
 @enduml

@@ -69,8 +69,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringReverse.ConApp", "Str
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberPalindrom.ConApp", "NumberPalindrom.ConApp\NumberPalindrom.ConApp.csproj", "{F3BFA0A4-2177-4BE1-B138-B342CE0D49C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NumberPuzzle1.ConApp", "NumberPuzzle1.ConApp\NumberPuzzle1.ConApp.csproj", "{C81A9379-5733-49A1-BC8C-B4B9C0383EF4}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditCardChecker.ConApp", "CreditCardChecker.ConApp\CreditCardChecker.ConApp.csproj", "{DCDBE1B2-2D65-46D4-8950-93E9E5A0741E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StringSplit.ConApp", "StringSplit.ConApp\StringSplit.ConApp.csproj", "{9CDF05BE-53BC-462B-BC99-685DE4B36287}"
@@ -150,6 +148,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilePhone.UnitTest", "MobilePhone.UnitTest\MobilePhone.UnitTest.csproj", "{3A75547B-596C-4FCC-8C66-B6E3ACB1B2CF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlantUML.Logic", "..\PlantUML\PlantUML.Logic\PlantUML.Logic.csproj", "{28BB0665-48A9-4C42-9E7D-F7CE4ACA5456}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumberPuzzle.ConApp", "NumberPuzzle.ConApp\NumberPuzzle.ConApp.csproj", "{AD7CEF72-9A8F-4A10-890F-52D7D6A20CEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeapManager.Logic", "HeapManager.Logic\HeapManager.Logic.csproj", "{426CC042-973C-438B-AC3B-FE48722E924C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeapManager.Logic.UnitTests", "HeapManager.Logic.UnitTests\HeapManager.Logic.UnitTests.csproj", "{2D5A4332-6AA4-4F46-8532-EADB2FF4AE4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -453,6 +457,18 @@ Global
 		{28BB0665-48A9-4C42-9E7D-F7CE4ACA5456}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28BB0665-48A9-4C42-9E7D-F7CE4ACA5456}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28BB0665-48A9-4C42-9E7D-F7CE4ACA5456}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD7CEF72-9A8F-4A10-890F-52D7D6A20CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD7CEF72-9A8F-4A10-890F-52D7D6A20CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD7CEF72-9A8F-4A10-890F-52D7D6A20CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD7CEF72-9A8F-4A10-890F-52D7D6A20CEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{426CC042-973C-438B-AC3B-FE48722E924C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{426CC042-973C-438B-AC3B-FE48722E924C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{426CC042-973C-438B-AC3B-FE48722E924C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{426CC042-973C-438B-AC3B-FE48722E924C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D5A4332-6AA4-4F46-8532-EADB2FF4AE4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D5A4332-6AA4-4F46-8532-EADB2FF4AE4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D5A4332-6AA4-4F46-8532-EADB2FF4AE4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D5A4332-6AA4-4F46-8532-EADB2FF4AE4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
