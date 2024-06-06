@@ -39,7 +39,7 @@ namespace SortingAlgorithms.ConApp
             Console.WriteLine("Test BruteForceSort");
             array = CreateRandomArray(TEST_SIZE);
             PrintArray("Unsorted:", array);
-            Sort.BruteForceSort(array);
+            Sorter.SortWithBruteForceSort(array);
             PrintArray("BruteForceSort:", array);
             Console.WriteLine();
 
@@ -47,7 +47,7 @@ namespace SortingAlgorithms.ConApp
             Console.WriteLine("Test BubbleSort");
             array = CreateRandomArray(TEST_SIZE);
             PrintArray("Unsorted:", array);
-            Sort.BubbleSort(array);
+            Sorter.SortWithBubbleSort(array);
             PrintArray("BubbleSort:", array);
             Console.WriteLine();
 
@@ -55,7 +55,7 @@ namespace SortingAlgorithms.ConApp
             Console.WriteLine("Test InsertionSort");
             array = CreateRandomArray(TEST_SIZE);
             PrintArray("Unsorted:", array);
-            Sort.InsertionSort(array);
+            Sorter.SortWithInsertionSort(array);
             PrintArray("InsertionSort:", array);
             Console.WriteLine();
 
@@ -63,7 +63,7 @@ namespace SortingAlgorithms.ConApp
             Console.WriteLine("Test SelectionSort");
             array = CreateRandomArray(TEST_SIZE);
             PrintArray("Unsorted:", array);
-            Sort.SelectionSort(array);
+            Sorter.SortWithSelectionSort(array);
             PrintArray("SelectionSort:", array);
             Console.WriteLine();
 
@@ -85,36 +85,36 @@ namespace SortingAlgorithms.ConApp
 
             // Performance BruteForceSort
             arrayToSort = (int[])randomArray.Clone();
-            Console.WriteLine($"{nameof(Sort.BruteForceSort)}(0...{randomArray.Length})");
+            Console.WriteLine($"{nameof(Sorter.SortWithBruteForceSort)}(0...{randomArray.Length})");
             sw.Start();
-            Sort.BruteForceSort(arrayToSort);
+            Sorter.SortWithBruteForceSort(arrayToSort);
             sw.Stop();
             Console.WriteLine($"Zeitmessung: {sw.ElapsedMilliseconds} ms");
             Console.WriteLine();
 
             // Performance BubbleSort
             arrayToSort = (int[])randomArray.Clone();
-            Console.WriteLine($"{nameof(Sort.BubbleSort)}(0...{randomArray.Length})");
+            Console.WriteLine($"{nameof(Sorter.SortWithBubbleSort)}(0...{randomArray.Length})");
             sw.Restart();
-            Sort.BubbleSort(arrayToSort);
+            Sorter.SortWithBubbleSort(arrayToSort);
             sw.Stop();
             Console.WriteLine($"Zeitmessung: {sw.ElapsedMilliseconds} ms");
             Console.WriteLine();
 
             // Performance InsertionSort
             arrayToSort = (int[])randomArray.Clone();
-            Console.WriteLine($"{nameof(Sort.InsertionSort)}(0...{randomArray.Length})");
+            Console.WriteLine($"{nameof(Sorter.SortWithInsertionSort)}(0...{randomArray.Length})");
             sw.Restart();
-            Sort.InsertionSort(arrayToSort);
+            Sorter.SortWithInsertionSort(arrayToSort);
             sw.Stop();
             Console.WriteLine($"Zeitmessung: {sw.ElapsedMilliseconds} ms");
             Console.WriteLine();
 
             // Performance SelectionSort
             arrayToSort = (int[])randomArray.Clone();
-            Console.WriteLine($"{nameof(Sort.SelectionSort)}(0...{randomArray.Length})");
+            Console.WriteLine($"{nameof(Sorter.SortWithSelectionSort)}(0...{randomArray.Length})");
             sw.Restart();
-            Sort.SelectionSort(arrayToSort);
+            Sorter.SortWithSelectionSort(arrayToSort);
             sw.Stop();
             Console.WriteLine($"Zeitmessung: {sw.ElapsedMilliseconds} ms");
             Console.WriteLine();

@@ -1,12 +1,12 @@
 ﻿namespace SortingAlgorithms.ConApp
 {
-    public static partial class Sort
+    public static partial class Sorter
     {
         /// <summary>
         /// Sorts an array using the brute force sorting algorithm.
         /// </summary>
         /// <param name="array">The array to be sorted.</param>
-        public static void BruteForceSort(int[] array)
+        public static void SortWithBruteForceSort(int[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
@@ -24,7 +24,7 @@
         /// Sorts an array of integers using the Bubble Sort algorithm.
         /// </summary>
         /// <param name="array">The array to be sorted.</param>
-        public static void BubbleSort(int[] array)
+        public static void SortWithBubbleSort(int[] array)
         {
             bool exchange;
             int length = array.Length;
@@ -48,7 +48,7 @@
         /// Sorts an array of integers using the Insertion Sort algorithm.
         /// </summary>
         /// <param name="array">The array to be sorted.</param>
-        public static void InsertionSort(int[] array)
+        public static void SortWithInsertionSort(int[] array)
         {
             for (int i = 1; i < array.Length; i++)
             {
@@ -68,7 +68,7 @@
         /// Sorts an array of integers using the Selection Sort algorithm.
         /// </summary>
         /// <param name="array">The array to be sorted.</param>
-        public static void SelectionSort(int[] array)
+        public static void SortWithSelectionSort(int[] array)
         {
             for (int i = 0; i < array.Length - 1; i++)
             {
