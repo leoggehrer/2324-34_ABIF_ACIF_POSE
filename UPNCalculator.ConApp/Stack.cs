@@ -46,7 +46,7 @@
         {
             if (IsEmpty)
             {
-                throw new InvalidOperationException("title Stack is empty!");
+                throw new InvalidOperationException("Stack is empty!");
             }
             
             Element tmp = _head!;

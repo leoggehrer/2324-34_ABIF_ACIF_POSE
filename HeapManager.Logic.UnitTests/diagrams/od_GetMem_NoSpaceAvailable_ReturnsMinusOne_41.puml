@@ -1,0 +1,12 @@
+@startuml object
+object Heap_33070207#LightBlue {
+  _size => 100
+  _first => 23385714
+}
+object Block_23385714#LightGoldenRodYellow {
+  _address => 0
+  _size => 100
+  _next => null
+}
+Heap_33070207::_first --> Block_23385714
+@enduml

@@ -1,0 +1,6 @@
+@startuml object
+object Heap_23558896#LightBlue {
+  _size => 1000
+  _first => null
+}
+@enduml
