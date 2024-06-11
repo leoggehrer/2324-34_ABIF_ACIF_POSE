@@ -19,8 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurrencyConverter.ConApp", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitYourAunt.ConApp", "VisitYourAunt.ConApp\VisitYourAunt.ConApp.csproj", "{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemperatureCalculator´.ConApp", "TemperatureCalculator.ConApp\TemperatureCalculator´.ConApp.csproj", "{86093A91-984F-40EA-8183-CF660993023F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrownUpCalculator.ConApp", "GrownUpCalculator.ConApp\GrownUpCalculator.ConApp.csproj", "{73D62E14-8633-4369-BB48-2E8D551A8CD9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleCalculator.ConApp", "SimpleCalculator.ConApp\SimpleCalculator.ConApp.csproj", "{1EDED6C6-167B-44D7-84F8-EBDA13839C44}"
@@ -159,6 +157,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BandOfPearl.Logic", "BandOf
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BandOfPearl.LogicUnitTests", "BandOfPearl.LogicUnitTests\BandOfPearl.LogicUnitTests.csproj", "{C1AE071A-3153-4A72-B748-34A7A3095D94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemperatureCalculator.ConApp", "TemperatureCalculator.ConApp\TemperatureCalculator.ConApp.csproj", "{83BBA6AD-5C9E-401E-8C85-7ADA8696805D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -197,10 +197,6 @@ Global
 		{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D55CDFA-0D13-4B7A-8F2B-1B1CB624B83D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{86093A91-984F-40EA-8183-CF660993023F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{86093A91-984F-40EA-8183-CF660993023F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{86093A91-984F-40EA-8183-CF660993023F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{86093A91-984F-40EA-8183-CF660993023F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73D62E14-8633-4369-BB48-2E8D551A8CD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{73D62E14-8633-4369-BB48-2E8D551A8CD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73D62E14-8633-4369-BB48-2E8D551A8CD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -477,6 +473,10 @@ Global
 		{C1AE071A-3153-4A72-B748-34A7A3095D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1AE071A-3153-4A72-B748-34A7A3095D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1AE071A-3153-4A72-B748-34A7A3095D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83BBA6AD-5C9E-401E-8C85-7ADA8696805D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83BBA6AD-5C9E-401E-8C85-7ADA8696805D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83BBA6AD-5C9E-401E-8C85-7ADA8696805D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83BBA6AD-5C9E-401E-8C85-7ADA8696805D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
